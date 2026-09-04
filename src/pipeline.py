@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 from src.llm_extractor import PROMPT_PATH, extract_pledge, require_env
 from src.pdf_parser import extract_pages
-
+from src.evidence_validator import validate_evidence
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_ROOT = PROJECT_ROOT / "outputs"
@@ -50,6 +50,7 @@ def main() -> None:
     pages_path = run_directory / "pages.json"
     raw_path = run_directory / "llm_raw.json"
     prediction_path = run_directory / "prediction.json"
+    evidence_path = run_directory / "evidence_report.json"
     log_path = run_directory / "run_log.json"
 
     started_clock = time.perf_counter()
@@ -94,7 +95,25 @@ def main() -> None:
             "model": model,
             "duration_seconds": round(time.perf_counter() - step_started, 4),
         })
-        log["status"] = "success"
+        step_started = time.perf_counter()
+        evidence_report = validate_evidence(document, pages)
+        write_json(evidence_path, evidence_report)
+        log["steps"].append({
+            "name": "evidence_validation",
+            "tool": "Deterministic evidence validator",
+            "passed": evidence_report["passed"],
+            "checks_count": evidence_report["checks_count"],
+            "duration_seconds": round(
+                time.perf_counter() - step_started,
+                4,
+            ),
+        })
+
+        log["status"] = (
+            "success"
+            if evidence_report["passed"]
+            else "needs_review"
+        )
 
     except Exception as error:
         log["status"] = "failed"
@@ -111,7 +130,12 @@ def main() -> None:
         )
         log["files_written"] = [
             str(path)
-            for path in (pages_path, raw_path, prediction_path)
+            for path in (
+                pages_path,
+                raw_path,
+                prediction_path,
+                evidence_path,
+            )
             if path.exists()
         ]
         write_json(log_path, log)
@@ -120,6 +144,8 @@ def main() -> None:
     print(f"Run directory: {run_directory}")
     print(f"Prediction: {prediction_path}")
     print(f"Audit log: {log_path}")
+    print(f"Evidence passed: {evidence_report['passed']}")
+    print(f"Evidence report: {evidence_path}")
 
 
 if __name__ == "__main__":
