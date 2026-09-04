@@ -22,10 +22,11 @@ def require_env(name: str) -> str:
     return value
 
 
-def main() -> None:
+def extract_pledge(
+    pages: list[dict],
+) -> tuple[PledgeDocument, str]:
     load_dotenv(PROJECT_ROOT / ".env")
 
-    pages = json.loads(PAGES_PATH.read_text(encoding="utf-8"))
     system_prompt = PROMPT_PATH.read_text(encoding="utf-8")
     schema = PledgeDocument.model_json_schema()
 
@@ -59,11 +60,17 @@ def main() -> None:
     if not content:
         raise RuntimeError("The model returned an empty response.")
 
-    RAW_OUTPUT_PATH.write_text(content, encoding="utf-8")
+    document = PledgeDocument.model_validate(json.loads(content))
+    return document, content
 
-    result = PledgeDocument.model_validate(json.loads(content))
+
+def main() -> None:
+    pages = json.loads(PAGES_PATH.read_text(encoding="utf-8"))
+    document, raw_content = extract_pledge(pages)
+
+    RAW_OUTPUT_PATH.write_text(raw_content, encoding="utf-8")
     RESULT_PATH.write_text(
-        result.model_dump_json(indent=2),
+        document.model_dump_json(indent=2),
         encoding="utf-8",
     )
 
