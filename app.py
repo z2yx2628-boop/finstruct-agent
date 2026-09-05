@@ -49,7 +49,7 @@ run_clicked = st.button(
     "运行提取",
     type="primary",
     disabled=uploaded_file is None,
-    use_container_width=True,
+    width="stretch",
 )
 
 if run_clicked and uploaded_file is not None:
@@ -96,7 +96,7 @@ if result:
         if frame.empty:
             st.info("公告中未提取到质押记录。")
         else:
-            st.dataframe(frame, use_container_width=True, hide_index=True)
+            st.dataframe(frame, width="stretch", hide_index=True)
 
         json_data = document.model_dump_json(indent=2)
         csv_data = frame.to_csv(index=False).encode("utf-8-sig")
@@ -107,14 +107,14 @@ if result:
             data=json_data,
             file_name="pledge_prediction.json",
             mime="application/json",
-            use_container_width=True,
+            width="stretch",
         )
         csv_column.download_button(
             "下载CSV",
             data=csv_data,
             file_name="pledge_records.csv",
             mime="text/csv",
-            use_container_width=True,
+            width="stretch",
         )
 
     with evidence_tab:
@@ -128,7 +128,7 @@ if result:
             st.error("发现证据不一致字段。")
             st.dataframe(
                 evidence_report["issues"],
-                use_container_width=True,
+                width="stretch",
                 hide_index=True,
             )
 
@@ -139,7 +139,7 @@ if result:
     with log_tab:
         st.dataframe(
             result["log"]["steps"],
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
         st.json(result["log"])
