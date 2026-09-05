@@ -30,12 +30,8 @@ def write_json(path: Path, data: object) -> None:
     )
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("pdf_path", type=Path)
-    args = parser.parse_args()
-
-    pdf_path = args.pdf_path.resolve()
+def run_pipeline(pdf_path: Path) -> dict:
+    pdf_path = pdf_path.resolve()
     if not pdf_path.exists():
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
     if pdf_path.suffix.lower() != ".pdf":
@@ -139,13 +135,31 @@ def main() -> None:
             if path.exists()
         ]
         write_json(log_path, log)
+    return {
+        "status": log["status"],
+        "run_directory": run_directory,
+        "document": document,
+        "evidence_report": evidence_report,
+        "log": log,
+        "prediction_path": prediction_path,
+        "evidence_path": evidence_path,
+        "log_path": log_path,
+    }
 
-    print(f"Status: {log['status']}")
-    print(f"Run directory: {run_directory}")
-    print(f"Prediction: {prediction_path}")
-    print(f"Audit log: {log_path}")
-    print(f"Evidence passed: {evidence_report['passed']}")
-    print(f"Evidence report: {evidence_path}")
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("pdf_path", type=Path)
+    args = parser.parse_args()
+
+    result = run_pipeline(args.pdf_path)
+
+    print(f"Status: {result['status']}")
+    print(f"Run directory: {result['run_directory']}")
+    print(f"Prediction: {result['prediction_path']}")
+    print(f"Audit log: {result['log_path']}")
+    print(f"Evidence passed: {result['evidence_report']['passed']}")
+    print(f"Evidence report: {result['evidence_path']}")
 
 
 if __name__ == "__main__":
