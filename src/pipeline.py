@@ -7,6 +7,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+from src.event_normalizer import inherit_shared_table_values
 from src.llm_extractor import PROMPT_PATH, extract_pledge, require_env
 from src.pdf_parser import extract_pages
 from src.evidence_validator import validate_evidence
@@ -80,6 +81,14 @@ def run_pipeline(pdf_path: Path) -> dict:
 
         step_started = time.perf_counter()
         document, raw_content = extract_pledge(pages)
+        llm_duration = round(time.perf_counter() - step_started, 4)
+
+        step_started = time.perf_counter()
+        document, normalization_changes = inherit_shared_table_values(document)
+        normalization_duration = round(
+            time.perf_counter() - step_started,
+            4,
+        )
         raw_path.write_text(raw_content, encoding="utf-8")
         prediction_path.write_text(
             document.model_dump_json(indent=2),
@@ -89,8 +98,17 @@ def run_pipeline(pdf_path: Path) -> dict:
             "name": "llm_structured_extraction",
             "tool": "OpenAI-compatible Chat Completions",
             "model": model,
-            "duration_seconds": round(time.perf_counter() - step_started, 4),
+            "duration_seconds": llm_duration,
         })
+
+        log["steps"].append({
+            "name": "shared_cell_normalization",
+            "tool": "Deterministic adjacent-row normalizer",
+            "changes_count": len(normalization_changes),
+            "changes": normalization_changes,
+            "duration_seconds": normalization_duration,
+        })
+
         step_started = time.perf_counter()
         evidence_report = validate_evidence(document, pages)
         write_json(evidence_path, evidence_report)
@@ -99,6 +117,13 @@ def run_pipeline(pdf_path: Path) -> dict:
             "tool": "Deterministic evidence validator",
             "passed": evidence_report["passed"],
             "checks_count": evidence_report["checks_count"],
+            "expected_event_types": evidence_report[
+                "expected_event_types"
+            ],
+            "extracted_event_types": evidence_report[
+                "extracted_event_types"
+            ],
+            "event_counts": evidence_report["event_counts"],
             "duration_seconds": round(
                 time.perf_counter() - step_started,
                 4,

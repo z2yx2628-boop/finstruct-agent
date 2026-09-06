@@ -1,0 +1,29 @@
+{
+  "security_code": "603799",
+  "security_name": "华友钴业",
+  "announcement_number": "2025-130",
+  "company_name": "浙江华友钴业股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "华友控股",
+      "shares": 32000000,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 10.37,
+      "total_share_capital_ratio": 1.69,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-11-19",
+      "pledge_end_date": "2026-11-19",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "国泰海通证券股份有限公司",
+      "purpose": "为融资提供担保",
+      "source_page": 1,
+      "evidence_text": "股东\n名称\n是否为控\n股股东\n本次质押\n股数（股）\n是否为\n限售股\n是否补\n充质押\n质押起始\n日\n质押到期\n日\n质权人\n占其所\n持股份\n比例\n占公司\n总股本\n比例\n质押融资\n资金用途\n华友\n控股\n是\n32,000,000\n否\n否\n2025/11/19\n2026/11/19\n国泰海通\n证券股份\n有限公司\n10.37%\n1.69%\n为融资提\n供担保",
+      "confidence": 1.0
+    }
+  ]
+}

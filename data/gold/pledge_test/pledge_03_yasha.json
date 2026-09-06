@@ -1,0 +1,50 @@
+{
+  "security_code": "002375",
+  "security_name": "亚厦股份",
+  "announcement_number": "2025-056",
+  "company_name": "浙江亚厦装饰股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "亚厦控股",
+      "shares": 21250000,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 4.84,
+      "total_share_capital_ratio": 1.59,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": "2023-09-07",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2025-09-17",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "浙江稠州商业银行股份有限公司绍兴分行",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "股东名称\n是否为控股\n股东及其一\n致行动人\n本次解除质\n押数量（股）\n占其所\n持股份\n比例\n占公司总\n股本比例\n起始日期\n解除日期\n质权人\n亚厦控股\n是\n21,250,000\n4.84%\n1.59%\n2023-9-7\n2025-9-17\n浙江稠\n州商业\n银行股\n份有限\n公司绍\n兴分行",
+      "confidence": 1.0
+    },
+    {
+      "event_type": "pledge",
+      "shareholder_name": "亚厦控股",
+      "shares": 14000000,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 3.19,
+      "total_share_capital_ratio": 1.04,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-09-17",
+      "pledge_end_date": null,
+      "pledge_end_condition": "申请解除质押之日止",
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "华夏银行股份有限公司杭州分行",
+      "purpose": "自身经营的资金需求",
+      "source_page": 2,
+      "evidence_text": "股\n东\n名\n称\n是否为\n控股股\n东及其\n一致行\n动人\n本次质押\n数量\n（股）\n占其所\n持股份\n比例\n占公司\n总股本\n比例\n是否\n为限\n售股\n是否\n为补\n充质\n押\n质押\n起始日\n质押\n到期日\n质权人\n质押用\n途\n亚\n厦\n控\n股\n是\n14,000,000\n3.19%\n1.04%\n否\n否\n2025-9-17\n申请解除\n质押之日\n止\n华夏银行\n股份有限\n公司杭州\n分行\n自身经\n营的资\n金需求",
+      "confidence": 1.0
+    }
+  ]
+}
