@@ -10,7 +10,7 @@ from schemas.pledge import PledgeDocument
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PAGES_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_pages.json"
-PROMPT_PATH = PROJECT_ROOT / "prompts" / "pledge_extraction_v1.txt"
+PROMPT_PATH = PROJECT_ROOT / "prompts" / "pledge_extraction_v3.txt"
 RAW_OUTPUT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_llm_raw.json"
 RESULT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_prediction.json"
 
