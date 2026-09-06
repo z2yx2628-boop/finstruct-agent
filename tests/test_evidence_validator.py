@@ -73,3 +73,12 @@ def test_adjacent_table_numbers_are_supported():
     assert number_supported(14_000_000.0, evidence)
     assert number_supported(3.19, evidence)
     assert number_supported(1.04, evidence)
+
+
+def test_wrapped_thousands_separators_are_supported():
+    assert number_supported(13_000_000.0, "13,00\n0,000")
+    assert number_supported(1_700_000.0, "1,700,\n000")
+
+
+def test_equivalent_decimal_formats_are_supported():
+    assert number_supported(25.0, "25.00\n%")

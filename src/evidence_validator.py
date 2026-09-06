@@ -40,16 +40,17 @@ def text_supported(value: Any, evidence: str) -> bool:
 
 
 def number_supported(value: int | float, evidence: str) -> bool:
-    normalized = re.sub(r"\s+", " ", str(evidence))
-    normalized = normalized.replace(",", "").replace("，", "")
+    normalized = str(evidence).replace("，", ",")
+    normalized = re.sub(r",\s+(?=\d)", ",", normalized)
+    normalized = re.sub(r"(?<=\d)\s+(?=\d{1,2},)", "", normalized)
+    normalized = normalized.replace(",", "")
 
-    decimal_value = Decimal(str(value))
-    number = format(decimal_value, "f")
-    if "." in number:
-        number = number.rstrip("0").rstrip(".")
-
-    pattern = rf"(?<![\d.]){re.escape(number)}(?![\d.])"
-    return re.search(pattern, normalized) is not None
+    expected = Decimal(str(value))
+    candidates = re.findall(
+        r"(?<![\d.])[+-]?\d+(?:\.\d+)?(?![\d.])",
+        normalized,
+    )
+    return any(Decimal(candidate) == expected for candidate in candidates)
 
 
 def date_supported(value: str, evidence: str) -> bool:
