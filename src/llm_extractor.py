@@ -6,12 +6,12 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 from schemas.pledge import PledgeDocument
-from src.event_normalizer import inherit_shared_table_values
+from src.event_normalizer import normalize_event_fields
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PAGES_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_pages.json"
-PROMPT_PATH = PROJECT_ROOT / "prompts" / "pledge_extraction_v4.txt"
+PROMPT_PATH = PROJECT_ROOT / "prompts" / "pledge_extraction_v5.txt"
 RAW_OUTPUT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_llm_raw.json"
 RESULT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_prediction.json"
 
@@ -68,7 +68,7 @@ def extract_pledge(
 def main() -> None:
     pages = json.loads(PAGES_PATH.read_text(encoding="utf-8"))
     document, raw_content = extract_pledge(pages)
-    document, normalization_changes = inherit_shared_table_values(document)
+    document, normalization_changes = normalize_event_fields(document)
 
     RAW_OUTPUT_PATH.write_text(raw_content, encoding="utf-8")
     RESULT_PATH.write_text(
@@ -77,7 +77,7 @@ def main() -> None:
     )
 
     print(f"Model: {require_env('LLM_MODEL')}")
-    print(f"Shared-cell values filled: {len(normalization_changes)}")
+    print(f"Normalized event fields: {len(normalization_changes)}")
     print(f"Validated result saved to: {RESULT_PATH}")
 
 

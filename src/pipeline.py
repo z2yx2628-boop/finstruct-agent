@@ -7,7 +7,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from src.event_normalizer import inherit_shared_table_values
+from src.event_normalizer import normalize_event_fields
 from src.llm_extractor import PROMPT_PATH, extract_pledge, require_env
 from src.pdf_parser import extract_pages
 from src.evidence_validator import validate_evidence
@@ -84,7 +84,7 @@ def run_pipeline(pdf_path: Path) -> dict:
         llm_duration = round(time.perf_counter() - step_started, 4)
 
         step_started = time.perf_counter()
-        document, normalization_changes = inherit_shared_table_values(document)
+        document, normalization_changes = normalize_event_fields(document)
         normalization_duration = round(
             time.perf_counter() - step_started,
             4,
@@ -102,8 +102,8 @@ def run_pipeline(pdf_path: Path) -> dict:
         })
 
         log["steps"].append({
-            "name": "shared_cell_normalization",
-            "tool": "Deterministic adjacent-row normalizer",
+            "name": "event_normalization",
+            "tool": "Deterministic semantic and shared-cell normalizer",
             "changes_count": len(normalization_changes),
             "changes": normalization_changes,
             "duration_seconds": normalization_duration,

@@ -158,6 +158,11 @@ def evaluate_document(
     present_attribute_matched = sum(
         item["matched"] for item in present_attribute_comparisons
     )
+    overfilled_attributes = [
+        item
+        for item in attribute_comparisons
+        if item["expected"] is None and item["actual"] is not None
+    ]
 
     return {
         "passed": (
@@ -189,6 +194,7 @@ def evaluate_document(
                 present_attribute_matched,
                 len(present_attribute_comparisons),
             ),
+            "overfilled": len(overfilled_attributes),
         },
         "missing_events": [identity_dict(item) for item in missing],
         "unexpected_events": [identity_dict(item) for item in unexpected],
@@ -247,6 +253,9 @@ def evaluate_directories(gold_dir: Path, prediction_dir: Path) -> dict:
     present_total = sum(
         item["event_attribute_metrics"]["present_total"] for item in reports
     )
+    overfilled = sum(
+        item["event_attribute_metrics"]["overfilled"] for item in reports
+    )
 
     return {
         "passed": (
@@ -281,6 +290,7 @@ def evaluate_directories(gold_dir: Path, prediction_dir: Path) -> dict:
             "present_matched": present_matched,
             "present_total": present_total,
             "present_accuracy": ratio(present_matched, present_total),
+            "overfilled": overfilled,
         },
         "documents": document_reports,
     }
@@ -301,14 +311,36 @@ def main() -> None:
     )
 
     metrics = report["event_metrics"]
+    documents = report["document_field_metrics"]
     attributes = report["event_attribute_metrics"]
+    corpus = report["corpus"]
+    print(f"Strict pass: {report['passed']}")
+    print(
+        "Documents evaluated: "
+        f"{corpus['evaluated_documents']}/{corpus['gold_documents']}"
+    )
     print(
         "Event precision/recall/F1: "
         f"{metrics['precision']:.2%}/"
         f"{metrics['recall']:.2%}/"
         f"{metrics['f1']:.2%}"
     )
-    print(f"Present attribute accuracy: {attributes['present_accuracy']:.2%}")
+    print(
+        "Document field accuracy: "
+        f"{documents['matched']}/{documents['total']} "
+        f"({documents['accuracy']:.2%})"
+    )
+    print(
+        "All event attribute accuracy: "
+        f"{attributes['matched']}/{attributes['total']} "
+        f"({attributes['accuracy']:.2%})"
+    )
+    print(
+        "Disclosed attribute accuracy: "
+        f"{attributes['present_matched']}/{attributes['present_total']} "
+        f"({attributes['present_accuracy']:.2%})"
+    )
+    print(f"Null overfill errors: {attributes['overfilled']}")
     print(f"Report saved to: {args.report}")
 
 

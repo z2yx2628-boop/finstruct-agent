@@ -1,5 +1,7 @@
+import sys
+
 from schemas.pledge import PledgeDocument, PledgeEvent
-from src.accuracy_evaluator import evaluate_document
+from src.accuracy_evaluator import evaluate_document, main
 
 
 def event(
@@ -73,3 +75,57 @@ def test_wrong_attribute_reduces_present_attribute_accuracy():
     assert report["event_metrics"]["f1"] == 1
     assert report["event_attribute_metrics"]["present_accuracy"] < 1
     assert report["field_mismatches"][0]["field"] == "pledgee"
+
+
+def test_overfilled_null_is_counted_in_strict_accuracy():
+    gold = document([event("release", 50)])
+    prediction = document([event("release", 50)])
+    prediction.events[0].is_restricted_share = False
+
+    report = evaluate_document(gold, prediction)
+
+    metrics = report["event_attribute_metrics"]
+    assert report["passed"] is False
+    assert metrics["accuracy"] < 1
+    assert metrics["present_accuracy"] == 1
+    assert metrics["overfilled"] == 1
+
+
+def test_cli_displays_strict_and_overfill_metrics(
+    tmp_path,
+    monkeypatch,
+    capsys,
+):
+    gold_dir = tmp_path / "gold"
+    prediction_dir = tmp_path / "predictions"
+    gold_dir.mkdir()
+    prediction_dir.mkdir()
+
+    gold = document([event("release", 50)])
+    prediction = document([event("release", 50)])
+    prediction.events[0].is_restricted_share = False
+    (gold_dir / "sample.json").write_text(
+        gold.model_dump_json(indent=2),
+        encoding="utf-8",
+    )
+    (prediction_dir / "sample.json").write_text(
+        prediction.model_dump_json(indent=2),
+        encoding="utf-8",
+    )
+    report_path = tmp_path / "report.json"
+    monkeypatch.setattr(sys, "argv", [
+        "accuracy_evaluator",
+        str(gold_dir),
+        str(prediction_dir),
+        "--report",
+        str(report_path),
+    ])
+
+    main()
+
+    output = capsys.readouterr().out
+    assert "Strict pass: False" in output
+    assert "Documents evaluated: 1/1" in output
+    assert "All event attribute accuracy: 11/12 (91.67%)" in output
+    assert "Disclosed attribute accuracy: 5/5 (100.00%)" in output
+    assert "Null overfill errors: 1" in output
