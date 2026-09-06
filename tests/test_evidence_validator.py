@@ -1,5 +1,5 @@
 from schemas.pledge import PledgeDocument, PledgeRecord
-from src.evidence_validator import validate_evidence
+from src.evidence_validator import number_supported, validate_evidence
 
 
 EVIDENCE = """昝圣达
@@ -63,3 +63,5 @@ def test_unsupported_ratio_is_detected():
     assert report["passed"] is False
     assert report["passed_checks"] == 13
     assert report["issues"][0]["check"] == "shareholder_holding_ratio"
+def test_large_share_count_is_supported():
+    assert number_supported(32_000_000.0, "32,000,000")

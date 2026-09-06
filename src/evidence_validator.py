@@ -1,3 +1,4 @@
+from decimal import Decimal
 import re
 from datetime import date
 from typing import Any
@@ -40,7 +41,12 @@ def text_supported(value: Any, evidence: str) -> bool:
 
 def number_supported(value: int | float, evidence: str) -> bool:
     normalized = compact(evidence).replace(",", "").replace("，", "")
-    number = f"{float(value):g}"
+
+    decimal_value = Decimal(str(value))
+    number = format(decimal_value, "f")
+    if "." in number:
+        number = number.rstrip("0").rstrip(".")
+
     pattern = rf"(?<![\d.]){re.escape(number)}(?![\d.])"
     return re.search(pattern, normalized) is not None
 
