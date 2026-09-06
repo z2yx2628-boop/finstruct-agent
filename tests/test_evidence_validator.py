@@ -65,3 +65,11 @@ def test_unsupported_ratio_is_detected():
     assert report["issues"][0]["check"] == "shareholder_holding_ratio"
 def test_large_share_count_is_supported():
     assert number_supported(32_000_000.0, "32,000,000")
+
+
+def test_adjacent_table_numbers_are_supported():
+    evidence = "14,000,000\n3.19%\n1.04%"
+
+    assert number_supported(14_000_000.0, evidence)
+    assert number_supported(3.19, evidence)
+    assert number_supported(1.04, evidence)

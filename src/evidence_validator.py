@@ -40,7 +40,8 @@ def text_supported(value: Any, evidence: str) -> bool:
 
 
 def number_supported(value: int | float, evidence: str) -> bool:
-    normalized = compact(evidence).replace(",", "").replace("，", "")
+    normalized = re.sub(r"\s+", " ", str(evidence))
+    normalized = normalized.replace(",", "").replace("，", "")
 
     decimal_value = Decimal(str(value))
     number = format(decimal_value, "f")
