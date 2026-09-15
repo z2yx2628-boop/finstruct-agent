@@ -11,7 +11,7 @@ from src.event_normalizer import normalize_event_fields
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PAGES_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_pages.json"
-PROMPT_PATH = PROJECT_ROOT / "prompts" / "pledge_extraction_v5.txt"
+PROMPT_PATH = PROJECT_ROOT / "prompts" / "pledge_extraction_v6.txt"
 RAW_OUTPUT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_llm_raw.json"
 RESULT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_prediction.json"
 
