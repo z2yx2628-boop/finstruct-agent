@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 from src.event_normalizer import normalize_event_fields
 from src.llm_extractor import PROMPT_PATH, extract_pledge, require_env
-from src.pdf_parser import extract_pages
+from src.document_parser import parse_document
 from src.evidence_validator import validate_evidence
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -43,6 +43,7 @@ def run_pipeline(pdf_path: Path) -> dict:
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run_directory = OUTPUT_ROOT / pdf_path.stem / run_id
     run_directory.mkdir(parents=True, exist_ok=True)
+    parsed_document_path = run_directory / "parsed_document.json"
 
     pages_path = run_directory / "pages.json"
     raw_path = run_directory / "llm_raw.json"
@@ -67,17 +68,51 @@ def run_pipeline(pdf_path: Path) -> dict:
         "model": model,
         "steps": [],
     }
-
     try:
         step_started = time.perf_counter()
-        pages = extract_pages(pdf_path)
+        source_document = parse_document(pdf_path)
+
+        write_json(
+            parsed_document_path,
+            source_document.model_dump(mode="json"),
+        )
+
+        if source_document.metadata.get("needs_ocr"):
+            raise ValueError(
+                "The PDF contains no extractable text and requires OCR."
+            )
+
+        pages = [
+            {
+                "page": page.page,
+                "text": page.text,
+            }
+            for page in source_document.pages
+        ]
         write_json(pages_path, pages)
+
         log["steps"].append({
-            "name": "pdf_text_extraction",
-            "tool": "PyMuPDF",
+            "name": "document_parsing",
+            "tool": "Unified document parser / PyMuPDF",
+            "source_type": source_document.source_type,
             "page_count": len(pages),
-            "duration_seconds": round(time.perf_counter() - step_started, 4),
+            "text_char_count": source_document.metadata.get(
+                "text_char_count",
+                0,
+            ),
+            "needs_ocr": source_document.metadata.get(
+                "needs_ocr",
+                False,
+            ),
+            "duration_seconds": round(
+                time.perf_counter() - step_started,
+                4,
+            ),
         })
+
+
+
+
 
         step_started = time.perf_counter()
         document, raw_content = extract_pledge(pages)
@@ -152,6 +187,7 @@ def run_pipeline(pdf_path: Path) -> dict:
         log["files_written"] = [
             str(path)
             for path in (
+                parsed_document_path,
                 pages_path,
                 raw_path,
                 prediction_path,
