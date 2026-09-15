@@ -1,0 +1,109 @@
+{
+  "version": "pledge-blind-v1",
+  "frozen_at": "2026-09-15",
+  "hash_algorithm": "sha256",
+  "document_count": 20,
+  "event_count": 33,
+  "files": [
+    {
+      "file": "blind_001_600052_dongwang.json",
+      "sha256": "d22adc29a4260796a54d8cad08dc9c770f990c4a91b2004b48ea4cdadcc76b44",
+      "events": 1
+    },
+    {
+      "file": "blind_002_600594_yibai.json",
+      "sha256": "2b08c59972ad0545e97faf19abd355ce79add24aaf40f741e1cb910e21793131",
+      "events": 2
+    },
+    {
+      "file": "blind_003_601886_jianghe.json",
+      "sha256": "791532fcd4aa18a593ed5809f9a0dd3ba58afaaa8563300f10f776116383e48a",
+      "events": 3
+    },
+    {
+      "file": "blind_004_300686_zhidongli.json",
+      "sha256": "fc3f0e5977813004df86df9e54755e0f2f65633e02024d1163c93db8216cde07",
+      "events": 1
+    },
+    {
+      "file": "blind_005_300682_langxin.json",
+      "sha256": "3455cc0e1d09835e0253a2e61c0a12c0b1aa6fe09d77ed0436bbade7a42b11a7",
+      "events": 1
+    },
+    {
+      "file": "blind_006_600580_wolong.json",
+      "sha256": "11863b44b921c6655cb33bab524d2858d4015f132cdf27cee39b1f3e247d822a",
+      "events": 1
+    },
+    {
+      "file": "blind_007_600588_yonyou.json",
+      "sha256": "cce5ef084dbcd232f8f410d6bc77bf34c9f8758109242e005dcb4214c2e3d04b",
+      "events": 2
+    },
+    {
+      "file": "blind_008_600645_zhongyuan.json",
+      "sha256": "75a264bb6cfdb266614b1000ce8bdc7d447a4131d216d0148713106eae24643a",
+      "events": 1
+    },
+    {
+      "file": "blind_009_600655_yuyuan.json",
+      "sha256": "50e8692cf9989b7420ec125004f51d6feeaeef7a9e1a21313703c9ec605a2a9a",
+      "events": 1
+    },
+    {
+      "file": "blind_010_603678_torch.json",
+      "sha256": "da91e0cdf4d44957487094cb986c6e6c4b2d2679b3d9f55ad848f1b07b0d6201",
+      "events": 2
+    },
+    {
+      "file": "blind_011_600613_shenqi.json",
+      "sha256": "63f54c8f8b8c142c327e0597103b19b0191f4d3b4df4b858c66af7033220e559",
+      "events": 1
+    },
+    {
+      "file": "blind_012_600703_sanan.json",
+      "sha256": "cb9f41837c45ea67c1b1e0b8cf002119b3c2fbf993bea42843fe24c9d1691aa9",
+      "events": 1
+    },
+    {
+      "file": "blind_013_300552_wanji.json",
+      "sha256": "dad5575af4f73417c2b10d4dc06590844af025a1b1f1f601cc59b63adc290ecc",
+      "events": 2
+    },
+    {
+      "file": "blind_014_300706_ashichuang.json",
+      "sha256": "c0ce9600e54235a5b479706a75911d145600b67670aa25a1f47aef67cc430c2f",
+      "events": 2
+    },
+    {
+      "file": "blind_015_300928_huaan.json",
+      "sha256": "e33ebc14e1f4a0711e5f7e81fbcbf8adb0e78be5fcf383f903173f940c01ed6e",
+      "events": 1
+    },
+    {
+      "file": "blind_016_600382_mingzhu.json",
+      "sha256": "e7244a4ac3d16c83f13d92a9cb1639db413037bc82123b3cdc366ea0673f1b0f",
+      "events": 4
+    },
+    {
+      "file": "blind_017_600693_dongbai.json",
+      "sha256": "a8f31215fc0d1ec8dd6e394a9599ee1f8e4d0167bce60041549932bc6ecb7889",
+      "events": 1
+    },
+    {
+      "file": "blind_018_300560_zhongfutong.json",
+      "sha256": "2aaa5b5ed42907b961876f236163dd3c297df702d1c030239745bc2256516d2c",
+      "events": 1
+    },
+    {
+      "file": "blind_019_300014_eve.json",
+      "sha256": "aa56370ea26aa86f31cfd660ad2d6cf58c5f698e9fd2dd05f0c319fb49654e7a",
+      "events": 2
+    },
+    {
+      "file": "blind_020_002701_org.json",
+      "sha256": "b059c2c444eb912420a4da75f05b45ee7754c41107d3b6cd4c9097ab122b0d23",
+      "events": 3
+    }
+  ]
+}

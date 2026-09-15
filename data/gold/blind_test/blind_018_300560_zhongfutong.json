@@ -1,0 +1,29 @@
+{
+  "security_code": "300560",
+  "security_name": "中富通",
+  "announcement_number": "2025-067",
+  "company_name": "中富通集团股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "融嘉科技",
+      "shares": 6600000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 28.02,
+      "total_share_capital_ratio": 2.87,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-12-26",
+      "pledge_end_date": "2026-11-30",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "上海长宁大众小额贷款股份有限公司",
+      "purpose": "资金需求",
+      "source_page": 1,
+      "evidence_text": "证券代码：300560\n证券简称：中富通\n公告编号：2025-067\n中富通集团股份有限公司\n关于控股股东、实际控制人的一致行动人\n进行部分股份质押的公告\n公司控股股东、实际控制人的一致行动人福建融嘉科技有限公司保证向本公司提供的信\n息内容真实、准确、完整，没有虚假记载、误导性陈述或重大遗漏。\n本公司及董事会全体成员保证公告内容与信息披露义务人提供的信息一致。\n中富通集团股份有限公司（以下简称“公司”）近日收到控股股东、实际控\n制人的一致行动人福建融嘉科技有限公司（以下简称“融嘉科技”）将其所持有\n的公司部分股份进行了质押的通知，现将具体情况公告如下：\n一、股东股份质押基本情况\n股东名称\n是否为控\n股股东或\n第一大股\n东及其一\n致行动人\n本次质押数\n量（股）\n占其所\n持股份\n比例\n占公司\n总股本\n比例\n是否为\n限售股\n是否为\n补充质\n押\n质押起\n始日\n质押\n到期\n日\n质权人\n质押用途\n融嘉科技\n是\n6,600,000\n28.02%\n2.87%\n否\n否\n2025 年\n12 月26\n日\n2026\n年11\n月30\n日\n上海长\n宁大众\n小额贷\n款股份\n有限公\n司\n资金需求\n二、股份累计质押的情况\n截至本公告披露日，公司控股股东、实际控制人陈融洁先生及其一致行动人\n福建融嘉科技有限公司（以下简称“融嘉科技”）所持质押股份情况如下：\n股\n东\n名\n称\n持股数量\n持股比\n例\n本次质押前\n质押股份数\n量（股）\n本次质押后\n质押股份数\n量（股）\n占其所\n持股份\n比例\n占公司\n总股本\n比例\n已质押股份\n情况\n未质押股份\n情况\n已质押股份\n限售和冻结\n数量（股）\n占已质\n押股份\n比例\n未质押股份\n限售和冻结\n数量（股）\n占未质\n押股份\n比例",
+      "confidence": 1.0
+    }
+  ]
+}

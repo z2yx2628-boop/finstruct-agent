@@ -1,0 +1,29 @@
+{
+  "security_code": "600613",
+  "security_name": "神奇制药",
+  "announcement_number": "2025-033",
+  "company_name": "上海神奇制药投资管理股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "迈吉斯",
+      "shares": 45280000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 51.45,
+      "total_share_capital_ratio": 8.48,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-09-26",
+      "pledge_end_date": "2027-09-25",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "厦门国际银行",
+      "purpose": "经营资金周转",
+      "source_page": 2,
+      "evidence_text": "2\n股\n东\n名\n称\n是\n否\n为\n控\n股\n股\n东\n本次质押股\n数\n（万股）\n是\n否\n为\n限\n售\n股\n是\n否\n补\n充\n质\n押\n质押起始\n日\n质押到期\n日\n质\n权\n人\n占其所\n持股份\n比例\n占公\n司总\n股本\n比例\n质\n押\n融\n资\n资\n金\n用\n途\n迈\n吉\n斯\n否\n45,280,000\n否\n否\n2025.9.26\n2027.9.25\n厦\n门\n国\n际\n银\n行\n51.45%\n8.48%\n经\n营\n资\n金\n周\n转\n合\n计\n45,280,000\n51.45%\n8.48%\n2、本次质押股份不存在被用作重大资产重组业绩补偿等事项的担保或其他\n保障用途的情形。\n3、控股股东及其控股公司累计质押股份情况\n截至公告披露日，神奇控股及迈吉斯累计质押股份情况如下：\n股\n东\n名\n称\n持股数\n量\n（万股）\n持股\n比例\n本次质\n押前累\n计质押\n数量\n（万股）\n本次质押\n后累计质\n押数量\n（万股）\n占其\n所持\n股份\n比例\n占公\n司总\n股本\n比例\n已质押股份\n情况\n未质押股份\n情况\n已质\n押股\n份中\n限售\n股份\n数量\n（万\n股）\n已质\n押股\n份中\n冻结\n股份\n数量\n（万\n股）\n未质\n押股\n份中\n限售\n股份\n数量\n（万\n股）\n未质\n押股\n份中\n冻结\n股份\n数量\n（万\n股）\n神\n奇\n控\n股\n9,066.16\n16.98%\n4,533.00\n4,533.00\n50%\n8.49%\n-\n-\n-\n-",
+      "confidence": 0.9
+    }
+  ]
+}
