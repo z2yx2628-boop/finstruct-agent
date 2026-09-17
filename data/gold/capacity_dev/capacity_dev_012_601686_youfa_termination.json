@@ -1,0 +1,32 @@
+{
+  "security_code": "601686",
+  "security_name": "友发集团",
+  "company_name": "天津友发钢管集团股份有限公司",
+  "announcement_number": "2024-188",
+  "announcement_date": "2024-12-13",
+  "events": [
+    {
+      "event_type": "termination",
+      "project_name": "唐山友发新型建筑器材有限公司焊接钢管、热浸镀锌盘扣脚手架、爬架加工项目",
+      "project_entity": "唐山友发新型建筑器材有限公司",
+      "project_location": null,
+      "project_status": null,
+      "investment_amount": 320000,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "公开发行可转换公司债券募集资金，拟投入145,000万元",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2024年12月13日董事会和监事会审议通过终止议案，尚需股东大会及债券持有人会议审议。",
+      "technology_description": null,
+      "project_purpose": "原计划增强焊接钢管生产能力并提升市场占有率；因需求下滑和项目公司持续亏损决定终止未建设部分。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "公司终止实施2022年度公开发行可转换公司债券募投项目“唐山友发新型建筑器材有限公司焊接钢管、热浸镀锌盘扣脚手架、爬架加工项目”，并将剩余募集资金用于永久补充流动资金",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2023-006",
+  "announcement_date": "2023-02-25",
+  "events": [
+    {
+      "event_type": "capacity_replacement",
+      "project_name": "炼钢产能置换建设项目",
+      "project_entity": "凌源钢铁股份有限公司",
+      "project_location": null,
+      "project_status": "commissioned",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2023年2月23日取得投产前验收意见，新建120t转炉已投入生产。",
+      "technology_description": "退出3×35t转炉系统并新建120t转炉系统。",
+      "project_purpose": "实施炼钢产能置换。",
+      "capacity_changes": [
+        {
+          "action": "retired",
+          "facility_type": "3×35t转炉系统",
+          "product_name": null,
+          "capacity": 35,
+          "capacity_unit": "t/座",
+          "source_page": 1,
+          "evidence_text": "凌钢3×35t转炉系统已经停产，主体设备完成去功能化",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "120t转炉系统",
+          "product_name": null,
+          "capacity": 120,
+          "capacity_unit": "t/座",
+          "source_page": 2,
+          "evidence_text": "凌钢新建120t转炉系统符合相关设计规范要求，与产能置换方案公告的结果一致。",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 2,
+      "evidence_text": "凌钢新建120t转炉系统符合相关设计规范要求，与产能置换方案公告的结果一致。公司新建的120t转炉已经投入生产。",
+      "confidence": 1.0
+    }
+  ]
+}

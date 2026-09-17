@@ -1,0 +1,73 @@
+{
+  "security_code": "000709",
+  "security_name": "河钢股份",
+  "company_name": "河钢股份有限公司",
+  "announcement_number": "2022-069",
+  "announcement_date": "2022-10-28",
+  "events": [
+    {
+      "event_type": "commissioning",
+      "project_name": "邯钢老区退城搬迁焦化项目一期1#焦炉",
+      "project_entity": "邯钢华丰能源有限公司",
+      "project_location": null,
+      "project_status": "commissioned",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "一期1#焦炉近日已装煤出焦；二期2#焦炉预计2023年2月达到装煤出焦条件。",
+      "technology_description": "焦化项目建设2座70孔7.65米焦炉。",
+      "project_purpose": "实施邯钢老区退城搬迁焦化项目的建设和运营。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "一期1#焦炉",
+          "product_name": "焦炭",
+          "capacity": 105,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "一期1#焦炉已经装煤出焦，设计产能为焦炭105万吨、粗苯1.1万吨、焦油4万吨、硫铵1.2万吨。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "一期1#焦炉",
+          "product_name": "粗苯",
+          "capacity": 1.1,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "一期1#焦炉已经装煤出焦，设计产能为焦炭105万吨、粗苯1.1万吨、焦油4万吨、硫铵1.2万吨。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "一期1#焦炉",
+          "product_name": "焦油",
+          "capacity": 4,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "一期1#焦炉已经装煤出焦，设计产能为焦炭105万吨、粗苯1.1万吨、焦油4万吨、硫铵1.2万吨。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "一期1#焦炉",
+          "product_name": "硫铵",
+          "capacity": 1.2,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "一期1#焦炉已经装煤出焦，设计产能为焦炭105万吨、粗苯1.1万吨、焦油4万吨、硫铵1.2万吨。",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "近日，一期1#焦炉已经装煤出焦，设计产能为焦炭105万吨、粗苯1.1万吨、焦油4万吨、硫铵1.2万吨。",
+      "confidence": 1.0
+    }
+  ]
+}

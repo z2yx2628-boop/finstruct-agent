@@ -1,7 +1,7 @@
 import json
 import os
 from pathlib import Path
-
+from schemas.capacity import CapacityDocument
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -12,6 +12,9 @@ from src.event_normalizer import normalize_event_fields
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PAGES_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_pages.json"
 PROMPT_PATH = PROJECT_ROOT / "prompts" / "pledge_extraction_v6.txt"
+CAPACITY_PROMPT_PATH = (
+    PROJECT_ROOT / "prompts" / "capacity_extraction_v1.txt"
+)
 RAW_OUTPUT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_llm_raw.json"
 RESULT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_prediction.json"
 
@@ -63,7 +66,47 @@ def extract_pledge(
 
     document = PledgeDocument.model_validate(json.loads(content))
     return document, content
+def extract_capacity(
+    pages: list[dict],
+) -> tuple[CapacityDocument, str]:
+    load_dotenv(PROJECT_ROOT / ".env")
 
+    system_prompt = CAPACITY_PROMPT_PATH.read_text(encoding="utf-8")
+    schema = CapacityDocument.model_json_schema()
+
+    page_text = "\n\n".join(
+        f"===== PAGE {page['page']} =====\n{page['text']}"
+        for page in pages
+    )
+
+    user_prompt = (
+        "请根据下面的JSON Schema抽取钢铁产能与项目事件。\n\n"
+        f"JSON Schema:\n"
+        f"{json.dumps(schema, ensure_ascii=False, indent=2)}\n\n"
+        f"公告文本:\n{page_text}"
+    )
+
+    client = OpenAI(
+        api_key=require_env("LLM_API_KEY"),
+        base_url=require_env("LLM_BASE_URL"),
+    )
+
+    response = client.chat.completions.create(
+        model=require_env("LLM_MODEL"),
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        response_format={"type": "json_object"},
+        temperature=0,
+    )
+
+    content = response.choices[0].message.content
+    if not content:
+        raise RuntimeError("The model returned an empty response.")
+
+    document = CapacityDocument.model_validate(json.loads(content))
+    return document, content
 
 def main() -> None:
     pages = json.loads(PAGES_PATH.read_text(encoding="utf-8"))
