@@ -2,6 +2,7 @@ import json
 import os
 from pathlib import Path
 from schemas.capacity import CapacityDocument
+from src.capacity_normalizer import sanitize_capacity_payload
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -13,7 +14,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PAGES_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_pages.json"
 PROMPT_PATH = PROJECT_ROOT / "prompts" / "pledge_extraction_v6.txt"
 CAPACITY_PROMPT_PATH = (
-    PROJECT_ROOT / "prompts" / "capacity_extraction_v1.txt"
+    PROJECT_ROOT / "prompts" / "capacity_extraction_v2.txt"
 )
 RAW_OUTPUT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_llm_raw.json"
 RESULT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_prediction.json"
@@ -68,7 +69,7 @@ def extract_pledge(
     return document, content
 def extract_capacity(
     pages: list[dict],
-) -> tuple[CapacityDocument, str]:
+) -> tuple[CapacityDocument, str, list[dict]]:
     load_dotenv(PROJECT_ROOT / ".env")
 
     system_prompt = CAPACITY_PROMPT_PATH.read_text(encoding="utf-8")
@@ -105,8 +106,11 @@ def extract_capacity(
     if not content:
         raise RuntimeError("The model returned an empty response.")
 
-    document = CapacityDocument.model_validate(json.loads(content))
-    return document, content
+    payload, sanitization_changes = sanitize_capacity_payload(
+        json.loads(content)
+    )
+    document = CapacityDocument.model_validate(payload)
+    return document, content, sanitization_changes
 
 def main() -> None:
     pages = json.loads(PAGES_PATH.read_text(encoding="utf-8"))

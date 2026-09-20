@@ -7,8 +7,16 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+from src.capacity_evidence_validator import validate_capacity_evidence
+from src.capacity_normalizer import normalize_capacity_fields
 from src.event_normalizer import normalize_event_fields
-from src.llm_extractor import PROMPT_PATH, extract_pledge, require_env
+from src.llm_extractor import (
+    CAPACITY_PROMPT_PATH,
+    PROMPT_PATH,
+    extract_capacity,
+    extract_pledge,
+    require_env,
+)
 from src.document_parser import parse_document
 from src.evidence_validator import validate_evidence
 
@@ -31,15 +39,20 @@ def write_json(path: Path, data: object) -> None:
     )
 
 
-def run_pipeline(pdf_path: Path) -> dict:
+def run_pipeline(pdf_path: Path, task: str = "pledge") -> dict:
     pdf_path = pdf_path.resolve()
     if not pdf_path.exists():
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
     if pdf_path.suffix.lower() != ".pdf":
         raise ValueError("The input file must be a PDF.")
+    if task not in {"pledge", "capacity"}:
+        raise ValueError("task must be pledge or capacity")
 
     load_dotenv(PROJECT_ROOT / ".env")
     model = require_env("LLM_MODEL")
+    prompt_path = (
+        PROMPT_PATH if task == "pledge" else CAPACITY_PROMPT_PATH
+    )
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run_directory = OUTPUT_ROOT / pdf_path.stem / run_id
     run_directory.mkdir(parents=True, exist_ok=True)
@@ -62,9 +75,10 @@ def run_pipeline(pdf_path: Path) -> dict:
             "sha256": file_sha256(pdf_path),
         },
         "prompt": {
-            "path": str(PROMPT_PATH),
-            "sha256": file_sha256(PROMPT_PATH),
+            "path": str(prompt_path),
+            "sha256": file_sha256(prompt_path),
         },
+        "task": task,
         "model": model,
         "steps": [],
     }
@@ -115,11 +129,31 @@ def run_pipeline(pdf_path: Path) -> dict:
 
 
         step_started = time.perf_counter()
-        document, raw_content = extract_pledge(pages)
+        if task == "pledge":
+            document, raw_content = extract_pledge(pages)
+            extraction_changes = []
+        else:
+            document, raw_content, extraction_changes = extract_capacity(
+                pages
+            )
         llm_duration = round(time.perf_counter() - step_started, 4)
 
         step_started = time.perf_counter()
-        document, normalization_changes = normalize_event_fields(document)
+        if task == "pledge":
+            document, normalization_changes = normalize_event_fields(
+                document
+            )
+            normalization_tool = (
+                "Deterministic semantic and shared-cell normalizer"
+            )
+        else:
+            document, normalization_changes = normalize_capacity_fields(
+                document,
+                pages,
+            )
+            normalization_tool = (
+                "Deterministic capacity overfill normalizer"
+            )
         normalization_duration = round(
             time.perf_counter() - step_started,
             4,
@@ -133,19 +167,24 @@ def run_pipeline(pdf_path: Path) -> dict:
             "name": "llm_structured_extraction",
             "tool": "OpenAI-compatible Chat Completions",
             "model": model,
+            "sanitization_changes_count": len(extraction_changes),
+            "sanitization_changes": extraction_changes,
             "duration_seconds": llm_duration,
         })
 
         log["steps"].append({
             "name": "event_normalization",
-            "tool": "Deterministic semantic and shared-cell normalizer",
+            "tool": normalization_tool,
             "changes_count": len(normalization_changes),
             "changes": normalization_changes,
             "duration_seconds": normalization_duration,
         })
 
         step_started = time.perf_counter()
-        evidence_report = validate_evidence(document, pages)
+        if task == "pledge":
+            evidence_report = validate_evidence(document, pages)
+        else:
+            evidence_report = validate_capacity_evidence(document, pages)
         write_json(evidence_path, evidence_report)
         log["steps"].append({
             "name": "evidence_validation",
@@ -211,9 +250,14 @@ def run_pipeline(pdf_path: Path) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("pdf_path", type=Path)
+    parser.add_argument(
+        "--task",
+        choices=("pledge", "capacity"),
+        default="pledge",
+    )
     args = parser.parse_args()
 
-    result = run_pipeline(args.pdf_path)
+    result = run_pipeline(args.pdf_path, task=args.task)
 
     print(f"Status: {result['status']}")
     print(f"Run directory: {result['run_directory']}")
