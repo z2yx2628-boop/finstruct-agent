@@ -141,14 +141,14 @@ def source_date_variants(value: str) -> tuple[str, ...]:
 
 def exact_date_supported(value: str, full_text: str) -> bool:
     year, month, day = (int(part) for part in value.split("-"))
+    compact_text = re.sub(r"\s+", "", full_text)
 
     if any(
-        variant in full_text
+        variant in compact_text
         for variant in source_date_variants(value)
     ):
         return True
 
-    compact_text = re.sub(r"\s+", "", full_text)
     last_day = calendar.monthrange(year, month)[1]
     month_end_markers = (
         f"{year}年{month}月末",

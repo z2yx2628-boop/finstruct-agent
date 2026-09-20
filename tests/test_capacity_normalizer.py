@@ -677,3 +677,19 @@ def test_removes_planned_capacity_from_delay_event():
 
     assert normalized.events[0].capacity_changes == []
     assert changes[0]["action"] == "remove_hypothetical_adverse_capacity"
+def test_spaced_exact_date_is_preserved():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="delay",
+        delay_until_date="2026-09-20",
+        source_page=1,
+        evidence_text="项目延期至2026 年9 月20 日",
+        confidence=0.9,
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": "项目延期至2026 年9 月20 日"}],
+    )
+
+    assert normalized.events[0].delay_until_date == "2026-09-20"
+    assert changes == []
