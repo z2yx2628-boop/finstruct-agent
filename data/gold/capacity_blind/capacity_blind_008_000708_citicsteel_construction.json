@@ -1,0 +1,43 @@
+{
+  "security_code": "000708",
+  "security_name": "大冶特钢",
+  "company_name": "大冶特殊钢股份有限公司",
+  "announcement_number": "2018-015",
+  "announcement_date": "2018-05-18",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "高品质模具钢生产线项目",
+      "project_entity": "大冶特殊钢股份有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": 7.35,
+      "investment_unit": "亿元",
+      "investment_currency": "CNY",
+      "funding_source": "自有资金",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目建设期2年，预计2019年投产、2020年达产。",
+      "technology_description": "在原有锻造生产工艺上新增60MN锻造生产线、双真空炉、保护性气氛电渣炉和退火炉等设备，并升级改造现有锻造装备。",
+      "project_purpose": "优化产品结构和质量，提升高端装备制造用特种材料生产能力，且不增加公司总体炼钢产能。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "60MN锻造生产线",
+          "product_name": "特冶锻造产品",
+          "capacity": 3,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "新建产能为3万吨/年的60MN锻造生产线",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "公司董事会批准投资建设高品质模具钢生产线项目（以下简称项目或该项目），项目总投资7.35亿元。",
+      "confidence": 1.0
+    }
+  ]
+}
