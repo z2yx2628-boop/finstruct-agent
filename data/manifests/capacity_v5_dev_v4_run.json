@@ -1,0 +1,86 @@
+{
+  "manifest_version": 1,
+  "purpose": "Frozen V4 baseline predictions for the capacity V5 development set",
+  "frozen_at": "2026-09-20",
+  "git_commit": "06d960aa9c1c12893333f14745934fb286366552",
+  "git_branch": "codex/capacity-event-v1",
+  "task": "capacity",
+  "model": "qwen-plus",
+  "prompt": {
+    "path": "prompts/capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "corpus": {
+    "documents": 8,
+    "gold_events": 11,
+    "success": 6,
+    "needs_review": 2,
+    "failed": 0
+  },
+  "batch_report": {
+    "path": "outputs/capacity_v5_dev_v4_baseline/batch_run.json",
+    "sha256": "4843694fca0b021249cd52dd9b972d773763cebd7485657ea11ffb8795a37b86"
+  },
+  "accuracy_report": {
+    "path": "outputs/capacity_v5_dev_v4_baseline/report.json",
+    "sha256": "f9728af517b0a3e67ba6d9357653c29c7765492851bd519a73788240ed139029"
+  },
+  "predictions": [
+    {
+      "document": "capacity_v5_dev_001_600581_bayi_framework",
+      "sha256": "79075ebd1cb0e2b9f44d1c91d37234ecde0c074239234b288407bdecc57008de",
+      "status": "needs_review",
+      "run_id": "20260920T210749Z",
+      "evidence_passed": false
+    },
+    {
+      "document": "capacity_v5_dev_002_600569_angang_framework_adjustment",
+      "sha256": "00a53eb496d0de465de31736a6bca73ec97dc509022ec556edae8dca32c81f13",
+      "status": "success",
+      "run_id": "20260920T211220Z",
+      "evidence_passed": true
+    },
+    {
+      "document": "capacity_v5_dev_003_000932_valin_equipment_upgrade",
+      "sha256": "2cf8900a5afeba03459d496cad68d4d7f022ce1602138ca451ba25ee33c95d0a",
+      "status": "success",
+      "run_id": "20260920T211439Z",
+      "evidence_passed": true
+    },
+    {
+      "document": "capacity_v5_dev_004_000709_hbis_plate_construction",
+      "sha256": "2f7446dab496553603797fbf62b69b37fb1139b047bc467a8385d58dab0ba69b",
+      "status": "success",
+      "run_id": "20260920T211452Z",
+      "evidence_passed": true
+    },
+    {
+      "document": "capacity_v5_dev_005_002843_bichamp_multi_delay",
+      "sha256": "4db8a3a4bbec45b2e5c31826e331b5002ce0d51572c9c62e5d76184e7daa5a84",
+      "status": "success",
+      "run_id": "20260920T211504Z",
+      "evidence_passed": true
+    },
+    {
+      "document": "capacity_v5_dev_006_301217_tongguan_multi_delay",
+      "sha256": "23eb8b8c1dc60b75fbd5ca3208b618a4943b1eb3e0507d74e00b5d946cb70de4",
+      "status": "success",
+      "run_id": "20260920T211534Z",
+      "evidence_passed": true
+    },
+    {
+      "document": "capacity_v5_dev_007_600019_baosteel_overseas_financing",
+      "sha256": "2c6e2bea63220a1948236c6ed8c6ac720f86e56ac7ed4544ef40a09d739c8758",
+      "status": "success",
+      "run_id": "20260920T211557Z",
+      "evidence_passed": true
+    },
+    {
+      "document": "capacity_v5_dev_008_600282_nangang_overseas_progress",
+      "sha256": "e9e0d46bc8d0b4c800f9fb2b367b0cf497a2e1f6fe6d4e77c69cdfd65cf6a591",
+      "status": "needs_review",
+      "run_id": "20260920T213638Z",
+      "evidence_passed": false
+    }
+  ]
+}
