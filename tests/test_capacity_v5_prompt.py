@@ -12,3 +12,4 @@ def test_capacity_v5_prompt_contains_regression_rules():
     assert "events必须为空数组" in prompt
     assert "禁止自行补为当月第一天或最后一天" in prompt
     assert "不得生成capacity_changes" in prompt
+    assert "项目“进展公告”" in prompt
