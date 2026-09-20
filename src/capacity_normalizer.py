@@ -1,5 +1,5 @@
+import calendar
 import re
-
 from schemas.capacity import CapacityDocument
 from src.evidence_validator import number_supported, text_supported
 
@@ -28,6 +28,7 @@ HYPOTHETICAL_OUTPUT_MARKERS = (
     "建成投产后",
     "预计可年产",
     "将形成年产",
+    "计划新增年产",
 )
 
 FORMAL_CAPACITY_MARKERS = (
@@ -138,7 +139,25 @@ def source_date_variants(value: str) -> tuple[str, ...]:
         f"{year}年{month}月{day}日",
     )
 
+def exact_date_supported(value: str, full_text: str) -> bool:
+    year, month, day = (int(part) for part in value.split("-"))
 
+    if any(
+        variant in full_text
+        for variant in source_date_variants(value)
+    ):
+        return True
+
+    compact_text = re.sub(r"\s+", "", full_text)
+    last_day = calendar.monthrange(year, month)[1]
+    month_end_markers = (
+        f"{year}年{month}月末",
+        f"{year}年{month}月底",
+    )
+    return (
+        day == last_day
+        and any(marker in compact_text for marker in month_end_markers)
+    )
 def commissioning_date_supported(value: str, full_text: str) -> bool:
     segments = re.split(r"[。；;\n]", full_text)
     dated_segments = [
@@ -517,7 +536,23 @@ def normalize_capacity_fields(
                 "action": "clear_unsupported_investment",
                 "original": original,
             })
-
+        for field in (
+            "planned_start_date",
+            "planned_completion_date",
+            "delay_until_date",
+        ):
+            value = event[field]
+            if value is not None and not exact_date_supported(
+                value,
+                full_text,
+            ):
+                event[field] = None
+                changes.append({
+                    "event_index": event_index,
+                    "action": "clear_unsupported_exact_date",
+                    "field": field,
+                    "original": value,
+                }) 
         commissioning_date = event["commissioning_date"]
         if (
             commissioning_date is not None

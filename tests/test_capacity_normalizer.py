@@ -617,3 +617,63 @@ def test_actual_full_line_commissioning_date_is_preserved():
 
     assert normalized.events[0].commissioning_date == "2024-06-06"
     assert changes == []
+def test_month_only_delay_date_is_cleared():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="delay",
+        delay_until_date="2024-06-30",
+        source_page=1,
+        evidence_text="项目延期至2024年6月",
+        confidence=0.9,
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": "项目延期至2024年6月"}],
+    )
+
+    assert normalized.events[0].delay_until_date is None
+    assert changes[0]["action"] == "clear_unsupported_exact_date"
+
+
+def test_explicit_month_end_date_is_preserved():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="delay",
+        delay_until_date="2021-09-30",
+        source_page=1,
+        evidence_text="项目延期至2021年9月末",
+        confidence=0.9,
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": "项目延期至2021年9月末"}],
+    )
+
+    assert normalized.events[0].delay_until_date == "2021-09-30"
+    assert changes == []
+
+
+def test_removes_planned_capacity_from_delay_event():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="delay",
+        capacity_changes=[make_capacity_change(
+            "new",
+            1000,
+            "万米/年",
+            "项目计划新增年产1,000万米高速钢双金属带锯条生产能力",
+        )],
+        source_page=1,
+        evidence_text="项目建设进度延期",
+        confidence=0.9,
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": (
+            "项目建设进度延期。"
+            "项目计划新增年产1,000万米高速钢双金属带锯条生产能力"
+        )}],
+    )
+
+    assert normalized.events[0].capacity_changes == []
+    assert changes[0]["action"] == "remove_hypothetical_adverse_capacity"
