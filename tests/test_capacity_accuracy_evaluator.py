@@ -52,3 +52,29 @@ def test_capacity_value_mismatch_is_reported():
         item["field"] == "capacity"
         for item in report["field_mismatches"]
     )
+
+
+def test_narrative_metrics_are_separate_from_factual_metrics():
+    gold = make_document()
+    prediction = make_document()
+    gold.events[0].timeline_text = "计划于2027年建成"
+    prediction.events[0].timeline_text = "预计2027年投产"
+
+    report = evaluate_document(gold, prediction)
+
+    assert report["passed"] is False
+    assert report["factual_attribute_metrics"]["accuracy"] == 1
+    assert report["narrative_attribute_metrics"]["accuracy"] < 1
+
+
+def test_safe_formatting_metric_does_not_change_strict_pass():
+    gold = make_document()
+    prediction = make_document()
+    gold.events[0].project_name = "2500m3 HyCROF商业化示范项目"
+    prediction.events[0].project_name = "2500m³HyCROF 商业化示范项目"
+
+    report = evaluate_document(gold, prediction)
+
+    assert report["passed"] is False
+    assert report["event_attribute_metrics"]["accuracy"] < 1
+    assert report["canonical_attribute_metrics"]["accuracy"] == 1

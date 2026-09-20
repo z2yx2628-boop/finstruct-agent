@@ -1,6 +1,6 @@
 # FinStruct Agent
 
-面向中国 A 股股份质押公告的结构化抽取与证据核验工具。系统使用
+面向中国 A 股股份质押公告和钢铁上市公司产能事件公告的结构化抽取与证据核验工具。系统使用
 PyMuPDF 按页提取公告文本，调用兼容 OpenAI Chat Completions 的大模型生成
 结构化事件，再通过确定性规则检查字段是否能在对应页原文中找到证据。
 
@@ -9,6 +9,10 @@ PyMuPDF 按页提取公告文本，调用兼容 OpenAI Chat Completions 的大�
 - `pledge`：新增、再次或补充质押
 - `release`：解除质押、解质押
 - `extension`：质押展期、延期购回
+
+产能方向目前支持：新建产能、产能置换、技术改造、投产、延期、暂停和终止，
+并可提取项目投资、建设进度、产能变化及量化环境指标。该方向的 V4 开发基线
+记录在 `docs/capacity_dev_v4_baseline.md`。
 
 新增与解除事件会在前端换算为“股”后汇总，并计算净质押变化；展期事件不计入
 净变化。当前支持的换算单位为“股”和“万股”。
@@ -34,6 +38,12 @@ PyMuPDF 按页提取公告文本，调用兼容 OpenAI Chat Completions 的大�
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.pipeline "data\raw\sample_pledge.pdf"
+```
+
+产能事件使用：
+
+```powershell
+.\.venv\Scripts\python.exe -m src.pipeline "公告.pdf" --task capacity
 ```
 
 ## 测试

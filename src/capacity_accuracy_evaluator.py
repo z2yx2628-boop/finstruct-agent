@@ -3,7 +3,9 @@ from collections import defaultdict
 import json
 import math
 from pathlib import Path
+import re
 from typing import Any
+import unicodedata
 
 from schemas.capacity import CapacityDocument
 
@@ -36,6 +38,17 @@ EVENT_ATTRIBUTE_FIELDS = (
     "source_page",
 )
 
+NARRATIVE_EVENT_FIELDS = (
+    "timeline_text",
+    "technology_description",
+    "project_purpose",
+)
+
+FACTUAL_EVENT_FIELDS = tuple(
+    field for field in EVENT_ATTRIBUTE_FIELDS
+    if field not in NARRATIVE_EVENT_FIELDS
+)
+
 CAPACITY_IDENTITY_FIELDS = ("action",)
 CAPACITY_ATTRIBUTE_FIELDS = (
     "facility_type",
@@ -59,6 +72,25 @@ def values_match(expected: Any, actual: Any) -> bool:
     if isinstance(expected, (int, float)) and isinstance(actual, (int, float)):
         return math.isclose(float(expected), float(actual), rel_tol=1e-9)
     return expected == actual
+
+
+def canonical_text(value: str, field: str) -> str:
+    value = unicodedata.normalize("NFKC", value)
+    value = value.replace("m³", "m3")
+    value = re.sub(r"\s+", "", value)
+    if field == "capacity_unit":
+        value = value.replace("吨/座", "t/座")
+    return value
+
+
+def canonical_values_match(field: str, expected: Any, actual: Any) -> bool:
+    if values_match(expected, actual):
+        return True
+    if not isinstance(expected, str) or not isinstance(actual, str):
+        return False
+    if field not in {"project_name", "capacity_unit"}:
+        return False
+    return canonical_text(expected, field) == canonical_text(actual, field)
 
 
 def ratio(numerator: int, denominator: int) -> float:
@@ -129,6 +161,11 @@ def comparison_rows(
                 "expected": expected,
                 "actual": actual,
                 "matched": values_match(expected, actual),
+                "canonical_matched": canonical_values_match(
+                    field,
+                    expected,
+                    actual,
+                ),
             })
     return rows
 
@@ -149,10 +186,13 @@ def detection_metrics(pairs: list, missing: list, unexpected: list) -> dict:
     }
 
 
-def attribute_metrics(rows: list[dict]) -> dict:
-    matched = sum(item["matched"] for item in rows)
+def attribute_metrics(
+    rows: list[dict],
+    match_key: str = "matched",
+) -> dict:
+    matched = sum(item[match_key] for item in rows)
     present = [item for item in rows if item["expected"] is not None]
-    present_matched = sum(item["matched"] for item in present)
+    present_matched = sum(item[match_key] for item in present)
     overfilled = [
         item
         for item in rows
@@ -189,6 +229,14 @@ def evaluate_document(
         EVENT_ATTRIBUTE_FIELDS,
         "event",
     )
+    factual_event_rows = [
+        row for row in event_rows
+        if row["field"] in FACTUAL_EVENT_FIELDS
+    ]
+    narrative_rows = [
+        row for row in event_rows
+        if row["field"] in NARRATIVE_EVENT_FIELDS
+    ]
 
     capacity_pairs = []
     missing_capacity = []
@@ -236,6 +284,12 @@ def evaluate_document(
         "environmental_metric",
     )
     all_rows = document_rows + event_rows + capacity_rows + environment_rows
+    factual_rows = (
+        document_rows
+        + factual_event_rows
+        + capacity_rows
+        + environment_rows
+    )
     all_missing = missing_events + missing_capacity + missing_environment
     all_unexpected = (
         unexpected_events + unexpected_capacity + unexpected_environment
@@ -266,6 +320,12 @@ def evaluate_document(
         "event_attribute_metrics": attribute_metrics(event_rows),
         "capacity_attribute_metrics": attribute_metrics(capacity_rows),
         "environment_attribute_metrics": attribute_metrics(environment_rows),
+        "factual_attribute_metrics": attribute_metrics(factual_rows),
+        "narrative_attribute_metrics": attribute_metrics(narrative_rows),
+        "canonical_attribute_metrics": attribute_metrics(
+            all_rows,
+            match_key="canonical_matched",
+        ),
         "field_mismatches": [
             item for item in all_rows if not item["matched"]
         ],
@@ -375,6 +435,18 @@ def evaluate_directories(gold_dir: Path, prediction_dir: Path) -> dict:
             reports,
             "environment_attribute_metrics",
         ),
+        "factual_attribute_metrics": sum_attributes(
+            reports,
+            "factual_attribute_metrics",
+        ),
+        "narrative_attribute_metrics": sum_attributes(
+            reports,
+            "narrative_attribute_metrics",
+        ),
+        "canonical_attribute_metrics": sum_attributes(
+            reports,
+            "canonical_attribute_metrics",
+        ),
         "documents": document_reports,
     }
 
@@ -430,6 +502,18 @@ def main() -> None:
     print_attributes(
         "Environmental attributes",
         report["environment_attribute_metrics"],
+    )
+    print_attributes(
+        "Factual attributes",
+        report["factual_attribute_metrics"],
+    )
+    print_attributes(
+        "Narrative fields (strict)",
+        report["narrative_attribute_metrics"],
+    )
+    print_attributes(
+        "All attributes (safe canonical formatting)",
+        report["canonical_attribute_metrics"],
     )
     print(f"Report saved to: {args.report}")
 

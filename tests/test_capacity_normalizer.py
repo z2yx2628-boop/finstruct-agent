@@ -246,6 +246,67 @@ def test_removes_commissioning_equipment_specs():
     assert changes[0]["action"] == "remove_nonreplacement_equipment_spec"
 
 
+def test_removes_chinese_unit_equipment_specs_from_construction():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="capacity_construction",
+        capacity_changes=[make_capacity_change(
+            "new",
+            3200,
+            "立方米/座",
+            "建设1座3200立方米高炉",
+            product_name="炼铁产能",
+        )],
+        source_page=1,
+        evidence_text="建设钢铁基地项目",
+        confidence=0.9,
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": "建设1座3200立方米高炉"}],
+    )
+
+    assert normalized.events[0].capacity_changes == []
+    assert changes[0]["action"] == "remove_nonreplacement_equipment_spec"
+
+
+def test_recovers_explicit_formal_capacity_and_removes_line_width():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="capacity_construction",
+        capacity_changes=[make_capacity_change(
+            "new",
+            1580,
+            "毫米/条",
+            "1条1580毫米热轧带钢生产线",
+            product_name="热轧带钢",
+        )],
+        source_page=1,
+        evidence_text="建设钢铁基地项目",
+        confidence=0.9,
+    )])
+    pages = [{
+        "page": 1,
+        "text": (
+            "生产规模为铁钢轧综合配套405万吨/年，"
+            "建设1条1580毫米热轧带钢生产线"
+        ),
+    }]
+
+    normalized, changes = normalize_capacity_fields(document, pages)
+
+    assert len(normalized.events[0].capacity_changes) == 1
+    record = normalized.events[0].capacity_changes[0]
+    assert record.capacity == 405
+    assert record.capacity_unit == "万吨/年"
+    assert record.product_name == "铁钢轧综合配套产能"
+    assert {
+        item["action"] for item in changes
+    } == {
+        "recover_formal_aggregate_capacity",
+        "remove_nonreplacement_equipment_spec",
+    }
+
+
 def test_removes_existing_asset_without_retirement_action():
     document = CapacityDocument(events=[CapacityEvent(
         event_type="technical_upgrade",
@@ -463,4 +524,96 @@ def test_keeps_standalone_new_equipment_count_without_aggregate():
     )
 
     assert len(normalized.events[0].capacity_changes) == 1
+    assert changes == []
+
+
+def test_replacement_converter_spec_is_not_multiplied():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="capacity_replacement",
+        capacity_changes=[make_capacity_change(
+            "retired",
+            105,
+            "吨/座×3",
+            "凌钢3×35t转炉系统已经停产",
+            product_name="炼钢产能",
+        )],
+        source_page=1,
+        evidence_text="凌钢3×35t转炉系统已经停产",
+        confidence=0.9,
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": "凌钢3×35t转炉系统已经停产"}],
+    )
+
+    record = normalized.events[0].capacity_changes[0]
+    assert record.facility_type == "3×35t转炉系统"
+    assert record.product_name is None
+    assert record.capacity == 35
+    assert record.capacity_unit == "t/座"
+    assert changes[0]["action"] == "normalize_converter_spec"
+
+
+def test_environmental_metric_name_is_canonicalized():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="technical_upgrade",
+        environmental_metrics=[EnvironmentalMetric(
+            metric_type="carbon_reduction",
+            metric_name="碳排放",
+            value=30,
+            unit="%",
+            source_page=1,
+            evidence_text="项目碳排放降低30%",
+            confidence=0.9,
+        )],
+        source_page=1,
+        evidence_text="实施低碳改造",
+        confidence=0.9,
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": "项目碳排放降低30%"}],
+    )
+
+    assert normalized.events[0].environmental_metrics[0].metric_name == (
+        "碳减排率"
+    )
+    assert changes[0]["action"] == "normalize_environmental_metric_name"
+
+
+def test_preproduction_acceptance_is_not_commissioning_date():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="capacity_replacement",
+        commissioning_date="2023-02-21",
+        source_page=1,
+        evidence_text="转炉置换项目",
+        confidence=0.9,
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": "2023年2月21日完成投产前验收"}],
+    )
+
+    assert normalized.events[0].commissioning_date is None
+    assert changes[0]["action"] == "clear_unsupported_commissioning_date"
+
+
+def test_actual_full_line_commissioning_date_is_preserved():
+    document = CapacityDocument(events=[CapacityEvent(
+        event_type="commissioning",
+        commissioning_date="2024-06-06",
+        source_page=1,
+        evidence_text="项目全线投产",
+        confidence=0.9,
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": "项目于2024年6月6日全线投产"}],
+    )
+
+    assert normalized.events[0].commissioning_date == "2024-06-06"
     assert changes == []
