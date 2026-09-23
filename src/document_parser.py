@@ -4,6 +4,7 @@ from typing import Callable
 from schemas.common import ParsedDocument
 from src.image_parser import IMAGE_SUFFIXES, parse_image
 from src.pdf_parser import parse_pdf
+from src.web_parser import HTML_SUFFIXES, parse_html
 
 
 class UnsupportedDocumentTypeError(ValueError):
@@ -15,6 +16,7 @@ Parser = Callable[[Path], ParsedDocument]
 PARSERS: dict[str, Parser] = {
     ".pdf": parse_pdf,
     **{suffix: parse_image for suffix in IMAGE_SUFFIXES},
+    **{suffix: parse_html for suffix in HTML_SUFFIXES},
 }
 
 

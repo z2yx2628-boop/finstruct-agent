@@ -50,6 +50,11 @@ STEEL_ISSUERS = {
     "000629": "钒钛股份", "002756": "永兴材料", "688186": "广大特材",
     "300881": "盛德鑫泰", "300034": "钢研高纳", "600295": "鄂尔多斯",
     "002541": "鸿路钢构", "600231": "凌钢股份", "000923": "河钢资源",
+    "600019": "宝钢股份", "000709": "河钢股份", "000932": "华菱钢铁",
+    "600581": "八一钢铁", "601003": "柳钢股份", "000717": "中南股份",
+    "600282": "南钢股份", "000708": "中信特钢", "600569": "安阳钢铁",
+    "600307": "酒钢宏兴", "600399": "抚顺特钢", "603878": "武进不锈",
+    "603995": "甬金股份",
 }
 
 INCLUDE = re.compile(
@@ -110,10 +115,17 @@ def org_id(code: str) -> str | None:
     return None
 
 
-SEARCH_KEYWORDS = (
+CAPACITY_KEYWORDS = (
     "项目", "投产", "投资计划", "框架计划", "延期", "终止", "暂停", "暂缓",
     "生产线", "高炉", "技术改造", "产能",
 )
+GUARANTEE_KEYWORDS = ("担保",)
+
+# --task guarantee switches keywords and title filters to guarantee notices.
+TASK = "capacity"
+if "--task" in sys.argv:
+    TASK = sys.argv[sys.argv.index("--task") + 1]
+SEARCH_KEYWORDS = GUARANTEE_KEYWORDS if TASK == "guarantee" else CAPACITY_KEYWORDS
 
 
 def announcements(code: str, org: str):
@@ -149,7 +161,27 @@ def announcements(code: str, org: str):
             time.sleep(0.2)
 
 
+GUARANTEE_INCLUDE = re.compile(r"担保")
+GUARANTEE_EXCLUDE = re.compile(
+    r"制度|管理办法|核查意见|法律意见|独立董事|摘要|英文|更正|股东大会|股东会|"
+    r"决议公告|审计|年度报告|季度报告|半年度报告|专项说明|质押|债券|可转"
+)
+GUARANTEE_PATTERNS = [
+    ("guarantee_overdue", r"逾期|代偿|诉讼"),
+    ("guarantee_release", r"解除|到期|终止"),
+    ("guarantee_related", r"关联"),
+    ("guarantee_annual_limit", r"额度|预计|年度"),
+    ("guarantee_progress", r"进展|实施"),
+    ("guarantee_single", r"担保"),
+]
+
+
 def classify(title: str) -> str:
+    if TASK == "guarantee":
+        for name, pattern in GUARANTEE_PATTERNS:
+            if re.search(pattern, title):
+                return name
+        return "other"
     for name, pattern in PATTERNS:
         if re.search(pattern, title):
             return name
@@ -160,7 +192,7 @@ def main() -> int:
     rows = []
     seen = set()
     for code, name in STEEL_ISSUERS.items():
-        if code in USED_CODES:
+        if TASK != "guarantee" and code in USED_CODES:
             continue
         try:
             org = org_id(code)
@@ -170,7 +202,11 @@ def main() -> int:
             count = 0
             for item in announcements(code, org):
                 title = re.sub(r"<[^>]+>", "", item.get("announcementTitle", ""))
-                if not INCLUDE.search(title) or EXCLUDE.search(title):
+                include, exclude = (
+                    (GUARANTEE_INCLUDE, GUARANTEE_EXCLUDE)
+                    if TASK == "guarantee" else (INCLUDE, EXCLUDE)
+                )
+                if not include.search(title) or exclude.search(title):
                     continue
                 url = "https://static.cninfo.com.cn/" + item["adjunctUrl"]
                 if url in seen or not url.upper().endswith(".PDF"):

@@ -93,7 +93,7 @@ if st.session_state.get("app_schema_version") != APP_SCHEMA_VERSION:
     st.session_state["app_schema_version"] = APP_SCHEMA_VERSION
 
 st.title("FinStruct Agent")
-st.caption("钢铁产业链公告结构化提取：股份质押、产能事件；支持文字PDF、扫描PDF和图片")
+st.caption("钢铁产业链公告结构化提取：股份质押、产能事件；支持文字PDF、扫描PDF、图片和网页")
 
 task_name = st.selectbox(
     "公告类型",
@@ -107,12 +107,34 @@ uploaded_file = st.file_uploader(
     accept_multiple_files=False,
 )
 
+page_url = st.text_input(
+    "或输入网页地址（新闻、互动平台问答、政府公告等）",
+    placeholder="https://",
+).strip()
+
 run_clicked = st.button(
     "运行提取",
     type="primary",
-    disabled=uploaded_file is None,
+    disabled=uploaded_file is None and not page_url,
     width="stretch",
 )
+
+if run_clicked and uploaded_file is None and page_url:
+    try:
+        from scripts.fetch_webpage import fetch
+
+        with st.spinner("正在抓取网页并提取结构化数据..."):
+            stored_path = fetch(
+                page_url,
+                PROJECT_ROOT / "data" / "raw" / "web",
+                f"web_{uuid.uuid4().hex[:8]}",
+            )
+            st.session_state["pipeline_result"] = run_pipeline(
+                stored_path, task=task_name,
+            )
+            st.session_state["uploaded_name"] = page_url
+    except Exception as error:
+        st.error(f"处理失败：{error}")
 
 if run_clicked and uploaded_file is not None:
     UPLOAD_DIRECTORY.mkdir(parents=True, exist_ok=True)
