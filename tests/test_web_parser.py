@@ -103,3 +103,19 @@ def test_long_page_is_split_into_blocks(tmp_path):
     assert document.metadata["paragraph_count"] == 119
     assert len(document.pages) > 1
     assert document.pages[1].text.startswith("[P")
+
+
+def test_interface_lines_and_detail_links_are_removed(tmp_path):
+    path = tmp_path / "digest.html"
+    path.write_text(
+        "<html><body><article>"
+        "<p>智能摘要</p><p>内容由AI生成</p><p>存在错误信息</p>"
+        "<p>◎黎城太行钢铁于6月30日停产一座530m³高炉，预计7月20日复产。详情>></p>"
+        "<p>免责声明：本站内容仅供参考。</p><p>← 返回首页</p><p>扫描二维码下载</p>"
+        "</article></body></html>",
+        encoding="utf-8",
+    )
+
+    text = parse_html(path).pages[0].text
+
+    assert text == "[P1] ◎黎城太行钢铁于6月30日停产一座530m³高炉，预计7月20日复产。"

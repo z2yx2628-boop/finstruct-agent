@@ -38,6 +38,22 @@ BLOCK_TAGS = {
 VOID_TAGS = {"br", "img", "hr", "meta", "link", "input", "source", "wbr"}
 CJK = re.compile(r"[一-鿿]")
 
+# Short interface lines that survive container detection on news sites.
+BOILERPLATE_LINE = re.compile(
+    r"^(?:内容由AI生成|存在错误信息|内容没有什么帮助|智能摘要|问AI.*|"
+    r"←?\s*返回首页|更多阅读.*|扫描二维码.*|.*手机版APP|分享到.*|"
+    r"责任编辑[:：].*|资讯编辑[:：].*|免责声明[:：].*|作者声明[:：].*|"
+    r"举报|收藏|点赞|评论|打开APP.*|下载客户端.*)$"
+)
+TRAILING_LINK = re.compile(r"\s*(?:详情|查看详情|阅读全文|点击查看)\s*>+\s*$")
+
+
+def clean_paragraph(text: str) -> str | None:
+    text = TRAILING_LINK.sub("", text).strip()
+    if not text or BOILERPLATE_LINE.match(text):
+        return None
+    return text
+
 
 def decode_html(raw: bytes) -> str:
     head = raw[:4096].decode("ascii", errors="ignore")
@@ -208,7 +224,10 @@ def parse_html(html_path: Path) -> ParsedDocument:
     builder.feed(html)
     container = _main_container(builder.root)
     paragraphs, tables = _paragraphs_and_tables(container)
-    paragraphs = [text for text in paragraphs if len(text) >= 2]
+    paragraphs = [
+        cleaned for cleaned in (clean_paragraph(text) for text in paragraphs)
+        if cleaned and len(cleaned) >= 2
+    ]
 
     pages: list[ParsedPage] = []
     block: list[str] = []
