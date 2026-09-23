@@ -22,9 +22,16 @@ from pathlib import Path
 import pymupdf as fitz
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SELECTION = PROJECT_ROOT / "data" / "manifests" / "capacity_holdout_selection.csv"
-MANIFEST = PROJECT_ROOT / "data" / "manifests" / "capacity_holdout_sources.csv"
-RAW_DIR = PROJECT_ROOT / "data" / "raw" / "capacity_holdout"
+# Usage for another split:
+#   python scripts\download_capacity_holdout.py --split capacity_v6_holdout
+SPLIT = "capacity_holdout"
+if "--split" in sys.argv:
+    SPLIT = sys.argv[sys.argv.index("--split") + 1]
+SELECTION = PROJECT_ROOT / "data" / "manifests" / f"{SPLIT}_selection.csv"
+MANIFEST = PROJECT_ROOT / "data" / "manifests" / f"{SPLIT}_sources.csv"
+RAW_DIR = PROJECT_ROOT / "data" / "raw" / SPLIT
+LINKS = PROJECT_ROOT / "data" / "manifests" / f"{SPLIT}_manual_download.txt"
+PAUSE_SECONDS = 15
 
 HEADERS = {
     "User-Agent": (
@@ -90,7 +97,7 @@ def main() -> int:
                 print(f"[get  ] {file_name}")
                 data = download(item["source_url"])
                 path.write_bytes(data)
-                time.sleep(3)
+                time.sleep(PAUSE_SECONDS)
             sha256 = hashlib.sha256(path.read_bytes()).hexdigest()
             info = inspect_pdf(path)
         except Exception as error:
@@ -108,7 +115,7 @@ def main() -> int:
             + (f", DUPLICATE of {duplicate}" if duplicate else "")
         )
         rows.append({
-            "split": "capacity_holdout",
+            "split": SPLIT,
             "file_name": file_name,
             "security_code": item["security_code"],
             "security_name": item["security_name"],
@@ -121,6 +128,30 @@ def main() -> int:
             **info,
         })
 
+    missing = [
+        item for item in selection
+        if not (RAW_DIR / (
+            f"{item['holdout_id']}_{item['security_code']}_"
+            f"{item['target_pattern']}.pdf"
+        )).exists()
+    ]
+    if missing:
+        with LINKS.open("w", encoding="utf-8") as handle:
+            handle.write(
+                "Open each link in a browser and save the PDF into\n"
+                f"{RAW_DIR}\nusing exactly the file name shown, then rerun "
+                "this script.\n\n"
+            )
+            for item in missing:
+                handle.write(
+                    f"{item['holdout_id']}_{item['security_code']}_"
+                    f"{item['target_pattern']}.pdf\n"
+                    f"{item['source_url'].replace('https://', 'http://', 1)}\n\n"
+                )
+        print(f"Manual download list for {len(missing)} files: {LINKS}")
+
+    if not rows:
+        return 1
     with MANIFEST.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
         writer.writeheader()

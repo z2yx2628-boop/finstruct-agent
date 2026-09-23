@@ -722,3 +722,213 @@ def test_spaced_exact_date_is_preserved():
 
     assert normalized.events[0].delay_until_date == "2026-09-20"
     assert changes == []
+
+def make_event(**fields) -> CapacityEvent:
+    values = {
+        "event_type": "technical_upgrade",
+        "source_page": 1,
+        "evidence_text": "项目",
+        "confidence": 0.9,
+    }
+    values.update(fields)
+    return CapacityEvent(**values)
+
+
+def test_v6_investment_accepts_non_standard_wording():
+    texts = {
+        (19.45, "亿元"): "2024年计划安排投资 19.45 亿元。",
+        (500000.0, "万元"): "项目核定投资额：500,000.00 万元",
+        (25.0, "亿元"): "5、投资规模：项目概算投资 25.00 亿元。",
+    }
+    for (amount, unit), text in texts.items():
+        document = CapacityDocument(events=[make_event(
+            investment_amount=amount,
+            investment_unit=unit,
+            investment_currency="CNY",
+        )])
+        normalized, _ = normalize_capacity_fields(
+            document, [{"page": 1, "text": text}],
+        )
+        assert normalized.events[0].investment_amount == amount, text
+
+
+def test_v6_investment_accepts_table_with_unit_header():
+    document = CapacityDocument(events=[make_event(
+        investment_amount=55634,
+        investment_unit="万元",
+    )])
+    text = (
+        "单位：万元\n项目名称 项目内容 投资金额 建设周期\n"
+        "新建生产线 年增加产能 33,080 2023-2024\n合计 / / 55,634 /"
+    )
+
+    normalized, _ = normalize_capacity_fields(
+        document, [{"page": 1, "text": text}],
+    )
+
+    assert normalized.events[0].investment_amount == 55634
+
+
+def test_v6_investment_restores_source_unit():
+    document = CapacityDocument(events=[make_event(
+        investment_amount=194500,
+        investment_unit="万元",
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document, [{"page": 1, "text": "2024年计划安排投资19.45亿元。"}],
+    )
+
+    assert normalized.events[0].investment_amount == 19.45
+    assert normalized.events[0].investment_unit == "亿元"
+    assert "restore_source_investment_unit" in [c["action"] for c in changes]
+
+
+def test_v6_investment_rejects_financing_and_loan_amounts():
+    for text in (
+        "为项目公司提供融资担保，担保金额不超过 12 亿元。",
+        "股东借款最高可能至 12 亿元。",
+    ):
+        document = CapacityDocument(events=[make_event(
+            investment_amount=12,
+            investment_unit="亿元",
+        )])
+        normalized, _ = normalize_capacity_fields(
+            document, [{"page": 1, "text": text}],
+        )
+        assert normalized.events[0].investment_amount is None, text
+
+
+def test_v6_amount_is_not_a_funding_source():
+    document = CapacityDocument(events=[make_event(
+        investment_amount=38115,
+        investment_unit="万元",
+        funding_source="资金计划28350.5万元",
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document,
+        [{"page": 1, "text": "投资计划38115万元，资金计划28350.5万元"}],
+    )
+
+    assert normalized.events[0].funding_source is None
+    assert "clear_non_source_funding_text" in [c["action"] for c in changes]
+
+
+def test_v6_spaced_plain_commissioning_date_is_preserved():
+    document = CapacityDocument(events=[make_event(
+        event_type="commissioning",
+        commissioning_date="2020-04-29",
+    )])
+
+    normalized, _ = normalize_capacity_fields(document, [{"page": 1, "text": (
+        "公司连续式酸洗线于 2020 年 4 月 29 日投产，成功下线第一卷钢。"
+    )}])
+
+    assert normalized.events[0].commissioning_date == "2020-04-29"
+
+
+def test_v6_post_commissioning_wording_is_not_a_date():
+    document = CapacityDocument(events=[make_event(
+        event_type="commissioning",
+        commissioning_date="2020-04-29",
+    )])
+
+    normalized, _ = normalize_capacity_fields(document, [{"page": 1, "text": (
+        "项目于2020年4月29日投产后将新增产能。"
+    )}])
+
+    assert normalized.events[0].commissioning_date is None
+
+
+def test_v6_collapses_pdf_spaces_in_names():
+    document = CapacityDocument(
+        announcement_number="临 2023-017",
+        events=[make_event(project_name="抚顺特钢2023 年-2024 年技术改造项目")],
+    )
+
+    normalized, _ = normalize_capacity_fields(document, [{"page": 1, "text": (
+        "项目名称：《抚顺特钢 2023 年-2024 年技术改造项目》"
+    )}])
+
+    assert normalized.announcement_number == "临2023-017"
+    assert normalized.events[0].project_name == "抚顺特钢2023年-2024年技术改造项目"
+
+
+def test_v6_framework_plan_keeps_one_event_without_capacity():
+    document = CapacityDocument(events=[
+        make_event(
+            project_name="板材炼钢厂1号铸机改造",
+            capacity_changes=[make_capacity_change(
+                "new", 35, "万吨/年", "1#铸机产能由195万吨/年提升至230万吨/年",
+            )],
+        ),
+        make_event(
+            project_name="2024 年度投资框架计划",
+            capacity_changes=[make_capacity_change(
+                "new", 31.5, "万吨/年", "汽车板高强钢产能31.5万吨/年",
+            )],
+        ),
+    ])
+
+    normalized, changes = normalize_capacity_fields(
+        document, [{"page": 1, "text": "2024年度投资框架计划"}],
+    )
+
+    assert len(normalized.events) == 1
+    assert normalized.events[0].project_name == "2024年度投资框架计划"
+    assert normalized.events[0].capacity_changes == []
+    actions = [c["action"] for c in changes]
+    assert "merge_framework_plan_item" in actions
+    assert "remove_framework_item_capacity" in actions
+
+
+def test_v6_removes_planned_capacity_of_delayed_named_project():
+    document = CapacityDocument(events=[make_event(
+        event_type="delay",
+        project_name="年产6000 吨油气输送用不锈钢焊管项目",
+        capacity_changes=[make_capacity_change(
+            "new", 6000, "吨/年", "年产6,000 吨油气输送用不锈钢焊管项目",
+        )],
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document, [{"page": 1, "text": "年产6000吨油气输送用不锈钢焊管项目延期"}],
+    )
+
+    assert normalized.events[0].capacity_changes == []
+    assert changes[-1]["action"] == "remove_planned_capacity_of_adverse_project"
+
+
+def test_v6_keeps_capacity_of_construction_named_project():
+    document = CapacityDocument(events=[make_event(
+        event_type="capacity_construction",
+        project_name="年产6000吨焊管项目",
+        capacity_changes=[make_capacity_change(
+            "new", 6000, "吨/年", "年产6000吨焊管项目",
+        )],
+    )])
+
+    normalized, _ = normalize_capacity_fields(
+        document, [{"page": 1, "text": "投资建设年产6000吨焊管项目"}],
+    )
+
+    assert len(normalized.events[0].capacity_changes) == 1
+
+
+def test_v6_removes_breakdown_components_beside_total():
+    evidence = "热轧酸洗板产能将新增约95万吨/年，其中新增酸洗汽车用钢60万吨/年，其他产品共计约35万吨/年"
+    document = CapacityDocument(events=[make_event(
+        event_type="commissioning",
+        capacity_changes=[
+            make_capacity_change("new", 95, "万吨/年", evidence, "热轧酸洗板"),
+            make_capacity_change("new", 60, "万吨/年", evidence, "酸洗汽车用钢"),
+            make_capacity_change("new", 35, "万吨/年", evidence, "其他产品"),
+        ],
+    )])
+
+    normalized, _ = normalize_capacity_fields(
+        document, [{"page": 1, "text": evidence}],
+    )
+
+    assert [r.capacity for r in normalized.events[0].capacity_changes] == [95]

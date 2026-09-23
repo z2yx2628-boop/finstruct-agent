@@ -107,6 +107,30 @@ def identity(record: Any, fields: tuple[str, ...]) -> tuple:
     return tuple(getattr(record, field) for field in fields)
 
 
+def pairing_score(gold_record: Any, predicted_record: Any, fields: tuple[str, ...]) -> int:
+    """Score a candidate pair; project names dominate and ignore whitespace.
+
+    Pairing only decides which records are compared. Attribute scoring still
+    uses the strict and canonical rules, so this cannot inflate accuracy.
+    """
+    score = sum(
+        values_match(
+            getattr(gold_record, field),
+            getattr(predicted_record, field),
+        )
+        for field in fields
+    )
+    gold_name = getattr(gold_record, "project_name", None)
+    predicted_name = getattr(predicted_record, "project_name", None)
+    if (
+        isinstance(gold_name, str)
+        and isinstance(predicted_name, str)
+        and re.sub(r"\s+", "", gold_name) == re.sub(r"\s+", "", predicted_name)
+    ):
+        score += len(fields) + 1
+    return score
+
+
 def pair_records(
     gold_records: list,
     predicted_records: list,
@@ -130,12 +154,10 @@ def pair_records(
             gold_record = gold_bucket.pop(0)
             best_index = max(
                 range(len(prediction_bucket)),
-                key=lambda index: sum(
-                    values_match(
-                        getattr(gold_record, field),
-                        getattr(prediction_bucket[index], field),
-                    )
-                    for field in attribute_fields
+                key=lambda index: pairing_score(
+                    gold_record,
+                    prediction_bucket[index],
+                    attribute_fields,
                 ),
             )
             pairs.append((gold_record, prediction_bucket.pop(best_index)))

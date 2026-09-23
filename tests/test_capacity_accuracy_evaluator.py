@@ -78,3 +78,36 @@ def test_safe_formatting_metric_does_not_change_strict_pass():
     assert report["passed"] is False
     assert report["event_attribute_metrics"]["accuracy"] < 1
     assert report["canonical_attribute_metrics"]["accuracy"] == 1
+
+
+def test_same_type_events_pair_by_project_name_ignoring_spaces():
+    def event(name: str, capacity: float | None) -> CapacityEvent:
+        return CapacityEvent(
+            event_type="technical_upgrade",
+            project_name=name,
+            capacity_changes=[] if capacity is None else [CapacityChange(
+                action="new",
+                capacity=capacity,
+                capacity_unit="吨/年",
+                source_page=2,
+                evidence_text="年增加产能",
+                confidence=1,
+            )],
+            source_page=2,
+            evidence_text="项目",
+            confidence=1,
+        )
+
+    gold = CapacityDocument(events=[
+        event("2023年-2024年提升产能项目", 6940),
+        event("2023年-2024年节能环保项目", None),
+    ])
+    prediction = CapacityDocument(events=[
+        event("2023 年-2024 年节能环保项目", None),
+        event("2023 年-2024 年提升产能项目", 6940),
+    ])
+
+    report = evaluate_document(gold, prediction)
+
+    assert report["capacity_record_metrics"]["true_positives"] == 1
+    assert report["capacity_record_metrics"]["false_positives"] == 0

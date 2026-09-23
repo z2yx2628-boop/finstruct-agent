@@ -12,6 +12,34 @@ PROJECT_INVESTMENT_MARKERS = (
     "计划总投资",
 )
 
+NON_PROJECT_CAPITAL_PATTERN = re.compile(
+    r"注册资本|注册资金|授权资本|融资|担保|授信|额度|借款|贷款|"
+    r"募集资金净额|募集资金总额|发行费用|资产总[计额]|净资产|总资产"
+)
+
+INVESTMENT_UNIT_SCALE = {
+    "元": 1,
+    "万元": 10_000,
+    "亿元": 100_000_000,
+    "美元": 1,
+    "万美元": 10_000,
+    "亿美元": 100_000_000,
+}
+
+FUNDING_SOURCE_PATTERN = re.compile(
+    r"自有|自筹|募集|募投|贷款|融资|借款|银行|股东|超募|专项|债券|资本金|"
+    r"政府|补助|补贴|出资|IPO|发行"
+)
+
+FRAMEWORK_PLAN_PATTERN = re.compile(
+    r"投资框架计划|固定资产投资(?:年中)?计划|年度投资计划|投资计划(?:调整)?$"
+)
+
+CJK_SPACE_PATTERN = re.compile(
+    r"(?<=[\u3000-\u303f\u4e00-\u9fff\uff00-\uffef])\s+"
+    r"|\s+(?=[\u3000-\u303f\u4e00-\u9fff\uff00-\uffef])"
+)
+
 EXPLICIT_RETIREMENT_MARKERS = (
     "淘汰",
     "退出",
@@ -82,6 +110,7 @@ ACTUAL_COMMISSIONING_MARKERS = (
     "全线投产",
     "顺利出铁",
     "顺利出焦",
+    "成功下线",
 )
 
 NON_COMMISSIONING_MARKERS = (
@@ -178,17 +207,30 @@ def exact_date_supported(value: str, full_text: str) -> bool:
         and any(marker in compact_text for marker in month_end_markers)
     )
 def commissioning_date_supported(value: str, full_text: str) -> bool:
-    segments = re.split(r"[。；;\n]", full_text)
+    segments = [
+        re.sub(r"\s+", "", segment)
+        for segment in re.split(r"[。；;\n]", re.sub(r"[ \t\u3000]+", "", full_text))
+    ]
+    variants = source_date_variants(value)
     dated_segments = [
         segment for segment in segments
-        if any(variant in segment for variant in source_date_variants(value))
+        if any(variant in segment for variant in variants)
     ]
     if not dated_segments:
         return False
     for segment in dated_segments:
         if any(marker in segment for marker in NON_COMMISSIONING_MARKERS):
             continue
-        if any(marker in segment for marker in ACTUAL_COMMISSIONING_MARKERS):
+        dated_plain_commissioning = any(
+            re.search(
+                re.escape(variant) + r"(?:正式|顺利|成功)?投产(?!后)",
+                segment,
+            )
+            for variant in variants
+        )
+        if dated_plain_commissioning or any(
+            marker in segment for marker in ACTUAL_COMMISSIONING_MARKERS
+        ):
             if (
                 "全线" not in segment
                 and re.search(r"预计.{0,30}全线.{0,20}投产", full_text)
@@ -277,21 +319,172 @@ def has_matching_capacity_record(event: dict, candidate: dict) -> bool:
     )
 
 
+def investment_unit_forms(amount: float, unit: str) -> list[tuple[float, str]]:
+    forms = [(amount, unit)]
+    scale = INVESTMENT_UNIT_SCALE.get(unit)
+    if scale is None:
+        return forms
+    currency_suffix = "美元" if unit.endswith("美元") else "元"
+    for other_unit, other_scale in INVESTMENT_UNIT_SCALE.items():
+        if other_unit == unit or not other_unit.endswith(currency_suffix):
+            continue
+        if currency_suffix == "元" and other_unit.endswith("美元"):
+            continue
+        converted = round(amount * scale / other_scale, 6)
+        forms.append((converted, other_unit))
+    return forms
+
+
+def number_positions(value: float, text: str) -> list[int]:
+    expected = f"{value:.6f}".rstrip("0").rstrip(".")
+    positions = []
+    for match in re.finditer(r"(?<![\d.])\d[\d,]*(?:\.\d+)?(?![\d.])", text):
+        candidate = match.group(0).replace(",", "")
+        try:
+            if float(candidate) == float(expected):
+                positions.append(match.start())
+        except ValueError:
+            continue
+    return positions
+
+
+def find_supported_investment(
+    amount: float,
+    unit: str,
+    text: str,
+) -> tuple[float, str] | None:
+    """Return the source form of a project investment, or None.
+
+    The amount must appear in the source with its unit (or an equivalent
+    万/亿 unit). It is rejected when the text right before every occurrence
+    describes registered capital, financing, guarantees, loans, raised funds
+    or balance-sheet totals rather than a project investment.
+    """
+    compact_text = re.sub(r"\s+", "", text)
+    for form_amount, form_unit in investment_unit_forms(amount, unit):
+        for position in number_positions(form_amount, compact_text):
+            tail = compact_text[position:position + 30]
+            number_text = re.match(r"[\d,.]+", tail).group(0)
+            after = compact_text[
+                position + len(number_text):
+                position + len(number_text) + len(form_unit) + 2
+            ]
+            unit_nearby = form_unit in after
+            if not unit_nearby:
+                segment_start = max(
+                    compact_text.rfind(mark, 0, position)
+                    for mark in ("。", "；", ";")
+                )
+                segment_end_candidates = [
+                    index for index in (
+                        compact_text.find(mark, position)
+                        for mark in ("。", "；", ";")
+                    ) if index >= 0
+                ]
+                segment_end = min(segment_end_candidates, default=len(compact_text))
+                segment = compact_text[segment_start + 1:segment_end]
+                unit_nearby = (
+                    f"单位：{form_unit}" in segment
+                    or f"（{form_unit}）" in segment
+                    or f"({form_unit})" in segment
+                )
+            if not unit_nearby:
+                continue
+            window = compact_text[max(0, position - 40):position]
+            if NON_PROJECT_CAPITAL_PATTERN.search(window):
+                continue
+            return form_amount, form_unit
+    return None
+
+
 def explicit_project_investment_supported(
     amount: float,
     unit: str,
     text: str,
 ) -> bool:
-    segments = re.split(r"[。；;]", text)
-    return any(
-        number_supported(amount, segment)
-        and text_supported(unit, segment)
-        and any(
-            marker in re.sub(r"\s+", "", segment)
-            for marker in PROJECT_INVESTMENT_MARKERS
+    return find_supported_investment(amount, unit, text) is not None
+
+
+def collapse_cjk_spaces(value: str | None) -> str | None:
+    if value is None:
+        return None
+    return CJK_SPACE_PATTERN.sub("", value).strip()
+
+
+def is_framework_plan_event(event: dict) -> bool:
+    return bool(
+        event["project_name"]
+        and FRAMEWORK_PLAN_PATTERN.search(
+            re.sub(r"\s+", "", event["project_name"])
         )
-        for segment in segments
     )
+
+
+def merge_framework_plan_items(
+    events: list[dict],
+    changes: list[dict],
+) -> list[dict]:
+    """Keep one aggregate event when an annual investment plan is present."""
+    framework_indexes = [
+        index for index, event in enumerate(events)
+        if is_framework_plan_event(event)
+    ]
+    if not framework_indexes:
+        return events
+    keep = framework_indexes[0]
+    kept_events = []
+    for index, event in enumerate(events):
+        if index == keep or event["event_type"] in {
+            "delay", "suspension", "termination",
+        }:
+            kept_events.append(event)
+            continue
+        changes.append({
+            "event_index": index,
+            "action": "merge_framework_plan_item",
+            "original": event["project_name"],
+        })
+    return kept_events
+
+
+def is_planned_capacity_of_adverse_project(
+    event: dict,
+    record: dict,
+) -> bool:
+    if (
+        event["event_type"] not in {"termination", "suspension", "delay"}
+        or record["action"] != "new"
+    ):
+        return False
+    evidence = re.sub(r"[\s,]", "", record["evidence_text"])
+    name = re.sub(r"[\s,]", "", event["project_name"] or "")
+    capacity_text = f"{record['capacity']:g}"
+    in_name = capacity_text in name and re.search(r"年(?:产|加工)", name)
+    in_named_project = re.search(
+        r"年(?:产|加工)" + re.escape(capacity_text) + r".{0,40}?项目",
+        evidence,
+    )
+    return bool(in_name or in_named_project)
+
+
+def breakdown_record_indexes(records: list[dict]) -> set[int]:
+    """Indexes of component records whose values sum to another record."""
+    indexes: set[int] = set()
+    for total_index, total in enumerate(records):
+        components = [
+            index for index, record in enumerate(records)
+            if index != total_index
+            and record["action"] == total["action"]
+            and record["capacity_unit"] == total["capacity_unit"]
+            and record["capacity"] < total["capacity"]
+            and "其中" in record["evidence_text"]
+        ]
+        if len(components) < 2:
+            continue
+        component_sum = sum(records[index]["capacity"] for index in components)
+        if abs(component_sum - total["capacity"]) <= 0.01 * total["capacity"]:
+            indexes.update(components)
+    return indexes
 
 
 def is_regulatory_environmental_threshold(
@@ -489,10 +682,22 @@ def normalize_capacity_fields(
     page_map = {item["page"]: item["text"] for item in pages}
     changes: list[dict] = []
 
+    for field in ("announcement_number", "company_name", "security_name"):
+        value = data.get(field)
+        collapsed = collapse_cjk_spaces(value)
+        if value is not None and collapsed != value:
+            data[field] = collapsed
+            changes.append({
+                "action": "collapse_cjk_spaces",
+                "field": field,
+                "original": value,
+            })
+
     data["events"] = merge_project_replacement_events(
         data["events"],
         changes,
     )
+    data["events"] = merge_framework_plan_items(data["events"], changes)
 
     for event_index, event in enumerate(data["events"]):
         if should_classify_as_technical_upgrade(event, full_text):
@@ -518,6 +723,18 @@ def normalize_capacity_fields(
                 "normalized": formal_capacity,
             })
 
+        for field in ("project_name", "project_entity", "project_location"):
+            value = event[field]
+            collapsed = collapse_cjk_spaces(value)
+            if value is not None and collapsed != value:
+                event[field] = collapsed
+                changes.append({
+                    "event_index": event_index,
+                    "action": "collapse_cjk_spaces",
+                    "field": field,
+                    "original": value,
+                })
+
         project_name = event["project_name"]
         if (
             project_name is not None
@@ -532,11 +749,35 @@ def normalize_capacity_fields(
 
         amount = event["investment_amount"]
         unit = event["investment_unit"]
-        if amount is not None and not explicit_project_investment_supported(
-            amount,
-            unit,
-            full_text,
+        supported_investment = (
+            find_supported_investment(amount, unit, full_text)
+            if amount is not None
+            else None
+        )
+        if supported_investment is not None and supported_investment != (
+            amount, unit,
         ):
+            event["investment_amount"], event["investment_unit"] = (
+                supported_investment
+            )
+            changes.append({
+                "event_index": event_index,
+                "action": "restore_source_investment_unit",
+                "original": {"investment_amount": amount, "investment_unit": unit},
+                "normalized": {
+                    "investment_amount": supported_investment[0],
+                    "investment_unit": supported_investment[1],
+                },
+            })
+        funding_source = event["funding_source"]
+        if funding_source and not FUNDING_SOURCE_PATTERN.search(funding_source):
+            event["funding_source"] = None
+            changes.append({
+                "event_index": event_index,
+                "action": "clear_non_source_funding_text",
+                "original": funding_source,
+            })
+        if amount is not None and supported_investment is None:
             cleared_fields = (
                 "investment_amount",
                 "investment_unit",
@@ -587,10 +828,22 @@ def normalize_capacity_fields(
                 "original": commissioning_date,
             })
 
+        framework_event = is_framework_plan_event(event)
+        breakdown_indexes = breakdown_record_indexes(event["capacity_changes"])
+        for record in event["capacity_changes"]:
+            for field in ("facility_type", "product_name"):
+                record[field] = collapse_cjk_spaces(record[field])
+
         kept_capacity_changes = []
         for record_index, record in enumerate(event["capacity_changes"]):
             removal_action = None
-            if is_existing_asset_background(record):
+            if framework_event:
+                removal_action = "remove_framework_item_capacity"
+            elif record_index in breakdown_indexes:
+                removal_action = "remove_capacity_breakdown"
+            elif is_planned_capacity_of_adverse_project(event, record):
+                removal_action = "remove_planned_capacity_of_adverse_project"
+            elif is_existing_asset_background(record):
                 removal_action = "remove_existing_asset_background"
             elif is_hypothetical_capacity_for_adverse_event(
                 event["event_type"],

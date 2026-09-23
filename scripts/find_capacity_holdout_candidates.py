@@ -19,13 +19,24 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = PROJECT_ROOT / "data" / "manifests" / "capacity_holdout_candidates.csv"
-DATE_RANGE = "2019-01-01~2026-09-23"
+if "--output" in sys.argv:
+    OUTPUT = PROJECT_ROOT / sys.argv[sys.argv.index("--output") + 1]
+DATE_RANGE = "2018-01-01~2026-09-23"
 
 # Issuers already used in capacity_dev, capacity_blind or capacity_v5_dev.
 USED_CODES = {
     "600019", "000709", "000932", "600581", "600231", "601686",
     "601003", "000717", "600282", "000708", "600569", "002843", "301217",
 }
+
+# Also exclude every issuer that appears in any existing capacity manifest.
+for manifest in (PROJECT_ROOT / "data" / "manifests").glob("capacity*sources.csv"):
+    with manifest.open(encoding="utf-8-sig") as handle:
+        USED_CODES.update(
+            row["security_code"].zfill(6)
+            for row in csv.DictReader(handle)
+            if row.get("security_code")
+        )
 
 STEEL_ISSUERS = {
     "000959": "首钢股份", "000825": "太钢不锈", "000898": "鞍钢股份",
@@ -36,12 +47,15 @@ STEEL_ISSUERS = {
     "601005": "重庆钢铁", "600117": "西宁特钢", "002318": "久立特材",
     "002478": "常宝股份", "603878": "武进不锈", "603995": "甬金股份",
     "002443": "金洲管道",
+    "000629": "钒钛股份", "002756": "永兴材料", "688186": "广大特材",
+    "300881": "盛德鑫泰", "300034": "钢研高纳", "600295": "鄂尔多斯",
+    "002541": "鸿路钢构", "600231": "凌钢股份", "000923": "河钢资源",
 }
 
 INCLUDE = re.compile(
     r"投产|投资建设|拟建设|新建|扩建|建设项目|固定资产投资|基建技改|投资框架|"
     r"产能置换|技术改造|技改|升级改造|改造项目|延期|暂停|暂缓|中止|终止|"
-    r"项目进展|项目的进展|搬迁"
+    r"项目进展|项目的进展|搬迁|高炉|转炉|电炉|焦炉|生产线|产线|基地"
 )
 EXCLUDE = re.compile(
     r"核查意见|法律意见|保荐|独立董事|问询|回复|摘要|英文|更正|取消|"
@@ -72,11 +86,17 @@ HEADERS = {
 }
 
 
-def post(url: str, data: dict) -> dict:
+def post(url: str, data: dict, attempts: int = 4) -> dict:
     body = urllib.parse.urlencode(data).encode("utf-8")
-    request = urllib.request.Request(url, data=body, headers=HEADERS)
-    with urllib.request.urlopen(request, timeout=20) as response:
-        return json.loads(response.read().decode("utf-8"))
+    for attempt in range(attempts):
+        try:
+            request = urllib.request.Request(url, data=body, headers=HEADERS)
+            with urllib.request.urlopen(request, timeout=40) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except Exception as error:
+            if attempt == attempts - 1:
+                raise
+            time.sleep(5 * (attempt + 1))
 
 
 def org_id(code: str) -> str | None:
@@ -164,7 +184,7 @@ def main() -> int:
             print(f"[ok]   {code} {name}: {count} candidates")
         except Exception as error:  # keep going for other issuers
             print(f"[fail] {code} {name}: {error}")
-        time.sleep(0.5)
+        time.sleep(2)
 
     rows.sort(key=lambda r: (r["pattern_guess"], r["security_code"],
                              r["announcement_date"]))
