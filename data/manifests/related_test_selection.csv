@@ -1,5 +1,5 @@
-holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url,notes
-related_test_001,000932,华菱钢铁,2026-01-23,annual_estimate,关于2026年与湖南钢铁集团日常关联交易预计额公告,https://epaper.stcn.com/pic/202601/23/3a41e37ef250a30f4e43f890e4e3ebde.pdf,公告编号2026-3; Securities Times e-paper copy; titles only (web search)
+﻿holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url,notes
+related_test_001,000932,华菱钢铁,2026-01-23,annual_estimate,关于2026年与湖南钢铁集团日常关联交易预计额公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-1/2026-01-23/11929413.PDF,公告编号2026-3; Sina mirror (standalone). The Securities Times e-paper copy bundled several other announcements and was replaced before annotation.
 related_test_002,600581,八一钢铁,2026-03-30,annual_estimate,关于2026年度日常关联交易的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034628.PDF,临2026-017; Sina mirror
 related_test_003,600581,八一钢铁,2026-03-30,group_scope,关于2026年度与新疆八一钢铁集团有限公司范围关联交易的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034653.PDF,临2026-018; title truncated in search result; Sina mirror
 related_test_004,600307,酒钢宏兴,2026-04-23,annual_estimate,关于2026年度日常关联交易预计的公告,http://xinpi.zqrb.cn/pdf/SH/600307/2026/0423/15fb2920675dd75cf34e9191dbad6a24.pdf,公告编号2026-009; Securities Daily disclosure copy
