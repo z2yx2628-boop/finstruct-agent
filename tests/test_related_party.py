@@ -85,6 +85,9 @@ def test_validator_accepts_supported_document():
         announcement_date="2026-04-30", transactions=[record()])
     report = validate_related_party_evidence(document, PAGES)
     assert report["passed"], report["issues"]
+    # The pipeline log reads these keys from every validator.
+    assert {"expected_event_types", "extracted_event_types", "event_counts"} <= set(report)
+    assert report["event_counts"] == {"purchase_goods": 1}
 
 
 def test_unit_header_applies_to_long_table_until_sentence_end():

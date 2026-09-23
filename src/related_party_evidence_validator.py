@@ -44,10 +44,17 @@ def validate_related_party_evidence(document: RelatedPartyDocument, pages: list[
     if not document.transactions and all(phrase in text for phrase in ESTIMATE_PHRASES[:2]):
         check(False, None, "transactions", None, "announcement has an estimate table but no records")
 
+    counts: dict[str, int] = {}
+    for record in document.transactions:
+        counts[record.transaction_category] = counts.get(record.transaction_category, 0) + 1
     return {
         "passed": not issues,
         "checks_count": checks,
         "passed_checks": checks - len(issues),
         "issues": issues,
         "record_count": len(document.transactions),
+        # Keys the pipeline log expects from every task's validator.
+        "expected_event_types": [],
+        "extracted_event_types": sorted(counts),
+        "event_counts": counts,
     }
