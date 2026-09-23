@@ -7,6 +7,7 @@ PDFs behave exactly as before.
 """
 from dataclasses import dataclass
 from functools import lru_cache
+import re
 from typing import Protocol
 
 LOW_CONFIDENCE_THRESHOLD = 0.90
@@ -45,6 +46,24 @@ def _group_lines(boxes: list[tuple[float, float, float, str, float]]) -> list[st
     ]
 
 
+_DIGIT_SEPARATOR = re.compile(r"(?<=\d)\s*([，,．.：:])\s*(?=\d)")
+_SEPARATOR_MAP = {"，": ",", ",": ",", "．": ".", ".": ".", "：": ".", ":": "."}
+
+
+def clean_ocr_numbers(text: str) -> str:
+    """Repair number punctuation that OCR commonly gets wrong.
+
+    Only characters between two digits are touched, e.g. "10，808" becomes
+    "10,808" and "3．5" becomes "3.5". Text outside numbers is unchanged.
+    """
+    def replace(match: re.Match) -> str:
+        return _SEPARATOR_MAP[match.group(1)]
+
+    text = _DIGIT_SEPARATOR.sub(replace, text)
+    # "10,808:万元" -> "10,808万元": a stray colon or dot before a unit.
+    return re.sub(r"(?<=\d)[：:．.](?=[万亿千百]?[元吨股])", "", text)
+
+
 class RapidOcrEngine:
     name = "RapidOCR (onnxruntime)"
 
@@ -66,7 +85,7 @@ class RapidOcrEngine:
             scores.append(float(score))
         lines = _group_lines(boxes)
         return OcrResult(
-            text="\n".join(lines),
+            text=clean_ocr_numbers("\n".join(lines)),
             confidence=round(sum(scores) / len(scores), 4),
             line_count=len(lines),
         )

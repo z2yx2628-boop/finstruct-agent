@@ -110,3 +110,11 @@ def test_text_pdf_records_table_cells(tmp_path):
     cells = [cell for table in parsed.pages[0].tables for row in table["rows"] for cell in row]
     assert "8,000.00" in cells
     assert "6,000.00" in cells
+
+
+def test_ocr_number_punctuation_is_repaired():
+    from src.ocr import clean_ocr_numbers
+
+    assert clean_ocr_numbers("投资总额为10，808:万元，") == "投资总额为10,808万元，"
+    assert clean_ocr_numbers("增长 3．5%") == "增长 3.5%"
+    assert clean_ocr_numbers("2019年2月1日，公司召开") == "2019年2月1日，公司召开"
