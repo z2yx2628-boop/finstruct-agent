@@ -127,3 +127,20 @@ def test_impact_fields_are_scored_only_when_used():
 
     assert report["impact_attribute_metrics"]["total"] == 2
     assert report["impact_attribute_metrics"]["matched"] == 1
+
+
+def test_research_fields_are_scored_only_when_used_and_reasons_ignore_order():
+    plain = evaluate_document(make_document(), make_document())
+    assert plain["research_attribute_metrics"]["total"] == 0
+
+    gold = make_document()
+    prediction = make_document()
+    gold.events[0].project_country = "印度尼西亚"
+    gold.events[0].decision_reasons = ["trade_policy", "market_demand"]
+    prediction.events[0].project_country = "印度尼西亚"
+    prediction.events[0].decision_reasons = ["market_demand", "trade_policy"]
+
+    report = evaluate_document(gold, prediction)
+
+    assert report["research_attribute_metrics"]["total"] == 2
+    assert report["research_attribute_metrics"]["matched"] == 2

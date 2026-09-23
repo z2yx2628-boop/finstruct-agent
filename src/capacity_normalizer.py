@@ -444,6 +444,36 @@ def explicit_project_investment_supported(
     return find_supported_investment(amount, unit, text) is not None
 
 
+COUNTRY_MARKERS = (
+    ("印度尼西亚", "印度尼西亚"), ("印尼", "印度尼西亚"), ("马来西亚", "马来西亚"),
+    ("越南", "越南"), ("泰国", "泰国"), ("沙特", "沙特阿拉伯"), ("塞尔维亚", "塞尔维亚"),
+    ("墨西哥", "墨西哥"), ("巴西", "巴西"), ("印度", "印度"), ("津巴布韦", "津巴布韦"),
+    ("南非", "南非"), ("埃及", "埃及"), ("阿联酋", "阿联酋"), ("土耳其", "土耳其"),
+    ("美国", "美国"), ("德国", "德国"), ("法国", "法国"), ("意大利", "意大利"),
+    ("英国", "英国"), ("俄罗斯", "俄罗斯"), ("哈萨克斯坦", "哈萨克斯坦"),
+    ("菲律宾", "菲律宾"), ("马来", "马来西亚"), ("柬埔寨", "柬埔寨"),
+)
+CHINA_LOCATION = re.compile(
+    r"省|自治区|开发区|工业园|中国|北京|上海|天津|重庆"
+    r"|[\u4e00-\u9fff]{2,}(?:市|县|镇)"
+    # "区" only after a place name, not generic 厂区/园区/库区/矿区 ("现有厂区").
+    r"|[\u4e00-\u9fff]{2,}(?<![厂园库矿])区"
+)
+
+
+def infer_project_country(location: str | None) -> str | None:
+    """Country from an explicit location; None when the text is unclear."""
+    if not location:
+        return None
+    compact = re.sub(r"\s+", "", location)
+    for marker, country in COUNTRY_MARKERS:
+        if marker in compact:
+            return country
+    if CHINA_LOCATION.search(compact):
+        return "中国"
+    return None
+
+
 def collapse_cjk_spaces(value: str | None) -> str | None:
     if value is None:
         return None
@@ -773,6 +803,24 @@ def normalize_capacity_fields(
                     "field": field,
                     "original": value,
                 })
+
+        if event.get("project_country") is None:
+            country = infer_project_country(event["project_location"])
+            if country is not None:
+                event["project_country"] = country
+                changes.append({
+                    "event_index": event_index,
+                    "action": "infer_project_country",
+                    "normalized": country,
+                })
+        reason_text = event.get("decision_reason_text")
+        if reason_text and not text_supported(reason_text, full_text):
+            event["decision_reason_text"] = None
+            changes.append({
+                "event_index": event_index,
+                "action": "clear_unsupported_reason_text",
+                "original": reason_text,
+            })
 
         project_name = event["project_name"]
         if (

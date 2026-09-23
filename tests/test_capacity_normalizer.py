@@ -992,3 +992,40 @@ def test_v7_maintenance_event_type_is_valid():
     )
 
     assert event.event_type == "maintenance"
+
+
+def test_v7_project_country_is_inferred_from_location():
+    from src.capacity_normalizer import infer_project_country
+
+    assert infer_project_country("印度尼西亚共和国中苏拉威西省MOROWALI县青山园区") == "印度尼西亚"
+    assert infer_project_country("河北乐亭经济开发区河钢乐亭钢铁有限公司厂区内") == "中国"
+    assert infer_project_country("湖州市开发区杨家埠霅水桥路618号") == "中国"
+    assert infer_project_country(None) is None
+    assert infer_project_country("现有厂区") is None
+
+
+def test_v7_reason_text_must_be_in_source():
+    document = CapacityDocument(events=[make_event(
+        event_type="termination",
+        project_location="印尼青山园区",
+        decision_reasons=["trade_policy", "market_demand"],
+        decision_reason_text="因产业政策、贸易政策和市场需求情况等有关因素影响",
+    )])
+
+    normalized, _ = normalize_capacity_fields(document, [{"page": 1, "text": (
+        "因产业政策、贸易政策和市场需求情况等有关因素影响，双方共同决定终止对该项目的投资。"
+    )}])
+    event = normalized.events[0]
+
+    assert event.project_country == "印度尼西亚"
+    assert event.decision_reasons == ["trade_policy", "market_demand"]
+    assert event.decision_reason_text is not None
+
+    fabricated = CapacityDocument(events=[make_event(
+        decision_reason_text="为应对欧盟碳关税",
+    )])
+    normalized, changes = normalize_capacity_fields(
+        fabricated, [{"page": 1, "text": "为降低成本实施改造。"}],
+    )
+    assert normalized.events[0].decision_reason_text is None
+    assert "clear_unsupported_reason_text" in [c["action"] for c in changes]

@@ -16,6 +16,18 @@ CapacityEventType = Literal[
     "maintenance",
 ]
 
+DecisionReason = Literal[
+    "trade_policy",          # tariffs, anti-dumping, quotas, CBAM, export policy
+    "environmental_policy",  # ultra-low emission, carbon, energy-saving rules
+    "industrial_policy",     # capacity replacement rules, industry regulation
+    "market_demand",         # demand, prices, product structure
+    "cost_reduction",        # cost, efficiency, raw materials
+    "equipment_safety",      # ageing equipment, safety hazards
+    "financing",             # funding, cash flow, fundraising progress
+    "overseas_expansion",    # overseas market or resource access
+    "other",
+]
+
 ProjectStatus = Literal[
     "planned",
     "approved",
@@ -65,6 +77,10 @@ class CapacityEvent(BaseModel):
     project_name: str | None = None
     project_entity: str | None = None
     project_location: str | None = None
+    # V7 research fields: domestic vs overseas projects and stated motives.
+    project_country: str | None = None
+    decision_reasons: list[DecisionReason] = Field(default_factory=list)
+    decision_reason_text: str | None = None
     project_status: ProjectStatus | None = None
 
     investment_amount: float | None = Field(default=None, ge=0)

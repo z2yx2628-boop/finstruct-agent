@@ -1,0 +1,13 @@
+Open each link in a browser and save the PDF into
+E:\金融人工智能比赛9..10-10.18\data\raw\guarantee
+using exactly the file name shown, then rerun this script.
+
+guarantee_001_600507_guarantee_multi_subsidiary.pdf
+http://static.cninfo.com.cn/finalpage/2024-08-30/1221053129.PDF
+
+guarantee_002_600408_guarantee_related_party.pdf
+http://static.cninfo.com.cn/finalpage/2025-06-07/1223803748.PDF
+
+guarantee_003_000708_guarantee_intra_group.pdf
+http://static.cninfo.com.cn/finalpage/2025-06-26/1223981007.PDF
+

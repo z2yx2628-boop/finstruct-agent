@@ -40,6 +40,11 @@ EVENT_ATTRIBUTE_FIELDS = (
 
 # V7 temporary-impact fields. They are scored only when Gold or prediction
 # fills them, so reports for sets labelled before V7 are unchanged.
+RESEARCH_EVENT_FIELDS = (
+    "project_country",
+    "decision_reasons",
+)
+
 IMPACT_EVENT_FIELDS = (
     "shutdown_facility",
     "shutdown_start_date",
@@ -271,6 +276,18 @@ def evaluate_document(
         )
         if row["expected"] is not None or row["actual"] is not None
     ]
+    research_rows = [
+        row for row in comparison_rows(
+            event_pairs,
+            RESEARCH_EVENT_FIELDS,
+            "event",
+        )
+        if row["expected"] not in (None, []) or row["actual"] not in (None, [])
+    ]
+    for row in research_rows:
+        if row["field"] == "decision_reasons":
+            same = sorted(row["expected"] or []) == sorted(row["actual"] or [])
+            row["matched"] = row["canonical_matched"] = same
     event_rows = event_rows + impact_rows
     factual_event_rows = [
         row for row in event_rows
@@ -367,6 +384,7 @@ def evaluate_document(
         "factual_attribute_metrics": attribute_metrics(factual_rows),
         "narrative_attribute_metrics": attribute_metrics(narrative_rows),
         "impact_attribute_metrics": attribute_metrics(impact_rows),
+        "research_attribute_metrics": attribute_metrics(research_rows),
         "canonical_attribute_metrics": attribute_metrics(
             all_rows,
             match_key="canonical_matched",
@@ -492,6 +510,10 @@ def evaluate_directories(gold_dir: Path, prediction_dir: Path) -> dict:
             reports,
             "impact_attribute_metrics",
         ),
+        "research_attribute_metrics": sum_attributes(
+            reports,
+            "research_attribute_metrics",
+        ),
         "canonical_attribute_metrics": sum_attributes(
             reports,
             "canonical_attribute_metrics",
@@ -559,6 +581,10 @@ def main() -> None:
     print_attributes(
         "Temporary impact attributes",
         report["impact_attribute_metrics"],
+    )
+    print_attributes(
+        "Research attributes (country, reasons)",
+        report["research_attribute_metrics"],
     )
     print_attributes(
         "Narrative fields (strict)",
