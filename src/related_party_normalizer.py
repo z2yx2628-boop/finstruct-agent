@@ -2,10 +2,14 @@
 import re
 
 from schemas.related_party import RelatedPartyDocument
-from src.capacity_normalizer import INVESTMENT_UNIT_SCALE, collapse_cjk_spaces
-from src.guarantee_normalizer import amount_supported
+from src.capacity_normalizer import collapse_cjk_spaces
+from src.guarantee_normalizer import amount_supported as _amount_supported
+from src.guarantee_normalizer import compact_keep_number_breaks
+from src.capacity_normalizer import number_positions
 
-TOTAL_ROW = re.compile(r"^(?:合计|小计|总计|共计)")
+TOTAL_ROW = re.compile(r"^(?:合计|小计|总计|共计|关联采购合计|关联销售合计|日常关联交易总)")
+UNIT_SCALE = {"元": 1, "千元": 1e3, "万元": 1e4, "百万元": 1e6, "亿元": 1e8,
+              "美元": 1, "万美元": 1e4, "百万美元": 1e6, "亿美元": 1e8}
 NAME_FIELDS = ("listed_company", "counterparty")
 AMOUNT_FIELDS = (
     ("estimated_amount", "estimated_unit"),
@@ -13,8 +17,29 @@ AMOUNT_FIELDS = (
 )
 
 
+UNIT_DECLARATION = re.compile(r"单位[:：](千元|百万元|万元|亿元|元)|[（(](千元|百万元|万元|亿元|元)[）)]")
+
+
+def amount_supported(amount: float, unit: str, text: str, evidence: str | None = None):
+    """Like the guarantee check, plus long tables: a number is in `unit` when
+    the nearest unit declaration before it ("单位：万元") names that unit and
+    no sentence end (。) lies between them, however many rows apart."""
+    found = _amount_supported(amount, unit, text, evidence)
+    if found is not None:
+        return found
+    compact_text = compact_keep_number_breaks(text)
+    for position in number_positions(amount, compact_text):
+        declarations = list(UNIT_DECLARATION.finditer(compact_text, 0, position))
+        if not declarations:
+            continue
+        last = declarations[-1]
+        if (last.group(1) or last.group(2)) == unit and "。" not in compact_text[last.end():position]:
+            return amount, unit
+    return None
+
+
 def amount_value(amount, unit) -> float | None:
-    scale = INVESTMENT_UNIT_SCALE.get(unit or "")
+    scale = UNIT_SCALE.get(unit or "")
     return None if amount is None or scale is None else amount * scale
 
 
@@ -66,6 +91,8 @@ def normalize_related_party_fields(
     records = data["transactions"]
     for index, record in enumerate(records):
         for field in NAME_FIELDS:
+            if record[field] is None:
+                continue
             collapsed = collapse_cjk_spaces(record[field])
             if collapsed != record[field]:
                 changes.append({"record_index": index, "action": "collapse_cjk_spaces",
@@ -90,7 +117,7 @@ def normalize_related_party_fields(
     subtotals = subtotal_indexes(records)
     kept, seen = [], set()
     for index, record in enumerate(records):
-        if TOTAL_ROW.match(compact(record["counterparty"])):
+        if TOTAL_ROW.match(compact(record["counterparty"])) or TOTAL_ROW.match(compact(record["category_text"])):
             changes.append({"record_index": index, "action": "drop_total_row"})
             continue
         if index in subtotals:

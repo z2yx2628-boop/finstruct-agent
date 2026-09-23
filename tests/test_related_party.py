@@ -22,7 +22,7 @@ def record(**fields) -> RelatedTransaction:
     values = {
         "listed_company": "宝山钢铁股份有限公司",
         "counterparty": "宝武集团及其子公司",
-        "transaction_category": "purchase_fuel_power",
+        "transaction_category": "purchase_goods",
         "estimated_amount": 1200000, "estimated_unit": "万元",
         "source_page": 1,
         "evidence_text": "采购燃料和动力 宝武集团及其子公司 1,200,000 1,050,000.5",
@@ -85,3 +85,11 @@ def test_validator_accepts_supported_document():
         announcement_date="2026-04-30", transactions=[record()])
     report = validate_related_party_evidence(document, PAGES)
     assert report["passed"], report["issues"]
+
+
+def test_unit_header_applies_to_long_table_until_sentence_end():
+    from src.related_party_normalizer import amount_supported
+    rows = "\n".join(f"关联方{i:02d}有限公司 销售商品 市场价格及协议价格 {1000 + i:,} {900 + i:,}" for i in range(40))
+    table = "（二）2026年预计日常关联交易类别和金额\n单位：万元\n" + rows
+    assert amount_supported(1039, "万元", table) == (1039, "万元")
+    assert amount_supported(1039, "万元", "单位：万元\n表一结束。说明：\n" + rows) is None

@@ -1,7 +1,7 @@
 """Deterministic evidence checks for related-party transaction extractions."""
 from schemas.related_party import RelatedPartyDocument
 from src.evidence_validator import compact, date_supported, text_supported
-from src.guarantee_normalizer import amount_supported
+from src.related_party_normalizer import amount_supported
 
 ESTIMATE_PHRASES = ("日常关联交易", "预计金额", "预计发生")
 
@@ -29,7 +29,8 @@ def validate_related_party_evidence(document: RelatedPartyDocument, pages: list[
     for index, record in enumerate(document.transactions):
         check(text_supported(record.evidence_text, page_map.get(record.source_page, "")),
               record.evidence_text[:60], "evidence_text", index, "evidence not found on source_page")
-        check(text_supported(record.counterparty, full_text), record.counterparty, "counterparty", index)
+        if record.counterparty:
+            check(text_supported(record.counterparty, full_text), record.counterparty, "counterparty", index)
         for amount_field, unit_field in (("estimated_amount", "estimated_unit"),
                                          ("prior_year_actual_amount", "prior_year_actual_unit")):
             amount = getattr(record, amount_field)

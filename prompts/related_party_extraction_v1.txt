@@ -7,33 +7,35 @@
 4. 原文未明确披露的可选字段必须填写null；没有符合条件的记录时transactions为空数组。
 
 记录粒度：
-5. 每条transaction对应“本次（本年度）日常关联交易预计金额和类别”表中的一行：一个交易类别与一个关联人。表格同一类别下列出多个关联人时，每个关联人分别生成一条记录。
-6. 表格中的“合计”“小计”“总计”行不得生成记录；只汇总总额填写到文档字段total_estimated_amount。
-7. “前次（上年）日常关联交易的预计和执行情况”表不单独生成记录；其“实际发生金额”只用于填写对应记录的prior_year_actual_amount。若本次预计表中已有“上年实际发生金额”列，优先采用本次预计表中的数值。
+5. 每条transaction对应正文中“本次（本年度）日常关联交易预计金额和类别”表的一行：一个交易类别与一个关联人。表格同一类别下列出多个关联人时，每个关联人分别生成一条记录。表格只按类别列示、没有关联人列时，每个类别生成一条记录，counterparty填写null。
+6. 表格中的“合计”“小计”“总计”“关联采购合计”“关联销售合计”行不得生成记录；本次预计的总金额填写到文档字段total_estimated_amount。
+6a. 只抽取正文中的本次预计表；“附件”中按关联方细分的明细表、在关联财务公司存贷款的明细表、委托或受托管理资产不生成记录。
+6b. 股东大会（股东会）决议公告、董事会决议公告只报告议案表决结果，不生成记录，transactions为空数组。
+7. “前次（上年）日常关联交易的预计和执行情况”表不单独生成记录。prior_year_actual_amount填写本次预计表同一行的实际发生金额列（包括“上年实际发生金额”或“上年1-10月实际发生额”等部分年度数据，按表中数值填写）；本次预计表没有实际发生金额列时填写null。
 8. 关联人按原文填写，例如“宝武集团及其子公司”“首钢集团有限公司及其下属公司”，不得拆分或改写；listed_company填写上市公司全称或原文中实际发生交易的主体。
 9. 原文表格同一行把一个关联人列为多个类别时，按类别分别生成记录。
 
 交易类别（transaction_category）：
-10. 采购铁矿石、废钢、合金、辅料等原材料为purchase_raw_materials；采购煤、焦炭、电、蒸汽、水、燃气等燃料和动力为purchase_fuel_power；采购设备、备件、其他商品为purchase_goods_other。
-11. 销售钢材、产品、商品为sell_goods；接受运输、工程、检修、技术、信息化等劳务或服务为receive_services；向关联人提供劳务或服务为provide_services。
-12. 租入或租出资产为lease；在关联财务公司存款、贷款、票据、结算等为financial_services；无法归入以上类别为other。
-13. category_text摘录原文的类别名称；goods_or_services摘录原文列明的交易内容，例如“铁矿石、焦炭”，未列明填写null。
+10. 采购商品、原材料、燃料和动力为purchase_goods；销售产品、商品为sell_goods；接受劳务、服务为receive_services；提供劳务、服务为provide_services。
+11. 租入资产为lease_in；租出资产为lease_out；资金使用费、利息收入、利息支出、存贷款等资金往来为financial_services；无法归入以上类别为other。
+12. 类别以表格原文为准，不得根据交易内容自行细分或改判。
+13. category_text摘录原文的类别名称，例如“采购商品”“接受劳务/服务”“资金使用费”；goods_or_services只在原文同一行列明具体内容（例如“铁矿石、焦炭”）时填写，否则填写null。
 
 金额：
-14. estimated_amount填写本次预计金额，保留原始数值和原始单位（元、万元、亿元），不得换算；表头写“单位：万元”或“（万元）”时单位取表头。
+14. estimated_amount填写本次预计金额，保留原始数值和原始单位（元、千元、万元、百万元、亿元），不得换算；表头写“单位：万元”“单位：百万元”或“（万元）”时单位取表头。预计金额为0的行照常生成记录，estimated_amount填写0。
 15. prior_year_actual_amount填写该类别、该关联人上年实际发生金额，保留原始数值和单位；未披露填写null。
 16. currency：人民币填写CNY；外币只有原文明示时填写对应代码。
-17. 金融服务类的“每日最高存款余额”“贷款额度”等可作为estimated_amount，但必须来自本次预计表或明确的本次预计条款。
+17. 本次预计表中列示的“资金使用费”“利息收入”等行按financial_services生成记录；表外的存款余额上限、授信额度等不生成记录。
 18. 不得把关联人注册资本、总资产、净资产、营业收入、占同类业务比例填写为金额。
 
 关联关系（relationship）：
 19. 控股股东、母公司或实际控制人为parent_or_controlling_shareholder；同一控股股东或实际控制人控制的其他企业为sister_company；上市公司的合营、联营、参股企业为associate_or_joint_venture；其他关联关系为other_related_party；原文无法判断填写null。
-20. 关联人写作“某集团及其子公司”时，按该集团与上市公司的关系判断。
+20. 关联人写作“某集团及其子公司”“某集团有限公司及下属企业”时，按该集团与上市公司的关系判断；“其他关联方”按原文注释判断（例如注明为联营、合营企业时为associate_or_joint_venture）。counterparty为null时relationship填写null。
 
 文档字段：
 21. security_code、security_name、company_name、announcement_number采用公告原文；announcement_date采用公告落款日期，统一为YYYY-MM-DD。
 22. estimate_year填写本次预计所属年度（整数），例如2026。
-23. total_estimated_amount、total_estimated_unit填写本次预计表的合计金额；原文没有合计时填写null，不得自行加总。
+23. total_estimated_amount、total_estimated_unit填写本次预计的日常关联交易总金额（表格“合计”“日常关联交易总金额”行，或正文明确的总额），保留表中数值和单位；原文没有总额时填写null，不得自行加总。
 24. requires_shareholder_approval：原文明确“尚需提交股东大会（股东会）审议”填写true，明确“无需提交股东大会审议”填写false，否则null。
 
 证据：

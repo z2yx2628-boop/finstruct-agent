@@ -190,14 +190,13 @@ def show_ocr_notice(log: dict) -> None:
 
 
 RELATED_CATEGORY_LABELS = {
-    "purchase_raw_materials": "关联采购·原材料",
-    "purchase_fuel_power": "关联采购·燃料动力",
-    "purchase_goods_other": "关联采购·其他商品",
+    "purchase_goods": "关联采购",
     "sell_goods": "关联销售",
     "receive_services": "接受劳务",
     "provide_services": "提供劳务",
-    "lease": "租赁",
-    "financial_services": "金融服务",
+    "lease_in": "租入资产",
+    "lease_out": "租出资产",
+    "financial_services": "资金往来",
     "other": "其他关联交易",
 }
 
@@ -205,7 +204,7 @@ RELATED_CATEGORY_LABELS = {
 def record_label(item: dict) -> str:
     if "transaction_category" in item:
         category = item.get("transaction_category")
-        return f"{RELATED_CATEGORY_LABELS.get(category, category)} · {item.get('counterparty', '')}"
+        return f"{RELATED_CATEGORY_LABELS.get(category, category)} · {item.get('counterparty') or '按类别汇总'}"
     return CAPACITY_EVENT_LABELS.get(item.get("event_type"), item.get("event_type"))
 
 

@@ -12,14 +12,13 @@ from pydantic import BaseModel, Field, model_validator
 DATE_PATTERN = r"^\d{4}-\d{2}-\d{2}$"
 
 TransactionCategory = Literal[
-    "purchase_raw_materials",   # 采购原材料 (铁矿石、废钢、合金…)
-    "purchase_fuel_power",      # 采购燃料和动力 (煤、焦炭、电、气、水)
-    "purchase_goods_other",     # 采购其他商品、设备、备件
-    "sell_goods",               # 销售产品、商品
-    "receive_services",         # 接受劳务、服务 (运输、工程、检修…)
-    "provide_services",         # 提供劳务、服务
-    "lease",                    # 租入或租出
-    "financial_services",       # 存款、贷款、票据等金融服务
+    "purchase_goods",       # 采购商品、原材料、燃料和动力
+    "sell_goods",           # 销售产品、商品
+    "receive_services",     # 接受劳务、服务
+    "provide_services",     # 提供劳务、服务
+    "lease_in",             # 租入资产
+    "lease_out",            # 租出资产
+    "financial_services",   # 资金使用费、利息收入、存贷款等资金往来
     "other",
 ]
 
@@ -33,11 +32,12 @@ Relationship = Literal[
 
 class RelatedTransaction(BaseModel):
     listed_company: str = Field(min_length=1)
-    counterparty: str = Field(min_length=1)
+    # None when the estimate table is by category only (no counterparty column).
+    counterparty: str | None = None
     relationship: Relationship | None = None
     transaction_category: TransactionCategory
-    category_text: str | None = None          # 原文类别，例如“向关联人购买燃料和动力”
-    goods_or_services: str | None = None      # 原文交易内容，例如“铁矿石、焦炭”
+    category_text: str | None = None          # 原文类别，例如“采购商品”“接受劳务/服务”
+    goods_or_services: str | None = None      # 原文列明的具体内容，例如“铁矿石、焦炭”
 
     estimated_amount: float | None = Field(default=None, ge=0)
     estimated_unit: str | None = None

@@ -17,7 +17,8 @@ from src.capacity_accuracy_evaluator import (
     ratio,
     values_match,
 )
-from src.guarantee_accuracy_evaluator import UNIT_SCALE, canon
+from src.guarantee_accuracy_evaluator import canon
+from src.related_party_normalizer import UNIT_SCALE
 
 DOCUMENT_FIELDS = (
     "security_code", "security_name", "company_name", "announcement_number",
