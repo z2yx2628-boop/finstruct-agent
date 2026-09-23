@@ -110,35 +110,43 @@ def org_id(code: str) -> str | None:
     return None
 
 
+SEARCH_KEYWORDS = (
+    "项目", "投产", "投资计划", "框架计划", "延期", "终止", "暂停", "暂缓",
+    "生产线", "高炉", "技术改造", "产能",
+)
+
+
 def announcements(code: str, org: str):
+    """Ask CNINFO to filter by keyword instead of paging every announcement."""
     is_sz = code.startswith(("0", "3"))
-    page = 1
-    while True:
-        result = post(
-            "http://www.cninfo.com.cn/new/hisAnnouncement/query",
-            {
-                "pageNum": page,
-                "pageSize": 30,
-                "column": "szse" if is_sz else "sse",
-                "tabName": "fulltext",
-                "plate": "sz" if is_sz else "sh",
-                "stock": f"{code},{org}",
-                "searchkey": "",
-                "secid": "",
-                "category": "",
-                "trade": "",
-                "seDate": DATE_RANGE,
-                "sortName": "",
-                "sortType": "",
-                "isHLtitle": "true",
-            },
-        )
-        items = result.get("announcements") or []
-        yield from items
-        if not result.get("hasMore") or not items:
-            return
-        page += 1
-        time.sleep(0.3)
+    for keyword in SEARCH_KEYWORDS:
+        page = 1
+        while page <= 5:
+            result = post(
+                "http://www.cninfo.com.cn/new/hisAnnouncement/query",
+                {
+                    "pageNum": page,
+                    "pageSize": 30,
+                    "column": "szse" if is_sz else "sse",
+                    "tabName": "fulltext",
+                    "plate": "sz" if is_sz else "sh",
+                    "stock": f"{code},{org}",
+                    "searchkey": keyword,
+                    "secid": "",
+                    "category": "",
+                    "trade": "",
+                    "seDate": DATE_RANGE,
+                    "sortName": "",
+                    "sortType": "",
+                    "isHLtitle": "true",
+                },
+            )
+            items = result.get("announcements") or []
+            yield from items
+            if not result.get("hasMore") or not items:
+                break
+            page += 1
+            time.sleep(0.2)
 
 
 def classify(title: str) -> str:
@@ -181,10 +189,10 @@ def main() -> int:
                     "source_url": url,
                 })
                 count += 1
-            print(f"[ok]   {code} {name}: {count} candidates")
+            print(f"[ok]   {code} {name}: {count} candidates", flush=True)
         except Exception as error:  # keep going for other issuers
             print(f"[fail] {code} {name}: {error}")
-        time.sleep(2)
+        time.sleep(0.5)
 
     rows.sort(key=lambda r: (r["pattern_guess"], r["security_code"],
                              r["announcement_date"]))
