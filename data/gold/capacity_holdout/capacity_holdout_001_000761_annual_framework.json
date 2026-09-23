@@ -1,0 +1,32 @@
+{
+  "security_code": "000761",
+  "security_name": "本钢板材",
+  "company_name": "本钢板材股份有限公司",
+  "announcement_number": "2024-018",
+  "announcement_date": "2024-04-29",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "2024年度投资框架计划",
+      "project_entity": "本钢板材股份有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": 19.45,
+      "investment_unit": "亿元",
+      "investment_currency": "CNY",
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2024年4月25日九届董事会第二十五次会议审议通过。",
+      "technology_description": "主要包括板材炼钢厂1号铸机改造、冷轧总厂高强钢热镀锌涂层机组、热连轧厂2300线提质增效改造（二期）、炼钢厂精炼区域除尘改造，以及新建常化酸洗机组等项目前期工作。",
+      "project_purpose": "强化投资经营管理，提升公司核心竞争力，推动企业实现高质量、绿色化、智能化发展。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "2024年计划安排投资19.45亿元",
+      "confidence": 1.0
+    }
+  ]
+}
