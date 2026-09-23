@@ -124,6 +124,7 @@ def date_supported(value: str, evidence: str) -> bool:
         return text_supported(value, evidence)
 
     variants = (
+        parsed.isoformat(),
         f"{parsed.year}-{parsed.month}-{parsed.day}",
         f"{parsed.year}/{parsed.month}/{parsed.day}",
         f"{parsed.year}年{parsed.month}月{parsed.day}日",
