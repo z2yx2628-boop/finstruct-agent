@@ -111,3 +111,19 @@ def test_same_type_events_pair_by_project_name_ignoring_spaces():
 
     assert report["capacity_record_metrics"]["true_positives"] == 1
     assert report["capacity_record_metrics"]["false_positives"] == 0
+
+
+def test_impact_fields_are_scored_only_when_used():
+    plain = evaluate_document(make_document(), make_document())
+    assert plain["impact_attribute_metrics"]["total"] == 0
+
+    gold = make_document()
+    prediction = make_document()
+    gold.events[0].output_loss_amount = 60
+    gold.events[0].output_loss_unit = "万吨"
+    prediction.events[0].output_loss_amount = 60
+
+    report = evaluate_document(gold, prediction)
+
+    assert report["impact_attribute_metrics"]["total"] == 2
+    assert report["impact_attribute_metrics"]["matched"] == 1

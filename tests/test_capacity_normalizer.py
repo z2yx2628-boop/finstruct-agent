@@ -932,3 +932,63 @@ def test_v6_removes_breakdown_components_beside_total():
     )
 
     assert [r.capacity for r in normalized.events[0].capacity_changes] == [95]
+
+
+def test_v7_temporary_loss_moves_to_impact_fields():
+    evidence = "7#高炉计划自2026年12月下旬开始停产65天，预计减少铁水产量60万吨，主要影响2027年一季度。"
+    document = CapacityDocument(events=[make_event(
+        event_type="technical_upgrade",
+        capacity_changes=[CapacityChange(
+            action="retired",
+            facility_type="7#高炉",
+            product_name="铁水",
+            capacity=60,
+            capacity_unit="万吨",
+            source_page=1,
+            evidence_text=evidence,
+            confidence=0.9,
+        )],
+    )])
+
+    normalized, changes = normalize_capacity_fields(
+        document, [{"page": 1, "text": evidence}],
+    )
+    event = normalized.events[0]
+
+    assert event.capacity_changes == []
+    assert event.output_loss_amount == 60
+    assert event.output_loss_unit == "万吨"
+    assert event.output_loss_product == "铁水"
+    assert event.shutdown_facility == "7#高炉"
+    assert event.shutdown_days == 65
+    assert "move_temporary_loss_to_impact" in [c["action"] for c in changes]
+
+
+def test_v7_permanent_retirement_is_kept():
+    evidence = "淘汰2座450m³高炉，退出炼铁产能120万吨/年"
+    document = CapacityDocument(events=[make_event(
+        event_type="capacity_replacement",
+        capacity_changes=[make_capacity_change("retired", 120, "万吨/年", evidence, "炼铁产能")],
+    )])
+
+    normalized, _ = normalize_capacity_fields(
+        document, [{"page": 1, "text": evidence}],
+    )
+
+    assert [r.capacity for r in normalized.events[0].capacity_changes] == [120]
+    assert normalized.events[0].output_loss_amount is None
+
+
+def test_v7_maintenance_event_type_is_valid():
+    event = make_event(
+        event_type="maintenance",
+        project_status="temporarily_shut_down",
+        shutdown_facility="530m³高炉",
+        shutdown_start_date="2026-06-30",
+        expected_restart_date="2026-07-20",
+        output_loss_amount=0.21,
+        output_loss_unit="万吨/日",
+        output_loss_product="铁水",
+    )
+
+    assert event.event_type == "maintenance"

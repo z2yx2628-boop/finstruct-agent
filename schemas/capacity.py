@@ -13,6 +13,7 @@ CapacityEventType = Literal[
     "delay",
     "suspension",
     "termination",
+    "maintenance",
 ]
 
 ProjectStatus = Literal[
@@ -23,6 +24,7 @@ ProjectStatus = Literal[
     "delayed",
     "suspended",
     "terminated",
+    "temporarily_shut_down",
 ]
 
 
@@ -88,6 +90,17 @@ class CapacityEvent(BaseModel):
     )
     timeline_text: str | None = None
 
+    # V7: temporary production impact (maintenance, planned shutdown of a
+    # facility during an upgrade, accident or weather halt). These are not
+    # capacity changes and must not be recorded in capacity_changes.
+    shutdown_facility: str | None = None
+    shutdown_start_date: str | None = Field(default=None, pattern=DATE_PATTERN)
+    expected_restart_date: str | None = Field(default=None, pattern=DATE_PATTERN)
+    shutdown_days: float | None = Field(default=None, gt=0)
+    output_loss_amount: float | None = Field(default=None, gt=0)
+    output_loss_unit: str | None = None
+    output_loss_product: str | None = None
+
     technology_description: str | None = None
     project_purpose: str | None = None
     capacity_changes: list[CapacityChange] = Field(default_factory=list)
@@ -109,6 +122,10 @@ class CapacityEvent(BaseModel):
         elif not self.investment_unit:
             raise ValueError(
                 "investment_unit is required when amount is present"
+            )
+        if self.output_loss_amount is not None and not self.output_loss_unit:
+            raise ValueError(
+                "output_loss_unit is required when output_loss_amount is present"
             )
         return self
 

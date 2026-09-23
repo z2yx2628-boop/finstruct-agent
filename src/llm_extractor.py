@@ -69,10 +69,13 @@ def extract_pledge(
     return document, content
 def extract_capacity(
     pages: list[dict],
+    prompt_path: Path | None = None,
 ) -> tuple[CapacityDocument, str, list[dict]]:
     load_dotenv(PROJECT_ROOT / ".env")
 
-    system_prompt = CAPACITY_PROMPT_PATH.read_text(encoding="utf-8")
+    system_prompt = (prompt_path or CAPACITY_PROMPT_PATH).read_text(
+        encoding="utf-8"
+    )
     schema = CapacityDocument.model_json_schema()
 
     page_text = "\n\n".join(

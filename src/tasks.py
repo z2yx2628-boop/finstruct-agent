@@ -48,7 +48,7 @@ def _validate_pledge(document: Any, pages: Pages) -> dict:
 def _extract_capacity(pages: Pages) -> ExtractResult:
     from src.llm_extractor import extract_capacity
 
-    return extract_capacity(pages)
+    return extract_capacity(pages, prompt_path=TASKS["capacity"].prompt_path)
 
 
 def _normalize_capacity(document: Any, pages: Pages):
@@ -81,7 +81,7 @@ TASKS: dict[str, TaskSpec] = {
     "capacity": TaskSpec(
         name="capacity",
         label="产能事件",
-        prompt_path=_prompt("capacity_extraction_v5.txt"),
+        prompt_path=_prompt("capacity_extraction_v7.txt"),
         extract=_extract_capacity,
         normalize=_normalize_capacity,
         normalization_tool="Deterministic capacity overfill normalizer",

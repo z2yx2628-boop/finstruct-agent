@@ -164,6 +164,7 @@ CAPACITY_EVENT_LABELS = {
     "delay": "延期",
     "suspension": "暂停",
     "termination": "终止",
+    "maintenance": "检修/临时停产",
 }
 
 

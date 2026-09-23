@@ -38,6 +38,18 @@ EVENT_ATTRIBUTE_FIELDS = (
     "source_page",
 )
 
+# V7 temporary-impact fields. They are scored only when Gold or prediction
+# fills them, so reports for sets labelled before V7 are unchanged.
+IMPACT_EVENT_FIELDS = (
+    "shutdown_facility",
+    "shutdown_start_date",
+    "expected_restart_date",
+    "shutdown_days",
+    "output_loss_amount",
+    "output_loss_unit",
+    "output_loss_product",
+)
+
 NARRATIVE_EVENT_FIELDS = (
     "timeline_text",
     "technology_description",
@@ -251,9 +263,19 @@ def evaluate_document(
         EVENT_ATTRIBUTE_FIELDS,
         "event",
     )
+    impact_rows = [
+        row for row in comparison_rows(
+            event_pairs,
+            IMPACT_EVENT_FIELDS,
+            "event",
+        )
+        if row["expected"] is not None or row["actual"] is not None
+    ]
+    event_rows = event_rows + impact_rows
     factual_event_rows = [
         row for row in event_rows
         if row["field"] in FACTUAL_EVENT_FIELDS
+        or row["field"] in IMPACT_EVENT_FIELDS
     ]
     narrative_rows = [
         row for row in event_rows
@@ -344,6 +366,7 @@ def evaluate_document(
         "environment_attribute_metrics": attribute_metrics(environment_rows),
         "factual_attribute_metrics": attribute_metrics(factual_rows),
         "narrative_attribute_metrics": attribute_metrics(narrative_rows),
+        "impact_attribute_metrics": attribute_metrics(impact_rows),
         "canonical_attribute_metrics": attribute_metrics(
             all_rows,
             match_key="canonical_matched",
@@ -465,6 +488,10 @@ def evaluate_directories(gold_dir: Path, prediction_dir: Path) -> dict:
             reports,
             "narrative_attribute_metrics",
         ),
+        "impact_attribute_metrics": sum_attributes(
+            reports,
+            "impact_attribute_metrics",
+        ),
         "canonical_attribute_metrics": sum_attributes(
             reports,
             "canonical_attribute_metrics",
@@ -528,6 +555,10 @@ def main() -> None:
     print_attributes(
         "Factual attributes",
         report["factual_attribute_metrics"],
+    )
+    print_attributes(
+        "Temporary impact attributes",
+        report["impact_attribute_metrics"],
     )
     print_attributes(
         "Narrative fields (strict)",

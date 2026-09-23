@@ -17,6 +17,7 @@ EVENT_ORDER = (
     "delay",
     "suspension",
     "termination",
+    "maintenance",
 )
 
 DOCUMENT_TEXT_FIELDS = (

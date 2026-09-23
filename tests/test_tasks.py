@@ -12,8 +12,8 @@ def test_registered_prompts_exist():
         assert spec.prompt_path.exists(), spec.prompt_path
 
 
-def test_capacity_task_keeps_frozen_v5_prompt():
-    assert get_task("capacity").prompt_path.name == "capacity_extraction_v5.txt"
+def test_capacity_task_uses_v7_prompt():
+    assert get_task("capacity").prompt_path.name == "capacity_extraction_v7.txt"
     assert get_task("pledge").prompt_path.name == "pledge_extraction_v6.txt"
 
 

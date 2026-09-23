@@ -40,6 +40,45 @@ CJK_SPACE_PATTERN = re.compile(
     r"|\s+(?=[\u3000-\u303f\u4e00-\u9fff\uff00-\uffef])"
 )
 
+# V7: wording for a temporary production loss (maintenance, shutdown during
+# an upgrade, accident or weather halt), as opposed to permanent retirement.
+TEMPORARY_LOSS_PATTERN = re.compile(
+    r"(?:停产|停炉|停机|检修|休风|焖炉|限产|减产).{0,30}?\d+(?:\.\d+)?\s*(?:天|日|个月)"
+    r"|\d+(?:\.\d+)?\s*(?:天|日|个月).{0,20}?(?:停产|停炉|检修)"
+    r"|(?:减少|影响|损失|降低).{0,15}?(?:产量|铁水量|钢产量)"
+    r"|复产|恢复生产"
+)
+PERMANENT_RETIREMENT_PATTERN = re.compile(r"淘汰|拆除|去功能化|退出|关停|永久")
+DURATION_DAYS = re.compile(r"(\d+(?:\.\d+)?)\s*天")
+
+
+def is_temporary_output_loss(record: dict) -> bool:
+    evidence = re.sub(r"\s+", "", record["evidence_text"])
+    return bool(
+        TEMPORARY_LOSS_PATTERN.search(evidence)
+        and not PERMANENT_RETIREMENT_PATTERN.search(evidence)
+    )
+
+
+def move_loss_to_impact_fields(event: dict, record: dict) -> dict:
+    """Record a temporary loss on the event instead of as a capacity change."""
+    moved = {}
+    if event.get("output_loss_amount") is None:
+        unit = re.sub(r"/年$", "", record["capacity_unit"])
+        moved = {
+            "output_loss_amount": record["capacity"],
+            "output_loss_unit": unit,
+            "output_loss_product": record.get("product_name"),
+        }
+        if record.get("facility_type") and not event.get("shutdown_facility"):
+            moved["shutdown_facility"] = record["facility_type"]
+        days = DURATION_DAYS.search(re.sub(r"\s+", "", record["evidence_text"]))
+        if days and event.get("shutdown_days") is None:
+            moved["shutdown_days"] = float(days.group(1))
+        event.update(moved)
+    return moved
+
+
 EXPLICIT_RETIREMENT_MARKERS = (
     "淘汰",
     "退出",
@@ -837,7 +876,16 @@ def normalize_capacity_fields(
         kept_capacity_changes = []
         for record_index, record in enumerate(event["capacity_changes"]):
             removal_action = None
-            if framework_event:
+            if is_temporary_output_loss(record):
+                removal_action = "move_temporary_loss_to_impact"
+                moved = move_loss_to_impact_fields(event, record)
+                if moved:
+                    changes.append({
+                        "event_index": event_index,
+                        "action": "set_temporary_impact_fields",
+                        "normalized": moved,
+                    })
+            elif framework_event:
                 removal_action = "remove_framework_item_capacity"
             elif record_index in breakdown_indexes:
                 removal_action = "remove_capacity_breakdown"
