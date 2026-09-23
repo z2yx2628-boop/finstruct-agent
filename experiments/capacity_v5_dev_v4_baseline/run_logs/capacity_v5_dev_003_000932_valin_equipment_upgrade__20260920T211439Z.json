@@ -1,0 +1,71 @@
+{
+  "run_id": "20260920T211439Z",
+  "status": "success",
+  "started_at": "2026-09-20T21:14:39.285836+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v5_dev\\capacity_v5_dev_003_000932_valin_equipment_upgrade.pdf",
+    "size_bytes": 185172,
+    "sha256": "ad9ada5165bbf4ddf9e0ea898649fa6f44213b05368f059c27c3bb8492a26545"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 3,
+      "text_char_count": 2425,
+      "needs_ocr": false,
+      "duration_seconds": 0.0087
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 13.1672
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0004
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 9,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "technical_upgrade"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 1,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0012
+    }
+  ],
+  "completed_at": "2026-09-20T21:14:52.466934+00:00",
+  "duration_seconds": 13.1811,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_003_000932_valin_equipment_upgrade\\20260920T211439Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_003_000932_valin_equipment_upgrade\\20260920T211439Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_003_000932_valin_equipment_upgrade\\20260920T211439Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_003_000932_valin_equipment_upgrade\\20260920T211439Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_003_000932_valin_equipment_upgrade\\20260920T211439Z\\evidence_report.json"
+  ]
+}

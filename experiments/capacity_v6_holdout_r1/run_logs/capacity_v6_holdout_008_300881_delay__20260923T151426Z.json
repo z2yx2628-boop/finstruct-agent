@@ -1,0 +1,82 @@
+{
+  "run_id": "20260923T151426Z",
+  "status": "success",
+  "started_at": "2026-09-23T15:14:26.201625+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v6_holdout\\capacity_v6_holdout_008_300881_delay.pdf",
+    "size_bytes": 169556,
+    "sha256": "2616e423b832ec1279732ab7e6fd62214992b57739f07d84fc0c0d7f39a204f6"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v5.txt",
+    "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 8,
+      "text_char_count": 6446,
+      "needs_ocr": false,
+      "duration_seconds": 0.0151
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 11.2211
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 1,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 262421470.16,
+            "investment_unit": "元",
+            "investment_currency": "CNY",
+            "funding_source": "募集资金"
+          }
+        }
+      ],
+      "duration_seconds": 0.0014
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 7,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "delay"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 1,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0023
+    }
+  ],
+  "completed_at": "2026-09-23T15:14:37.447453+00:00",
+  "duration_seconds": 11.2458,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T151426Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T151426Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T151426Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T151426Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T151426Z\\evidence_report.json"
+  ]
+}

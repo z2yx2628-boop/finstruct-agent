@@ -1,0 +1,87 @@
+{
+  "run_id": "20260920T222229Z",
+  "status": "needs_review",
+  "started_at": "2026-09-20T22:22:29.379775+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v5_dev\\capacity_v5_dev_001_600581_bayi_framework.pdf",
+    "size_bytes": 231218,
+    "sha256": "9c371bb2a264ae5798a354e9d7a909fb7ada9482298a09428ce3cf636874de03"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v5.txt",
+    "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 5,
+      "text_char_count": 3390,
+      "needs_ocr": false,
+      "duration_seconds": 0.0159
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 11.6625
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 2,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_project_name",
+          "original": "新疆八一钢铁股份有限公司2025年固定资产投资计划"
+        },
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 38115.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY",
+            "funding_source": "资金计划28350.5万元"
+          }
+        }
+      ],
+      "duration_seconds": 0.0017
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 6,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "technical_upgrade"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 1,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0013
+    }
+  ],
+  "completed_at": "2026-09-20T22:22:41.064520+00:00",
+  "duration_seconds": 11.6848,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_001_600581_bayi_framework\\20260920T222229Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_001_600581_bayi_framework\\20260920T222229Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_001_600581_bayi_framework\\20260920T222229Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_001_600581_bayi_framework\\20260920T222229Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_001_600581_bayi_framework\\20260920T222229Z\\evidence_report.json"
+  ]
+}

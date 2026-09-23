@@ -1,0 +1,29 @@
+{
+  "security_code": "600655",
+  "security_name": "豫园股份",
+  "announcement_number": "临2025-061",
+  "company_name": "上海豫园旅游商城（集团）股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "上海复地投资管理有限公司",
+      "shares": 40930000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 4.0,
+      "total_share_capital_ratio": 1.05,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-06-26",
+      "pledge_end_date": "2026-06-26",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "重庆国际信托股份有限公司",
+      "purpose": "偿还债务",
+      "source_page": 2,
+      "evidence_text": "股东名\n称\n是否为\n控股股\n东\n本次质押股数\n是否为限售\n股（如是，\n注明限售类\n型）\n是否补\n充质押\n质押起始\n日\n质押到期\n日\n质权人\n占其所\n持股份\n比例\n占公司\n总股本\n比例\n质押融\n资资金\n用途\n上海复\n地投资\n管理有\n限公司\n控股股\n东一致\n行动人\n40,930,000\n否\n否\n2025 年6\n月26 日\n2026 年6\n月26 日\n重庆国际\n信托股份\n有限公司\n4.00%\n1.05%\n偿还债\n务",
+      "confidence": 1.0
+    }
+  ]
+}

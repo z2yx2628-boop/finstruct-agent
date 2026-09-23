@@ -1,0 +1,13 @@
+﻿holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url
+capacity_v6_holdout_001,002756,永兴材料,2018-03-07,commissioning,关于“年产25万吨高品质不锈钢和特种合金棒线项目”建成投产的公告,https://static.cninfo.com.cn/finalpage/2018-03-08/1204458005.PDF
+capacity_v6_holdout_002,002756,永兴材料,2019-02-01,technical_upgrade,关于投资建设高性能不锈钢连铸系统技改项目的公告,https://static.cninfo.com.cn/finalpage/2019-02-02/1205821676.PDF
+capacity_v6_holdout_003,002478,常宝股份,2018-09-28,construction,关于投资新建特种专用管材生产线项目的公告,https://static.cninfo.com.cn/finalpage/2018-09-29/1205477379.PDF
+capacity_v6_holdout_004,002318,久立特材,2024-06-17,construction,关于投资建设年产20000吨核能及油气用高性能管材项目的公告,https://static.cninfo.com.cn/finalpage/2024-06-18/1220375732.PDF
+capacity_v6_holdout_005,002318,久立特材,2021-12-30,commissioning,关于募投项目投产的公告,https://static.cninfo.com.cn/finalpage/2021-12-31/1212059536.PDF
+capacity_v6_holdout_006,002541,鸿路钢构,2024-03-29,delay,关于部分募集资金投资项目延期的公告,https://static.cninfo.com.cn/finalpage/2024-03-30/1219468465.PDF
+capacity_v6_holdout_007,688186,广大特材,2022-03-08,delay,关于部分募投项目延期的公告,https://static.cninfo.com.cn/finalpage/2022-03-09/1212527303.PDF
+capacity_v6_holdout_008,300881,盛德鑫泰,2022-04-14,delay,关于募集资金投资项目重新论证并延期的公告,https://static.cninfo.com.cn/finalpage/2022-04-15/1212918215.PDF
+capacity_v6_holdout_009,000923,河钢资源,2026-02-04,suspension,关于南非子公司暂停井下采矿的公告,https://static.cninfo.com.cn/finalpage/2026-02-05/1224966908.PDF
+capacity_v6_holdout_010,002443,金洲管道,2024-08-29,progress,关于固定资产投资建设项目的进展公告,https://static.cninfo.com.cn/finalpage/2024-08-30/1221055736.PDF
+capacity_v6_holdout_011,601005,重庆钢铁,2025-03-27,hard_negative_asset_purchase,重庆钢铁关于参与竞拍4100mm宽厚板生产线等资产的公告,https://static.cninfo.com.cn/finalpage/2025-03-28/1222923509.PDF
+capacity_v6_holdout_012,600126,杭钢股份,2020-06-30,hard_negative_data_center,关于投资设立全资子公司暨建设浙江云计算数据中心项目的进展公告,https://static.cninfo.com.cn/finalpage/2020-07-01/1207977117.PDF

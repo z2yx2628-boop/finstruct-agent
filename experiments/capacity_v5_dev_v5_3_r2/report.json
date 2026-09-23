@@ -1,0 +1,1507 @@
+{
+  "passed": false,
+  "corpus": {
+    "gold_documents": 8,
+    "evaluated_documents": 8,
+    "missing_predictions": [],
+    "unexpected_predictions": []
+  },
+  "event_metrics": {
+    "true_positives": 11,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "capacity_record_metrics": {
+    "true_positives": 2,
+    "false_positives": 1,
+    "false_negatives": 0,
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1": 0.8
+  },
+  "environment_record_metrics": {
+    "true_positives": 0,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "document_field_metrics": {
+    "matched": 40,
+    "total": 40,
+    "accuracy": 1.0,
+    "present_matched": 40,
+    "present_total": 40,
+    "present_accuracy": 1.0,
+    "overfilled": 0
+  },
+  "event_attribute_metrics": {
+    "matched": 110,
+    "total": 176,
+    "accuracy": 0.625,
+    "present_matched": 45,
+    "present_total": 108,
+    "present_accuracy": 0.4166666666666667,
+    "overfilled": 3
+  },
+  "capacity_attribute_metrics": {
+    "matched": 10,
+    "total": 10,
+    "accuracy": 1.0,
+    "present_matched": 9,
+    "present_total": 9,
+    "present_accuracy": 1.0,
+    "overfilled": 0
+  },
+  "environment_attribute_metrics": {
+    "matched": 0,
+    "total": 0,
+    "accuracy": 1.0,
+    "present_matched": 0,
+    "present_total": 0,
+    "present_accuracy": 1.0,
+    "overfilled": 0
+  },
+  "factual_attribute_metrics": {
+    "matched": 153,
+    "total": 193,
+    "accuracy": 0.7927461139896373,
+    "present_matched": 94,
+    "present_total": 132,
+    "present_accuracy": 0.7121212121212122,
+    "overfilled": 2
+  },
+  "narrative_attribute_metrics": {
+    "matched": 7,
+    "total": 33,
+    "accuracy": 0.21212121212121213,
+    "present_matched": 0,
+    "present_total": 25,
+    "present_accuracy": 0.0,
+    "overfilled": 1
+  },
+  "canonical_attribute_metrics": {
+    "matched": 160,
+    "total": 226,
+    "accuracy": 0.7079646017699115,
+    "present_matched": 94,
+    "present_total": 157,
+    "present_accuracy": 0.5987261146496815,
+    "overfilled": 3
+  },
+  "documents": {
+    "capacity_v5_dev_001_600581_bayi_framework": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 8,
+        "total": 16,
+        "accuracy": 0.5,
+        "present_matched": 2,
+        "present_total": 10,
+        "present_accuracy": 0.2,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 13,
+        "total": 18,
+        "accuracy": 0.7222222222222222,
+        "present_matched": 7,
+        "present_total": 12,
+        "present_accuracy": 0.5833333333333334,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 3,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 13,
+        "total": 21,
+        "accuracy": 0.6190476190476191,
+        "present_matched": 7,
+        "present_total": 15,
+        "present_accuracy": 0.4666666666666667,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_name",
+          "expected": "2025年度固定资产投资计划",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_entity",
+          "expected": "新疆八一钢铁股份有限公司",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 38115.0,
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "第八届董事会第二十二次会议审议同意，尚需提交股东大会审议。",
+          "actual": "2025年度固定资产投资计划经公司战略与投资委员会全体委员一致通过，提交公司第八届董事会第二十二次会议审议同意；尚需提交股东大会审议。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "固定资产投资计划主要以环保、超低排、安全、节能等合规性项目为主，并优先考虑品种调整、质量改善、资源接续等项目。",
+          "actual": "以环保、超低排、安全、节能等合规性项目为主，优先考虑品种调整、质量改善、资源接续等项目。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "通过工艺创新降低生产成本并提高企业竞争力。",
+          "actual": "满足环保、安全政策要求，降低生产成本，提高企业竞争力，保障公司持续稳健发展。",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v5_dev_002_600569_angang_framework_adjustment": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 9,
+        "total": 16,
+        "accuracy": 0.5625,
+        "present_matched": 3,
+        "present_total": 10,
+        "present_accuracy": 0.3,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 14,
+        "total": 18,
+        "accuracy": 0.7777777777777778,
+        "present_matched": 8,
+        "present_total": 12,
+        "present_accuracy": 0.6666666666666666,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 3,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 14,
+        "total": 21,
+        "accuracy": 0.6666666666666666,
+        "present_matched": 8,
+        "present_total": 15,
+        "present_accuracy": 0.5333333333333333,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_name",
+          "expected": "2026年度固定资产投资年中计划调整",
+          "actual": "关于公司2026年度固定资产投资年中计划调整的议案",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 328238.37,
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2026年第十三次临时董事会会议审议通过，属于董事会审批权限，无需提交股东会审议。",
+          "actual": "2026年9月18日召开第十三次临时董事会审议通过；本次调整后投资概算总额328,238.37万元，本年度投资额78,941.37万元。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "调整项目围绕烟气脱硫脱硝、除尘灰接卸与配加、超纯净钢冶炼高效捞渣、高炉煤气放散塔改造及除尘系统优化。",
+          "actual": "重点围绕轧钢加热炉烟气末端脱硫脱硝治理、除尘灰环保接卸与配加、超纯净钢冶炼高效捞渣、高炉煤气放散塔自力式点火伴烧改造以及转炉、精炼炉除尘系统优化等关键环节。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "补齐环保设施短板，支撑特钢产品结构升级并提升能源利用效率和生产保障能力。",
+          "actual": "全面满足环保提标与A级绩效要求，支撑特钢产品结构升级，消除安全环保隐患，实现节能降本与生产效能提升。",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v5_dev_003_000932_valin_equipment_upgrade": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 1.0,
+        "f1": 0.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 13,
+        "total": 16,
+        "accuracy": 0.8125,
+        "present_matched": 8,
+        "present_total": 11,
+        "present_accuracy": 0.7272727272727273,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 18,
+        "total": 18,
+        "accuracy": 1.0,
+        "present_matched": 13,
+        "present_total": 13,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 3,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 18,
+        "total": 21,
+        "accuracy": 0.8571428571428571,
+        "present_matched": 13,
+        "present_total": 16,
+        "present_accuracy": 0.8125,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "建设期10个月，其中高炉全停产65天；7#高炉计划自2026年12月下旬开始停产。",
+          "actual": "建设期10个月，其中高炉全停产工期65天；7#高炉计划自2026年12月下旬开始停产；已列入公司2026年度固定资产投资计划；董事会已于2026年5月15日审议通过。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "更新改造高炉本体、烧结区域、能源公辅和铁水运输系统，并升级高炉本体区域PLC系统。",
+          "actual": "集成应用炉顶五通球结构优化、加深死铁层、新型高效冷却壁、炉底封板加固及智能化控制等成熟先进技术",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "消除设备隐患与安全问题，推进技术迭代升级与全流程降本增效。",
+          "actual": "消除7#高炉及其配套系统设备隐患与安全问题，保障炼铁系统长周期稳定运行，推进技术迭代升级与全流程降本增效",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 1,
+        "environment_records": 0
+      }
+    },
+    "capacity_v5_dev_004_000709_hbis_plate_construction": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 8,
+        "total": 16,
+        "accuracy": 0.5,
+        "present_matched": 4,
+        "present_total": 12,
+        "present_accuracy": 0.3333333333333333,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 18,
+        "total": 23,
+        "accuracy": 0.782608695652174,
+        "present_matched": 14,
+        "present_total": 19,
+        "present_accuracy": 0.7368421052631579,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 3,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 18,
+        "total": 26,
+        "accuracy": 0.6923076923076923,
+        "present_matched": 14,
+        "present_total": 22,
+        "present_accuracy": 0.6363636363636364,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_name",
+          "expected": "宽厚板项目",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 79.67,
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "亿元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "自有资金及自筹资金",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "计划建设工期24个月；项目已取得河北省国资委审核同意，仍需履行其他政府部门审批手续后方可开工。",
+          "actual": "2026年7月23日董事会审议通过；已获河北省国资委审核同意；尚需履行其他相关政府部门审批手续后方可开工建设；计划建设工期24个月。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "新建1条5600mm热轧宽厚板生产线，并配套铁水预处理、精炼、连铸、热处理、除尘及公辅系统。",
+          "actual": "新建5600mm热轧宽厚板生产线，配套铁水预处理、精炼、连铸、热处理、余热回收利用、脱硫脱硝等系统。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "优化产品结构，建设以品种钢为特色的宽厚板生产基地并提升市场竞争力。",
+          "actual": "优化产品结构，打造以品种钢为特色的优质、高效、绿色、智能的国内头部宽厚板生产基地，提升市场竞争力。",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v5_dev_005_002843_bichamp_multi_delay": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 24,
+        "total": 48,
+        "accuracy": 0.5,
+        "present_matched": 9,
+        "present_total": 33,
+        "present_accuracy": 0.2727272727272727,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 26,
+        "total": 44,
+        "accuracy": 0.5909090909090909,
+        "present_matched": 14,
+        "present_total": 32,
+        "present_accuracy": 0.4375,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 3,
+        "total": 9,
+        "accuracy": 0.3333333333333333,
+        "present_matched": 0,
+        "present_total": 6,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 29,
+        "total": 53,
+        "accuracy": 0.5471698113207547,
+        "present_matched": 14,
+        "present_total": 38,
+        "present_accuracy": 0.3684210526315789,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_entity",
+          "expected": "湖南泰嘉新材料科技股份有限公司",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 11211.13,
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "拟投入募集资金9,844.21万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "达到预定可使用状态日期由2025年9月20日延期至2026年9月20日。",
+          "actual": "原定达到预定可使用状态日期为2025年9月20日，现延期至2026年9月20日；因外部环境不确定性增加、市场竞争加剧，公司暂缓建设。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "建设硬质合金带锯条产线以满足高难度、高硬度材料切割需求。",
+          "actual": "新增硬质合金带锯条产线，满足切割难度大、硬度较高的金属材料、高档木材等领域客户需求",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "source_page",
+          "expected": 1,
+          "actual": 2,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "project_entity",
+          "expected": "湖南泰嘉新材料科技股份有限公司",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "investment_amount",
+          "expected": 12280.5,
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "funding_source",
+          "expected": "拟投入募集资金9,849.40万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "timeline_text",
+          "expected": "达到预定可使用状态日期由2025年9月20日延期至2026年9月20日。",
+          "actual": "原定达到预定可使用状态日期为2025年9月20日，现延期至2026年9月20日；因外部环境不确定性增加、市场竞争加剧，公司暂缓建设。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "project_purpose",
+          "expected": "建设高速钢双金属带锯条产线并提升相关产品产能。",
+          "actual": "新增年产1,000万米高速钢双金属带锯条生产能力，进一步提升公司双金属带锯条产品产能",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "source_page",
+          "expected": 1,
+          "actual": 2,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "project_entity",
+          "expected": "湖南泰嘉新材料科技股份有限公司",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "investment_amount",
+          "expected": 24183.79,
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "funding_source",
+          "expected": "拟投入募集资金20,112.01万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "timeline_text",
+          "expected": "达到预定可使用状态日期由2025年9月20日延期至2026年9月20日。",
+          "actual": "原定达到预定可使用状态日期为2025年9月20日，现延期至2026年9月20日；因新能源产业市场竞争加剧、光伏逆变器出口市场政策调整、市场需求波动大，公司暂缓建设。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "project_purpose",
+          "expected": "生产优化器、逆变器和储能变流器等产品。",
+          "actual": "主要产出为优化器、逆变器和储能变流器等产品",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "source_page",
+          "expected": 1,
+          "actual": 2,
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v5_dev_006_301217_tongguan_multi_delay": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 34,
+        "total": 48,
+        "accuracy": 0.7083333333333334,
+        "present_matched": 15,
+        "present_total": 27,
+        "present_accuracy": 0.5555555555555556,
+        "overfilled": 2
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 36,
+        "total": 44,
+        "accuracy": 0.8181818181818182,
+        "present_matched": 20,
+        "present_total": 26,
+        "present_accuracy": 0.7692307692307693,
+        "overfilled": 2
+      },
+      "narrative_attribute_metrics": {
+        "matched": 3,
+        "total": 9,
+        "accuracy": 0.3333333333333333,
+        "present_matched": 0,
+        "present_total": 6,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 39,
+        "total": 53,
+        "accuracy": 0.7358490566037735,
+        "present_matched": 20,
+        "present_total": 32,
+        "present_accuracy": 0.625,
+        "overfilled": 2
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "募集资金拟投资额8,388.01万元",
+          "actual": "募集资金8,388.01万元，其余自筹",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "达到预定可使用状态日期由2023年12月调整至2024年6月。",
+          "actual": "原计划2023年12月达到预定可使用状态，现延期至2024年6月。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "建设技术中心，加快产品研发并丰富高性能电子铜箔产品品类。",
+          "actual": "加快产品研发速度，丰富高性能电子铜箔产品品类，优化产品结构，提高市场份额。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "source_page",
+          "expected": 4,
+          "actual": 3,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "project_entity",
+          "expected": null,
+          "actual": "铜陵铜冠电子铜箔有限公司",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "funding_source",
+          "expected": "部分超募资金60,000万元，不足部分自筹",
+          "actual": "超募资金60,000万元，其余自筹",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "timeline_text",
+          "expected": "达到预定可使用状态日期由2024年2月调整至2024年6月；建设周期18个月。",
+          "actual": "原计划2024年2月达到预定可使用状态，现延期至2024年6月。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "project_purpose",
+          "expected": "满足国内外市场对锂电铜箔的需求并提升铜箔生产能力。",
+          "actual": "满足国内外市场对锂电铜箔的需求，提升公司满足客户订单需求能力、铜箔生产能力和市场占有率，提高企业经济效益。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "source_page",
+          "expected": 4,
+          "actual": 3,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "project_entity",
+          "expected": null,
+          "actual": "合肥铜冠电子铜箔有限公司",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "funding_source",
+          "expected": "部分超募资金96,385.93万元，不足部分自筹",
+          "actual": "超募资金96,385.93万元，其余自筹",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "timeline_text",
+          "expected": "达到预定可使用状态日期由2024年3月调整至2024年6月；建设周期18个月。",
+          "actual": "原计划2024年3月达到预定可使用状态，现延期至2024年6月。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "project_purpose",
+          "expected": "满足国内外市场对锂电铜箔的需求并提升铜箔生产能力。",
+          "actual": "满足国内外市场对锂电铜箔的需求，提升公司满足客户订单需求能力、铜箔生产能力和市场占有率，提高企业经济效益。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "source_page",
+          "expected": 4,
+          "actual": 3,
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v5_dev_007_600019_baosteel_overseas_financing": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v5_dev_008_600282_nangang_overseas_progress": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 14,
+        "total": 16,
+        "accuracy": 0.875,
+        "present_matched": 4,
+        "present_total": 5,
+        "present_accuracy": 0.8,
+        "overfilled": 1
+      },
+      "capacity_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 4,
+        "present_total": 4,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 23,
+        "total": 23,
+        "accuracy": 1.0,
+        "present_matched": 13,
+        "present_total": 13,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 1,
+        "total": 3,
+        "accuracy": 0.3333333333333333,
+        "present_matched": 0,
+        "present_total": 1,
+        "present_accuracy": 0.0,
+        "overfilled": 1
+      },
+      "canonical_attribute_metrics": {
+        "matched": 24,
+        "total": 26,
+        "accuracy": 0.9230769230769231,
+        "present_matched": 13,
+        "present_total": 14,
+        "present_accuracy": 0.9285714285714286,
+        "overfilled": 1
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2021年7月16日相关方签署项目合资协议及保证协议。",
+          "actual": "2021年6月28日召开第八届董事会第九次会议、2021年7月16日召开2021年第三次临时股东大会审议通过；2021年7月16日签署合资协议。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": null,
+          "actual": "实施焦炭项目",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    }
+  }
+}

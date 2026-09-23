@@ -6,8 +6,10 @@ from pydantic import BaseModel, Field, model_validator
 SourceType = Literal[
     "pdf_text",
     "pdf_scan",
+    "pdf_mixed",
     "image",
     "webpage",
+    "word",
     "spreadsheet",
 ]
 

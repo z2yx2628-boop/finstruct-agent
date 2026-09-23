@@ -1,0 +1,91 @@
+{
+  "started_at": "2026-09-20T19:35:40.100682+00:00",
+  "pdf_count": 12,
+  "task": "capacity",
+  "runs": [
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_001_600019_baosteel_construction.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_001_600019_baosteel_construction.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_001_600019_baosteel_construction\\20260920T192345Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_002_600019_baosteel_construction.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_002_600019_baosteel_construction.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_002_600019_baosteel_construction\\20260920T192406Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_003_000709_hbis_construction.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_003_000709_hbis_construction.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T193540Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_004_000709_hbis_commissioning.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_004_000709_hbis_commissioning.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T192513Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_005_000709_hbis_commissioning.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_005_000709_hbis_commissioning.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_005_000709_hbis_commissioning\\20260920T192535Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_006_000932_valin_technical_upgrade.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_006_000932_valin_technical_upgrade.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_006_000932_valin_technical_upgrade\\20260920T192556Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_007_000932_valin_technical_upgrade.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_007_000932_valin_technical_upgrade.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_007_000932_valin_technical_upgrade\\20260920T192627Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_008_600581_bayi_technical_upgrade.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_008_600581_bayi_technical_upgrade.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_008_600581_bayi_technical_upgrade\\20260920T192641Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_009_600581_bayi_construction.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_009_600581_bayi_construction.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_009_600581_bayi_construction\\20260920T192659Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_010_600231_linggang_replacement.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_010_600231_linggang_replacement.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_010_600231_linggang_replacement\\20260920T192712Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_011_600231_linggang_delay.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_011_600231_linggang_delay.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_011_600231_linggang_delay\\20260920T192727Z",
+      "cached": true
+    },
+    {
+      "pdf": "data\\raw\\capacity_dev\\capacity_dev_012_601686_youfa_termination.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_dev_v4\\predictions\\capacity_dev_012_601686_youfa_termination.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_012_601686_youfa_termination\\20260920T192738Z",
+      "cached": true
+    }
+  ],
+  "completed_at": "2026-09-20T19:36:40.565294+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "security_code": "600307",
+  "security_name": "酒钢宏兴",
+  "company_name": "甘肃酒钢集团宏兴钢铁股份有限公司",
+  "announcement_number": "2023-033",
+  "announcement_date": "2023-10-28",
+  "events": [
+    {
+      "event_type": "capacity_construction",
+      "project_name": "炼轧厂工艺装备提升及产品结构调整项目",
+      "project_entity": "甘肃酒钢集团宏兴钢铁股份有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "炼钢连铸工程于2025年6月前建成投产，4200mm宽厚板工程于2025年10月前建成投产；项目分为一期（炼钢连铸、4200mm宽厚板生产线及配套公辅设施）和二期（双高棒生产线）。",
+      "technology_description": "高端化、智能化、绿色化项目；含屋顶光伏；一次设计、分期实施。",
+      "project_purpose": "提升工艺装备水平、优化产品结构，提高企业核心竞争力；为超低排放改造及‘提质增效、转型升级’高质量发展奠定基础。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": " 项目名称：炼轧厂工艺装备提升及产品结构调整项目\n 项目核定投资额：500,000.00 万元\n……\n项目类别：高端化、智能化、绿色化项目\n……\n炼钢连铸工程于2025 年6 月前建成投产，4200mm 宽厚板工程于2025 年10 月前建成投产。",
+      "confidence": 1.0
+    }
+  ]
+}

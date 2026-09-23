@@ -1,0 +1,32 @@
+{
+  "security_code": "002541",
+  "security_name": "鸿路钢构",
+  "company_name": "安徽鸿路钢结构（集团）股份有限公司",
+  "announcement_number": "2024-032",
+  "announcement_date": "2024-03-30",
+  "events": [
+    {
+      "event_type": "delay",
+      "project_name": "鸿路钢构信息化与智能化管理平台建设项目",
+      "project_entity": "安徽鸿路钢结构（集团）股份有限公司",
+      "project_location": null,
+      "project_status": "delayed",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": "2024-12-31",
+      "timeline_text": "达到预定可使用状态日期由2023年12月延期至2024年12月；截至2023年末投入进度36.90%。",
+      "technology_description": "涉及ERP系统升级、智能质量管理系统、生产监控系统、能源管控系统、物联网管理系统、运营分析系统等信息化平台建设。",
+      "project_purpose": "提升信息化与智能化管理水平，实现智能管控一体化，降低运营成本，提高安全生产水平和运营效率。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 2,
+      "evidence_text": "6 鸿路钢构信息化与智能化管理平台建设项目 8,000.00 2,952.20 36.90%",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Frozen Gold labels and archived experiments are hashed byte-for-byte.
+# Never convert their line endings on checkout.
+data/gold/** -text
+experiments/** -text

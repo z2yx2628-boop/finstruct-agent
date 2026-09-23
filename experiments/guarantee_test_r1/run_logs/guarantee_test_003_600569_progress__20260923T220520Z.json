@@ -1,0 +1,82 @@
+{
+  "run_id": "20260923T220520Z",
+  "status": "needs_review",
+  "started_at": "2026-09-23T22:05:20.945512+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\guarantee_test\\guarantee_test_003_600569_progress.pdf",
+    "size_bytes": 177353,
+    "sha256": "1270e6a412cb90909f1f05e1a02fe1b38386473af06315f3454fa8ef7ccccce9"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\guarantee_extraction_v3.txt",
+    "sha256": "c92c96b8c2a374074bee15ba8e3c24fba6a719ab5430e317267d58c5fd528fd5"
+  },
+  "task": "guarantee",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF + OCR",
+      "source_type": "pdf_text",
+      "page_count": 5,
+      "text_char_count": 2620,
+      "needs_ocr": false,
+      "ocr_pages": [],
+      "ocr_engine": null,
+      "ocr_confidence": {},
+      "ocr_low_confidence_pages": [],
+      "duration_seconds": 0.2247
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 21.66
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic guarantee normalizer",
+      "changes_count": 2,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_debt_ratio",
+          "original": 74.31
+        },
+        {
+          "event_index": 1,
+          "action": "drop_prior_limit_in_progress_announcement"
+        }
+      ],
+      "duration_seconds": 0.0038
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 10,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "guarantee_provided"
+      ],
+      "event_counts": {
+        "guarantee_provided": 1,
+        "guarantee_limit": 0,
+        "guarantee_released": 0,
+        "guarantee_overdue": 0
+      },
+      "duration_seconds": 0.0033
+    }
+  ],
+  "completed_at": "2026-09-23T22:05:42.843452+00:00",
+  "duration_seconds": 21.898,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_003_600569_progress\\20260923T220520Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_003_600569_progress\\20260923T220520Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_003_600569_progress\\20260923T220520Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_003_600569_progress\\20260923T220520Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_003_600569_progress\\20260923T220520Z\\evidence_report.json"
+  ]
+}

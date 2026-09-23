@@ -1,0 +1,32 @@
+{
+  "security_code": "688186",
+  "security_name": "广大特材",
+  "company_name": "张家港广大特材股份有限公司",
+  "announcement_number": "2022-012",
+  "announcement_date": "2022-03-09",
+  "events": [
+    {
+      "event_type": "delay",
+      "project_name": "特殊合金材料扩建项目",
+      "project_entity": null,
+      "project_location": null,
+      "project_status": "delayed",
+      "investment_amount": 30000.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "首次公开发行股票募集资金30,000.00万元",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "达到预定可使用状态时间由2023年延长至2024年12月；截至2021年12月31日累计投入募集资金10,237.54万元。",
+      "technology_description": "购置国内外先进设备，建设特殊合金产品生产线，用于生产高温合金、耐蚀合金、超高强度钢、超高纯不锈钢等特殊合金产品。",
+      "project_purpose": null,
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "同意公司将募投项目“特殊合金材料扩建项目”达到预定可使用状态的时间延长至2024年12月",
+      "confidence": 1.0
+    }
+  ]
+}

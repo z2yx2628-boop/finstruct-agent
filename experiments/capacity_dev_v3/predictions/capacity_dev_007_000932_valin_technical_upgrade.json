@@ -1,0 +1,43 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2020-92",
+  "announcement_date": "2020-11-06",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "华菱涟钢冷轧镀锌机组技术改造工程项目",
+      "project_entity": "湖南华菱涟源钢铁有限公司",
+      "project_location": "华菱涟钢冷轧厂区",
+      "project_status": "approved",
+      "investment_amount": 45000.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "自有资金",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目建设周期约8个月，预计于2021年7月建成投运。",
+      "technology_description": "建设一条立式连续镀锌线、一条半自动包装机组、主厂房及相应公辅设施",
+      "project_purpose": "优化产品结构，提高镀锌板产品质量和产品档次，满足高端家电用钢市场需求",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": null,
+          "product_name": "热镀锌板",
+          "capacity": 40.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "项目投资总额45,000 万元，生产规模40 万吨/年，产品定位于高端家电板。",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "为进一步优化产品结构，提高镀锌板产品质量和产品档次，满足高端家电用钢市场需求，增强市场竞争力和盈利能力，公司下属子公司湖南华菱涟源钢铁有限公司（以下简称“华菱涟钢”）拟实施冷轧镀锌机组技术改造工程项目（以下简称“项目”）。",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "security_code": "603995",
+  "security_name": "甬金股份",
+  "company_name": "浙江甬金金属科技股份有限公司",
+  "announcement_number": "2023-048",
+  "announcement_date": "2023-06-02",
+  "events": [
+    {
+      "event_type": "termination",
+      "project_name": "年加工70万吨宽幅冷轧不锈钢板带项目",
+      "project_entity": "甬金金属科技（印尼）有限公司",
+      "project_location": "印度尼西亚共和国中苏拉威西省 MOROWALI 县青山园区",
+      "project_status": "terminated",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2022年1月11日董事会审议通过，2022年2月9日股东大会审议通过，2022年10月4日完成工商注册，截至公告日尚未开工；2023年6月1日董事会审议通过终止投资并注销项目公司。",
+      "technology_description": null,
+      "project_purpose": "因产业政策、贸易政策和市场需求情况等有关因素影响，经与合资方友好协商决定终止投资。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": null,
+          "product_name": "宽幅冷轧不锈钢板带",
+          "capacity": 70.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "建设年加工70 万吨宽幅冷轧不锈钢板带项目",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "审议通过了公司与时任关联方浙江青展实业有限公司……建设年加工70 万吨宽幅冷轧不锈钢板带项目的相关议案。",
+      "confidence": 1.0
+    }
+  ]
+}

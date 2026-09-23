@@ -1,0 +1,10 @@
+﻿holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url
+capacity_holdout_001,000761,本钢板材,2024-04-28,annual_framework,本钢板材股份有限公司2024年投资框架计划公告,https://static.cninfo.com.cn/finalpage/2024-04-29/1219857376.PDF
+capacity_holdout_002,600307,酒钢宏兴,2023-10-27,framework_project_launch,酒钢宏兴关于启动固定资产投资项目的公告,https://static.cninfo.com.cn/finalpage/2023-10-28/1218190702.PDF
+capacity_holdout_003,600399,抚顺特钢,2023-04-19,equipment_heavy_upgrade,抚顺特钢：关于投资建设技术改造项目的公告,https://static.cninfo.com.cn/finalpage/2023-04-20/1216476288.PDF
+capacity_holdout_004,000778,新兴铸管,2020-09-29,equipment_heavy_upgrade,关于投资建设武安工业区焦化升级改造项目的公告,https://static.cninfo.com.cn/finalpage/2020-09-30/1208514943.PDF
+capacity_holdout_005,603995,甬金股份,2024-03-28,multi_project_delay,关于向特定对象发行股票部分募投项目建设延期的公告,https://static.cninfo.com.cn/finalpage/2024-03-29/1219439169.PDF
+capacity_holdout_006,603878,武进不锈,2019-04-25,multi_project_delay,关于部分募集资金投资项目延期的公告,https://static.cninfo.com.cn/finalpage/2019-04-26/1206100089.PDF
+capacity_holdout_007,603995,甬金股份,2023-06-01,overseas_termination,关于终止投资印尼项目暨对外投资进展的公告,https://static.cninfo.com.cn/finalpage/2023-06-02/1216964208.PDF
+capacity_holdout_008,002110,三钢闽光,2019-12-26,capacity_cooperation_suspension,关于中止与福建亿鑫钢铁有限公司钢铁产能合作的公告,https://static.cninfo.com.cn/finalpage/2019-12-27/1207197579.PDF
+capacity_holdout_009,000959,首钢股份,2020-04-29,commissioning,关于连续式酸洗线投产的自愿性信息披露公告,https://static.cninfo.com.cn/finalpage/2020-04-30/1207680272.PDF

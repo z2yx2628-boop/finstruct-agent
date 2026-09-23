@@ -1,0 +1,32 @@
+{
+  "security_code": "603995",
+  "security_name": "甬金股份",
+  "company_name": "甬金科技集团股份有限公司",
+  "announcement_number": "2024-015",
+  "announcement_date": "2024-03-29",
+  "events": [
+    {
+      "event_type": "delay",
+      "project_name": "年加工22万吨精密不锈钢板带项目",
+      "project_entity": "甘肃甬金金属科技有限公司",
+      "project_location": null,
+      "project_status": "delayed",
+      "investment_amount": 122868.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "向特定对象发行股票募集资金22,000.00万元（用于项目一期建设）；IPO募集资金55,000.00万元（用于项目一期及二期建设）",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": "2025-03-31",
+      "timeline_text": "一期计划完工日期由2024年3月31日调整至2025年3月31日；二期由2025年9月30日调整至2026年9月30日，二期在一期建成后启动，开工、完工时间相应顺延。",
+      "technology_description": null,
+      "project_purpose": null,
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 3,
+      "evidence_text": "拟将“年加工22万吨精密不锈钢板带项目”达到预定可使用状态的时间进行延期",
+      "confidence": 1.0
+    }
+  ]
+}

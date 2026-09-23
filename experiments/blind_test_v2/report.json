@@ -1,0 +1,711 @@
+{
+  "passed": false,
+  "corpus": {
+    "gold_documents": 20,
+    "evaluated_documents": 20,
+    "missing_predictions": [],
+    "unexpected_predictions": []
+  },
+  "event_metrics": {
+    "true_positives": 30,
+    "false_positives": 2,
+    "false_negatives": 3,
+    "precision": 0.9375,
+    "recall": 0.9090909090909091,
+    "f1": 0.923076923076923
+  },
+  "document_field_metrics": {
+    "matched": 79,
+    "total": 80,
+    "accuracy": 0.9875
+  },
+  "event_attribute_metrics": {
+    "matched": 355,
+    "total": 360,
+    "accuracy": 0.9861111111111112,
+    "present_matched": 183,
+    "present_total": 188,
+    "present_accuracy": 0.973404255319149,
+    "overfilled": 0
+  },
+  "documents": {
+    "blind_001_600052_dongwang": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 8,
+        "present_total": 8,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_002_600594_yibai": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 24,
+        "total": 24,
+        "accuracy": 1.0,
+        "present_matched": 11,
+        "present_total": 11,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_003_601886_jianghe": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 1,
+        "false_negatives": 2,
+        "precision": 0.5,
+        "recall": 0.3333333333333333,
+        "f1": 0.4
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 12,
+        "accuracy": 0.9166666666666666,
+        "present_matched": 4,
+        "present_total": 5,
+        "present_accuracy": 0.8,
+        "overfilled": 0
+      },
+      "missing_events": [
+        {
+          "event_type": "extension",
+          "shareholder_name": "江河汇众",
+          "shares": 8655.0,
+          "shares_unit": "万股",
+          "source_page": 1
+        },
+        {
+          "event_type": "pledge",
+          "shareholder_name": "江河汇众",
+          "shares": 680.0,
+          "shares_unit": "万股",
+          "source_page": 2
+        }
+      ],
+      "unexpected_events": [
+        {
+          "event_type": "extension",
+          "shareholder_name": "江河汇众",
+          "shares": 680.0,
+          "shares_unit": "万股",
+          "source_page": 2
+        }
+      ],
+      "field_mismatches": [
+        {
+          "event_index": 0,
+          "event_identity": {
+            "event_type": "release",
+            "shareholder_name": "江河汇众",
+            "shares": 1730.0,
+            "shares_unit": "万股",
+            "source_page": 1
+          },
+          "field": "pledge_start_date",
+          "expected": "2024-03-27",
+          "actual": null,
+          "matched": false
+        }
+      ]
+    },
+    "blind_004_300686_zhidongli": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 9,
+        "present_total": 9,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_005_300682_langxin": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_006_600580_wolong": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 4,
+        "present_total": 4,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_007_600588_yonyou": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 1,
+        "false_negatives": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 12,
+        "accuracy": 0.9166666666666666,
+        "present_matched": 4,
+        "present_total": 5,
+        "present_accuracy": 0.8,
+        "overfilled": 0
+      },
+      "missing_events": [
+        {
+          "event_type": "pledge",
+          "shareholder_name": "北京用友科技",
+          "shares": 35000000.0,
+          "shares_unit": "股",
+          "source_page": 2
+        }
+      ],
+      "unexpected_events": [
+        {
+          "event_type": "pledge",
+          "shareholder_name": "北京用友科技有限公司",
+          "shares": 35000000.0,
+          "shares_unit": "股",
+          "source_page": 2
+        }
+      ],
+      "field_mismatches": [
+        {
+          "event_index": 0,
+          "event_identity": {
+            "event_type": "release",
+            "shareholder_name": "北京用友科技有限公司",
+            "shares": 55000000.0,
+            "shares_unit": "股",
+            "source_page": 1
+          },
+          "field": "pledge_start_date",
+          "expected": "2024-06-19",
+          "actual": null,
+          "matched": false
+        }
+      ]
+    },
+    "blind_008_600645_zhongyuan": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 9,
+        "present_total": 9,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_009_600655_yuyuan": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 8,
+        "present_total": 8,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_010_603678_torch": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 24,
+        "total": 24,
+        "accuracy": 1.0,
+        "present_matched": 11,
+        "present_total": 11,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_011_600613_shenqi": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 8,
+        "present_total": 8,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_012_600703_sanan": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 4,
+        "present_total": 4,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_013_300552_wanji": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 24,
+        "total": 24,
+        "accuracy": 1.0,
+        "present_matched": 16,
+        "present_total": 16,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_014_300706_ashichuang": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 24,
+        "total": 24,
+        "accuracy": 1.0,
+        "present_matched": 13,
+        "present_total": 13,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_015_300928_huaan": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_016_600382_mingzhu": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 48,
+        "total": 48,
+        "accuracy": 1.0,
+        "present_matched": 24,
+        "present_total": 24,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_017_600693_dongbai": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 4,
+        "present_total": 4,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_018_300560_zhongfutong": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 8,
+        "present_total": 8,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_019_300014_eve": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 24,
+        "total": 24,
+        "accuracy": 1.0,
+        "present_matched": 10,
+        "present_total": 10,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "blind_020_002701_org": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 3,
+        "total": 4,
+        "accuracy": 0.75
+      },
+      "event_attribute_metrics": {
+        "matched": 33,
+        "total": 36,
+        "accuracy": 0.9166666666666666,
+        "present_matched": 18,
+        "present_total": 21,
+        "present_accuracy": 0.8571428571428571,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": [
+        {
+          "field": "announcement_number",
+          "expected": "（奥瑞）2025—临074号",
+          "actual": "（奥瑞）2025－临074 号",
+          "matched": false
+        },
+        {
+          "event_index": 1,
+          "event_identity": {
+            "event_type": "pledge",
+            "shareholder_name": "上海原龙",
+            "shares": 1862.0,
+            "shares_unit": "万股",
+            "source_page": 1
+          },
+          "field": "is_restricted_share",
+          "expected": false,
+          "actual": null,
+          "matched": false
+        },
+        {
+          "event_index": 1,
+          "event_identity": {
+            "event_type": "pledge",
+            "shareholder_name": "上海原龙",
+            "shares": 1862.0,
+            "shares_unit": "万股",
+            "source_page": 1
+          },
+          "field": "is_supplementary_pledge",
+          "expected": false,
+          "actual": null,
+          "matched": false
+        },
+        {
+          "event_index": 1,
+          "event_identity": {
+            "event_type": "pledge",
+            "shareholder_name": "上海原龙",
+            "shares": 1862.0,
+            "shares_unit": "万股",
+            "source_page": 1
+          },
+          "field": "pledge_end_condition",
+          "expected": "至质权人申请解除质押之日止",
+          "actual": null,
+          "matched": false
+        }
+      ]
+    }
+  }
+}

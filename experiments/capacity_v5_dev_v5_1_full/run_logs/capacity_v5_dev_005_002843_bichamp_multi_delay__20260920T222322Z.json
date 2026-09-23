@@ -1,0 +1,102 @@
+{
+  "run_id": "20260920T222322Z",
+  "status": "success",
+  "started_at": "2026-09-20T22:23:22.050990+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v5_dev\\capacity_v5_dev_005_002843_bichamp_multi_delay.pdf",
+    "size_bytes": 169293,
+    "sha256": "f96ffd746f799df58fbc1cb2b2cba3c570abef08592d09b90d267c68afe6f4d7"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v5.txt",
+    "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 5,
+      "text_char_count": 3887,
+      "needs_ocr": false,
+      "duration_seconds": 0.0162
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 27.6456
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 3,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 11211.13,
+            "investment_unit": "万元",
+            "investment_currency": "CNY",
+            "funding_source": "募集资金9,844.21万元"
+          }
+        },
+        {
+          "event_index": 1,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 12280.5,
+            "investment_unit": "万元",
+            "investment_currency": "CNY",
+            "funding_source": "募集资金9,849.40万元"
+          }
+        },
+        {
+          "event_index": 2,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 24183.79,
+            "investment_unit": "万元",
+            "investment_currency": "CNY",
+            "funding_source": "募集资金20,112.01万元"
+          }
+        }
+      ],
+      "duration_seconds": 0.0016
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 14,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "delay"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 3,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0017
+    }
+  ],
+  "completed_at": "2026-09-20T22:23:49.719984+00:00",
+  "duration_seconds": 27.669,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260920T222322Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260920T222322Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260920T222322Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260920T222322Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260920T222322Z\\evidence_report.json"
+  ]
+}

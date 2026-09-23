@@ -1,0 +1,37 @@
+{
+  "security_code": "600307",
+  "security_name": "酒钢宏兴",
+  "company_name": "甘肃酒钢集团宏兴钢铁股份有限公司",
+  "announcement_number": "2025-026",
+  "announcement_date": "2025-04-30",
+  "total_guarantee_balance": 7.71,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "甘肃酒钢集团宏兴钢铁股份有限公司",
+      "guaranteed_party": "酒钢集团榆中钢铁有限责任公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": "银行承兑汇票或国内信用证",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "担保有效期为3年",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "公司本次为榆钢公司向金融机构申请的4.5 亿元融资业务的敞口部分（不超过1 亿元）提供连带责任保证担保。……同意榆钢公司在金融机构申请总额为不超过4.5 亿元的融资业务（主要用于银行承兑汇票或国内信用证），由公司为其不超过1 亿元的敞口部分提供连带责任保证担保，担保有效期为3 年。其中，榆钢公司以不超过3.5 亿元的自有资金作为保证金提供质押担保，榆钢公司以其自有资产按照实际接受的担保金额为限向公司提供同等额度的反担保。",
+      "confidence": 0.98
+    }
+  ]
+}

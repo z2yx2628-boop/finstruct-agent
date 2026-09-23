@@ -1,0 +1,118 @@
+{
+  "run_id": "20260923T153724Z",
+  "status": "needs_review",
+  "started_at": "2026-09-23T15:37:24.570605+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v6_holdout_scan\\capacity_v6_holdout_008_300881_delay.pdf",
+    "size_bytes": 17420751,
+    "sha256": "036f2f093bde70d7b61e52d0e8efe5d705554d6065a3001997d8a34b98bd6187"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v5.txt",
+    "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF + OCR",
+      "source_type": "pdf_scan",
+      "page_count": 8,
+      "text_char_count": 6264,
+      "needs_ocr": true,
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "ocr_engine": "RapidOCR (onnxruntime)",
+      "ocr_confidence": {
+        "1": 0.8684,
+        "2": 0.8842,
+        "3": 0.8969,
+        "4": 0.9183,
+        "5": 0.9008,
+        "6": 0.9032,
+        "7": 0.9053,
+        "8": 0.8568
+      },
+      "ocr_low_confidence_pages": [
+        1,
+        2,
+        3,
+        8
+      ],
+      "duration_seconds": 22.9835
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 12.4079
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 2,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 262421470.16,
+            "investment_unit": "元",
+            "investment_currency": "CNY",
+            "funding_source": "募集资金投资金额262,421,470.16元"
+          }
+        },
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_exact_date",
+          "field": "delay_until_date",
+          "original": "2023-02-01"
+        }
+      ],
+      "duration_seconds": 0.0012
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 7,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "delay"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 1,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0017
+    }
+  ],
+  "review_reasons": [
+    "OCR confidence below 0.9 on pages [1, 2, 3, 8]; verify numbers against the source."
+  ],
+  "completed_at": "2026-09-23T15:37:59.987965+00:00",
+  "duration_seconds": 35.4174,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T153724Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T153724Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T153724Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T153724Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_008_300881_delay\\20260923T153724Z\\evidence_report.json"
+  ]
+}

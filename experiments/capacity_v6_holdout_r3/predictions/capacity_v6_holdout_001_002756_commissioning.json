@@ -1,0 +1,43 @@
+{
+  "security_code": "002756",
+  "security_name": "永兴特钢",
+  "company_name": "永兴特种不锈钢股份有限公司",
+  "announcement_number": "2018-017号",
+  "announcement_date": "2018-03-08",
+  "events": [
+    {
+      "event_type": "commissioning",
+      "project_name": "年产25万吨高品质不锈钢和特种合金棒线项目",
+      "project_entity": "永兴特种不锈钢股份有限公司",
+      "project_location": null,
+      "project_status": "commissioned",
+      "investment_amount": 80054.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "募集资金79,990.15万元，不足部分以自有资金补足",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2015年10月18日董事会审议通过，2015年11月12日股东大会审议通过；截至2018年3月8日公告披露日已正式投产。",
+      "technology_description": "引进国际先进水平的轧机机组、在线固溶炉和自动化技术装备；采用在线性能控制、在线热处理等热机械控制工艺技术；应用纯氧燃烧、余热回收发电等清洁生产技术。",
+      "project_purpose": "实现不锈钢进口替代，建设高标准、智能化、绿色制造的棒线加工生产线，缓解前道冶炼能力大于后道加工能力的产能不匹配压力。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "棒线生产线",
+          "product_name": "高品质不锈钢和特种合金棒线",
+          "capacity": 25.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "“年产25 万吨高品质不锈钢和特种合金棒线项目”",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "近日，永兴特种不锈钢股份有限公司（以下简称“公司”）建设的“年产25 万吨高品质不锈钢和特种合金棒线项目”建成投产，现将相关情况公告如下：",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "security_code": "603878",
+  "security_name": "武进不锈",
+  "company_name": "江苏武进不锈股份有限公司",
+  "announcement_number": "2019-023",
+  "announcement_date": "2019-04-26",
+  "events": [
+    {
+      "event_type": "delay",
+      "project_name": "年产6000吨油气输送用不锈钢焊管项目",
+      "project_entity": null,
+      "project_location": null,
+      "project_status": "delayed",
+      "investment_amount": 17767,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "首次公开发行募集资金17,767.00万元",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": "2020-06-30",
+      "timeline_text": "原计划建设进度约18个月；2018年7月31日已延期至2019年6月30日，本次再延期至2020年6月30日。",
+      "technology_description": null,
+      "project_purpose": "建成后生产油气输送用不锈钢焊管。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "同意公司募集资金投资项目之“年产6000吨油气输送用不锈钢焊管项目”延期至2020年6月30日",
+      "confidence": 1.0
+    }
+  ]
+}

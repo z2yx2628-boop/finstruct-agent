@@ -1,0 +1,84 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2023-45",
+  "announcement_date": "2023-10-30",
+  "events": [
+    {
+      "event_type": "capacity_replacement",
+      "project_name": "炼铁厂烧结机节能环保升级改造项目",
+      "project_entity": "湖南华菱涟源钢铁有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目建设周期约10个月。",
+      "technology_description": "新建一套包含原料、熔剂、燃料的接受、配料、混合及制粒、铺底与布料、点火、烧结与冷却、抽风及除尘、烧结矿筛分、成品烧结矿取制样检验以及成品烧结矿转运等主工艺设施的烧结机；配套建设脱硫脱硝系统、余热发电系统、通风除尘、总图运输、35kV变电站、供配电及控制、室内外消防等。",
+      "project_purpose": "响应国家产业政策和环保政策要求，提高劳动生产率、降低生产成本，满足以高炉为中心的铁前生产需求；将130㎡、180㎡烧结机等量置换，建设新的大型化烧结机，实现技术升级与装备更新换代。",
+      "capacity_changes": [
+        {
+          "action": "retired",
+          "facility_type": "烧结机",
+          "product_name": "烧结矿",
+          "capacity": 130.0,
+          "capacity_unit": "㎡",
+          "source_page": 2,
+          "evidence_text": "华菱涟钢炼铁厂三烧车间现有1 台130 ㎡烧结机、1 台180 ㎡烧结机，分别为1999 年、2003 年投产",
+          "confidence": 1.0
+        },
+        {
+          "action": "retired",
+          "facility_type": "烧结机",
+          "product_name": "烧结矿",
+          "capacity": 180.0,
+          "capacity_unit": "㎡",
+          "source_page": 2,
+          "evidence_text": "华菱涟钢炼铁厂三烧车间现有1 台130 ㎡烧结机、1 台180 ㎡烧结机，分别为1999 年、2003 年投产",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [
+        {
+          "metric_type": "pollutant_reduction",
+          "metric_name": "颗粒物排放浓度",
+          "value": 10.0,
+          "unit": "mg/Nm³",
+          "period": "小时均值",
+          "source_page": 2,
+          "evidence_text": "烧结机头烟气在基准含氧量 16%条件下，颗粒物、二氧化硫、氮氧化物小时均值排放浓度分别不高于 10、35 和 50mg/Nm³。",
+          "confidence": 1.0
+        },
+        {
+          "metric_type": "pollutant_reduction",
+          "metric_name": "二氧化硫排放浓度",
+          "value": 35.0,
+          "unit": "mg/Nm³",
+          "period": "小时均值",
+          "source_page": 2,
+          "evidence_text": "烧结机头烟气在基准含氧量 16%条件下，颗粒物、二氧化硫、氮氧化物小时均值排放浓度分别不高于 10、35 和 50mg/Nm³。",
+          "confidence": 1.0
+        },
+        {
+          "metric_type": "pollutant_reduction",
+          "metric_name": "氮氧化物排放浓度",
+          "value": 50.0,
+          "unit": "mg/Nm³",
+          "period": "小时均值",
+          "source_page": 2,
+          "evidence_text": "烧结机头烟气在基准含氧量 16%条件下，颗粒物、二氧化硫、氮氧化物小时均值排放浓度分别不高于 10、35 和 50mg/Nm³。",
+          "confidence": 1.0
+        }
+      ],
+      "source_page": 1,
+      "evidence_text": "公司全资子公司湖南华菱涟源钢铁有限公司（以下简称“华菱涟钢”）拟建设实施炼铁厂烧结机节能环保升级改造项目，项目投资总额107,382 万元。",
+      "confidence": 1.0
+    }
+  ]
+}

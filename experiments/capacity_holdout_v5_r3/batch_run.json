@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-23T13:34:14.824804+00:00",
+  "pdf_count": 9,
+  "task": "capacity",
+  "runs": [
+    {
+      "pdf": "data\\raw\\capacity_holdout\\capacity_holdout_001_000761_annual_framework.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_holdout_v5_r3\\predictions\\capacity_holdout_001_000761_annual_framework.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_001_000761_annual_framework\\20260923T133414Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_holdout\\capacity_holdout_002_600307_framework_project_launch.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_holdout_v5_r3\\predictions\\capacity_holdout_002_600307_framework_project_launch.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_002_600307_framework_project_launch\\20260923T133500Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_holdout\\capacity_holdout_003_600399_equipment_heavy_upgrade.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_holdout_v5_r3\\predictions\\capacity_holdout_003_600399_equipment_heavy_upgrade.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_003_600399_equipment_heavy_upgrade\\20260923T133515Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_holdout\\capacity_holdout_004_000778_equipment_heavy_upgrade.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_holdout_v5_r3\\predictions\\capacity_holdout_004_000778_equipment_heavy_upgrade.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_004_000778_equipment_heavy_upgrade\\20260923T133540Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_holdout\\capacity_holdout_005_603995_multi_project_delay.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_holdout_v5_r3\\predictions\\capacity_holdout_005_603995_multi_project_delay.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_005_603995_multi_project_delay\\20260923T133601Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_holdout\\capacity_holdout_006_603878_multi_project_delay.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_holdout_v5_r3\\predictions\\capacity_holdout_006_603878_multi_project_delay.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_006_603878_multi_project_delay\\20260923T133613Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_holdout\\capacity_holdout_007_603995_overseas_termination.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_holdout_v5_r3\\predictions\\capacity_holdout_007_603995_overseas_termination.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_007_603995_overseas_termination\\20260923T133625Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_holdout\\capacity_holdout_008_002110_capacity_cooperation_suspension.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_holdout_v5_r3\\predictions\\capacity_holdout_008_002110_capacity_cooperation_suspension.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_008_002110_capacity_cooperation_suspension\\20260923T133638Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_holdout\\capacity_holdout_009_000959_commissioning.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_holdout_v5_r3\\predictions\\capacity_holdout_009_000959_commissioning.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_009_000959_commissioning\\20260923T133642Z"
+    }
+  ],
+  "completed_at": "2026-09-23T13:37:05.435880+00:00"
+}

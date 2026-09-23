@@ -1,0 +1,173 @@
+{
+  "passed": true,
+  "corpus": {
+    "gold_documents": 5,
+    "evaluated_documents": 5,
+    "missing_predictions": [],
+    "unexpected_predictions": []
+  },
+  "event_metrics": {
+    "true_positives": 10,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "document_field_metrics": {
+    "matched": 20,
+    "total": 20,
+    "accuracy": 1.0
+  },
+  "event_attribute_metrics": {
+    "matched": 120,
+    "total": 120,
+    "accuracy": 1.0,
+    "present_matched": 69,
+    "present_total": 69,
+    "present_accuracy": 1.0,
+    "overfilled": 0
+  },
+  "documents": {
+    "pledge_01_huayou": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 8,
+        "present_total": 8,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "pledge_02_yongding": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 24,
+        "total": 24,
+        "accuracy": 1.0,
+        "present_matched": 12,
+        "present_total": 12,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "pledge_03_yasha": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 24,
+        "total": 24,
+        "accuracy": 1.0,
+        "present_matched": 13,
+        "present_total": 13,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "pledge_04_letong": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 24,
+        "total": 24,
+        "accuracy": 1.0,
+        "present_matched": 18,
+        "present_total": 18,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    },
+    "pledge_05_tongding": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 4,
+        "total": 4,
+        "accuracy": 1.0
+      },
+      "event_attribute_metrics": {
+        "matched": 36,
+        "total": 36,
+        "accuracy": 1.0,
+        "present_matched": 18,
+        "present_total": 18,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "missing_events": [],
+      "unexpected_events": [],
+      "field_mismatches": []
+    }
+  }
+}

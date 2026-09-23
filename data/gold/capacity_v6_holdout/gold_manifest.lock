@@ -1,0 +1,71 @@
+{
+  "version": "capacity-v6-holdout-gold-v1",
+  "frozen_at": "2026-09-23",
+  "hash_algorithm": "sha256",
+  "document_count": 12,
+  "event_count": 10,
+  "capacity_record_count": 4,
+  "system_under_test_commit": "f08347f",
+  "files": [
+    {
+      "file": "capacity_v6_holdout_001_002756_commissioning.json",
+      "sha256": "4f69421d2bb93663080287d0569d12984d03d8167c55766851d5af05306b2198",
+      "events": 1
+    },
+    {
+      "file": "capacity_v6_holdout_002_002756_technical_upgrade.json",
+      "sha256": "073f58b674e0bf6c9724e1b73e7fec7d4bb6aaee327661312a190676fa996613",
+      "events": 1
+    },
+    {
+      "file": "capacity_v6_holdout_003_002478_construction.json",
+      "sha256": "628e161560102857885ac170ec520b1cda977e95fcd6ffd691b9ad158a48170d",
+      "events": 1
+    },
+    {
+      "file": "capacity_v6_holdout_004_002318_construction.json",
+      "sha256": "b7b6df0cc4bd5795218dce413ce1ff136e6b9b59252e5a55c75ba42a8b848123",
+      "events": 1
+    },
+    {
+      "file": "capacity_v6_holdout_005_002318_commissioning.json",
+      "sha256": "f990cf62ed35242a6ff9b6de2de8e9470dc2edb2a053c669e78eee198541563d",
+      "events": 2
+    },
+    {
+      "file": "capacity_v6_holdout_006_002541_delay.json",
+      "sha256": "fe74a510ee5d2fdc85c7230829bd6253b09ce1ce28ebe09fc8d78b400acfe88b",
+      "events": 1
+    },
+    {
+      "file": "capacity_v6_holdout_007_688186_delay.json",
+      "sha256": "e71e1abb6a19a6a1c398e0b8d7d022e43fcb58ab631cb6e35ffb348c64964348",
+      "events": 1
+    },
+    {
+      "file": "capacity_v6_holdout_008_300881_delay.json",
+      "sha256": "5a3daaedde0698bbe36cf87c5bd2420a99fb3d9a184440a0f66883ad192df752",
+      "events": 1
+    },
+    {
+      "file": "capacity_v6_holdout_009_000923_suspension.json",
+      "sha256": "19ef6ceba07321f4e4357dc996520bb55a759b5e504c5c64a676427dea3edc6e",
+      "events": 0
+    },
+    {
+      "file": "capacity_v6_holdout_010_002443_progress.json",
+      "sha256": "c2552eec6156678458d23ff0431e7acf59b3110fb258229ac9f99ac1282b5419",
+      "events": 1
+    },
+    {
+      "file": "capacity_v6_holdout_011_601005_hard_negative_asset_purchase.json",
+      "sha256": "99cb99c90e9ac9deddb9b46fe0bab91a748d465e0856c1d3a0bba3dca5a6ccc0",
+      "events": 0
+    },
+    {
+      "file": "capacity_v6_holdout_012_600126_hard_negative_data_center.json",
+      "sha256": "51859c0e7f0148b501384a4658f66b3a4d9f0672a1876be61f3e2efa0760c910",
+      "events": 0
+    }
+  ]
+}

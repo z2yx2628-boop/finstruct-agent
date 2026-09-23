@@ -1,0 +1,39 @@
+{
+  "security_code": null,
+  "security_name": null,
+  "company_name": "黎城太行钢铁有限公司",
+  "announcement_number": null,
+  "announcement_date": "2026-07-01",
+  "events": [
+    {
+      "event_type": "maintenance",
+      "project_name": "530m³高炉",
+      "project_entity": "黎城太行钢铁有限公司",
+      "project_location": null,
+      "project_status": "temporarily_shut_down",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2026年6月30日停产，预计2026年7月20日复产",
+      "shutdown_facility": "530m³高炉",
+      "shutdown_start_date": "2026-06-30",
+      "expected_restart_date": "2026-07-20",
+      "shutdown_days": 20.0,
+      "output_loss_amount": 0.21,
+      "output_loss_unit": "万吨/日",
+      "output_loss_product": "铁水",
+      "technology_description": null,
+      "project_purpose": null,
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "黎城太行钢铁于6月30日停产一座530m³高炉，日影响铁水产量0.21万吨，带钢轧线同步停产，预计7月20日复产。",
+      "confidence": 1.0
+    }
+  ]
+}

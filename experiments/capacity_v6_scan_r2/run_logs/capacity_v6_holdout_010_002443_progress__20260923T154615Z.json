@@ -1,0 +1,104 @@
+{
+  "run_id": "20260923T154615Z",
+  "status": "needs_review",
+  "started_at": "2026-09-23T15:46:15.489047+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v6_holdout_scan\\capacity_v6_holdout_010_002443_progress.pdf",
+    "size_bytes": 6529367,
+    "sha256": "e8816a807ce1a785fad184814befbae6d5aa54cce5184a70bdb2c32758a6d593"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v5.txt",
+    "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF + OCR",
+      "source_type": "pdf_scan",
+      "page_count": 3,
+      "text_char_count": 1768,
+      "needs_ocr": true,
+      "ocr_pages": [
+        1,
+        2,
+        3
+      ],
+      "ocr_engine": "RapidOCR (onnxruntime)",
+      "ocr_confidence": {
+        "1": 0.9013,
+        "2": 0.9063,
+        "3": 0.8348
+      },
+      "ocr_low_confidence_pages": [
+        3
+      ],
+      "duration_seconds": 10.8918
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 15.895
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 1,
+      "changes": [
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_planned_capacity_of_adverse_project",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "清洁能源及高端装备用精密管",
+            "capacity": 100.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 1,
+            "evidence_text": "原投资建设年产60万吨优质焊管和工厂预制深加工管材管件项目调整为投资建设年产100万吨清洁能源及高端装备用精密管未来工厂项目。",
+            "confidence": 1.0
+          }
+        }
+      ],
+      "duration_seconds": 0.0007
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 7,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "suspension"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 1,
+        "termination": 0
+      },
+      "duration_seconds": 0.0022
+    }
+  ],
+  "review_reasons": [
+    "OCR confidence below 0.9 on pages [3]; verify numbers against the source."
+  ],
+  "completed_at": "2026-09-23T15:46:42.291980+00:00",
+  "duration_seconds": 26.803,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_010_002443_progress\\20260923T154615Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_010_002443_progress\\20260923T154615Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_010_002443_progress\\20260923T154615Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_010_002443_progress\\20260923T154615Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_010_002443_progress\\20260923T154615Z\\evidence_report.json"
+  ]
+}

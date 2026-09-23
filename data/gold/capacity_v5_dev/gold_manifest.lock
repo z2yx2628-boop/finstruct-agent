@@ -1,0 +1,49 @@
+{
+  "version": "capacity-v5-dev-gold-v1",
+  "frozen_at": "2026-09-20",
+  "hash_algorithm": "sha256",
+  "document_count": 8,
+  "event_count": 11,
+  "files": [
+    {
+      "file": "capacity_v5_dev_001_600581_bayi_framework.json",
+      "sha256": "58a9e45ecbeeff254a29d099a3eee55fa9dd478f01d55bc6ad6ccd2d79945627",
+      "events": 1
+    },
+    {
+      "file": "capacity_v5_dev_002_600569_angang_framework_adjustment.json",
+      "sha256": "961779f6df682a4d736b2a24151a333bf0adcdd3fc9a5a9c08203faf450a327c",
+      "events": 1
+    },
+    {
+      "file": "capacity_v5_dev_003_000932_valin_equipment_upgrade.json",
+      "sha256": "babf548cdbad7aafe7b0322d476e406fec3a9c800718f6392c7c269042b31e9f",
+      "events": 1
+    },
+    {
+      "file": "capacity_v5_dev_004_000709_hbis_plate_construction.json",
+      "sha256": "a807ac9d8b92e6e8258178553dde4e94f8c4e1af9702f6bd2cf98a1b98bda3b9",
+      "events": 1
+    },
+    {
+      "file": "capacity_v5_dev_005_002843_bichamp_multi_delay.json",
+      "sha256": "d273bc48dc6cb22442c5e25d9200ef8da6e8e87dc5119a011990e909004691d1",
+      "events": 3
+    },
+    {
+      "file": "capacity_v5_dev_006_301217_tongguan_multi_delay.json",
+      "sha256": "b63643cf5da032413cb56315d1706deacce7b3ccc58beb28d394066a91467f4d",
+      "events": 3
+    },
+    {
+      "file": "capacity_v5_dev_007_600019_baosteel_overseas_financing.json",
+      "sha256": "e7354cb2838d821d275304b3ddb5c27541778392f61f0783c433be1ebbd5119f",
+      "events": 0
+    },
+    {
+      "file": "capacity_v5_dev_008_600282_nangang_overseas_progress.json",
+      "sha256": "84a48b0cfba41006d71d592811ef2757df10b5c8197711ada58f7e4a9ac21b2e",
+      "events": 1
+    }
+  ]
+}

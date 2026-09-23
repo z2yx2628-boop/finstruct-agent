@@ -1,17 +1,21 @@
 import json
 import os
 from pathlib import Path
-
+from schemas.capacity import CapacityDocument
+from src.capacity_normalizer import sanitize_capacity_payload
 from dotenv import load_dotenv
 from openai import OpenAI
 
 from schemas.pledge import PledgeDocument
 from src.event_normalizer import normalize_event_fields
-
+from src.capacity_empty_retry import capacity_empty_retry_reason
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PAGES_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_pages.json"
 PROMPT_PATH = PROJECT_ROOT / "prompts" / "pledge_extraction_v6.txt"
+CAPACITY_PROMPT_PATH = (
+    PROJECT_ROOT / "prompts" / "capacity_extraction_v5.txt"
+)
 RAW_OUTPUT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_llm_raw.json"
 RESULT_PATH = PROJECT_ROOT / "outputs" / "sample_pledge_prediction.json"
 
@@ -63,7 +67,119 @@ def extract_pledge(
 
     document = PledgeDocument.model_validate(json.loads(content))
     return document, content
+def extract_capacity(
+    pages: list[dict],
+    prompt_path: Path | None = None,
+) -> tuple[CapacityDocument, str, list[dict]]:
+    load_dotenv(PROJECT_ROOT / ".env")
 
+    system_prompt = (prompt_path or CAPACITY_PROMPT_PATH).read_text(
+        encoding="utf-8"
+    )
+    schema = CapacityDocument.model_json_schema()
+
+    page_text = "\n\n".join(
+        f"===== PAGE {page['page']} =====\n{page['text']}"
+        for page in pages
+    )
+
+    user_prompt = (
+        "请根据下面的JSON Schema抽取钢铁产能与项目事件。\n\n"
+        f"JSON Schema:\n"
+        f"{json.dumps(schema, ensure_ascii=False, indent=2)}\n\n"
+        f"公告文本:\n{page_text}"
+    )
+
+    client = OpenAI(
+        api_key=require_env("LLM_API_KEY"),
+        base_url=require_env("LLM_BASE_URL"),
+    )
+
+    response = client.chat.completions.create(
+        model=require_env("LLM_MODEL"),
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        response_format={"type": "json_object"},
+        temperature=0,
+    )
+
+    content = response.choices[0].message.content
+    if not content:
+        raise RuntimeError("The model returned an empty response.")
+
+    payload, sanitization_changes = sanitize_capacity_payload(
+        json.loads(content)
+    )
+   
+    document = CapacityDocument.model_validate(payload)
+
+    retry_reason = capacity_empty_retry_reason(document, pages)
+    if retry_reason is not None:
+        first_response = json.loads(content)
+        retry_user_prompt = (
+            f"{user_prompt}\n\n"
+            "空事件复核要求：检测到公告中签署的协议名称同时包含"
+            "具体工业项目、明确产能规模以及合资、投资或建设协议。"
+            "请重新核对本次实际进展。若原文明示签署此类项目协议，"
+            "应生成capacity_construction事件；同一公告出现保证协议"
+            "不得否定该建设事件。纯保证、担保或融资协议仍不得生成事件。"
+        )
+
+        try:
+            retry_response = client.chat.completions.create(
+                model=require_env("LLM_MODEL"),
+                messages=[
+                    {
+                        "role": "system",
+                        "content": system_prompt,
+                    },
+                    {
+                        "role": "user",
+                        "content": retry_user_prompt,
+                    },
+                ],
+                response_format={"type": "json_object"},
+                temperature=0,
+            )
+            retry_content = retry_response.choices[0].message.content
+            if not retry_content:
+                raise RuntimeError(
+                    "The retry returned an empty response."
+                )
+
+            retry_payload, retry_changes = sanitize_capacity_payload(
+                json.loads(retry_content)
+            )
+            retry_document = CapacityDocument.model_validate(
+                retry_payload
+            )
+        except Exception as error:
+            sanitization_changes.append({
+                "action": "empty_event_retry_failed",
+                "reason": retry_reason,
+                "error_type": type(error).__name__,
+                "error_message": str(error),
+                "first_response": first_response,
+            })
+        else:
+            retry_accepted = bool(retry_document.events)
+            sanitization_changes.append({
+                "action": "empty_event_retry",
+                "reason": retry_reason,
+                "accepted": retry_accepted,
+                "first_event_count": len(document.events),
+                "second_event_count": len(retry_document.events),
+                "first_response": first_response,
+            })
+            sanitization_changes.extend(retry_changes)
+
+            if retry_accepted:
+                document = retry_document
+                content = retry_content
+
+    return document, content, sanitization_changes
 
 def main() -> None:
     pages = json.loads(PAGES_PATH.read_text(encoding="utf-8"))

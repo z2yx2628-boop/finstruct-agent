@@ -7,10 +7,10 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from src.event_normalizer import normalize_event_fields
-from src.llm_extractor import PROMPT_PATH, extract_pledge, require_env
-from src.document_parser import parse_document
-from src.evidence_validator import validate_evidence
+from src.document_parser import PARSERS, parse_document
+from src.llm_extractor import require_env
+from src.ocr import LOW_CONFIDENCE_THRESHOLD
+from src.tasks import get_task, task_names
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_ROOT = PROJECT_ROOT / "outputs"
@@ -31,15 +31,21 @@ def write_json(path: Path, data: object) -> None:
     )
 
 
-def run_pipeline(pdf_path: Path) -> dict:
-    pdf_path = pdf_path.resolve()
+def run_pipeline(pdf_path: Path, task: str = "pledge") -> dict:
+    pdf_path = Path(pdf_path).resolve()
     if not pdf_path.exists():
-        raise FileNotFoundError(f"PDF not found: {pdf_path}")
-    if pdf_path.suffix.lower() != ".pdf":
-        raise ValueError("The input file must be a PDF.")
+        raise FileNotFoundError(f"Document not found: {pdf_path}")
+    if pdf_path.suffix.lower() not in PARSERS:
+        supported = ", ".join(sorted(PARSERS))
+        raise ValueError(
+            f"Unsupported document type: {pdf_path.suffix}. "
+            f"Supported types: {supported}"
+        )
+    spec = get_task(task)
 
     load_dotenv(PROJECT_ROOT / ".env")
     model = require_env("LLM_MODEL")
+    prompt_path = spec.prompt_path
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run_directory = OUTPUT_ROOT / pdf_path.stem / run_id
     run_directory.mkdir(parents=True, exist_ok=True)
@@ -62,9 +68,10 @@ def run_pipeline(pdf_path: Path) -> dict:
             "sha256": file_sha256(pdf_path),
         },
         "prompt": {
-            "path": str(PROMPT_PATH),
-            "sha256": file_sha256(PROMPT_PATH),
+            "path": str(prompt_path),
+            "sha256": file_sha256(prompt_path),
         },
+        "task": task,
         "model": model,
         "steps": [],
     }
@@ -77,10 +84,17 @@ def run_pipeline(pdf_path: Path) -> dict:
             source_document.model_dump(mode="json"),
         )
 
-        if source_document.metadata.get("needs_ocr"):
+        if not source_document.metadata.get("text_char_count"):
             raise ValueError(
-                "The PDF contains no extractable text and requires OCR."
+                "The document contains no extractable text. For scanned "
+                "files install OCR: pip install rapidocr_onnxruntime"
             )
+        low_confidence_pages = [
+            page.page for page in source_document.pages
+            if page.ocr_used
+            and page.ocr_confidence is not None
+            and page.ocr_confidence < LOW_CONFIDENCE_THRESHOLD
+        ]
 
         pages = [
             {
@@ -93,7 +107,7 @@ def run_pipeline(pdf_path: Path) -> dict:
 
         log["steps"].append({
             "name": "document_parsing",
-            "tool": "Unified document parser / PyMuPDF",
+            "tool": "Unified document parser / PyMuPDF + OCR",
             "source_type": source_document.source_type,
             "page_count": len(pages),
             "text_char_count": source_document.metadata.get(
@@ -104,22 +118,27 @@ def run_pipeline(pdf_path: Path) -> dict:
                 "needs_ocr",
                 False,
             ),
+            "ocr_pages": source_document.metadata.get("ocr_pages", []),
+            "ocr_engine": source_document.metadata.get("ocr_engine"),
+            "ocr_confidence": {
+                page.page: page.ocr_confidence
+                for page in source_document.pages
+                if page.ocr_used
+            },
+            "ocr_low_confidence_pages": low_confidence_pages,
             "duration_seconds": round(
                 time.perf_counter() - step_started,
                 4,
             ),
         })
 
-
-
-
-
         step_started = time.perf_counter()
-        document, raw_content = extract_pledge(pages)
+        document, raw_content, extraction_changes = spec.extract(pages)
         llm_duration = round(time.perf_counter() - step_started, 4)
 
         step_started = time.perf_counter()
-        document, normalization_changes = normalize_event_fields(document)
+        document, normalization_changes = spec.normalize(document, pages)
+        normalization_tool = spec.normalization_tool
         normalization_duration = round(
             time.perf_counter() - step_started,
             4,
@@ -133,19 +152,21 @@ def run_pipeline(pdf_path: Path) -> dict:
             "name": "llm_structured_extraction",
             "tool": "OpenAI-compatible Chat Completions",
             "model": model,
+            "sanitization_changes_count": len(extraction_changes),
+            "sanitization_changes": extraction_changes,
             "duration_seconds": llm_duration,
         })
 
         log["steps"].append({
             "name": "event_normalization",
-            "tool": "Deterministic semantic and shared-cell normalizer",
+            "tool": normalization_tool,
             "changes_count": len(normalization_changes),
             "changes": normalization_changes,
             "duration_seconds": normalization_duration,
         })
 
         step_started = time.perf_counter()
-        evidence_report = validate_evidence(document, pages)
+        evidence_report = spec.validate(document, pages)
         write_json(evidence_path, evidence_report)
         log["steps"].append({
             "name": "evidence_validation",
@@ -167,9 +188,14 @@ def run_pipeline(pdf_path: Path) -> dict:
 
         log["status"] = (
             "success"
-            if evidence_report["passed"]
+            if evidence_report["passed"] and not low_confidence_pages
             else "needs_review"
         )
+        if low_confidence_pages:
+            log["review_reasons"] = [
+                f"OCR confidence below {LOW_CONFIDENCE_THRESHOLD} on pages "
+                f"{low_confidence_pages}; verify numbers against the source."
+            ]
 
     except Exception as error:
         log["status"] = "failed"
@@ -211,9 +237,14 @@ def run_pipeline(pdf_path: Path) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("pdf_path", type=Path)
+    parser.add_argument(
+        "--task",
+        choices=task_names(),
+        default="pledge",
+    )
     args = parser.parse_args()
 
-    result = run_pipeline(args.pdf_path)
+    result = run_pipeline(args.pdf_path, task=args.task)
 
     print(f"Status: {result['status']}")
     print(f"Run directory: {result['run_directory']}")

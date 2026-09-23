@@ -1,0 +1,126 @@
+{
+  "run_id": "20260920T185730Z",
+  "status": "success",
+  "started_at": "2026-09-20T18:57:30.432010+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_012_601686_youfa_termination.pdf",
+    "size_bytes": 329766,
+    "sha256": "f41fe7fe9f5ae8eb162aa180945744f9435fd9fa0f0399047e2bd80d1b6d259e"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v3.txt",
+    "sha256": "1194b65a2e74d077ac182149eac47a7c0a75a2cb5b3f43a2d147b30bdc397bca"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 5,
+      "text_char_count": 4253,
+      "needs_ocr": false,
+      "duration_seconds": 0.014
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 20.1574
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 4,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 320000.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_hypothetical_adverse_capacity",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "焊接钢管",
+            "capacity": 540.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 3,
+            "evidence_text": "募投项目完全达产后，将形成年产 540 万吨焊接钢管、200 万吨热浸镀锌盘扣脚手架与 18 万吨爬架的生产能力。",
+            "confidence": 1.0
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 1,
+          "action": "remove_hypothetical_adverse_capacity",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "热浸镀锌盘扣脚手架",
+            "capacity": 200.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 3,
+            "evidence_text": "募投项目完全达产后，将形成年产 540 万吨焊接钢管、200 万吨热浸镀锌盘扣脚手架与 18 万吨爬架的生产能力。",
+            "confidence": 1.0
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 2,
+          "action": "remove_hypothetical_adverse_capacity",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "爬架",
+            "capacity": 18.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 3,
+            "evidence_text": "募投项目完全达产后，将形成年产 540 万吨焊接钢管、200 万吨热浸镀锌盘扣脚手架与 18 万吨爬架的生产能力。",
+            "confidence": 1.0
+          }
+        }
+      ],
+      "duration_seconds": 0.0008
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 7,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "termination"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 1
+      },
+      "duration_seconds": 0.0016
+    }
+  ],
+  "completed_at": "2026-09-20T18:57:50.609053+00:00",
+  "duration_seconds": 20.1771,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_012_601686_youfa_termination\\20260920T185730Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_012_601686_youfa_termination\\20260920T185730Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_012_601686_youfa_termination\\20260920T185730Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_012_601686_youfa_termination\\20260920T185730Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_012_601686_youfa_termination\\20260920T185730Z\\evidence_report.json"
+  ]
+}

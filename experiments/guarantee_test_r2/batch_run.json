@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-09-23T22:09:23.586182+00:00",
+  "pdf_count": 6,
+  "task": "guarantee",
+  "runs": [
+    {
+      "pdf": "data\\raw\\guarantee_test\\guarantee_test_001_000932_annual_limit.pdf",
+      "status": "success",
+      "prediction": "outputs\\guarantee_test_r2\\predictions\\guarantee_test_001_000932_annual_limit.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_001_000932_annual_limit\\20260923T220923Z"
+    },
+    {
+      "pdf": "data\\raw\\guarantee_test\\guarantee_test_002_002110_annual_limit.pdf",
+      "status": "success",
+      "prediction": "outputs\\guarantee_test_r2\\predictions\\guarantee_test_002_002110_annual_limit.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_002_002110_annual_limit\\20260923T220953Z"
+    },
+    {
+      "pdf": "data\\raw\\guarantee_test\\guarantee_test_003_600569_progress.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\guarantee_test_r2\\predictions\\guarantee_test_003_600569_progress.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_003_600569_progress\\20260923T221018Z"
+    },
+    {
+      "pdf": "data\\raw\\guarantee_test\\guarantee_test_005_600307_wholly_owned.pdf",
+      "status": "success",
+      "prediction": "outputs\\guarantee_test_r2\\predictions\\guarantee_test_005_600307_wholly_owned.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_005_600307_wholly_owned\\20260923T221039Z"
+    },
+    {
+      "pdf": "data\\raw\\guarantee_test\\guarantee_test_006_600231_related_controlling_shareholder.pdf",
+      "status": "success",
+      "prediction": "outputs\\guarantee_test_r2\\predictions\\guarantee_test_006_600231_related_controlling_shareholder.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_006_600231_related_controlling_shareholder\\20260923T221050Z"
+    },
+    {
+      "pdf": "data\\raw\\guarantee_test\\guarantee_test_007_600307_wholly_owned_2.pdf",
+      "status": "success",
+      "prediction": "outputs\\guarantee_test_r2\\predictions\\guarantee_test_007_600307_wholly_owned_2.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_test_007_600307_wholly_owned_2\\20260923T221110Z"
+    }
+  ],
+  "completed_at": "2026-09-23T22:11:21.764442+00:00"
+}

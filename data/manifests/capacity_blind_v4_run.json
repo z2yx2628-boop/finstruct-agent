@@ -1,0 +1,135 @@
+{
+  "manifest_version": 1,
+  "purpose": "Frozen one-time V4 predictions for the isolated capacity blind set",
+  "frozen_at": "2026-09-20T21:48:29+02:00",
+  "git_commit": "0b8b73247a3c11030c09cae14a227ce73c1679d4",
+  "git_branch": "codex/capacity-event-v1",
+  "task": "capacity",
+  "blind_policy": {
+    "prediction_run_count": 1,
+    "gold_available_during_prediction": false,
+    "tune_on_blind_labels": false
+  },
+  "corpus": {
+    "documents": 8,
+    "success": 3,
+    "needs_review": 5,
+    "failed": 0
+  },
+  "prompt": {
+    "path": "prompts/capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "batch_report": {
+    "path": "outputs/capacity_blind_v4/batch_run.json",
+    "sha256": "be986641e4718dc3beb0d066ba8ceb2e85c7610a408ee8060caa5d6a4745ff2d",
+    "started_at": "2026-09-20T21:45:45.823465+02:00",
+    "completed_at": "2026-09-20T21:47:38.655429+02:00"
+  },
+  "predictions": [
+    {
+      "document": "capacity_blind_001_601003_liugang_replacement",
+      "input_pdf": "data\\raw\\capacity_blind\\capacity_blind_001_601003_liugang_replacement.pdf",
+      "input_sha256": "42adbf8db4d0c7c0319d4f85c231684ba421412a8aebf3dcba12fc99abed89c4",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_001_601003_liugang_replacement.json",
+      "prediction_sha256": "ad4e8c04a884d62d35ac2a857efce1dbadc7abc35f03c5cddea1408e960d5e33",
+      "run_id": "20260920T194545Z",
+      "status": "success",
+      "evidence_passed": true,
+      "evidence_issue_count": 0,
+      "model": "qwen-plus",
+      "prompt_sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+    },
+    {
+      "document": "capacity_blind_002_601003_liugang_replacement",
+      "input_pdf": "data\\raw\\capacity_blind\\capacity_blind_002_601003_liugang_replacement.pdf",
+      "input_sha256": "6a658f1d06d98b9e978a0f95d8e4ba56e3d6453062e3013af8287852b86ff54a",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_002_601003_liugang_replacement.json",
+      "prediction_sha256": "8b834ea5c385201931080e81cccfa86abd4a213867032a423f73a1d8b44f0070",
+      "run_id": "20260920T194559Z",
+      "status": "needs_review",
+      "evidence_passed": false,
+      "evidence_issue_count": 1,
+      "model": "qwen-plus",
+      "prompt_sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+    },
+    {
+      "document": "capacity_blind_003_000717_zhongnan_technical_upgrade",
+      "input_pdf": "data\\raw\\capacity_blind\\capacity_blind_003_000717_zhongnan_technical_upgrade.pdf",
+      "input_sha256": "6c03a2ea85c0e48d44537fc1fee825f70811498e0f16641c6d538a37407a04d6",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_003_000717_zhongnan_technical_upgrade.json",
+      "prediction_sha256": "c0a6363c1841b4f82b52532e7e04452e0714e8402e41f317cd5872c9121cad53",
+      "run_id": "20260920T194615Z",
+      "status": "success",
+      "evidence_passed": true,
+      "evidence_issue_count": 0,
+      "model": "qwen-plus",
+      "prompt_sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+    },
+    {
+      "document": "capacity_blind_004_000717_zhongnan_technical_upgrade",
+      "input_pdf": "data\\raw\\capacity_blind\\capacity_blind_004_000717_zhongnan_technical_upgrade.pdf",
+      "input_sha256": "b1ee721a63395dd492acca0da10f4c136ca6efce3d27ebe0cb9150401b15e73a",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_004_000717_zhongnan_technical_upgrade.json",
+      "prediction_sha256": "5f500d17717a5997403a949b388fbf34a4684079e48602848a4fbf0e1b04f430",
+      "run_id": "20260920T194619Z",
+      "status": "success",
+      "evidence_passed": true,
+      "evidence_issue_count": 0,
+      "model": "qwen-plus",
+      "prompt_sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+    },
+    {
+      "document": "capacity_blind_005_600282_nangang_delay",
+      "input_pdf": "data\\raw\\capacity_blind\\capacity_blind_005_600282_nangang_delay.pdf",
+      "input_sha256": "195b4eed7f76c02ec2dd70adc0f73e9b469b1022983dd6d2a914f29701ac945a",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_005_600282_nangang_delay.json",
+      "prediction_sha256": "da83956ceb021d0d5c020cfe95b26b38297780f8ba23ccb7451e58c6ed32a4c0",
+      "run_id": "20260920T194623Z",
+      "status": "needs_review",
+      "evidence_passed": false,
+      "evidence_issue_count": 1,
+      "model": "qwen-plus",
+      "prompt_sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+    },
+    {
+      "document": "capacity_blind_006_600282_nangang_construction",
+      "input_pdf": "data\\raw\\capacity_blind\\capacity_blind_006_600282_nangang_construction.pdf",
+      "input_sha256": "8a498ac8025ac720f161d735a24769c2e18671cf2e1436b1c215d90ea88d8ec1",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_006_600282_nangang_construction.json",
+      "prediction_sha256": "ebc47986638a1056d7c2364225bc86e7ba2118a003e462010d163d8e7cf60779",
+      "run_id": "20260920T194638Z",
+      "status": "needs_review",
+      "evidence_passed": false,
+      "evidence_issue_count": 2,
+      "model": "qwen-plus",
+      "prompt_sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+    },
+    {
+      "document": "capacity_blind_007_000708_citicsteel_construction",
+      "input_pdf": "data\\raw\\capacity_blind\\capacity_blind_007_000708_citicsteel_construction.pdf",
+      "input_sha256": "754e1f06d5e67026654419de91ed4c9cd429659739a7612053b26124c919ce58",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_007_000708_citicsteel_construction.json",
+      "prediction_sha256": "ddc84a21415da63820c977c6217d39812cb503b2e19f2b2fb3e0276f952fd5f6",
+      "run_id": "20260920T194654Z",
+      "status": "needs_review",
+      "evidence_passed": false,
+      "evidence_issue_count": 5,
+      "model": "qwen-plus",
+      "prompt_sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+    },
+    {
+      "document": "capacity_blind_008_000708_citicsteel_construction",
+      "input_pdf": "data\\raw\\capacity_blind\\capacity_blind_008_000708_citicsteel_construction.pdf",
+      "input_sha256": "9da85fc16e4aa4358b7f4fadbf16d4a996daf3a51319109c908a35bd580a1cc9",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_008_000708_citicsteel_construction.json",
+      "prediction_sha256": "a7f0f24a67b69a381c086287d5a45440d93bed4b750da364ba98153fa952481d",
+      "run_id": "20260920T194721Z",
+      "status": "needs_review",
+      "evidence_passed": false,
+      "evidence_issue_count": 2,
+      "model": "qwen-plus",
+      "prompt_sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+    }
+  ]
+}

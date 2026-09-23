@@ -1,0 +1,127 @@
+{
+  "started_at": "2026-09-15T13:35:47.999023+00:00",
+  "pdf_count": 20,
+  "runs": [
+    {
+      "pdf": "data\\raw\\blind_test\\blind_001_600052_dongwang.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_001_600052_dongwang.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_001_600052_dongwang\\20260915T133548Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_002_600594_yibai.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_002_600594_yibai.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_002_600594_yibai\\20260915T133604Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_003_601886_jianghe.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_003_601886_jianghe.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_003_601886_jianghe\\20260915T133624Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_004_300686_zhidongli.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_004_300686_zhidongli.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_004_300686_zhidongli\\20260915T133641Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_005_300682_langxin.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_005_300682_langxin.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_005_300682_langxin\\20260915T133657Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_006_600580_wolong.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_006_600580_wolong.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_006_600580_wolong\\20260915T133710Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_007_600588_yonyou.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_007_600588_yonyou.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_007_600588_yonyou\\20260915T133723Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_008_600645_zhongyuan.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_008_600645_zhongyuan.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_008_600645_zhongyuan\\20260915T133741Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_009_600655_yuyuan.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_009_600655_yuyuan.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_009_600655_yuyuan\\20260915T133755Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_010_603678_torch.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_010_603678_torch.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_010_603678_torch\\20260915T133809Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_011_600613_shenqi.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_011_600613_shenqi.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_011_600613_shenqi\\20260915T133829Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_012_600703_sanan.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_012_600703_sanan.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_012_600703_sanan\\20260915T133841Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_013_300552_wanji.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_013_300552_wanji.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_013_300552_wanji\\20260915T133852Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_014_300706_ashichuang.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_014_300706_ashichuang.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_014_300706_ashichuang\\20260915T133940Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_015_300928_huaan.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_015_300928_huaan.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_015_300928_huaan\\20260915T133959Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_016_600382_mingzhu.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_016_600382_mingzhu.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_016_600382_mingzhu\\20260915T134012Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_017_600693_dongbai.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_017_600693_dongbai.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_017_600693_dongbai\\20260915T134046Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_018_300560_zhongfutong.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_018_300560_zhongfutong.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_018_300560_zhongfutong\\20260915T134059Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_019_300014_eve.pdf",
+      "status": "success",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_019_300014_eve.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_019_300014_eve\\20260915T134111Z"
+    },
+    {
+      "pdf": "data\\raw\\blind_test\\blind_020_002701_org.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\blind_test_v2\\predictions\\blind_020_002701_org.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_020_002701_org\\20260915T134128Z"
+    }
+  ],
+  "completed_at": "2026-09-15T13:41:58.831920+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2026—016",
+  "announcement_date": "2026-02-09",
+  "total_guarantee_balance": 577634.67,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 218.19,
+  "external_guarantee_balance": 11000.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢周口钢铁有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.5,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国环球租赁有限公司",
+      "guaranteed_debt_purpose": "融资租赁（回租方式，租赁物为宽厚板进口精轧机、宽厚板矫直机设备等）",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "从租赁合同生效之日开始到租赁合同最后一期租金付款履行期届满之日起经过三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "安阳钢铁股份有限公司（以下简称公司）控股子公司河南安钢周口钢铁有限责任公司与中国环球租赁有限公司（以下简称环球租赁）以回租方式开展融资租赁业务，租赁物为河南安钢周口钢铁有限责任公司宽厚板进口精轧机、宽厚板矫直机设备等，计划融资金额为不超过人民币1.5 亿元，融资期限不超过3 年。公司为河南安钢周口钢铁有限责任公司以上融资事项提供连带责任担保。",
+      "confidence": 0.98
+    }
+  ]
+}

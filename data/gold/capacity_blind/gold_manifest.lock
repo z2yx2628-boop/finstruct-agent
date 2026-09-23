@@ -1,0 +1,49 @@
+{
+  "version": "capacity-blind-v1",
+  "frozen_at": "2026-09-20",
+  "hash_algorithm": "sha256",
+  "document_count": 8,
+  "event_count": 9,
+  "files": [
+    {
+      "file": "capacity_blind_001_601003_liugang_replacement.json",
+      "sha256": "b94d0e3c8e61b7cdf5317958a583dca02cc0196f572fa01ece6ceed04384d863",
+      "events": 1
+    },
+    {
+      "file": "capacity_blind_002_601003_liugang_replacement.json",
+      "sha256": "9ac681153d071dac77eafcdd5fbd2d528f23584f655c91c3ca3ca20b4a36bb3d",
+      "events": 1
+    },
+    {
+      "file": "capacity_blind_003_000717_zhongnan_technical_upgrade.json",
+      "sha256": "4fd1766b1049237be86a28bd9b3a6fe877570354f295af96469d6051cc9a278d",
+      "events": 1
+    },
+    {
+      "file": "capacity_blind_004_000717_zhongnan_technical_upgrade.json",
+      "sha256": "eded2776cbe0e2c5a207d0a846263710d65741ad4fad30e42f3e7bdbf05d2459",
+      "events": 1
+    },
+    {
+      "file": "capacity_blind_005_600282_nangang_delay.json",
+      "sha256": "ee327cfcd8db0b4b7ead37df7998ee78514e1bff79104971e970c7c31296f302",
+      "events": 2
+    },
+    {
+      "file": "capacity_blind_006_600282_nangang_construction.json",
+      "sha256": "1a049ab42001ee73a28bb70c7982863c2c5a9a0fbd1da3f5a47d40a9f90a2d57",
+      "events": 1
+    },
+    {
+      "file": "capacity_blind_007_000708_citicsteel_construction.json",
+      "sha256": "0e523ace6b142bc9c9d027028b2b4403072c0879b31b09dcaec598ecbd024a8d",
+      "events": 1
+    },
+    {
+      "file": "capacity_blind_008_000708_citicsteel_construction.json",
+      "sha256": "0b799de01a680a54040eabbd8dd267b914e02c0f30e74c27c79b44a8ff0a0870",
+      "events": 1
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "security_code": "000778",
+  "security_name": "新兴铸管",
+  "company_name": "新兴铸管股份有限公司",
+  "announcement_number": "2020-45",
+  "announcement_date": "2020-09-30",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "新兴铸管武安工业区焦化升级改造项目",
+      "project_entity": null,
+      "project_location": "武安工业区现有厂区",
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目建设周期预计18个月；2020年9月28日董事会审议通过；需办理备案、环评等审批程序。",
+      "technology_description": "采用捣固焦工艺，建设2座6.73米复热式捣固焦炉",
+      "project_purpose": "打造绿色工厂，提高公司装备水平，通过产能置换实现焦炉升级改造",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "2座6.73米复热式捣固焦炉",
+          "product_name": "干全焦",
+          "capacity": 194.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "建设2 座6.73 米复热式捣固焦炉，按年工作日365天计算，干全焦产能194 万吨。",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "新兴铸管股份有限公司关于投资建设武安工业区焦化升级改造项目的公告",
+      "confidence": 1.0
+    }
+  ]
+}

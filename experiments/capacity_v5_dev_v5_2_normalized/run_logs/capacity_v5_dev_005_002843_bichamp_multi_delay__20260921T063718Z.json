@@ -1,0 +1,148 @@
+{
+  "run_id": "20260921T063718Z",
+  "status": "success",
+  "started_at": "2026-09-21T06:37:18.849274+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v5_dev\\capacity_v5_dev_005_002843_bichamp_multi_delay.pdf",
+    "size_bytes": 169293,
+    "sha256": "f96ffd746f799df58fbc1cb2b2cba3c570abef08592d09b90d267c68afe6f4d7"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v5.txt",
+    "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 5,
+      "text_char_count": 3887,
+      "needs_ocr": false,
+      "duration_seconds": 0.0254
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 2,
+      "sanitization_changes": [
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_incomplete_capacity_change",
+          "original": {
+            "action": "new",
+            "facility_type": "产线",
+            "product_name": "硬质合金带锯条",
+            "capacity": null,
+            "capacity_unit": null,
+            "source_page": 3,
+            "evidence_text": "公司“硬质合金带锯条产线建设项目”计划新增硬质合金带锯条产线满足切割难度大、硬度较高的金属材料、高档木材等领域客户的需求。",
+            "confidence": 0.7
+          }
+        },
+        {
+          "event_index": 2,
+          "record_index": 0,
+          "action": "remove_incomplete_capacity_change",
+          "original": {
+            "action": "new",
+            "facility_type": "生产基地",
+            "product_name": "优化器、逆变器、储能变流器",
+            "capacity": null,
+            "capacity_unit": null,
+            "source_page": 3,
+            "evidence_text": "公司“新能源电源及储能电源生产基地项目”主要产出为优化器、逆变器和储能变流器等产品。",
+            "confidence": 0.6
+          }
+        }
+      ],
+      "duration_seconds": 32.9227
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 4,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 11211.13,
+            "investment_unit": "万元",
+            "investment_currency": "CNY",
+            "funding_source": "募集资金9,844.21万元"
+          }
+        },
+        {
+          "event_index": 1,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 12280.5,
+            "investment_unit": "万元",
+            "investment_currency": "CNY",
+            "funding_source": "募集资金9,849.40万元"
+          }
+        },
+        {
+          "event_index": 1,
+          "record_index": 0,
+          "action": "remove_hypothetical_adverse_capacity",
+          "original": {
+            "action": "new",
+            "facility_type": "产线",
+            "product_name": "高速钢双金属带锯条",
+            "capacity": 1000.0,
+            "capacity_unit": "万米/年",
+            "source_page": 3,
+            "evidence_text": "公司“高速钢双金属带锯条产线建设项目”计划新增年产1,000 万米高速钢双金属带锯条生产能力，进一步提升公司双金属带锯条产品产能。",
+            "confidence": 1.0
+          }
+        },
+        {
+          "event_index": 2,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 24183.79,
+            "investment_unit": "万元",
+            "investment_currency": "CNY",
+            "funding_source": "募集资金20,112.01万元"
+          }
+        }
+      ],
+      "duration_seconds": 0.0018
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 11,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "delay"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 3,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0015
+    }
+  ],
+  "completed_at": "2026-09-21T06:37:51.818579+00:00",
+  "duration_seconds": 32.9693,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260921T063718Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260921T063718Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260921T063718Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260921T063718Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260921T063718Z\\evidence_report.json"
+  ]
+}

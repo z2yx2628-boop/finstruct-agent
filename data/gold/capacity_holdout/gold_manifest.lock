@@ -1,0 +1,56 @@
+{
+  "version": "capacity-holdout-gold-v1",
+  "frozen_at": "2026-09-23",
+  "hash_algorithm": "sha256",
+  "document_count": 9,
+  "event_count": 9,
+  "capacity_record_count": 5,
+  "system_under_test_commit": "a50839f",
+  "files": [
+    {
+      "file": "capacity_holdout_001_000761_annual_framework.json",
+      "sha256": "9115c98a171ae54c4fb59236bed7a2c3456ece983e4ac20309e8c4f51dc8fb9a",
+      "events": 1
+    },
+    {
+      "file": "capacity_holdout_002_600307_framework_project_launch.json",
+      "sha256": "3622bebc95c0f8b3a583e3f1efeb5d6e1643f8284f19b235c2934b6ae987e7c9",
+      "events": 1
+    },
+    {
+      "file": "capacity_holdout_003_600399_equipment_heavy_upgrade.json",
+      "sha256": "405cf4cdd7957f89de3304ce9db920ad447c07bb88b014774e3d3590685a7398",
+      "events": 2
+    },
+    {
+      "file": "capacity_holdout_004_000778_equipment_heavy_upgrade.json",
+      "sha256": "2b261993dcfa47ccf48f9c66e5a6b7133f33b9d0c49e72a0862a7dd62288e0e1",
+      "events": 1
+    },
+    {
+      "file": "capacity_holdout_005_603995_multi_project_delay.json",
+      "sha256": "7ada6058d747b38a29cd29cc0955e04489a2b5d061a212510bb60ed23221a582",
+      "events": 1
+    },
+    {
+      "file": "capacity_holdout_006_603878_multi_project_delay.json",
+      "sha256": "f5a5a7836ee4ce60fe38f06ed00a511b0e0aac2997fdd4e6c27069c55359d16e",
+      "events": 1
+    },
+    {
+      "file": "capacity_holdout_007_603995_overseas_termination.json",
+      "sha256": "777d7969cc748ddcb04c6dfd9701f70bf8243b589c8c3c6e541e423b457b7866",
+      "events": 1
+    },
+    {
+      "file": "capacity_holdout_008_002110_capacity_cooperation_suspension.json",
+      "sha256": "fb643f8954ffc8c74f22fcf0e6f85b686bdccf57edd9803315967d4f15db89fe",
+      "events": 0
+    },
+    {
+      "file": "capacity_holdout_009_000959_commissioning.json",
+      "sha256": "9620b4a8d18882db8e634c04d2bdbcd78af6b97c5834157ffa26d8ba89675c2e",
+      "events": 1
+    }
+  ]
+}

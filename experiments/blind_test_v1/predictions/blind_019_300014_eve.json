@@ -1,0 +1,50 @@
+{
+  "security_code": "300014",
+  "security_name": "亿纬锂能",
+  "announcement_number": "2025-169",
+  "company_name": "惠州亿纬锂能股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "亿纬控股",
+      "shares": 2000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 3.37,
+      "total_share_capital_ratio": 0.1,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": "2023-01-31",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2025-12-30",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中国建设银行股份有限公司惠州市分行",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "股东名称\n是否为控股股东\n或第一大股东及\n其一致行动人\n本次解除质押\n数量（股）\n占其所持\n股份比例\n占公司总\n股本比例\n质押开始日\n解除质押日\n质权人\n亿纬控股\n是\n2,000,000\n3.37%\n0.10%\n2023年1月31日2025年12月30日中国建设银行股份有限公\n司惠州市分行",
+      "confidence": 0.98
+    },
+    {
+      "event_type": "release",
+      "shareholder_name": "亿纬控股",
+      "shares": 8600000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 1.32,
+      "total_share_capital_ratio": 0.41,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": "2025-05-13",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2025-12-31",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "渤海国际信托股份有限公司",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "亿纬控股\n是\n8,600,000\n1.32%\n0.41%\n2025年5月13日2025年12月31日渤海国际信托股份有限公\n司",
+      "confidence": 0.98
+    }
+  ]
+}

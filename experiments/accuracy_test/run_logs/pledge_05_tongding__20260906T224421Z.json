@@ -1,0 +1,73 @@
+{
+  "run_id": "20260906T224421Z",
+  "status": "success",
+  "started_at": "2026-09-06T22:44:21.741334+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\pledge_test\\pledge_05_tongding.pdf",
+    "size_bytes": 136587,
+    "sha256": "28886ccb69e2eb5b71bd2f280cdba46acef2909871d6926e5e693faa2ab4a18b"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\pledge_extraction_v5.txt",
+    "sha256": "ac01f3b5dd6b77059bb990f40be5c17cfdb6316c7276846db9429b100a8048d9"
+  },
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "pdf_text_extraction",
+      "tool": "PyMuPDF",
+      "page_count": 5,
+      "duration_seconds": 0.0104
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "duration_seconds": 25.3936
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic semantic and shared-cell normalizer",
+      "changes_count": 1,
+      "changes": [
+        {
+          "event_index": 1,
+          "event_type": "release",
+          "field": "pledgee",
+          "value": "江苏江阴农村商业银行股份有限公司苏州分行",
+          "source_event_index": 0,
+          "reason": "adjacent_merged_cell_with_exact_evidence"
+        }
+      ],
+      "duration_seconds": 0.0002
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 36,
+      "expected_event_types": [
+        "pledge",
+        "release"
+      ],
+      "extracted_event_types": [
+        "pledge",
+        "release"
+      ],
+      "event_counts": {
+        "pledge": 1,
+        "release": 2,
+        "extension": 0
+      },
+      "duration_seconds": 0.0023
+    }
+  ],
+  "completed_at": "2026-09-06T22:44:47.151868+00:00",
+  "duration_seconds": 25.4105,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\pledge_05_tongding\\20260906T224421Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\pledge_05_tongding\\20260906T224421Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\pledge_05_tongding\\20260906T224421Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\pledge_05_tongding\\20260906T224421Z\\evidence_report.json"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "run_id": "20260920T055541Z",
+  "status": "needs_review",
+  "started_at": "2026-09-20T05:55:41.168350+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_004_000709_hbis_commissioning.pdf",
+    "size_bytes": 389639,
+    "sha256": "0598e4e3a8449cd7fff57acc46686deaebee3f6e82c01348acdcc4bd72112193"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v3.txt",
+    "sha256": "5f4497d75543cff0e4fa67408754f37f0fb77c89ad7050a852a7f71b91ee153f"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 2,
+      "text_char_count": 979,
+      "needs_ocr": false,
+      "duration_seconds": 0.0112
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 22.139
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0002
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 16,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "commissioning"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 1,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0006
+    }
+  ],
+  "completed_at": "2026-09-20T05:56:03.323178+00:00",
+  "duration_seconds": 22.1548,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T055541Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T055541Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T055541Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T055541Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T055541Z\\evidence_report.json"
+  ]
+}

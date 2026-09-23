@@ -1,0 +1,32 @@
+{
+  "security_code": "000709",
+  "security_name": "河钢股份",
+  "company_name": "河钢股份有限公司",
+  "announcement_number": "2024-025",
+  "announcement_date": "2024-06-07",
+  "events": [
+    {
+      "event_type": "commissioning",
+      "project_name": "邯钢新区二期项目",
+      "project_entity": "河钢股份有限公司邯郸分公司",
+      "project_location": "涉县新区",
+      "project_status": "commissioned",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "二期工程设备近日全部完工；2024年6月6日3700m3高炉顺利出铁，预计2024年6月上旬全线贯通投产。",
+      "technology_description": "建设1座3700m3高炉、1座250t转炉、1条1780mm热轧生产线及配套公辅设施。",
+      "project_purpose": "完成邯钢新区建设并提升新区生产效率和竞争力。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "二期工程建设的1座3700m3高炉、1座250t转炉、1条1780mm热轧生产线及配套公辅设施于近日全部完工。2024年6月6日，二期工程3700m3高炉顺利出铁",
+      "confidence": 1.0
+    }
+  ]
+}

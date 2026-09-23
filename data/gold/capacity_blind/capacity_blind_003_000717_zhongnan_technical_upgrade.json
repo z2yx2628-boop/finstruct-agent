@@ -1,0 +1,32 @@
+{
+  "security_code": "000717",
+  "security_name": "中南股份",
+  "company_name": "广东中南钢铁股份有限公司",
+  "announcement_number": "2024-13",
+  "announcement_date": "2024-04-29",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "2024年度基建技改项目投资框架计划",
+      "project_entity": "广东中南钢铁股份有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": 67643,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2024年度框架计划包含132项基建技改项目，部分项目计划于2024年或2025年完成，尚需2023年度股东大会审议。",
+      "technology_description": "安排装备能力与智能化提升、节能环保、信息化、消防安全及降本增效等基建技改项目。",
+      "project_purpose": "推进降本增效与高端化、智能化、绿色化、高效化转型。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "2024年度全年计划安排基建技改项目132项（含尾款项目），投资总额67,643万元。",
+      "confidence": 1.0
+    }
+  ]
+}

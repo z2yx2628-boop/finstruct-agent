@@ -1,0 +1,69 @@
+{
+  "run_id": "20260923T133132Z",
+  "status": "success",
+  "started_at": "2026-09-23T13:31:32.129564+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_holdout\\capacity_holdout_008_002110_capacity_cooperation_suspension.pdf",
+    "size_bytes": 160764,
+    "sha256": "2edc73906c9e56c9550f8f29836c2c7286ab5682ea860949d5956208a0fcc9ff"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v5.txt",
+    "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 2,
+      "text_char_count": 801,
+      "needs_ocr": false,
+      "duration_seconds": 0.009
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 4.2862
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 5,
+      "expected_event_types": [],
+      "extracted_event_types": [],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0006
+    }
+  ],
+  "completed_at": "2026-09-23T13:31:36.431377+00:00",
+  "duration_seconds": 4.3018,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_008_002110_capacity_cooperation_suspension\\20260923T133132Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_008_002110_capacity_cooperation_suspension\\20260923T133132Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_008_002110_capacity_cooperation_suspension\\20260923T133132Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_008_002110_capacity_cooperation_suspension\\20260923T133132Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_holdout_008_002110_capacity_cooperation_suspension\\20260923T133132Z\\evidence_report.json"
+  ]
+}

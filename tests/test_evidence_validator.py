@@ -162,3 +162,11 @@ def test_wrapped_thousands_separators_are_supported():
 
 def test_equivalent_decimal_formats_are_supported():
     assert number_supported(25.0, "25.00\n%")
+
+
+def test_zero_padded_iso_date_is_supported():
+    from src.evidence_validator import date_supported
+
+    assert date_supported("2026-05-15", "[发布日期] 2026-05-15")
+    assert date_supported("2026-05-15", "2026年5月15日")
+    assert not date_supported("2026-05-15", "2024-05-15")

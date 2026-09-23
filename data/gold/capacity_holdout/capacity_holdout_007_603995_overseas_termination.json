@@ -1,0 +1,32 @@
+{
+  "security_code": "603995",
+  "security_name": "甬金股份",
+  "company_name": "浙江甬金金属科技股份有限公司",
+  "announcement_number": "2023-048",
+  "announcement_date": "2023-06-02",
+  "events": [
+    {
+      "event_type": "termination",
+      "project_name": "年加工70万吨宽幅冷轧不锈钢板带项目",
+      "project_entity": "甬金金属科技（印尼）有限公司",
+      "project_location": "印度尼西亚共和国中苏拉威西省MOROWALI县青山园区",
+      "project_status": "terminated",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2022年10月4日项目公司完成印尼工商注册，项目尚未开工；2023年6月1日第五届董事会第三十八次会议审议通过终止投资并注销项目公司。",
+      "technology_description": null,
+      "project_purpose": null,
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "双方共同决定终止对该项目的投资，并同意注销该项目公司。",
+      "confidence": 1.0
+    }
+  ]
+}

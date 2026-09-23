@@ -1,0 +1,69 @@
+{
+  "run_id": "20260917T185342Z",
+  "status": "success",
+  "started_at": "2026-09-17T18:53:42.078336+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_001_600019_baosteel_construction.pdf",
+    "size_bytes": 310228,
+    "sha256": "9ed42040783d5ceea70d4ac67e3be60f6202dd760c8110ba6ae8628368e18190"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v2.txt",
+    "sha256": "30c6c6701201486b618da1903e544978155cc209ccfde77b2b564940a46ecc36"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 3,
+      "text_char_count": 2492,
+      "needs_ocr": false,
+      "duration_seconds": 0.0164
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "duration_seconds": 19.7499
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0003
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 16,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "capacity_construction"
+      ],
+      "event_counts": {
+        "capacity_construction": 1,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0013
+    }
+  ],
+  "completed_at": "2026-09-17T18:54:01.849850+00:00",
+  "duration_seconds": 19.7715,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_001_600019_baosteel_construction\\20260917T185342Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_001_600019_baosteel_construction\\20260917T185342Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_001_600019_baosteel_construction\\20260917T185342Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_001_600019_baosteel_construction\\20260917T185342Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_001_600019_baosteel_construction\\20260917T185342Z\\evidence_report.json"
+  ]
+}

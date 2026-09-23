@@ -1,0 +1,7 @@
+Open each link in a browser and save the PDF into
+E:\金融人工智能比赛9..10-10.18\data\raw\guarantee_test
+using exactly the file name shown, then rerun this script.
+
+guarantee_test_004_600569_single_subsidiary.pdf
+http://pdf.dfcfw.com/pdf/H2_AN202512031793257867_1.pdf
+

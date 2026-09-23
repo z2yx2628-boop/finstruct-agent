@@ -1,0 +1,32 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2026-087",
+  "announcement_date": "2026-09-18",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "2026年度固定资产投资年中计划调整",
+      "project_entity": "安阳钢铁股份有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": 328238.37,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2026年第十三次临时董事会会议审议通过，属于董事会审批权限，无需提交股东会审议。",
+      "technology_description": "调整项目围绕烟气脱硫脱硝、除尘灰接卸与配加、超纯净钢冶炼高效捞渣、高炉煤气放散塔改造及除尘系统优化。",
+      "project_purpose": "补齐环保设施短板，支撑特钢产品结构升级并提升能源利用效率和生产保障能力。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "本次调整后投资概算总额328,238.37万元，较年初投资概算总额减少840.96万元，本年度投资额78,941.37万元，较年初本年度计划投资额减少17,045.06万元。",
+      "confidence": 1.0
+    }
+  ]
+}

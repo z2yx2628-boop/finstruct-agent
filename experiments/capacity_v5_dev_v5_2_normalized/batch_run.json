@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-09-21T06:36:20.440660+00:00",
+  "pdf_count": 8,
+  "task": "capacity",
+  "runs": [
+    {
+      "pdf": "data\\raw\\capacity_v5_dev\\capacity_v5_dev_001_600581_bayi_framework.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_v5_dev_v5_2_normalized\\predictions\\capacity_v5_dev_001_600581_bayi_framework.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_001_600581_bayi_framework\\20260921T063620Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_v5_dev\\capacity_v5_dev_002_600569_angang_framework_adjustment.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_v5_dev_v5_2_normalized\\predictions\\capacity_v5_dev_002_600569_angang_framework_adjustment.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_002_600569_angang_framework_adjustment\\20260921T063637Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_v5_dev\\capacity_v5_dev_003_000932_valin_equipment_upgrade.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_v5_dev_v5_2_normalized\\predictions\\capacity_v5_dev_003_000932_valin_equipment_upgrade.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_003_000932_valin_equipment_upgrade\\20260921T063650Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_v5_dev\\capacity_v5_dev_004_000709_hbis_plate_construction.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_v5_dev_v5_2_normalized\\predictions\\capacity_v5_dev_004_000709_hbis_plate_construction.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_004_000709_hbis_plate_construction\\20260921T063704Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_v5_dev\\capacity_v5_dev_005_002843_bichamp_multi_delay.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_v5_dev_v5_2_normalized\\predictions\\capacity_v5_dev_005_002843_bichamp_multi_delay.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_005_002843_bichamp_multi_delay\\20260921T063718Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_v5_dev\\capacity_v5_dev_006_301217_tongguan_multi_delay.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_v5_dev_v5_2_normalized\\predictions\\capacity_v5_dev_006_301217_tongguan_multi_delay.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_006_301217_tongguan_multi_delay\\20260921T063751Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_v5_dev\\capacity_v5_dev_007_600019_baosteel_overseas_financing.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_v5_dev_v5_2_normalized\\predictions\\capacity_v5_dev_007_600019_baosteel_overseas_financing.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_007_600019_baosteel_overseas_financing\\20260921T063816Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_v5_dev\\capacity_v5_dev_008_600282_nangang_overseas_progress.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_v5_dev_v5_2_normalized\\predictions\\capacity_v5_dev_008_600282_nangang_overseas_progress.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_008_600282_nangang_overseas_progress\\20260921T063820Z"
+    }
+  ],
+  "completed_at": "2026-09-21T06:38:23.573046+00:00"
+}

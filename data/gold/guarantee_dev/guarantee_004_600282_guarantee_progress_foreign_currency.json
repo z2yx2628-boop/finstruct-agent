@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2026-032",
+  "announcement_date": "2026-05-07",
+  "total_guarantee_balance": 659254.49,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 23.79,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1590.0,
+      "guarantee_unit": "万美元",
+      "guarantee_currency": "USD",
+      "guarantee_type": "joint_and_several",
+      "creditor": "交通银行股份有限公司江苏省分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自该笔债务履行期限届满之日(或债权人垫付款项之日)起，计至全部主合同项下最后到期的主债务的债务履行期限届满之日(或债权人垫付款项之日)后三年止",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "confidence": 1.0,
+      "guarantor": "南京钢铁股份有限公司",
+      "guaranteed_party": "PT. KinXiang New Energy Technologies Indonesia",
+      "source_page": 3,
+      "evidence_text": "1、银行：交通银行股份有限公司江苏省分行\n2、担保方式：连带责任保证\n3、担保的主债权本金余额最高额：1,590万美元"
+    }
+  ]
+}

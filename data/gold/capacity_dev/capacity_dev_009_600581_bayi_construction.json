@@ -1,0 +1,43 @@
+{
+  "security_code": "600581",
+  "security_name": "八一钢铁",
+  "company_name": "新疆八一钢铁股份有限公司",
+  "announcement_number": "临2022-069",
+  "announcement_date": "2022-12-28",
+  "events": [
+    {
+      "event_type": "capacity_construction",
+      "project_name": "炼铁厂焦化分厂新建一套干熄焦项目",
+      "project_entity": "新疆八一钢铁股份有限公司",
+      "project_location": "炼铁厂焦化分厂",
+      "project_status": "approved",
+      "investment_amount": 14061,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "企业自筹",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "建设总工期11个月，投运后2个月内完成交工验收。",
+      "technology_description": "建设干熄焦本体、干熄焦锅炉、运焦系统及综合电气室、除尘地面站等辅助设施。",
+      "project_purpose": "达到钢铁行业超低排放要求，提高焦炭质量并降低炼铁焦比。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "干熄焦装置",
+          "product_name": null,
+          "capacity": 1,
+          "capacity_unit": "套",
+          "source_page": 1,
+          "evidence_text": "公司在现有2套干熄焦的基础上，拟新建1套干熄焦装置",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "项目名称：炼铁厂焦化分厂新建一套干熄焦项目",
+      "confidence": 1.0
+    }
+  ]
+}

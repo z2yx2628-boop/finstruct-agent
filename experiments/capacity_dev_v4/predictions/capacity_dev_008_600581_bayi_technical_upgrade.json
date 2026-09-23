@@ -1,0 +1,53 @@
+{
+  "security_code": "600581",
+  "security_name": "八一钢铁",
+  "company_name": "新疆八一钢铁股份有限公司",
+  "announcement_number": "临2023-026",
+  "announcement_date": "2023-06-22",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "2500m³HyCROF 商业化示范项目",
+      "project_entity": "新疆八一钢铁股份有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": 73031.47,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "中国宝武提供研究开发经费29,700万元，公司自有或自筹资金43,331.47万元",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "建设总工期13个月，投运后3个月内完成交工验收；董事会于2023年6月21日审议通过，尚需提交股东大会批准",
+      "technology_description": "HyCROF工艺技术商业化示范，包含A高炉本体热风围管、送风装置、风口设备HyCROF工艺改造，3座顶燃式热风炉改造，新建煤气洗涤塔2座、煤气加压及脱碳装置1套，燃气设施改造，三电系统升级改造等；同步实施A高炉大修",
+      "project_purpose": "实现固体燃耗降低30%以上、碳减排18%以上，提升企业绿色低碳转型能力与竞争力",
+      "capacity_changes": [],
+      "environmental_metrics": [
+        {
+          "metric_type": "energy_saving",
+          "metric_name": "固体燃耗降低率",
+          "value": 30.0,
+          "unit": "%以上",
+          "period": null,
+          "source_page": 1,
+          "evidence_text": "以实现固体燃耗降低30%以上,碳减排18%以上的目标",
+          "confidence": 0.98
+        },
+        {
+          "metric_type": "carbon_reduction",
+          "metric_name": "碳减排率",
+          "value": 18.0,
+          "unit": "%以上",
+          "period": null,
+          "source_page": 1,
+          "evidence_text": "以实现固体燃耗降低30%以上,碳减排18%以上的目标",
+          "confidence": 0.98
+        }
+      ],
+      "source_page": 1,
+      "evidence_text": "投资标的名称：2500m³HyCROF 商业化示范项目（以下简称“本项目”或“项目”）。",
+      "confidence": 0.99
+    }
+  ]
+}
