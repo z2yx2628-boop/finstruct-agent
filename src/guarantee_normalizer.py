@@ -16,11 +16,15 @@ FINANCIAL_INSTITUTION = re.compile(
 NAME_FIELDS = ("guarantor", "guaranteed_party", "creditor")
 # Numbered closing section "六、累计对外担保数量及逾期担保的数量": background only.
 CUMULATIVE_HEADING = re.compile(r"[一二三四五六七八九十]+、(?:公司)?累计对外担保")
-PROGRESS_TITLE = re.compile(r"担保(?:事项)?的?进展")
+# 进展公告 and 实施公告 report on guarantees under an earlier approval.
+PROGRESS_TITLE = re.compile(r"担保(?:事项)?的?(?:进展|实施)")
+RATIO_LABEL = re.compile(r"资产负债率[（(]%[）)][\d.,\s]*$")
 QUOTA_TITLE = re.compile(r"调剂|额度预计|预计.{0,6}额度")
 EXTERNAL_ZERO = re.compile(
     r"(?:无|不存在|未发生)(?:对外担保|对合并报表(?:范围)?外(?:单位|公司|主体)?(?:提供)?(?:的)?担保)"
     r"|(?:对外|合并报表(?:范围)?外(?:单位|公司|主体)?)(?:提供)?(?:的)?担保(?:总)?余额(?:为)?(?:0|零)"
+    r"|(?:未|没有|不存在)(?:向|为|对)合并报表(?:范围)?外(?:单位|公司|主体)?提供(?:过)?担保"
+    r"|对合并报表(?:范围)?外(?:单位|公司|主体)?(?:未|没有)提供(?:过)?(?:任何)?担保"
 )
 
 
@@ -152,6 +156,9 @@ def debt_ratio_supported(value: float, text: str) -> bool:
     for position in number_positions(value, compact_text):
         number = re.match(r"[\d,.]+", compact_text[position:]).group(0)
         if compact_text[position + len(number): position + len(number) + 1] in ("%", "％"):
+            return True
+        # Table row "资产负债率（%） 67.51 66.50": the percent sign sits in the label.
+        if RATIO_LABEL.search(compact_text[max(0, position - 40):position]):
             return True
     return False
 

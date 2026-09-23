@@ -221,3 +221,33 @@ def test_zero_external_balance_needs_explicit_statement():
     assert unsupported.external_guarantee_balance is None
     supported, _ = normalize_guarantee_fields(doc, [{"page": 1, "text": "公司无对外担保。"}])
     assert supported.external_guarantee_balance == 0
+
+
+def test_implementation_announcement_counts_as_progress():
+    from src.guarantee_normalizer import is_progress_announcement
+    pages = [{"page": 1, "text": "凌源钢铁股份有限公司\n关于为控股股东提供担保的实施公告\n"}]
+    assert is_progress_announcement(pages)
+
+
+def test_not_provided_to_off_group_units_is_zero_external_balance():
+    doc = GuaranteeDocument(external_guarantee_balance=0, external_guarantee_unit="亿元")
+    text = "公司的担保均为对合并报表范围内控股子公司的担保，对合并报表外单位未提供担保。"
+    normalized, _ = normalize_guarantee_fields(doc, [{"page": 1, "text": text}])
+    assert normalized.external_guarantee_balance == 0
+
+
+def test_debt_ratio_with_percent_in_table_label_is_kept():
+    from src.guarantee_normalizer import debt_ratio_supported
+    assert debt_ratio_supported(67.51, "负债总计 1,855,470.65\n资产负债率（%） 67.51 66.50")
+    assert debt_ratio_supported(66.50, "资产负债率（%） 67.51 66.50")
+    assert not debt_ratio_supported(67.51, "负债总额 67.51 亿元")
+
+
+def test_equal_amounts_in_different_units_match_canonically():
+    gold = GuaranteeDocument(events=[event(event_type="guarantee_provided", guaranteed_party="周口钢铁",
+                                           guarantee_amount=1.5, guarantee_unit="亿元")])
+    predicted = GuaranteeDocument(events=[event(event_type="guarantee_provided", guaranteed_party="周口钢铁",
+                                                guarantee_amount=15000, guarantee_unit="万元")])
+    report = evaluate_document(gold, predicted)
+    assert report["factual_attribute_metrics"]["matched"] < report["factual_attribute_metrics"]["total"]
+    assert report["canonical_attribute_metrics"]["matched"] == report["canonical_attribute_metrics"]["total"]

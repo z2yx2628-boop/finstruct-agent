@@ -64,6 +64,37 @@ def pair_events(gold: list, predicted: list):
     return pairs, missing, remaining
 
 
+AMOUNT_PAIRS = {
+    "guarantee_amount": "guarantee_unit",
+    "total_guarantee_balance": "total_guarantee_unit",
+    "external_guarantee_balance": "external_guarantee_unit",
+    "overdue_guarantee_amount": "overdue_guarantee_unit",
+}
+UNIT_SCALE = {"元": 1, "万元": 1e4, "亿元": 1e8, "美元": 1, "万美元": 1e4, "亿美元": 1e8}
+
+
+def amount_value(amount, unit):
+    if amount is None or unit not in UNIT_SCALE:
+        return None
+    return round(amount * UNIT_SCALE[unit], 2), "USD" if unit.endswith("美元") else "CNY"
+
+
+def mark_equal_amounts(rows: list[dict], pairs: list[tuple]) -> list[dict]:
+    """Canonical scoring: 1.5亿元 and 15,000万元 are the same amount."""
+    for row in rows:
+        field = row["field"]
+        amount_field = next((a for a, u in AMOUNT_PAIRS.items() if field in (a, u)), None)
+        if amount_field is None or row["canonical_matched"]:
+            continue
+        gold, predicted = pairs[row["record_index"]]
+        unit_field = AMOUNT_PAIRS[amount_field]
+        expected = amount_value(getattr(gold, amount_field), getattr(gold, unit_field))
+        actual = amount_value(getattr(predicted, amount_field), getattr(predicted, unit_field))
+        if expected is not None and expected == actual:
+            row["canonical_matched"] = True
+    return rows
+
+
 def add_canonical(rows: list[dict]) -> list[dict]:
     for row in rows:
         row["canonical_matched"] = row["matched"] or (
@@ -73,9 +104,12 @@ def add_canonical(rows: list[dict]) -> list[dict]:
 
 
 def evaluate_document(gold: GuaranteeDocument, prediction: GuaranteeDocument) -> dict:
-    document_rows = add_canonical(comparison_rows([(gold, prediction)], DOCUMENT_FIELDS, "document"))
+    document_rows = mark_equal_amounts(
+        add_canonical(comparison_rows([(gold, prediction)], DOCUMENT_FIELDS, "document")),
+        [(gold, prediction)],
+    )
     pairs, missing, unexpected = pair_events(gold.events, prediction.events)
-    event_rows = add_canonical(comparison_rows(pairs, EVENT_FIELDS, "event"))
+    event_rows = mark_equal_amounts(add_canonical(comparison_rows(pairs, EVENT_FIELDS, "event")), pairs)
     narrative_rows = comparison_rows(pairs, NARRATIVE_FIELDS, "event")
     factual = document_rows + event_rows
     return {
@@ -159,7 +193,7 @@ def main() -> None:
         ("document_field_metrics", "Document fields"),
         ("event_attribute_metrics", "Event attributes"),
         ("factual_attribute_metrics", "Factual attributes"),
-        ("canonical_attribute_metrics", "Factual (canonical names)"),
+        ("canonical_attribute_metrics", "Factual (canonical names, equal amounts)"),
         ("narrative_attribute_metrics", "Narrative fields (strict)"),
     ):
         m = report[name]
