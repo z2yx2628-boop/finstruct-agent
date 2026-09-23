@@ -7,7 +7,7 @@
 4. 原文未明确披露的可选字段必须填写null；没有符合条件的事件时events为空数组。
 
 事件粒度与类型：
-5. 每个event表示一组“担保方→被担保方”的本次担保决策或进展。同一担保方为多个被担保方担保时，每个被担保方分别生成一个event。
+5. 每个event表示一组“担保方→被担保方”的本次担保决策或进展。同一担保方为多个被担保方担保时，每个被担保方分别生成一个event。担保明细表按“被担保方+债权人”分行列示金额时，每一行生成一个event，creditor填写该行债权人，guarantee_amount填写该行本次担保（续保）金额，不得把多行金额自行加总。
 6. guarantee_provided：本次已签署担保合同、已实际提供担保，或董事会/股东大会审议通过为某一具体被担保方提供一笔具体金额的担保。
 7. guarantee_limit：公告核心事项是年度担保额度预计、担保额度授权或额度调剂。表格中按被担保方分别列出额度时，每个被担保方生成一个guarantee_limit事件；只披露总额度而未分被担保方时，生成一个event，guaranteed_party填写null。
 8. guarantee_released：担保解除、到期、提前终止或被担保债务已清偿导致担保责任解除。
@@ -35,7 +35,7 @@
 文档级累计字段：
 25. total_guarantee_balance、total_guarantee_unit填写公告披露的公司及子公司担保总余额或担保总额；total_guarantee_net_asset_ratio填写其占最近一期经审计净资产的比例数值。
 26. external_guarantee_balance、external_guarantee_unit填写对合并报表范围外单位的担保余额；原文明确“无对外担保”时填写0并保留单位。
-27. overdue_guarantee_amount、overdue_guarantee_unit填写逾期担保金额；原文明确“无逾期担保”时填写0，单位填写“元”或原文单位。
+27. overdue_guarantee_amount、overdue_guarantee_unit填写逾期担保金额；原文明确“无逾期担保”时填写0，单位采用同一累计担保段落或表格中担保总额所用的单位（如“万元”）；段落中没有任何金额单位时填写“元”。
 28. 累计字段没有披露时填写null，不得用本次担保金额代替累计余额。
 
 文档字段：

@@ -116,3 +116,23 @@ def test_evaluator_pairs_by_guaranteed_party():
     amounts = [m for m in report["field_mismatches"] if m["field"] == "guarantee_amount"]
     assert amounts == []
     assert report["canonical_attribute_metrics"]["matched"] > report["factual_attribute_metrics"]["matched"]
+
+
+def test_same_party_and_amount_with_different_creditors_are_kept():
+    rows = "被担保方 银行 担保敞口金额（万元）\n方大长力 兴业银行股份有限公司南昌分行 10,000.00\n方大长力 中信银行股份有限公司南昌分行 10,000.00"
+    pages = [{"page": 1, "text": rows}]
+    document = GuaranteeDocument(events=[
+        event(event_type="guarantee_provided", guaranteed_party="方大长力",
+              guarantee_amount=10000, guarantee_unit="万元", creditor=bank,
+              evidence_text=f"方大长力 {bank} 10,000.00")
+        for bank in ("兴业银行股份有限公司南昌分行", "中信银行股份有限公司南昌分行")
+    ])
+    normalized, _ = normalize_guarantee_fields(document, pages)
+    assert [e.creditor for e in normalized.events] == [
+        "兴业银行股份有限公司南昌分行", "中信银行股份有限公司南昌分行"]
+
+
+def test_table_amount_is_not_glued_to_next_row_number():
+    from src.guarantee_normalizer import amount_supported
+    table = "担保敞口金额\n（万元）\n序号\n被担保方\n银行\n1\n悬架集团\n兴业银行股份有限公司南昌分行\n3,600.00\n2\n济南重弹"
+    assert amount_supported(3600, "万元", table) == (3600, "万元")

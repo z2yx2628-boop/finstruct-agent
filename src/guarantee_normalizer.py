@@ -33,8 +33,22 @@ def amount_supported(
     return _amount_in(amount, unit, text)
 
 
+def compact_keep_number_breaks(text: str) -> str:
+    """Remove whitespace, but keep one space between two digits.
+
+    Table cells such as "3,600.00" followed by the next row number "2" would
+    otherwise merge into "3,600.002" and hide the amount.
+    """
+    def replace(match: re.Match) -> str:
+        before = text[match.start() - 1] if match.start() > 0 else ""
+        after = text[match.end()] if match.end() < len(text) else ""
+        return " " if before.isdigit() and after.isdigit() else ""
+
+    return re.sub(r"\s+", replace, text)
+
+
 def _amount_in(amount: float, unit: str, text: str) -> tuple[float, str] | None:
-    compact_text = re.sub(r"\s+", "", text)
+    compact_text = compact_keep_number_breaks(text)
     for form_amount, form_unit in investment_unit_forms(amount, unit):
         for position in number_positions(form_amount, compact_text):
             number = re.match(r"[\d,.]+", compact_text[position:]).group(0)
@@ -55,6 +69,9 @@ def event_key(event: dict) -> tuple:
         re.sub(r"\s+", "", event["guaranteed_party"] or ""),
         event["guarantee_amount"],
         event["guarantee_unit"],
+        # Same party and amount with different creditors are separate
+        # guarantees (one table row per bank), not duplicates.
+        re.sub(r"\s+", "", event["creditor"] or ""),
     )
 
 

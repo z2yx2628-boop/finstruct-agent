@@ -1,0 +1,55 @@
+# Guarantee development Gold (guarantee-dev-gold-v1)
+
+## Status
+
+- **Development set, not a test set.** These 4 documents are used to tune the
+  guarantee prompt and normalizer; scores on them are development results and
+  must never be reported as independent accuracy. No lock file on purpose.
+- Drafted 2026-09-23 from the source PDFs only, before any guarantee
+  prediction was run. One annotator, no second review.
+- Sources and SHA-256: `data/manifests/guarantee_sources.csv`.
+
+## Scope
+
+| File | Issuer | Pattern | Events |
+| --- | --- | --- | --- |
+| 001 | 方大特钢 600507 | 14-row table, 7 subsidiaries × banks, counter-guarantee for 2 | 14 provided |
+| 002 | 安泰集团 600408 | Related-party renewal guarantee, overdue 4亿元 | 4 provided |
+| 003 | 中信特钢 000708 | Subsidiary guarantees another subsidiary, contract signed | 1 provided |
+| 004 | 南钢股份 600282 | USD guarantee for Indonesian subsidiary under annual quota | 1 provided |
+
+## Rules added with this Gold (prompt v1 rules 5 and 27)
+
+- A guarantee table listed per **guaranteed party + creditor** gives one event
+  per row, `creditor` = that row's creditor, amount = that row's amount. Rows
+  are never summed (the normalizer would reject a summed amount anyway, since
+  it does not appear in the source).
+- "No overdue guarantee" → `overdue_guarantee_amount = 0` with the unit used by
+  the cumulative-guarantee paragraph or table (万元 in 001, 003, 004).
+
+## Material judgments
+
+| File | Label | Alternative |
+| --- | --- | --- |
+| 001 | Board-approved but contracts not yet signed (“尚未签署担保合同”) → `guarantee_provided` per rule 6. | `guarantee_limit`. |
+| 001 | Guaranteed parties use the full names from 重要内容提示, not the table abbreviations. | Abbreviations (悬架集团…). |
+| 001 | 方大长力 is “间接全资子公司” → `wholly_owned_subsidiary`; 重庆红岩, 济南重弹 → `controlled_subsidiary`. | — |
+| 001 | Counter-guarantee `true` only for 重庆红岩/济南重弹; `null` for the other five (text does not say they have none). | `false` for the other five. |
+| 001 | `external_guarantee_balance` null: 405,500 includes mutual guarantees with 方大炭素 and only the within-group 305,500 is split out; the off-group figure would need subtraction. | 100,000 万元. |
+| 002 | Amount = 续保金额 column (40,650 / 19,350 / 5,750 / 16,820 万元), not the current balance column. | One event of 8.26亿元. |
+| 002 | 新泰钢铁 is 100% held by the controlling shareholder’s company → `sister_company`; “构成关联担保” → `is_related_transaction = true`. | `other_related_party`. |
+| 002 | Cumulative 26.11亿元 is to the related party outside the group → `external_guarantee_balance`; `total_guarantee_balance` null (group total not disclosed). | total = 26.11亿元. |
+| 003 | Relationship judged against the guarantor (天管国贸 is 天津钢管’s wholly owned subsidiary). | `controlled_subsidiary` (listed company’s view). |
+| 003 | Signing date 2025-06-25 is not a guarantee-period date → `start_date` null. | 2025-06-25. |
+| 003 | 12,000万元 is an off-group guarantee **quota**, not a balance → `external_guarantee_balance` null. | 12,000 万元. |
+| 004 | Party = English legal name as printed in the table; unit `万美元`, currency USD. | Chinese name 印尼金祥新能源科技有限责任公司. |
+| 004 | `source_page` = 3 (担保协议的主要内容). | 1 (summary table). |
+| all | Debt ratio filled only where printed as a percentage (001); not computed from assets/liabilities (002–004). | — |
+
+## Known system fix made while drafting
+
+Whitespace removal glued table cells ("3,600.00" + next row number "2" →
+"3,600.002"), so every table amount in 001/002 failed the evidence check and
+was deleted. `compact_keep_number_breaks` in `src/guarantee_normalizer.py` now
+keeps a space between two digits. The same bug still exists in the capacity
+investment check and is scheduled for a later capacity version.
