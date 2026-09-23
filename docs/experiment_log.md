@@ -42,6 +42,7 @@ All 25 pledge Gold documents come from issuers outside the steel industry.
 | guarantee_dev_v1 | 4 × 1 | Guarantee prompt v1 (`1805779`) | 28.6% | — | 118/132 | Development (Gold v1) |
 | guarantee_dev_v2 | 4 × 1 | Guarantee prompt v2 (`ade6873`) | 76.5% | — | 188/230 | Development (Gold v2) |
 | guarantee_dev_v3 | 4 × 1 | Guarantee prompt v3 (`5cf6f00`) | 100% | — | 313/328 | Development (Gold v2) — dev freeze; the 15 remaining mismatches are all listed Gold alternatives |
+| **guarantee_test_r1–r3** | 6 × 3 | Guarantee v3 (`fbb7d33`) | **95.65%** | — | **216–217/226** | **Independent** (Gold `d76a3c3` before first run) |
 
 Known anomaly: `capacity_v5_dev_v5_1_full` reports the same attribute
 counts as the V4 baseline although its predictions differ. The report should
@@ -59,5 +60,5 @@ to the errors that motivated the rules.
 | Module | What is missing |
 | --- | --- |
 | Capacity V7 (maintenance events, research fields) | New issuer-disjoint Gold including maintenance and overseas projects |
-| Guarantee v3 | Frozen test set from the 14 eligible core mills (core Y minus the 8 reserved mills minus dev issuers) |
+| Guarantee v4 | Released/overdue coverage and a new issuer-disjoint set after the v4 fixes |
 | Final test set | Reserved documents from 8 core steel mills, run once after the final freeze |
