@@ -63,6 +63,30 @@ def _validate_capacity(document: Any, pages: Pages) -> dict:
     return validate_capacity_evidence(document, pages)
 
 
+def _extract_guarantee(pages: Pages) -> ExtractResult:
+    from schemas.guarantee import GuaranteeDocument
+    from src.structured_extractor import extract_structured
+
+    return extract_structured(
+        pages,
+        TASKS["guarantee"].prompt_path,
+        GuaranteeDocument,
+        "请根据下面的JSON Schema抽取对外担保信息。",
+    )
+
+
+def _normalize_guarantee(document: Any, pages: Pages):
+    from src.guarantee_normalizer import normalize_guarantee_fields
+
+    return normalize_guarantee_fields(document, pages)
+
+
+def _validate_guarantee(document: Any, pages: Pages) -> dict:
+    from src.guarantee_evidence_validator import validate_guarantee_evidence
+
+    return validate_guarantee_evidence(document, pages)
+
+
 def _prompt(name: str) -> Path:
     return PROJECT_ROOT / "prompts" / name
 
@@ -87,6 +111,16 @@ TASKS: dict[str, TaskSpec] = {
         normalization_tool="Deterministic capacity overfill normalizer",
         validate=_validate_capacity,
         evaluator_module="src.capacity_accuracy_evaluator",
+    ),
+    "guarantee": TaskSpec(
+        name="guarantee",
+        label="对外担保",
+        prompt_path=_prompt("guarantee_extraction_v1.txt"),
+        extract=_extract_guarantee,
+        normalize=_normalize_guarantee,
+        normalization_tool="Deterministic guarantee normalizer",
+        validate=_validate_guarantee,
+        evaluator_module="src.guarantee_accuracy_evaluator",
     ),
 }
 

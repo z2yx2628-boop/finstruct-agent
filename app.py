@@ -165,6 +165,10 @@ CAPACITY_EVENT_LABELS = {
     "suspension": "暂停",
     "termination": "终止",
     "maintenance": "检修/临时停产",
+    "guarantee_provided": "提供担保",
+    "guarantee_limit": "担保额度",
+    "guarantee_released": "担保解除",
+    "guarantee_overdue": "逾期担保",
 }
 
 
