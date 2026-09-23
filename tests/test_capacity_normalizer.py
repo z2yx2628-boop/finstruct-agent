@@ -119,6 +119,35 @@ def test_sanitizer_removes_incomplete_nested_records():
     assert len(changes) == 2
 
 
+
+def test_sanitizer_removes_investment_amount_emitted_as_capacity():
+    payload = {
+        "events": [{
+            "capacity_changes": [
+                {
+                    "action": "new",
+                    "facility_type": "7#高炉",
+                    "capacity": 76781.0,
+                    "capacity_unit": "万元",
+                },
+                {
+                    "action": "new",
+                    "capacity": 120,
+                    "capacity_unit": "万吨/年",
+                },
+            ],
+            "environmental_metrics": [],
+        }],
+    }
+
+    cleaned, changes = sanitize_capacity_payload(payload)
+
+    records = cleaned["events"][0]["capacity_changes"]
+    assert [record["capacity_unit"] for record in records] == ["万吨/年"]
+    assert [change["action"] for change in changes] == [
+        "remove_monetary_capacity_change"
+    ]
+
 def make_capacity_change(
     action: str,
     capacity: float,

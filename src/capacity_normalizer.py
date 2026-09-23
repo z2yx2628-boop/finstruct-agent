@@ -93,6 +93,18 @@ NON_COMMISSIONING_MARKERS = (
 )
 
 
+MONETARY_UNIT_PATTERN = re.compile(
+    r"^(?:人民币|美元|港元|欧元|日元)?(?:元|千元|万元|百万元|千万元|亿元|万美元|亿美元|美元)$"
+)
+
+
+def is_monetary_capacity_unit(unit: str | None) -> bool:
+    if not unit:
+        return False
+    compact = re.sub(r"\s+", "", str(unit))
+    return bool(MONETARY_UNIT_PATTERN.match(compact))
+
+
 def sanitize_capacity_payload(data: dict) -> tuple[dict, list[dict]]:
     changes: list[dict] = []
     for event_index, event in enumerate(data.get("events", [])):
@@ -108,6 +120,13 @@ def sanitize_capacity_payload(data: dict) -> tuple[dict, list[dict]]:
                     "event_index": event_index,
                     "record_index": record_index,
                     "action": "remove_incomplete_capacity_change",
+                    "original": record,
+                })
+            elif is_monetary_capacity_unit(record.get("capacity_unit")):
+                changes.append({
+                    "event_index": event_index,
+                    "record_index": record_index,
+                    "action": "remove_monetary_capacity_change",
                     "original": record,
                 })
             else:
