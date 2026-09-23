@@ -1,4 +1,4 @@
-# Guarantee development Gold (guarantee-dev-gold-v1)
+# Guarantee development Gold (guarantee-dev-gold-v2)
 
 ## Status
 
@@ -13,8 +13,8 @@
 
 | File | Issuer | Pattern | Events |
 | --- | --- | --- | --- |
-| 001 | 方大特钢 600507 | 14-row table, 7 subsidiaries × banks, counter-guarantee for 2 | 14 provided |
-| 002 | 安泰集团 600408 | Related-party renewal guarantee, overdue 4亿元 | 4 provided |
+| 001 | 方大特钢 600507 | 14-row table, 7 subsidiaries × banks, counter-guarantee for 2 | 14 limit |
+| 002 | 安泰集团 600408 | Related-party renewal guarantee, overdue 4亿元 | 4 limit |
 | 003 | 中信特钢 000708 | Subsidiary guarantees another subsidiary, contract signed | 1 provided |
 | 004 | 南钢股份 600282 | USD guarantee for Indonesian subsidiary under annual quota | 1 provided |
 
@@ -31,7 +31,7 @@
 
 | File | Label | Alternative |
 | --- | --- | --- |
-| 001 | Board-approved but contracts not yet signed (“尚未签署担保合同”) → `guarantee_provided` per rule 6. | `guarantee_limit`. |
+| 001 | Board-approved but contracts not yet signed (“尚未签署担保合同”) → `guarantee_limit` (v2 rule 7). | `guarantee_provided` (v1). |
 | 001 | Guaranteed parties use the full names from 重要内容提示, not the table abbreviations. | Abbreviations (悬架集团…). |
 | 001 | 方大长力 is “间接全资子公司” → `wholly_owned_subsidiary`; 重庆红岩, 济南重弹 → `controlled_subsidiary`. | — |
 | 001 | Counter-guarantee `true` only for 重庆红岩/济南重弹; `null` for the other five (text does not say they have none). | `false` for the other five. |
@@ -53,3 +53,16 @@ Whitespace removal glued table cells ("3,600.00" + next row number "2" →
 was deleted. `compact_keep_number_breaks` in `src/guarantee_normalizer.py` now
 keeps a space between two digits. The same bug still exists in the capacity
 investment check and is scheduled for a later capacity version.
+
+## Revision log
+
+| Version | Date | Change | Why |
+| --- | --- | --- | --- |
+| v1 | 2026-09-23 | Initial draft, 20 events. | — |
+| v2 | 2026-09-23 | 001 (14) and 002 (4) relabelled `guarantee_provided` → `guarantee_limit`; nothing else changed. | Dev run 1 (prompt v1) exposed that v1 rules 6/7 overlapped: “board-approved specific amount” fell under both. Prompt v2 draws the line at the **signed contract**: signed / actually provided → `provided`; approved but unsigned (“尚未签署”“以实际签订的合同为准”“拟提供”“尚需股东大会审议”) → `limit`. This separates actual liabilities from authorised capacity, which is what the risk graph needs. Changed on a development set only; the v1 labels are kept in git history and the dev-run-1 report scores against v1. |
+
+Dev run 1 (prompt v1, v1 Gold): event F1 28.57%, factual attributes 89.39%.
+Main errors: event type on 001 (all 14 rows otherwise correct), an overdue event taken
+from the cumulative section (002), a prior annual quota taken as a new limit in a
+progress announcement (004), debt ratios computed from assets/liabilities (002–004),
+Chinese-numeral signature dates rejected by the date check (002, 004).

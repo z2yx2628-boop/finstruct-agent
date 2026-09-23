@@ -13,6 +13,10 @@ FINANCIAL_INSTITUTION = re.compile(
     r"银行|信用社|信托|金融租赁|融资租赁|证券|保险|资产管理|财务有限公司|农商行|农信"
 )
 NAME_FIELDS = ("guarantor", "guaranteed_party", "creditor")
+# Numbered closing section "六、累计对外担保数量及逾期担保的数量": background only.
+CUMULATIVE_HEADING = re.compile(r"[一二三四五六七八九十]+、(?:公司)?累计对外担保")
+PROGRESS_TITLE = re.compile(r"担保(?:事项)?的?进展")
+QUOTA_TITLE = re.compile(r"调剂|额度预计|预计.{0,6}额度")
 
 
 def amount_supported(
@@ -62,6 +66,45 @@ def _amount_in(amount: float, unit: str, text: str) -> tuple[float, str] | None:
     return None
 
 
+def cumulative_section_start(pages: list[dict]) -> tuple[int, int] | None:
+    """(page, offset in whitespace-free page text) of the cumulative section."""
+    for page in pages:
+        match = CUMULATIVE_HEADING.search(re.sub(r"\s+", "", page["text"]))
+        if match:
+            return page["page"], match.start()
+    return None
+
+
+def in_cumulative_section(evidence: str, source_page: int, pages: list[dict]) -> bool:
+    start = cumulative_section_start(pages)
+    if start is None:
+        return False
+    page_no, offset = start
+    if source_page > page_no:
+        return True
+    if source_page < page_no:
+        return False
+    page_text = next((re.sub(r"\s+", "", p["text"]) for p in pages if p["page"] == page_no), "")
+    position = page_text.find(re.sub(r"\s+", "", evidence or ""))
+    return position >= offset
+
+
+def is_progress_announcement(pages: list[dict]) -> bool:
+    head = re.sub(r"\s+", "", pages[0]["text"])[:300] if pages else ""
+    title = re.search(r"关于.{0,60}?公告", head)
+    title_text = title.group(0) if title else ""
+    return bool(PROGRESS_TITLE.search(title_text)) and not QUOTA_TITLE.search(title_text)
+
+
+def debt_ratio_supported(value: float, text: str) -> bool:
+    compact_text = compact_keep_number_breaks(text)
+    for position in number_positions(value, compact_text):
+        number = re.match(r"[\d,.]+", compact_text[position:]).group(0)
+        if compact_text[position + len(number): position + len(number) + 1] in ("%", "％"):
+            return True
+    return False
+
+
 def event_key(event: dict) -> tuple:
     return (
         event["event_type"],
@@ -107,7 +150,20 @@ def normalize_guarantee_fields(
 
     kept_events = []
     seen = set()
+    progress = is_progress_announcement(pages)
     for index, event in enumerate(data["events"]):
+        if in_cumulative_section(event["evidence_text"], event["source_page"], pages):
+            changes.append({"event_index": index, "action": "drop_cumulative_section_event",
+                            "event_type": event["event_type"]})
+            continue
+        if progress and event["event_type"] == "guarantee_limit":
+            changes.append({"event_index": index, "action": "drop_prior_limit_in_progress_announcement"})
+            continue
+        ratio = event["guaranteed_party_debt_ratio"]
+        if ratio is not None and not debt_ratio_supported(ratio, full_text):
+            event["guaranteed_party_debt_ratio"] = None
+            changes.append({"event_index": index, "action": "clear_unsupported_debt_ratio",
+                            "original": ratio})
         for field in NAME_FIELDS:
             value = event[field]
             collapsed = collapse_cjk_spaces(value)

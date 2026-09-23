@@ -33,7 +33,7 @@ def event(**fields) -> GuaranteeEvent:
 
 def test_guarantee_task_is_registered():
     spec = get_task("guarantee")
-    assert spec.prompt_path.name == "guarantee_extraction_v1.txt"
+    assert spec.prompt_path.name == "guarantee_extraction_v2.txt"
     assert spec.prompt_path.exists()
 
 
@@ -136,3 +136,50 @@ def test_table_amount_is_not_glued_to_next_row_number():
     from src.guarantee_normalizer import amount_supported
     table = "担保敞口金额\n（万元）\n序号\n被担保方\n银行\n1\n悬架集团\n兴业银行股份有限公司南昌分行\n3,600.00\n2\n济南重弹"
     assert amount_supported(3600, "万元", table) == (3600, "万元")
+
+
+CUMULATIVE_PAGES = [
+    {"page": 1, "text": "近日，公司与中国银行签署《保证合同》，为湖南华菱湘潭钢铁有限公司提供连带责任保证，担保金额为5亿元。"},
+    {"page": 2, "text": "七、累计对外担保数量\n公司对外担保逾期金额 4 亿元，系为关联方提供的最高额 4 亿元保证担保。\n二○二五年六月六日"},
+]
+
+
+def test_event_from_cumulative_section_is_dropped():
+    document = GuaranteeDocument(events=[event(
+        event_type="guarantee_overdue", guaranteed_party="关联方",
+        guarantee_amount=4, guarantee_unit="亿元", source_page=2,
+        evidence_text="公司对外担保逾期金额 4 亿元")])
+    normalized, changes = normalize_guarantee_fields(document, CUMULATIVE_PAGES)
+    assert normalized.events == []
+    assert changes[-1]["action"] == "drop_cumulative_section_event"
+
+
+def test_prior_limit_in_progress_announcement_is_dropped():
+    pages = [{"page": 1, "text": "南京钢铁股份有限公司\n关于对外提供担保的进展公告\n同意公司为金祥新能源新增不超过 144,000 万元的授信担保额度。"}]
+    document = GuaranteeDocument(events=[event(
+        guaranteed_party="金祥新能源", guarantee_amount=144000, guarantee_unit="万元",
+        evidence_text="同意公司为金祥新能源新增不超过 144,000 万元的授信担保额度")])
+    normalized, changes = normalize_guarantee_fields(document, pages)
+    assert normalized.events == []
+    assert changes[-1]["action"] == "drop_prior_limit_in_progress_announcement"
+
+
+def test_computed_debt_ratio_is_cleared_but_printed_ratio_kept():
+    kept = event(guaranteed_party="湖南华菱涟源钢铁有限公司", guaranteed_party_debt_ratio=58.21)
+    computed = event(guaranteed_party="华菱钢铁（香港）国际贸易有限公司", guaranteed_party_debt_ratio=66.66)
+    normalized, _ = normalize_guarantee_fields(GuaranteeDocument(events=[kept, computed]), PAGES)
+    assert [e.guaranteed_party_debt_ratio for e in normalized.events] == [58.21, None]
+
+
+def test_chinese_numeral_signature_date_is_supported():
+    from src.evidence_validator import date_supported
+    assert date_supported("2025-06-06", "山西安泰集团股份有限公司\n二○二五年六月六日")
+    assert date_supported("2026-05-07", "董事会\n二〇二六年五月七日")
+    assert date_supported("2024-12-31", "二○二四年十二月三十一日")
+    assert not date_supported("2025-06-07", "二○二五年六月六日")
+
+
+def test_validator_ignores_quota_wording_in_cumulative_section():
+    from src.guarantee_evidence_validator import detect_expected_event_types
+    text = "天管国贸申请2.29亿元授信额度。五、累计对外担保数量及逾期担保的数量\n提供担保额度总金额为749,900万元"
+    assert "guarantee_limit" not in detect_expected_event_types(text)

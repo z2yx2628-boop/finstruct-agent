@@ -4,7 +4,7 @@ import re
 
 from schemas.guarantee import GuaranteeDocument
 from src.evidence_validator import compact, date_supported, text_supported
-from src.guarantee_normalizer import amount_supported
+from src.guarantee_normalizer import CUMULATIVE_HEADING, amount_supported, is_progress_announcement
 
 EVENT_ORDER = (
     "guarantee_provided",
@@ -21,6 +21,10 @@ SECTION_PHRASES = {
 
 def detect_expected_event_types(full_text: str) -> set[str]:
     text = compact(full_text)
+    # The closing cumulative section ("累计对外担保…担保额度总金额") is background.
+    heading = CUMULATIVE_HEADING.search(text)
+    if heading:
+        text = text[:heading.start()]
     expected = set()
     for event_type, phrases in SECTION_PHRASES.items():
         if any(phrase in text for phrase in phrases):
@@ -79,7 +83,11 @@ def validate_guarantee_evidence(
 
     counts = Counter(event.event_type for event in document.events)
     extracted = [item for item in EVENT_ORDER if counts.get(item)]
-    expected = sorted(detect_expected_event_types(full_text), key=EVENT_ORDER.index)
+    expected_types = detect_expected_event_types(full_text)
+    if is_progress_announcement(pages):
+        # Quota wording in a progress announcement refers to the prior approval.
+        expected_types.discard("guarantee_limit")
+    expected = sorted(expected_types, key=EVENT_ORDER.index)
     missing = [item for item in expected if not counts.get(item)]
     for item in missing:
         check(False, item, "event_type", None, "section wording suggests this event type")

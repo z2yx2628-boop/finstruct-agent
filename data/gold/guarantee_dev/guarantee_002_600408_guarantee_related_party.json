@@ -13,7 +13,7 @@
   "overdue_guarantee_unit": "亿元",
   "events": [
     {
-      "event_type": "guarantee_provided",
+      "event_type": "guarantee_limit",
       "relationship": "sister_company",
       "is_related_transaction": true,
       "guarantee_amount": 40650.0,
@@ -34,7 +34,7 @@
       "evidence_text": "40,650.00   2025-08-07   40,650.00"
     },
     {
-      "event_type": "guarantee_provided",
+      "event_type": "guarantee_limit",
       "relationship": "sister_company",
       "is_related_transaction": true,
       "guarantee_amount": 19350.0,
@@ -55,7 +55,7 @@
       "evidence_text": "19,350.00   2025-11-04   19,350.00"
     },
     {
-      "event_type": "guarantee_provided",
+      "event_type": "guarantee_limit",
       "relationship": "sister_company",
       "is_related_transaction": true,
       "guarantee_amount": 5750.0,
@@ -76,7 +76,7 @@
       "evidence_text": "6,400.00   2025-12-20    5,750.00"
     },
     {
-      "event_type": "guarantee_provided",
+      "event_type": "guarantee_limit",
       "relationship": "sister_company",
       "is_related_transaction": true,
       "guarantee_amount": 16820.0,

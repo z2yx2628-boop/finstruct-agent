@@ -129,7 +129,26 @@ def date_supported(value: str, evidence: str) -> bool:
         f"{parsed.year}/{parsed.month}/{parsed.day}",
         f"{parsed.year}年{parsed.month}月{parsed.day}日",
     )
-    return any(text_supported(item, evidence) for item in variants)
+    if any(text_supported(item, evidence) for item in variants):
+        return True
+    return chinese_date(parsed) in re.sub(r"\s+", "", evidence).translate(ZERO_FORMS)
+
+
+ZERO_FORMS = str.maketrans({"〇": "○", "零": "○", "Ｏ": "○", "O": "○"})
+CN_DIGITS = "○一二三四五六七八九"
+
+
+def _cn_number(value: int) -> str:
+    tens, ones = divmod(value, 10)
+    if tens == 0:
+        return CN_DIGITS[ones]
+    return ("" if tens == 1 else CN_DIGITS[tens]) + "十" + (CN_DIGITS[ones] if ones else "")
+
+
+def chinese_date(parsed: date) -> str:
+    """二○二五年六月六日 (signature dates in many announcements)."""
+    year = "".join(CN_DIGITS[int(d)] for d in str(parsed.year))
+    return f"{year}年{_cn_number(parsed.month)}月{_cn_number(parsed.day)}日"
 
 
 def boolean_supported(value: bool, evidence: str) -> bool:
