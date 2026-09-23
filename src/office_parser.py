@@ -9,7 +9,11 @@ blocks that play the role of pages, as for webpages:
   "[工作表 名称]" and repeats the header row, and every data line starts
   with its Excel row number, e.g. "[R12] 华菱涟钢 | 300,000".
 
-Legacy .doc and .xls files are not supported: save them as .docx / .xlsx.
+Legacy Word 97-2003 (.doc) and Excel 97-2003 (.xls) files are read with the
+built-in compound-file reader in src.legacy_office (no extra packages). In a
+.doc, lines that came from table rows contain " | " and are not numbered as
+paragraphs. Older Word 6/95 or Excel 5/95 files and encrypted files raise an
+error asking the user to save the file as .docx / .xlsx.
 """
 import csv
 import re
@@ -18,10 +22,11 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 from schemas.common import ParsedDocument, ParsedPage
+from src.legacy_office import doc_text, xls_sheets
 from src.pdf_parser import calculate_sha256
 
-WORD_SUFFIXES = (".docx",)
-SPREADSHEET_SUFFIXES = (".xlsx", ".xlsm", ".csv")
+WORD_SUFFIXES = (".docx", ".doc")
+SPREADSHEET_SUFFIXES = (".xlsx", ".xlsm", ".xls", ".csv")
 BLOCK_CHAR_LIMIT = 1500
 
 W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
@@ -62,8 +67,24 @@ def _paragraph_text(paragraph) -> str:
     return re.sub(r"[ \t]+", " ", "".join(parts)).strip()
 
 
+def _legacy_doc_lines(path: Path) -> tuple[list[str], list[dict], int]:
+    lines, table_rows, paragraph_number = [], [], 0
+    for line in doc_text(path).split("\n"):
+        if " | " in line:
+            lines.append(line)
+            table_rows.append(line.split(" | "))
+        else:
+            paragraph_number += 1
+            lines.append(f"[P{paragraph_number}] {line}")
+    tables = [{"index": 1, "rows": table_rows}] if table_rows else []
+    return lines, tables, paragraph_number
+
+
 def parse_docx(path: Path) -> ParsedDocument:
     path = Path(path).resolve()
+    if path.suffix.lower() == ".doc":
+        lines, tables, paragraph_number = _legacy_doc_lines(path)
+        return _word_document(path, lines, tables, paragraph_number, legacy=True)
     with zipfile.ZipFile(path) as archive:
         root = ElementTree.fromstring(archive.read("word/document.xml"))
     body = root.find(W + "body")
@@ -92,6 +113,16 @@ def parse_docx(path: Path) -> ParsedDocument:
                 tables.append({"index": len(tables) + 1, "rows": rows})
                 lines.extend(" | ".join(row) for row in rows)
 
+    return _word_document(path, lines, tables, paragraph_number)
+
+
+def _word_document(
+    path: Path,
+    lines: list[str],
+    tables: list[dict],
+    paragraph_number: int,
+    legacy: bool = False,
+) -> ParsedDocument:
     pages = [
         ParsedPage(page=index, text=text)
         for index, text in enumerate(_blocks(lines), start=1)
@@ -110,6 +141,7 @@ def parse_docx(path: Path) -> ParsedDocument:
             "page_unit": "text_block",
             "paragraph_count": paragraph_number,
             "table_count": len(tables),
+            "legacy_format": legacy,
             "text_char_count": sum(len(page.text) for page in pages),
             "empty_page_count": 0,
             "needs_ocr": False,
@@ -128,6 +160,12 @@ def _sheet_rows(path: Path) -> list[tuple[str, list[list[str]]]]:
                 continue
         rows = [[_cell_text(cell) for cell in row] for row in csv.reader(text.splitlines())]
         return [(path.stem, rows)]
+
+    if path.suffix.lower() == ".xls":
+        return [
+            (name, [[_cell_text(cell) for cell in row] for row in rows])
+            for name, rows in xls_sheets(path)
+        ]
 
     from openpyxl import load_workbook
 

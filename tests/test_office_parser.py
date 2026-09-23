@@ -79,3 +79,44 @@ def test_office_files_are_routed(tmp_path):
     make_docx(path)
 
     assert parse_document(path).source_type == "word"
+
+
+FIXTURES = __import__("pathlib").Path(__file__).parent / "fixtures"
+
+
+def test_legacy_doc_paragraphs_and_table():
+    document = parse_document(FIXTURES / "legacy_notice.doc")
+    text = document.pages[0].text
+
+    assert document.source_type == "word"
+    assert document.metadata["legacy_format"] is True
+    assert "[P1] 湖南华菱钢铁股份有限公司关于为子公司提供担保的公告" in text
+    assert "[P2] 公司拟为湖南华菱涟源钢铁有限公司提供担保，担保金额为30亿元。" in text
+    assert "华菱涟钢 | 300,000" in text
+    assert ["华菱涟钢", "300,000"] in document.pages[0].tables[0]["rows"]
+
+
+def test_legacy_xls_values_formulas_and_long_string_table():
+    document = parse_document(FIXTURES / "legacy_detail.xls")
+
+    assert document.source_type == "spreadsheet"
+    assert document.metadata["sheets"] == ["担保明细", "大表"]
+    first = document.pages[0].text
+    assert first.startswith("[工作表 担保明细]\n[R1] 被担保方 | 银行 | 担保金额（万元） | 持股比例")
+    assert "[R2] 湖南华菱涟源钢铁有限公司 | 中国银行股份有限公司湘潭分行 | 300000 | 1" in first
+    assert "[R3] 华菱钢铁（香港）国际贸易有限公司 | 交通银行 | 50000.5 | 0.8591" in first
+    assert "[R4] 合计 |  | 350000.5" in first  # cached formula result
+    # 700 distinct strings force the shared-string table across CONTINUE records.
+    big = "\n".join(page.text for page in document.pages[1:])
+    assert "[R701] 700 | 测试钢铁子公司第700号有限责任公司" in big
+    assert big.count("有限责任公司") == 700
+
+
+def test_unsupported_legacy_file_gives_clear_error(tmp_path):
+    import pytest
+    from src.legacy_office import LegacyOfficeError
+
+    fake = tmp_path / "old.doc"
+    fake.write_bytes(b"not an ole file")
+    with pytest.raises(LegacyOfficeError):
+        parse_docx(fake)
