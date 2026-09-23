@@ -1,0 +1,4 @@
+holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url,notes
+related_dev_001,600019,宝钢股份,2026-04-30,annual_estimate,2026年度日常关联交易公告,http://static.cninfo.com.cn/finalpage/2026-04-30/1225257391.PDF,临2026-013; download falls back to QQ mirror
+related_dev_002,000959,首钢股份,2025-12-06,annual_estimate,关于2026年度日常关联交易额预计情况的公告,https://file.finance.qq.com/finance/hs/pdf/2025/12/06/1224853544.PDF,2025-057; QQ mirror
+related_dev_003,601003,柳钢股份,2025-03-19,annual_estimate,日常关联交易公告,http://static.cninfo.com.cn/finalpage/2025-03-19/1222835174.PDF,2025-009 (title from search result); download falls back to QQ mirror

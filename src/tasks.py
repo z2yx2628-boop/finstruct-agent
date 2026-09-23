@@ -87,6 +87,30 @@ def _validate_guarantee(document: Any, pages: Pages) -> dict:
     return validate_guarantee_evidence(document, pages)
 
 
+def _extract_related_party(pages: Pages) -> ExtractResult:
+    from schemas.related_party import RelatedPartyDocument
+    from src.structured_extractor import extract_structured
+
+    return extract_structured(
+        pages,
+        TASKS["related_party"].prompt_path,
+        RelatedPartyDocument,
+        "请根据下面的JSON Schema抽取日常关联交易预计信息。",
+    )
+
+
+def _normalize_related_party(document: Any, pages: Pages):
+    from src.related_party_normalizer import normalize_related_party_fields
+
+    return normalize_related_party_fields(document, pages)
+
+
+def _validate_related_party(document: Any, pages: Pages) -> dict:
+    from src.related_party_evidence_validator import validate_related_party_evidence
+
+    return validate_related_party_evidence(document, pages)
+
+
 def _prompt(name: str) -> Path:
     return PROJECT_ROOT / "prompts" / name
 
@@ -121,6 +145,16 @@ TASKS: dict[str, TaskSpec] = {
         normalization_tool="Deterministic guarantee normalizer",
         validate=_validate_guarantee,
         evaluator_module="src.guarantee_accuracy_evaluator",
+    ),
+    "related_party": TaskSpec(
+        name="related_party",
+        label="日常关联交易",
+        prompt_path=_prompt("related_party_extraction_v1.txt"),
+        extract=_extract_related_party,
+        normalize=_normalize_related_party,
+        normalization_tool="Deterministic related-party normalizer",
+        validate=_validate_related_party,
+        evaluator_module="src.related_party_accuracy_evaluator",
     ),
 }
 

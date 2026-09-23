@@ -2,3 +2,5 @@
 # Never convert their line endings on checkout.
 data/gold/** -text
 experiments/** -text
+# Prompts are hashed in run manifests and sent verbatim to the model.
+prompts/** -text
