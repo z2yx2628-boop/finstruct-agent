@@ -4,7 +4,9 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+from src.document_parser import PARSERS
 from src.pipeline import run_pipeline
+from src.tasks import get_task, task_names
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -91,11 +93,17 @@ if st.session_state.get("app_schema_version") != APP_SCHEMA_VERSION:
     st.session_state["app_schema_version"] = APP_SCHEMA_VERSION
 
 st.title("FinStruct Agent")
-st.caption("A股股份质押公告结构化提取")
+st.caption("钢铁产业链公告结构化提取：股份质押、产能事件；支持文字PDF、扫描PDF和图片")
+
+task_name = st.selectbox(
+    "公告类型",
+    options=list(task_names()),
+    format_func=lambda name: get_task(name).label,
+)
 
 uploaded_file = st.file_uploader(
-    "选择公告PDF",
-    type=["pdf"],
+    "选择公告文件（文字PDF、扫描PDF或图片）",
+    type=[suffix.lstrip(".") for suffix in sorted(PARSERS)],
     accept_multiple_files=False,
 )
 
@@ -112,20 +120,126 @@ if run_clicked and uploaded_file is not None:
     safe_name = Path(uploaded_file.name).name
     stored_path = (
         UPLOAD_DIRECTORY
-        / f"{Path(safe_name).stem}_{uuid.uuid4().hex[:8]}.pdf"
+        / f"{Path(safe_name).stem}_{uuid.uuid4().hex[:8]}"
+        f"{Path(safe_name).suffix.lower()}"
     )
     stored_path.write_bytes(uploaded_file.getvalue())
 
     try:
         with st.spinner("正在解析公告并提取结构化数据..."):
-            st.session_state["pipeline_result"] = run_pipeline(stored_path)
+            st.session_state["pipeline_result"] = run_pipeline(
+                stored_path, task=task_name,
+            )
             st.session_state["uploaded_name"] = safe_name
     except Exception as error:
         st.error(f"处理失败：{error}")
 
+CAPACITY_EVENT_LABELS = {
+    "capacity_construction": "产能建设",
+    "capacity_replacement": "产能置换",
+    "technical_upgrade": "技术改造",
+    "commissioning": "投产",
+    "delay": "延期",
+    "suspension": "暂停",
+    "termination": "终止",
+}
+
+
+def show_ocr_notice(log: dict) -> None:
+    parsing = next(
+        (step for step in log["steps"] if step["name"] == "document_parsing"),
+        {},
+    )
+    if parsing.get("ocr_pages"):
+        st.info(
+            f"第 {parsing['ocr_pages']} 页通过 OCR 识别"
+            f"（{parsing.get('ocr_engine') or 'OCR'}）。"
+        )
+    if parsing.get("ocr_low_confidence_pages"):
+        st.warning(
+            f"第 {parsing['ocr_low_confidence_pages']} 页 OCR 置信度较低，"
+            "请对照原文核对数字。"
+        )
+
+
+def show_generic_result(result: dict) -> None:
+    """Result view for every non-pledge task."""
+    document = result["document"]
+    evidence_report = result["evidence_report"]
+    if result["status"] == "success":
+        st.success("处理完成，证据检查通过。")
+    else:
+        st.warning("处理完成，但存在需要人工复核的字段。")
+    show_ocr_notice(result["log"])
+
+    first, second, third, fourth = st.columns(4)
+    first.metric("证券代码", document.security_code or "-")
+    second.metric("证券简称", document.security_name or "-")
+    third.metric("公告编号", document.announcement_number or "-")
+    fourth.metric("事件记录", len(document.events))
+
+    events = [event.model_dump() for event in document.events]
+    event_frame = pd.DataFrame([
+        {
+            "事件类型": CAPACITY_EVENT_LABELS.get(item.get("event_type"), item.get("event_type")),
+            **{
+                key: value for key, value in item.items()
+                if key not in {"capacity_changes", "environmental_metrics", "event_type"}
+            },
+        }
+        for item in events
+    ])
+    capacity_frame = pd.DataFrame([
+        {"事件序号": index, **record}
+        for index, item in enumerate(events, start=1)
+        for record in item.get("capacity_changes", [])
+    ])
+
+    result_tab, evidence_tab, log_tab = st.tabs(
+        ["结构化结果", "证据检查", "运行日志"]
+    )
+    with result_tab:
+        if event_frame.empty:
+            st.info("公告中未提取到相关事件。")
+        else:
+            st.dataframe(event_frame, width="stretch", hide_index=True)
+        if not capacity_frame.empty:
+            st.subheader("产能变化")
+            st.dataframe(capacity_frame, width="stretch", hide_index=True)
+        st.download_button(
+            "下载JSON",
+            data=document.model_dump_json(indent=2),
+            file_name=f"{result['log']['task']}_prediction.json",
+            mime="application/json",
+            width="stretch",
+        )
+    with evidence_tab:
+        if evidence_report.get("passed"):
+            st.success("证据检查通过。")
+        else:
+            st.error("发现需要复核的证据问题。")
+            st.dataframe(
+                evidence_report.get("issues", []),
+                width="stretch",
+                hide_index=True,
+            )
+        for index, event in enumerate(document.events, start=1):
+            with st.expander(
+                f"事件 {index} · "
+                f"{CAPACITY_EVENT_LABELS.get(event.event_type, event.event_type)}"
+                f" · 第{event.source_page}页"
+            ):
+                st.code(event.evidence_text or "无证据文本")
+    with log_tab:
+        st.json(result["log"])
+
+
 result = st.session_state.get("pipeline_result")
 
-if result:
+if result and result["log"].get("task", "pledge") != "pledge":
+    show_generic_result(result)
+elif result:
+    show_ocr_notice(result["log"])
     document = result["document"]
     evidence_report = result["evidence_report"]
     rows = event_rows(document)

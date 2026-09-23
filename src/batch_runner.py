@@ -4,7 +4,9 @@ import json
 from pathlib import Path
 import shutil
 
+from src.document_parser import PARSERS
 from src.pipeline import run_pipeline
+from src.tasks import task_names
 
 
 def main() -> None:
@@ -13,15 +15,21 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument(
         "--task",
-        choices=("pledge", "capacity"),
+        choices=task_names(),
         default="pledge",
     )
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
 
-    pdf_paths = sorted(args.pdf_dir.glob("*.pdf"))
+    pdf_paths = sorted(
+        path for path in args.pdf_dir.iterdir()
+        if path.is_file() and path.suffix.lower() in PARSERS
+    )
     if not pdf_paths:
-        raise FileNotFoundError(f"No PDF files found in: {args.pdf_dir}")
+        raise FileNotFoundError(
+            f"No supported documents ({', '.join(sorted(PARSERS))}) "
+            f"found in: {args.pdf_dir}"
+        )
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     report_path = args.output_dir.parent / "batch_run.json"
