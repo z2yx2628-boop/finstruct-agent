@@ -17,6 +17,9 @@ AMOUNT_FIELDS = (
 )
 
 
+# Deposit/loan/discount arrangements with a group finance company are a
+# separate table (out of scope, prompt rule 6a), not daily trading rows.
+FINANCE_COMPANY = re.compile(r"财务(?:有限责任|股份有限)?公司")
 UNIT_DECLARATION = re.compile(r"单位[:：](千元|百万元|万元|亿元|元)|[（(](千元|百万元|万元|亿元|元)[）)]")
 
 
@@ -119,6 +122,9 @@ def normalize_related_party_fields(
     for index, record in enumerate(records):
         if TOTAL_ROW.match(compact(record["counterparty"])) or TOTAL_ROW.match(compact(record["category_text"])):
             changes.append({"record_index": index, "action": "drop_total_row"})
+            continue
+        if record["transaction_category"] == "financial_services" and FINANCE_COMPANY.search(record["counterparty"] or ""):
+            changes.append({"record_index": index, "action": "drop_finance_company_service"})
             continue
         if index in subtotals:
             changes.append({"record_index": index, "action": "drop_category_subtotal"})

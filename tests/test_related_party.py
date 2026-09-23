@@ -96,3 +96,18 @@ def test_unit_header_applies_to_long_table_until_sentence_end():
     table = "（二）2026年预计日常关联交易类别和金额\n单位：万元\n" + rows
     assert amount_supported(1039, "万元", table) == (1039, "万元")
     assert amount_supported(1039, "万元", "单位：万元\n表一结束。说明：\n" + rows) is None
+
+
+def test_finance_company_deposit_rows_are_dropped_but_group_interest_kept():
+    text = "单位：百万元\n贷款 利息支出 按市场利率确定 人民币 107 9\n单位：万元\n首钢集团有限公司及下属企业 利息收入 市场价格及协议价格 7,999 7,717"
+    pages = [{"page": 1, "text": text}]
+    document = RelatedPartyDocument(transactions=[
+        record(counterparty="宝武集团财务有限责任公司", transaction_category="financial_services",
+               estimated_amount=107, estimated_unit="百万元", evidence_text="利息支出 按市场利率确定 人民币 107 9"),
+        record(counterparty="首钢集团有限公司及下属企业", transaction_category="financial_services",
+               estimated_amount=7999, estimated_unit="万元",
+               evidence_text="首钢集团有限公司及下属企业 利息收入 市场价格及协议价格 7,999 7,717"),
+    ])
+    normalized, changes = normalize_related_party_fields(document, pages)
+    assert [r.counterparty for r in normalized.transactions] == ["首钢集团有限公司及下属企业"]
+    assert changes[0]["action"] == "drop_finance_company_service"
