@@ -50,7 +50,8 @@ def test_paragraphs_are_numbered(tmp_path):
     document = parse_html(write_page(tmp_path))
     text = document.pages[0].text
 
-    assert text.startswith("[P1] 某钢铁公司2号高炉停产检修")
+    assert text.startswith("[网页标题] 某钢铁公司高炉检修公告_新闻")
+    assert "\n[P1] 某钢铁公司2号高炉停产检修" in text
     assert "[P2] 据公司消息" in text
     assert document.metadata["page_unit"] == "text_block"
 
@@ -119,3 +120,25 @@ def test_interface_lines_and_detail_links_are_removed(tmp_path):
     text = parse_html(path).pages[0].text
 
     assert text == "[P1] ◎黎城太行钢铁于6月30日停产一座530m³高炉，预计7月20日复产。"
+
+
+def test_publish_date_is_read_from_metadata(tmp_path):
+    path = tmp_path / "dated.html"
+    path.write_text(
+        '<html><head><title>华菱钢铁：高炉改造</title>'
+        '<meta property="article:published_time" content="2026-05-15T20:24:45+08:00">'
+        '</head><body><article><p>人民财讯5月15日电，华菱钢铁5月15日公告，投资额7.68亿元。</p>'
+        '<p>海量资讯、精准解读，尽在新浪财经APP</p><p>文章关键词： 华菱钢铁 高炉</p>'
+        '</article></body></html>',
+        encoding="utf-8",
+    )
+
+    document = parse_html(path)
+    lines = document.pages[0].text.split("\n")
+
+    assert document.metadata["published_date"] == "2026-05-15"
+    assert lines == [
+        "[网页标题] 华菱钢铁：高炉改造",
+        "[发布日期] 2026-05-15",
+        "[P1] 人民财讯5月15日电，华菱钢铁5月15日公告，投资额7.68亿元。",
+    ]

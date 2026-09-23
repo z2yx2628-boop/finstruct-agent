@@ -25,6 +25,7 @@ BLOCK_CHAR_LIMIT = 1500
 SKIP_TAGS = {
     "script", "style", "noscript", "iframe", "svg", "canvas", "form",
     "button", "select", "nav", "header", "footer", "aside", "template",
+    "head", "title",
 }
 BOILERPLATE_ATTR = re.compile(
     r"nav|menu|breadcrumb|footer|header|sidebar|side-bar|share|comment|"
@@ -43,7 +44,10 @@ BOILERPLATE_LINE = re.compile(
     r"^(?:内容由AI生成|存在错误信息|内容没有什么帮助|智能摘要|问AI.*|"
     r"←?\s*返回首页|更多阅读.*|扫描二维码.*|.*手机版APP|分享到.*|"
     r"责任编辑[:：].*|资讯编辑[:：].*|免责声明[:：].*|作者声明[:：].*|"
-    r"举报|收藏|点赞|评论|打开APP.*|下载客户端.*)$"
+    r"举报|收藏|点赞|评论|打开APP.*|下载客户端.*|"
+    r"海量资讯.*|文章关键词[:：].*|VIP课程推荐|加载中\.*|APP专享直播|"
+    r"上一页\s*下一页|\d+\s*/\s*\d+|热门推荐|收起|展开|.*公众号|"
+    r".*扫描二维码关注.*|转自[:：].*|来源[:：]\S{0,20})$"
 )
 TRAILING_LINK = re.compile(r"\s*(?:详情|查看详情|阅读全文|点击查看)\s*>+\s*$")
 
@@ -210,6 +214,25 @@ def _paragraphs_and_tables(node: _Node) -> tuple[list[str], list[dict]]:
     return lines, tables
 
 
+PUBLISH_META = re.compile(
+    r"<meta[^>]+(?:property|name|itemprop)=[\"'](?:article:published_time|"
+    r"og:release_date|pubdate|publishdate|datePublished|[a-z]+:published_time|"
+    r"publish)[\"'][^>]*content=[\"']([^\"']+)[\"']",
+    re.I,
+)
+DATE_IN_TEXT = re.compile(r"(20\d{2})[-/年.](\d{1,2})[-/月.](\d{1,2})")
+
+
+def publish_date(html: str) -> str | None:
+    """Publication date from page metadata, as YYYY-MM-DD."""
+    for match in PUBLISH_META.finditer(html):
+        found = DATE_IN_TEXT.search(match.group(1))
+        if found:
+            year, month, day = found.groups()
+            return f"{year}-{int(month):02d}-{int(day):02d}"
+    return None
+
+
 def _read_meta(path: Path) -> dict:
     meta_path = path.with_name(path.stem + ".meta.json")
     if meta_path.exists():
@@ -229,8 +252,18 @@ def parse_html(html_path: Path) -> ParsedDocument:
         if cleaned and len(cleaned) >= 2
     ]
 
+    published = publish_date(html)
+    title = re.sub(r"\s+", " ", builder.title).strip() or None
+    # Header lines give the model the full date and title, which news text
+    # often omits ("5月15日电" without a year).
+    header = []
+    if title:
+        header.append(f"[网页标题] {title}")
+    if published:
+        header.append(f"[发布日期] {published}")
+
     pages: list[ParsedPage] = []
-    block: list[str] = []
+    block: list[str] = list(header)
     block_start = 1
     for number, text in enumerate(paragraphs, start=1):
         line = f"[P{number}] {text}"
@@ -260,7 +293,8 @@ def parse_html(html_path: Path) -> ParsedDocument:
             "text_char_count": text_char_count,
             "empty_page_count": 0,
             "needs_ocr": False,
-            "title": re.sub(r"\s+", " ", builder.title).strip() or None,
+            "title": title,
+            "published_date": published,
             "fetched_at": meta.get("fetched_at"),
             "table_count": len(tables),
         },
