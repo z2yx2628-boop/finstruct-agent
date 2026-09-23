@@ -93,7 +93,7 @@ if st.session_state.get("app_schema_version") != APP_SCHEMA_VERSION:
     st.session_state["app_schema_version"] = APP_SCHEMA_VERSION
 
 st.title("FinStruct Agent")
-st.caption("钢铁产业链公告结构化提取：股份质押、产能事件；支持文字PDF、扫描PDF、图片和网页")
+st.caption("钢铁产业链公告结构化提取：股份质押、产能事件、对外担保；支持文字PDF、扫描PDF、图片、网页、Word和Excel")
 
 task_name = st.selectbox(
     "公告类型",
@@ -102,7 +102,7 @@ task_name = st.selectbox(
 )
 
 uploaded_file = st.file_uploader(
-    "选择公告文件（文字PDF、扫描PDF或图片）",
+    "选择公告文件（PDF、扫描件、图片、网页、Word、Excel）",
     type=[suffix.lstrip(".") for suffix in sorted(PARSERS)],
     accept_multiple_files=False,
 )

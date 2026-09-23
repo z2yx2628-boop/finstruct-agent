@@ -9,6 +9,7 @@ SourceType = Literal[
     "pdf_mixed",
     "image",
     "webpage",
+    "word",
     "spreadsheet",
 ]
 

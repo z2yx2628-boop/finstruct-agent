@@ -3,6 +3,12 @@ from typing import Callable
 
 from schemas.common import ParsedDocument
 from src.image_parser import IMAGE_SUFFIXES, parse_image
+from src.office_parser import (
+    SPREADSHEET_SUFFIXES,
+    WORD_SUFFIXES,
+    parse_docx,
+    parse_spreadsheet,
+)
 from src.pdf_parser import parse_pdf
 from src.web_parser import HTML_SUFFIXES, parse_html
 
@@ -17,6 +23,8 @@ PARSERS: dict[str, Parser] = {
     ".pdf": parse_pdf,
     **{suffix: parse_image for suffix in IMAGE_SUFFIXES},
     **{suffix: parse_html for suffix in HTML_SUFFIXES},
+    **{suffix: parse_docx for suffix in WORD_SUFFIXES},
+    **{suffix: parse_spreadsheet for suffix in SPREADSHEET_SUFFIXES},
 }
 
 
