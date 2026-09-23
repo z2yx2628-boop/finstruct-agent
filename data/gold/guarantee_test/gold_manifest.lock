@@ -1,0 +1,40 @@
+{
+  "version": "guarantee-test-gold-v1",
+  "frozen_at": "2026-09-24",
+  "hash_algorithm": "sha256",
+  "document_count": 6,
+  "event_count": 11,
+  "system_under_test_commit": "fbb7d33",
+  "files": [
+    {
+      "file": "guarantee_test_001_000932_annual_limit.json",
+      "sha256": "7fe6c8aa454f2c6d5ff5815c88e1b34401ad5e8132e02dd613dbccb1eb8e9ed1",
+      "events": 4
+    },
+    {
+      "file": "guarantee_test_002_002110_annual_limit.json",
+      "sha256": "881c584396336d154e30289a74a8e747cecc667bd6555e466715ccbc450809be",
+      "events": 3
+    },
+    {
+      "file": "guarantee_test_003_600569_progress.json",
+      "sha256": "850958f15ff3ad3722d4409ca76c7136e4d1ab72220c063c9552d62a4d049f81",
+      "events": 1
+    },
+    {
+      "file": "guarantee_test_005_600307_wholly_owned.json",
+      "sha256": "39b142c2917f8595994152340e3986fb89542855876e9dee2388ba2a2fe7a477",
+      "events": 1
+    },
+    {
+      "file": "guarantee_test_006_600231_related_controlling_shareholder.json",
+      "sha256": "4d42a77363dd1e4f5005116747182b6351900d0d56a7b8f81cca1c0bafa5c5ce",
+      "events": 1
+    },
+    {
+      "file": "guarantee_test_007_600307_wholly_owned_2.json",
+      "sha256": "92d400a6ecfd94da207782eebc7c410eb7ddde06dfb911615f9fbd6ebceff615",
+      "events": 1
+    }
+  ]
+}

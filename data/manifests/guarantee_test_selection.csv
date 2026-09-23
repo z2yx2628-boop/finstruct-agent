@@ -1,0 +1,7 @@
+﻿holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url,notes
+guarantee_test_001,000932,华菱钢铁,2026-03-31,annual_limit,关于2026年度为子公司提供担保额度预计的公告,https://www.valin.cn/upload/file/2026/03/31/1992e83f-4905-48a7-82f1-991d91822ac0.pdf,公告编号2026-19; source = issuer website; found by web search (titles only)
+guarantee_test_002,002110,三钢闽光,2025-12-31,annual_limit,关于2026年度公司为全资及控股子公司提供担保的公告,https://file.finance.qq.com/finance/hs/pdf/2025/12/31/1224911052.PDF,公告编号2025-054; QQ mirror of CNINFO doc 1224911052
+guarantee_test_003,600569,安阳钢铁,2026-02-10,progress,关于为控股子公司河南安钢周口钢铁有限责任公司银行授信提供担保的进展公告,https://file.finance.qq.com/finance/hs/pdf/2026/02/10/1224972998.PDF,编号2026-016; QQ mirror
+guarantee_test_005,600307,酒钢宏兴,2025-09-06,wholly_owned,关于为全资子公司提供担保的公告,https://file.finance.qq.com/finance/hs/pdf/2025/09/06/1224641607.PDF,公告编号2025-053; QQ mirror
+guarantee_test_006,600231,凌钢股份,2023-06-29,related_controlling_shareholder,关于为控股股东提供担保的实施公告,https://file.finance.qq.com/finance/hs/pdf/2023/06/29/1217154727.PDF,QQ mirror of CNINFO doc 1217154727
+guarantee_test_007,600307,酒钢宏兴,2025-04-29,wholly_owned_2,关于为全资子公司提供担保的公告,https://stockn.xueqiu.com/SH600307/20250429884344.pdf,公告编号2025-026; Xueqiu mirror
