@@ -1,0 +1,29 @@
+{
+  "security_code": "300928",
+  "security_name": "华安鑫创",
+  "announcement_number": "2025-040",
+  "company_name": "华安鑫创控股（北京）股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "肖炎",
+      "shares": 720000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 7.77,
+      "total_share_capital_ratio": 0.9,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": "2023-09-20",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2025-09-29",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "江阴市融汇农村小额贷款有限公司",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "股东名\n称 \n是否为控股股东\n或第一大股东及\n其一致行动人 \n本次解除质押\n数量（股） \n占其所持股\n份比例（%） \n占公司总股本\n比例（%） \n质押起始\n日 \n解除质押 \n日期 \n质权人 \n肖炎 \n否 \n720,000 \n7.77 \n0.90 \n2023 年9\n月20 日 \n2025 年9 月\n29 日 \n江阴市融汇\n农村小额贷\n款有限公司 \n合计 \n- \n720,000 \n7.77 \n0.90 \n- \n- \n-",
+      "confidence": 1.0
+    }
+  ]
+}

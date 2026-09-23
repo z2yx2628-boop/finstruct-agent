@@ -1,0 +1,69 @@
+{
+  "run_id": "20260917T185737Z",
+  "status": "needs_review",
+  "started_at": "2026-09-17T18:57:37.060120+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_010_600231_linggang_replacement.pdf",
+    "size_bytes": 330276,
+    "sha256": "b83c1e269a1e781a51f07fa29d94e7ad00af7d8297aa54d10b824c8681506059"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v2.txt",
+    "sha256": "30c6c6701201486b618da1903e544978155cc209ccfde77b2b564940a46ecc36"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 2,
+      "text_char_count": 1034,
+      "needs_ocr": false,
+      "duration_seconds": 0.013
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "duration_seconds": 18.0531
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0001
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 13,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "capacity_replacement"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 1,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0011
+    }
+  ],
+  "completed_at": "2026-09-17T18:57:55.139512+00:00",
+  "duration_seconds": 18.0794,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_010_600231_linggang_replacement\\20260917T185737Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_010_600231_linggang_replacement\\20260917T185737Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_010_600231_linggang_replacement\\20260917T185737Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_010_600231_linggang_replacement\\20260917T185737Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_010_600231_linggang_replacement\\20260917T185737Z\\evidence_report.json"
+  ]
+}

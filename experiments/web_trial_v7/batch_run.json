@@ -1,0 +1,26 @@
+{
+  "started_at": "2026-09-23T19:45:16.043324+00:00",
+  "pdf_count": 3,
+  "task": "capacity",
+  "runs": [
+    {
+      "pdf": "data\\raw\\web\\mysteel_maintenance.html",
+      "status": "needs_review",
+      "prediction": "outputs\\web_trial_v7\\predictions\\mysteel_maintenance.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\mysteel_maintenance\\20260923T194516Z"
+    },
+    {
+      "pdf": "data\\raw\\web\\qq_steel_loss.html",
+      "status": "needs_review",
+      "prediction": "outputs\\web_trial_v7\\predictions\\qq_steel_loss.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\qq_steel_loss\\20260923T194533Z"
+    },
+    {
+      "pdf": "data\\raw\\web\\sina_valin_7bf.html",
+      "status": "needs_review",
+      "prediction": "outputs\\web_trial_v7\\predictions\\sina_valin_7bf.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\sina_valin_7bf\\20260923T194557Z"
+    }
+  ],
+  "completed_at": "2026-09-23T19:46:17.573187+00:00"
+}

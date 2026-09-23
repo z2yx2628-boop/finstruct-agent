@@ -1,0 +1,32 @@
+{
+  "security_code": "300881",
+  "security_name": "盛德鑫泰",
+  "company_name": "盛德鑫泰新材料股份有限公司",
+  "announcement_number": "2022-015",
+  "announcement_date": "2022-04-15",
+  "events": [
+    {
+      "event_type": "delay",
+      "project_name": "新建特种设备用不锈钢、合金钢无缝钢管制造项目",
+      "project_entity": null,
+      "project_location": null,
+      "project_status": "delayed",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "预计完成时间由2022年2月延期至2023年2月。",
+      "technology_description": null,
+      "project_purpose": "新增HR3C、Super304H不锈钢无缝钢管产品，扩充TP347HFG不锈钢及T91、T92、12Cr1MoVG合金钢无缝钢管产能，提升生产工艺和技术水平，形成全系列产品并扩大高盈利产品产能。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "同意将“新建特种设备用不锈钢、合金钢无缝钢管制造项目”的预计完成时间由2022 年2 月延期至2023 年2 月。",
+      "confidence": 1.0
+    }
+  ]
+}

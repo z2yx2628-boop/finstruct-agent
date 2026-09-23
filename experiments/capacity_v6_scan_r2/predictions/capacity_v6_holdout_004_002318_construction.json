@@ -1,0 +1,43 @@
+{
+  "security_code": "002318",
+  "security_name": "久立特材",
+  "company_name": "浙江久立特材科技股份有限公司",
+  "announcement_number": "2024-028",
+  "announcement_date": "2024-06-18",
+  "events": [
+    {
+      "event_type": "capacity_construction",
+      "project_name": "年产20000吨核能及油气用高性能管材项目",
+      "project_entity": "浙江久立特材科技股份有限公司",
+      "project_location": "双林镇镇西工业厂区内",
+      "project_status": "approved",
+      "investment_amount": 37630.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "自有资金",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目建设期预计18个月；2024年6月17日经公司第七届董事会第三次会议审议通过。",
+      "technology_description": null,
+      "project_purpose": "顺应行业发展、把握客户需求，保障公司主营业务板块稳步增长，提升产品与服务竞争力，实现产业转型升级。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "高性能管材生产线",
+          "product_name": "核能及油气用高性能管材",
+          "capacity": 20000.0,
+          "capacity_unit": "吨/年",
+          "source_page": 1,
+          "evidence_text": "拟投资建设“年产20000吨核能及油气用高性能管材项目”",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "公司拟投资建设“年产20000吨核能及油气用高性能管材项目”",
+      "confidence": 1.0
+    }
+  ]
+}

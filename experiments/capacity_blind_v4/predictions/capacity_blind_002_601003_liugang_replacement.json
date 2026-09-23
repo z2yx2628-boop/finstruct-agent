@@ -1,0 +1,43 @@
+{
+  "security_code": "601003",
+  "security_name": "柳钢股份",
+  "company_name": "柳州钢铁股份有限公司",
+  "announcement_number": "2021-036",
+  "announcement_date": "2021-07-29",
+  "events": [
+    {
+      "event_type": "capacity_replacement",
+      "project_name": null,
+      "project_entity": "柳州钢铁股份有限公司",
+      "project_location": "柳州生产基地",
+      "project_status": "planned",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2021年6月4日披露置换产能提示性公告（公告编号：2021-028）；2021年6月29日广西工信厅公示淘汰方案；2021年7月29日公告修改为淘汰方案，计划近期拆除。",
+      "technology_description": null,
+      "project_purpose": "响应国家工业低碳行动和压缩粗钢产量，落实广西优化钢铁工业布局及冶金产业二次创业部署",
+      "capacity_changes": [
+        {
+          "action": "retired",
+          "facility_type": "1500立方米高炉",
+          "product_name": "生铁产能",
+          "capacity": 1500.0,
+          "capacity_unit": "m³/座",
+          "source_page": 1,
+          "evidence_text": "计划于近期将设备老化的一座1500 立方米高炉等相关设施进行拆除。",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "为响应国家实施工业低碳行动和压缩粗钢产量以及广西优化钢铁工业布局，推进冶金产业二次创业的决策部署，按照广西壮族自治区工业和信息化厅2021 年6 月29 日公示的相关产能淘汰方案文件和精神，公司拟将2021 年6 月4 日披露的《关于公司拟向控股子公司置换产能的提示性公告》（公告编号：2021-028）中的置换产能方案修改为淘汰产能方案，计划于近期将设备老化的一座1500 立方米高炉等相关设施进行拆除。",
+      "confidence": 1.0
+    }
+  ]
+}

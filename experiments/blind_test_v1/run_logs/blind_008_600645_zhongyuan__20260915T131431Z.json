@@ -1,0 +1,62 @@
+{
+  "run_id": "20260915T131431Z",
+  "status": "needs_review",
+  "started_at": "2026-09-15T13:14:31.921670+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\blind_test\\blind_008_600645_zhongyuan.pdf",
+    "size_bytes": 156117,
+    "sha256": "40800bb99f5fb8cd73878d0edd258b3d0c2f3827a586581c3fd2d9df6cd13dd2"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\pledge_extraction_v5.txt",
+    "sha256": "ac01f3b5dd6b77059bb990f40be5c17cfdb6316c7276846db9429b100a8048d9"
+  },
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "pdf_text_extraction",
+      "tool": "PyMuPDF",
+      "page_count": 3,
+      "duration_seconds": 0.0099
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "duration_seconds": 12.7776
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic semantic and shared-cell normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0001
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 18,
+      "expected_event_types": [
+        "extension"
+      ],
+      "extracted_event_types": [
+        "extension"
+      ],
+      "event_counts": {
+        "pledge": 0,
+        "release": 0,
+        "extension": 1
+      },
+      "duration_seconds": 0.0016
+    }
+  ],
+  "completed_at": "2026-09-15T13:14:44.714008+00:00",
+  "duration_seconds": 12.7923,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_008_600645_zhongyuan\\20260915T131431Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_008_600645_zhongyuan\\20260915T131431Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_008_600645_zhongyuan\\20260915T131431Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_008_600645_zhongyuan\\20260915T131431Z\\evidence_report.json"
+  ]
+}

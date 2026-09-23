@@ -1,0 +1,86 @@
+{
+  "security_code": "600399",
+  "security_name": "抚顺特钢",
+  "company_name": "抚顺特殊钢股份有限公司",
+  "announcement_number": "临 2023-017",
+  "announcement_date": "2023-04-20",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "抚顺特钢2023 年-2024 年提升产能及产品质量技术改造项目",
+      "project_entity": null,
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2023-2024年建设周期；董事会于2023年4月19日审议通过。",
+      "technology_description": "新建高合金板材生产线；新增1台12吨真空感应炉、6台12吨真空自耗炉及配套辅助设备设施。",
+      "project_purpose": "扩大高端产品产能，提升核心产品交付能力及产品质量，优化高附加值产品结构，提升重点产品产量占比。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "高合金板材生产线",
+          "product_name": "高合金板材",
+          "capacity": 6940.0,
+          "capacity_unit": "吨/年",
+          "source_page": 2,
+          "evidence_text": "年增加产能6940 吨",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "12吨真空感应炉",
+          "product_name": "感应钢",
+          "capacity": 5400.0,
+          "capacity_unit": "吨/年",
+          "source_page": 2,
+          "evidence_text": "感应钢年产能提高5400吨",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "12吨真空自耗炉",
+          "product_name": "自耗钢",
+          "capacity": 9720.0,
+          "capacity_unit": "吨/年",
+          "source_page": 2,
+          "evidence_text": "自耗钢年产能提高9720 吨",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "抚顺特殊钢股份有限公司于2023 年4 月19 日召开第八届董事会第三次会议，审议通过了《关于投资建设技术改造项目的议案》……公司拟未来两年（2023年-2024 年）投资建设相关技术改造项目",
+      "confidence": 1.0
+    },
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "抚顺特钢2023 年-2024 年节能环保技术改造项目",
+      "project_entity": null,
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2023-2024年建设周期；董事会于2023年4月19日审议通过。",
+      "technology_description": "通过冶炼流程布局调整，结合智能化、自动化技术实现节约能源，降本增效。",
+      "project_purpose": "提升公司清洁化、低碳化发展进程，提升绿色发展水平；以“节能设备规模化、生产过程低碳化”为目标。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 2,
+      "evidence_text": "项目名称：《抚顺特钢2023 年-2024 年节能环保技术改造项目》……节能环保技术改造工程：通过冶炼流程布局调整，结合智能化、自动化技术实现节约能源，降本增效。",
+      "confidence": 1.0
+    }
+  ]
+}

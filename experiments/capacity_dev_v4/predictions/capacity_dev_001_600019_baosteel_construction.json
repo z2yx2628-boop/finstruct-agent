@@ -1,0 +1,63 @@
+{
+  "security_code": "600019",
+  "security_name": "宝钢股份",
+  "company_name": "宝山钢铁股份有限公司",
+  "announcement_number": "临2024-043",
+  "announcement_date": "2024-07-25",
+  "events": [
+    {
+      "event_type": "capacity_construction",
+      "project_name": "沙特厚板项目",
+      "project_entity": "沙特厚板公司（暂定名）",
+      "project_location": "沙特阿拉伯",
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2023年4月7日董事会审议通过原出资方案；2024年7月25日董事会审议通过调整后的出资方案；项目尚需取得相关监管机构批准、备案、登记。",
+      "technology_description": "采用国际最先进的工艺技术，建设绿色低碳全流程厚板工厂",
+      "project_purpose": "建设全球最具竞争力的绿色低碳厚板工厂，服务于中东北非地区的油气、造船、海工和建筑行业；宝钢股份首个海外绿地全流程钢铁项目",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": null,
+          "product_name": "直接还原铁",
+          "capacity": 250.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 3,
+          "evidence_text": "拟在沙特阿拉伯投资建设全球最具竞争力的绿色低碳厚板工厂，年产250 万吨直接还原铁、166.7 万吨钢、150 万吨厚板，主要服务于中东北非地区的油气、造船、海工和建筑行业。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": null,
+          "product_name": "钢",
+          "capacity": 166.7,
+          "capacity_unit": "万吨/年",
+          "source_page": 3,
+          "evidence_text": "拟在沙特阿拉伯投资建设全球最具竞争力的绿色低碳厚板工厂，年产250 万吨直接还原铁、166.7 万吨钢、150 万吨厚板，主要服务于中东北非地区的油气、造船、海工和建筑行业。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": null,
+          "product_name": "厚板",
+          "capacity": 150.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 3,
+          "evidence_text": "拟在沙特阿拉伯投资建设全球最具竞争力的绿色低碳厚板工厂，年产250 万吨直接还原铁、166.7 万吨钢、150 万吨厚板，主要服务于中东北非地区的油气、造船、海工和建筑行业。",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 3,
+      "evidence_text": "拟在沙特阿拉伯投资建设全球最具竞争力的绿色低碳厚板工厂，年产250 万吨直接还原铁、166.7 万吨钢、150 万吨厚板，主要服务于中东北非地区的油气、造船、海工和建筑行业。",
+      "confidence": 1.0
+    }
+  ]
+}

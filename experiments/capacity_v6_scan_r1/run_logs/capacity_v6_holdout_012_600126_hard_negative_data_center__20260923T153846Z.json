@@ -1,0 +1,92 @@
+{
+  "run_id": "20260923T153846Z",
+  "status": "needs_review",
+  "started_at": "2026-09-23T15:38:46.268289+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v6_holdout_scan\\capacity_v6_holdout_012_600126_hard_negative_data_center.pdf",
+    "size_bytes": 10889082,
+    "sha256": "09b7a3a0d2c687998e1e9f106a77ca6fcd5f162af4cea1abe7d7a4567d7c17eb"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v5.txt",
+    "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF + OCR",
+      "source_type": "pdf_scan",
+      "page_count": 5,
+      "text_char_count": 3017,
+      "needs_ocr": true,
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ocr_engine": "RapidOCR (onnxruntime)",
+      "ocr_confidence": {
+        "1": 0.8701,
+        "2": 0.9059,
+        "3": 0.8922,
+        "4": 0.9082,
+        "5": 0.8899
+      },
+      "ocr_low_confidence_pages": [
+        1,
+        3,
+        5
+      ],
+      "duration_seconds": 11.8865
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 4.2378
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 5,
+      "expected_event_types": [],
+      "extracted_event_types": [],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0012
+    }
+  ],
+  "review_reasons": [
+    "OCR confidence below 0.9 on pages [1, 3, 5]; verify numbers against the source."
+  ],
+  "completed_at": "2026-09-23T15:39:02.408360+00:00",
+  "duration_seconds": 16.1401,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_012_600126_hard_negative_data_center\\20260923T153846Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_012_600126_hard_negative_data_center\\20260923T153846Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_012_600126_hard_negative_data_center\\20260923T153846Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_012_600126_hard_negative_data_center\\20260923T153846Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v6_holdout_012_600126_hard_negative_data_center\\20260923T153846Z\\evidence_report.json"
+  ]
+}

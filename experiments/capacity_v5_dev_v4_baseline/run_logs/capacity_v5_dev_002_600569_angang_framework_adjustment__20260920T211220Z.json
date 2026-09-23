@@ -1,0 +1,244 @@
+{
+  "run_id": "20260920T211220Z",
+  "status": "success",
+  "started_at": "2026-09-20T21:12:20.721266+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v5_dev\\capacity_v5_dev_002_600569_angang_framework_adjustment.pdf",
+    "size_bytes": 117044,
+    "sha256": "750d11b508b42994f600b901a21762af736bed906ed71e85270bed9e7d5b517c"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 5,
+      "text_char_count": 2917,
+      "needs_ocr": false,
+      "duration_seconds": 0.0086
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 138.5362
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 19,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 284.43,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 1,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 236.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 2,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 5290.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 3,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 86535.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 4,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 400.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 5,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 4500.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 6,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 3000.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 7,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 950.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 8,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 7150.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 9,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 3000.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 10,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 1575.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 11,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 1800.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 12,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 6380.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 13,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 5500.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 14,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 4500.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 15,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 355.04,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 16,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 300.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 17,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 89.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        },
+        {
+          "event_index": 18,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 460.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY"
+          }
+        }
+      ],
+      "duration_seconds": 0.0103
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 43,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "technical_upgrade",
+        "termination"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 12,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 7
+      },
+      "duration_seconds": 0.0024
+    }
+  ],
+  "completed_at": "2026-09-20T21:14:39.282439+00:00",
+  "duration_seconds": 138.5612,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_002_600569_angang_framework_adjustment\\20260920T211220Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_002_600569_angang_framework_adjustment\\20260920T211220Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_002_600569_angang_framework_adjustment\\20260920T211220Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_002_600569_angang_framework_adjustment\\20260920T211220Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_002_600569_angang_framework_adjustment\\20260920T211220Z\\evidence_report.json"
+  ]
+}

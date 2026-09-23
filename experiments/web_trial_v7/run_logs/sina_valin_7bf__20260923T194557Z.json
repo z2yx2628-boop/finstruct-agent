@@ -1,0 +1,76 @@
+{
+  "run_id": "20260923T194557Z",
+  "status": "needs_review",
+  "started_at": "2026-09-23T19:45:57.559622+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\web\\sina_valin_7bf.html",
+    "size_bytes": 95087,
+    "sha256": "1b68363c4d5c77d1b5b24b4d7c3622948892ed10a1b1b1cd436da983f4bda8c4"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v7.txt",
+    "sha256": "b670988d4867245c468d4ec764a9dc548c40e0706cc6562262f138b08a88ddd5"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF + OCR",
+      "source_type": "webpage",
+      "page_count": 1,
+      "text_char_count": 286,
+      "needs_ocr": false,
+      "ocr_pages": [],
+      "ocr_engine": null,
+      "ocr_confidence": {},
+      "ocr_low_confidence_pages": [],
+      "duration_seconds": 0.032
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 19.64
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0004
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 8,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "technical_upgrade"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 1,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0,
+        "maintenance": 0
+      },
+      "duration_seconds": 0.0012
+    }
+  ],
+  "completed_at": "2026-09-23T19:46:17.571525+00:00",
+  "duration_seconds": 20.0119,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\sina_valin_7bf\\20260923T194557Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\sina_valin_7bf\\20260923T194557Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\sina_valin_7bf\\20260923T194557Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\sina_valin_7bf\\20260923T194557Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\sina_valin_7bf\\20260923T194557Z\\evidence_report.json"
+  ]
+}

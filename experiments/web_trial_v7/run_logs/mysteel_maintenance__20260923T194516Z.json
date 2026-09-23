@@ -1,0 +1,76 @@
+{
+  "run_id": "20260923T194516Z",
+  "status": "needs_review",
+  "started_at": "2026-09-23T19:45:16.046480+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\web\\mysteel_maintenance.html",
+    "size_bytes": 59401,
+    "sha256": "3bb2874af150c05ccb80a8d225fa1bfd08dfd951c8a3f28ad1e45cac2ee76742"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v7.txt",
+    "sha256": "b670988d4867245c468d4ec764a9dc548c40e0706cc6562262f138b08a88ddd5"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF + OCR",
+      "source_type": "webpage",
+      "page_count": 2,
+      "text_char_count": 2457,
+      "needs_ocr": false,
+      "ocr_pages": [],
+      "ocr_engine": null,
+      "ocr_confidence": {},
+      "ocr_low_confidence_pages": [],
+      "duration_seconds": 0.0207
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 16.9514
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.001
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 4,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "maintenance"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0,
+        "maintenance": 1
+      },
+      "duration_seconds": 0.0025
+    }
+  ],
+  "completed_at": "2026-09-23T19:45:33.080135+00:00",
+  "duration_seconds": 17.0337,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\mysteel_maintenance\\20260923T194516Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\mysteel_maintenance\\20260923T194516Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\mysteel_maintenance\\20260923T194516Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\mysteel_maintenance\\20260923T194516Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\mysteel_maintenance\\20260923T194516Z\\evidence_report.json"
+  ]
+}

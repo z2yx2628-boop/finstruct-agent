@@ -1,0 +1,112 @@
+{
+  "run_id": "20260920T055727Z",
+  "status": "needs_review",
+  "started_at": "2026-09-20T05:57:27.750277+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_009_600581_bayi_construction.pdf",
+    "size_bytes": 565798,
+    "sha256": "99cd402f2e7a8771e946f2de58f41997f5ba80f94958ee3cf8b63651c253851d"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v3.txt",
+    "sha256": "5f4497d75543cff0e4fa67408754f37f0fb77c89ad7050a852a7f71b91ee153f"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 2,
+      "text_char_count": 1297,
+      "needs_ocr": false,
+      "duration_seconds": 0.0147
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 15.6128
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 3,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 14061.0,
+            "investment_unit": "万元",
+            "investment_currency": "CNY",
+            "funding_source": "企业自筹"
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_unsupported_environmental_metric",
+          "original": {
+            "metric_type": "energy_saving",
+            "metric_name": "降低炼铁焦比",
+            "value": 0.0,
+            "unit": "（未量化）",
+            "period": null,
+            "source_page": 1,
+            "evidence_text": "提高焦炭质量，降低炼铁焦比",
+            "confidence": 0.6
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 1,
+          "action": "remove_unsupported_environmental_metric",
+          "original": {
+            "metric_type": "pollutant_reduction",
+            "metric_name": "超低排放",
+            "value": 0.0,
+            "unit": "（未量化）",
+            "period": null,
+            "source_page": 1,
+            "evidence_text": "达到超低排放评估监测要求",
+            "confidence": 0.5
+          }
+        }
+      ],
+      "duration_seconds": 0.0005
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 10,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "capacity_construction"
+      ],
+      "event_counts": {
+        "capacity_construction": 1,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0006
+    }
+  ],
+  "completed_at": "2026-09-20T05:57:43.382284+00:00",
+  "duration_seconds": 15.632,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_009_600581_bayi_construction\\20260920T055727Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_009_600581_bayi_construction\\20260920T055727Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_009_600581_bayi_construction\\20260920T055727Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_009_600581_bayi_construction\\20260920T055727Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_009_600581_bayi_construction\\20260920T055727Z\\evidence_report.json"
+  ]
+}

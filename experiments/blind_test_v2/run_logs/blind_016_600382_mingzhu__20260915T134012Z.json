@@ -1,0 +1,61 @@
+{
+  "run_id": "20260915T134012Z",
+  "status": "success",
+  "started_at": "2026-09-15T13:40:12.300866+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\blind_test\\blind_016_600382_mingzhu.pdf",
+    "size_bytes": 110313,
+    "sha256": "c0a1a97035b8500a8b2f943bb7009902300efa4fa7b70abf6c7d14b456cfda71"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\pledge_extraction_v6.txt",
+    "sha256": "1ee7fa3cf21764a9d45ae992a629b81d446621275e2cebc019e98fbcdacbafc3"
+  },
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "pdf_text_extraction",
+      "tool": "PyMuPDF",
+      "page_count": 5,
+      "duration_seconds": 0.0083
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "duration_seconds": 34.5811
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic semantic and shared-cell normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0001
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 44,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "pledge",
+        "release"
+      ],
+      "event_counts": {
+        "pledge": 2,
+        "release": 2,
+        "extension": 0
+      },
+      "duration_seconds": 0.0018
+    }
+  ],
+  "completed_at": "2026-09-15T13:40:46.894621+00:00",
+  "duration_seconds": 34.5938,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_016_600382_mingzhu\\20260915T134012Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_016_600382_mingzhu\\20260915T134012Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_016_600382_mingzhu\\20260915T134012Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\blind_016_600382_mingzhu\\20260915T134012Z\\evidence_report.json"
+  ]
+}

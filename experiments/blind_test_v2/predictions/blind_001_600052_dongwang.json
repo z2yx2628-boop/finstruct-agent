@@ -1,0 +1,29 @@
+{
+  "security_code": "600052",
+  "security_name": "东望时代",
+  "announcement_number": "临2025-050",
+  "company_name": "浙江东望时代科技股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "复创信息",
+      "shares": 59093631.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 100.0,
+      "total_share_capital_ratio": 7.0,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-03-27",
+      "pledge_end_date": "2030-03-27",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中信银行股份有限公司金华东阳支行",
+      "purpose": "资金周转",
+      "source_page": 1,
+      "evidence_text": "股东\n名称 \n是否\n为控\n股股\n东 \n本次质押股\n数（股） \n是否\n为限\n售股 \n是否\n补充\n质押 \n质押起始日 质押到期日 \n质权人 \n占其所\n持股份\n比例 \n占公司\n总股本\n比例 \n质押\n融资\n资金\n用途 \n复创\n信息 \n否 \n59,093,631 \n否 \n否 \n2025 年3\n月27 日 \n2030 年3\n月27 日 \n中信银行股\n份有限公司\n金华东阳支\n行 \n100.00% \n7.00% \n资金\n周转",
+      "confidence": 1.0
+    }
+  ]
+}

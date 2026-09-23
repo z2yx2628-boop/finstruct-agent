@@ -1,0 +1,39 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "华菱钢铁",
+  "announcement_number": null,
+  "announcement_date": "2026-05-15",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "炼铁厂7#高炉及烧结等配套系统提质升级改造项目",
+      "project_entity": "华菱涟钢",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": 7.68,
+      "investment_unit": "亿元",
+      "investment_currency": "CNY",
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "建设期10个月；7#高炉计划自2026年12月下旬开始停产65天，预计减少铁水产量60万吨，主要影响2027年一季度。",
+      "shutdown_facility": "7#高炉",
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": 65.0,
+      "output_loss_amount": 60.0,
+      "output_loss_unit": "万吨",
+      "output_loss_product": "铁水",
+      "technology_description": "提质升级改造",
+      "project_purpose": "消除7#高炉及其配套系统存在的设备隐患与安全问题",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "华菱钢铁(000932)5月15日公告，子公司华菱涟钢炼铁厂7#高炉已到一代炉龄的末期，为消除7#高炉及其配套系统存在的设备隐患与安全问题，华菱涟钢拟实施炼铁厂7#高炉及烧结等配套系统提质升级改造项目，投资额7.68亿元，建设期10个月。该项目已列入公司2026年度固定资产投资计划。7#高炉计划自2026年12月下旬开始停产65天，预计减少铁水产量60万吨，主要影响2027年一季度。",
+      "confidence": 1.0
+    }
+  ]
+}

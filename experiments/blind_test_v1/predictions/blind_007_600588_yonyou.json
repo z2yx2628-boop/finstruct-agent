@@ -1,0 +1,50 @@
+{
+  "security_code": "600588",
+  "security_name": "用友网络",
+  "announcement_number": "临2025-060",
+  "company_name": "用友网络科技股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "北京用友科技有限公司",
+      "shares": 55000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 5.97,
+      "total_share_capital_ratio": 1.61,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": "2024-06-19",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2025-06-24",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "云南国际信托有限公司",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "股东名称\n北京用友科技有限公司\n本次解质股份（股）\n55,000,000\n占其所持股份比例（%）\n5.97\n占公司总股本比例（%）\n1.61\n解质时间\n2025 年6 月24 日",
+      "confidence": 0.95
+    },
+    {
+      "event_type": "pledge",
+      "shareholder_name": "北京用友科技有限公司",
+      "shares": 35000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 3.8,
+      "total_share_capital_ratio": 1.02,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-06-26",
+      "pledge_end_date": null,
+      "pledge_end_condition": "办理解除质押登记手续为止",
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "北京中关村银行股份有限公司",
+      "purpose": "偿还债务",
+      "source_page": 2,
+      "evidence_text": "股东名\n称\n是否为\n控股股\n东\n本次质押股\n数（股）\n是否为限售\n股（如是，注\n明限售类型）\n是否\n补充\n质押\n质押起始日\n质押到期日\n质权人\n占其所\n持股份\n比例\n（%）\n占公司\n总股本\n比例\n（%）\n质押融\n资资金\n用途\n北京用\n友科技\n是\n35,000,000\n否\n否\n2025-6-26\n办理解除质\n押登记手续\n为止\n北京中关\n村银行股\n份有限公\n司\n3.80\n1.02\n偿还债\n务",
+      "confidence": 0.98
+    }
+  ]
+}

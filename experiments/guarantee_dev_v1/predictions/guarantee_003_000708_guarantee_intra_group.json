@@ -1,0 +1,37 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2025-046",
+  "announcement_date": "2025-06-26",
+  "total_guarantee_balance": 379173.41,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 9.26,
+  "external_guarantee_balance": 12000.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "天津钢管制造有限公司",
+      "guaranteed_party": "天津钢管国际经济贸易有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 2.29,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国银行股份有限公司天津东丽支行",
+      "guaranteed_debt_purpose": "开立非融资性保函等相关业务",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主债务合同债务期限届满之日起三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 65.93,
+      "source_page": 1,
+      "evidence_text": "天管国贸在中国银行股份有限公司天津东丽支行（以下简称“中国银行”）申请2.29 亿元人民币的授信额度，由天津钢管提供连带责任保证担保，担保期限为主债务合同债务期限届满之日起三年。天津钢管于2025 年6 月25 日在天津与中国银行签署《最高额保证合同》。",
+      "confidence": 1.0
+    }
+  ]
+}

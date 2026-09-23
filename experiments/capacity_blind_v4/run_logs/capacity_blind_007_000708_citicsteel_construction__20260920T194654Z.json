@@ -1,0 +1,102 @@
+{
+  "run_id": "20260920T194654Z",
+  "status": "needs_review",
+  "started_at": "2026-09-20T19:46:54.144115+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_blind\\capacity_blind_007_000708_citicsteel_construction.pdf",
+    "size_bytes": 174735,
+    "sha256": "754e1f06d5e67026654419de91ed4c9cd429659739a7612053b26124c919ce58"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 4,
+      "text_char_count": 2148,
+      "needs_ocr": false,
+      "duration_seconds": 0.0095
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 27.7693
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 2,
+      "changes": [
+        {
+          "event_index": 0,
+          "record_index": 1,
+          "action": "remove_nonreplacement_equipment_spec",
+          "original": {
+            "action": "new",
+            "facility_type": "1200m³高炉",
+            "product_name": "炼铁产能",
+            "capacity": 1200.0,
+            "capacity_unit": "m³/座",
+            "source_page": 1,
+            "evidence_text": "1 座1200m³高炉炼铁设施",
+            "confidence": 1.0
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 2,
+          "action": "remove_nonreplacement_equipment_spec",
+          "original": {
+            "action": "new",
+            "facility_type": "100t转炉系统",
+            "product_name": "炼钢产能",
+            "capacity": 100.0,
+            "capacity_unit": "t/座",
+            "source_page": 1,
+            "evidence_text": "1 座100t 转炉及配套脱硫脱磷、精炼设施",
+            "confidence": 1.0
+          }
+        }
+      ],
+      "duration_seconds": 0.0008
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 27,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "capacity_construction"
+      ],
+      "event_counts": {
+        "capacity_construction": 1,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0011
+    }
+  ],
+  "completed_at": "2026-09-20T19:47:21.935222+00:00",
+  "duration_seconds": 27.7911,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_007_000708_citicsteel_construction\\20260920T194654Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_007_000708_citicsteel_construction\\20260920T194654Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_007_000708_citicsteel_construction\\20260920T194654Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_007_000708_citicsteel_construction\\20260920T194654Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_007_000708_citicsteel_construction\\20260920T194654Z\\evidence_report.json"
+  ]
+}

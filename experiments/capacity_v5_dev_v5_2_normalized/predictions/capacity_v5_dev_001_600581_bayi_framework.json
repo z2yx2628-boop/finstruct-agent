@@ -1,0 +1,32 @@
+{
+  "security_code": "600581",
+  "security_name": "八一钢铁",
+  "company_name": "新疆八一钢铁股份有限公司",
+  "announcement_number": "临2025-025",
+  "announcement_date": "2025-04-26",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": null,
+      "project_entity": null,
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2025年度固定资产投资计划共48项，含续建项目10项、新开环保项目1项、新开装备措施项目21项、新开智慧制造项目6项、新开消防安全项目3项、新开其他项目7项；经公司战略与投资委员会全体委员一致通过，并提交第八届董事会第二十二次会议审议同意，尚需提交股东大会审议。",
+      "technology_description": "以环保、超低排、安全、节能等合规性项目为主，优先考虑品种调整、质量改善、资源接续等项目；涵盖PLC系统升级、连铸机增段提速、副枪及转炉模型改造、宽厚板连铸机新建、除尘系统改造、冲渣系统改造、智能化煤矿建设、无人化作业、远程操控、一键脱硫、自动扒渣等技术内容。",
+      "project_purpose": "满足环保、安全、节能政策要求，推进品种调整、质量改善和资源接续，降低生产成本，提升企业竞争力。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "2025 年固定资产投资计划主要以环保、超低排、安全、节能等合规性项目为主，优先考虑品种调整、质量改善、资源接续等项目。计划固定资产投资项目48 项，投资计划38115 万元，资金计划28350.5 万元",
+      "confidence": 1.0
+    }
+  ]
+}

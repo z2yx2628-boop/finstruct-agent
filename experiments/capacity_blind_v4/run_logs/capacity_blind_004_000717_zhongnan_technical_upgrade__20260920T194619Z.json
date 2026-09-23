@@ -1,0 +1,69 @@
+{
+  "run_id": "20260920T194619Z",
+  "status": "success",
+  "started_at": "2026-09-20T19:46:19.859913+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_blind\\capacity_blind_004_000717_zhongnan_technical_upgrade.pdf",
+    "size_bytes": 333952,
+    "sha256": "b1ee721a63395dd492acca0da10f4c136ca6efce3d27ebe0cb9150401b15e73a"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 6,
+      "text_char_count": 3030,
+      "needs_ocr": false,
+      "duration_seconds": 0.0171
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 3.1839
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 5,
+      "expected_event_types": [],
+      "extracted_event_types": [],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0011
+    }
+  ],
+  "completed_at": "2026-09-20T19:46:23.081067+00:00",
+  "duration_seconds": 3.2212,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_004_000717_zhongnan_technical_upgrade\\20260920T194619Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_004_000717_zhongnan_technical_upgrade\\20260920T194619Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_004_000717_zhongnan_technical_upgrade\\20260920T194619Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_004_000717_zhongnan_technical_upgrade\\20260920T194619Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_004_000717_zhongnan_technical_upgrade\\20260920T194619Z\\evidence_report.json"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "run_id": "20260920T185457Z",
+  "status": "success",
+  "started_at": "2026-09-20T18:54:57.596385+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_004_000709_hbis_commissioning.pdf",
+    "size_bytes": 389639,
+    "sha256": "0598e4e3a8449cd7fff57acc46686deaebee3f6e82c01348acdcc4bd72112193"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v3.txt",
+    "sha256": "1194b65a2e74d077ac182149eac47a7c0a75a2cb5b3f43a2d147b30bdc397bca"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 2,
+      "text_char_count": 979,
+      "needs_ocr": false,
+      "duration_seconds": 0.0113
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 20.9473
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 3,
+      "changes": [
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_nonreplacement_equipment_spec",
+          "original": {
+            "action": "new",
+            "facility_type": "高炉",
+            "product_name": "炼铁产能",
+            "capacity": 3700.0,
+            "capacity_unit": "m³",
+            "source_page": 1,
+            "evidence_text": "二期工程建设的1 座3700m3 高炉、1 座250t 转炉、1 条1780mm 热轧生产线及配套公辅设施于近日全部完工。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 1,
+          "action": "remove_nonreplacement_equipment_spec",
+          "original": {
+            "action": "new",
+            "facility_type": "转炉",
+            "product_name": "炼钢产能",
+            "capacity": 250.0,
+            "capacity_unit": "t",
+            "source_page": 1,
+            "evidence_text": "二期工程建设的1 座3700m3 高炉、1 座250t 转炉、1 条1780mm 热轧生产线及配套公辅设施于近日全部完工。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 2,
+          "action": "remove_nonreplacement_equipment_spec",
+          "original": {
+            "action": "new",
+            "facility_type": "热轧生产线",
+            "product_name": "钢材产能",
+            "capacity": 1780.0,
+            "capacity_unit": "mm",
+            "source_page": 1,
+            "evidence_text": "二期工程建设的1 座3700m3 高炉、1 座250t 转炉、1 条1780mm 热轧生产线及配套公辅设施于近日全部完工。",
+            "confidence": 0.95
+          }
+        }
+      ],
+      "duration_seconds": 0.0001
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 7,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "commissioning"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 1,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0008
+    }
+  ],
+  "completed_at": "2026-09-20T18:55:18.558136+00:00",
+  "duration_seconds": 20.9618,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T185457Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T185457Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T185457Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T185457Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T185457Z\\evidence_report.json"
+  ]
+}

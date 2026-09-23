@@ -1,0 +1,32 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2023-45",
+  "announcement_date": "2023-10-30",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "炼铁厂烧结机节能环保升级改造项目",
+      "project_entity": "湖南华菱涟源钢铁有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": 107382.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "自有资金",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目建设周期约10个月。",
+      "technology_description": "新建一套包含原料、熔剂、燃料的接受、配料、混合及制粒、铺底与布料、点火、烧结与冷却、抽风及除尘、烧结矿筛分、成品烧结矿取制样检验以及成品烧结矿转运等主工艺设施的烧结机；配套建设脱硫脱硝系统、余热发电系统、通风除尘、总图运输、35kV变电站、供配电及控制、室内外消防等。",
+      "project_purpose": "提高劳动生产率、降低生产成本，满足以高炉为中心的铁前生产需求；实现技术升级与装备更新换代；达到超低排放要求。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "公司全资子公司湖南华菱涟源钢铁有限公司（以下简称“华菱涟钢”）拟建设实施炼铁厂烧结机节能环保升级改造项目，项目投资总额107,382 万元。",
+      "confidence": 0.95
+    }
+  ]
+}

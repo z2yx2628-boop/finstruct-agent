@@ -1,0 +1,32 @@
+{
+  "started_at": "2026-09-23T21:42:14.915780+00:00",
+  "pdf_count": 4,
+  "task": "guarantee",
+  "runs": [
+    {
+      "pdf": "data\\raw\\guarantee\\guarantee_001_600507_guarantee_multi_subsidiary.pdf",
+      "status": "success",
+      "prediction": "outputs\\guarantee_dev_v3\\predictions\\guarantee_001_600507_guarantee_multi_subsidiary.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_001_600507_guarantee_multi_subsidiary\\20260923T214214Z"
+    },
+    {
+      "pdf": "data\\raw\\guarantee\\guarantee_002_600408_guarantee_related_party.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\guarantee_dev_v3\\predictions\\guarantee_002_600408_guarantee_related_party.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_002_600408_guarantee_related_party\\20260923T214338Z"
+    },
+    {
+      "pdf": "data\\raw\\guarantee\\guarantee_003_000708_guarantee_intra_group.pdf",
+      "status": "success",
+      "prediction": "outputs\\guarantee_dev_v3\\predictions\\guarantee_003_000708_guarantee_intra_group.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_003_000708_guarantee_intra_group\\20260923T214407Z"
+    },
+    {
+      "pdf": "data\\raw\\guarantee\\guarantee_004_600282_guarantee_progress_foreign_currency.pdf",
+      "status": "success",
+      "prediction": "outputs\\guarantee_dev_v3\\predictions\\guarantee_004_600282_guarantee_progress_foreign_currency.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\guarantee_004_600282_guarantee_progress_foreign_currency\\20260923T214421Z"
+    }
+  ],
+  "completed_at": "2026-09-23T21:44:41.584488+00:00"
+}

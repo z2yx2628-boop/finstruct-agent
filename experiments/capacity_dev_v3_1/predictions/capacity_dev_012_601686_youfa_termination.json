@@ -1,0 +1,32 @@
+{
+  "security_code": "601686",
+  "security_name": "友发集团",
+  "company_name": "天津友发钢管集团股份有限公司",
+  "announcement_number": "2024-188",
+  "announcement_date": "2024-12-13",
+  "events": [
+    {
+      "event_type": "termination",
+      "project_name": "唐山友发新型建筑器材有限公司焊接钢管、热浸镀锌盘扣脚手架、爬架加工项目",
+      "project_entity": "唐山友发新型建筑器材有限公司",
+      "project_location": null,
+      "project_status": null,
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "根据公司2021年9月10日发布的《天津友发钢管集团股份有限公司公开发行可转换公司债券募集资金使用可行性分析报告》，募投项目完全达产后，将形成年产540万吨焊接钢管、200万吨热浸镀锌盘扣脚手架与18万吨爬架的生产能力。预计2025年达到可使用状态。",
+      "technology_description": null,
+      "project_purpose": "增强焊接钢管的生产能力，提升市场占有率，巩固行业地位",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "本次拟终止的募投项目名称：“唐山友发新型建筑器材有限公司焊接钢管、热浸镀锌盘扣脚手架、爬架加工项目”",
+      "confidence": 1.0
+    }
+  ]
+}

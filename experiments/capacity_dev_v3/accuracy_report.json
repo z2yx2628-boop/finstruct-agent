@@ -1,0 +1,1634 @@
+{
+  "passed": false,
+  "corpus": {
+    "gold_documents": 12,
+    "evaluated_documents": 12,
+    "missing_predictions": [],
+    "unexpected_predictions": []
+  },
+  "event_metrics": {
+    "true_positives": 11,
+    "false_positives": 1,
+    "false_negatives": 1,
+    "precision": 0.9166666666666666,
+    "recall": 0.9166666666666666,
+    "f1": 0.9166666666666666
+  },
+  "capacity_record_metrics": {
+    "true_positives": 18,
+    "false_positives": 19,
+    "false_negatives": 0,
+    "precision": 0.4864864864864865,
+    "recall": 1.0,
+    "f1": 0.6545454545454547
+  },
+  "environment_record_metrics": {
+    "true_positives": 0,
+    "false_positives": 2,
+    "false_negatives": 2,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "document_field_metrics": {
+    "matched": 60,
+    "total": 60,
+    "accuracy": 1.0,
+    "present_matched": 60,
+    "present_total": 60,
+    "present_accuracy": 1.0,
+    "overfilled": 0
+  },
+  "event_attribute_metrics": {
+    "matched": 118,
+    "total": 176,
+    "accuracy": 0.6704545454545454,
+    "present_matched": 53,
+    "present_total": 108,
+    "present_accuracy": 0.49074074074074076,
+    "overfilled": 3
+  },
+  "capacity_attribute_metrics": {
+    "matched": 65,
+    "total": 90,
+    "accuracy": 0.7222222222222222,
+    "present_matched": 62,
+    "present_total": 85,
+    "present_accuracy": 0.7294117647058823,
+    "overfilled": 2
+  },
+  "environment_attribute_metrics": {
+    "matched": 0,
+    "total": 0,
+    "accuracy": 1.0,
+    "present_matched": 0,
+    "present_total": 0,
+    "present_accuracy": 1.0,
+    "overfilled": 0
+  },
+  "documents": {
+    "capacity_dev_001_600019_baosteel_construction": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 16,
+        "accuracy": 0.6875,
+        "present_matched": 3,
+        "present_total": 8,
+        "present_accuracy": 0.375,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 12,
+        "total": 15,
+        "accuracy": 0.8,
+        "present_matched": 12,
+        "present_total": 15,
+        "present_accuracy": 0.8,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_entity",
+          "expected": "沙特厚板公司（暂定名）",
+          "actual": "沙特厚板公司",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_status",
+          "expected": "approved",
+          "actual": "planned",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2024年7月25日董事会审议通过调整后的参股并投资建设方案，项目仍需取得相关监管机构批准、备案、登记。",
+          "actual": "2023年4月7日董事会审议通过原出资方案；2024年7月25日董事会审议通过调整后的出资方案；项目实施还需取得相关监管机构的批准、备案、登记。",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "采用国际先进工艺技术建设绿色低碳全流程厚板工厂。",
+          "actual": "国际最先进的工艺技术，绿色低碳全流程厚板工厂",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "服务中东北非地区的油气、造船、海工和建筑行业，并推进宝钢股份国际化和绿色低碳发展。",
+          "actual": "建设全球最具竞争力的绿色低碳厚板工厂，服务于中东北非地区的油气、造船、海工和建筑行业",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "facility_type",
+          "expected": "绿色低碳厚板工厂",
+          "actual": "厚板工厂",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 1,
+          "field": "facility_type",
+          "expected": "绿色低碳厚板工厂",
+          "actual": "厚板工厂",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 2,
+          "field": "facility_type",
+          "expected": "绿色低碳厚板工厂",
+          "actual": "厚板工厂",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_002_600019_baosteel_construction": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 16,
+        "accuracy": 0.6875,
+        "present_matched": 6,
+        "present_total": 11,
+        "present_accuracy": 0.5454545454545454,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 18,
+        "total": 20,
+        "accuracy": 0.9,
+        "present_matched": 18,
+        "present_total": 20,
+        "present_accuracy": 0.9,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_entity",
+          "expected": "湛江钢铁",
+          "actual": "宝山钢铁股份有限公司",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_location",
+          "expected": "广东省湛江市",
+          "actual": "湛江",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "待产能置换手续、能评、环评等审批事项完成后正式启动建设。",
+          "actual": "项目建设所需的产能指标置换方案已获国资委批准，中国宝武钢铁集团有限公司和广东省正分别按程序组织产能置换方案公示和公告。项目能评和环评工作正在与广东省、湛江市积极沟通中，已取得相关部门的支持文件。待产能置换手续、能评、环评等审批事项完成后，本项目才能正式启动建设工作。",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "扩建原料码头、原料场、烧结机、焦炉、高炉、转炉等装备，并新建热轧单元和冷轧单元各1个。",
+          "actual": "结合智慧制造、绿色钢厂的最新要求，坚持“智慧化、生态化，简单、高效、低成本、高质量”的建设和运营理念；新建具备超高强钢生产能力的热轧单元和冷轧单元各1个；冷轧单元结合上海地区的产线调整，考虑搬迁部分上海不锈的冷轧产线。",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "巩固优质碳钢扁平材领域优势，提升湛江钢铁的产品、制造、清洁生产和效率水平。",
+          "actual": "巩固和强化公司在优质碳钢扁平材领域的领先地位，提升公司业绩；提升湛江钢铁的能源利用效率、物流运输效率、生产效率、劳动效率和投资效率，降低生产成本；提升产品拓展、智慧制造、清洁生产、效率提升等方面的整体竞争力。",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "facility_type",
+          "expected": "三高炉系统",
+          "actual": "高炉系统",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 1,
+          "field": "facility_type",
+          "expected": "三高炉系统",
+          "actual": "转炉系统",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_003_000709_hbis_construction": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 3,
+        "false_positives": 15,
+        "false_negatives": 0,
+        "precision": 0.16666666666666666,
+        "recall": 1.0,
+        "f1": 0.2857142857142857
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 16,
+        "accuracy": 0.6875,
+        "present_matched": 7,
+        "present_total": 12,
+        "present_accuracy": 0.5833333333333334,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 7,
+        "total": 15,
+        "accuracy": 0.4666666666666667,
+        "present_matched": 7,
+        "present_total": 13,
+        "present_accuracy": 0.5384615384615384,
+        "overfilled": 2
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_location",
+          "expected": "河钢乐亭钢铁有限公司现有厂区内及当前已成陆地的海域",
+          "actual": "河钢乐亭钢铁有限公司现有厂区内",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "自有资金筹建；烧结、高炉、1580线等项目采用F+EPC总包、设备直租方式融资",
+          "actual": "自有资金筹建，烧结、高炉、1580线等项目采取F+EPC总包、设备直租方式进行融资",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "一部工程在相关行政审批手续完成后开工，二部工程根据国家土地等相关政策适时启动。",
+          "actual": "一部工程计划办理完成相关行政审批手续后开工建设，二部工程根据国家土地等相关政策适时启动建设；项目已于2019年7月29日备案（冀发改产业备字〔2019〕487号），2021年7月29日完成备案变更（冀发改政务备字〔2021〕153号），2021年12月14日获河北省发改委同意分两部分建设的复函；节能审查意见有效期2年（2019年8月27日出具），正在办理延期；环评正在办理中；一部工程用地已取得土地产权证书",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "分两部分建设烧结机、高炉、转炉、电炉、ESP热轧、酸洗镀锌和冷轧生产线及配套设施。",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "落实钢铁企业退城搬迁，优化钢铁产能布局和产品结构。",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "facility_type",
+          "expected": "铁钢轧综合配套工程",
+          "actual": "烧结机",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "product_name",
+          "expected": "铁钢轧综合配套产能",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "capacity",
+          "expected": 405.0,
+          "actual": 500.0,
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "capacity_unit",
+          "expected": "万吨/年",
+          "actual": "平方米",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 1,
+          "field": "facility_type",
+          "expected": null,
+          "actual": "炼铁产能",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 1,
+          "field": "product_name",
+          "expected": "炼铁产能",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 2,
+          "field": "facility_type",
+          "expected": null,
+          "actual": "炼钢产能",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 2,
+          "field": "product_name",
+          "expected": "炼钢产能",
+          "actual": null,
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 15,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_004_000709_hbis_commissioning": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 3,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 1.0,
+        "f1": 0.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 16,
+        "accuracy": 0.6875,
+        "present_matched": 4,
+        "present_total": 8,
+        "present_accuracy": 0.5,
+        "overfilled": 1
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_location",
+          "expected": "涉县新区",
+          "actual": "涉县",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "commissioning_date",
+          "expected": null,
+          "actual": "2024-06-06",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "二期工程设备近日全部完工；2024年6月6日3700m3高炉顺利出铁，预计2024年6月上旬全线贯通投产。",
+          "actual": "2024年6月6日，二期工程3700m³高炉顺利出铁，预计2024年6月上旬二期工程全线贯通投产。",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "建设1座3700m3高炉、1座250t转炉、1条1780mm热轧生产线及配套公辅设施。",
+          "actual": "依托互联网+、云计算、大数据智能化等先进技术，建设了“数字指挥中心”、“铁前智慧中心”、“焦化智能中心”三大智能管控中心，建成了集物质流、能源流、信息流、资金流、价值流“五位一体”的“智慧大脑”",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "完成邯钢新区建设并提升新区生产效率和竞争力。",
+          "actual": "落实钢铁行业退城搬迁决策，实现产能转移和智能化升级",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 3,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_005_000709_hbis_commissioning": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 16,
+        "accuracy": 0.6875,
+        "present_matched": 3,
+        "present_total": 7,
+        "present_accuracy": 0.42857142857142855,
+        "overfilled": 1
+      },
+      "capacity_attribute_metrics": {
+        "matched": 16,
+        "total": 20,
+        "accuracy": 0.8,
+        "present_matched": 16,
+        "present_total": 20,
+        "present_accuracy": 0.8,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_name",
+          "expected": "邯钢老区退城搬迁焦化项目一期1#焦炉",
+          "actual": "邯钢老区退城搬迁焦化项目",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "commissioning_date",
+          "expected": null,
+          "actual": "2022-10-28",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "一期1#焦炉近日已装煤出焦；二期2#焦炉预计2023年2月达到装煤出焦条件。",
+          "actual": "一期1#焦炉已经装煤出焦；二期2#焦炉预计将于2023年02月达到装煤出焦条件。",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "焦化项目建设2座70孔7.65米焦炉。",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "实施邯钢老区退城搬迁焦化项目的建设和运营。",
+          "actual": "邯钢老区退城搬迁",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "facility_type",
+          "expected": "一期1#焦炉",
+          "actual": "焦炉",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 1,
+          "field": "facility_type",
+          "expected": "一期1#焦炉",
+          "actual": "焦炉",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 2,
+          "field": "facility_type",
+          "expected": "一期1#焦炉",
+          "actual": "焦炉",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 3,
+          "field": "facility_type",
+          "expected": "一期1#焦炉",
+          "actual": "焦炉",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_006_000932_valin_technical_upgrade": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 9,
+        "total": 16,
+        "accuracy": 0.5625,
+        "present_matched": 5,
+        "present_total": 12,
+        "present_accuracy": 0.4166666666666667,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_location",
+          "expected": "炼铁厂中和场一、二次料场区域",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 107382.0,
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "自有资金",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "新建烧结机主工艺设施，并配套建设脱硫脱硝、余热发电、通风除尘、供配电及控制等系统。",
+          "actual": "新建一套包含原料、熔剂、燃料的接受、配料、混合及制粒、铺底与布料、点火、烧结与冷却、抽风及除尘、烧结矿筛分、成品烧结矿取制样检验以及成品烧结矿转运等主工艺设施的烧结机；配套建设脱硫脱硝系统、余热发电系统、通风除尘、总图运输、35kV变电站、供配电及控制、室内外消防等。",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "提高劳动生产率、降低生产成本，满足高炉生产需求并达到超低排放要求。",
+          "actual": "提高劳动生产率、降低生产成本，满足以高炉为中心的铁前生产需求；实现技术升级与装备更新换代；满足超低排放环保政策要求。",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_007_000932_valin_technical_upgrade": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 13,
+        "total": 16,
+        "accuracy": 0.8125,
+        "present_matched": 9,
+        "present_total": 12,
+        "present_accuracy": 0.75,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 3,
+        "total": 5,
+        "accuracy": 0.6,
+        "present_matched": 3,
+        "present_total": 5,
+        "present_accuracy": 0.6,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "建设周期约8个月，预计于2021年7月建成投运。",
+          "actual": "项目建设周期约8个月，预计于2021年7月建成投运。",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "建设一条立式连续镀锌线、一条半自动包装机组、主厂房及相应公辅设施。",
+          "actual": "建设一条立式连续镀锌线、一条半自动包装机组、主厂房及相应公辅设施",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "优化产品结构，提高镀锌板质量和档次，满足高端家电用钢需求。",
+          "actual": "优化产品结构，提高镀锌板产品质量和产品档次，满足高端家电用钢市场需求",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "facility_type",
+          "expected": "立式连续镀锌线",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "product_name",
+          "expected": "热镀锌产品",
+          "actual": "热镀锌板",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_008_600581_bayi_technical_upgrade": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 1.0,
+        "f1": 0.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 2,
+        "false_negatives": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [],
+      "missing_counts": {
+        "events": 1,
+        "capacity_records": 0,
+        "environment_records": 2
+      },
+      "unexpected_counts": {
+        "events": 1,
+        "capacity_records": 1,
+        "environment_records": 2
+      }
+    },
+    "capacity_dev_009_600581_bayi_construction": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 9,
+        "total": 16,
+        "accuracy": 0.5625,
+        "present_matched": 5,
+        "present_total": 12,
+        "present_accuracy": 0.4166666666666667,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 4,
+        "present_total": 4,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_location",
+          "expected": "炼铁厂焦化分厂",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 14061.0,
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "企业自筹",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "建设干熄焦本体、干熄焦锅炉、运焦系统及综合电气室、除尘地面站等辅助设施。",
+          "actual": "干熄焦工艺",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "达到钢铁行业超低排放要求，提高焦炭质量并降低炼铁焦比。",
+          "actual": "实现‘焦炉应采用干熄焦工艺’，达到超低排放评估监测要求，提高焦炭质量，降低炼铁焦比",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_010_600231_linggang_replacement": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 16,
+        "accuracy": 0.6875,
+        "present_matched": 3,
+        "present_total": 7,
+        "present_accuracy": 0.42857142857142855,
+        "overfilled": 1
+      },
+      "capacity_attribute_metrics": {
+        "matched": 4,
+        "total": 10,
+        "accuracy": 0.4,
+        "present_matched": 2,
+        "present_total": 8,
+        "present_accuracy": 0.25,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "commissioning_date",
+          "expected": null,
+          "actual": "2023-02-21",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2023年2月23日取得投产前验收意见，新建120t转炉已投入生产。",
+          "actual": "2020年11月16日董事会审议通过，2020年12月2日股东大会审议通过；2021年6月1日取得项目备案证明；2022年8月31日取得建筑工程施工许可证；2023年2月21日完成投产前现场验收；2023年2月23日出具验收意见。",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "退出3×35t转炉系统并新建120t转炉系统。",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "实施炼钢产能置换。",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1,
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "facility_type",
+          "expected": "120t转炉系统",
+          "actual": "转炉",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "capacity",
+          "expected": 120.0,
+          "actual": 1.0,
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "capacity_unit",
+          "expected": "t/座",
+          "actual": "台×120t",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 1,
+          "field": "facility_type",
+          "expected": "3×35t转炉系统",
+          "actual": "转炉",
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 1,
+          "field": "capacity",
+          "expected": 35.0,
+          "actual": 3.0,
+          "matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 1,
+          "field": "capacity_unit",
+          "expected": "t/座",
+          "actual": "台×35t",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_011_600231_linggang_delay": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 16,
+        "accuracy": 0.6875,
+        "present_matched": 5,
+        "present_total": 10,
+        "present_accuracy": 0.5,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 46509.29,
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "公开发行可转换公司债券募集资金，拟投入30,800万元",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "受疫情、设计和设备到货延迟、施工推迟及追加工程量影响，项目延期至2021年9月末。",
+          "actual": "将原料场改扩建工程进行延期至2021年9月末。受新冠肺炎疫情的影响，项目施工图设计、设备到货、建安工程施工等均较计划工期推迟，以及项目追加投资后工程量增加较多，导致该项目延期。目前该项目主体已投入使用，但该项目中配套建设的解冻库、料场封闭等尚未完工。",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_dev_012_601686_youfa_termination": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 10,
+        "total": 16,
+        "accuracy": 0.625,
+        "present_matched": 3,
+        "present_total": 9,
+        "present_accuracy": 0.3333333333333333,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 320000.0,
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "公开发行可转换公司债券募集资金，拟投入145,000万元",
+          "actual": null,
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2024年12月13日董事会和监事会审议通过终止议案，尚需股东大会及债券持有人会议审议。",
+          "actual": "根据公司2021年9月10日发布的《天津友发钢管集团股份有限公司公开发行可转换公司债券募集资金使用可行性分析报告》，募投项目完全达产后，将形成年产540万吨焊接钢管、200万吨热浸镀锌盘扣脚手架与18万吨爬架的生产能力。截至2024年11月30日，已完成395万吨焊接钢管，完工进度73.15%；84.5万吨热浸镀锌盘扣脚手架的生产能力，完工进度42.25%。",
+          "matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "原计划增强焊接钢管生产能力并提升市场占有率；因需求下滑和项目公司持续亏损决定终止未建设部分。",
+          "actual": "增强焊接钢管的生产能力，提升市场占有率，巩固行业地位",
+          "matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    }
+  }
+}

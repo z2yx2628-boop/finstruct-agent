@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-09-06T22:43:00.387515+00:00",
+  "pdf_count": 5,
+  "runs": [
+    {
+      "pdf": "data\\raw\\pledge_test\\pledge_01_huayou.pdf",
+      "status": "success",
+      "prediction": "outputs\\accuracy_test\\predictions\\pledge_01_huayou.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\pledge_01_huayou\\20260906T224300Z"
+    },
+    {
+      "pdf": "data\\raw\\pledge_test\\pledge_02_yongding.pdf",
+      "status": "success",
+      "prediction": "outputs\\accuracy_test\\predictions\\pledge_02_yongding.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\pledge_02_yongding\\20260906T224313Z"
+    },
+    {
+      "pdf": "data\\raw\\pledge_test\\pledge_03_yasha.pdf",
+      "status": "success",
+      "prediction": "outputs\\accuracy_test\\predictions\\pledge_03_yasha.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\pledge_03_yasha\\20260906T224342Z"
+    },
+    {
+      "pdf": "data\\raw\\pledge_test\\pledge_04_letong.pdf",
+      "status": "success",
+      "prediction": "outputs\\accuracy_test\\predictions\\pledge_04_letong.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\pledge_04_letong\\20260906T224400Z"
+    },
+    {
+      "pdf": "data\\raw\\pledge_test\\pledge_05_tongding.pdf",
+      "status": "success",
+      "prediction": "outputs\\accuracy_test\\predictions\\pledge_05_tongding.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\pledge_05_tongding\\20260906T224421Z"
+    }
+  ],
+  "completed_at": "2026-09-06T22:44:47.153288+00:00"
+}

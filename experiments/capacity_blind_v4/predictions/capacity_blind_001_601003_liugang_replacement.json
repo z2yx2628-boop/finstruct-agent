@@ -1,0 +1,32 @@
+{
+  "security_code": "601003",
+  "security_name": "柳钢股份",
+  "company_name": "柳州钢铁股份有限公司",
+  "announcement_number": "2021-028",
+  "announcement_date": "2021-06-04",
+  "events": [
+    {
+      "event_type": "capacity_replacement",
+      "project_name": null,
+      "project_entity": "柳州钢铁股份有限公司",
+      "project_location": null,
+      "project_status": null,
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "在2017年12月8日已公告的《柳州钢铁股份有限公司产能置换方案》基础上，分阶段将公司部分炉龄老化、需要大修的高炉、转炉对应的炼铁、炼钢产能用于广西钢铁集团有限公司防城港钢铁基地项目；产能置换方案尚处于广西工信厅门户网站公示期（不少于20个工作日），公示期满无异议后予以公告。",
+      "technology_description": null,
+      "project_purpose": "将炉龄老化、需要大修的高炉、转炉对应的炼铁、炼钢产能用于防城港钢铁基地项目",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "近日，公司接控股股东广西柳州钢铁集团有限公司（简称“柳钢集团”）通知，拟在公司2017 年12 月8 日于广西壮族自治区工业和信息化厅（简称“广西工信厅”）门户网站公告的《柳州钢铁股份有限公司产能置换方案》（已经公司第六届董事会第十八次会议审议通过，详见公司2017-039 号公告）的基础上，分阶段将公司的部分炉龄老化、需要大修的高炉、转炉对应的炼铁、炼钢产能用于广西钢铁集团有限公司防城港钢铁基地项目，并按照钢铁行业产能置换相关要求，在广西工信厅门户网站向社会公示产能置换方案（具体方案以广西工信厅门户网站公示为准）。",
+      "confidence": 0.95
+    }
+  ]
+}

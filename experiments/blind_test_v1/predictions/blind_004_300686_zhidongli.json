@@ -1,0 +1,29 @@
+{
+  "security_code": "300686",
+  "security_name": "智动力",
+  "announcement_number": "2025-007",
+  "company_name": "深圳市智动力精密技术股份有限公司",
+  "events": [
+    {
+      "event_type": "extension",
+      "shareholder_name": "吴加维",
+      "shares": 12000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 25.06,
+      "total_share_capital_ratio": 4.6,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2024-04-01",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": "2025-03-30",
+      "extended_end_date": "9999-01-01",
+      "pledgee": "浙江银通典当有限责任公司",
+      "purpose": "个人资金需求",
+      "source_page": 1,
+      "evidence_text": "股东 \n名称 \n是否为控\n股股东或\n第一大股\n东及其一\n致行动人 \n本次股\n份质押\n延期购\n回数量\n（股） \n占其所\n持股份\n比例\n（%） \n占公司\n总股本\n比（%） \n是否为\n限售股 \n是否\n为补\n充质\n押 \n质押\n起始\n日 \n原质押\n到期日 \n延期\n后质\n押到\n期日 \n质权人 \n质押\n用途 \n吴加维 \n是 \n12,000,\n000 \n25.06 \n4.60 \n否 \n否 \n2024-\n04-01 \n2025-3-\n30 \n9999-\n01-01 \n浙江银通\n典当有限\n责任公司 \n个人\n资金\n需求",
+      "confidence": 0.98
+    }
+  ]
+}

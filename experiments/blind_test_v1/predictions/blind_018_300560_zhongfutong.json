@@ -1,0 +1,29 @@
+{
+  "security_code": "300560",
+  "security_name": "中富通",
+  "announcement_number": "2025-067",
+  "company_name": "中富通集团股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "福建融嘉科技有限公司",
+      "shares": 6600000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 28.02,
+      "total_share_capital_ratio": 2.87,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-12-26",
+      "pledge_end_date": "2026-11-30",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "上海长宁大众小额贷款股份有限公司",
+      "purpose": "资金需求",
+      "source_page": 1,
+      "evidence_text": "股东名称\n是否为控\n股股东或\n第一大股\n东及其一\n致行动人\n本次质押数\n量（股）\n占其所\n持股份\n比例\n占公司\n总股本\n比例\n是否为\n限售股\n是否为\n补充质\n押\n质押起\n始日\n质押\n到期\n日\n质权人\n质押用途\n融嘉科技\n是\n6,600,000\n28.02%\n2.87%\n否\n否\n2025 年\n12 月26\n日\n2026\n年11\n月30\n日\n上海长\n宁大众\n小额贷\n款股份\n有限公\n司\n资金需求",
+      "confidence": 1.0
+    }
+  ]
+}

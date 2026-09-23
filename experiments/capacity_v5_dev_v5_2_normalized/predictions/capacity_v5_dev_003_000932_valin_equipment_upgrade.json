@@ -1,0 +1,32 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2026-26",
+  "announcement_date": "2026-05-15",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "华菱涟钢炼铁厂7#高炉及烧结等配套系统提质升级改造项目",
+      "project_entity": "湖南华菱涟源钢铁有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": 76781.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "自筹资金",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "建设期10个月，其中高炉全停产工期65天；7#高炉计划自2026年12月下旬开始停产；已列入公司2026年度固定资产投资计划；董事会审议通过。",
+      "technology_description": "集成应用炉顶五通球结构优化、加深死铁层、新型高效冷却壁、炉底封板加固及智能化控制等成熟先进技术",
+      "project_purpose": "消除7#高炉及其配套系统设备隐患与安全问题，保障炼铁系统长周期稳定运行，推进技术迭代升级与全流程降本增效",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "公司子公司湖南华菱涟源钢铁有限公司（以下简称“华菱涟钢”）炼铁厂7#高炉已到一代炉龄的末期，为消除7#高炉及其配套系统存在的设备隐患与安全问题，保障炼铁系统长周期稳定运行，推进技术迭代升级与全流程降本增效，华菱涟钢拟实施炼铁厂7#高炉及烧结等配套系统提质升级改造项目（以下简称“项目”），投资额76,781 万元，建设期10 个月。",
+      "confidence": 1.0
+    }
+  ]
+}

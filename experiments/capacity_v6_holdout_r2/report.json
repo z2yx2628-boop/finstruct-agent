@@ -1,0 +1,1796 @@
+{
+  "passed": false,
+  "corpus": {
+    "gold_documents": 12,
+    "evaluated_documents": 12,
+    "missing_predictions": [],
+    "unexpected_predictions": []
+  },
+  "event_metrics": {
+    "true_positives": 10,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "capacity_record_metrics": {
+    "true_positives": 4,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "environment_record_metrics": {
+    "true_positives": 0,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "document_field_metrics": {
+    "matched": 60,
+    "total": 60,
+    "accuracy": 1.0,
+    "present_matched": 60,
+    "present_total": 60,
+    "present_accuracy": 1.0,
+    "overfilled": 0
+  },
+  "event_attribute_metrics": {
+    "matched": 109,
+    "total": 160,
+    "accuracy": 0.68125,
+    "present_matched": 53,
+    "present_total": 99,
+    "present_accuracy": 0.5353535353535354,
+    "overfilled": 5
+  },
+  "capacity_attribute_metrics": {
+    "matched": 18,
+    "total": 20,
+    "accuracy": 0.9,
+    "present_matched": 16,
+    "present_total": 18,
+    "present_accuracy": 0.8888888888888888,
+    "overfilled": 0
+  },
+  "environment_attribute_metrics": {
+    "matched": 0,
+    "total": 0,
+    "accuracy": 1.0,
+    "present_matched": 0,
+    "present_total": 0,
+    "present_accuracy": 1.0,
+    "overfilled": 0
+  },
+  "factual_attribute_metrics": {
+    "matched": 186,
+    "total": 210,
+    "accuracy": 0.8857142857142857,
+    "present_matched": 129,
+    "present_total": 151,
+    "present_accuracy": 0.8543046357615894,
+    "overfilled": 2
+  },
+  "narrative_attribute_metrics": {
+    "matched": 1,
+    "total": 30,
+    "accuracy": 0.03333333333333333,
+    "present_matched": 0,
+    "present_total": 26,
+    "present_accuracy": 0.0,
+    "overfilled": 3
+  },
+  "canonical_attribute_metrics": {
+    "matched": 187,
+    "total": 240,
+    "accuracy": 0.7791666666666667,
+    "present_matched": 129,
+    "present_total": 177,
+    "present_accuracy": 0.7288135593220338,
+    "overfilled": 5
+  },
+  "documents": {
+    "capacity_v6_holdout_001_002756_commissioning": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 13,
+        "total": 16,
+        "accuracy": 0.8125,
+        "present_matched": 8,
+        "present_total": 11,
+        "present_accuracy": 0.7272727272727273,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 4,
+        "total": 5,
+        "accuracy": 0.8,
+        "present_matched": 4,
+        "present_total": 5,
+        "present_accuracy": 0.8,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 22,
+        "total": 23,
+        "accuracy": 0.9565217391304348,
+        "present_matched": 17,
+        "present_total": 18,
+        "present_accuracy": 0.9444444444444444,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 3,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 22,
+        "total": 26,
+        "accuracy": 0.8461538461538461,
+        "present_matched": 17,
+        "present_total": 21,
+        "present_accuracy": 0.8095238095238095,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2015年10月18日、11月12日董事会和临时股东大会审议通过建设；近日建成投产，项目已正式投产，并有望快速达产。",
+          "actual": "2015年10月18日董事会审议通过，2015年11月12日股东大会审议通过；2018年3月8日建成投产。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "引进国际先进水平的轧机机组、在线固溶炉和自动化技术装备，采用在线性能控制、在线热处理等热机械控制工艺技术和纯氧燃烧、余热回收发电等清洁生产技术。",
+          "actual": "引进国际先进水平的轧机机组、在线固溶炉和自动化技术装备；采用在线性能控制、在线热处理等热机械控制工艺技术；应用纯氧燃烧、余热回收发电等清洁生产技术。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "替代进口高端特钢产品，提升产量并缓解前道冶炼能力大于后道加工能力的产能不匹配。",
+          "actual": "实现不锈钢进口替代，建设高标准、智能化、绿色制造的棒线加工生产线，缓解前道冶炼能力大于后道加工能力的产能不匹配压力。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "facility_type",
+          "expected": "棒线加工生产线",
+          "actual": "棒线生产线",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_002_002756_technical_upgrade": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 13,
+        "total": 16,
+        "accuracy": 0.8125,
+        "present_matched": 9,
+        "present_total": 12,
+        "present_accuracy": 0.75,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 18,
+        "total": 18,
+        "accuracy": 1.0,
+        "present_matched": 14,
+        "present_total": 14,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 3,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 18,
+        "total": 21,
+        "accuracy": 0.8571428571428571,
+        "present_matched": 14,
+        "present_total": 17,
+        "present_accuracy": 0.8235294117647058,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2019年2月1日第四届董事会第十七次临时会议审议通过；项目建设期12个月；项目立项建设尚须报相关部门履行备案手续。",
+          "actual": "项目建设期12个月；项目立项建设尚须报相关部门履行备案手续。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "拆除炼钢一厂旧房约7000平米，新建厂房8842平米，购置一机一流弧形连铸机、VD真空脱气、AOD智能系统等设备，将钢锭模铸升级为智能连铸系统。",
+          "actual": "将钢锭模铸升级为智能连铸系统；购置一机一流弧形连铸机、VD真空脱气、起重设备、电气设备、AOD智能系统等设备。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "加快新材料产品结构升级与替代进口，提升生产效率和产品成材率，确保前后端产能匹配。",
+          "actual": "提升生产效率和产品成材率，提高产品附加值；满足年产25万吨高品质不锈钢和特种合金棒线项目对连铸坯的需求，确保前后端产能匹配。",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_003_002478_construction": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 16,
+        "accuracy": 0.75,
+        "present_matched": 8,
+        "present_total": 12,
+        "present_accuracy": 0.6666666666666666,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 4,
+        "total": 5,
+        "accuracy": 0.8,
+        "present_matched": 4,
+        "present_total": 5,
+        "present_accuracy": 0.8,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 21,
+        "total": 23,
+        "accuracy": 0.9130434782608695,
+        "present_matched": 17,
+        "present_total": 19,
+        "present_accuracy": 0.8947368421052632,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 3,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 21,
+        "total": 26,
+        "accuracy": 0.8076923076923077,
+        "present_matched": 17,
+        "present_total": 22,
+        "present_accuracy": 0.7727272727272727,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "企业自筹解决",
+          "actual": "企业自筹",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2018年9月28日第四届董事会第十一次会议审议通过；项目建设期为18个月。",
+          "actual": "项目建设期为18个月；2018年9月28日经公司第四届董事会第十一次会议审议通过。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "新建一条热轧无缝钢管生产线及其公辅设施。",
+          "actual": "新建一条热轧无缝钢管生产线及其公辅设施",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "满足市场对高钢级、高性能能源管材产品的需求，增强公司竞争力并提升经济效益。",
+          "actual": "满足市场对高钢级、高性能的能源管材产品需求，增强公司特色竞争力和竞争优势，提升经济效益",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "capacity_change",
+          "record_index": 0,
+          "field": "source_page",
+          "expected": 1,
+          "actual": 2,
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_004_002318_construction": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 13,
+        "total": 16,
+        "accuracy": 0.8125,
+        "present_matched": 8,
+        "present_total": 11,
+        "present_accuracy": 0.7272727272727273,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 4,
+        "present_total": 4,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 22,
+        "total": 23,
+        "accuracy": 0.9565217391304348,
+        "present_matched": 17,
+        "present_total": 18,
+        "present_accuracy": 0.9444444444444444,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 1,
+        "total": 3,
+        "accuracy": 0.3333333333333333,
+        "present_matched": 0,
+        "present_total": 2,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 23,
+        "total": 26,
+        "accuracy": 0.8846153846153846,
+        "present_matched": 17,
+        "present_total": 20,
+        "present_accuracy": 0.85,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_location",
+          "expected": "双林镇镇西工业厂区内",
+          "actual": "双林镇镇西工业厂区",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2024年6月17日第七届董事会第三次会议审议通过；项目建设期预计18个月。",
+          "actual": "项目建设期预计18个月；2024年6月17日经公司第七届董事会第三次会议审议通过。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "顺应行业发展、把握客户需求，保障主营业务稳步增长，提升产品与服务竞争力，实现产业转型升级。",
+          "actual": "顺应行业发展、把握客户需求，保障公司主营业务板块稳步增长，提升产品与服务竞争力，实现产业升级转型。",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_005_002318_commissioning": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 22,
+        "total": 32,
+        "accuracy": 0.6875,
+        "present_matched": 6,
+        "present_total": 16,
+        "present_accuracy": 0.375,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 4,
+        "present_total": 4,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 32,
+        "total": 36,
+        "accuracy": 0.8888888888888888,
+        "present_matched": 15,
+        "present_total": 19,
+        "present_accuracy": 0.7894736842105263,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 6,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 6,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 32,
+        "total": 42,
+        "accuracy": 0.7619047619047619,
+        "present_matched": 15,
+        "present_total": 25,
+        "present_accuracy": 0.6,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_entity",
+          "expected": "浙江久立特材科技股份有限公司",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "可转换公司债券募集资金",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "主体设备及生产线于近日建成并达到可使用状态，经过一段时间的试运行后将正式投产运行。",
+          "actual": "主体设备及生产线于近日建成并达到可使用状态，经过试运行后将正式投产运行。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "对原有生产单位进行工业自动化与智能化改造，改造包括冷轧和穿孔车间。",
+          "actual": "对公司原有生产单位进行工业自动化与智能化改造，改造包括冷轧和穿孔车间",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "实现冷轧和穿孔工序的自动化稳定生产，提高生产效率，降低生产成本，提高产品成材率和质量。",
+          "actual": "实现工序的自动化稳定生产目标，提高生产效率和整体运营效率，优化生产流程，降低生产成本，提高产品的成材率和质量",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "project_entity",
+          "expected": "浙江久立特材科技股份有限公司",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "funding_source",
+          "expected": "可转换公司债券募集资金",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "timeline_text",
+          "expected": "主体设备及生产线于近日建成并达到可使用状态，经过一段时间的试运行后将正式投产运行。",
+          "actual": "主体设备及生产线于近日建成并达到可使用状态，经过试运行后将正式投产运行。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "technology_description",
+          "expected": "为航空产业配套各种航空用管，包括飞机发动机用管、飞机主机用管等。",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "project_purpose",
+          "expected": "调整和优化产品结构，提升公司在高端管材应用的行业地位。",
+          "actual": "为航空产业配套各种航空用管，包括飞机发动机用管、飞机主机用管等；提升公司在高端管材应用的行业地位",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_006_002541_delay": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 8,
+        "total": 16,
+        "accuracy": 0.5,
+        "present_matched": 4,
+        "present_total": 11,
+        "present_accuracy": 0.36363636363636365,
+        "overfilled": 1
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 13,
+        "total": 18,
+        "accuracy": 0.7222222222222222,
+        "present_matched": 9,
+        "present_total": 13,
+        "present_accuracy": 0.6923076923076923,
+        "overfilled": 1
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 3,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 13,
+        "total": 21,
+        "accuracy": 0.6190476190476191,
+        "present_matched": 9,
+        "present_total": 16,
+        "present_accuracy": 0.5625,
+        "overfilled": 1
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_entity",
+          "expected": null,
+          "actual": "安徽鸿路钢结构（集团）股份有限公司",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 8000.0,
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "公开发行可转换公司债券募集资金",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "预定可使用状态日期由2023年12月31日延期至2024年12月31日；截至2023年末投入进度36.90%。",
+          "actual": "达到预定可使用状态日期由2023年12月延期至2024年12月；截至2023年末投入进度36.90%。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "ERP系统升级、智能质量管理系统、生产监控系统、能源管控系统、物联网管理系统、运营分析系统等信息化平台建设。",
+          "actual": "涉及ERP系统升级、智能质量管理系统、生产监控系统、能源管控系统、物联网管理系统、运营分析系统等信息化平台建设。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": "建立科学高效的信息化管理模式，提升业务协同效应，降低业务运营成本。",
+          "actual": "提升信息化与智能化管理水平，实现智能管控一体化，降低运营成本，提高安全生产水平和运营效率。",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_007_688186_delay": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 8,
+        "total": 16,
+        "accuracy": 0.5,
+        "present_matched": 3,
+        "present_total": 9,
+        "present_accuracy": 0.3333333333333333,
+        "overfilled": 2
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 13,
+        "total": 18,
+        "accuracy": 0.7222222222222222,
+        "present_matched": 8,
+        "present_total": 12,
+        "present_accuracy": 0.6666666666666666,
+        "overfilled": 1
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 2,
+        "present_accuracy": 0.0,
+        "overfilled": 1
+      },
+      "canonical_attribute_metrics": {
+        "matched": 13,
+        "total": 21,
+        "accuracy": 0.6190476190476191,
+        "present_matched": 8,
+        "present_total": 14,
+        "present_accuracy": 0.5714285714285714,
+        "overfilled": 2
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_entity",
+          "expected": null,
+          "actual": "张家港广大特材股份有限公司",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 30000.0,
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "首次公开发行股票募集资金30,000.00万元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "达到预定可使用状态时间由2023年延长至2024年12月；截至2021年12月31日累计投入募集资金10,237.54万元。",
+          "actual": "原计划2023年达到预定可使用状态，延期至2024年12月；项目预计建设周期为3年。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "购置国内外先进设备，建设特殊合金产品生产线，用于生产高温合金、耐蚀合金、超高强度钢、超高纯不锈钢等特殊合金产品。",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": null,
+          "actual": "建设特殊合金产品生产线，用于生产高温合金、耐蚀合金、超高强度钢、超高纯不锈钢等特殊合金产品",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_008_300881_delay": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 9,
+        "total": 16,
+        "accuracy": 0.5625,
+        "present_matched": 3,
+        "present_total": 9,
+        "present_accuracy": 0.3333333333333333,
+        "overfilled": 1
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 14,
+        "total": 18,
+        "accuracy": 0.7777777777777778,
+        "present_matched": 8,
+        "present_total": 12,
+        "present_accuracy": 0.6666666666666666,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 2,
+        "present_accuracy": 0.0,
+        "overfilled": 1
+      },
+      "canonical_attribute_metrics": {
+        "matched": 14,
+        "total": 21,
+        "accuracy": 0.6666666666666666,
+        "present_matched": 8,
+        "present_total": 14,
+        "present_accuracy": 0.5714285714285714,
+        "overfilled": 1
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_amount",
+          "expected": 262421470.16,
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_unit",
+          "expected": "元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "investment_currency",
+          "expected": "CNY",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "funding_source",
+          "expected": "首次公开发行股票募集资金262,421,470.16元",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "预计完成时间由2022年2月延期至2023年2月；截至2021年12月31日募集资金使用进度16.31%。",
+          "actual": "预计完成时间由2022年2月延期至2023年2月。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "新建生产基地，新增不锈钢和合金钢生产设备，生产HR3C、TP347HFG、Super304H不锈钢管以及T91、T92、12Cr1MoVG合金钢管。",
+          "actual": null,
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": null,
+          "actual": "新增HR3C、Super304H不锈钢无缝钢管产品，扩充TP347HFG不锈钢及T91、T92、12Cr1MoVG合金钢无缝钢管产能，提升生产工艺和技术水平，形成全系列产品并扩大高盈利产品产能。",
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_009_000923_suspension": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_010_002443_progress": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 11,
+        "total": 16,
+        "accuracy": 0.6875,
+        "present_matched": 4,
+        "present_total": 8,
+        "present_accuracy": 0.5,
+        "overfilled": 1
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 16,
+        "total": 18,
+        "accuracy": 0.8888888888888888,
+        "present_matched": 9,
+        "present_total": 11,
+        "present_accuracy": 0.8181818181818182,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 3,
+        "accuracy": 0.0,
+        "present_matched": 0,
+        "present_total": 2,
+        "present_accuracy": 0.0,
+        "overfilled": 1
+      },
+      "canonical_attribute_metrics": {
+        "matched": 16,
+        "total": 21,
+        "accuracy": 0.7619047619047619,
+        "present_matched": 9,
+        "present_total": 13,
+        "present_accuracy": 0.6923076923076923,
+        "overfilled": 1
+      },
+      "field_mismatches": [
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_location",
+          "expected": "吴兴区临港工业园湖州市八里店镇尹家圩村",
+          "actual": "湖州市吴兴区临港工业园湖州市八里店镇尹家圩村",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "timeline_text",
+          "expected": "2024年8月29日第七届董事会第十一次会议审议通过暂缓实施；项目尚未实质性投入。",
+          "actual": "2020年11月30日董事会审议通过原‘年产60万吨优质焊管和工厂预制深加工管材管件项目’；后调整备案为‘年产100万吨清洁能源及高端装备用精密管未来工厂项目’；截至2024年8月29日公告披露日，项目尚未实质性投入；公司于2024年8月29日决定暂缓实施。",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "technology_description",
+          "expected": "新增生产车间及辅助用房，新建自备码头一座，新增钢卷精密纵剪机、高精密焊管生产线、钢管热浸镀锌铝合金生产线、RBE直缝埋弧焊钢管生产线、双金属复合管生产线等智能化装备。",
+          "actual": "新建钢卷精密纵剪机、高精密焊管生产线、钢管热浸镀锌铝合金生产线、RBE直缝埋弧焊钢管生产线、耐蚀合金堆焊机、双金属复合管生产线等智能化装备以及配套先进的节能环保设施",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "project_purpose",
+          "expected": null,
+          "actual": "应对钢铁行业供大于求、钢材价格低迷、低价竞争加剧的市场环境变化，降低经营风险，稳定公司业绩，维护全体股东根本利益",
+          "matched": false,
+          "canonical_matched": false
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1,
+          "matched": false,
+          "canonical_matched": false
+        }
+      ],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_011_601005_hard_negative_asset_purchase": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    },
+    "capacity_v6_holdout_012_600126_hard_negative_data_center": {
+      "passed": true,
+      "event_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "capacity_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "environment_record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "capacity_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "environment_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 5,
+        "total": 5,
+        "accuracy": 1.0,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [],
+      "missing_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      },
+      "unexpected_counts": {
+        "events": 0,
+        "capacity_records": 0,
+        "environment_records": 0
+      }
+    }
+  }
+}

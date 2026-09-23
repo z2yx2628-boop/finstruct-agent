@@ -1,0 +1,63 @@
+{
+  "security_code": "000708",
+  "security_name": "大冶特钢",
+  "company_name": "大冶特殊钢股份有限公司",
+  "announcement_number": "2018-015",
+  "announcement_date": "2018-05-18",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "高品质模具钢生产线项目",
+      "project_entity": "大冶特殊钢股份有限公司",
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": 7.35,
+      "investment_unit": "亿元",
+      "investment_currency": "CNY",
+      "funding_source": "自有资金",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目建设期为2年，预计投产时间为2019年，达产时间为2020年；项目获黄石市发改委、湖北省发改委、国家工信部批准；经公司第八届董事会第七次会议审议通过。",
+      "technology_description": "在原有锻造生产工艺上，增建先进的锻压及特冶设备，优化主体工艺方案及设备组成；新建60MN锻造生产线、两台“双真空”炉、两台保护性气氛电渣炉、退火炉等设备。",
+      "project_purpose": "调整产品结构、提高产品质量、提升服务能力；在不增加炼钢总产能的情况下，加大高端装备制造需用材料的生产能力；提升公司核心竞争力和高端模具钢质量稳定性。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "60MN锻造生产线",
+          "product_name": "特冶锻造产品",
+          "capacity": 3.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "新建产能为3 万吨/年的60MN锻造生产线",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "双真空炉",
+          "product_name": "特冶锻造产品",
+          "capacity": 2.0,
+          "capacity_unit": "台",
+          "source_page": 1,
+          "evidence_text": "两台“双真空”炉",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "保护性气氛电渣炉",
+          "product_name": "特冶锻造产品",
+          "capacity": 2.0,
+          "capacity_unit": "台",
+          "source_page": 1,
+          "evidence_text": "两台保护性气氛电渣炉",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "公司董事会批准投资建设高品质模具钢生产线项目（以下简称项目或该项目），项目总投资7.35 亿元。资金来源主要依靠自有资金解决。",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -188,10 +188,33 @@ def classify(title: str) -> str:
     return "other"
 
 
+# Final test set (docs/steel_universe.md): never searched for development or
+# task test sets. 方大特钢 was already used for guarantee development, so it
+# stays in the final set for capacity/maintenance only.
+RESERVED_FINAL = {"000898", "600808", "600010", "600507", "600782", "600022", "002075", "000825"}
+
+
+def guarantee_issuers() -> dict[str, str]:
+    """Core steel mills eligible for the guarantee test set."""
+    used = set()
+    sources = PROJECT_ROOT / "data" / "manifests" / "guarantee_sources.csv"
+    if sources.exists():
+        with sources.open(encoding="utf-8-sig") as handle:
+            used = {row["security_code"].zfill(6) for row in csv.DictReader(handle)}
+    with (PROJECT_ROOT / "data" / "manifests" / "steel_universe.csv").open(encoding="utf-8-sig") as handle:
+        return {
+            row["security_code"]: row["security_name"]
+            for row in csv.DictReader(handle)
+            if row["tier"] == "core" and row["core_analysis_target"] == "Y"
+            and row["security_code"] not in RESERVED_FINAL | used
+        }
+
+
 def main() -> int:
     rows = []
     seen = set()
-    for code, name in STEEL_ISSUERS.items():
+    issuers = guarantee_issuers() if TASK == "guarantee" else STEEL_ISSUERS
+    for code, name in issuers.items():
         if TASK != "guarantee" and code in USED_CODES:
             continue
         try:

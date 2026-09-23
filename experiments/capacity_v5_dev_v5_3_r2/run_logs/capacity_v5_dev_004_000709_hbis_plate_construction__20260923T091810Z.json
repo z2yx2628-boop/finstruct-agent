@@ -1,0 +1,87 @@
+{
+  "run_id": "20260923T091810Z",
+  "status": "success",
+  "started_at": "2026-09-23T09:18:10.462856+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_v5_dev\\capacity_v5_dev_004_000709_hbis_plate_construction.pdf",
+    "size_bytes": 121628,
+    "sha256": "f1f499f24980ef1bc6e600c94b3b6ab6152dfb7263f496ac59338177e040344b"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v5.txt",
+    "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 2,
+      "text_char_count": 1198,
+      "needs_ocr": false,
+      "duration_seconds": 0.0061
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 13.6069
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 2,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_project_name",
+          "original": "5600mm热轧宽厚板项目"
+        },
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_investment",
+          "original": {
+            "investment_amount": 79.67,
+            "investment_unit": "亿元",
+            "investment_currency": "CNY",
+            "funding_source": "自有资金及自筹资金"
+          }
+        }
+      ],
+      "duration_seconds": 0.0006
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 9,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "capacity_construction"
+      ],
+      "event_counts": {
+        "capacity_construction": 1,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0005
+    }
+  ],
+  "completed_at": "2026-09-23T09:18:24.078761+00:00",
+  "duration_seconds": 13.6159,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_004_000709_hbis_plate_construction\\20260923T091810Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_004_000709_hbis_plate_construction\\20260923T091810Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_004_000709_hbis_plate_construction\\20260923T091810Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_004_000709_hbis_plate_construction\\20260923T091810Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_v5_dev_004_000709_hbis_plate_construction\\20260923T091810Z\\evidence_report.json"
+  ]
+}

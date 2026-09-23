@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-09-20T19:45:45.823465+00:00",
+  "pdf_count": 8,
+  "task": "capacity",
+  "runs": [
+    {
+      "pdf": "data\\raw\\capacity_blind\\capacity_blind_001_601003_liugang_replacement.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_001_601003_liugang_replacement.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_001_601003_liugang_replacement\\20260920T194545Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_blind\\capacity_blind_002_601003_liugang_replacement.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_002_601003_liugang_replacement.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_002_601003_liugang_replacement\\20260920T194559Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_blind\\capacity_blind_003_000717_zhongnan_technical_upgrade.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_003_000717_zhongnan_technical_upgrade.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_003_000717_zhongnan_technical_upgrade\\20260920T194615Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_blind\\capacity_blind_004_000717_zhongnan_technical_upgrade.pdf",
+      "status": "success",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_004_000717_zhongnan_technical_upgrade.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_004_000717_zhongnan_technical_upgrade\\20260920T194619Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_blind\\capacity_blind_005_600282_nangang_delay.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_005_600282_nangang_delay.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_005_600282_nangang_delay\\20260920T194623Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_blind\\capacity_blind_006_600282_nangang_construction.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_006_600282_nangang_construction.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_006_600282_nangang_construction\\20260920T194638Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_blind\\capacity_blind_007_000708_citicsteel_construction.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_007_000708_citicsteel_construction.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_007_000708_citicsteel_construction\\20260920T194654Z"
+    },
+    {
+      "pdf": "data\\raw\\capacity_blind\\capacity_blind_008_000708_citicsteel_construction.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\capacity_blind_v4\\predictions\\capacity_blind_008_000708_citicsteel_construction.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_008_000708_citicsteel_construction\\20260920T194721Z"
+    }
+  ],
+  "completed_at": "2026-09-20T19:47:38.655429+00:00"
+}

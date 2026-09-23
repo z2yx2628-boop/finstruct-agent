@@ -1,0 +1,32 @@
+{
+  "security_code": "002443",
+  "security_name": "金洲管道",
+  "company_name": "浙江金洲管道科技股份有限公司",
+  "announcement_number": "2024-029",
+  "announcement_date": "2024-08-29",
+  "events": [
+    {
+      "event_type": "suspension",
+      "project_name": "年产100万吨清洁能源及高端装备用精密管未来工厂项目",
+      "project_entity": "浙江金洲管道科技股份有限公司",
+      "project_location": "湖州市吴兴区临港工业园湖州市八里店镇尹家圩村",
+      "project_status": "suspended",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": "自有资金及自筹资金",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2020年11月30日董事会审议通过原‘年产60万吨优质焊管和工厂预制深加工管材管件项目’；后备案调整为‘年产100万吨清洁能源及高端装备用精密管未来工厂项目’；截至2024年8月29日公告披露日，项目尚未实质性投入；公司于2024年8月29日董事会决议暂缓实施。",
+      "technology_description": "新建钢卷精密纵剪机、高精密焊管生产线、钢管热浸镀锌铝合金生产线、RBE直缝埋弧焊钢管生产线、耐蚀合金堆焊机、双金属复合管生产线等智能化装备以及配套先进的节能环保设施",
+      "project_purpose": "应对钢铁行业供大于求、钢材价格低迷、低价竞争加剧的市场环境变化，降低经营风险，稳定公司业绩，维护全体股东根本利益",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "审议通过了《关于暂缓固定资产投资建设项目的议案》",
+      "confidence": 1.0
+    }
+  ]
+}

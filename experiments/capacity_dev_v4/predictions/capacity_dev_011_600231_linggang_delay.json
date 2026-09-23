@@ -1,0 +1,32 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2021-015",
+  "announcement_date": "2021-04-08",
+  "events": [
+    {
+      "event_type": "delay",
+      "project_name": "原料场改扩建工程",
+      "project_entity": null,
+      "project_location": null,
+      "project_status": "delayed",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": "2021-09-30",
+      "timeline_text": "原计划于2020年建成，因新冠肺炎疫情导致施工图设计、设备到货、建安工程施工推迟，以及追加投资后工程量增加，延期至2021年9月末；目前主体已投入使用，但配套解冻库、料场封闭等尚未完工。",
+      "technology_description": null,
+      "project_purpose": "提升原料储存、转运及环保能力，配套建设解冻库、料场封闭等设施",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 2,
+      "evidence_text": "原料场改扩建工程\n46,509.29\n30,800.00\n28,412.64",
+      "confidence": 0.95
+    }
+  ]
+}

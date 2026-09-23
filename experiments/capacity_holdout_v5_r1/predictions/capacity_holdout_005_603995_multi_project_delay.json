@@ -1,0 +1,43 @@
+{
+  "security_code": "603995",
+  "security_name": "甬金股份",
+  "company_name": "甬金科技集团股份有限公司",
+  "announcement_number": "2024-015",
+  "announcement_date": "2024-03-29",
+  "events": [
+    {
+      "event_type": "delay",
+      "project_name": "年加工22万吨精密不锈钢板带项目",
+      "project_entity": "广东甬金金属科技有限公司",
+      "project_location": null,
+      "project_status": "delayed",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "原计划一期2024年3月31日完工，二期2025年9月30日完工；现调整为一期延期至2025年3月31日，二期顺延至2026年9月30日。",
+      "technology_description": null,
+      "project_purpose": "根据市场需求恢复节奏和产能利用效率审慎调整建设进度，避免设备闲置。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "精密不锈钢板带生产线",
+          "product_name": "精密不锈钢板带",
+          "capacity": 22.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 2,
+          "evidence_text": "公司向特定对象发行股票涉及“年加工22 万吨精密不锈钢板带项目”和“年加工35 万吨宽幅精密不锈钢板带技术改造项目”两个建设项目",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 2,
+      "evidence_text": "公司向特定对象发行股票涉及“年加工22 万吨精密不锈钢板带项目”和“年加工35 万吨宽幅精密不锈钢板带技术改造项目”两个建设项目",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2020-012",
+  "announcement_date": "2020-03-06",
+  "events": [
+    {
+      "event_type": "capacity_construction",
+      "project_name": "青岛特钢环保搬迁项目续建工程",
+      "project_entity": "青岛特殊钢铁有限公司",
+      "project_location": "青岛市西海岸经济新区青岛特钢现厂区内",
+      "project_status": "approved",
+      "investment_amount": 49.83,
+      "investment_unit": "亿元",
+      "investment_currency": "CNY",
+      "funding_source": "自筹资金",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目总工期为21个月（含手续办理），初步计划2021年下半年竣工；项目获国家发改委核准，核准产能417万吨，目前已具备300万吨精品特钢产能。",
+      "technology_description": null,
+      "project_purpose": null,
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "265m²烧结机",
+          "product_name": null,
+          "capacity": 265.0,
+          "capacity_unit": "m²/台",
+          "source_page": 1,
+          "evidence_text": "1 台265m²烧结机",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "方坯连铸机",
+          "product_name": null,
+          "capacity": 2.0,
+          "capacity_unit": "台",
+          "source_page": 1,
+          "evidence_text": "2 台方坯连铸机",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "高线生产线",
+          "product_name": null,
+          "capacity": 2.0,
+          "capacity_unit": "条",
+          "source_page": 1,
+          "evidence_text": "2 条高线",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": null,
+          "product_name": "帘线钢、胎圈用钢",
+          "capacity": 50.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 2,
+          "evidence_text": "该项目生产50 万吨帘线钢、胎圈用钢，50 万吨焊丝等产品，以及13 万吨钢坯，总计年产113 万吨坯材。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": null,
+          "product_name": "焊丝用钢",
+          "capacity": 50.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 2,
+          "evidence_text": "该项目生产50 万吨帘线钢、胎圈用钢，50 万吨焊丝等产品，以及13 万吨钢坯，总计年产113 万吨坯材。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": null,
+          "product_name": "钢坯",
+          "capacity": 13.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 2,
+          "evidence_text": "该项目生产50 万吨帘线钢、胎圈用钢，50 万吨焊丝等产品，以及13 万吨钢坯，总计年产113 万吨坯材。",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "青岛特殊钢铁有限公司（以下简称“青岛特钢”）为切实提高在特钢领域的综合竞争实力，拟启动青岛特钢环保搬迁项目续建工程（以下简称“项目”或“该项目”）……项目总投资49.83 亿元，资金来源为自筹资金。",
+      "confidence": 1.0
+    }
+  ]
+}

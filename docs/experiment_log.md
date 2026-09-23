@@ -39,6 +39,9 @@ All 25 pledge Gold documents come from issuers outside the steel industry.
 | capacity_v6_scan_r1 | 12 × 1 | V6 + OCR | 90.0% | 66.7% | 160/192 | Independent measurement of OCR loss |
 | capacity_v6_scan_r2 | 12 × 1 | V6 + OCR fix `58bf2ae` | 90.0% | 66.7% | 164/192 | Development (OCR fix made after r1) |
 | web_trial, web_trial_v7 | 3 × 1 | V6 / V7 | — | — | — | Qualitative webpage check, no Gold |
+| guarantee_dev_v1 | 4 × 1 | Guarantee prompt v1 (`1805779`) | 28.6% | — | 118/132 | Development (Gold v1) |
+| guarantee_dev_v2 | 4 × 1 | Guarantee prompt v2 (`ade6873`) | 76.5% | — | 188/230 | Development (Gold v2) |
+| guarantee_dev_v3 | 4 × 1 | Guarantee prompt v3 (`5cf6f00`) | 100% | — | 313/328 | Development (Gold v2) — dev freeze; the 15 remaining mismatches are all listed Gold alternatives |
 
 Known anomaly: `capacity_v5_dev_v5_1_full` reports the same attribute
 counts as the V4 baseline although its predictions differ. The report should
@@ -56,5 +59,5 @@ to the errors that motivated the rules.
 | Module | What is missing |
 | --- | --- |
 | Capacity V7 (maintenance events, research fields) | New issuer-disjoint Gold including maintenance and overseas projects |
-| Guarantee v1 | Development labels for 4 documents, then a frozen test set from core steel mills |
+| Guarantee v3 | Frozen test set from the 14 eligible core mills (core Y minus the 8 reserved mills minus dev issuers) |
 | Final test set | Reserved documents from 8 core steel mills, run once after the final freeze |

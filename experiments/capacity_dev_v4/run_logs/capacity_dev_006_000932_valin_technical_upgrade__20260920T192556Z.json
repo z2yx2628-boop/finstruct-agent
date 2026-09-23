@@ -1,0 +1,163 @@
+{
+  "run_id": "20260920T192556Z",
+  "status": "success",
+  "started_at": "2026-09-20T19:25:56.290719+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_006_000932_valin_technical_upgrade.pdf",
+    "size_bytes": 160196,
+    "sha256": "d6fa99f830dccc3b0ec82b6309c415b60f8e807822f505e189dc8d3c9e4cdc3e"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 2,
+      "text_char_count": 1481,
+      "needs_ocr": false,
+      "duration_seconds": 0.0085
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 1,
+      "sanitization_changes": [
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_incomplete_capacity_change",
+          "original": {
+            "action": "new",
+            "facility_type": "烧结机",
+            "product_name": "烧结矿",
+            "capacity": null,
+            "capacity_unit": "套",
+            "source_page": 1,
+            "evidence_text": "在炼铁厂中和场一、二次料场区域新建一套包含原料、熔剂、燃料的接受、配料、混合及制粒、铺底与布料、点火、烧结与冷却、抽风及除尘、烧结矿筛分、成品烧结矿取制样检验以及成品烧结矿转运等主工艺设施的烧结机；",
+            "confidence": 0.95
+          }
+        }
+      ],
+      "duration_seconds": 31.2875
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 5,
+      "changes": [
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_existing_asset_background",
+          "original": {
+            "action": "retired",
+            "facility_type": "130㎡烧结机",
+            "product_name": "烧结矿",
+            "capacity": 130.0,
+            "capacity_unit": "㎡",
+            "source_page": 2,
+            "evidence_text": "华菱涟钢炼铁厂三烧车间现有1 台130 ㎡烧结机、1 台180 ㎡烧结机，分别为1999 年、2003 年投产……华菱涟钢拟将130 ㎡、180 ㎡烧结机等量置换，建设新的大型化烧结机",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 1,
+          "action": "remove_existing_asset_background",
+          "original": {
+            "action": "retired",
+            "facility_type": "180㎡烧结机",
+            "product_name": "烧结矿",
+            "capacity": 180.0,
+            "capacity_unit": "㎡",
+            "source_page": 2,
+            "evidence_text": "华菱涟钢炼铁厂三烧车间现有1 台130 ㎡烧结机、1 台180 ㎡烧结机，分别为1999 年、2003 年投产……华菱涟钢拟将130 ㎡、180 ㎡烧结机等量置换，建设新的大型化烧结机",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_regulatory_environmental_threshold",
+          "original": {
+            "metric_type": "pollutant_reduction",
+            "metric_name": "颗粒物排放浓度",
+            "value": 10.0,
+            "unit": "mg/Nm³",
+            "period": "小时均值",
+            "source_page": 2,
+            "evidence_text": "烧结机头烟气在基准含氧量 16%条件下，颗粒物、二氧化硫、氮氧化物小时均值排放浓度分别不高于 10、35 和 50mg/Nm³。",
+            "confidence": 0.8
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 1,
+          "action": "remove_regulatory_environmental_threshold",
+          "original": {
+            "metric_type": "pollutant_reduction",
+            "metric_name": "二氧化硫排放浓度",
+            "value": 35.0,
+            "unit": "mg/Nm³",
+            "period": "小时均值",
+            "source_page": 2,
+            "evidence_text": "烧结机头烟气在基准含氧量 16%条件下，颗粒物、二氧化硫、氮氧化物小时均值排放浓度分别不高于 10、35 和 50mg/Nm³。",
+            "confidence": 0.8
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 2,
+          "action": "remove_regulatory_environmental_threshold",
+          "original": {
+            "metric_type": "pollutant_reduction",
+            "metric_name": "氮氧化物排放浓度",
+            "value": 50.0,
+            "unit": "mg/Nm³",
+            "period": "小时均值",
+            "source_page": 2,
+            "evidence_text": "烧结机头烟气在基准含氧量 16%条件下，颗粒物、二氧化硫、氮氧化物小时均值排放浓度分别不高于 10、35 和 50mg/Nm³。",
+            "confidence": 0.8
+          }
+        }
+      ],
+      "duration_seconds": 0.0003
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 9,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "technical_upgrade"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 1,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0007
+    }
+  ],
+  "completed_at": "2026-09-20T19:26:27.591001+00:00",
+  "duration_seconds": 31.3003,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_006_000932_valin_technical_upgrade\\20260920T192556Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_006_000932_valin_technical_upgrade\\20260920T192556Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_006_000932_valin_technical_upgrade\\20260920T192556Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_006_000932_valin_technical_upgrade\\20260920T192556Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_006_000932_valin_technical_upgrade\\20260920T192556Z\\evidence_report.json"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "run_id": "20260920T055448Z",
+  "status": "needs_review",
+  "started_at": "2026-09-20T05:54:48.076031+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_003_000709_hbis_construction.pdf",
+    "size_bytes": 220449,
+    "sha256": "23955ba8e9324c30581f0e0ac9af441e62a7e783ac625c9fb2369c70714bc937"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v3.txt",
+    "sha256": "5f4497d75543cff0e4fa67408754f37f0fb77c89ad7050a852a7f71b91ee153f"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 4,
+      "text_char_count": 3051,
+      "needs_ocr": false,
+      "duration_seconds": 0.012
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 53.0726
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 3,
+      "changes": [
+        {
+          "event_index": 1,
+          "target_event_index": 0,
+          "action": "merge_project_replacement_event",
+          "project_name": "河钢乐亭钢铁基地项目二期工程"
+        },
+        {
+          "event_index": 0,
+          "record_index": 16,
+          "action": "normalize_annual_capacity_unit",
+          "original": "万吨",
+          "normalized": "万吨/年"
+        },
+        {
+          "event_index": 0,
+          "record_index": 17,
+          "action": "normalize_annual_capacity_unit",
+          "original": "万吨",
+          "normalized": "万吨/年"
+        }
+      ],
+      "duration_seconds": 0.0006
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 63,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "capacity_construction"
+      ],
+      "event_counts": {
+        "capacity_construction": 1,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0015
+    }
+  ],
+  "completed_at": "2026-09-20T05:55:41.166214+00:00",
+  "duration_seconds": 53.0902,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T055448Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T055448Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T055448Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T055448Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T055448Z\\evidence_report.json"
+  ]
+}

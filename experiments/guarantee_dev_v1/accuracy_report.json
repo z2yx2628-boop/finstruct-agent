@@ -1,0 +1,574 @@
+{
+  "passed": false,
+  "corpus": {
+    "evaluated_documents": 4,
+    "missing_predictions": []
+  },
+  "event_metrics": {
+    "true_positives": 6,
+    "false_positives": 16,
+    "false_negatives": 14,
+    "precision": 0.2727272727272727,
+    "recall": 0.3,
+    "f1": 0.28571428571428564
+  },
+  "document_field_metrics": {
+    "matched": 41,
+    "total": 48,
+    "present_matched": 39,
+    "present_total": 39,
+    "overfilled": 7,
+    "accuracy": 0.8541666666666666,
+    "present_accuracy": 1.0
+  },
+  "event_attribute_metrics": {
+    "matched": 77,
+    "total": 84,
+    "present_matched": 63,
+    "present_total": 64,
+    "overfilled": 6,
+    "accuracy": 0.9166666666666666,
+    "present_accuracy": 0.984375
+  },
+  "factual_attribute_metrics": {
+    "matched": 118,
+    "total": 132,
+    "present_matched": 102,
+    "present_total": 103,
+    "overfilled": 13,
+    "accuracy": 0.8939393939393939,
+    "present_accuracy": 0.9902912621359223
+  },
+  "canonical_attribute_metrics": {
+    "matched": 118,
+    "total": 132,
+    "present_matched": 102,
+    "present_total": 103,
+    "overfilled": 13,
+    "accuracy": 0.8939393939393939,
+    "present_accuracy": 0.9902912621359223
+  },
+  "narrative_attribute_metrics": {
+    "matched": 9,
+    "total": 12,
+    "present_matched": 4,
+    "present_total": 7,
+    "overfilled": 0,
+    "accuracy": 0.75,
+    "present_accuracy": 0.5714285714285714
+  },
+  "documents": {
+    "guarantee_001_600507_guarantee_multi_subsidiary": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 0,
+        "false_positives": 14,
+        "false_negatives": 14,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "document_field_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 10,
+        "present_total": 10,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "event_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 10,
+        "present_total": 10,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 10,
+        "present_total": 10,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [],
+      "missing_events": [
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大特钢汽车悬架集团有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "济南方大重弹汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "济南方大重弹汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "济南方大重弹汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大长力汽车零部件有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大长力汽车零部件有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大长力汽车零部件有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "重庆红岩方大汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "重庆红岩方大汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大长力汽车零部件有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大特钢汽车悬架集团有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "宁波方大海鸥贸易有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "南昌长力二次资源销售有限公司"
+        },
+        {
+          "event_type": "guarantee_provided",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "本溪满族自治县同达铁选有限责任公司"
+        }
+      ],
+      "unexpected_events": [
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大特钢汽车悬架集团有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "济南方大重弹汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "济南方大重弹汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "济南方大重弹汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大长力汽车零部件有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大长力汽车零部件有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大长力汽车零部件有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "重庆红岩方大汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "重庆红岩方大汽车悬架有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大长力汽车零部件有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "江西方大特钢汽车悬架集团有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "宁波方大海鸥贸易有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "南昌长力二次资源销售有限公司"
+        },
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "方大特钢科技股份有限公司",
+          "guaranteed_party": "本溪满族自治县同达铁选有限责任公司"
+        }
+      ]
+    },
+    "guarantee_002_600408_guarantee_related_party": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 4,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.888888888888889
+      },
+      "document_field_metrics": {
+        "matched": 9,
+        "total": 12,
+        "accuracy": 0.75,
+        "present_matched": 9,
+        "present_total": 9,
+        "present_accuracy": 1.0,
+        "overfilled": 3
+      },
+      "event_attribute_metrics": {
+        "matched": 52,
+        "total": 56,
+        "accuracy": 0.9285714285714286,
+        "present_matched": 44,
+        "present_total": 44,
+        "present_accuracy": 1.0,
+        "overfilled": 4
+      },
+      "factual_attribute_metrics": {
+        "matched": 61,
+        "total": 68,
+        "accuracy": 0.8970588235294118,
+        "present_matched": 53,
+        "present_total": 53,
+        "present_accuracy": 1.0,
+        "overfilled": 7
+      },
+      "canonical_attribute_metrics": {
+        "matched": 61,
+        "total": 68,
+        "accuracy": 0.8970588235294118,
+        "present_matched": 53,
+        "present_total": 53,
+        "present_accuracy": 1.0,
+        "overfilled": 7
+      },
+      "narrative_attribute_metrics": {
+        "matched": 6,
+        "total": 8,
+        "accuracy": 0.75,
+        "present_matched": 2,
+        "present_total": 4,
+        "present_accuracy": 0.5,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "document",
+          "record_index": 0,
+          "field": "total_guarantee_balance",
+          "expected": null,
+          "actual": 26.11
+        },
+        {
+          "record_type": "document",
+          "record_index": 0,
+          "field": "total_guarantee_unit",
+          "expected": null,
+          "actual": "亿元"
+        },
+        {
+          "record_type": "document",
+          "record_index": 0,
+          "field": "total_guarantee_net_asset_ratio",
+          "expected": null,
+          "actual": 172.57
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "guaranteed_party_debt_ratio",
+          "expected": null,
+          "actual": 85.26
+        },
+        {
+          "record_type": "event",
+          "record_index": 1,
+          "field": "guaranteed_party_debt_ratio",
+          "expected": null,
+          "actual": 85.26
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "guaranteed_party_debt_ratio",
+          "expected": null,
+          "actual": 85.26
+        },
+        {
+          "record_type": "event",
+          "record_index": 3,
+          "field": "guaranteed_party_debt_ratio",
+          "expected": null,
+          "actual": 85.26
+        },
+        {
+          "record_type": "event",
+          "record_index": 2,
+          "field": "period_text",
+          "expected": "为主合同项下债务履行期限届满之日起三年",
+          "actual": "为主合同项下债务履行期限届满之日起三年。保证人同意债务展期的，保证期间为展期协议重新约定的债务履行期限届满之日起三年。"
+        },
+        {
+          "record_type": "event",
+          "record_index": 3,
+          "field": "period_text",
+          "expected": "自重组生效日起至重组期间届满之日后三年止",
+          "actual": "自重组生效日起至重组期间届满之日后三年止。如果重组期间变更，保证期间截止至变更协议重新约定的债务履行期限届满之日后三年止。"
+        }
+      ],
+      "missing_events": [],
+      "unexpected_events": [
+        {
+          "event_type": "guarantee_overdue",
+          "guarantor": "山西安泰集团股份有限公司",
+          "guaranteed_party": "山西新泰钢铁有限公司"
+        }
+      ]
+    },
+    "guarantee_003_000708_guarantee_intra_group": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 10,
+        "total": 12,
+        "accuracy": 0.8333333333333334,
+        "present_matched": 10,
+        "present_total": 10,
+        "present_accuracy": 1.0,
+        "overfilled": 2
+      },
+      "event_attribute_metrics": {
+        "matched": 13,
+        "total": 14,
+        "accuracy": 0.9285714285714286,
+        "present_matched": 10,
+        "present_total": 10,
+        "present_accuracy": 1.0,
+        "overfilled": 1
+      },
+      "factual_attribute_metrics": {
+        "matched": 23,
+        "total": 26,
+        "accuracy": 0.8846153846153846,
+        "present_matched": 20,
+        "present_total": 20,
+        "present_accuracy": 1.0,
+        "overfilled": 3
+      },
+      "canonical_attribute_metrics": {
+        "matched": 23,
+        "total": 26,
+        "accuracy": 0.8846153846153846,
+        "present_matched": 20,
+        "present_total": 20,
+        "present_accuracy": 1.0,
+        "overfilled": 3
+      },
+      "narrative_attribute_metrics": {
+        "matched": 2,
+        "total": 2,
+        "accuracy": 1.0,
+        "present_matched": 2,
+        "present_total": 2,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "document",
+          "record_index": 0,
+          "field": "external_guarantee_balance",
+          "expected": null,
+          "actual": 12000.0
+        },
+        {
+          "record_type": "document",
+          "record_index": 0,
+          "field": "external_guarantee_unit",
+          "expected": null,
+          "actual": "万元"
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "guaranteed_party_debt_ratio",
+          "expected": null,
+          "actual": 65.93
+        }
+      ],
+      "missing_events": [],
+      "unexpected_events": []
+    },
+    "guarantee_004_600282_guarantee_progress_foreign_currency": {
+      "passed": false,
+      "event_metrics": {
+        "true_positives": 1,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666
+      },
+      "document_field_metrics": {
+        "matched": 10,
+        "total": 12,
+        "accuracy": 0.8333333333333334,
+        "present_matched": 10,
+        "present_total": 10,
+        "present_accuracy": 1.0,
+        "overfilled": 2
+      },
+      "event_attribute_metrics": {
+        "matched": 12,
+        "total": 14,
+        "accuracy": 0.8571428571428571,
+        "present_matched": 9,
+        "present_total": 10,
+        "present_accuracy": 0.9,
+        "overfilled": 1
+      },
+      "factual_attribute_metrics": {
+        "matched": 22,
+        "total": 26,
+        "accuracy": 0.8461538461538461,
+        "present_matched": 19,
+        "present_total": 20,
+        "present_accuracy": 0.95,
+        "overfilled": 3
+      },
+      "canonical_attribute_metrics": {
+        "matched": 22,
+        "total": 26,
+        "accuracy": 0.8461538461538461,
+        "present_matched": 19,
+        "present_total": 20,
+        "present_accuracy": 0.95,
+        "overfilled": 3
+      },
+      "narrative_attribute_metrics": {
+        "matched": 1,
+        "total": 2,
+        "accuracy": 0.5,
+        "present_matched": 0,
+        "present_total": 1,
+        "present_accuracy": 0.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "document",
+          "record_index": 0,
+          "field": "external_guarantee_balance",
+          "expected": null,
+          "actual": 0.0
+        },
+        {
+          "record_type": "document",
+          "record_index": 0,
+          "field": "external_guarantee_unit",
+          "expected": null,
+          "actual": "万元"
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "guaranteed_party_debt_ratio",
+          "expected": null,
+          "actual": 83.45
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "record_type": "event",
+          "record_index": 0,
+          "field": "period_text",
+          "expected": "自该笔债务履行期限届满之日(或债权人垫付款项之日)起，计至全部主合同项下最后到期的主债务的债务履行期限届满之日(或债权人垫付款项之日)后三年止",
+          "actual": "自该笔债务履行期限届满之日(或债权人垫付款项之日)起，计至全部主合同项下最后到期的主债务的债务履行期限届满之日(或债权人垫付款项之日)后三年止。"
+        }
+      ],
+      "missing_events": [],
+      "unexpected_events": [
+        {
+          "event_type": "guarantee_limit",
+          "guarantor": "南京钢铁股份有限公司",
+          "guaranteed_party": "PT. KinXiang New Energy Technologies Indonesia"
+        }
+      ]
+    }
+  }
+}

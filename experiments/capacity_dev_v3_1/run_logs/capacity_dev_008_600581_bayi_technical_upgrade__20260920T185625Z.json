@@ -1,0 +1,93 @@
+{
+  "run_id": "20260920T185625Z",
+  "status": "success",
+  "started_at": "2026-09-20T18:56:25.492228+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_008_600581_bayi_technical_upgrade.pdf",
+    "size_bytes": 549191,
+    "sha256": "9f7f5a984c29c63b23412fd55b61995f2fab3f461535000eea23edfd2ec8bcfa"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v3.txt",
+    "sha256": "1194b65a2e74d077ac182149eac47a7c0a75a2cb5b3f43a2d147b30bdc397bca"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 3,
+      "text_char_count": 1738,
+      "needs_ocr": false,
+      "duration_seconds": 0.0187
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 18.3378
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 2,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "classify_existing_asset_technical_upgrade",
+          "original": "capacity_construction",
+          "normalized": "technical_upgrade"
+        },
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_nonreplacement_equipment_spec",
+          "original": {
+            "action": "new",
+            "facility_type": "高炉",
+            "product_name": "炼铁产能",
+            "capacity": 2500.0,
+            "capacity_unit": "m³",
+            "source_page": 1,
+            "evidence_text": "2500m³HyCROF 商业化示范项目（以下简称“本项目”或“项目”）。",
+            "confidence": 0.95
+          }
+        }
+      ],
+      "duration_seconds": 0.0002
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 15,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "technical_upgrade"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 1,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0011
+    }
+  ],
+  "completed_at": "2026-09-20T18:56:43.853058+00:00",
+  "duration_seconds": 18.3608,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_008_600581_bayi_technical_upgrade\\20260920T185625Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_008_600581_bayi_technical_upgrade\\20260920T185625Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_008_600581_bayi_technical_upgrade\\20260920T185625Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_008_600581_bayi_technical_upgrade\\20260920T185625Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_008_600581_bayi_technical_upgrade\\20260920T185625Z\\evidence_report.json"
+  ]
+}

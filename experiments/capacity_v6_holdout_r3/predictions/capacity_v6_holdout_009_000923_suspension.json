@@ -1,0 +1,32 @@
+{
+  "security_code": "000923",
+  "security_name": "河钢资源",
+  "company_name": "河钢资源股份有限公司",
+  "announcement_number": "2026-06",
+  "announcement_date": "2026-02-05",
+  "events": [
+    {
+      "event_type": "suspension",
+      "project_name": null,
+      "project_entity": "帕拉博拉铜业有限公司",
+      "project_location": "南非林波波省",
+      "project_status": "suspended",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "因持续强降雨及区域性洪水导致井下巷道积水，自公告日前后起暂停地下矿的生产与建设活动。",
+      "technology_description": null,
+      "project_purpose": "集中开展井下排水、设备检修及安全隐患排查，确保安全前提下有序推进复产。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "PC 于近日起暂停厂区地下矿的生产与建设活动，集中力量开展井下排水、设备检修及安全隐患排查工作。",
+      "confidence": 0.95
+    }
+  ]
+}

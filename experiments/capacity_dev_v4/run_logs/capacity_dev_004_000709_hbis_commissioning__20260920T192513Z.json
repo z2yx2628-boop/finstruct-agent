@@ -1,0 +1,122 @@
+{
+  "run_id": "20260920T192513Z",
+  "status": "success",
+  "started_at": "2026-09-20T19:25:13.225210+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_004_000709_hbis_commissioning.pdf",
+    "size_bytes": 389639,
+    "sha256": "0598e4e3a8449cd7fff57acc46686deaebee3f6e82c01348acdcc4bd72112193"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 2,
+      "text_char_count": 979,
+      "needs_ocr": false,
+      "duration_seconds": 0.0107
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 21.9565
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 4,
+      "changes": [
+        {
+          "event_index": 0,
+          "action": "clear_unsupported_commissioning_date",
+          "original": "2024-06-06"
+        },
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_nonreplacement_equipment_spec",
+          "original": {
+            "action": "new",
+            "facility_type": "3700m³高炉",
+            "product_name": "炼铁产能",
+            "capacity": 3700.0,
+            "capacity_unit": "m³/座",
+            "source_page": 1,
+            "evidence_text": "二期工程建设的1 座3700m3 高炉、1 座250t 转炉、1 条1780mm 热轧生产线及配套公辅设施于近日全部完工。2024 年6 月6 日，二期工程3700m3 高炉顺利出铁",
+            "confidence": 1.0
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 1,
+          "action": "remove_nonreplacement_equipment_spec",
+          "original": {
+            "action": "new",
+            "facility_type": "250t转炉",
+            "product_name": "炼钢产能",
+            "capacity": 250.0,
+            "capacity_unit": "t/座",
+            "source_page": 1,
+            "evidence_text": "二期工程建设的1 座3700m3 高炉、1 座250t 转炉、1 条1780mm 热轧生产线及配套公辅设施于近日全部完工。",
+            "confidence": 1.0
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 2,
+          "action": "remove_nonreplacement_equipment_spec",
+          "original": {
+            "action": "new",
+            "facility_type": "1780mm热轧生产线",
+            "product_name": "钢材产能",
+            "capacity": 1780.0,
+            "capacity_unit": "mm/条",
+            "source_page": 1,
+            "evidence_text": "二期工程建设的1 座3700m3 高炉、1 座250t 转炉、1 条1780mm 热轧生产线及配套公辅设施于近日全部完工。",
+            "confidence": 0.95
+          }
+        }
+      ],
+      "duration_seconds": 0.0004
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": true,
+      "checks_count": 7,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "commissioning"
+      ],
+      "event_counts": {
+        "capacity_construction": 0,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 1,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0007
+    }
+  ],
+  "completed_at": "2026-09-20T19:25:35.196833+00:00",
+  "duration_seconds": 21.9716,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T192513Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T192513Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T192513Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T192513Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_004_000709_hbis_commissioning\\20260920T192513Z\\evidence_report.json"
+  ]
+}

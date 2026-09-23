@@ -1,0 +1,50 @@
+{
+  "security_code": "002319",
+  "security_name": "乐通股份",
+  "announcement_number": "2025-054",
+  "company_name": "珠海市乐通化工股份有限公司",
+  "events": [
+    {
+      "event_type": "extension",
+      "shareholder_name": "大晟资产",
+      "shares": 13000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 25.0,
+      "total_share_capital_ratio": 6.21,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2024-12-17",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": "2025-06-30",
+      "extended_end_date": "2025-09-30",
+      "pledgee": "厦门天玖堂贸易有限公司",
+      "purpose": "质押担保",
+      "source_page": 1,
+      "evidence_text": "股\n东\n名\n称 \n是否为\n控股股\n东或第\n一大股\n东及其\n一致行\n动人 \n本次\n展期\n的质\n押股\n份数\n量 \n（股） \n占其\n所持\n股份\n比例 \n占公\n司总\n股本\n比例 \n是\n否\n为\n限\n售\n股 \n是\n否\n为\n补\n充\n质\n押 \n质押\n起始\n日 \n原质\n押到\n期日 \n展期\n后质\n押到\n期日 \n质权人 \n质押\n用途 \n大\n晟\n资\n产 \n是 \n13,00\n0,000 \n25.00\n% \n6.21\n% \n否 \n否 \n2024\n年12\n月17\n日 \n2025\n年6\n月30\n日 \n2025\n年9 月\n30 日 \n厦门天\n玖堂贸\n易有限\n公司 \n质押\n担保",
+      "confidence": 1.0
+    },
+    {
+      "event_type": "extension",
+      "shareholder_name": "大晟资产",
+      "shares": 1700000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 3.27,
+      "total_share_capital_ratio": 0.81,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2024-12-31",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": "2025-06-30",
+      "extended_end_date": "2025-09-30",
+      "pledgee": "杭州荆灿建筑劳务有限公司",
+      "purpose": "质押担保",
+      "source_page": 2,
+      "evidence_text": "大\n晟\n资\n产 \n是 \n1,700,\n000 \n3.27% \n0.81\n% \n否 \n否 \n2024\n年12\n月31\n日 \n2025\n年6\n月30\n日 \n2025\n年9 月\n30 日 \n杭州荆\n灿建筑 \n劳务有\n限公司 \n质押\n担保",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2023-006",
+  "announcement_date": "2023-02-25",
+  "events": [
+    {
+      "event_type": "capacity_replacement",
+      "project_name": "炼钢产能置换建设项目",
+      "project_entity": "凌源钢铁股份有限公司",
+      "project_location": null,
+      "project_status": "commissioned",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": "2023-02-21",
+      "delay_until_date": null,
+      "timeline_text": "2020年11月16日董事会审议通过；2020年12月2日股东大会审议通过；2021年6月1日取得项目备案证明；2022年8月31日取得建筑工程施工许可证；2023年2月21日完成投产前现场验收；2023年2月23日出具验收意见；新建120t转炉已投入生产。",
+      "technology_description": null,
+      "project_purpose": null,
+      "capacity_changes": [
+        {
+          "action": "retired",
+          "facility_type": "转炉",
+          "product_name": "炼钢产能",
+          "capacity": 105.0,
+          "capacity_unit": "吨/座×3",
+          "source_page": 1,
+          "evidence_text": "凌钢3×35t转炉系统已经停产，主体设备完成去功能化，且已不具备恢复生产条件。",
+          "confidence": 0.95
+        },
+        {
+          "action": "new",
+          "facility_type": "转炉",
+          "product_name": "炼钢产能",
+          "capacity": 120.0,
+          "capacity_unit": "吨/座",
+          "source_page": 2,
+          "evidence_text": "凌钢新建120t转炉系统符合相关设计规范要求，与产能置换方案公告的结果一致。公司新建的120t转炉已经投入生产。",
+          "confidence": 0.95
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "2020年11月16日，凌源钢铁股份有限公司（以下简称“公司”或“凌钢”）第八届董事会第三次会议审议了《关于炼钢产能置换建设项目的议案》，此议案于2020年12月2日经公司2020年第四次临时股东大会审议通过……2023年2月21日，朝阳市工业和信息化局受辽宁省工业和信息化厅委托，对公司炼钢产能置换建设项目的退出设备情况和项目建设与公告产能置换方案的一致性情况进行了现场验收。2023年2月23日，朝阳市工业和信息化局出具了《关于凌源钢铁股份有限公司炼钢产能置换建设项目投产前验收意见》（朝工信发[2023]5号）……公司新建的120t转炉已经投入生产。",
+      "confidence": 0.98
+    }
+  ]
+}

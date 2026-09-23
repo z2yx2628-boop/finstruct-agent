@@ -1,0 +1,29 @@
+{
+  "security_code": "600693",
+  "security_name": "东百集团",
+  "announcement_number": "临2025—067",
+  "company_name": "福建东百集团股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "丰琪投资",
+      "shares": 3000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 0.69,
+      "total_share_capital_ratio": 0.34,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": null,
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2025-12-29",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "渤海银行股份有限公司福州分行",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "股东名称\n丰琪投资\n本次解质股份\n3,000,000 股\n占其所持股份比例\n0.69%\n占公司总股本比例\n0.34%\n解质时间\n2025 年12 月29 日\n持股数量\n437,659,603 股\n持股比例\n50.31%\n剩余被质押股份数量\n304,760,000 股\n剩余被质押股份数量占其所持股份比例\n69.63%\n剩余被质押股份数量占公司总股本比例\n35.04%",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "security_code": "002318",
+  "security_name": "久立特材",
+  "company_name": "浙江久立特材科技股份有限公司",
+  "announcement_number": "2021-111",
+  "announcement_date": "2021-12-31",
+  "events": [
+    {
+      "event_type": "commissioning",
+      "project_name": null,
+      "project_entity": null,
+      "project_location": null,
+      "project_status": "commissioned",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "主体设备及生产线于近日建成并达到可使用状态，经过试运行后将正式投产运行。",
+      "technology_description": null,
+      "project_purpose": "生产航空航天用管，包括飞机发动机用管、飞机主机用管等；为我国航空航天产业重点领域建设提供帮助；助力产品结构调整和优化，提升高端管材应用行业地位。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": null,
+          "product_name": "航空航天材料及制品",
+          "capacity": 1000.0,
+          "capacity_unit": "吨/年",
+          "source_page": 1,
+          "evidence_text": "“年产1000吨航空航天材料及制品项目”主体设备及生产线于近日建成并达到可使用状态",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "“年产1000吨航空航天材料及制品项目”主体设备及生产线于近日建成并达到可使用状态，经过一段时间的试运行后将正式投产运行。",
+      "confidence": 1.0
+    },
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "工业自动化与智能制造项目",
+      "project_entity": null,
+      "project_location": null,
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "对公司原有生产单位进行工业自动化与智能化改造，改造包括冷轧和穿孔车间。",
+      "technology_description": "工业自动化与智能化改造，覆盖冷轧和穿孔车间",
+      "project_purpose": "实现工序自动化稳定生产，提高生产效率和整体运营效率，优化生产流程，降低生产成本，提高成材率和质量，提升核心竞争力。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "“工业自动化与智能制造项目”主要是对公司原有生产单位进行工业自动化与智能化改造，改造包括冷轧和穿孔车间，整体符合我国制造产业优化升级的发展趋势。",
+      "confidence": 1.0
+    }
+  ]
+}

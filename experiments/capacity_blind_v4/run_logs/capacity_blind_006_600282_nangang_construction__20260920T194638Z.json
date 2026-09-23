@@ -1,0 +1,71 @@
+{
+  "run_id": "20260920T194638Z",
+  "status": "needs_review",
+  "started_at": "2026-09-20T19:46:38.209310+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_blind\\capacity_blind_006_600282_nangang_construction.pdf",
+    "size_bytes": 351228,
+    "sha256": "8a498ac8025ac720f161d735a24769c2e18671cf2e1436b1c215d90ea88d8ec1"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 13,
+      "text_char_count": 9625,
+      "needs_ocr": false,
+      "duration_seconds": 0.0198
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 15.8964
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 0,
+      "changes": [],
+      "duration_seconds": 0.0016
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 12,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "capacity_construction"
+      ],
+      "event_counts": {
+        "capacity_construction": 1,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0025
+    }
+  ],
+  "completed_at": "2026-09-20T19:46:54.142199+00:00",
+  "duration_seconds": 15.9329,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_006_600282_nangang_construction\\20260920T194638Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_006_600282_nangang_construction\\20260920T194638Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_006_600282_nangang_construction\\20260920T194638Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_006_600282_nangang_construction\\20260920T194638Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_blind_006_600282_nangang_construction\\20260920T194638Z\\evidence_report.json"
+  ]
+}

@@ -14,6 +14,7 @@ Usage:
 import csv
 import datetime
 import hashlib
+import re
 import sys
 import time
 import urllib.request
@@ -42,6 +43,14 @@ HEADERS = {
 }
 
 
+def qq_mirror(url: str) -> str | None:
+    match = re.search(r"finalpage/(\d{4})-(\d{2})-(\d{2})/(\d+)\.PDF", url, re.I)
+    if not match:
+        return None
+    year, month, day, doc_id = match.groups()
+    return f"https://file.finance.qq.com/finance/hs/pdf/{year}/{month}/{day}/{doc_id}.PDF"
+
+
 def download(url: str, attempts: int = 5) -> bytes:
     """Fetch a PDF, retrying with backoff and alternating http/https.
 
@@ -49,6 +58,11 @@ def download(url: str, attempts: int = 5) -> bytes:
     so each failure waits longer before the next attempt.
     """
     candidates = [url, url.replace("https://", "http://", 1)]
+    mirror = qq_mirror(url)
+    if mirror:
+        # Same CNINFO document id served by Tencent Finance; reachable when
+        # static.cninfo.com.cn is blocked or throttled.
+        candidates.insert(1, mirror)
     last_error: Exception | None = None
     for attempt in range(attempts):
         target = candidates[attempt % len(candidates)]

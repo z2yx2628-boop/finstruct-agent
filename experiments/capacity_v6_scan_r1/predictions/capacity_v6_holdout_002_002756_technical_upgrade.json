@@ -1,0 +1,43 @@
+{
+  "security_code": "002756",
+  "security_name": "永兴特钢",
+  "company_name": "永兴特种不锈钢股份有限公司",
+  "announcement_number": "2019-007号",
+  "announcement_date": "2019-02-02",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "高性能不锈钢连铸系统技改项目",
+      "project_entity": "永兴特种不锈钢股份有限公司",
+      "project_location": "湖州市开发区杨家埠雪水桥路618号",
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目建设期12个月；项目立项建设尚须报相关部门履行备案手续。",
+      "technology_description": "将钢锭模铸升级为智能连铸系统，购置一机一流弧形连铸机、VD真空脱气、起重设备、电气设备、AOD智能系统等设备",
+      "project_purpose": "提升生产效率和产品成材率，提高产品附加值；满足年产25万吨高品质不锈钢和特种合金棒线项目对连铸坯的需求，确保前后端产能匹配",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "一机一流弧形连铸机",
+          "product_name": "不锈钢连铸坯",
+          "capacity": 25.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 3,
+          "evidence_text": "随着年产25万吨高品质不锈钢和特种合金棒线项目产能的快速提升，对连铸坯的需求量不断加大。本项目建成后……更好地满足年产25万吨高品质不锈钢和特种合金棒线项目生产效率提升的需求",
+          "confidence": 0.95
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "第四届董事会第十七次临时会议，审议通过了《关于投资建设高性能不锈钢连铸系统技改项目的议案》，同意公司以自有资金投资建设高性能不锈钢连铸系统技改项目",
+      "confidence": 0.98
+    }
+  ]
+}

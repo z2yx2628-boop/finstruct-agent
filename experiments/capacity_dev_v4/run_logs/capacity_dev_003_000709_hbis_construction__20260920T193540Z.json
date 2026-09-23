@@ -1,0 +1,224 @@
+{
+  "run_id": "20260920T193540Z",
+  "status": "needs_review",
+  "started_at": "2026-09-20T19:35:40.101838+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\capacity_dev\\capacity_dev_003_000709_hbis_construction.pdf",
+    "size_bytes": 220449,
+    "sha256": "23955ba8e9324c30581f0e0ac9af441e62a7e783ac625c9fb2369c70714bc937"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\capacity_extraction_v4.txt",
+    "sha256": "5989bb4292bbc7ea3dbc49233f62be4858f9b702864f2ff3654724664fe99930"
+  },
+  "task": "capacity",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF",
+      "source_type": "pdf_text",
+      "page_count": 4,
+      "text_char_count": 3051,
+      "needs_ocr": false,
+      "duration_seconds": 0.017
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 60.4381
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic capacity overfill normalizer",
+      "changes_count": 13,
+      "changes": [
+        {
+          "event_index": 1,
+          "target_event_index": 0,
+          "action": "merge_project_replacement_event",
+          "project_name": "河钢乐亭钢铁基地项目二期工程"
+        },
+        {
+          "event_index": 0,
+          "record_index": 0,
+          "action": "remove_projected_product_breakdown",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "铁水",
+            "capacity": 246.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 4,
+            "evidence_text": "乐钢二期项目整体建成投产后，预计可年产铁水246万吨，转炉钢水225万吨，电炉钢水180万吨，热轧商品材148万吨、热轧酸洗卷70万吨、热基热镀锌80万吨、冷轧商品卷80万吨、热镀锌卷75万吨。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 1,
+          "action": "remove_projected_product_breakdown",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "转炉钢水",
+            "capacity": 225.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 4,
+            "evidence_text": "乐钢二期项目整体建成投产后，预计可年产铁水246万吨，转炉钢水225万吨，电炉钢水180万吨，热轧商品材148万吨、热轧酸洗卷70万吨、热基热镀锌80万吨、冷轧商品卷80万吨、热镀锌卷75万吨。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 2,
+          "action": "remove_projected_product_breakdown",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "电炉钢水",
+            "capacity": 180.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 4,
+            "evidence_text": "乐钢二期项目整体建成投产后，预计可年产铁水246万吨，转炉钢水225万吨，电炉钢水180万吨，热轧商品材148万吨、热轧酸洗卷70万吨、热基热镀锌80万吨、冷轧商品卷80万吨、热镀锌卷75万吨。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 3,
+          "action": "remove_projected_product_breakdown",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "热轧商品材",
+            "capacity": 148.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 4,
+            "evidence_text": "乐钢二期项目整体建成投产后，预计可年产铁水246万吨，转炉钢水225万吨，电炉钢水180万吨，热轧商品材148万吨、热轧酸洗卷70万吨、热基热镀锌80万吨、冷轧商品卷80万吨、热镀锌卷75万吨。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 4,
+          "action": "remove_projected_product_breakdown",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "热轧酸洗卷",
+            "capacity": 70.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 4,
+            "evidence_text": "乐钢二期项目整体建成投产后，预计可年产铁水246万吨，转炉钢水225万吨，电炉钢水180万吨，热轧商品材148万吨、热轧酸洗卷70万吨、热基热镀锌80万吨、冷轧商品卷80万吨、热镀锌卷75万吨。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 5,
+          "action": "remove_projected_product_breakdown",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "热基热镀锌",
+            "capacity": 80.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 4,
+            "evidence_text": "乐钢二期项目整体建成投产后，预计可年产铁水246万吨，转炉钢水225万吨，电炉钢水180万吨，热轧商品材148万吨、热轧酸洗卷70万吨、热基热镀锌80万吨、冷轧商品卷80万吨、热镀锌卷75万吨。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 6,
+          "action": "remove_projected_product_breakdown",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "冷轧商品卷",
+            "capacity": 80.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 4,
+            "evidence_text": "乐钢二期项目整体建成投产后，预计可年产铁水246万吨，转炉钢水225万吨，电炉钢水180万吨，热轧商品材148万吨、热轧酸洗卷70万吨、热基热镀锌80万吨、冷轧商品卷80万吨、热镀锌卷75万吨。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 7,
+          "action": "remove_projected_product_breakdown",
+          "original": {
+            "action": "new",
+            "facility_type": null,
+            "product_name": "热镀锌卷",
+            "capacity": 75.0,
+            "capacity_unit": "万吨/年",
+            "source_page": 4,
+            "evidence_text": "乐钢二期项目整体建成投产后，预计可年产铁水246万吨，转炉钢水225万吨，电炉钢水180万吨，热轧商品材148万吨、热轧酸洗卷70万吨、热基热镀锌80万吨、冷轧商品卷80万吨、热镀锌卷75万吨。",
+            "confidence": 0.95
+          }
+        },
+        {
+          "event_index": 0,
+          "record_index": 9,
+          "action": "move_capacity_label_to_product",
+          "normalized": "炼铁产能"
+        },
+        {
+          "event_index": 0,
+          "record_index": 9,
+          "action": "normalize_annual_capacity_unit",
+          "original": "万吨",
+          "normalized": "万吨/年"
+        },
+        {
+          "event_index": 0,
+          "record_index": 10,
+          "action": "move_capacity_label_to_product",
+          "normalized": "炼钢产能"
+        },
+        {
+          "event_index": 0,
+          "record_index": 10,
+          "action": "normalize_annual_capacity_unit",
+          "original": "万吨",
+          "normalized": "万吨/年"
+        }
+      ],
+      "duration_seconds": 0.0019
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 18,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "capacity_construction"
+      ],
+      "event_counts": {
+        "capacity_construction": 1,
+        "capacity_replacement": 0,
+        "technical_upgrade": 0,
+        "commissioning": 0,
+        "delay": 0,
+        "suspension": 0,
+        "termination": 0
+      },
+      "duration_seconds": 0.0012
+    }
+  ],
+  "completed_at": "2026-09-20T19:36:40.563386+00:00",
+  "duration_seconds": 60.4616,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T193540Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T193540Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T193540Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T193540Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\capacity_dev_003_000709_hbis_construction\\20260920T193540Z\\evidence_report.json"
+  ]
+}
