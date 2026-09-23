@@ -7,6 +7,7 @@ from src.capacity_normalizer import (
     exact_date_supported,
     investment_unit_forms,
     number_positions,
+    INVESTMENT_UNIT_SCALE,
 )
 
 FINANCIAL_INSTITUTION = re.compile(
@@ -17,6 +18,10 @@ NAME_FIELDS = ("guarantor", "guaranteed_party", "creditor")
 CUMULATIVE_HEADING = re.compile(r"[一二三四五六七八九十]+、(?:公司)?累计对外担保")
 PROGRESS_TITLE = re.compile(r"担保(?:事项)?的?进展")
 QUOTA_TITLE = re.compile(r"调剂|额度预计|预计.{0,6}额度")
+EXTERNAL_ZERO = re.compile(
+    r"(?:无|不存在|未发生)(?:对外担保|对合并报表(?:范围)?外(?:单位|公司|主体)?(?:提供)?(?:的)?担保)"
+    r"|(?:对外|合并报表(?:范围)?外(?:单位|公司|主体)?)(?:提供)?(?:的)?担保(?:总)?余额(?:为)?(?:0|零)"
+)
 
 
 def amount_supported(
@@ -89,6 +94,52 @@ def in_cumulative_section(evidence: str, source_page: int, pages: list[dict]) ->
     return position >= offset
 
 
+def describes_quota(amount: float, unit: str, text: str) -> bool:
+    """True when every occurrence of the amount is introduced as a quota (额度), not a balance."""
+    compact_text = compact_keep_number_breaks(text)
+    found = False
+    for form_amount, form_unit in investment_unit_forms(amount, unit):
+        for position in number_positions(form_amount, compact_text):
+            if not compact_text[position:].lstrip("0123456789,. ").startswith(form_unit):
+                continue
+            found = True
+            clause_start = max(compact_text.rfind(m, 0, position) for m in ("。", "；", "，"))
+            clause = compact_text[clause_start + 1:position]
+            if "额度" not in clause or "余额" in clause:
+                return False
+    return found
+
+
+def event_amount_value(event: dict) -> float | None:
+    scale = INVESTMENT_UNIT_SCALE.get(event["guarantee_unit"] or "")
+    if event["guarantee_amount"] is None or scale is None:
+        return None
+    return event["guarantee_amount"] * scale
+
+
+def total_of_row_indexes(events: list[dict]) -> set[int]:
+    """Events without a creditor whose amount equals the sum of rows with creditors.
+
+    "本次担保金额不超过8.26亿元" next to four per-creditor rows (8.257亿) is the
+    total of those rows, not a fifth guarantee.
+    """
+    drop = set()
+    for index, event in enumerate(events):
+        total = event_amount_value(event)
+        if event["creditor"] or total is None:
+            continue
+        rows = [
+            event_amount_value(other) for other in events
+            if other is not event and other["creditor"]
+            and other["event_type"] == event["event_type"]
+            and re.sub(r"\s+", "", other["guaranteed_party"] or "") == re.sub(r"\s+", "", event["guaranteed_party"] or "")
+        ]
+        rows = [value for value in rows if value is not None]
+        if len(rows) >= 2 and abs(sum(rows) - total) <= total * 0.005:
+            drop.add(index)
+    return drop
+
+
 def is_progress_announcement(pages: list[dict]) -> bool:
     head = re.sub(r"\s+", "", pages[0]["text"])[:300] if pages else ""
     title = re.search(r"关于.{0,60}?公告", head)
@@ -139,6 +190,18 @@ def normalize_guarantee_fields(
         ("overdue_guarantee_amount", "overdue_guarantee_unit"),
     ):
         amount, unit = data[amount_field], data[unit_field]
+        if amount_field != "overdue_guarantee_amount" and amount and unit and describes_quota(amount, unit, full_text):
+            changes.append({"action": "clear_quota_as_balance", "field": amount_field,
+                            "original": {amount_field: amount, unit_field: unit}})
+            data[amount_field] = None
+            data[unit_field] = None
+            continue
+        if amount_field == "external_guarantee_balance" and amount == 0 and not EXTERNAL_ZERO.search(re.sub(r"\s+", "", full_text)):
+            changes.append({"action": "clear_unsupported_zero_external_balance",
+                            "original": {amount_field: amount, unit_field: unit}})
+            data[amount_field] = None
+            data[unit_field] = None
+            continue
         if amount and unit and amount_supported(amount, unit, full_text) is None:
             changes.append({
                 "action": "clear_unsupported_document_amount",
@@ -151,7 +214,11 @@ def normalize_guarantee_fields(
     kept_events = []
     seen = set()
     progress = is_progress_announcement(pages)
+    row_totals = total_of_row_indexes(data["events"])
     for index, event in enumerate(data["events"]):
+        if index in row_totals:
+            changes.append({"event_index": index, "action": "drop_total_of_row_events"})
+            continue
         if in_cumulative_section(event["evidence_text"], event["source_page"], pages):
             changes.append({"event_index": index, "action": "drop_cumulative_section_event",
                             "event_type": event["event_type"]})

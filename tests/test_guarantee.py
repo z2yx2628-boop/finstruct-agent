@@ -33,7 +33,7 @@ def event(**fields) -> GuaranteeEvent:
 
 def test_guarantee_task_is_registered():
     spec = get_task("guarantee")
-    assert spec.prompt_path.name == "guarantee_extraction_v2.txt"
+    assert spec.prompt_path.name == "guarantee_extraction_v3.txt"
     assert spec.prompt_path.exists()
 
 
@@ -183,3 +183,41 @@ def test_validator_ignores_quota_wording_in_cumulative_section():
     from src.guarantee_evidence_validator import detect_expected_event_types
     text = "天管国贸申请2.29亿元授信额度。五、累计对外担保数量及逾期担保的数量\n提供担保额度总金额为749,900万元"
     assert "guarantee_limit" not in detect_expected_event_types(text)
+
+
+def test_total_next_to_per_creditor_rows_is_dropped():
+    text = ("本次拟担保金额不超过 8.26 亿元。续保金额不超过（万元）\n"
+            "工商银行 40,650.00\n工商银行 19,350.00\n光大银行 5,750.00\n农银投资 16,820.00")
+    pages = [{"page": 1, "text": text}]
+    rows = [("工商银行", 40650), ("工商银行", 19350), ("光大银行", 5750), ("农银投资", 16820)]
+    document = GuaranteeDocument(events=[
+        event(guaranteed_party="新泰钢铁", guarantee_amount=8.26, guarantee_unit="亿元",
+              evidence_text="本次拟担保金额不超过 8.26 亿元")
+    ] + [
+        event(guaranteed_party="新泰钢铁", guarantee_amount=amount, guarantee_unit="万元",
+              creditor=bank, evidence_text=f"{bank} {amount:,.2f}")
+        for bank, amount in rows
+    ])
+    normalized, changes = normalize_guarantee_fields(document, pages)
+    assert len(normalized.events) == 4
+    assert all(e.creditor for e in normalized.events)
+    assert changes[0]["action"] == "drop_total_of_row_events"
+
+
+def test_quota_is_not_taken_as_external_balance():
+    text = ("公司及控股子公司对合并报表外公司提供担保额度总金额为 12,000 万元。"
+            "公司及控股子公司对外担保总余额为 379,173.41 万元。")
+    document = GuaranteeDocument(
+        external_guarantee_balance=12000, external_guarantee_unit="万元",
+        total_guarantee_balance=379173.41, total_guarantee_unit="万元")
+    normalized, _ = normalize_guarantee_fields(document, [{"page": 1, "text": text}])
+    assert normalized.external_guarantee_balance is None
+    assert normalized.total_guarantee_balance == 379173.41
+
+
+def test_zero_external_balance_needs_explicit_statement():
+    doc = GuaranteeDocument(external_guarantee_balance=0, external_guarantee_unit="万元")
+    unsupported, _ = normalize_guarantee_fields(doc, [{"page": 1, "text": "公司未对控股股东提供担保。"}])
+    assert unsupported.external_guarantee_balance is None
+    supported, _ = normalize_guarantee_fields(doc, [{"page": 1, "text": "公司无对外担保。"}])
+    assert supported.external_guarantee_balance == 0

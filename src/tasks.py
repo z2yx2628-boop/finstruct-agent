@@ -115,7 +115,7 @@ TASKS: dict[str, TaskSpec] = {
     "guarantee": TaskSpec(
         name="guarantee",
         label="对外担保",
-        prompt_path=_prompt("guarantee_extraction_v2.txt"),
+        prompt_path=_prompt("guarantee_extraction_v3.txt"),
         extract=_extract_guarantee,
         normalize=_normalize_guarantee,
         normalization_tool="Deterministic guarantee normalizer",

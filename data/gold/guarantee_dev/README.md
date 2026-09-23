@@ -66,3 +66,16 @@ Main errors: event type on 001 (all 14 rows otherwise correct), an overdue event
 from the cumulative section (002), a prior annual quota taken as a new limit in a
 progress announcement (004), debt ratios computed from assets/liabilities (002–004),
 Chinese-numeral signature dates rejected by the date check (002, 004).
+
+Dev run 2 (prompt v2, v2 Gold): event F1 76.47% (TP/FP/FN 13/1/7), factual 81.74%.
+- 001: v2 rule 7 said "one limit event per guaranteed party", so the model summed each
+  party's bank rows (8,400 / 6,000 / 27,800 / 12,000 万元); the normalizer rejected the
+  sums (not in the source) and 7 rows were lost. Prompt v3 makes rule 7 defer to rule 5
+  (one event per party+creditor row, never summed) and adds a pre-output check.
+- 002: the "不超过8.26亿元" total was emitted next to its four rows -> normalizer now drops
+  a creditor-less event whose amount equals the sum of the same party's rows (±0.5%).
+- 003/004: a quota (额度总金额) and an inferred 0 were put in `external_guarantee_balance`
+  -> normalizer clears a balance introduced only as 额度, and a 0 without an explicit
+  "无对外担保 / 对合并报表外担保余额为0".
+- Replaying run-2 raw outputs through the new normalizer (no new LLM call): 002-004
+  events all correct; 001 still needs the v3 prompt.
