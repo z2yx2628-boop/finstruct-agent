@@ -125,3 +125,52 @@ def test_one_misclassified_row_does_not_cascade_through_pairing():
     report = evaluate_document(gold, predicted)
     assert report["record_metrics"]["true_positives"] == 2
     assert not [m for m in report["field_mismatches"] if m["field"] in ("counterparty", "estimated_amount")]
+
+
+
+def test_unit_scope_survives_sentences_inside_table_cells():
+    from src.related_party_normalizer import amount_supported
+    text = ("单位：万元\n关联交易类别 关联人 2026年预计金额 差异较大的原因\n"
+            "销售产品 八钢公司及子分公司 17620 0.91% 销量增加71万吨。其中出口增加。\n"
+            "销售产品 八钢公司之联营企业 86 0.00%\n")
+    assert amount_supported(86.0, "万元", text) == (86.0, "万元")
+
+
+def test_unit_scope_ends_at_a_new_section():
+    from src.related_party_normalizer import amount_supported
+    text = "单位：万元\n购买原材料 某公司 17620\n合计。二、关联方介绍 注册资本 86"
+    assert amount_supported(86.0, "万元", text) is None
+
+
+def test_group_rows_take_relationship_from_the_entity_table():
+    from src.group_relationship import group_relationship
+    assert group_relationship("八钢公司及子分公司(钢材)", "600581") == "parent_or_controlling_shareholder"
+    assert group_relationship("宝武集团及子公司（焦炭）", "600581") == "parent_or_controlling_shareholder"
+    assert group_relationship("八钢公司之子公司（铁矿石）", "600581") == "sister_company"
+    assert group_relationship("宝武集团之联营企业(工程施工)", "600581") == "other_related_party"
+    assert group_relationship("本公司之联营企业（租赁）", "600581") == "associate_or_joint_venture"
+    assert group_relationship("湘钢集团", "000932") is None          # not on the parent chain: model decides
+
+
+def test_near_miss_category_value_is_repaired_and_logged():
+    from src.structured_extractor import validate_with_repair
+    from schemas.related_party import RelatedPartyDocument
+    payload = {"security_code": "600581", "transactions": [{
+        "listed_company": "新疆八一钢铁股份有限公司", "counterparty": "八钢公司之子公司", "relationship": "s sister_company",
+        "transaction_category": "purchase_goods", "estimated_amount": 1.0, "estimated_unit": "万元",
+        "source_page": 1, "evidence_text": "x", "confidence": 1.0}]}
+    doc, repairs = validate_with_repair(RelatedPartyDocument, payload)
+    assert doc.transactions[0].relationship == "sister_company"
+    assert repairs[0]["original"] == "s sister_company"
+
+
+def test_unrepairable_value_still_fails():
+    import pytest
+    from pydantic import ValidationError
+    from src.structured_extractor import validate_with_repair
+    from schemas.related_party import RelatedPartyDocument
+    payload = {"security_code": "600581", "transactions": [{
+        "listed_company": "新疆八一钢铁股份有限公司", "counterparty": "x", "relationship": "cousin", "transaction_category": "purchase_goods",
+        "source_page": 1, "evidence_text": "x", "confidence": 1.0}]}
+    with pytest.raises(ValidationError):
+        validate_with_repair(RelatedPartyDocument, payload)

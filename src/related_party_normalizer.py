@@ -2,6 +2,7 @@
 import re
 
 from schemas.related_party import RelatedPartyDocument
+from src.group_relationship import group_relationship
 from src.capacity_normalizer import collapse_cjk_spaces
 from src.guarantee_normalizer import amount_supported as _amount_supported
 from src.guarantee_normalizer import compact_keep_number_breaks
@@ -23,10 +24,17 @@ FINANCE_COMPANY = re.compile(r"财务(?:有限责任|股份有限)?公司")
 UNIT_DECLARATION = re.compile(r"单位[:：](千元|百万元|万元|亿元|元)|[（(](千元|百万元|万元|亿元|元)[）)]")
 
 
+# A table's unit scope ends at a new section or a note after the table ("。说明：", "。上述…"),
+# not at any "。": explanation cells such as
+# 差异较大的原因 contain full sentences inside the table (八一钢铁 2026 estimate, page 7).
+SECTION_BREAK = re.compile(r"。(?:[一二三四五六七八九十]+、|（[一二三四五六七八九十]+）|\(\d+\)|\d+、|第[一二三四五六七八九十]+[节章条]"
+                           r"|说明|注[:：]|备注|上述|以上|综上)")
+
+
 def amount_supported(amount: float, unit: str, text: str, evidence: str | None = None):
     """Like the guarantee check, plus long tables: a number is in `unit` when
     the nearest unit declaration before it ("单位：万元") names that unit and
-    no sentence end (。) lies between them, however many rows apart."""
+    no new section starts between them, however many rows apart."""
     found = _amount_supported(amount, unit, text, evidence)
     if found is not None:
         return found
@@ -36,7 +44,7 @@ def amount_supported(amount: float, unit: str, text: str, evidence: str | None =
         if not declarations:
             continue
         last = declarations[-1]
-        if (last.group(1) or last.group(2)) == unit and "。" not in compact_text[last.end():position]:
+        if (last.group(1) or last.group(2)) == unit and not SECTION_BREAK.search(compact_text[last.end():position]):
             return amount, unit
     return None
 
@@ -116,6 +124,11 @@ def normalize_related_party_fields(
                                 "field": amount_field, "original": {amount_field: amount, unit_field: unit}})
         if record["estimated_amount"] is None and record["prior_year_actual_amount"] is None:
             record["currency"] = None
+        implied = group_relationship(record["counterparty"], data.get("security_code"))
+        if implied and implied != record["relationship"]:
+            changes.append({"record_index": index, "action": "relationship_from_group_table",
+                            "field": "relationship", "original": record["relationship"]})
+            record["relationship"] = implied
 
     subtotals = subtotal_indexes(records)
     kept, seen = [], set()

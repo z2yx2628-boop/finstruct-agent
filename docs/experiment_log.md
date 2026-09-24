@@ -50,6 +50,18 @@ Known anomaly: `capacity_v5_dev_v5_1_full` reports the same attribute
 counts as the V4 baseline although its predictions differ. The report should
 be regenerated before any V5.1 number is quoted.
 
+## Freeze regression (2026-09-24, extraction system freeze for the analysis corpus)
+
+Both sets were already used to find these defects, so these are **development** results that
+only show the fixes work without regressions; they are not new test scores.
+
+| Run | Documents × runs | Fixes | Result before | Result after | Status |
+| --- | --- | --- | --- | --- | --- |
+| related_v2_regress | 4 × 1 (related_test) | unit scope ends at a new section or note, not at “。” inside table cells; group rows take relationship from the entity table; near-miss category values repaired and logged | record F1 98.69%, factual 91.20% | record F1 98.69% (151/2/2), factual 95.67% (1479/1546) | Development |
+| capacity_fix_regress | 12 × 1 (capacity_v6_holdout) | investment amounts in tables no longer glued to the next cell; “单位：人民币元” accepted | event F1 95.2–100%, factual 88.1–89.5% (V6) | event F1 95.24% (10/1/0), capacity records 100%, factual 92.86% (195/210) | Development |
+
+Two documents timed out on the first pass and were rerun with `--resume`.
+
 ## Replays without new model calls
 
 V6 and V7 rules were also checked by re-normalizing stored raw model outputs

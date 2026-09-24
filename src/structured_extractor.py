@@ -5,7 +5,9 @@ from typing import Type
 
 from dotenv import load_dotenv
 from openai import OpenAI
-from pydantic import BaseModel
+import re
+
+from pydantic import BaseModel, ValidationError
 
 from src.llm_extractor import PROJECT_ROOT, require_env
 
@@ -47,4 +49,30 @@ def extract_structured(
     content = response.choices[0].message.content
     if not content:
         raise RuntimeError("The model returned an empty response.")
-    return document_model.model_validate(json.loads(content)), content, []
+    document, repairs = validate_with_repair(document_model, json.loads(content))
+    return document, content, repairs
+
+
+def validate_with_repair(document_model: Type[BaseModel], payload: dict) -> tuple[BaseModel, list[dict]]:
+    """Validate; if a category field is a near miss of exactly one allowed value
+    ("s sister_company" -> "sister_company"), repair it, log it and validate again.
+    Anything else still raises, so real schema problems are never hidden."""
+    try:
+        return document_model.model_validate(payload), []
+    except ValidationError as error:
+        repairs = []
+        for item in error.errors():
+            if item.get("type") != "literal_error" or not isinstance(item.get("input"), str):
+                raise
+            allowed = re.findall(r"'([^']+)'", str(item.get("ctx", {}).get("expected", "")))
+            value = item["input"].strip()
+            matches = [a for a in allowed if a in value]
+            if len(matches) != 1:
+                raise
+            parent = payload
+            for key in item["loc"][:-1]:
+                parent = parent[key]
+            parent[item["loc"][-1]] = matches[0]
+            repairs.append({"action": "repair_category_value", "field": ".".join(map(str, item["loc"])),
+                            "original": item["input"], "repaired": matches[0]})
+        return document_model.model_validate(payload), repairs

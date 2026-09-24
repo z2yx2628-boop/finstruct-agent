@@ -387,6 +387,17 @@ def number_positions(value: float, text: str) -> list[int]:
     return positions
 
 
+def keep_number_breaks(text: str) -> str:
+    """Remove whitespace but keep one space between two digits, so adjacent table cells
+    ("8,000.00  6,000.00") do not glue into one number ("8,000.006,000.00")."""
+    def replace(match: re.Match) -> str:
+        before = text[match.start() - 1] if match.start() > 0 else ""
+        after = text[match.end()] if match.end() < len(text) else ""
+        return " " if before.isdigit() and after.isdigit() else ""
+
+    return re.sub(r"\s+", replace, text)
+
+
 def find_supported_investment(
     amount: float,
     unit: str,
@@ -399,7 +410,7 @@ def find_supported_investment(
     describes registered capital, financing, guarantees, loans, raised funds
     or balance-sheet totals rather than a project investment.
     """
-    compact_text = re.sub(r"\s+", "", text)
+    compact_text = keep_number_breaks(text)
     for form_amount, form_unit in investment_unit_forms(amount, unit):
         for position in number_positions(form_amount, compact_text):
             tail = compact_text[position:position + 30]
@@ -423,7 +434,7 @@ def find_supported_investment(
                 segment_end = min(segment_end_candidates, default=len(compact_text))
                 segment = compact_text[segment_start + 1:segment_end]
                 unit_nearby = (
-                    f"单位：{form_unit}" in segment
+                    re.search(rf"单位[:：](?:人民币)?{re.escape(form_unit)}", segment) is not None
                     or f"（{form_unit}）" in segment
                     or f"({form_unit})" in segment
                 )

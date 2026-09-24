@@ -1029,3 +1029,13 @@ def test_v7_reason_text_must_be_in_source():
     )
     assert normalized.events[0].decision_reason_text is None
     assert "clear_unsupported_reason_text" in [c["action"] for c in changes]
+
+
+def test_investment_inside_table_is_not_glued_to_next_cell():
+    from src.capacity_normalizer import find_supported_investment
+    table = "序号 项目名称 投资总额（万元） 已投入金额（万元）\n1 智能化改造项目 8,000.00 6,000.00\n"
+    assert find_supported_investment(8000.0, "万元", table) == (8000.0, "万元")
+    assert find_supported_investment(5000.0, "万元", "公司注册资本5,000万元") is None
+
+    table_rmb = "单位：人民币元序号项目名称项目投资总额 1 新建无缝钢管项目 262,421,470.16 262,421,470.16 42,793,710.95"
+    assert find_supported_investment(262421470.16, "元", table_rmb) == (262421470.16, "元")
