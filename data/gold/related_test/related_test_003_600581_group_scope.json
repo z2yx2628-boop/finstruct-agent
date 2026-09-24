@@ -1,0 +1,29 @@
+{
+  "security_code": "600581",
+  "security_name": "八一钢铁",
+  "company_name": "新疆八一钢铁股份有限公司",
+  "announcement_number": "临2026-018",
+  "announcement_date": "2026-03-30",
+  "estimate_year": 2026,
+  "total_estimated_amount": 42.0,
+  "total_estimated_unit": "亿元",
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "relationship": "parent_or_controlling_shareholder",
+      "category_text": "借款",
+      "goods_or_services": null,
+      "estimated_amount": 42.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "confidence": 1.0,
+      "listed_company": "新疆八一钢铁股份有限公司",
+      "counterparty": "八钢公司及其下属子公司",
+      "transaction_category": "financial_services",
+      "source_page": 2,
+      "evidence_text": "八一钢铁 2026 年度向控股股东八钢公司及其下属子公司申请新增借款额度"
+    }
+  ]
+}

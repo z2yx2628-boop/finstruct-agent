@@ -1,0 +1,32 @@
+{
+  "started_at": "2026-09-24T07:01:34.765612+00:00",
+  "pdf_count": 4,
+  "task": "related_party",
+  "runs": [
+    {
+      "pdf": "data\\raw\\related_test\\related_test_001_000932_annual_estimate.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\related_test_r3\\predictions\\related_test_001_000932_annual_estimate.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\related_test_001_000932_annual_estimate\\20260924T070134Z"
+    },
+    {
+      "pdf": "data\\raw\\related_test\\related_test_002_600581_annual_estimate.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\related_test_r3\\predictions\\related_test_002_600581_annual_estimate.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\related_test_002_600581_annual_estimate\\20260924T070532Z"
+    },
+    {
+      "pdf": "data\\raw\\related_test\\related_test_003_600581_group_scope.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\related_test_r3\\predictions\\related_test_003_600581_group_scope.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\related_test_003_600581_group_scope\\20260924T070841Z"
+    },
+    {
+      "pdf": "data\\raw\\related_test\\related_test_004_600307_annual_estimate.pdf",
+      "status": "needs_review",
+      "prediction": "outputs\\related_test_r3\\predictions\\related_test_004_600307_annual_estimate.json",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\related_test_004_600307_annual_estimate\\20260924T070852Z"
+    }
+  ],
+  "completed_at": "2026-09-24T07:11:52.874385+00:00"
+}

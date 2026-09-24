@@ -1,0 +1,304 @@
+{
+  "passed": false,
+  "corpus": {
+    "evaluated_documents": 3,
+    "missing_predictions": []
+  },
+  "record_metrics": {
+    "true_positives": 31,
+    "false_positives": 5,
+    "false_negatives": 0,
+    "precision": 0.8611111111111112,
+    "recall": 1.0,
+    "f1": 0.9253731343283582
+  },
+  "document_field_metrics": {
+    "matched": 26,
+    "total": 27,
+    "present_matched": 23,
+    "present_total": 23,
+    "overfilled": 1,
+    "accuracy": 0.9629629629629629,
+    "present_accuracy": 1.0
+  },
+  "record_attribute_metrics": {
+    "matched": 305,
+    "total": 310,
+    "present_matched": 293,
+    "present_total": 298,
+    "overfilled": 0,
+    "accuracy": 0.9838709677419355,
+    "present_accuracy": 0.9832214765100671
+  },
+  "factual_attribute_metrics": {
+    "matched": 331,
+    "total": 337,
+    "present_matched": 316,
+    "present_total": 321,
+    "overfilled": 1,
+    "accuracy": 0.9821958456973294,
+    "present_accuracy": 0.9844236760124611
+  },
+  "canonical_attribute_metrics": {
+    "matched": 331,
+    "total": 337,
+    "present_matched": 316,
+    "present_total": 321,
+    "overfilled": 1,
+    "accuracy": 0.9821958456973294,
+    "present_accuracy": 0.9844236760124611
+  },
+  "narrative_attribute_metrics": {
+    "matched": 62,
+    "total": 62,
+    "present_matched": 31,
+    "present_total": 31,
+    "overfilled": 0,
+    "accuracy": 1.0,
+    "present_accuracy": 1.0
+  },
+  "documents": {
+    "related_dev_001_600019_annual_estimate": {
+      "passed": false,
+      "record_metrics": {
+        "true_positives": 6,
+        "false_positives": 5,
+        "false_negatives": 0,
+        "precision": 0.5454545454545454,
+        "recall": 1.0,
+        "f1": 0.7058823529411764
+      },
+      "document_field_metrics": {
+        "matched": 9,
+        "total": 9,
+        "accuracy": 1.0,
+        "present_matched": 9,
+        "present_total": 9,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "record_attribute_metrics": {
+        "matched": 60,
+        "total": 60,
+        "accuracy": 1.0,
+        "present_matched": 48,
+        "present_total": 48,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 69,
+        "total": 69,
+        "accuracy": 1.0,
+        "present_matched": 57,
+        "present_total": 57,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 69,
+        "total": 69,
+        "accuracy": 1.0,
+        "present_matched": 57,
+        "present_total": 57,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 12,
+        "total": 12,
+        "accuracy": 1.0,
+        "present_matched": 6,
+        "present_total": 6,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [],
+      "missing_records": [],
+      "unexpected_records": [
+        {
+          "counterparty": "宝武集团财务有限责任公司",
+          "transaction_category": "financial_services"
+        },
+        {
+          "counterparty": "宝武集团财务有限责任公司",
+          "transaction_category": "financial_services"
+        },
+        {
+          "counterparty": "宝武集团财务有限责任公司",
+          "transaction_category": "financial_services"
+        },
+        {
+          "counterparty": "宝武集团财务有限责任公司",
+          "transaction_category": "financial_services"
+        },
+        {
+          "counterparty": "宝武集团财务有限责任公司",
+          "transaction_category": "financial_services"
+        }
+      ]
+    },
+    "related_dev_002_000959_annual_estimate": {
+      "passed": false,
+      "record_metrics": {
+        "true_positives": 25,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 9,
+        "total": 9,
+        "accuracy": 1.0,
+        "present_matched": 9,
+        "present_total": 9,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "record_attribute_metrics": {
+        "matched": 245,
+        "total": 250,
+        "accuracy": 0.98,
+        "present_matched": 245,
+        "present_total": 250,
+        "present_accuracy": 0.98,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 254,
+        "total": 259,
+        "accuracy": 0.9806949806949807,
+        "present_matched": 254,
+        "present_total": 259,
+        "present_accuracy": 0.9806949806949807,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 254,
+        "total": 259,
+        "accuracy": 0.9806949806949807,
+        "present_matched": 254,
+        "present_total": 259,
+        "present_accuracy": 0.9806949806949807,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 50,
+        "total": 50,
+        "accuracy": 1.0,
+        "present_matched": 25,
+        "present_total": 25,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "transaction",
+          "record_index": 20,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 21,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 22,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 23,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 24,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        }
+      ],
+      "missing_records": [],
+      "unexpected_records": []
+    },
+    "related_dev_003_601003_annual_estimate": {
+      "passed": false,
+      "record_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 8,
+        "total": 9,
+        "accuracy": 0.8888888888888888,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 1
+      },
+      "record_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 8,
+        "total": 9,
+        "accuracy": 0.8888888888888888,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 1
+      },
+      "canonical_attribute_metrics": {
+        "matched": 8,
+        "total": 9,
+        "accuracy": 0.8888888888888888,
+        "present_matched": 5,
+        "present_total": 5,
+        "present_accuracy": 1.0,
+        "overfilled": 1
+      },
+      "narrative_attribute_metrics": {
+        "matched": 0,
+        "total": 0,
+        "accuracy": 1.0,
+        "present_matched": 0,
+        "present_total": 0,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "document",
+          "record_index": 0,
+          "field": "estimate_year",
+          "expected": null,
+          "actual": 2025
+        }
+      ],
+      "missing_records": [],
+      "unexpected_records": []
+    }
+  }
+}

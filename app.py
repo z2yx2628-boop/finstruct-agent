@@ -93,7 +93,7 @@ if st.session_state.get("app_schema_version") != APP_SCHEMA_VERSION:
     st.session_state["app_schema_version"] = APP_SCHEMA_VERSION
 
 st.title("FinStruct Agent")
-st.caption("钢铁产业链公告结构化提取：股份质押、产能事件、对外担保；支持文字PDF、扫描PDF、图片、网页、Word和Excel")
+st.caption("钢铁产业链公告结构化提取：股份质押、产能事件、对外担保、日常关联交易；支持文字PDF、扫描PDF、图片、网页、Word和Excel")
 
 task_name = st.selectbox(
     "公告类型",
@@ -189,6 +189,25 @@ def show_ocr_notice(log: dict) -> None:
         )
 
 
+RELATED_CATEGORY_LABELS = {
+    "purchase_goods": "关联采购",
+    "sell_goods": "关联销售",
+    "receive_services": "接受劳务",
+    "provide_services": "提供劳务",
+    "lease_in": "租入资产",
+    "lease_out": "租出资产",
+    "financial_services": "资金往来",
+    "other": "其他关联交易",
+}
+
+
+def record_label(item: dict) -> str:
+    if "transaction_category" in item:
+        category = item.get("transaction_category")
+        return f"{RELATED_CATEGORY_LABELS.get(category, category)} · {item.get('counterparty') or '按类别汇总'}"
+    return CAPACITY_EVENT_LABELS.get(item.get("event_type"), item.get("event_type"))
+
+
 def show_generic_result(result: dict) -> None:
     """Result view for every non-pledge task."""
     document = result["document"]
@@ -203,15 +222,16 @@ def show_generic_result(result: dict) -> None:
     first.metric("证券代码", document.security_code or "-")
     second.metric("证券简称", document.security_name or "-")
     third.metric("公告编号", document.announcement_number or "-")
-    fourth.metric("事件记录", len(document.events))
+    records = list(getattr(document, "events", None) or getattr(document, "transactions", None) or [])
+    fourth.metric("事件记录", len(records))
 
-    events = [event.model_dump() for event in document.events]
+    events = [record.model_dump() for record in records]
     event_frame = pd.DataFrame([
         {
-            "事件类型": CAPACITY_EVENT_LABELS.get(item.get("event_type"), item.get("event_type")),
+            "事件类型": record_label(item),
             **{
                 key: value for key, value in item.items()
-                if key not in {"capacity_changes", "environmental_metrics", "event_type"}
+                if key not in {"capacity_changes", "environmental_metrics", "event_type", "transaction_category"}
             },
         }
         for item in events
@@ -250,10 +270,9 @@ def show_generic_result(result: dict) -> None:
                 width="stretch",
                 hide_index=True,
             )
-        for index, event in enumerate(document.events, start=1):
+        for index, event in enumerate(records, start=1):
             with st.expander(
-                f"事件 {index} · "
-                f"{CAPACITY_EVENT_LABELS.get(event.event_type, event.event_type)}"
+                f"事件 {index} · {record_label(event.model_dump())}"
                 f" · 第{event.source_page}页"
             ):
                 st.code(event.evidence_text or "无证据文本")

@@ -1,0 +1,30 @@
+{
+  "version": "related-test-gold-v1",
+  "frozen_at": "2026-09-24",
+  "hash_algorithm": "sha256",
+  "document_count": 4,
+  "record_count": 153,
+  "system_under_test_commit": "832efb8",
+  "files": [
+    {
+      "file": "related_test_001_000932_annual_estimate.json",
+      "sha256": "71b7fb8f6b3ce28ea901eb2b526ec8384020f54c8ca547f88eaaa2772b85335c",
+      "records": 64
+    },
+    {
+      "file": "related_test_002_600581_annual_estimate.json",
+      "sha256": "943b09e3de2809d34663c80cdbbc387e03896c99a1ab6f48683a34543d3cd722",
+      "records": 44
+    },
+    {
+      "file": "related_test_003_600581_group_scope.json",
+      "sha256": "8801eeae8800129ef5cad059d89aff91158f1f76e7597a8783a738054cbb4d92",
+      "records": 1
+    },
+    {
+      "file": "related_test_004_600307_annual_estimate.json",
+      "sha256": "c1e6254a6f37859aaf72f301cd69aecb495a4fd3ef8e2b5e6d2ef6d739193d78",
+      "records": 44
+    }
+  ]
+}
