@@ -1,0 +1,14 @@
+src_industry,dst_industry,material,dependence,note
+S_铁矿,S_普钢,铁矿石,high,高炉-转炉长流程的主要原料
+S_铁矿,S_特钢,铁矿石,medium,特钢部分采用长流程
+S_焦炭,S_普钢,焦炭,high,高炉燃料和还原剂
+S_焦炭,S_特钢,焦炭,medium,
+S_铁合金,S_普钢,硅锰/硅铁,medium,炼钢脱氧和合金化
+S_铁合金,S_特钢,硅锰/硅铁/合金,medium,
+S_钒,S_普钢,钒氮合金,low,螺纹钢等微合金化
+S_钒,S_特钢,钒铁,medium,
+S_普钢,S_钢管,热轧卷/带钢,high,焊管主要原料
+S_特钢,S_钢管,管坯,medium,无缝管原料
+S_普钢,S_钢结构,中厚板/型钢,high,钢结构主要原料
+S_不锈钢,S_不锈钢加工,不锈钢热轧卷,high,冷轧加工原料
+S_特钢,S_特种合金,钢锭/坯料,low,特种合金企业多数自行冶炼

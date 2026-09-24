@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.chain_inputs import EDGE_FIELDS, SIGNAL_FIELDS, as_row, doc_key, doc_kind, edges_from, signals_from  # noqa: E402
+from src.chain_inputs import EDGE_FIELDS, SIGNAL_FIELDS, as_row, doc_key, doc_kind, edges_from, industry_edges, signals_from  # noqa: E402
 
 
 def main() -> None:
@@ -42,6 +42,8 @@ def main() -> None:
         edges += e
         skipped += s
         signals += signals_from(doc, rel)
+    disclosed = len(edges)
+    edges += industry_edges()
     out.mkdir(parents=True, exist_ok=True)
     for name, rows, fields in (("edges.csv", edges, EDGE_FIELDS), ("signals.csv", signals, SIGNAL_FIELDS)):
         with (out / name).open("w", encoding="utf-8", newline="") as f:
@@ -49,7 +51,7 @@ def main() -> None:
             w.writeheader()
             w.writerows(as_row(r) for r in rows)
     print("documents:", dict(kinds), f"(duplicates across splits skipped: {dup})")
-    print(f"edges: {len(edges)} ({dict(Counter(e.edge_type for e in edges))}); "
+    print(f"edges: {disclosed} disclosed + {len(edges) - disclosed} industry_approx; all {len(edges)} ({dict(Counter(e.edge_type for e in edges))}); "
           f"same-group {sum(e.same_group for e in edges)}; skipped (party not named) {skipped}")
     nodes = {e.src_id for e in edges} | {e.dst_id for e in edges}
     print(f"nodes: {len(nodes)} ({sum(1 for n in nodes if n.startswith('N_'))} without a table entry)")

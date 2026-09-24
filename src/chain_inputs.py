@@ -16,9 +16,11 @@ with each company's financial strength.
 """
 from __future__ import annotations
 
+import csv
 from dataclasses import asdict, dataclass, fields
+from pathlib import Path
 
-from src.entity_resolver import Resolution, load_entities, node_id, resolve
+from src.entity_resolver import ROOT, Resolution, load_entities, node_id, resolve
 
 TO_WAN = {"元": 1e-4, "千元": 0.1, "万元": 1.0, "百万元": 100.0, "亿元": 1e4}
 
@@ -56,6 +58,7 @@ class Edge:
     dst_matched_by: str
     src_scope: str
     dst_scope: str
+    basis: str = "disclosed"   # disclosed (company announcement) | industry_approx (segment-level dependence)
 
 
 @dataclass
@@ -225,6 +228,47 @@ def signals_from(doc: dict, source_doc: str) -> list[Signal]:
 def doc_key(doc: dict) -> tuple:
     """The same announcement can sit in several Gold splits; count it once."""
     return (doc.get("security_code"), doc.get("announcement_number"), doc.get("announcement_date"), doc_kind(doc))
+
+
+INDUSTRY_LINKS = ROOT / "data" / "reference" / "industry_links.csv"
+MEMBERSHIP = ROOT / "data" / "reference" / "industry_membership.csv"
+OVERRIDES = ROOT / "data" / "reference" / "industry_overrides.csv"
+UNIVERSE = ROOT / "data" / "manifests" / "steel_universe.csv"
+
+
+def _read(path: Path) -> list[dict]:
+    with path.open(encoding="utf-8-sig", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def industry_of() -> dict[str, str]:
+    """security_code -> industry node (S_*), from the universe segment, with explicit overrides."""
+    seg = {r["segment"]: r["industry"] for r in _read(MEMBERSHIP)}
+    out = {r["security_code"]: seg[r["segment"]] for r in _read(UNIVERSE) if r["segment"] in seg}
+    out.update({r["security_code"]: r["industry"] for r in _read(OVERRIDES)})
+    return out
+
+
+def industry_edges() -> list[Edge]:
+    """Approximate, segment-level links for relations announcements never disclose
+    (a mill selling to an unrelated pipe maker). Always basis=industry_approx."""
+    rows, _ = load_entities()
+    blank = dict(relationship="", status="", amount_wan=None, prior_actual_wan=None, period="", issuer_id="",
+                 announcement_date="", source_page=None, src_matched_by="industry", dst_matched_by="industry",
+                 src_scope="self", dst_scope="self", basis="industry_approx")
+    out = []
+    for link in _read(INDUSTRY_LINKS):
+        out.append(Edge(edge_type="industry", src_id=link["src_industry"], src_name=link["src_industry"][2:],
+                        dst_id=link["dst_industry"], dst_name=link["dst_industry"][2:], src_group="", dst_group="",
+                        same_group=0, category_text=f"{link['material']}（依赖度 {link['dependence']}）",
+                        source_doc="data/reference/industry_links.csv", evidence_text=link["note"], **blank))
+    for code, industry in sorted(industry_of().items()):
+        entity = rows.get(code, {})
+        out.append(Edge(edge_type="member_of", src_id=code, src_name=entity.get("short_name", code),
+                        dst_id=industry, dst_name=industry[2:], src_group=entity.get("group_id", ""), dst_group="",
+                        same_group=0, category_text="所属细分行业", source_doc="data/manifests/steel_universe.csv",
+                        evidence_text="", **blank))
+    return out
 
 
 def as_row(record) -> dict:

@@ -63,3 +63,18 @@ def test_maintenance_becomes_supply_disruption():
                        "output_loss_unit": "万吨", "source_page": 1, "evidence_text": "停产20天"}]}
     (s,) = signals_from(doc, "m.json")
     assert (s.entity_id, s.signal_type, s.severity, s.magnitude) == ("600507", "supply_disruption", "medium", 20)
+
+
+def test_industry_links_are_marked_approximate_and_cover_the_chain():
+    from src.chain_inputs import industry_edges, industry_of
+    ind = industry_of()
+    assert ind["600019"] == "S_普钢" and ind["000825"] == "S_不锈钢" and ind["002318"] == "S_钢管"
+    edges = industry_edges()
+    assert all(e.basis == "industry_approx" for e in edges)
+    links = {(e.src_id, e.dst_id) for e in edges if e.edge_type == "industry"}
+    assert ("S_焦炭", "S_普钢") in links and ("S_普钢", "S_钢管") in links
+
+
+def test_disclosed_edges_default_to_disclosed_basis():
+    edges, _ = edges_from(GUARANTEE, "g.json")
+    assert edges[0].basis == "disclosed"
