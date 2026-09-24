@@ -1,0 +1,2 @@
+holdout_id,security_code,security_name,publish_date,target_pattern,title,url,notes,fetched_at,sha256,bytes
+final_web_001,600507,方大特钢,2026-05-09,maintenance_news,方大特钢“一条龙”检修 筑牢下半年高效生产根基,http://www.csteelnews.com/qypd/scjy/202605/t20260509_109661.html,China Steel News webpage; task capacity (V7 maintenance); fetch with scripts/fetch_webpage.py,2026-09-24T07:35:58+00:00,0df14bdc9e39d97ca11ab309174463f2dd7b3f8922bd6eb5dae6ecc9d3f5e642,44725

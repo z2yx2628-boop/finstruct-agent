@@ -7,3 +7,4 @@ outputs/
 *.log
 tmp/
 .pytest_tmp/
+data/external/probe/

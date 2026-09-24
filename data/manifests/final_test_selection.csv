@@ -1,0 +1,8 @@
+holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url,notes
+final_001,000898,鞍钢股份,2026-03-31,related_estimate,2026年度日常关联交易预计公告,https://disc.static.szse.cn/disc/disk03/finalpage/2026-03-31/cf1ebd8f-0029-479f-9958-a0797c12e5ef.PDF,2026-008; task related_party
+final_002,600010,包钢股份,2026-04-18,related_estimate,关于2025年度关联交易执行情况及2026年度日常关联交易预测的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-18/12112608.PDF,（临）2026-015; task related_party
+final_004,000825,太钢不锈,2025-12-04,related_estimate,关于2026年与日常经营相关的关联交易预计公告,https://disc.static.szse.cn/download/disc/disk03/finalpage/2025-12-04/deda1443-f54d-4ef3-9fc2-a679607e6f6b.PDF,2025-054; task related_party
+final_005,600507,方大特钢,2025-12-31,related_estimate,关于预计2026年度日常关联交易事项的公告,https://file.finance.qq.com/finance/hs/pdf/2025/12/31/1224910066.PDF,临2025-079; task related_party
+final_006,002075,沙钢股份,2025-10-30,related_adjustment,关于调整2025年度日常关联交易预计的公告,https://file.finance.qq.com/finance/hs/pdf/2025/10/30/1224765570.PDF,临2025-032; adjustment of an existing estimate; task related_party
+final_007,600782,新钢股份,2026-04-21,related_execution,关于2025年度日常关联交易执行情况的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-21/12119684.PDF,临2026-020; execution report (may contain no current-year estimate); task related_party
+final_008,600808,马钢股份,2025-06-21,related_agreement,关于签订关联交易补充协议的公告,https://file.finance.qq.com/finance/hs/pdf/2025/06/21/1223953704.PDF,2025-027; framework agreement supplement; task related_party
