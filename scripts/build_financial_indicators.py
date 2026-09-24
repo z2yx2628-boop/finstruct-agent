@@ -1,6 +1,8 @@
-"""Build data/external/financials/indicators.csv (24 core mills x FY2021-2025).
+"""Build data/external/financials/indicators.csv for every company whose statements are downloaded.
 
-Run scripts/fetch_financials.py first.
+Years run from FY2021 to the latest annual report found in the data, so a newly published
+annual report appears after `fetch_financials.py --refresh` without code changes.
+`peer_group` = core for the 24 core mills (the peer set for ranking), other otherwise.
     python scripts/build_financial_indicators.py
 """
 import csv
@@ -9,11 +11,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from scripts.fetch_financials import RAW, core_mills  # noqa: E402
-from src.financial_indicators import INDICATORS, INPUTS, build  # noqa: E402
+from scripts.fetch_financials import RAW, universe  # noqa: E402
+from src.financial_indicators import INDICATORS, INPUTS, annual_rows, build  # noqa: E402
 
 OUT = ROOT / "data" / "external" / "financials" / "indicators.csv"
-YEARS = range(2021, 2026)
+FIRST_YEAR = 2021
 
 
 def read(path: Path) -> list[dict]:
@@ -28,22 +30,29 @@ def fmt(value):
 
 
 def main() -> None:
-    fields = ["security_code", "security_name", "segment", "fiscal_year", "notice_date", *INDICATORS,
+    fields = ["security_code", "security_name", "segment", "peer_group", "fiscal_year", "notice_date", *INDICATORS,
               *[f"raw_{k}" for cols in INPUTS.values() for k in cols]]
     rows, missing = [], []
-    for m in core_mills():
-        code = m["security_code"]
+    known = {r["security_code"]: r for r in universe()}
+    codes = sorted({p.name.split("_")[0] for p in RAW.glob("*_balance.csv")})
+    for code in codes:
+        m = known.get(code, {"security_code": code, "security_name": code, "segment": "", "tier": "", "core_analysis_target": ""})
+        peer = "core" if m.get("tier") == "core" and m.get("core_analysis_target") == "Y" else "other"
         paths = {s: RAW / f"{code}_{s}.csv" for s in ("balance", "income", "cashflow")}
         if not all(p.exists() for p in paths.values()):
             missing.append(f"{code} {m['security_name']}")
             continue
-        built = build(read(paths["balance"]), read(paths["income"]), read(paths["cashflow"]), YEARS)
+        balance = read(paths["balance"])
+        latest = max(annual_rows(balance), default=FIRST_YEAR)
+        years_wanted = range(FIRST_YEAR, latest + 1)
+        built = build(balance, read(paths["income"]), read(paths["cashflow"]), years_wanted)
         years = {r["fiscal_year"] for r in built}
-        for y in YEARS:
+        for y in years_wanted:
             if y not in years:
                 missing.append(f"{code} {m['security_name']} FY{y}")
         for r in built:
-            rows.append({"security_code": code, "security_name": m["security_name"], "segment": m["segment"], **r})
+            rows.append({"security_code": code, "security_name": m["security_name"], "segment": m.get("segment", ""),
+                         "peer_group": peer, **r})
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
