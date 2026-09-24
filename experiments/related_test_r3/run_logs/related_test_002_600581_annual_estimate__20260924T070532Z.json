@@ -1,0 +1,238 @@
+{
+  "run_id": "20260924T070532Z",
+  "status": "needs_review",
+  "started_at": "2026-09-24T07:05:32.899322+00:00",
+  "input": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\data\\raw\\related_test\\related_test_002_600581_annual_estimate.pdf",
+    "size_bytes": 517735,
+    "sha256": "873412eab0400ae16a8512bcf6d84364933479d13cdf675c8002da593539a417"
+  },
+  "prompt": {
+    "path": "E:\\金融人工智能比赛9..10-10.18\\prompts\\related_party_extraction_v1.txt",
+    "sha256": "ea27717d0a05f0e3fcd70abe98d9e579d26323d9cd6b66230fe7fcc7e009897c"
+  },
+  "task": "related_party",
+  "model": "qwen-plus",
+  "steps": [
+    {
+      "name": "document_parsing",
+      "tool": "Unified document parser / PyMuPDF + OCR",
+      "source_type": "pdf_text",
+      "page_count": 26,
+      "text_char_count": 23350,
+      "needs_ocr": false,
+      "ocr_pages": [],
+      "ocr_engine": null,
+      "ocr_confidence": {},
+      "ocr_low_confidence_pages": [],
+      "duration_seconds": 0.9589
+    },
+    {
+      "name": "llm_structured_extraction",
+      "tool": "OpenAI-compatible Chat Completions",
+      "model": "qwen-plus",
+      "sanitization_changes_count": 0,
+      "sanitization_changes": [],
+      "duration_seconds": 186.9422
+    },
+    {
+      "name": "event_normalization",
+      "tool": "Deterministic related-party normalizer",
+      "changes_count": 18,
+      "changes": [
+        {
+          "record_index": 34,
+          "action": "clear_unsupported_amount",
+          "field": "estimated_amount",
+          "original": {
+            "estimated_amount": 86.0,
+            "estimated_unit": "万元"
+          }
+        },
+        {
+          "record_index": 34,
+          "action": "clear_unsupported_amount",
+          "field": "prior_year_actual_amount",
+          "original": {
+            "prior_year_actual_amount": 82.0,
+            "prior_year_actual_unit": "万元"
+          }
+        },
+        {
+          "record_index": 35,
+          "action": "clear_unsupported_amount",
+          "field": "estimated_amount",
+          "original": {
+            "estimated_amount": 489878.0,
+            "estimated_unit": "万元"
+          }
+        },
+        {
+          "record_index": 35,
+          "action": "clear_unsupported_amount",
+          "field": "prior_year_actual_amount",
+          "original": {
+            "prior_year_actual_amount": 112254.0,
+            "prior_year_actual_unit": "万元"
+          }
+        },
+        {
+          "record_index": 36,
+          "action": "clear_unsupported_amount",
+          "field": "estimated_amount",
+          "original": {
+            "estimated_amount": 26751.0,
+            "estimated_unit": "万元"
+          }
+        },
+        {
+          "record_index": 36,
+          "action": "clear_unsupported_amount",
+          "field": "prior_year_actual_amount",
+          "original": {
+            "prior_year_actual_amount": 26227.0,
+            "prior_year_actual_unit": "万元"
+          }
+        },
+        {
+          "record_index": 37,
+          "action": "clear_unsupported_amount",
+          "field": "estimated_amount",
+          "original": {
+            "estimated_amount": 178816.0,
+            "estimated_unit": "万元"
+          }
+        },
+        {
+          "record_index": 37,
+          "action": "clear_unsupported_amount",
+          "field": "prior_year_actual_amount",
+          "original": {
+            "prior_year_actual_amount": 176872.0,
+            "prior_year_actual_unit": "万元"
+          }
+        },
+        {
+          "record_index": 38,
+          "action": "clear_unsupported_amount",
+          "field": "estimated_amount",
+          "original": {
+            "estimated_amount": 81992.0,
+            "estimated_unit": "万元"
+          }
+        },
+        {
+          "record_index": 38,
+          "action": "clear_unsupported_amount",
+          "field": "prior_year_actual_amount",
+          "original": {
+            "prior_year_actual_amount": 64113.0,
+            "prior_year_actual_unit": "万元"
+          }
+        },
+        {
+          "record_index": 39,
+          "action": "clear_unsupported_amount",
+          "field": "prior_year_actual_amount",
+          "original": {
+            "prior_year_actual_amount": 670.0,
+            "prior_year_actual_unit": "万元"
+          }
+        },
+        {
+          "record_index": 40,
+          "action": "clear_unsupported_amount",
+          "field": "estimated_amount",
+          "original": {
+            "estimated_amount": 1063.0,
+            "estimated_unit": "万元"
+          }
+        },
+        {
+          "record_index": 40,
+          "action": "clear_unsupported_amount",
+          "field": "prior_year_actual_amount",
+          "original": {
+            "prior_year_actual_amount": 886.0,
+            "prior_year_actual_unit": "万元"
+          }
+        },
+        {
+          "record_index": 41,
+          "action": "clear_unsupported_amount",
+          "field": "estimated_amount",
+          "original": {
+            "estimated_amount": 1540.0,
+            "estimated_unit": "万元"
+          }
+        },
+        {
+          "record_index": 42,
+          "action": "clear_unsupported_amount",
+          "field": "estimated_amount",
+          "original": {
+            "estimated_amount": 9271.0,
+            "estimated_unit": "万元"
+          }
+        },
+        {
+          "record_index": 42,
+          "action": "clear_unsupported_amount",
+          "field": "prior_year_actual_amount",
+          "original": {
+            "prior_year_actual_amount": 7726.0,
+            "prior_year_actual_unit": "万元"
+          }
+        },
+        {
+          "record_index": 43,
+          "action": "clear_unsupported_amount",
+          "field": "estimated_amount",
+          "original": {
+            "estimated_amount": 235.0,
+            "estimated_unit": "万元"
+          }
+        },
+        {
+          "record_index": 43,
+          "action": "clear_unsupported_amount",
+          "field": "prior_year_actual_amount",
+          "original": {
+            "prior_year_actual_amount": 209.0,
+            "prior_year_actual_unit": "万元"
+          }
+        }
+      ],
+      "duration_seconds": 0.4286
+    },
+    {
+      "name": "evidence_validation",
+      "tool": "Deterministic evidence validator",
+      "passed": false,
+      "checks_count": 172,
+      "expected_event_types": [],
+      "extracted_event_types": [
+        "provide_services",
+        "purchase_goods",
+        "receive_services",
+        "sell_goods"
+      ],
+      "event_counts": {
+        "purchase_goods": 17,
+        "receive_services": 16,
+        "sell_goods": 7,
+        "provide_services": 4
+      },
+      "duration_seconds": 0.3803
+    }
+  ],
+  "completed_at": "2026-09-24T07:08:41.636886+00:00",
+  "duration_seconds": 188.7376,
+  "files_written": [
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\related_test_002_600581_annual_estimate\\20260924T070532Z\\parsed_document.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\related_test_002_600581_annual_estimate\\20260924T070532Z\\pages.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\related_test_002_600581_annual_estimate\\20260924T070532Z\\llm_raw.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\related_test_002_600581_annual_estimate\\20260924T070532Z\\prediction.json",
+    "E:\\金融人工智能比赛9..10-10.18\\outputs\\related_test_002_600581_annual_estimate\\20260924T070532Z\\evidence_report.json"
+  ]
+}

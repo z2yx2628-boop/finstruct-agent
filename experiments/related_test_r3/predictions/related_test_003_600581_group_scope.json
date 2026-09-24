@@ -1,0 +1,29 @@
+{
+  "security_code": "600581",
+  "security_name": "八一钢铁",
+  "company_name": "新疆八一钢铁股份有限公司",
+  "announcement_number": "临2026-018",
+  "announcement_date": "2026-03-30",
+  "estimate_year": 2026,
+  "total_estimated_amount": 42.0,
+  "total_estimated_unit": "亿元",
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "新疆八一钢铁股份有限公司",
+      "counterparty": "新疆八一钢铁集团有限公司及其下属子公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "financial_services",
+      "category_text": "借款",
+      "goods_or_services": null,
+      "estimated_amount": 42.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "新疆八一钢铁股份有限公司（以下简称“八一钢铁”、“上市公司”或“公司”）2026 年度拟向关联方申请借款，累计发生额不超过人民币42 亿元，借款有效期为2026 年3 月至2026 年12 月，具体借款事宜以合同约定为主，利率定价按照一年期贷款市场报价利率（LPR）下浮40BP，用于公司经营资金周转及项目建设，上市公司无需提供担保。",
+      "confidence": 1.0
+    }
+  ]
+}

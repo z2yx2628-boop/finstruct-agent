@@ -1,0 +1,1608 @@
+{
+  "passed": false,
+  "corpus": {
+    "evaluated_documents": 4,
+    "missing_predictions": []
+  },
+  "record_metrics": {
+    "true_positives": 151,
+    "false_positives": 2,
+    "false_negatives": 2,
+    "precision": 0.9869281045751634,
+    "recall": 0.9869281045751634,
+    "f1": 0.9869281045751634
+  },
+  "document_field_metrics": {
+    "matched": 36,
+    "total": 36,
+    "present_matched": 33,
+    "present_total": 33,
+    "overfilled": 0,
+    "accuracy": 1.0,
+    "present_accuracy": 1.0
+  },
+  "record_attribute_metrics": {
+    "matched": 1374,
+    "total": 1510,
+    "present_matched": 1372,
+    "present_total": 1506,
+    "overfilled": 2,
+    "accuracy": 0.909933774834437,
+    "present_accuracy": 0.9110225763612217
+  },
+  "factual_attribute_metrics": {
+    "matched": 1410,
+    "total": 1546,
+    "present_matched": 1405,
+    "present_total": 1539,
+    "overfilled": 2,
+    "accuracy": 0.9120310478654593,
+    "present_accuracy": 0.9129304743339831
+  },
+  "canonical_attribute_metrics": {
+    "matched": 1410,
+    "total": 1546,
+    "present_matched": 1405,
+    "present_total": 1539,
+    "overfilled": 2,
+    "accuracy": 0.9120310478654593,
+    "present_accuracy": 0.9129304743339831
+  },
+  "narrative_attribute_metrics": {
+    "matched": 254,
+    "total": 302,
+    "present_matched": 191,
+    "present_total": 191,
+    "overfilled": 48,
+    "accuracy": 0.8410596026490066,
+    "present_accuracy": 1.0
+  },
+  "documents": {
+    "related_test_001_000932_annual_estimate": {
+      "passed": false,
+      "record_metrics": {
+        "true_positives": 62,
+        "false_positives": 2,
+        "false_negatives": 2,
+        "precision": 0.96875,
+        "recall": 0.96875,
+        "f1": 0.96875
+      },
+      "document_field_metrics": {
+        "matched": 9,
+        "total": 9,
+        "accuracy": 1.0,
+        "present_matched": 9,
+        "present_total": 9,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "record_attribute_metrics": {
+        "matched": 569,
+        "total": 620,
+        "accuracy": 0.917741935483871,
+        "present_matched": 569,
+        "present_total": 620,
+        "present_accuracy": 0.917741935483871,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 578,
+        "total": 629,
+        "accuracy": 0.918918918918919,
+        "present_matched": 578,
+        "present_total": 629,
+        "present_accuracy": 0.918918918918919,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 578,
+        "total": 629,
+        "accuracy": 0.918918918918919,
+        "present_matched": 578,
+        "present_total": 629,
+        "present_accuracy": 0.918918918918919,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 124,
+        "total": 124,
+        "accuracy": 1.0,
+        "present_matched": 62,
+        "present_total": 62,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "transaction",
+          "record_index": 4,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 5,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 6,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 7,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 8,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 9,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 10,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 11,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 12,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 13,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 14,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 15,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 16,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 17,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 18,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 19,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 20,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 21,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 22,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 23,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 24,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 25,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 26,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 27,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 28,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 29,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 30,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 31,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 32,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 38,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 39,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 41,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 42,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 44,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 45,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 46,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 47,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 48,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 49,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 50,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 51,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 52,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 53,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 54,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 55,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 56,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 57,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 58,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 59,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        }
+      ],
+      "missing_records": [
+        {
+          "counterparty": "湘钢集团",
+          "transaction_category": "receive_services"
+        },
+        {
+          "counterparty": "涟钢建设",
+          "transaction_category": "receive_services"
+        }
+      ],
+      "unexpected_records": [
+        {
+          "counterparty": "湘钢集团",
+          "transaction_category": "purchase_goods"
+        },
+        {
+          "counterparty": "涟钢建设",
+          "transaction_category": "purchase_goods"
+        }
+      ]
+    },
+    "related_test_002_600581_annual_estimate": {
+      "passed": false,
+      "record_metrics": {
+        "true_positives": 44,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 9,
+        "total": 9,
+        "accuracy": 1.0,
+        "present_matched": 9,
+        "present_total": 9,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "record_attribute_metrics": {
+        "matched": 367,
+        "total": 440,
+        "accuracy": 0.8340909090909091,
+        "present_matched": 367,
+        "present_total": 440,
+        "present_accuracy": 0.8340909090909091,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 376,
+        "total": 449,
+        "accuracy": 0.8374164810690423,
+        "present_matched": 376,
+        "present_total": 449,
+        "present_accuracy": 0.8374164810690423,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 376,
+        "total": 449,
+        "accuracy": 0.8374164810690423,
+        "present_matched": 376,
+        "present_total": 449,
+        "present_accuracy": 0.8374164810690423,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 84,
+        "total": 88,
+        "accuracy": 0.9545454545454546,
+        "present_matched": 84,
+        "present_total": 84,
+        "present_accuracy": 1.0,
+        "overfilled": 4
+      },
+      "field_mismatches": [
+        {
+          "record_type": "transaction",
+          "record_index": 3,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 6,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 7,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 9,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 11,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 13,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 13,
+          "field": "source_page",
+          "expected": 6,
+          "actual": 5
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 14,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 14,
+          "field": "source_page",
+          "expected": 6,
+          "actual": 5
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 15,
+          "field": "relationship",
+          "expected": "other_related_party",
+          "actual": "associate_or_joint_venture"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 15,
+          "field": "source_page",
+          "expected": 6,
+          "actual": 5
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 16,
+          "field": "source_page",
+          "expected": 6,
+          "actual": 5
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 17,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 18,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 19,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 20,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 21,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 22,
+          "field": "relationship",
+          "expected": "other_related_party",
+          "actual": "associate_or_joint_venture"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 25,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 26,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 28,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 29,
+          "field": "relationship",
+          "expected": "other_related_party",
+          "actual": "associate_or_joint_venture"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 30,
+          "field": "relationship",
+          "expected": "other_related_party",
+          "actual": "associate_or_joint_venture"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 33,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 34,
+          "field": "relationship",
+          "expected": "other_related_party",
+          "actual": "associate_or_joint_venture"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 34,
+          "field": "estimated_amount",
+          "expected": 86.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 34,
+          "field": "estimated_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 34,
+          "field": "prior_year_actual_amount",
+          "expected": 82.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 34,
+          "field": "prior_year_actual_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 34,
+          "field": "currency",
+          "expected": "CNY",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 35,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 35,
+          "field": "estimated_amount",
+          "expected": 489878.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 35,
+          "field": "estimated_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 35,
+          "field": "prior_year_actual_amount",
+          "expected": 112254.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 35,
+          "field": "prior_year_actual_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 35,
+          "field": "currency",
+          "expected": "CNY",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 36,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 36,
+          "field": "estimated_amount",
+          "expected": 26751.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 36,
+          "field": "estimated_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 36,
+          "field": "prior_year_actual_amount",
+          "expected": 26227.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 36,
+          "field": "prior_year_actual_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 36,
+          "field": "currency",
+          "expected": "CNY",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 37,
+          "field": "estimated_amount",
+          "expected": 178816.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 37,
+          "field": "estimated_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 37,
+          "field": "prior_year_actual_amount",
+          "expected": 176872.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 37,
+          "field": "prior_year_actual_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 37,
+          "field": "currency",
+          "expected": "CNY",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 38,
+          "field": "estimated_amount",
+          "expected": 81992.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 38,
+          "field": "estimated_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 38,
+          "field": "prior_year_actual_amount",
+          "expected": 64113.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 38,
+          "field": "prior_year_actual_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 38,
+          "field": "currency",
+          "expected": "CNY",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 39,
+          "field": "prior_year_actual_amount",
+          "expected": 670.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 39,
+          "field": "prior_year_actual_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "estimated_amount",
+          "expected": 1063.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "estimated_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "prior_year_actual_amount",
+          "expected": 886.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "prior_year_actual_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "currency",
+          "expected": "CNY",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 41,
+          "field": "relationship",
+          "expected": "parent_or_controlling_shareholder",
+          "actual": "sister_company"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 41,
+          "field": "estimated_amount",
+          "expected": 1540.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 41,
+          "field": "estimated_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 42,
+          "field": "estimated_amount",
+          "expected": 9271.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 42,
+          "field": "estimated_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 42,
+          "field": "prior_year_actual_amount",
+          "expected": 7726.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 42,
+          "field": "prior_year_actual_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 42,
+          "field": "currency",
+          "expected": "CNY",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "estimated_amount",
+          "expected": 235.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "estimated_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "prior_year_actual_amount",
+          "expected": 209.0,
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "prior_year_actual_unit",
+          "expected": "万元",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "currency",
+          "expected": "CNY",
+          "actual": null
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "提供劳务"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 41,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "提供劳务"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 42,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "提供劳务"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "提供劳务"
+        }
+      ],
+      "missing_records": [],
+      "unexpected_records": []
+    },
+    "related_test_003_600581_group_scope": {
+      "passed": false,
+      "record_metrics": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 9,
+        "total": 9,
+        "accuracy": 1.0,
+        "present_matched": 9,
+        "present_total": 9,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "record_attribute_metrics": {
+        "matched": 8,
+        "total": 10,
+        "accuracy": 0.8,
+        "present_matched": 6,
+        "present_total": 8,
+        "present_accuracy": 0.75,
+        "overfilled": 0
+      },
+      "factual_attribute_metrics": {
+        "matched": 17,
+        "total": 19,
+        "accuracy": 0.8947368421052632,
+        "present_matched": 15,
+        "present_total": 17,
+        "present_accuracy": 0.8823529411764706,
+        "overfilled": 0
+      },
+      "canonical_attribute_metrics": {
+        "matched": 17,
+        "total": 19,
+        "accuracy": 0.8947368421052632,
+        "present_matched": 15,
+        "present_total": 17,
+        "present_accuracy": 0.8823529411764706,
+        "overfilled": 0
+      },
+      "narrative_attribute_metrics": {
+        "matched": 2,
+        "total": 2,
+        "accuracy": 1.0,
+        "present_matched": 1,
+        "present_total": 1,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "field_mismatches": [
+        {
+          "record_type": "transaction",
+          "record_index": 0,
+          "field": "counterparty",
+          "expected": "八钢公司及其下属子公司",
+          "actual": "新疆八一钢铁集团有限公司及其下属子公司"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 0,
+          "field": "source_page",
+          "expected": 2,
+          "actual": 1
+        }
+      ],
+      "missing_records": [],
+      "unexpected_records": []
+    },
+    "related_test_004_600307_annual_estimate": {
+      "passed": false,
+      "record_metrics": {
+        "true_positives": 44,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "document_field_metrics": {
+        "matched": 9,
+        "total": 9,
+        "accuracy": 1.0,
+        "present_matched": 6,
+        "present_total": 6,
+        "present_accuracy": 1.0,
+        "overfilled": 0
+      },
+      "record_attribute_metrics": {
+        "matched": 430,
+        "total": 440,
+        "accuracy": 0.9772727272727273,
+        "present_matched": 430,
+        "present_total": 438,
+        "present_accuracy": 0.9817351598173516,
+        "overfilled": 2
+      },
+      "factual_attribute_metrics": {
+        "matched": 439,
+        "total": 449,
+        "accuracy": 0.977728285077951,
+        "present_matched": 436,
+        "present_total": 444,
+        "present_accuracy": 0.9819819819819819,
+        "overfilled": 2
+      },
+      "canonical_attribute_metrics": {
+        "matched": 439,
+        "total": 449,
+        "accuracy": 0.977728285077951,
+        "present_matched": 436,
+        "present_total": 444,
+        "present_accuracy": 0.9819819819819819,
+        "overfilled": 2
+      },
+      "narrative_attribute_metrics": {
+        "matched": 44,
+        "total": 88,
+        "accuracy": 0.5,
+        "present_matched": 44,
+        "present_total": 44,
+        "present_accuracy": 1.0,
+        "overfilled": 44
+      },
+      "field_mismatches": [
+        {
+          "record_type": "transaction",
+          "record_index": 22,
+          "field": "prior_year_actual_amount",
+          "expected": null,
+          "actual": 150.0
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 22,
+          "field": "prior_year_actual_unit",
+          "expected": null,
+          "actual": "万元"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 37,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 38,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 39,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 41,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 42,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "relationship",
+          "expected": "sister_company",
+          "actual": "other_related_party"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "source_page",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 0,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "材料备件、服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 1,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "原料、材料备件、服务费、废钢、动力产品、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 2,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "动力能源、服务费、培训费、租赁费、原燃料、材料备件等"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 3,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "原燃料、运输费、服务费、材料备件、租赁费、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 4,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢坯、材料备件、废钢、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 5,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "废钢、钢坯、材料备件、服务费、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 6,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "原燃料"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 7,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "原燃料"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 8,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "废钢、服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 9,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "原料"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 10,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "动力产品、服务费、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 11,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "原燃料"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 12,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费、辅助材料"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 13,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "生产材料"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 14,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "租赁费、服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 15,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 16,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 17,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "防暑降温费、服务费、废钢、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 18,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费、应急药品"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 19,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "原燃料、勘察费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 20,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 21,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "生铁废钢、干馏煤气"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 22,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "培训费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 23,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、废钢、辅助材料、动力产品、服务费、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 24,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢坯、动力产品、服务费、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 25,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、钢坯、原燃料、服务费、动力产品、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 26,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、动力产品、服务费、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 27,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 28,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费、动力产品、辅助材料、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 29,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、动力产品、服务费、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 30,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 31,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 32,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、动力产品、服务费、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 33,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、动力能源、服务费、原燃料、辅材等"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 34,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "辅助材料"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 35,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 36,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "动力产品、服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 37,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "动力产品、服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 38,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 39,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费、其他"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 40,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "钢材、服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 41,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "服务费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 42,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "租赁费"
+        },
+        {
+          "record_type": "transaction",
+          "record_index": 43,
+          "field": "goods_or_services",
+          "expected": null,
+          "actual": "租赁费"
+        }
+      ],
+      "missing_records": [],
+      "unexpected_records": []
+    }
+  }
+}
