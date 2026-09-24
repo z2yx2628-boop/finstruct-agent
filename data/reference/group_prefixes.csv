@@ -1,0 +1,29 @@
+token,group_id,match,note
+宝武,G_BAOWU,contains,宝武集团之子公司 etc.
+八钢,G_BAOWU,contains,八一钢铁 parent 八钢公司
+马钢,G_BAOWU,contains,
+太钢,G_BAOWU,contains,
+新钢,G_BAOWU,prefix,since 2022-12
+湘钢,G_HUNAN,contains,湖南钢铁集团 subsidiaries
+涟钢,G_HUNAN,contains,
+衡钢,G_HUNAN,contains,
+华菱,G_HUNAN,contains,
+湖南钢铁,G_HUNAN,prefix,
+首钢,G_SHOUGANG,contains,
+鞍钢,G_ANSTEEL,contains,
+本钢,G_ANSTEEL,contains,
+攀钢,G_ANSTEEL,prefix,
+凌钢,G_ANSTEEL,contains,since 2024-12
+河钢,G_HBIS,contains,
+酒钢,G_JISCO,contains,
+安钢,G_ANYANG,contains,
+闽光,G_FJYJ,contains,
+三钢,G_FJYJ,prefix,
+方大,G_FANGDA,contains,
+沙钢,G_SHAGANG,contains,
+山钢,G_SHANGANG,prefix,
+包钢,G_BAOTOU,contains,
+柳钢,G_LIUGANG,contains,
+杭钢,G_HANGGANG,prefix,
+中信,G_CITIC,prefix,
+南钢,G_CITIC,prefix,since 2023

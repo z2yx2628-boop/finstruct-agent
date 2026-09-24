@@ -8,3 +8,4 @@ outputs/
 tmp/
 .pytest_tmp/
 data/external/probe/
+data/external/financials/raw/
