@@ -40,8 +40,29 @@ AMOUNT_PAIRS = {
 
 
 def pair_records(gold: list, predicted: list):
-    pairs, missing, remaining = [], [], list(predicted)
-    for gold_record in gold:
+    """Pair Gold and predicted records within the same category.
+
+    Pass 1 locks in unambiguous pairs (same category, same counterparty and
+    the same estimated amount) so that one misclassified row cannot make the
+    greedy pass steal a neighbour's partner and cascade errors down a table.
+    Pass 2 pairs the rest greedily as before.
+    """
+    pairs_by_gold, remaining = {}, list(predicted)
+    for index, gold_record in enumerate(gold):
+        for record in remaining:
+            if (
+                record.transaction_category == gold_record.transaction_category
+                and canon(record.counterparty) == canon(gold_record.counterparty)
+                and amount_value(record.estimated_amount, record.estimated_unit)
+                == amount_value(gold_record.estimated_amount, gold_record.estimated_unit)
+            ):
+                pairs_by_gold[index] = record
+                remaining.remove(record)
+                break
+    missing = []
+    for index, gold_record in enumerate(gold):
+        if index in pairs_by_gold:
+            continue
         candidates = [r for r in remaining if r.transaction_category == gold_record.transaction_category]
         if not candidates:
             missing.append(gold_record)
@@ -55,7 +76,8 @@ def pair_records(gold: list, predicted: list):
 
         best = max(candidates, key=score)
         remaining.remove(best)
-        pairs.append((gold_record, best))
+        pairs_by_gold[index] = best
+    pairs = [(gold[index], pairs_by_gold[index]) for index in sorted(pairs_by_gold)]
     return pairs, missing, remaining
 
 

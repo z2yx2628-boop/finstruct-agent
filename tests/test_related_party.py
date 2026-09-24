@@ -111,3 +111,17 @@ def test_finance_company_deposit_rows_are_dropped_but_group_interest_kept():
     normalized, changes = normalize_related_party_fields(document, pages)
     assert [r.counterparty for r in normalized.transactions] == ["首钢集团有限公司及下属企业"]
     assert changes[0]["action"] == "drop_finance_company_service"
+
+
+def test_one_misclassified_row_does_not_cascade_through_pairing():
+    rows = [("湘钢集团", "receive_services", 2410), ("洪盛物流", "receive_services", 93215),
+            ("湘钢瑞兴", "receive_services", 5429)]
+    gold = RelatedPartyDocument(transactions=[
+        record(counterparty=c, transaction_category=k, estimated_amount=a) for c, k, a in rows])
+    predicted = RelatedPartyDocument(transactions=[
+        record(counterparty="湘钢集团", transaction_category="purchase_goods", estimated_amount=2410),
+        record(counterparty="洪盛物流", transaction_category="receive_services", estimated_amount=93215),
+        record(counterparty="湘钢瑞兴", transaction_category="receive_services", estimated_amount=5429)])
+    report = evaluate_document(gold, predicted)
+    assert report["record_metrics"]["true_positives"] == 2
+    assert not [m for m in report["field_mismatches"] if m["field"] in ("counterparty", "estimated_amount")]
