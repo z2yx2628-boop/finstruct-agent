@@ -1,0 +1,268 @@
+{
+  "generated_at": "2026-09-26T23:33:47+00:00",
+  "system_under_test": "extraction-freeze-2026-09-24",
+  "gold": "final-test-gold-v1",
+  "gold_records": 178,
+  "commit": "ef63fc4",
+  "runs": [
+    {
+      "run": 1,
+      "related_party": {
+        "tp": 173,
+        "fp": 29,
+        "fn": 4,
+        "precision": 0.8564356435643564,
+        "recall": 0.9774011299435028,
+        "f1": 0.912928759894459,
+        "factual_matched": 1342,
+        "factual_total": 1793,
+        "factual_accuracy": 0.7484662576687117,
+        "failed_documents": [],
+        "per_document": {
+          "final_001_000898_related_estimate": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 4
+          },
+          "final_002_600010_related_estimate": {
+            "tp": 39,
+            "fp": 0,
+            "fn": 0
+          },
+          "final_004_000825_related_estimate": {
+            "tp": 48,
+            "fp": 0,
+            "fn": 0
+          },
+          "final_005_600507_related_estimate": {
+            "tp": 22,
+            "fp": 1,
+            "fn": 0
+          },
+          "final_006_002075_related_adjustment": {
+            "tp": 28,
+            "fp": 0,
+            "fn": 0
+          },
+          "final_007_600782_related_execution": {
+            "tp": 0,
+            "fp": 28,
+            "fn": 0
+          },
+          "final_008_600808_related_agreement": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      },
+      "capacity": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "factual_matched": 18,
+        "factual_total": 22,
+        "factual_accuracy": 0.8181818181818182,
+        "failed_documents": [],
+        "per_document": {
+          "final_web_001": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      }
+    },
+    {
+      "run": 2,
+      "related_party": {
+        "tp": 173,
+        "fp": 29,
+        "fn": 4,
+        "precision": 0.8564356435643564,
+        "recall": 0.9774011299435028,
+        "f1": 0.912928759894459,
+        "factual_matched": 1341,
+        "factual_total": 1793,
+        "factual_accuracy": 0.7479085331846068,
+        "failed_documents": [],
+        "per_document": {
+          "final_001_000898_related_estimate": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 4
+          },
+          "final_002_600010_related_estimate": {
+            "tp": 39,
+            "fp": 0,
+            "fn": 0
+          },
+          "final_004_000825_related_estimate": {
+            "tp": 48,
+            "fp": 0,
+            "fn": 0
+          },
+          "final_005_600507_related_estimate": {
+            "tp": 22,
+            "fp": 1,
+            "fn": 0
+          },
+          "final_006_002075_related_adjustment": {
+            "tp": 28,
+            "fp": 0,
+            "fn": 0
+          },
+          "final_007_600782_related_execution": {
+            "tp": 0,
+            "fp": 28,
+            "fn": 0
+          },
+          "final_008_600808_related_agreement": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      },
+      "capacity": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "factual_matched": 18,
+        "factual_total": 22,
+        "factual_accuracy": 0.8181818181818182,
+        "failed_documents": [],
+        "per_document": {
+          "final_web_001": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      }
+    },
+    {
+      "run": 3,
+      "related_party": {
+        "tp": 173,
+        "fp": 29,
+        "fn": 4,
+        "precision": 0.8564356435643564,
+        "recall": 0.9774011299435028,
+        "f1": 0.912928759894459,
+        "factual_matched": 1341,
+        "factual_total": 1793,
+        "factual_accuracy": 0.7479085331846068,
+        "failed_documents": [],
+        "per_document": {
+          "final_001_000898_related_estimate": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 4
+          },
+          "final_002_600010_related_estimate": {
+            "tp": 39,
+            "fp": 0,
+            "fn": 0
+          },
+          "final_004_000825_related_estimate": {
+            "tp": 48,
+            "fp": 0,
+            "fn": 0
+          },
+          "final_005_600507_related_estimate": {
+            "tp": 22,
+            "fp": 1,
+            "fn": 0
+          },
+          "final_006_002075_related_adjustment": {
+            "tp": 28,
+            "fp": 0,
+            "fn": 0
+          },
+          "final_007_600782_related_execution": {
+            "tp": 0,
+            "fp": 28,
+            "fn": 0
+          },
+          "final_008_600808_related_agreement": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      },
+      "capacity": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "factual_matched": 18,
+        "factual_total": 22,
+        "factual_accuracy": 0.8181818181818182,
+        "failed_documents": [],
+        "per_document": {
+          "final_web_001": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "related_party": {
+      "precision": {
+        "mean": 0.8564356435643564,
+        "min": 0.8564356435643564,
+        "max": 0.8564356435643564
+      },
+      "recall": {
+        "mean": 0.9774011299435028,
+        "min": 0.9774011299435028,
+        "max": 0.9774011299435028
+      },
+      "f1": {
+        "mean": 0.912928759894459,
+        "min": 0.912928759894459,
+        "max": 0.912928759894459
+      },
+      "factual_accuracy": {
+        "mean": 0.7480944413459751,
+        "min": 0.7479085331846068,
+        "max": 0.7484662576687117
+      }
+    },
+    "capacity": {
+      "precision": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "recall": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "factual_accuracy": {
+        "mean": 0.8181818181818182,
+        "min": 0.8181818181818182,
+        "max": 0.8181818181818182
+      }
+    }
+  }
+}
