@@ -83,3 +83,13 @@ def test_group_rule_is_used_at_most_once_per_path():
     g = graph([], {"B": "weak", "C": "weak"}, groups={"A": "G", "B": "G", "C": "G"}, listed=["A", "B", "C"])
     for p in propagate(g, "A", "credit", "high", ""):
         assert sum(s.rule == "R3" for s in p.steps) == 1
+
+
+def test_summary_cuts_after_last_listed_company_and_ranks_weak_first():
+    from src.propagation import summarize
+    edges = [edge("supply", "A", "L1", 10000), edge("supply", "L1", "U1", 500), edge("supply", "L1", "U2", 700),
+             edge("supply", "A", "L2", 10000)]
+    g = graph(edges, {"L1": "weak", "L2": "medium"})
+    ranked, reach = summarize(propagate(g, "A", "supply", "high", "停产"), listed={"A", "L1", "L2"})
+    assert [e["steps"][-1].dst for e in ranked] == ["L1", "L2"]          # weak ranks above medium
+    assert ranked[0]["beyond"] == {"U1", "U2"}                           # unlisted tail folded in

@@ -36,6 +36,7 @@ class Step:
     basis: str
     evidence: str
     note: str = ""
+    amount_wan: float | None = None
 
 
 @dataclass
@@ -136,8 +137,9 @@ def propagate(graph: Graph, seed: str, shock: str, severity: str, reason: str) -
             return
         for nxt, rule, edge in options:
             tier = graph.tier(nxt)
+            amount = edge.get("amount_wan")
             step = Step(rule, node, nxt, shock, level, tier, "continue", edge.get("basis", "disclosed"),
-                        evidence_of(edge))
+                        evidence_of(edge), amount_wan=float(amount) if amount not in (None, "") else None)
             branch = Path(path.seed, path.seed_reason, path.steps + [step])
             if rule != "R4" and not graph.material(edge, nxt):
                 step.decision, step.note = "immaterial", f"金额低于对方净资产的{MATERIALITY:.0%}"
@@ -186,3 +188,60 @@ def seeds_from(signals: list[dict], fragility: dict[str, dict], as_of: str) -> l
         if row.get("tier") == "weak" and (code, "credit") not in seeds:
             seeds[(code, "credit")] = (code, "credit", "medium", f"承压评分为弱：{row.get('reasons', '')[:80]}")
     return list(seeds.values())
+
+
+SEVERITY_WEIGHT = {"high": 3, "medium": 2, "low": 1}
+TIER_WEIGHT = {"weak": 1.0, "medium": 0.5, "strong": 0.0}
+
+
+def summarize(paths: list[Path], listed: set[str]) -> tuple[list[dict], list[dict]]:
+    """Make 500 raw branches readable.
+
+    key paths : each path is cut after its last LISTED company; what lies beyond (unlisted group
+                subsidiaries) is folded into a count and an amount. Identical cut paths merge.
+                score = seed severity x (1 + log10(1 + amount in 亿元)) x sum of listed tiers passed
+                (weak 1, medium 0.5, strong 0): paths that reach weak listed companies with large
+                amounts rank first; every factor is shown so the ranking stays explainable.
+    local reach: per seed, the unlisted related parties reached directly (no listed company on the way).
+    """
+    import math
+
+    keyed: dict[tuple, dict] = {}
+    local: dict[str, dict] = {}
+    for p in paths:
+        last = max((i for i, s in enumerate(p.steps) if s.dst in listed), default=None)
+        if last is None:
+            entry = local.setdefault(p.seed, {"seed": p.seed, "reason": p.seed_reason, "parties": set(), "amount_wan": 0.0})
+            entry["parties"].update(s.dst for s in p.steps)
+            entry["amount_wan"] += sum(s.amount_wan or 0 for s in p.steps[:1])
+            continue
+        head, tail = p.steps[:last + 1], p.steps[last + 1:]
+        key = (p.seed,) + tuple((s.rule, s.dst) for s in head)
+        entry = keyed.setdefault(key, {"seed": p.seed, "reason": p.seed_reason, "steps": head,
+                                       "beyond": set(), "beyond_amount_wan": 0.0})
+        entry["beyond"].update(s.dst for s in tail)
+        entry["beyond_amount_wan"] += sum(s.amount_wan or 0 for s in tail[:1])
+    ranked = []
+    for entry in keyed.values():
+        amount_yi = sum(s.amount_wan or 0 for s in entry["steps"]) / 1e4
+        reach = sum(TIER_WEIGHT.get(s.dst_tier, 0) for s in entry["steps"] if s.dst in listed)
+        severity = entry["steps"][0].severity
+        entry["score"] = round(SEVERITY_WEIGHT[severity] * (1 + math.log10(1 + amount_yi)) * reach, 2)
+        entry["amount_yi"] = round(amount_yi, 2)
+        entry["listed_reach"] = reach
+        ranked.append(entry)
+    ranked.sort(key=lambda e: -e["score"])
+    # The same listed companies reached in the same order via different unlisted group
+    # subsidiaries is one finding: keep the best-scoring route, count the alternatives.
+    findings, by_listed = [], {}
+    for entry in ranked:
+        key = (entry["seed"],) + tuple(s.dst for s in entry["steps"] if s.dst in listed)
+        if key in by_listed:
+            by_listed[key]["alternatives"] += 1
+            continue
+        entry["alternatives"] = 0
+        by_listed[key] = entry
+        findings.append(entry)
+    ranked = findings
+    reach_rows = sorted(local.values(), key=lambda e: -len(e["parties"]))
+    return ranked, reach_rows
