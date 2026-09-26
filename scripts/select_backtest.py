@@ -24,6 +24,7 @@ def main() -> None:
     ap.add_argument("name")
     ap.add_argument("--codes", nargs="+", required=True)
     ap.add_argument("--before", required=True, help="event date; only earlier announcements are used")
+    ap.add_argument("--exclude", default="", help="regex on titles that are not events (rules, margin collateral)")
     args = ap.parse_args()
     rows, seen = [], set()
     for path in sorted(glob.glob(str(ROOT / "data" / "manifests" / "analysis_corpus_candidates*.csv"))):
@@ -31,7 +32,7 @@ def main() -> None:
             for r in csv.DictReader(f):
                 key = (r["security_code"], r["doc_id"])
                 if r["security_code"] in args.codes and r["notice_date"] < args.before and key not in seen:
-                    if "final_test" in r["used_in"]:
+                    if "final_test" in r["used_in"] or (args.exclude and re.search(args.exclude, r["title"])):
                         continue
                     seen.add(key)
                     rows.append(r)

@@ -1,0 +1,5 @@
+entity_id,group_id,valid_from,valid_to,source
+600231,G_LINGGANG,,2024-12,凌钢集团控股股东变更为鞍钢集团之前，凌钢自成一组：https://finance.sina.com.cn/stock/relnews/cn/2024-12-19/doc-inczysvu0087067.shtml
+E_LINGGANG_GROUP,G_LINGGANG,,2024-12,同上
+000761,G_BENGANG,,2021,本钢集团并入鞍钢集团（2021年）之前，本钢自成一组；年份未核实
+E_BENGANG_GROUP,G_BENGANG,,2021,同上

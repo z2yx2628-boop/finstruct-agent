@@ -124,6 +124,37 @@ def node_id(res: Resolution) -> str:
     return res.entity_id or f"N_{res.base_name}"
 
 
+HISTORY = ENTITIES.parent / "group_history.csv"
+
+
+def _start(value: str) -> str:
+    """'2024-12' -> '2024-12-01', '2021' -> '2021-01-01' (comparable with ISO dates)."""
+    value = (value or "").strip()
+    return value + "-01-01" if len(value) == 4 else value + "-01" if len(value) == 7 else value
+
+
+def groups_as_of(as_of: str | None = None) -> dict[str, str]:
+    """entity_id -> group_id in force on `as_of` (None = today's table).
+
+    `group_since` in entities.csv is when the current group took control. Before that date the
+    entity belongs to the group in group_history.csv active then, or to no group. Without this a
+    backtest would treat 凌钢 as an Ansteel member in 2024-04, eight months before the takeover."""
+    rows, _ = load_entities()
+    groups = {k: v.get("group_id", "") for k, v in rows.items()}
+    if not as_of:
+        return groups
+    history = []
+    if HISTORY.exists():
+        with HISTORY.open(encoding="utf-8-sig", newline="") as f:
+            history = list(csv.DictReader(f))
+    for entity, row in rows.items():
+        since = _start(row.get("group_since", ""))
+        if since and as_of < since:
+            groups[entity] = next((h["group_id"] for h in history if h["entity_id"] == entity
+                                   and _start(h["valid_from"]) <= as_of < _start(h["valid_to"] or "9999")), "")
+    return groups
+
+
 def same_group(a: str, b: str) -> bool:
     rows, _ = load_entities()
     ga, gb = rows.get(a, {}).get("group_id"), rows.get(b, {}).get("group_id")

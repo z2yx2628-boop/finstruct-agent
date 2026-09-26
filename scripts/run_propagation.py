@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.entity_resolver import load_entities  # noqa: E402
+from src.entity_resolver import groups_as_of, load_entities  # noqa: E402
 from src.propagation import Graph, propagate, seeds_from, summarize  # noqa: E402
 from src.validity import is_active  # noqa: E402
 
@@ -39,7 +39,7 @@ def main() -> None:
     fragility = {r["security_code"]: r for r in read(snap / "fragility.csv")}
     equity = {r["security_code"]: float(r["equity"]) for r in read(snap / "quarterly_metrics.csv") if r.get("equity")}
     rows, _ = load_entities()
-    groups = {k: v["group_id"] for k, v in rows.items()}
+    groups = groups_as_of(as_of)          # group membership on the evaluation date
     listed = {k for k, v in rows.items() if v.get("security_code")}
     # Point in time: an edge from an announcement published after the evaluation date does not exist yet.
     edges = [e for e in read(chain / "edges.csv") if is_active(e, as_of)]   # in force on the evaluation date

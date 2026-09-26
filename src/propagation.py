@@ -69,7 +69,7 @@ def group_proxies(fragility: dict[str, dict], equity: dict[str, float], groups: 
             by_group[groups[code]].append((code, float(r["total_score"]), max(weight, 0.0)))
     proxies = {}
     for entity, row in rows.items():
-        members = by_group.get(row.get("group_id"))
+        members = by_group.get(groups.get(entity, row.get("group_id")))
         if row.get("entity_type") != "parent_group" or not members:
             continue
         total_w = sum(w for _, _, w in members)

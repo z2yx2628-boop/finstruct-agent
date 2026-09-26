@@ -67,3 +67,13 @@ def test_same_group_follows_control_changes_in_table():
     assert same_group("600782", "600019")      # 新钢 in 宝武 since 2022-12
     assert same_group("600231", "000898")      # 凌钢 in 鞍钢 since 2024-12
     assert not same_group("600019", "000709")
+
+
+def test_groups_as_of_respects_group_since():
+    from src.entity_resolver import groups_as_of
+    today = groups_as_of()
+    assert today["600231"] == "G_ANSTEEL"
+    before = groups_as_of("2024-04-30")          # eight months before Ansteel took control
+    assert before["600231"] == "G_LINGGANG" and before["E_LINGGANG_GROUP"] == "G_LINGGANG"
+    assert before["000898"] == "G_ANSTEEL"       # no group_since: unchanged
+    assert groups_as_of("2025-01-31")["600231"] == "G_ANSTEEL"
