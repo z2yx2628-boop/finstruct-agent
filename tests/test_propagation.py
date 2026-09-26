@@ -104,3 +104,11 @@ def test_opaque_guaranteed_party_becomes_a_seed_graded_by_guarantor_equity():
     assert ("E_XINTAI", "credit", "high") in {(s[0], s[1], s[2]) for s in seeds}
     assert all(s[0] != "SUB" for s in seeds)                           # subsidiaries are consolidated
     assert seeds_from([], {}, "2024-01-01", edges, {"ANTAI": 1.6e9}) == []   # not yet announced
+
+
+def test_task_is_detected_from_the_title():
+    from src.analyze import detect_task
+    assert detect_task("关于2026年度日常关联交易预计的公告") == "related_party"
+    assert detect_task("关于为全资子公司提供担保的公告") == "guarantee"
+    assert detect_task("关于控股股东部分股份质押的公告") == "pledge"
+    assert detect_task("关于3号高炉停产检修的公告") == "capacity"

@@ -268,8 +268,10 @@ def summarize(paths: list[Path], listed: set[str]) -> tuple[list[dict], list[dic
         key = (entry["seed"],) + tuple(s.dst for s in entry["steps"] if s.dst in listed)
         if key in by_listed:
             by_listed[key]["alternatives"] += 1
+            by_listed[key]["alternative_routes"].append("+".join(s.rule for s in entry["steps"]))
             continue
         entry["alternatives"] = 0
+        entry["alternative_routes"] = []
         by_listed[key] = entry
         findings.append(entry)
     ranked = findings
