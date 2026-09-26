@@ -91,11 +91,13 @@ def test_app_loads_without_a_result():
     app = AppTest.from_file(APP_PATH, default_timeout=10).run()
 
     assert not app.exception
+    assert app.title[0].value == "FinStruct Agent"
     assert app.button[0].disabled is True
 
 
 def test_app_displays_event_summary():
-    app = AppTest.from_file(APP_PATH, default_timeout=10)
+    app = AppTest.from_file(APP_PATH, default_timeout=10).run()
+    app.switch_page("pages/1_公告结构化.py")
     app.session_state["app_schema_version"] = 2
     app.session_state["pipeline_result"] = make_result()
 

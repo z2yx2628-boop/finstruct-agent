@@ -11,8 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SNAP = ROOT / "data" / "snapshots"
 TIER_COLOR = {"weak": "🔴", "medium": "🟡", "strong": "🟢"}
 
-st.set_page_config(page_title="承压评分 · FinStruct Agent", layout="wide")
-st.title("承压评分：这家企业扛不扛得住冲击？")
+st.title("企业承压评分", icon=":material/monitoring:")
 st.caption("财报层（最新法定披露期，同行排名）+ 市场层（60日超额收益、回撤、波动）+ 事件层（财报后的高风险公告）。"
            "每个等级都附原因；红线（资不抵债、负债率≥85%）和财报后事件只会使等级变差。")
 

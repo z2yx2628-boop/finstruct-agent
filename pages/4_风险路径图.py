@@ -15,7 +15,6 @@ DECISION = {"continue": "继续传导", "weakened": "继续传导（减弱）", 
 CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/analysis_v1": "真实图谱（84份公告，2024–2026）",
                "data/chain/backtest_antai": "回测图谱（安泰）", "data/chain/gold_demo": "演示图谱（仅开发用）"}
 
-st.set_page_config(page_title="风险路径图 · FinStruct Agent", layout="wide")
 import subprocess  # noqa: E402
 
 with st.sidebar:
@@ -32,7 +31,7 @@ with st.sidebar:
     if reports:
         with st.expander(f"最新日报 {reports[0].stem[7:]}"):
             st.markdown(reports[0].read_text(encoding="utf-8"))
-st.title("风险路径图：风险从哪里来，会流向哪里？")
+st.title("风险路径图", icon=":material/account_tree:")
 st.caption("节点颜色 = 承压等级（🔴弱 🟡中 🟢强 ⚪未评分），粗边框 = 风险起点；边的颜色 = 传导规则"
            "（红=担保，蓝=供需，紫=同集团，灰虚线=行业近似），边上数字为交易或担保金额。")
 
