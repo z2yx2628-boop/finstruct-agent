@@ -78,3 +78,12 @@ def test_event_after_report_downgrades_one_tier_only_inside_window():
     out = {r["security_code"]: r for r in score(peers(), signals, "2026-09-24", "20260630")}
     assert out["c0"]["base_tier"] == "strong" and out["c0"]["tier"] == "medium" and "逾期担保" in out["c0"]["reasons"]
     assert out["c1"]["tier"] == out["c1"]["base_tier"]            # event after as_of is ignored
+
+
+def test_company_outside_peer_group_is_placed_without_moving_peers():
+    rows = peers()
+    before = {r["security_code"]: r["total_score"] for r in score(rows, [], "2026-09-24", "20260630")}
+    outsider = dict(rows[-1], security_code="X", security_name="外部公司", debt_ratio=0.99)
+    after = {r["security_code"]: r for r in score(rows, [], "2026-09-24", "20260630", extra=[outsider])}
+    assert all(after[c]["total_score"] == s for c, s in before.items())
+    assert after["X"]["peer_group"] == "other" and after["X"]["tier"] == "weak"

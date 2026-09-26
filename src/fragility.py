@@ -38,20 +38,25 @@ def fmt(value: float, kind: str) -> str:
     return f"{value * 100:.1f}%" if kind == "pct" else f"{value:.2f}"
 
 
-def percentile_scores(rows: list[dict], metric: str, direction: int) -> dict[str, tuple[float, int, int]]:
-    """code -> (score 0..100 where 100 = weakest, rank from weakest, n)."""
-    present = [(r["security_code"], r[metric]) for r in rows if r.get(metric) is not None]
-    n = len(present)
+def percentile_scores(rows: list[dict], metric: str, direction: int,
+                      reference: list[dict] | None = None) -> dict[str, tuple[float, int, int]]:
+    """code -> (score 0..100 where 100 = weakest, rank from weakest, n).
+
+    Ranked against `reference` (default: the rows themselves). A company outside the peer group
+    is placed within the peers' distribution without changing the peers' own scores."""
+    ref = [r[metric] for r in (reference if reference is not None else rows) if r.get(metric) is not None]
+    n = len(ref)
     if n < 2:
         return {}
-    ordered = sorted(present, key=lambda x: -direction * x[1])  # weakest first
     out = {}
-    for code, value in present:
-        worse = sum(1 for _, v in present if direction * v > direction * value)
-        ties = sum(1 for _, v in present if v == value) - 1
-        score = 100 * (1 - (worse + ties / 2) / (n - 1))
-        rank = 1 + sum(1 for _, v in ordered if direction * v > direction * value)
-        out[code] = (score, rank, n)
+    for r in rows:
+        value = r.get(metric)
+        if value is None:
+            continue
+        worse = sum(1 for v in ref if direction * v > direction * value)
+        ties = sum(1 for v in ref if v == value) - (1 if reference is None else 0)
+        score = 100 * (1 - (worse + max(ties, 0) / 2) / (n - 1 if reference is None else n))
+        out[r["security_code"]] = (max(0.0, min(100.0, score)), 1 + worse, n)
     return out
 
 
@@ -64,9 +69,15 @@ def red_lines(row: dict) -> list[str]:
     return reasons
 
 
-def score(rows: list[dict], signals: list[dict], as_of: str, period_public: str) -> list[dict]:
-    """rows: one dict per peer company with security_code, security_name and metric fields."""
+def score(rows: list[dict], signals: list[dict], as_of: str, period_public: str,
+          extra: list[dict] | None = None) -> list[dict]:
+    """rows: one dict per peer company (security_code, security_name, metric fields).
+    extra: companies outside the peer group, scored against the peers' distribution."""
     per_metric = {m: percentile_scores(rows, m, d) for m, (_, d, _, _) in METRICS.items()}
+    for m, (_, d, _, _) in METRICS.items():
+        per_metric[m].update(percentile_scores(extra or [], m, d, reference=rows))
+    peer_codes = {r["security_code"] for r in rows}
+    rows = rows + list(extra or [])
     report_public = available_by(period_public)  # events after this date are not in the financials
     results = []
     for row in rows:
@@ -76,7 +87,8 @@ def score(rows: list[dict], signals: list[dict], as_of: str, period_public: str)
             if code in per_metric[metric]:
                 s, rank, n = per_metric[metric][code]
                 dims.setdefault(dim, []).append(s)
-                notes.append((s, f"{label}{fmt(row[metric], kind)}（{n}家中第{rank}弱）"))
+                where = f"{n}家中第{rank}弱" if code in peer_codes else f"弱于{n}家核心钢厂中的{n - rank + 1}家"
+                notes.append((s, f"{label}{fmt(row[metric], kind)}（{where}）"))
         dim_scores = {d: sum(v) / len(v) for d, v in dims.items()}
         weight = sum(WEIGHTS[d] for d in dim_scores)
         total = sum(WEIGHTS[d] * s for d, s in dim_scores.items()) / weight if weight else None
@@ -96,6 +108,7 @@ def score(rows: list[dict], signals: list[dict], as_of: str, period_public: str)
                                                   for s in serious[:2]))
         results.append({
             "as_of": as_of, "security_code": code, "security_name": row.get("security_name", ""),
+            "peer_group": "core" if code in peer_codes else "other",
             "period": row.get("period", ""), "total_score": None if total is None else round(total, 1),
             **{f"score_{d}": round(dim_scores[d], 1) if d in dim_scores else None for d in WEIGHTS},
             "base_tier": base_tier or "", "tier": tier or "", "tier_label": TIER_LABEL.get(tier, ""),

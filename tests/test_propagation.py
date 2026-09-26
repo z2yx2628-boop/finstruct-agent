@@ -93,3 +93,14 @@ def test_summary_cuts_after_last_listed_company_and_ranks_weak_first():
     ranked, reach = summarize(propagate(g, "A", "supply", "high", "停产"), listed={"A", "L1", "L2"})
     assert [e["steps"][-1].dst for e in ranked] == ["L1", "L2"]          # weak ranks above medium
     assert ranked[0]["beyond"] == {"U1", "U2"}                           # unlisted tail folded in
+
+
+def test_opaque_guaranteed_party_becomes_a_seed_graded_by_guarantor_equity():
+    edges = [{"edge_type": "guarantee", "src_id": "ANTAI", "dst_id": "E_XINTAI", "amount_wan": 280000,
+              "relationship": "sister_company", "announcement_date": "2024-04-27"},
+             {"edge_type": "guarantee", "src_id": "ANTAI", "dst_id": "SUB", "amount_wan": 280000,
+              "relationship": "wholly_owned_subsidiary", "announcement_date": "2024-04-27"}]
+    seeds = seeds_from([], {"ANTAI": {"tier": "weak"}}, "2025-01-31", edges, {"ANTAI": 1.6e9})
+    assert ("E_XINTAI", "credit", "high") in {(s[0], s[1], s[2]) for s in seeds}
+    assert all(s[0] != "SUB" for s in seeds)                           # subsidiaries are consolidated
+    assert seeds_from([], {}, "2024-01-01", edges, {"ANTAI": 1.6e9}) == []   # not yet announced

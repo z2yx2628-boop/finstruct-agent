@@ -108,10 +108,12 @@ def main() -> None:
     ap.add_argument("--as-of", default=date.today().isoformat())
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--signals")
+    ap.add_argument("--extra", nargs="*", default=[], help="companies outside the 24-mill peer group to score")
     args = ap.parse_args()
     as_of = args.as_of
     mills = select([], False)                      # the peer group is always the full core set
-    to_fetch = select(args.codes, False) if args.codes else mills
+    extras = select(args.extra, False) if args.extra else []
+    to_fetch = list({m["security_code"]: m for m in (select(args.codes, False) if args.codes else mills) + extras}.values())
     failures = []
 
     if not args.offline:
@@ -130,18 +132,24 @@ def main() -> None:
             print(f"[updated] {code} {name}")
 
     missing = [m["security_name"] for m in mills if not (QDIR / f"{m['security_code']}_abstract.csv").exists()]
-    rows, new_annual = [], []
+    rows, extra_rows, new_annual = [], [], []
     period = latest_public_period(as_of)
-    for m in mills:
+    for m in mills + extras:
         code = m["security_code"]
         path = QDIR / f"{code}_abstract.csv"
         periods = parse_abstract(read_rows(path)) if path.exists() else {}
-        if periods and needs_new_annual(code, periods):
+        if periods and m not in extras and needs_new_annual(code, periods):
             new_annual.append(code)
         metrics = dict(periods.get(period) or {"period": period})
         metrics.update(market_metrics(prices(code), as_of))
-        rows.append({"security_code": code, "security_name": m["security_name"], **metrics})
+        target = extra_rows if m in extras else rows
+        target.append({"security_code": code, "security_name": m["security_name"], **metrics})
     add_excess_return(rows)
+    if extra_rows:  # excess return against the peers' median, not the outsiders'
+        values = sorted(r["ret_60d"] for r in rows if r.get("ret_60d") is not None)
+        median = values[len(values) // 2] if values else None
+        for r in extra_rows:
+            r["excess_ret_60d"] = None if median is None or r.get("ret_60d") is None else r["ret_60d"] - median
 
     if new_annual and not args.offline:
         print(f"new annual reports for {', '.join(new_annual)}: refreshing full statements")
@@ -149,7 +157,8 @@ def main() -> None:
         import subprocess
         subprocess.run([sys.executable, str(ROOT / "scripts" / "build_financial_indicators.py")], check=False)
 
-    results = score(rows, load_signals(args.signals), as_of, period)
+    results = score(rows, load_signals(args.signals), as_of, period, extra=extra_rows)
+    rows = rows + extra_rows
     out = SNAP / as_of
     out.mkdir(parents=True, exist_ok=True)
     for name, data in (("quarterly_metrics.csv", rows), ("fragility.csv", results)):

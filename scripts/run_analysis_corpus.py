@@ -1,6 +1,7 @@
 """Run the FROZEN extraction system over the analysis corpus, one task per document type.
 
-    python scripts/run_analysis_corpus.py            # resumable: finished documents are skipped
+    python scripts/run_analysis_corpus.py                           # resumable: finished documents are skipped
+    python scripts/run_analysis_corpus.py --split backtest_antai    # any downloaded split
 Then build the real direction-3 inputs:
     python scripts/build_chain_inputs.py --src outputs/analysis_freeze --out data/chain/analysis_v1
 
@@ -22,9 +23,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-SOURCES = ROOT / "data" / "manifests" / "analysis_sources.csv"
-RAW = ROOT / "data" / "raw" / "analysis"
-OUT = ROOT / "outputs" / "analysis_freeze"
+SPLIT = sys.argv[sys.argv.index("--split") + 1] if "--split" in sys.argv else "analysis"
+SOURCES = ROOT / "data" / "manifests" / f"{SPLIT}_sources.csv"
+RAW = ROOT / "data" / "raw" / SPLIT
+OUT = ROOT / "outputs" / f"{SPLIT}_freeze"
 LOG = OUT / "run_log.json"
 FREEZE_TAG = "extraction-freeze-2026-09-24"
 

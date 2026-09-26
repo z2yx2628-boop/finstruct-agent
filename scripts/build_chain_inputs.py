@@ -2,6 +2,7 @@
 
     python scripts/build_chain_inputs.py                                  # Gold data, demo only
     python scripts/build_chain_inputs.py --src outputs/<run>/predictions --out data/chain/<run>
+    python scripts/build_chain_inputs.py --src outputs/backtest_antai_freeze outputs/analysis_freeze --out data/chain/backtest_antai
 
 The Gold build is for developing direction 3; the analysis itself must use outputs of the
 frozen extraction system.
@@ -20,12 +21,12 @@ from src.chain_inputs import EDGE_FIELDS, SIGNAL_FIELDS, as_row, doc_key, doc_ki
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--src", default="data/gold")
+    ap.add_argument("--src", nargs="+", default=["data/gold"], help="one or more folders of extraction outputs")
     ap.add_argument("--out", default="data/chain/gold_demo")
     args = ap.parse_args()
-    src, out = ROOT / args.src, ROOT / args.out
+    sources, out = [ROOT / s for s in args.src], ROOT / args.out
     edges, signals, kinds, skipped, seen, dup = [], [], Counter(), 0, set(), 0
-    for path in sorted(src.rglob("*.json")):
+    for path in sorted(p for src in sources for p in src.rglob("*.json")):
         try:
             doc = json.loads(path.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, UnicodeDecodeError):

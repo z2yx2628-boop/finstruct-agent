@@ -40,11 +40,13 @@ def main() -> None:
     rows, _ = load_entities()
     groups = {k: v["group_id"] for k, v in rows.items()}
     listed = {k for k, v in rows.items() if v.get("security_code")}
-    graph = Graph(read(chain / "edges.csv"), fragility, equity, groups, listed)
+    # Point in time: an edge from an announcement published after the evaluation date does not exist yet.
+    edges = [e for e in read(chain / "edges.csv") if (e.get("announcement_date") or "") <= as_of]
+    graph = Graph(edges, fragility, equity, groups, listed)
     names = {k: v["short_name"] for k, v in rows.items()}
 
     paths = []
-    for node, shock, severity, reason in seeds_from(read(chain / "signals.csv"), fragility, as_of):
+    for node, shock, severity, reason in seeds_from(read(chain / "signals.csv"), fragility, as_of, edges, equity):
         paths += propagate(graph, node, shock, severity, reason)
     paths.sort(key=lambda p: (-len(p.steps), p.seed))
 

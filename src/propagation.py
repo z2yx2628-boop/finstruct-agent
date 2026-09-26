@@ -171,9 +171,39 @@ def propagate(graph: Graph, seed: str, shock: str, severity: str, reason: str) -
     return unique
 
 
-def seeds_from(signals: list[dict], fragility: dict[str, dict], as_of: str) -> list[tuple[str, str, str, str]]:
-    """(node, shock, severity, reason): serious signals up to as_of, plus companies rated weak."""
+SUBSIDIARY = {"wholly_owned_subsidiary", "controlled_subsidiary"}
+
+
+def opaque_guarantee_seeds(edges: list[dict], fragility: dict[str, dict], equity: dict[str, float],
+                           as_of: str) -> dict[tuple[str, str], tuple[str, str, str, str]]:
+    """A non-subsidiary that receives guarantees but has no rating of its own is an opaque risk
+    source (its accounts are not public). Severity follows the guarantee's size relative to the
+    guarantor's equity: >=50% high, >=10% medium (安泰集团 -> 山西新泰钢铁 is ~170%)."""
+    totals: dict[tuple[str, str], float] = defaultdict(float)
+    for e in edges:
+        if (e.get("edge_type") == "guarantee" and e.get("relationship") not in SUBSIDIARY
+                and e.get("dst_id") not in fragility and e.get("amount_wan") not in (None, "")
+                and (e.get("announcement_date") or "") <= as_of):
+            totals[(e["src_id"], e["dst_id"])] += float(e["amount_wan"])
     seeds = {}
+    for (guarantor, party), amount_wan in totals.items():
+        eq = equity.get(guarantor)
+        if not eq or eq <= 0:
+            continue
+        ratio = amount_wan * 1e4 / eq
+        severity = "high" if ratio >= 0.5 else "medium" if ratio >= 0.1 else None
+        if severity:
+            seeds[(party, "credit")] = (party, "credit", severity,
+                                        f"未评分的非子公司被担保方（财务不公开）：获担保 {amount_wan / 1e4:.2f} 亿元，"
+                                        f"占担保方净资产 {ratio:.0%}")
+    return seeds
+
+
+def seeds_from(signals: list[dict], fragility: dict[str, dict], as_of: str, edges: list[dict] | None = None,
+               equity: dict[str, float] | None = None) -> list[tuple[str, str, str, str]]:
+    """(node, shock, severity, reason): serious signals up to as_of, companies rated weak, and
+    opaque guaranteed parties (see opaque_guarantee_seeds)."""
+    seeds = dict(opaque_guarantee_seeds(edges or [], fragility, equity or {}, as_of))
     for s in signals:
         if s.get("date", "") > as_of or s.get("severity") not in ("medium", "high"):
             continue
@@ -181,7 +211,7 @@ def seeds_from(signals: list[dict], fragility: dict[str, dict], as_of: str) -> l
         shock = "supply" if t in SUPPLY_SIGNALS else "credit" if t in CREDIT_SIGNALS else None
         if shock:
             key = (s["entity_id"], shock)
-            if key not in seeds or s["severity"] == "high":
+            if key not in seeds or (s["severity"] == "high" and seeds[key][2] != "high"):
                 seeds[key] = (s["entity_id"], shock, s["severity"],
                               f"{s['date']} {t}：{s.get('detail', '')}（{s.get('source_doc', '')}）")
     for code, row in fragility.items():

@@ -1,0 +1,11 @@
+holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url,notes
+backtest_antai_001,600408,安泰集团,2023-04-22,related_estimate,关于调整2023年度部分日常关联交易预计的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2023/2023-4/2023-04-22/9040750.PDF,sina doc 9040750; event 2025-02-06
+backtest_antai_002,600408,安泰集团,2023-06-22,pledge,关于控股股东股份质押的进展公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2023/2023-6/2023-06-22/9307213.PDF,sina doc 9307213; event 2025-02-06
+backtest_antai_003,600408,安泰集团,2023-10-28,related_estimate,关于调整二○二三年度部分日常关联交易预计的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2023/2023-10/2023-10-28/9604862.PDF,sina doc 9604862; event 2025-02-06
+backtest_antai_004,600408,安泰集团,2024-04-03,guarantee_backtest,关于全资子公司为公司提供担保的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2024/2024-4/2024-04-03/9940130.PDF,sina doc 9940130; event 2025-02-06
+backtest_antai_005,600408,安泰集团,2024-04-03,related_estimate,关于二○二四年度日常关联交易预计的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2024/2024-4/2024-04-03/9940136.PDF,sina doc 9940136; event 2025-02-06
+backtest_antai_006,600408,安泰集团,2024-04-27,guarantee_backtest,关于为山西新泰钢铁有限公司提供担保的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2024/2024-4/2024-04-27/10110426.PDF,sina doc 10110426; event 2025-02-06; also used in guarantee (development)
+backtest_antai_007,600408,安泰集团,2024-04-27,guarantee_backtest,关于为全资子公司宏安焦化提供担保的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2024/2024-4/2024-04-27/10110420.PDF,sina doc 10110420; event 2025-02-06
+backtest_antai_008,600408,安泰集团,2024-06-27,pledge,关于控股股东股份质押的进展公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2024/2024-6/2024-06-27/10297120.PDF,sina doc 10297120; event 2025-02-06
+backtest_antai_009,600408,安泰集团,2024-07-04,related_estimate,关于与参股公司二○二四年度日常关联交易预计的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2024/2024-7/2024-07-04/10312382.PDF,sina doc 10312382; event 2025-02-06
+backtest_antai_010,600408,安泰集团,2024-08-06,guarantee_backtest,关于为参股公司提供担保的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2024/2024-8/2024-08-06/10360543.PDF,sina doc 10360543; event 2025-02-06
