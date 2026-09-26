@@ -14,8 +14,8 @@ TASKS = {"自动识别": None, "日常关联交易": "related_party", "对外担
 TIER_ICON = {"弱": "🔴", "中": "🟡", "强": "🟢"}
 
 st.title("FinStruct Agent", icon=":material/account_tree:")
-st.subheader("钢铁产业链白箱风险预警")
-st.caption("公告事实 · 企业承压 · 风险传导 · 全程证据可追溯")
+st.subheader("钢铁产业链风险传导预警 · 每一步可追溯到公告原文")
+st.caption("公告事实 → 企业承压 → 风险传导")
 
 st.header("分析新公告", icon=":material/upload_file:")
 

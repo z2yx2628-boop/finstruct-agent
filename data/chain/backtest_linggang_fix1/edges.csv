@@ -6872,6 +6872,577 @@ supply,601003,柳州钢铁股份有限公司,N_其他关联方,其他关联方,G
 其他
 55,000.00
 21,291.49",exact,unresolved,self,self,disclosed,2026-03-12,2026-12-31
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,joint_and_several,2022-05-11,600231,2022-05-11,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json,2,2022 年5 月9 日，根据《相互担保协议》及《相互担保协议之补充协议》约定，公司与渤海银行锦州分行签订了《最高额保证协议》（合同编号：渤锦分最高保（2022）第4 号），为控股股东凌钢集团与渤海银行锦州分行签订的《综合授信合同》（合同编号：渤锦分综（2022）第4 号）项下不超过人民币1.0 亿元的敞口额度提供连带责任保证担保，凌钢集团就上述担保事项向公司提供反担保，并签署了《反担保合同》，承担连带责任保证担保。,exact,exact,self,self,disclosed,2022-05-11,2025-05-11
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,pledge,2022-05-11,600231,2022-05-11,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json,2,公司与盛京银行朝阳分行签订了《银行承兑质押合同》（合同编号：150211202205070053Z01），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协议》（合同编号：150211202205070053）项下签发日为2022 年5 月9 日，到期日为2023 年1 月20 日，金额为人民币1.0 亿元的80 张银行承兑汇票提供质押担保，凌钢集团就上述担保事项向公司提供反担保，并签署了《反担保合同》，承担连带责任保证担保。,exact,exact,self,self,disclosed,2022-05-09,2023-01-20
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,pledge,2022-05-21,600231,2022-05-21,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_005_600231_guarantee_backtest.json,3,同日，公司与民生银行大连分行签订了《最高额质押合同》（合同编号：公高质字第ZH22Z0000051470 号），为控股股东凌钢集团与民生银行大连分行签订的《银行承兑协议》（合同编号：公承兑字第ZH2200000051470 号）项下签发日为2022 年5 月19 日，到期日为2023 年5 月3 日，金额合计为人民币1.0 亿元的10 张银行承兑汇票提供质押担保。,exact,exact,self,self,disclosed,2022-05-19,2023-05-03
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,pledge,2022-06-11,600231,2022-06-11,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_006_600231_guarantee_backtest.json,2,2022 年6 月9 日，根据《相互担保协议》及《相互担保协议之补充协议》约定，公司与盛京银行朝阳分行签订了《银行承兑质押合同》（合同编号：150211202206090053Z01），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协议》（合同编号：150211202206090053）项下签发日为2022 年6 月9 日，到期日为2022 年12 月7 日，金额为人民币1.0 亿元的56 张银行承兑汇票提供质押担保，凌钢集团就上述担保事项向公司提供反担保，并签署了《反担保合同》，承担连带责任保证担保。,exact,exact,self,self,disclosed,2022-06-09,2022-12-07
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,20000.0,,joint_and_several,2022-06-11,600231,2022-06-11,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_006_600231_guarantee_backtest.json,3,2022 年6 月10 日，公司与华夏银行沈阳分行签订了《最高额保证合同》（合同编号：SY12(高保)20220010），为凌钢集团与华夏银行沈阳分行签订的2.86亿元《最高额融资合同》（编号：SY12（融资）20220010）提供连带责任保证担保。凌钢集团就上述担保事项向公司提供反担保，并签署了《反担保合同》，承担连带责任保证担保。同日，凌钢集团在华夏银行沈阳分行办理了人民币2.0亿元流动资金贷款，公司本次实际为其提供的担保金额为人民币2.0 亿元。,exact,exact,self,self,disclosed,2022-06-10,2025-06-10
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,20000.0,,pledge,2022-06-23,600231,2022-06-23,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_007_600231_guarantee_backtest.json,1,公司本次为凌钢集团与盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）签订的2.0 亿元《银行承兑协议》提供质押担保。,exact,exact,self,self,disclosed,2022-06-22,2023-06-22
+guarantee,600231,凌源钢铁股份有限公司,N_凌源钢铁国际贸易有限公司,凌源钢铁国际贸易有限公司,G_ANSTEEL,G_ANSTEEL,1,wholly_owned_subsidiary,guarantee_limit,20000.0,,joint_and_several,2022-08-31,600231,2022-08-31,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_010_600231_guarantee_backtest.json,1,公司与控股股东凌源钢铁集团有限责任公司（以下简称“凌钢集团”）拟分别为公司的全资子公司国贸公司向盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）申请期限为2 年、最高余额在人民币2 亿元内的综合授信提供连带责任保证担保,exact,relationship,self,self,disclosed,2022-08-31,2023-08-31
+guarantee,N_凌源钢铁国际贸易有限公司,凌源钢铁国际贸易有限公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,wholly_owned_subsidiary,guarantee_limit,70000.0,,joint_and_several,2022-08-31,600231,2022-08-31,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_010_600231_guarantee_backtest.json,1,公司的全资子公司国贸公司拟为公司向盛京银行朝阳分行申请期限为2 年、最高余额在人民币7 亿元内的综合授信提供连带责任保证担保,unresolved,exact,self,self,disclosed,2022-08-31,2023-08-31
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,pledge,2022-09-24,600231,2022-09-24,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_013_600231_guarantee_backtest.json,2,"2022 年9 月23 日，根据《相互担保协议》及《相互担保协议之补充协议》
+约定，公司与盛京银行朝阳分行签订了《银行承兑质押合同》（合同编号：
+150211202209230101Z02），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协
+议》（合同编号：150211202209230101）项下签发日为2022 年9 月23 日，到期
+日为2023 年2 月24 日，金额为人民币1.0 亿元的88 张银行承兑汇票提供质押
+担保，凌钢集团就上述担保事项向公司提供反担保，并签署了《反担保合同》，
+承担连带责任保证担保。",exact,exact,self,self,disclosed,2022-09-24,2025-09-24
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,joint_and_several,2022-11-19,600231,2022-11-19,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_016_600231_guarantee_backtest.json,2,"2022 年11 月18 日，根据《相互担保协议》及《相互担保协议之补充协议》约定，公司与农业银行朝阳分行签订了编号为21100120220017404 、21100120220017409 和21100120220017410 号的《保证合同》，分别为凌钢集团与农业银行朝阳分行签订的期限为1 年，金额为人民币1 亿元、8,000 万元和7,000万元，编号为21010120220001123 、21010120220001124和21010120220001125 号的《流动资金借款合同》提供连带责任保证担保。",exact,exact,self,self,disclosed,2022-11-19,2025-11-19
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,8000.0,,joint_and_several,2022-11-19,600231,2022-11-19,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_016_600231_guarantee_backtest.json,2,"2022 年11 月18 日，根据《相互担保协议》及《相互担保协议之补充协议》约定，公司与农业银行朝阳分行签订了编号为21100120220017404 、21100120220017409 和21100120220017410 号的《保证合同》，分别为凌钢集团与农业银行朝阳分行签订的期限为1 年，金额为人民币1 亿元、8,000 万元和7,000万元，编号为21010120220001123 、21010120220001124和21010120220001125 号的《流动资金借款合同》提供连带责任保证担保。",exact,exact,self,self,disclosed,2022-11-19,2025-11-19
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,7000.0,,joint_and_several,2022-11-19,600231,2022-11-19,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_016_600231_guarantee_backtest.json,2,"2022 年11 月18 日，根据《相互担保协议》及《相互担保协议之补充协议》约定，公司与农业银行朝阳分行签订了编号为21100120220017404 、21100120220017409 和21100120220017410 号的《保证合同》，分别为凌钢集团与农业银行朝阳分行签订的期限为1 年，金额为人民币1 亿元、8,000 万元和7,000万元，编号为21010120220001123 、21010120220001124和21010120220001125 号的《流动资金借款合同》提供连带责任保证担保。",exact,exact,self,self,disclosed,2022-11-19,2025-11-19
+guarantee,N_凌钢股份北票保国铁矿有限公司,凌钢股份北票保国铁矿有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,wholly_owned_subsidiary,guarantee_limit,190000.0,,mortgage,2022-12-03,600231,2022-12-03,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_017_600231_guarantee_backtest.json,1,保国公司拟以其所持有的采矿权为公司向中国民生银行股份有限公司大连分行（以下简称“民生银行大连分行”）申请期限为2 年、金额为不超过人民币19 亿元的综合授信提供抵押担保；,group_token,exact,self,self,disclosed,2022-12-03,2023-12-03
+guarantee,N_凌源钢铁国际贸易有限公司,凌源钢铁国际贸易有限公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,wholly_owned_subsidiary,guarantee_limit,10000.0,,joint_and_several,2022-12-03,600231,2022-12-03,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_017_600231_guarantee_backtest.json,1,国贸公司拟为公司向上海浦东发展银行股份有限公司沈阳分行（以下简称“浦发银行沈阳分行”）申请期限为8 年、金额为人民币1 亿元的综合授信提供连带责任保证担保。,unresolved,exact,self,self,disclosed,2022-12-03,2023-12-03
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,pledge,2022-12-21,600231,2022-12-21,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_018_600231_guarantee_backtest.json,1,公司本次为凌钢集团与盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）签订的1.0 亿元《银行承兑协议》提供质押担保。,exact,exact,self,self,disclosed,2022-12-21,2025-12-21
+guarantee,N_凌源钢铁国际贸易有限公司,凌源钢铁国际贸易有限公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,wholly_owned_subsidiary,guarantee_provided,30000.0,,joint_and_several,2022-12-29,600231,2022-12-29,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json,1,公司的全资子公司国贸公司为公司与盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）签署的在2022 年6 月21 日至2024 年6 月21 日期间、金额为不超过人民币3 亿元的《最高额综合授信合同》项下发放的贷款、开出的信用证、保函、承兑汇票等和期限为96 个月（自2022 年12 月19 日至2030 年12 月18 日）、金额为人民币4 亿元的《固定资产借款合同》提供连带责任保证担保；,unresolved,exact,self,self,disclosed,2022-12-29,2025-12-29
+guarantee,N_凌源钢铁国际贸易有限公司,凌源钢铁国际贸易有限公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,wholly_owned_subsidiary,guarantee_provided,40000.0,,joint_and_several,2022-12-29,600231,2022-12-29,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json,1,公司的全资子公司国贸公司为公司与盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）签署的在2022 年6 月21 日至2024 年6 月21 日期间、金额为不超过人民币3 亿元的《最高额综合授信合同》项下发放的贷款、开出的信用证、保函、承兑汇票等和期限为96 个月（自2022 年12 月19 日至2030 年12 月18 日）、金额为人民币4 亿元的《固定资产借款合同》提供连带责任保证担保；,unresolved,exact,self,self,disclosed,2022-12-29,2025-12-29
+guarantee,N_凌钢股份北票保国铁矿有限公司,凌钢股份北票保国铁矿有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,wholly_owned_subsidiary,guarantee_provided,190000.0,,mortgage,2022-12-29,600231,2022-12-29,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json,1,保国公司以其所持有的3 宗采矿权为公司与中国人民民生银行股份有限公司大连分行（以下简称“民生银行大连分行”）签署的在2022 年11 月30 日至2024 年11 月29 日期间发生的、金额为不超过人民币19 亿元的《综合授信合同》项下的债权提供最高额抵押担保。,group_token,exact,self,self,disclosed,2022-12-29,2025-12-29
+guarantee,N_凌源钢铁国际贸易有限公司,凌源钢铁国际贸易有限公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,wholly_owned_subsidiary,guarantee_provided,10000.0,,joint_and_several,2023-02-04,600231,2023-02-04,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_021_600231_guarantee_backtest.json,2,根据上述决议，2023年2月2日，公司全资子公司国贸公司与浦发银行沈阳分行签署了《保证合同》（合同编号:YB7101202328012701），为公司向浦发银行沈阳分行申请的金额为1亿元、期限为8年的《固定资产贷款合同》（合同编号：71012023280127）提供连带责任保证担保。贷款资金专项用于“凌源钢铁股份有限公司炼钢产能置换建设项目”。上述担保无需提供反担保。,unresolved,exact,self,self,disclosed,2023-02-02,2031-01-30
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,pledge,2023-02-11,600231,2023-02-11,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_022_600231_guarantee_backtest.json,2,2023 年2 月9 日，根据《相互担保协议》约定，公司与盛京银行朝阳分行签订了《质押合同》（合同编号：150211202302090101Z02），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协议》（合同编号：150211202302090101）项下签发日为2023 年2 月9 日，到期日为2023 年8 月9 日，金额为人民币1.0 亿元的61 张银行承兑汇票提供质押担保，凌钢集团就上述担保事项向公司提供反担保，并签署了《反担保合同》，承担连带责任保证担保。,exact,exact,self,self,disclosed,2023-02-09,2023-08-09
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,pledge,2023-03-04,600231,2023-03-04,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_025_600231_guarantee_backtest.json,2,2023 年3 月3 日，根据《相互担保协议》约定，公司与盛京银行朝阳分行签订了《质押合同》（合同编号：150211202303020153Z03），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协议》（合同编号：150211202303020153）项下，期限自2023 年3 月3 日始至2023 年9 月1 日止，金额为人民币1.0 亿元的75张银行承兑汇票提供质押担保，凌钢集团就上述担保事项向公司提供反担保，并签署了《反担保合同》，承担连带责任保证担保。,exact,exact,self,self,disclosed,2023-03-03,2023-09-01
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,100000.0,,,2023-03-14,600231,2023-03-14,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_026_600231_guarantee_backtest.json,4,"凌源钢铁
+股份有限
+公司 
+凌源钢铁集
+团有限责任
+公司 
+浙商银行 
+10 购买原燃材料
+等",exact,exact,self,self,disclosed,2023-03-14,2024-03-14
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,40000.0,,,2023-03-14,600231,2023-03-14,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_026_600231_guarantee_backtest.json,4,"盛京银行 
+4",exact,exact,self,self,disclosed,2023-03-14,2024-03-14
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,26400.0,,,2023-03-14,600231,2023-03-14,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_026_600231_guarantee_backtest.json,4,"葫芦岛银行 
+2.64",exact,exact,self,self,disclosed,2023-03-14,2024-03-14
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,20000.0,,,2023-03-14,600231,2023-03-14,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_026_600231_guarantee_backtest.json,4,"华夏银行 
+2",exact,exact,self,self,disclosed,2023-03-14,2024-03-14
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,13000.0,,,2023-03-14,600231,2023-03-14,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_026_600231_guarantee_backtest.json,4,"葫芦岛农商行 
+1.3",exact,exact,self,self,disclosed,2023-03-14,2024-03-14
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,10000.0,,,2023-03-14,600231,2023-03-14,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_026_600231_guarantee_backtest.json,4,"渤海银行 
+1",exact,exact,self,self,disclosed,2023-03-14,2024-03-14
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,5000.0,,mortgage,2023-03-25,600231,2023-03-25,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_027_600231_guarantee_backtest.json,2,2023 年3 月24 日，根据《相互担保协议》约定，公司与盛京银行朝阳分行签订了《质押合同》（合同编号：150211202303230062Z03），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协议》（合同编号：150211202303230062）项下，期限自2023 年3 月24 日始至2023 年9 月23 日止，金额为人民币0.5 亿元的33 张银行承兑汇票提供质押担保；,exact,exact,self,self,disclosed,2023-03-24,2023-09-23
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,13000.0,,joint_and_several,2023-03-25,600231,2023-03-25,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_027_600231_guarantee_backtest.json,2,与葫芦岛农商行凌源支行签订了《保证合同》（合同编号：葫农商行2023 年凌支保字第0010 号），为凌钢集团与葫芦岛农商行凌源支行签订的《借款合同》（合同编号：葫农商行2023 年凌支借字第0011号）提供连带责任保证担保。,exact,exact,self,self,disclosed,2023-03-24,2024-03-23
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,pledge,2023-06-17,600231,2023-06-17,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_032_600231_guarantee_backtest.json,2,2023 年6 月15 日，根据上述股东大会决议，公司与盛京银行朝阳分行签订了《质押合同》（合同编号：150211202306140009Z03），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协议》（合同编号：150211202306140009）项下，期限自2023 年6 月15 日始至2023 年12 月13 日止，金额为人民币1.0 亿元的99张银行承兑汇票提供质押担保，该额度在公司2023 年第二季度为凌钢集团提供担保的计划范围内。,exact,exact,self,self,disclosed,2023-06-15,2023-12-13
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,50000.0,,,2023-06-20,600231,2023-06-20,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json,4,"金额单位：亿元 
+担保方 
+被担保方 
+债权方 
+担保金额 
+资金用途 
+凌源钢铁
+股份有限
+公司 
+凌源钢铁集
+团有限责任
+公司 
+平安银行 
+5 
+购买原燃材料",exact,exact,self,self,disclosed,2023-06-20,2024-06-20
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,25000.0,,,2023-06-20,600231,2023-06-20,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json,4,"金额单位：亿元 
+担保方 
+被担保方 
+债权方 
+担保金额 
+资金用途 
+凌源钢铁
+股份有限
+公司 
+凌源钢铁集
+团有限责任
+公司 
+平安银行 
+5 
+购买原燃材料 
+盛京银行 
+2.5 
+锦州银行 
+5 
+渤海银行 
+2",exact,exact,self,self,disclosed,2023-06-20,2024-06-20
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,50000.0,,,2023-06-20,600231,2023-06-20,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json,4,"金额单位：亿元 
+担保方 
+被担保方 
+债权方 
+担保金额 
+资金用途 
+凌源钢铁
+股份有限
+公司 
+凌源钢铁集
+团有限责任
+公司 
+平安银行 
+5 
+购买原燃材料 
+盛京银行 
+2.5 
+锦州银行 
+5 
+渤海银行 
+2",exact,exact,self,self,disclosed,2023-06-20,2024-06-20
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_limit,20000.0,,,2023-06-20,600231,2023-06-20,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json,4,"金额单位：亿元 
+担保方 
+被担保方 
+债权方 
+担保金额 
+资金用途 
+凌源钢铁
+股份有限
+公司 
+凌源钢铁集
+团有限责任
+公司 
+平安银行 
+5 
+购买原燃材料 
+盛京银行 
+2.5 
+锦州银行 
+5 
+渤海银行 
+2",exact,exact,self,self,disclosed,2023-06-20,2024-06-20
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,10000.0,,mortgage,2023-06-28,600231,2023-06-28,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_034_600231_guarantee_backtest.json,2,2023 年6 月26 日，根据上述股东大会决议，公司与盛京银行朝阳分行签订了《质押合同》（合同编号：150211202306260052Z04），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协议》（合同编号：150211202306260052）项下，期限自2023 年6 月26 日始至2023 年12 月20 日止，金额为人民币1.0 亿元的65张银行承兑汇票提供质押担保；,exact,exact,self,self,disclosed,2023-06-26,2023-12-20
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,25800.0,,joint_and_several,2023-06-28,600231,2023-06-28,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_034_600231_guarantee_backtest.json,2,与葫芦岛银行沈阳和平支行签订了《最高额保证合同》（合同编号：（葫银沈分）保字第6801072023001 号），为凌钢集团与葫芦岛银行沈阳和平支行签订的人民币2.58 亿元《最高额综合授信合同》（合同编号：（葫银沈分）授字第6801072023001 号）提供连带责任保证担保。,exact,exact,self,self,disclosed,2023-06-26,2024-06-26
+guarantee,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,guarantee_provided,28600.0,,joint_and_several,2023-06-29,600231,2023-06-29,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_035_600231_guarantee_backtest.json,1,公司本次为凌钢集团与华夏银行股份有限公司沈阳分行（以下简称“华夏银行沈阳分行”）签订的人民币2.86 亿元《最高额融资合同》提供连带责任保证担保。,exact,exact,self,self,disclosed,2023-06-29,2026-06-29
+guarantee,N_凌钢股份北票保国铁矿有限公司,凌钢股份北票保国铁矿有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,wholly_owned_subsidiary,guarantee_provided,190000.0,,mortgage,2023-09-02,600231,2023-09-02,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_038_600231_guarantee_backtest.json,1,"2022 年12 月27 日，凌钢股份北票保国铁矿有限公司（以下简称“保国公司”）
+与民生银行大连分行签署了《最高额抵押合同》（公高抵字第ZH22D0000134432
+号），以其所持有的3 宗采矿权为公司与民生银行大连分行签署的在2022 年11
+月30 日至2024 年11 月29 日期间发生的、金额为不超过人民币19 亿元的《综
+合授信合同》（公授信字第ZH2200000134432 号）项下的债权提供最高额抵押担
+保。",group_token,exact,self,self,disclosed,2023-09-02,2026-09-02
+guarantee,N_凌钢股份北票保国铁矿有限公司,凌钢股份北票保国铁矿有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,wholly_owned_subsidiary,guarantee_provided,,,pledge,2023-09-02,600231,2023-09-02,outputs/backtest_linggang_freeze/guarantee/backtest_linggang_038_600231_guarantee_backtest.json,2,"2023 年8 月31 日，保国公司在辽宁省自然资源厅办理了铁蛋山采区（采矿
+许可证证号: C2100002010062120067813）和黑山分区（采矿许可证证号: 
+C2100002010062120067812）采矿权质押手续。",group_token,exact,self,self,disclosed,2023-09-02,2026-09-02
+supply,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,491832.0,619159.49,向关联人购买材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人购买材料 
+凌源钢铁集团有限责任公司 
+491,832 619,159.49",exact,exact,self,self,disclosed,2022-03-02,2022-12-31
+supply,N_赤峰九联煤化有限责任公司,赤峰九联煤化有限责任公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,other_related_party,estimate,28200.0,,向关联人购买材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人购买材料 
+赤峰九联煤化有限责任公司 
+28,200",unresolved,exact,self,self,disclosed,2022-03-02,2022-12-31
+supply,N_融通物贸(天津)电子商务有限公司,融通物贸（天津）电子商务有限公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,other_related_party,estimate,,2449.67,向关联人购买材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人购买材料 
+融通物贸（天津）电子商务有限
+公司 
+
+2,449.67",unresolved,exact,self,self,disclosed,2022-03-02,2022-12-31
+supply,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,148690.0,123122.64,向关联人购买动力,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人购买动力 
+凌源钢铁集团有限责任公司 
+148,690 123,122.64",exact,exact,self,self,disclosed,2022-03-02,2022-12-31
+supply,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,66874.0,61110.62,向关联人购买热力,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人购买热力 
+凌源钢铁集团有限责任公司 
+66,874 
+61,110.62",exact,exact,self,self,disclosed,2022-03-02,2022-12-31
+service,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,9471.0,9502.2,接受关联人提供的劳务,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"接受关联人提供的劳
+务 
+凌源钢铁集团有限责任公司 
+9,471 
+9,502.20",exact,exact,self,self,disclosed,2022-03-02,2022-12-31
+service,N_凌源钢铁运输有限责任公司,凌源钢铁运输有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,6892.0,6439.63,接受关联人提供的劳务,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"接受关联人提供的劳
+务 
+凌源钢铁运输有限责任公司 
+6,892 
+6,439.63",relationship,exact,self,self,disclosed,2022-03-02,2022-12-31
+service,N_凌源钢铁集团设计研究有限公司,凌源钢铁集团设计研究有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,1264.0,1310.28,接受关联人提供的劳务,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"接受关联人提供的劳
+务 
+凌源钢铁集团设计研究有限公司 
+1,264 
+1,310.28",relationship,exact,self,self,disclosed,2022-03-02,2022-12-31
+service,N_凌源滨河会务中心,凌源滨河会务中心,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,105.0,106.17,接受关联人提供的劳务,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"接受关联人提供的劳
+务 
+凌源滨河会务中心 
+105 
+106.17",relationship,exact,self,self,disclosed,2022-03-02,2022-12-31
+lease,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,3819.0,3765.78,向关联人租赁房屋、土地、会议室等,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人租赁房屋、
+土地、会议室等 
+凌源钢铁集团有限责任公司 
+3,819 
+3,765.78",exact,exact,self,self,disclosed,2022-03-02,2022-12-31
+supply,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,63001.0,58046.68,向关联人销售材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人销售材料 
+凌源钢铁集团有限责任公司 
+63,001 
+58,046.68",exact,exact,self,self,disclosed,2022-03-02,2022-12-31
+supply,600231,凌源钢铁股份有限公司,N_凌源钢铁热电有限责任公司,凌源钢铁热电有限责任公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,997.0,997.94,向关联人销售材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人销售材料 
+凌源钢铁热电有限责任公司 
+997 
+997.94",exact,relationship,self,self,disclosed,2022-03-02,2022-12-31
+supply,600231,凌源钢铁股份有限公司,N_凌源钢铁运输有限责任公司,凌源钢铁运输有限责任公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,125.0,126.06,向关联人销售材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人销售材料 
+凌源钢铁运输有限责任公司 
+125 
+126.06",exact,relationship,self,self,disclosed,2022-03-02,2022-12-31
+supply,600231,凌源钢铁股份有限公司,N_融通物贸(天津)电子商务有限公司,融通物贸（天津）电子商务有限公司,G_ANSTEEL,,0,other_related_party,estimate,7000.0,23133.8,向关联人销售材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人销售材料 
+融通物贸（天津）电子商务有限
+公司 
+7,000 
+23,133.80",exact,unresolved,self,self,disclosed,2022-03-02,2022-12-31
+supply,600231,凌源钢铁股份有限公司,N_天津市盈通物资有限公司,天津市盈通物资有限公司,G_ANSTEEL,,0,other_related_party,estimate,50000.0,9274.28,向关联人销售材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人销售材料 
+天津市盈通物资有限公司 
+50,000 
+9,274.28",exact,unresolved,self,self,disclosed,2022-03-02,2022-12-31
+supply,600231,凌源钢铁股份有限公司,N_陕西天物能源资源发展有限公司,陕西天物能源资源发展有限公司,G_ANSTEEL,,0,other_related_party,estimate,,262.19,向关联人销售材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人销售材料 
+陕西天物能源资源发展有限公司 
+
+262.19",exact,unresolved,self,self,disclosed,2022-03-02,2022-12-31
+supply,600231,凌源钢铁股份有限公司,N_北京金浩通物资有限公司,北京金浩通物资有限公司,G_ANSTEEL,,0,other_related_party,estimate,,5644.55,向关联人销售材料,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人销售材料 
+北京金浩通物资有限公司 
+
+5,644.55",exact,unresolved,self,self,disclosed,2022-03-02,2022-12-31
+service,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,4756.0,5048.4,向关联人提供的劳务,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人提供的劳务 凌源钢铁集团有限责任公司 
+4,756 
+5,048.40",exact,exact,self,self,disclosed,2022-03-02,2022-12-31
+lease,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,76.0,241.84,向关联人出租房屋、土地等,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人出租房屋、
+土地等 
+凌源钢铁集团有限责任公司 
+76 
+241.84",exact,exact,self,self,disclosed,2022-03-02,2022-12-31
+lease,600231,凌源钢铁股份有限公司,N_凌源钢铁热电有限责任公司,凌源钢铁热电有限责任公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,68.0,68.08,向关联人出租房屋、土地等,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人出租房屋、
+土地等 
+凌源钢铁热电有限责任公司 
+68 
+68.08",exact,relationship,self,self,disclosed,2022-03-02,2022-12-31
+lease,600231,凌源钢铁股份有限公司,N_凌钢集团建筑材料检测有限公司,凌钢集团建筑材料检测有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,1.0,1.07,向关联人出租房屋、土地等,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人出租房屋、
+土地等 
+凌钢集团建筑材料检测有限公司 
+1 
+1.07",exact,group_token,self,self,disclosed,2022-03-02,2022-12-31
+lease,600231,凌源钢铁股份有限公司,N_凌源钢铁集团设计研究有限公司,凌源钢铁集团设计研究有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,24.0,23.87,向关联人出租房屋、土地等,2022,600231,2022-03-02,outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json,3,"向关联人出租房屋、
+土地等 
+凌源钢铁集团设计研究有限公司 
+24 
+23.87",exact,relationship,self,self,disclosed,2022-03-02,2022-12-31
+supply,N_赤峰九联煤化有限责任公司,赤峰九联煤化有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,55200.0,,向关联人购买材料,2022,600231,2022-08-31,outputs/backtest_linggang_freeze/related_party/backtest_linggang_011_600231_related_estimate.json,2,"向关联人购买材料 
+赤峰九联煤化有限责任公司 
+28,200 
+27,000 
+55,200",relationship,exact,self,self,disclosed,2022-08-31,2022-12-31
+supply,600231,凌源钢铁股份有限公司,N_天津融诚物产新材料科技有限责任公司,天津融诚物产新材料科技有限责任公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,5000.0,,向关联人销售材料,2022,600231,2022-08-31,outputs/backtest_linggang_freeze/related_party/backtest_linggang_011_600231_related_estimate.json,2,"向关联人销售材料 
+天津融诚物产新材料科技有限
+责任公司 
+
+5,000 
+5,000",exact,relationship,self,self,disclosed,2022-08-31,2022-12-31
+supply,600231,凌源钢铁股份有限公司,N_天津融诚物产能源资源发展有限公司,天津融诚物产能源资源发展有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,300.0,,向关联人销售材料,2022,600231,2022-08-31,outputs/backtest_linggang_freeze/related_party/backtest_linggang_011_600231_related_estimate.json,2,"向关联人销售材料 
+天津融诚物产能源资源发展有
+限公司 
+
+300 
+300",exact,relationship,self,self,disclosed,2022-08-31,2022-12-31
+supply,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,437339.0,501547.0,向关联人购买材料,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人购买材料 
+凌源钢铁集团有限责任公司 
+437,339 
+   501,547",exact,exact,self,self,disclosed,2023-04-29,2023-12-31
+supply,N_赤峰九联煤化有限责任公司,赤峰九联煤化有限责任公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,other_related_party,estimate,24070.0,33914.0,向关联人购买材料,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人购买材料 
+赤峰九联煤化有限责任公司 
+24,070 
+    33,914",unresolved,exact,self,self,disclosed,2023-04-29,2023-12-31
+supply,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,150516.0,130457.0,向关联人购买动力,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人购买动力 
+凌源钢铁集团有限责任公司 
+ 150,516 
+   130,457",exact,exact,self,self,disclosed,2023-04-29,2023-12-31
+supply,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,72282.0,63937.0,向关联人购买热力,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人购买热力 
+凌源钢铁集团有限责任公司 
+ 72,282 
+    63,937",exact,exact,self,self,disclosed,2023-04-29,2023-12-31
+service,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,8815.0,9232.0,接受关联人提供的劳务,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"接受关联人提供的劳
+务 
+凌源钢铁集团有限责任公司 
+     8,815 
+     9,232",exact,exact,self,self,disclosed,2023-04-29,2023-12-31
+service,N_凌源钢铁运输有限责任公司,凌源钢铁运输有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,7136.0,7213.0,接受关联人提供的劳务,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"接受关联人提供的劳
+务 
+凌源钢铁运输有限责任公司 
+7,136 
+     7,213",relationship,exact,self,self,disclosed,2023-04-29,2023-12-31
+service,N_凌源钢铁集团设计研究有限公司,凌源钢铁集团设计研究有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,1380.0,1332.0,接受关联人提供的劳务,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"接受关联人提供的劳
+务 
+凌源钢铁集团设计研究有限公司 
+1,380 
+     1,332",relationship,exact,self,self,disclosed,2023-04-29,2023-12-31
+service,N_凌源滨河会务中心,凌源滨河会务中心,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,105.0,107.0,接受关联人提供的劳务,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"接受关联人提供的劳
+务 
+凌源滨河会务中心 
+105 
+       107",relationship,exact,self,self,disclosed,2023-04-29,2023-12-31
+lease,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,3819.0,3819.0,向关联方租赁房屋、土地、会议室等,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联方租赁房屋、
+土地、会议室等 
+凌源钢铁集团有限责任公司 
+    3,819 
+     3,819",exact,exact,self,self,disclosed,2023-04-29,2023-12-31
+supply,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,71323.0,67360.0,向关联人销售材料,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人销售材料 
+凌源钢铁集团有限责任公司 
+  71,323 
+67,360",exact,exact,self,self,disclosed,2023-04-29,2023-12-31
+supply,600231,凌源钢铁股份有限公司,N_凌源钢铁热电有限责任公司,凌源钢铁热电有限责任公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,407.0,415.0,向关联人销售材料,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人销售材料 
+凌源钢铁热电有限责任公司 
+407 
+       415",exact,relationship,self,self,disclosed,2023-04-29,2023-12-31
+supply,600231,凌源钢铁股份有限公司,N_凌源钢铁运输有限责任公司,凌源钢铁运输有限责任公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,92.0,93.0,向关联人销售材料,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人销售材料 
+凌源钢铁运输有限责任公司 
+92 
+        93",exact,relationship,self,self,disclosed,2023-04-29,2023-12-31
+supply,600231,凌源钢铁股份有限公司,N_融通物贸(天津)电子商务有限公司,融通物贸（天津）电子商务有限公司,G_ANSTEEL,,0,other_related_party,estimate,,5881.0,向关联人销售材料,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人销售材料 
+融通物贸（天津）电子商务有限公司 
+
+5,881",exact,unresolved,self,self,disclosed,2023-04-29,2023-12-31
+supply,600231,凌源钢铁股份有限公司,N_天津市盈通物资有限公司,天津市盈通物资有限公司,G_ANSTEEL,,0,other_related_party,estimate,30200.0,28840.0,向关联人销售材料,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人销售材料 
+天津市盈通物资有限公司 
+30,200 
+    28,840",exact,unresolved,self,self,disclosed,2023-04-29,2023-12-31
+supply,600231,凌源钢铁股份有限公司,N_天津融诚物产新材料科技有限责任公司,天津融诚物产新材料科技有限责任公司,G_ANSTEEL,,0,other_related_party,estimate,,4601.0,向关联人销售材料,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人销售材料 
+天津融诚物产新材料科技有限责任
+公司 
+
+     4,601",exact,unresolved,self,self,disclosed,2023-04-29,2023-12-31
+supply,600231,凌源钢铁股份有限公司,N_天津融诚物产能源资源发展有限公司,天津融诚物产能源资源发展有限公司,G_ANSTEEL,,0,other_related_party,estimate,25200.0,272.0,向关联人销售材料,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人销售材料 
+天津融诚物产能源资源发展有限公
+司 
+25,200 
+       272",exact,unresolved,self,self,disclosed,2023-04-29,2023-12-31
+service,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,5099.0,4450.0,向关联人提供的劳务,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人提供的劳务 凌源钢铁集团有限责任公司 
+   5,099 
+     4,450",exact,exact,self,self,disclosed,2023-04-29,2023-12-31
+lease,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,76.0,76.0,向关联人出租房屋等,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人出租房屋等 
+凌源钢铁集团有限责任公司 
+  76 
+        76",exact,exact,self,self,disclosed,2023-04-29,2023-12-31
+lease,600231,凌源钢铁股份有限公司,N_凌源钢铁热电有限责任公司,凌源钢铁热电有限责任公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,68.0,68.0,向关联人出租房屋等,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人出租房屋等 
+凌源钢铁热电有限责任公司 
+        68 
+        68",exact,relationship,self,self,disclosed,2023-04-29,2023-12-31
+lease,600231,凌源钢铁股份有限公司,N_凌钢集团建筑材料检测有限公司,凌钢集团建筑材料检测有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,1.0,1.0,向关联人出租房屋等,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人出租房屋等 
+凌钢集团建筑材料检测有限公司 
+         1 
+         1",exact,group_token,self,self,disclosed,2023-04-29,2023-12-31
+lease,600231,凌源钢铁股份有限公司,N_凌源钢铁集团设计研究有限公司,凌源钢铁集团设计研究有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,24.0,24.0,向关联人出租房屋等,2023,600231,2023-04-29,outputs/backtest_linggang_freeze/related_party/backtest_linggang_029_600231_related_estimate.json,3,"向关联人出租房屋等 
+凌源钢铁集团设计研究有限公司 
+        24 
+        24",exact,relationship,self,self,disclosed,2023-04-29,2023-12-31
+supply,N_赤峰九联煤化有限责任公司,赤峰九联煤化有限责任公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,other_related_party,estimate,41070.0,,向关联人购买材料,2023,600231,2023-08-31,outputs/backtest_linggang_freeze/related_party/backtest_linggang_037_600231_related_estimate.json,2,"向关联人购买材料 
+赤峰九联煤化有限责任公司 
+24,070 17,000 
+41,070 
+注1",unresolved,exact,self,self,disclosed,2023-08-31,2023-12-31
+supply,N_建平磷铁矿业有限公司,建平磷铁矿业有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,6500.0,,向关联人购买材料,2023,600231,2023-08-31,outputs/backtest_linggang_freeze/related_party/backtest_linggang_037_600231_related_estimate.json,2,"建平磷铁矿业有限公司 
+
+6,500 
+6,500 
+注2",relationship,exact,self,self,disclosed,2023-08-31,2023-12-31
+supply,600231,凌源钢铁股份有限公司,N_融通物贸(天津)电子商务有限公司,融通物贸（天津）电子商务有限公司,G_ANSTEEL,,0,other_related_party,estimate,4000.0,,向关联人销售材料,2023,600231,2023-08-31,outputs/backtest_linggang_freeze/related_party/backtest_linggang_037_600231_related_estimate.json,2,"融通物贸（天津）电子商务有
+限公司 
+
+4,000 
+4,000 
+注3",exact,unresolved,self,self,disclosed,2023-08-31,2023-12-31
+supply,600231,凌源钢铁股份有限公司,N_天津融诚物产新材料科技有限责任公司,天津融诚物产新材料科技有限责任公司,G_ANSTEEL,,0,other_related_party,estimate,3800.0,,向关联人销售材料,2023,600231,2023-08-31,outputs/backtest_linggang_freeze/related_party/backtest_linggang_037_600231_related_estimate.json,2,"天津融诚物产新材料科技有限
+责任公司 
+
+3,800 
+3,800 
+注3",exact,unresolved,self,self,disclosed,2023-08-31,2023-12-31
+supply,N_德邻陆港供应链服务有限公司,德邻陆港供应链服务有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,8000.0,,向关联人购买材料,2023,600231,2023-10-28,outputs/backtest_linggang_freeze/related_party/backtest_linggang_039_600231_related_estimate.json,2,"向关联人购
+买材料 
+德邻陆港 
+
+
+8,000 
+8,000 
+注1",relationship,exact,self,self,disclosed,2023-10-28,2023-12-31
+service,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,34.0,,向关联人提供的劳务,2023,600231,2023-10-28,outputs/backtest_linggang_freeze/related_party/backtest_linggang_039_600231_related_estimate.json,2,"向关联人提
+供的劳务 
+凌钢集团 
+5,099 
+3,046 
+34 
+5,133 
+注2",exact,exact,self,self,disclosed,2023-10-28,2023-12-31
+supply,E_LINGGANG_GROUP,凌源钢铁集团有限责任公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,501339.0,440753.0,向关联人购买材料,2023,600231,2023-12-21,outputs/backtest_linggang_freeze/related_party/backtest_linggang_042_600231_related_estimate.json,2,"向关联人
+购买材料 
+凌钢集团 
+437,339 
+440,753 
+64,000 
+501,339 
+注1",exact,exact,self,self,disclosed,2023-12-21,2023-12-31
+supply,N_建平磷铁矿业有限公司,建平磷铁矿业有限公司,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,other_related_party,estimate,14000.0,4781.0,向关联人购买材料,2023,600231,2023-12-21,outputs/backtest_linggang_freeze/related_party/backtest_linggang_042_600231_related_estimate.json,2,"建平磷铁 
+6,500 
+4,781 
+7,500 
+14,000",unresolved,exact,self,self,disclosed,2023-12-21,2023-12-31
+supply,N_鞍山钢铁集团有限公司,鞍山钢铁集团有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,27600.0,18544.0,向关联人购买材料,2023,600231,2023-12-21,outputs/backtest_linggang_freeze/related_party/backtest_linggang_042_600231_related_estimate.json,2,"鞍山钢铁 
+8,000 
+18,544 
+19,600 
+27,600",relationship,exact,self,self,disclosed,2023-12-21,2023-12-31
+supply,N_鞍钢集团矿业有限公司,鞍钢集团矿业有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,19000.0,18040.0,向关联人购买材料,2023,600231,2023-12-21,outputs/backtest_linggang_freeze/related_party/backtest_linggang_042_600231_related_estimate.json,2,"其中：鞍钢矿
+业 
+
+18,040 
+19,000 
+19,000 
+注2",group_token,exact,self,self,disclosed,2023-12-21,2023-12-31
+supply,N_德邻陆港供应链服务有限公司,德邻陆港供应链服务有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,8000.0,,向关联人购买材料,2023,600231,2023-12-21,outputs/backtest_linggang_freeze/related_party/backtest_linggang_042_600231_related_estimate.json,2,"德邻陆港 
+8,000 
+
+
+8,000",relationship,exact,self,self,disclosed,2023-12-21,2023-12-31
+supply,N_鞍山钢铁集团有限公司,鞍山钢铁集团有限公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,600.0,504.0,向关联人购买材料,2023,600231,2023-12-21,outputs/backtest_linggang_freeze/related_party/backtest_linggang_042_600231_related_estimate.json,2,"鞍山钢铁其
+他子公司 
+
+504 
+600 
+600",relationship,exact,self,self,disclosed,2023-12-21,2023-12-31
+supply,600231,凌源钢铁股份有限公司,N_德邻陆港供应链服务有限公司,德邻陆港供应链服务有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,8000.0,2804.0,向关联人销售材料,2023,600231,2023-12-21,outputs/backtest_linggang_freeze/related_party/backtest_linggang_042_600231_related_estimate.json,2,"向关联人
+销售材料 
+德邻陆港 
+
+2,804 
+8,000 
+8,000 
+注2",exact,relationship,self,self,disclosed,2023-12-21,2023-12-31
+supply,E_LINGGANG_GROUP,凌钢集团,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,500000.0,489816.85,向关联人购买原材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,5,"向关联人
+购买原材
+料 
+凌钢集团 
+500,000 489,816.85 
+注1 
+采购矿粉、废钢、
+焦炭等",exact,exact,self,self,disclosed,2024-03-14,2024-12-31
+supply,N_建平磷铁,建平磷铁,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,12000.0,6312.21,向关联人购买原材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,5,"建平磷铁 
+12,000 
+6,312.21 
+注2 
+采购矿粉",relationship,exact,self,self,disclosed,2024-03-14,2024-12-31
+supply,N_鞍钢矿业,鞍钢矿业,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,,20511.24,向关联人购买原材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,5,"鞍钢矿业 
+
+20,511.24 
+注3 
+采购矿粉",group_token,exact,self,self,disclosed,2024-03-14,2024-12-31
+supply,N_鞍钢国贸,鞍钢国贸,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,30000.0,,向关联人购买原材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,5,"鞍钢国贸 
+30,000 
+
+注2 
+采购焦炭、备件材
+料等",group_token,exact,self,self,disclosed,2024-03-14,2024-12-31
+supply,E_ANSTEEL_GROUP,鞍钢集团其他子公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,9000.0,956.72,向关联人购买原材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,5,"鞍钢集团其他子公司 
+9,000 
+956.72 
+注2 
+采购设备、备件、
+材料等",exact,exact,subsidiaries,self,disclosed,2024-03-14,2024-12-31
+supply,N_赤峰九联,赤峰九联,600231,凌源钢铁股份有限公司,,G_ANSTEEL,0,other_related_party,estimate,,25667.01,向关联人购买原材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,5,"赤峰九联 
+
+25,667.01 
+注3 
+采购焦炭",unresolved,exact,self,self,disclosed,2024-03-14,2024-12-31
+supply,E_LINGGANG_GROUP,凌钢集团,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,220000.0,211731.96,向关联人购买动力和热力,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"向关联人
+购买动力
+和热力 
+凌钢集团 
+220,000 211,731.96 
+注4 
+采购电力、水、蒸
+汽等",exact,exact,self,self,disclosed,2024-03-14,2024-12-31
+lease,E_LINGGANG_GROUP,凌钢集团,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,6000.0,3915.69,向关联方租赁房屋、土地、会议室等,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"向关联方
+租赁房屋、
+土地、会议
+室等 
+凌钢集团 
+6,000 
+3,915.69 
+注5  房屋土地租赁",exact,exact,self,self,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌钢集团,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,70000.0,68926.56,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"向关联人
+销售材料 
+凌钢集团 
+70,000 
+68,926.56 
+
+销售高炉煤气、转
+炉煤气等",exact,exact,self,self,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌钢集团其他子公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,400.0,412.09,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"凌钢集团其他子公司 
+400 
+412.09 
+
+销售材料等",exact,exact,self,subsidiaries,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,N_德邻供应链,德邻供应链,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,90000.0,6195.28,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"德邻供应链 
+90,000 
+6,195.28 
+注2 
+销售钢材",exact,relationship,self,self,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,N_鞍矿机械,鞍矿机械,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,13000.0,8888.14,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"鞍矿机械 
+13,000 
+8,888.14 
+注2 
+销售钢材",exact,relationship,self,self,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,E_ANSTEEL_GROUP,鞍钢集团其他子公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,8000.0,742.01,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"鞍钢集团其他子公司 
+8,000 
+742.01 
+注2 
+销售钢材",exact,exact,self,subsidiaries,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,N_融通物贸,融通物贸,G_ANSTEEL,,0,other_related_party,estimate,9000.0,3788.19,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"融通物贸 
+9,000 
+3,788.19 
+注2 
+销售钢材",exact,unresolved,self,self,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,N_盈通物资,盈通物资,G_ANSTEEL,,0,other_related_party,estimate,31000.0,17690.96,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"盈通物资 
+31,000 
+17,690.96 
+注2 
+销售钢材",exact,unresolved,self,self,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,N_陕西天物,陕西天物,G_ANSTEEL,,0,other_related_party,estimate,22000.0,,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"陕西天物 
+22,000 
+
+注2 
+销售钢材",exact,unresolved,self,self,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,N_金浩通,金浩通,G_ANSTEEL,,0,other_related_party,estimate,9000.0,,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"金浩通 
+9,000 
+
+注2 
+销售钢材",exact,unresolved,self,self,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,N_融诚新科,融诚新科,G_ANSTEEL,,0,other_related_party,estimate,,2979.33,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"融诚新科 
+
+2,979.33 
+注3 
+销售钢材",exact,unresolved,self,self,disclosed,2024-03-14,2024-12-31
+supply,600231,凌源钢铁股份有限公司,N_融诚能源,融诚能源,G_ANSTEEL,,0,other_related_party,estimate,9000.0,10794.6,向关联人销售材料,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"融诚能源 
+9,000 
+10,794.60 
+
+销售钢材",exact,unresolved,self,self,disclosed,2024-03-14,2024-12-31
+service,600231,凌源钢铁股份有限公司,E_LINGGANG_GROUP,凌钢集团,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,1100.0,4417.16,向关联人提供劳务,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,6,"向关联人
+提供劳务 
+凌钢集团 
+1,100 
+4,417.16 
+
+委托管理服务、化
+验、检斤、鉴定等
+服务",exact,exact,self,self,disclosed,2024-03-14,2024-12-31
+service,E_LINGGANG_GROUP,凌钢集团,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,9000.0,9107.87,接受关联人提供的劳务,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,7,"接受关联
+人提供的
+劳务 
+凌钢集团 
+9,000 
+9,107.87 
+
+维修服务",exact,exact,self,self,disclosed,2024-03-14,2024-12-31
+service,N_凌钢运输,凌钢运输,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,7000.0,7625.98,接受关联人提供的劳务,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,7,"凌钢运输 
+7,000 
+7,625.98 
+
+运输服务",group_token,exact,self,self,disclosed,2024-03-14,2024-12-31
+service,E_LINGGANG_GROUP,凌钢集团其他子公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,2000.0,1346.38,接受关联人提供的劳务,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,7,"凌钢集团其他子公司 
+2,000 
+1,346.38 
+
+设计、监理等服务",exact,exact,subsidiaries,self,disclosed,2024-03-14,2024-12-31
+service,E_ANSTEEL_GROUP,鞍钢集团其他子公司,600231,凌源钢铁股份有限公司,G_ANSTEEL,G_ANSTEEL,1,sister_company,estimate,2300.0,925.12,接受关联人提供的劳务,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,7,"鞍钢集团其他子公司 
+2,300 
+925.12  
+餐饮服务",exact,exact,subsidiaries,self,disclosed,2024-03-14,2024-12-31
+lease,600231,凌源钢铁股份有限公司,N_凌钢集团及,凌钢集团及其他子公司,G_ANSTEEL,G_ANSTEEL,1,parent_or_controlling_shareholder,estimate,300.0,169.22,向关联人出租房屋、土地等,2024,600231,2024-03-14,outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json,7,"向关联人
+出租房屋、
+土地等 
+凌钢集团及其他子公
+司 
+300 
+169.22 
+ 房屋土地出租",exact,group_token,self,subsidiaries,disclosed,2024-03-14,2024-12-31
 industry,S_铁矿,铁矿,S_普钢,普钢,,,0,,,,,铁矿石（依赖度 high）,,,,data/reference/industry_links.csv,,高炉-转炉长流程的主要原料,industry,industry,self,self,industry_approx,,
 industry,S_铁矿,铁矿,S_特钢,特钢,,,0,,,,,铁矿石（依赖度 medium）,,,,data/reference/industry_links.csv,,特钢部分采用长流程,industry,industry,self,self,industry_approx,,
 industry,S_焦炭,焦炭,S_普钢,普钢,,,0,,,,,焦炭（依赖度 high）,,,,data/reference/industry_links.csv,,高炉燃料和还原剂,industry,industry,self,self,industry_approx,,

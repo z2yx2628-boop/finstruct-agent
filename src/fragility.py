@@ -13,6 +13,13 @@ from __future__ import annotations
 
 from src.quarterly import available_by
 
+# Method version, written into every snapshot (meta.json) so that tier changes caused by a method change
+# are never shown as changes in the companies. v0: five peer-ranked dimensions (2026-09-24).
+# v1: + external-guarantee dimension (cumulative reported balance), extreme-dimension rule (2026-09-26).
+VERSION = "v1"
+VERSION_NOTES = {"v0": "五维同行排名（杠杆、短期偿债、造血、盈利、市场）",
+                 "v1": "v0 + 对外担保维度（按累计担保余额）+ 单一维度极差规则（2026-09-26 安泰回测后校准）"}
+
 # metric -> (dimension, +1 if higher is worse / -1 if lower is worse, label, format)
 METRICS = {
     "debt_ratio": ("leverage", +1, "资产负债率", "pct"),

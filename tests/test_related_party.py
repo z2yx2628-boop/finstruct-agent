@@ -174,3 +174,12 @@ def test_unrepairable_value_still_fails():
         "source_page": 1, "evidence_text": "x", "confidence": 1.0}]}
     with pytest.raises(ValidationError):
         validate_with_repair(RelatedPartyDocument, payload)
+
+
+def test_unit_declaration_with_renminbi_fix1():
+    """fix1 (after the final test): 鞍钢/包钢 tables declare "金额单位：人民币百万元" / "单位：人民币万元"."""
+    from src.related_party_normalizer import UNIT_DECLARATION
+    for text, unit in (("金额单位：人民币百万元", "百万元"), ("单位：人民币万元", "万元"), ("单位：万元", "万元"),
+                       ("（人民币万元）", "万元"), ("(万元)", "万元")):
+        m = UNIT_DECLARATION.search(text)
+        assert m and (m.group(1) or m.group(2)) == unit, text

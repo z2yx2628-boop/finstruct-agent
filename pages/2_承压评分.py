@@ -8,6 +8,9 @@ from pathlib import Path
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from src.fragility_view import (compared_snapshot, data_sources, events_after_report, explain,  # noqa: E402
+                                guarantee_evidence, report_links, snapshot_meta, version_note)
 SNAP = ROOT / "data" / "snapshots"
 TIER_COLOR = {"weak": "🔴", "medium": "🟡", "strong": "🟢"}
 
@@ -34,8 +37,20 @@ if not snapshots:
 with col2:
     chosen = st.selectbox("查看快照", [d.name for d in snapshots])
 folder = SNAP / chosen
-with (folder / "fragility.csv").open(encoding="utf-8", newline="") as f:
+with (folder / "fragility.csv").open(encoding="utf-8-sig", newline="") as f:
     rows = list(csv.DictReader(f))
+metrics = {}
+if (folder / "quarterly_metrics.csv").exists():
+    with (folder / "quarterly_metrics.csv").open(encoding="utf-8-sig", newline="") as f:
+        metrics = {r["security_code"]: r for r in csv.DictReader(f)}
+meta = snapshot_meta(folder)
+version = meta.get("version", "?")
+with col2:
+    st.caption(f"评分方法 **{version}**：{version_note(version)}"
+               + ("（版本由快照字段推断）" if meta.get("inferred") else "")
+               + f"；担保与事件来源：{meta.get('signals') or '未记录'}")
+if version != "v1":
+    st.warning(f"该快照使用评分方法 {version}，与当前方法 v1 不同，不能与 v1 快照直接比较等级。")
 
 counts = {k: sum(1 for r in rows if r["tier"] == k) for k in ("weak", "medium", "strong")}
 m1, m2, m3 = st.columns(3)
@@ -43,15 +58,81 @@ m1.metric("🔴 弱", counts["weak"])
 m2.metric("🟡 中", counts["medium"])
 m3.metric("🟢 强", counts["strong"])
 
+
+def period_label(p: str) -> str:
+    return f"{p[:4]}-{p[4:6]}-{p[6:]}" if p and len(p) == 8 else (p or "")
+
+
 table = [{
     "等级": f"{TIER_COLOR.get(r['tier'], '')} {r['tier_label']}", "企业": r["security_name"], "代码": r["security_code"],
-    "总分(越高越弱)": r["total_score"], "杠杆": r["score_leverage"], "短期偿债": r["score_liquidity"],
-    "造血": r["score_cash"], "盈利": r["score_profit"], "市场": r["score_market"],
-    "对外担保": r.get("score_contingent"),
-    "财报后事件": r["events_after_report"], "原因": r["reasons"],
+    "总分(越高越弱)": float(r["total_score"]) if r["total_score"] else None,
+    "杠杆": r["score_leverage"], "短期偿债": r["score_liquidity"], "造血": r["score_cash"], "盈利": r["score_profit"],
+    "市场": r["score_market"], "对外担保": r.get("score_contingent"), "财报后事件": r["events_after_report"],
+    "财报期": period_label(r.get("period", "")), "行情截至": metrics.get(r["security_code"], {}).get("last_trade_date", ""),
+    "原因": r["reasons"],
 } for r in rows]
-st.dataframe(table, use_container_width=True, hide_index=True)
+st.caption("点击一行，查看该企业的评分拆解与数据来源。")
+picked = st.dataframe(table, use_container_width=True, hide_index=True, on_select="rerun",
+                      selection_mode="single-row", key=f"frag_{chosen}")
+index = picked.selection.rows[0] if picked.selection.rows else 0
+code = rows[min(index, len(rows) - 1)]["security_code"]
+
+# ---------------------------------------------------------------- 评分拆解
+r = next(x for x in rows if x["security_code"] == code)
+st.subheader(f"{TIER_COLOR.get(r['tier'], '')} {r['security_name']}（{code}）：{r['tier_label']}，"
+             f"总分 {r['total_score'] or '—'}", divider="gray")
+detail = explain(folder, code) if version == "v1" else None
+if detail and detail["rules"]:
+    st.error("直接判为弱的规则：" + "；".join(detail["rules"]))
+if r.get("events_after_report") not in (None, "", "0") and r["tier"] != r.get("base_tier"):
+    st.warning("财报后出现高风险事件，等级在分数基础上下调一档（见下方“财报后事件”）。")
+
+left, right = st.columns([3, 2])
+with left:
+    st.markdown("**各维度如何得出总分**")
+    if detail:
+        flat = [{"维度": d["dimension"], "指标": m["metric"], "原值": m["value"], "同行位置": m["rank"],
+                 "指标得分": m["score"], "维度得分": d["score"], "权重": d["effective_weight"], "对总分贡献": d["contribution"]}
+                for d in detail["dimensions"] for m in d["metrics"]]
+        st.dataframe(flat, hide_index=True, use_container_width=True)
+        ok = "，与快照一致 ✓" if r["total_score"] and abs(detail["total_recomputed"] - float(r["total_score"])) < 0.05 else ""
+        missing = f"；缺少数据的维度（{('、'.join(detail['missing_weight']))}）不计，权重按比例重新分配" if detail["missing_weight"] else ""
+        st.caption(f"指标得分 = 在 24 家核心钢厂中的分位（0 最强、100 最弱）；维度得分 = 维度内指标平均；"
+                   f"总分 = Σ 权重 × 维度得分 = {detail['total_recomputed']}{ok}{missing}。≥60 为弱，≥40 为中。")
+    else:
+        st.info("逐项拆解只提供给当前评分方法（v1）的快照。")
+with right:
+    st.markdown("**数据来源**")
+    if code in metrics:
+        m = metrics[code]
+        for label, value in data_sources({"period": m.get("period"), "available_by": m.get("available_by"),
+                                          "last_trade_date": m.get("last_trade_date")}):
+            st.markdown(f"- **{label}**：{value}")
+    st.markdown("**核对原始定期报告（新浪财经公告列表）**")
+    links = st.columns(4)
+    for col, (label, url) in zip(links, report_links(code).items()):
+        col.link_button(label, url, use_container_width=True)
+
+if detail is not None or version == "v1":
+    g = guarantee_evidence(folder, code)
+    st.markdown("**对外担保的依据公告**（评估日有效；取公告披露的累计余额与新增担保合计中的较大者）")
+    if g:
+        st.dataframe(g, hide_index=True, use_container_width=True)
+    else:
+        st.caption("评估日没有有效的非子公司担保记录。")
+    ev = events_after_report(folder, code, metrics.get(code, {}).get("period", ""))
+    st.markdown("**财报后事件**（财报可使用日之后、评估日之前发布的风险公告）")
+    if ev:
+        st.dataframe(ev, hide_index=True, use_container_width=True)
+    else:
+        st.caption("无。")
 
 if (folder / "changes.md").exists():
-    with st.expander("本次变化与弱档说明", expanded=True):
-        st.markdown((folder / "changes.md").read_text(encoding="utf-8"))
+    with st.expander("本次变化与弱档说明", expanded=False):
+        before = compared_snapshot(folder)
+        before_version = snapshot_meta(before)["version"] if before else version
+        text = (folder / "changes.md").read_text(encoding="utf-8")
+        if before and before_version != version and "评分方法为" not in text:
+            st.warning(f"对比的上期快照 {before.name} 使用评分方法 {before_version}（{version_note(before_version)}），"
+                       f"本期为 {version}。下列等级变化主要来自评分方法调整，不代表企业经营变化。")
+        st.markdown(text)

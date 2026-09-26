@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.fetch_financials import RAW, main as fetch_statements, select  # noqa: E402
 from src.financial_indicators import annual_rows  # noqa: E402
-from src.fragility import TIER_LABEL, score  # noqa: E402
+from src.fragility import TIER_LABEL, VERSION, WEIGHTS, score  # noqa: E402
 from src.market import add_excess_return, market_metrics  # noqa: E402
 from src.quarterly import latest_public_period, parse_abstract  # noqa: E402
 
@@ -197,8 +197,21 @@ def main() -> None:
             w.writeheader()
             w.writerows(data)
 
+    import json
+    from datetime import datetime, timezone
+    from src.fragility_view import compared_snapshot, snapshot_meta, version_note
+    (out / "meta.json").write_text(json.dumps({
+        "version": VERSION, "as_of": as_of, "period": period, "weights": WEIGHTS,
+        "signals": Path(args.signals).as_posix() if args.signals else "all data/chain/*/signals.csv",
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}, ensure_ascii=False, indent=2), encoding="utf-8")
+
     prev = previous_snapshot(as_of)
-    lines = [f"# 承压评分 {as_of}（财报期 {period}，行情截至 {max((r.get('last_trade_date') or '') for r in rows)}）", ""]
+    lines = [f"# 承压评分 {as_of}（财报期 {period}，行情截至 {max((r.get('last_trade_date') or '') for r in rows)}；评分方法 {VERSION}）", ""]
+    before = compared_snapshot(out)
+    prev_version = snapshot_meta(before)["version"] if before else VERSION
+    if prev and prev_version != VERSION:
+        lines += [f"> 注意：上期（{before.name}）评分方法为 {prev_version}（{version_note(prev_version)}），本期为 {VERSION}。"
+                  "以下等级变化主要来自方法调整，不代表企业经营变化。", ""]
     changed = [r for r in results if r["security_code"] in prev and prev[r["security_code"]]["tier"] != r["tier"]]
     lines.append(f"## 等级变化（对比 {sorted(d.name for d in SNAP.glob('*') if d.name < as_of)[-1] if prev else '无上期'}）")
     lines += [f"- {r['security_name']}：{TIER_LABEL.get(prev[r['security_code']]['tier'], '-')} → {r['tier_label']}；{r['reasons']}"

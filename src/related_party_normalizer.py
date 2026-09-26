@@ -21,7 +21,9 @@ AMOUNT_FIELDS = (
 # Deposit/loan/discount arrangements with a group finance company are a
 # separate table (out of scope, prompt rule 6a), not daily trading rows.
 FINANCE_COMPANY = re.compile(r"财务(?:有限责任|股份有限)?公司")
-UNIT_DECLARATION = re.compile(r"单位[:：](千元|百万元|万元|亿元|元)|[（(](千元|百万元|万元|亿元|元)[）)]")
+# fix1 (2026-09-27, after the final test): "金额单位：人民币百万元" / "单位：人民币万元" / "（人民币万元）" name the unit
+# too; without the optional 人民币 every amount of such a table was blanked (final test 001 and 002).
+UNIT_DECLARATION = re.compile(r"单位[:：](?:人民币)?(千元|百万元|万元|亿元|元)|[（(](?:人民币)?(千元|百万元|万元|亿元|元)[）)]")
 
 
 # A table's unit scope ends at a new section or a note after the table ("。说明：", "。上述…"),

@@ -31,7 +31,7 @@ RUNS = 3
 # Direction 2/3 modules changed after the tag on purpose; they are not used by extraction.
 NOT_EXTRACTION = {"src/analyze.py", "src/chain_inputs.py", "src/fragility.py", "src/network_view.py",
                   "src/propagation.py", "src/sources.py", "src/validity.py", "src/quarterly.py", "src/market.py",
-                  "src/financial_indicators.py"}
+                  "src/financial_indicators.py", "src/fragility_view.py"}
 ADDITIVE_OK = {"src/entity_resolver.py"}     # only groups_as_of() added; checked below
 
 

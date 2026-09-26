@@ -76,3 +76,5 @@ to the errors that motivated the rules.
 | Capacity V7 (maintenance events, research fields) | New issuer-disjoint Gold including maintenance and overseas projects |
 | Guarantee v4 | Released/overdue coverage and a new issuer-disjoint set after the v4 fixes |
 | Final test set | Reserved documents from 8 core steel mills, run once after the final freeze |
+
+| fix1_unit_renminbi (2026-09-27) | final test 7 docs × 3 (post-test, **not blind**) | related-party normalizer `UNIT_DECLARATION` accepts 单位：人民币万元; re-normalized from saved `llm_raw.json`, no model call | blind: record F1 91.29%, field 74.8% | fix1: record F1 92.15%, field 84.5% (1540/1823) | Post-test fix; blind result stands |
