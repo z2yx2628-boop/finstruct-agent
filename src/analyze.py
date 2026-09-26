@@ -21,29 +21,22 @@ from src.chain_inputs import as_row, edges_from, signals_from
 from src.entity_resolver import ROOT, load_entities
 from src.propagation import Graph, SUBSIDIARY, opaque_guarantee_seeds, propagate, summarize
 
-TASK_KEYWORDS = [  # checked on the first pages; first match wins
+TASK_KEYWORDS = [  # first match wins
     ("related_party", re.compile(r"日常关[联连]交易|日常经营相关的关[联连]交易|持续关[联连]交易")),
+    ("pledge", re.compile(r"股份质押|质押(?:的)?(?:进展)?公告|解除质押|质押展期|补充质押")),
     ("guarantee", re.compile(r"担保")),
-    ("pledge", re.compile(r"质押")),
     ("capacity", re.compile(r"停产|检修|产能|投产|技术改造|技改|建设项目|高炉|转炉|电炉|项目")),
 ]
 SEVERITY_ORDER = {"high": 3, "medium": 2, "low": 1, "info": 0}
-RULE_LABEL = {"R1": "担保", "R2": "供需", "R3": "同集团", "R4": "行业(近似)"}
-TIER_LABEL = {"weak": "弱", "medium": "中", "strong": "强", "unknown": "未评分"}
-SIGNAL_LABEL = {"credit_exposure": "担保敞口", "credit_event": "担保违约/代偿", "supply_disruption": "供应中断",
-                "capacity_reduction": "产能减少", "capacity_increase": "产能增加", "project_delay": "项目延期/终止",
-                "share_pledge": "股权质押"}
-
-
-def flat(text: str | None, limit: int = 120) -> str:
-    return re.sub(r"\s+", " ", text or "").strip()[:limit]
 
 
 def detect_task(text: str) -> str:
-    head = text[:3000]
-    for task, pattern in TASK_KEYWORDS:
-        if pattern.search(head):
-            return task
+    """Decide from the title area first (pledge notices say "为融资提供担保" in the body,
+    which must not turn them into guarantee notices), then from the first pages."""
+    for window in (text[:300], text[:3000]):
+        for task, pattern in TASK_KEYWORDS:
+            if pattern.search(window):
+                return task
     return "capacity"
 
 
@@ -95,7 +88,8 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
     for s in new_signals:
         key = (s["entity_id"], s["signal_type"], s["detail"])
         h = happened.setdefault(key, {"type": SIGNAL_LABEL.get(s["signal_type"], s["signal_type"]),
-                                      "severity": s["severity"], "entity": nm(s["entity_id"]), "detail": s["detail"],
+                                      "severity": SEVERITY_LABEL.get(s["severity"], s["severity"]),
+                                      "entity": nm(s["entity_id"]), "detail": zh_detail(s["detail"]),
                                       "rule": s["severity_rule"], "rows": 0, "magnitude": 0.0,
                                       "evidence": f"第{s['source_page']}页：{flat(s['evidence_text'])}"})
         h["rows"] += 1
@@ -103,8 +97,9 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
     relations = {}
     for e in new_edges:
         key = (e["src_id"], e["dst_id"], e["edge_type"])
-        r = relations.setdefault(key, {"type": e["edge_type"], "from": nm(e["src_id"]), "to": nm(e["dst_id"]),
-                                       "amount_yi": 0.0, "rows": 0, "relationship": e["relationship"],
+        r = relations.setdefault(key, {"type": EDGE_LABEL.get(e["edge_type"], e["edge_type"]), "from": nm(e["src_id"]),
+                                       "to": nm(e["dst_id"]), "amount_yi": 0.0, "rows": 0,
+                                       "relationship": RELATION_LABEL.get(e["relationship"], e["relationship"]),
                                        "evidence": f"第{e['source_page']}页：{flat(e['evidence_text'])}"})
         r["rows"] += 1
         r["amount_yi"] += float(e["amount_wan"]) / 1e4 if e["amount_wan"] not in ("", None) else 0.0
@@ -123,12 +118,13 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
                          "path": nm(e["seed"]) + "".join(f" →[{RULE_LABEL[s.rule]}] {nm(s.dst)}({TIER_LABEL.get(s.dst_tier, s.dst_tier)})"
                                                          for s in e["steps"]),
                          "steps": [dict(asdict(s), src_name=nm(s.src), dst_name=nm(s.dst), rule_label=RULE_LABEL[s.rule],
+                                        decision_label=DECISION_LABEL.get(s.decision, s.decision),
                                         tier_label=TIER_LABEL.get(s.dst_tier, s.dst_tier), evidence=flat(s.evidence, 200))
                                    for s in e["steps"]],
                          "alternatives": e.get("alternatives", 0),
                          "alternative_routes": sorted({"+".join(RULE_LABEL[r] for r in route.split("+"))
                                                        for route in e.get("alternative_routes", [])}),
-                         "reason": e["reason"]} for i, e in enumerate(ranked[:10], 1)],
+                         "reason": zh_detail(e["reason"])} for i, e in enumerate(ranked[:10], 1)],
         "unlisted_reach": [{"from": nm(r["seed"]), "parties": len(r["parties"]),
                             "amount_yi": round(r["amount_wan"] / 1e4, 2)} for r in reach[:5]],
         "counts": {"signals": len(new_signals), "edges": len(new_edges), "paths": len(paths)},
@@ -160,7 +156,7 @@ def card_markdown(card: dict) -> str:
         lines.append(f"- {p['rank']}. {p['path']} · 得分 {p['score']}{alt}")
         lines.append(f"    - 起点：{p['reason']}")
         for s in p["steps"]:
-            lines.append(f"    - {s['rule_label']}：{s['src_name']} → {s['dst_name']}（{s['tier_label']}），{s['decision']} · 依据 {s['evidence']}")
+            lines.append(f"    - {s['rule_label']}：{s['src_name']} → {s['dst_name']}（{s['tier_label']}），{s['decision_label']} · 依据 {s['evidence']}")
     return "\n".join(lines)
 
 

@@ -21,7 +21,10 @@ chains = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "data" / "chain"
 c1, c2, c3 = st.columns(3)
 task_label = c1.selectbox("公告类型", list(TASKS))
 as_of = c2.date_input("评估日", value=date.today())
-chain = c3.selectbox("产业链图谱", chains, index=chains.index("data/chain/analysis_v1") if "data/chain/analysis_v1" in chains else 0)
+CHAIN_LABEL = {"data/chain/analysis_v1": "真实图谱（84份公告，2024–2026）", "data/chain/backtest_antai": "回测图谱（安泰，评估日选 2025-01-31）",
+               "data/chain/gold_demo": "演示图谱（测试答案，仅开发用）"}
+chain = c3.selectbox("产业链图谱", chains, index=chains.index("data/chain/analysis_v1") if "data/chain/analysis_v1" in chains else 0,
+                     format_func=lambda c: CHAIN_LABEL.get(c, c))
 
 tab_new, tab_demo = st.tabs(["上传新公告（调用模型，约30–90秒）", "用已提取结果演示（不调用模型）"])
 card = None
@@ -61,7 +64,9 @@ if card:
         st.markdown(f"- 关系：**{r['from']} →[{r['type']}] {r['to']}**，合计 {r['amount_yi']} 亿元（{r['relationship']}）  \n  依据：{r['evidence']}")
 
     st.markdown("#### ② 扛不扛得住")
-    for c in card["can_they_absorb"] or [{"entity": card["company"], "tier": "未评分", "score": "", "reasons": ""}]:
+    if not card["can_they_absorb"]:
+        st.markdown(f"- ⚪ **{card['company']}**：不在承压评分范围内（24家核心钢厂及手动加入的企业）。")
+    for c in card["can_they_absorb"]:
         st.markdown(f"- {TIER_ICON.get(c['tier'], '⚪')} **{c['entity']}：{c['tier']}**（{c['score']}分）  \n  {c['reasons'] or ''}")
 
     st.markdown("#### ③ 会传给谁")
@@ -72,5 +77,5 @@ if card:
         with st.expander(f"{p['rank']}. {p['path']} · 得分 {p['score']}{alt}", expanded=p["rank"] <= 3):
             st.markdown(f"起点：{p['reason']}")
             for s in p["steps"]:
-                st.markdown(f"- **{s['rule_label']}**：{s['src_name']} → {s['dst_name']}（{s['tier_label']}），{s['decision']}  \n  依据：{s['evidence']}")
+                st.markdown(f"- **{s['rule_label']}**：{s['src_name']} → {s['dst_name']}（{s['tier_label']}），{s['decision_label']}  \n  依据：{s['evidence']}")
     st.download_button("下载预警卡片（Markdown）", card_markdown(card), file_name=f"alert_{card['as_of']}.md")
