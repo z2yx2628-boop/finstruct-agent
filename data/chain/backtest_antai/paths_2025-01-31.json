@@ -1,0 +1,4106 @@
+[
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
+        "note": "",
+        "amount_wan": 15936.0
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
+        "note": "严重程度已降至最低",
+        "amount_wan": 190000.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
+        "note": "",
+        "amount_wan": 15936.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 992386.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
+        "note": "",
+        "amount_wan": 15936.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢矿业",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢矿业 \n102,746 \n\n注2 \n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 102746.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
+        "note": "",
+        "amount_wan": 15936.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_建平磷铁",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：建平磷铁 \n13,703 \n10,556.11 \n\n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 13703.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
+        "note": "",
+        "amount_wan": 15936.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢国贸",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢国贸 \n49,080 \n9,212.86 \n注2 \n采购矿粉、煤、\n备件材料等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 49080.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
+        "note": "",
+        "amount_wan": 15936.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢自动化",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢自动化 \n7,543 \n247.73 \n注2 \n信息化采购",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7543.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
+        "note": "",
+        "amount_wan": 15936.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌钢运输",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：凌钢运输 \n8,820 \n6,086.00 \n注3  \n运输服务",
+        "note": "严重程度已降至最低",
+        "amount_wan": 8820.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
+        "note": "",
+        "amount_wan": 15936.0
+      },
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000898",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
+        "note": "",
+        "amount_wan": 15936.0
+      },
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000629",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
+        "note": "严重程度已降至最低",
+        "amount_wan": 190000.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 992386.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢矿业",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢矿业 \n102,746 \n\n注2 \n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 102746.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_建平磷铁",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：建平磷铁 \n13,703 \n10,556.11 \n\n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 13703.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢国贸",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢国贸 \n49,080 \n9,212.86 \n注2 \n采购矿粉、煤、\n备件材料等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 49080.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢自动化",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢自动化 \n7,543 \n247.73 \n注2 \n信息化采购",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7543.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌钢运输",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：凌钢运输 \n8,820 \n6,086.00 \n注3  \n运输服务",
+        "note": "严重程度已降至最低",
+        "amount_wan": 8820.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
+        "note": "严重程度已降至最低",
+        "amount_wan": 190000.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 992386.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢矿业",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢矿业 \n102,746 \n\n注2 \n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 102746.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_建平磷铁",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：建平磷铁 \n13,703 \n10,556.11 \n\n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 13703.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢国贸",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢国贸 \n49,080 \n9,212.86 \n注2 \n采购矿粉、煤、\n备件材料等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 49080.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢自动化",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢自动化 \n7,543 \n247.73 \n注2 \n信息化采购",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7543.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 14427.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌钢运输",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：凌钢运输 \n8,820 \n6,086.00 \n注3  \n运输服务",
+        "note": "严重程度已降至最低",
+        "amount_wan": 8820.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍钢集团众元产业发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：采购商品/\n提供服务 \n鞍钢集团众元产\n业发展有限公司 \n采购主要\n原材料 \n市场化原则 \n 309,360.00   104,257.60  \n 65,569",
+        "note": "",
+        "amount_wan": 309360.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍山钢铁集团有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：（共3行，合计216406.91999999998万元；最大一行）鞍山钢铁集团有\n限公司 \n接受支持\n性服务 \n市场化原则 \n 87,704.87  \n 68,",
+        "note": "",
+        "amount_wan": 216406.91999999998
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪北营钢铁(集团)股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共3行，合计1330223.59万元；最大一行）本溪北营钢铁\n（集团）股份有\n限公司 \n采购主要\n原材料 \n市场化原则 \n1,256,423.81 1,056",
+        "note": "",
+        "amount_wan": 1330223.59
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：本溪钢铁（集\n团）矿业有限责\n任公司 \n采购主要\n原材料 \n市场化原则 \n 801,377.49   648,895.42   608,801.00  ",
+        "note": "",
+        "amount_wan": 801377.49
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)机械制造有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：（共2行，合计47970.55万元；最大一行）本溪钢铁（集\n团）机械制造有\n限责任公司 \n采购辅助\n材料 \n市场化原则 \n 34,650.12  \n 28,09",
+        "note": "",
+        "amount_wan": 47970.55
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)实业发展有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）实业发展有\n限责任公司 \n采购辅助\n材料 \n市场化原则 \n 23,143.12  \n 3,283.60  \n 20,752.93  ",
+        "note": "",
+        "amount_wan": 23143.12
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍钢集团工程技术发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：鞍钢集团工程技\n术发展有限公司 \n接受支持\n性服务 \n市场化原则 \n 15,200.00  \n 1,332.43  \n 10,616.64  ",
+        "note": "",
+        "amount_wan": 15200.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)建设有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）建设有限责\n任公司 \n接受支持\n性服务 \n市场化原则 \n 51,334.92  \n 22,736.12  \n 46,713.63",
+        "note": "",
+        "amount_wan": 51334.92
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)设备工程有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）设备工程有\n限公司 \n接受支持\n性服务 \n市场化原则 \n 123,937.73  \n 60,255.15  \n 63,895.53",
+        "note": "",
+        "amount_wan": 123937.73
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）有限责任公\n司 \n接受支持\n性服务 \n市场化原则 \n 44,093.88  \n 13,350.86  \n 35,315.79",
+        "note": "",
+        "amount_wan": 44093.88
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍钢集团众元产业发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：采购商品/\n提供服务 \n鞍钢集团众元产\n业发展有限公司 \n采购主要\n原材料 \n市场化原则 \n 309,360.00   104,257.60  \n 65,569",
+        "note": "",
+        "amount_wan": 309360.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍山钢铁集团有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：（共3行，合计216406.91999999998万元；最大一行）鞍山钢铁集团有\n限公司 \n接受支持\n性服务 \n市场化原则 \n 87,704.87  \n 68,",
+        "note": "",
+        "amount_wan": 216406.91999999998
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪北营钢铁(集团)股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共3行，合计1330223.59万元；最大一行）本溪北营钢铁\n（集团）股份有\n限公司 \n采购主要\n原材料 \n市场化原则 \n1,256,423.81 1,056",
+        "note": "",
+        "amount_wan": 1330223.59
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：本溪钢铁（集\n团）矿业有限责\n任公司 \n采购主要\n原材料 \n市场化原则 \n 801,377.49   648,895.42   608,801.00  ",
+        "note": "",
+        "amount_wan": 801377.49
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)机械制造有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：（共2行，合计47970.55万元；最大一行）本溪钢铁（集\n团）机械制造有\n限责任公司 \n采购辅助\n材料 \n市场化原则 \n 34,650.12  \n 28,09",
+        "note": "",
+        "amount_wan": 47970.55
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)实业发展有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）实业发展有\n限责任公司 \n采购辅助\n材料 \n市场化原则 \n 23,143.12  \n 3,283.60  \n 20,752.93  ",
+        "note": "",
+        "amount_wan": 23143.12
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍钢集团工程技术发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：鞍钢集团工程技\n术发展有限公司 \n接受支持\n性服务 \n市场化原则 \n 15,200.00  \n 1,332.43  \n 10,616.64  ",
+        "note": "",
+        "amount_wan": 15200.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)建设有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）建设有限责\n任公司 \n接受支持\n性服务 \n市场化原则 \n 51,334.92  \n 22,736.12  \n 46,713.63",
+        "note": "",
+        "amount_wan": 51334.92
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)设备工程有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）设备工程有\n限公司 \n接受支持\n性服务 \n市场化原则 \n 123,937.73  \n 60,255.15  \n 63,895.53",
+        "note": "",
+        "amount_wan": 123937.73
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）有限责任公\n司 \n接受支持\n性服务 \n市场化原则 \n 44,093.88  \n 13,350.86  \n 35,315.79",
+        "note": "",
+        "amount_wan": 44093.88
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日最大回撤-36.2%（24家中第1弱）；现金比率0.07（24家中第2弱）；速动比率0.25（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600808",
+        "dst": "N_中国宝武钢铁集团有限公司及其附属公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_081_600808_related_estimate.json 第2页：（共2行，合计4682610.9541万元；最大一行）（2）公司及其附属公司向中国宝武及其附属公司采购产品，包括采购矿石﹑石灰﹑废钢﹑钢坯﹑耐火材料﹑备件﹑成套",
+        "note": "严重程度已降至最低",
+        "amount_wan": 4682610.9541
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000898",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000629",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "000898",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_BENGANG_GROUP",
+        "dst": "000629",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
+        "note": "",
+        "amount_wan": 190000.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢矿业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢矿业 \n102,746 \n\n注2 \n采购矿粉",
+        "note": "",
+        "amount_wan": 102746.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_建平磷铁",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：建平磷铁 \n13,703 \n10,556.11 \n\n采购矿粉",
+        "note": "",
+        "amount_wan": 13703.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢国贸",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢国贸 \n49,080 \n9,212.86 \n注2 \n采购矿粉、煤、\n备件材料等",
+        "note": "",
+        "amount_wan": 49080.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢自动化",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢自动化 \n7,543 \n247.73 \n注2 \n信息化采购",
+        "note": "",
+        "amount_wan": 7543.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌钢运输",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：凌钢运输 \n8,820 \n6,086.00 \n注3  \n运输服务",
+        "note": "",
+        "amount_wan": 8820.0
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600808",
+        "dst": "N_中国宝武钢铁集团有限公司及其附属公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_081_600808_related_estimate.json 第2页：（共2行，合计4682610.9541万元；最大一行）（2）公司及其附属公司向中国宝武及其附属公司采购产品，包括采购矿石﹑石灰﹑废钢﹑钢坯﹑耐火材料﹑备件﹑成套",
+        "note": "严重程度已降至最低",
+        "amount_wan": 4682610.9541
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000898",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共4行，合计992386.0万元；最大一行）向关联\n人购买\n原材料 \n凌钢集团 \n729,299 \n392,357.07 \n注1 \n采购矿粉、废\n钢、焦炭等",
+        "note": "",
+        "amount_wan": 992386.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "000629",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R2",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "immaterial",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第3页：（共2行，合计7734.92万元；最大一行）鞍钢集团其他子\n公司 \n销售商品 \n市场化原则 \n 7,154.92  \n 16,006.68  \n 16,033.",
+        "note": "金额低于对方净资产的1%",
+        "amount_wan": 7734.92
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000898",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计14427.0万元；最大一行）鞍钢集团其他\n子公司 \n8,622 \n5,100.59 \n注2 \n设计、监理、\n包保、住宿、\n信息化、培训、\n餐饮等",
+        "note": "",
+        "amount_wan": 14427.0
+      },
+      {
+        "rule": "R3",
+        "src": "E_ANSTEEL_GROUP",
+        "dst": "000629",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍钢集团众元产业发展有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：采购商品/\n提供服务 \n鞍钢集团众元产\n业发展有限公司 \n采购主要\n原材料 \n市场化原则 \n 309,360.00   104,257.60  \n 65,569",
+        "note": "",
+        "amount_wan": 309360.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍山钢铁集团有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：（共3行，合计216406.91999999998万元；最大一行）鞍山钢铁集团有\n限公司 \n接受支持\n性服务 \n市场化原则 \n 87,704.87  \n 68,",
+        "note": "",
+        "amount_wan": 216406.91999999998
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪北营钢铁(集团)股份有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共3行，合计1330223.59万元；最大一行）本溪北营钢铁\n（集团）股份有\n限公司 \n采购主要\n原材料 \n市场化原则 \n1,256,423.81 1,056",
+        "note": "",
+        "amount_wan": 1330223.59
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)矿业有限责任公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：本溪钢铁（集\n团）矿业有限责\n任公司 \n采购主要\n原材料 \n市场化原则 \n 801,377.49   648,895.42   608,801.00  ",
+        "note": "",
+        "amount_wan": 801377.49
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
+        "note": "",
+        "amount_wan": 111466.36
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)机械制造有限责任公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：（共2行，合计47970.55万元；最大一行）本溪钢铁（集\n团）机械制造有\n限责任公司 \n采购辅助\n材料 \n市场化原则 \n 34,650.12  \n 28,09",
+        "note": "",
+        "amount_wan": 47970.55
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)实业发展有限责任公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）实业发展有\n限责任公司 \n采购辅助\n材料 \n市场化原则 \n 23,143.12  \n 3,283.60  \n 20,752.93  ",
+        "note": "",
+        "amount_wan": 23143.12
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "E_BENGANG_GROUP",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
+        "note": "",
+        "amount_wan": 53250.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍钢集团工程技术发展有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：鞍钢集团工程技\n术发展有限公司 \n接受支持\n性服务 \n市场化原则 \n 15,200.00  \n 1,332.43  \n 10,616.64  ",
+        "note": "",
+        "amount_wan": 15200.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)建设有限责任公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）建设有限责\n任公司 \n接受支持\n性服务 \n市场化原则 \n 51,334.92  \n 22,736.12  \n 46,713.63",
+        "note": "",
+        "amount_wan": 51334.92
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)设备工程有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）设备工程有\n限公司 \n接受支持\n性服务 \n市场化原则 \n 123,937.73  \n 60,255.15  \n 63,895.53",
+        "note": "",
+        "amount_wan": 123937.73
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)有限责任公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）有限责任公\n司 \n接受支持\n性服务 \n市场化原则 \n 44,093.88  \n 13,350.86  \n 35,315.79",
+        "note": "",
+        "amount_wan": 44093.88
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率98.6%≥85%；资产负债率98.6%（24家中第1弱）；现金比率0.07（24家中第1弱）；流动比率0.31（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600808",
+        "dst": "N_中国宝武钢铁集团有限公司及其附属公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_081_600808_related_estimate.json 第2页：（共2行，合计4682610.9541万元；最大一行）（2）公司及其附属公司向中国宝武及其附属公司采购产品，包括采购矿石﹑石灰﹑废钢﹑钢坯﹑耐火材料﹑备件﹑成套",
+        "note": "严重程度已降至最低",
+        "amount_wan": 4682610.9541
+      }
+    ]
+  },
+  {
+    "seed": "E_XINTAI",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 10.00 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_XINTAI",
+        "dst": "600408",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_006_600408_guarantee_backtest.json 第2页：（共4行，合计100000.0万元；最大一行）新泰钢铁 \n工商银行 \n介休支行 \n40,650.00 \n2024-08-09 \n40,650.00 \n19,35",
+        "note": "",
+        "amount_wan": 100000.0
+      },
+      {
+        "rule": "R1",
+        "src": "600408",
+        "dst": "N_山西宏安焦化科技有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
+        "note": "",
+        "amount_wan": 27920.0
+      }
+    ]
+  },
+  {
+    "seed": "E_XINTAI",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 10.00 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_XINTAI",
+        "dst": "600408",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_001_600408_related_estimate.json 第2页：（共15行，合计757950.0万元；最大一行）出售商品\n新泰钢铁\n冶炼公司\n富安新材\n焦炭\n378,000.00\n45.00\n255,236.85\n44.11",
+        "note": "",
+        "amount_wan": 757950.0
+      },
+      {
+        "rule": "R1",
+        "src": "600408",
+        "dst": "N_山西宏安焦化科技有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
+        "note": "",
+        "amount_wan": 27920.0
+      }
+    ]
+  },
+  {
+    "seed": "E_XINTAI",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 10.00 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_XINTAI",
+        "dst": "600408",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANTAI",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R1",
+        "src": "600408",
+        "dst": "N_山西宏安焦化科技有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
+        "note": "",
+        "amount_wan": 27920.0
+      }
+    ]
+  },
+  {
+    "seed": "N_漳州龙泰供应链管理有限公司",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 2.45 亿元，占担保方净资产 16%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_漳州龙泰供应链管理有限公司",
+        "dst": "600408",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_010_600408_guarantee_backtest.json 第1页：被担保人：本公司的关联参股公司漳州龙泰供应链管理有限公司（以下简称“龙泰公司”）\n担保金额：本公司首次为龙泰公司提供担保，担保最高额为2.45 亿元。\n本次担保",
+        "note": "",
+        "amount_wan": 24500.0
+      },
+      {
+        "rule": "R1",
+        "src": "600408",
+        "dst": "N_山西宏安焦化科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
+        "note": "",
+        "amount_wan": 27920.0
+      }
+    ]
+  },
+  {
+    "seed": "N_漳州龙泰供应链管理有限公司",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 2.45 亿元，占担保方净资产 16%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_漳州龙泰供应链管理有限公司",
+        "dst": "600408",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_010_600408_guarantee_backtest.json 第1页：被担保人：本公司的关联参股公司漳州龙泰供应链管理有限公司（以下简称“龙泰公司”）\n担保金额：本公司首次为龙泰公司提供担保，担保最高额为2.45 亿元。\n本次担保",
+        "note": "",
+        "amount_wan": 24500.0
+      },
+      {
+        "rule": "R2",
+        "src": "600408",
+        "dst": "E_XINTAI",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_005_600408_related_estimate.json 第2页：（共8行，合计501610.0万元；最大一行）采购商品 \n新泰钢铁\n冶炼公司 \n富安新材 \n钢坯 \n482,800.00 \n100.00 \n475,855.52",
+        "note": "",
+        "amount_wan": 501610.0
+      }
+    ]
+  },
+  {
+    "seed": "N_漳州龙泰供应链管理有限公司",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 2.45 亿元，占担保方净资产 16%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "N_漳州龙泰供应链管理有限公司",
+        "dst": "600408",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_009_600408_related_estimate.json 第2页：（共2行，合计100000.0万元；最大一行）公司与龙泰公司预计2024 年度发生的日常关联交易包括：安泰型钢向龙泰公司销售H 型钢，宏安焦化向龙泰公司销售焦炭",
+        "note": "",
+        "amount_wan": 100000.0
+      },
+      {
+        "rule": "R1",
+        "src": "600408",
+        "dst": "N_山西宏安焦化科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
+        "note": "",
+        "amount_wan": 27920.0
+      }
+    ]
+  },
+  {
+    "seed": "N_漳州龙泰供应链管理有限公司",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 2.45 亿元，占担保方净资产 16%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "N_漳州龙泰供应链管理有限公司",
+        "dst": "600408",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_009_600408_related_estimate.json 第2页：（共2行，合计100000.0万元；最大一行）公司与龙泰公司预计2024 年度发生的日常关联交易包括：安泰型钢向龙泰公司销售H 型钢，宏安焦化向龙泰公司销售焦炭",
+        "note": "",
+        "amount_wan": 100000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600408",
+        "dst": "E_XINTAI",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_005_600408_related_estimate.json 第2页：（共8行，合计501610.0万元；最大一行）采购商品 \n新泰钢铁\n冶炼公司 \n富安新材 \n钢坯 \n482,800.00 \n100.00 \n475,855.52",
+        "note": "",
+        "amount_wan": 501610.0
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日最大回撤-36.2%（24家中第1弱）；现金比率0.07（24家中第2弱）；速动比率0.25（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日最大回撤-36.2%（24家中第1弱）；现金比率0.07（24家中第2弱）；速动比率0.25（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日最大回撤-36.2%（24家中第1弱）；现金比率0.07（24家中第2弱）；速动比率0.25（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日最大回撤-36.2%（24家中第1弱）；现金比率0.07（24家中第2弱）；速动比率0.25（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日最大回撤-36.2%（24家中第1弱）；现金比率0.07（24家中第2弱）；速动比率0.25（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍钢集团众元产业发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：采购商品/\n提供服务 \n鞍钢集团众元产\n业发展有限公司 \n采购主要\n原材料 \n市场化原则 \n 309,360.00   104,257.60  \n 65,569",
+        "note": "",
+        "amount_wan": 309360.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍山钢铁集团有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：（共3行，合计216406.91999999998万元；最大一行）鞍山钢铁集团有\n限公司 \n接受支持\n性服务 \n市场化原则 \n 87,704.87  \n 68,",
+        "note": "",
+        "amount_wan": 216406.91999999998
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪北营钢铁(集团)股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共3行，合计1330223.59万元；最大一行）本溪北营钢铁\n（集团）股份有\n限公司 \n采购主要\n原材料 \n市场化原则 \n1,256,423.81 1,056",
+        "note": "",
+        "amount_wan": 1330223.59
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：本溪钢铁（集\n团）矿业有限责\n任公司 \n采购主要\n原材料 \n市场化原则 \n 801,377.49   648,895.42   608,801.00  ",
+        "note": "",
+        "amount_wan": 801377.49
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)机械制造有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：（共2行，合计47970.55万元；最大一行）本溪钢铁（集\n团）机械制造有\n限责任公司 \n采购辅助\n材料 \n市场化原则 \n 34,650.12  \n 28,09",
+        "note": "",
+        "amount_wan": 47970.55
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)实业发展有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）实业发展有\n限责任公司 \n采购辅助\n材料 \n市场化原则 \n 23,143.12  \n 3,283.60  \n 20,752.93  ",
+        "note": "",
+        "amount_wan": 23143.12
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_鞍钢集团工程技术发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：鞍钢集团工程技\n术发展有限公司 \n接受支持\n性服务 \n市场化原则 \n 15,200.00  \n 1,332.43  \n 10,616.64  ",
+        "note": "",
+        "amount_wan": 15200.0
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)建设有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）建设有限责\n任公司 \n接受支持\n性服务 \n市场化原则 \n 51,334.92  \n 22,736.12  \n 46,713.63",
+        "note": "",
+        "amount_wan": 51334.92
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)设备工程有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）设备工程有\n限公司 \n接受支持\n性服务 \n市场化原则 \n 123,937.73  \n 60,255.15  \n 63,895.53",
+        "note": "",
+        "amount_wan": 123937.73
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000761",
+        "dst": "N_本溪钢铁(集团)有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本溪钢铁（集\n团）有限责任公\n司 \n接受支持\n性服务 \n市场化原则 \n 44,093.88  \n 13,350.86  \n 35,315.79",
+        "note": "",
+        "amount_wan": 44093.88
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "000898",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "000629",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
+        "note": "",
+        "amount_wan": 190000.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢矿业",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢矿业 \n102,746 \n\n注2 \n采购矿粉",
+        "note": "",
+        "amount_wan": 102746.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_建平磷铁",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：建平磷铁 \n13,703 \n10,556.11 \n\n采购矿粉",
+        "note": "",
+        "amount_wan": 13703.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢国贸",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢国贸 \n49,080 \n9,212.86 \n注2 \n采购矿粉、煤、\n备件材料等",
+        "note": "",
+        "amount_wan": 49080.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢自动化",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：鞍钢自动化 \n7,543 \n247.73 \n注2 \n信息化采购",
+        "note": "",
+        "amount_wan": 7543.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌钢运输",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：凌钢运输 \n8,820 \n6,086.00 \n注3  \n运输服务",
+        "note": "",
+        "amount_wan": 8820.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000898",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000629",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600408",
+    "seed_reason": "2024-04-26 credit_exposure：guarantee_limit → 山西新泰钢铁有限公司（outputs/backtest_antai_freeze/guarantee/backtest_antai_006_600408_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "600408",
+        "dst": "N_山西宏安焦化科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
+        "note": "",
+        "amount_wan": 27920.0
+      }
+    ]
+  },
+  {
+    "seed": "600408",
+    "seed_reason": "2024-04-26 credit_exposure：guarantee_limit → 山西新泰钢铁有限公司（outputs/backtest_antai_freeze/guarantee/backtest_antai_006_600408_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600408",
+        "dst": "E_XINTAI",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_005_600408_related_estimate.json 第2页：（共8行，合计501610.0万元；最大一行）采购商品 \n新泰钢铁\n冶炼公司 \n富安新材 \n钢坯 \n482,800.00 \n100.00 \n475,855.52",
+        "note": "",
+        "amount_wan": 501610.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率98.6%≥85%；资产负债率98.6%（24家中第1弱）；现金比率0.07（24家中第1弱）；流动比率0.31（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率98.6%≥85%；资产负债率98.6%（24家中第1弱）；现金比率0.07（24家中第1弱）；流动比率0.31（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率98.6%≥85%；资产负债率98.6%（24家中第1弱）；现金比率0.07（24家中第1弱）；流动比率0.31（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率98.6%≥85%；资产负债率98.6%（24家中第1弱）；现金比率0.07（24家中第1弱）；流动比率0.31（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率98.6%≥85%；资产负债率98.6%（24家中第1弱）；现金比率0.07（24家中第1弱）；流动比率0.31（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_FANGDA_GROUP",
+    "seed_reason": "2024-04-12 credit_exposure：guarantee_limit → 绥芬河方大国际贸易有限公司（outputs/analysis_freeze/guarantee/analysis_062_600507_guarantee_related.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_FANGDA_GROUP",
+        "dst": "600507",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_FANGDA",
+        "note": "承压评分为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "N_九江萍钢钢铁有限公司",
+    "seed_reason": "2024-04-12 credit_exposure：guarantee_limit → 辽宁方大集团国贸有限公司（outputs/analysis_freeze/guarantee/analysis_062_600507_guarantee_related.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "N_九江萍钢钢铁有限公司",
+        "dst": "600507",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_070_600507_related_estimate.json 第3页：向关联人销售商品\n10\n九江钢铁及其子公司\n销售废钢、焦炭、煤炭、铁矿粉、合金，提供制造加工、检修维修、建安工程、运输贸易服务等\n2025 年1-12 月\n21",
+        "note": "承压评分为强，风险在此被吸收",
+        "amount_wan": 216500.0
+      }
+    ]
+  }
+]
