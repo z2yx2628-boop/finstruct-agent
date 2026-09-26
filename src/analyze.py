@@ -20,6 +20,7 @@ from pathlib import Path
 from src.chain_inputs import as_row, edges_from, signals_from
 from src.entity_resolver import ROOT, load_entities
 from src.propagation import Graph, SUBSIDIARY, opaque_guarantee_seeds, propagate, summarize
+from src.sources import readable
 
 TASK_KEYWORDS = [  # first match wins
     ("related_party", re.compile(r"日常关[联连]交易|日常经营相关的关[联连]交易|持续关[联连]交易")),
@@ -149,7 +150,7 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
                                                          for s in e["steps"]),
                          "steps": [dict(asdict(s), src_name=nm(s.src), dst_name=nm(s.dst), rule_label=RULE_LABEL[s.rule],
                                         decision_label=DECISION_LABEL.get(s.decision, s.decision),
-                                        tier_label=TIER_LABEL.get(s.dst_tier, s.dst_tier), evidence=flat(s.evidence, 200))
+                                        tier_label=TIER_LABEL.get(s.dst_tier, s.dst_tier), evidence=readable(s.evidence))
                                    for s in e["steps"]],
                          "alternatives": e.get("alternatives", 0),
                          "alternative_routes": sorted({"+".join(RULE_LABEL[r] for r in route.split("+"))

@@ -125,3 +125,10 @@ def test_alert_card_renders_with_chinese_labels():
     card = build_card(doc, "doc.json", "2025-01-31", Path("no_such_chain"))
     text = card_markdown(card)
     assert "担保额度" in text and "同一控制下的兄弟公司" in text and "guarantee_limit" not in text
+
+
+def test_evidence_is_shown_as_announcement_title_and_group_name():
+    from src.sources import readable
+    assert readable("data/reference/entities.csv：同属集团 G_ANSTEEL").startswith("同属鞍钢集团")
+    text = readable("outputs/analysis_freeze/related_party/no_such_doc.json 第2页：甲\n乙")
+    assert "第2页：甲 乙" in text
