@@ -54,7 +54,10 @@ RELATION_LABEL = {"wholly_owned_subsidiary": "全资子公司", "controlled_subs
                   "associate_or_joint_venture": "联营/合营企业", "other_related_party": "其他关联方",
                   "unrelated_party": "非关联方", "": "未注明"}
 STATUS_LABEL = {"guarantee_provided": "已提供担保", "guarantee_limit": "担保额度", "guarantee_released": "担保解除",
-                "guarantee_overdue": "逾期担保"}
+                "guarantee_overdue": "逾期担保", "capacity_construction": "产能建设", "capacity_replacement": "产能置换",
+                "technical_upgrade": "技术改造", "commissioning": "投产", "delay": "延期", "suspension": "暂停",
+                "termination": "终止", "maintenance": "检修/临时停产", "=medium": "=中", "=high": "=高",
+                "=low": "=低", " medium": " 中", " high": " 高"}
 
 
 def flat(text: str | None, limit: int = 120) -> str:
@@ -117,7 +120,7 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
         h = happened.setdefault(key, {"type": SIGNAL_LABEL.get(s["signal_type"], s["signal_type"]),
                                       "severity": SEVERITY_LABEL.get(s["severity"], s["severity"]),
                                       "entity": nm(s["entity_id"]), "detail": zh_detail(s["detail"]),
-                                      "rule": s["severity_rule"], "rows": 0, "magnitude": 0.0,
+                                      "rule": zh_detail(s["severity_rule"]), "rows": 0, "magnitude": 0.0,
                                       "evidence": f"第{s['source_page']}页：{flat(s['evidence_text'])}"})
         h["rows"] += 1
         h["magnitude"] += float(s["magnitude"]) if s.get("magnitude") not in ("", None) else 0.0
