@@ -23,9 +23,11 @@ def read(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def fmt(value):
+def fmt(value, key: str = ""):
+    """Raw statement amounts keep full precision (they are checked against annual reports to the
+    cent); derived ratios are rounded to 6 significant digits."""
     if isinstance(value, float):
-        return f"{value:.6g}"
+        return repr(value) if key.startswith("raw_") else f"{value:.6g}"
     return "" if value is None else value
 
 
@@ -57,7 +59,7 @@ def main() -> None:
     with OUT.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
-        writer.writerows({k: fmt(v) for k, v in r.items()} for r in rows)
+        writer.writerows({k: fmt(v, k) for k, v in r.items()} for r in rows)
     print(f"{len(rows)} mill-years written to {OUT.relative_to(ROOT)}")
     if missing:
         print("missing:", "; ".join(missing))
