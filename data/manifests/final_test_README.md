@@ -57,3 +57,6 @@ Checked on 2026-09-27 (`git diff --ignore-cr-at-eol extraction-freeze-2026-09-24
 4. If an extraction-module change ever becomes necessary after this note, the final-test result
    can no longer be called blind (the developers have seen the documents while annotating); the
    report must say so and name the later commit as the system tested.
+
+Annotation helper and scope rules (2026-09-27, before opening): `scripts/final_gold.py`,
+`data/gold/final_test/README.md` ("Final-test scope rules").
