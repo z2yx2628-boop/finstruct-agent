@@ -1,0 +1,45 @@
+{
+  "security_code": "600808",
+  "security_name": "马钢股份",
+  "company_name": "马鞍山钢铁股份有限公司",
+  "announcement_number": "2025-027",
+  "announcement_date": "2025-06-20",
+  "estimate_year": 2025,
+  "total_estimated_amount": 65943035629.0,
+  "total_estimated_unit": "元",
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "马鞍山钢铁股份有限公司",
+      "counterparty": "中国宝武",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "sell_goods",
+      "category_text": "销售产品",
+      "goods_or_services": "销售钢材﹑钢锭﹑焦粉﹑氧化铁皮﹑冶金辅料﹑材料（不锈钢带、电缆、工具等）及其他产品（劳保、办公用品等）；销售电﹑生活水﹑工业净水﹑高炉煤气﹑焦炉煤气﹑转炉煤气﹑蒸汽﹑压缩空气﹑其他气体及水渣等",
+      "estimated_amount": 27641790517.0,
+      "estimated_unit": "元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "销售产品，包括销售钢材﹑钢锭﹑焦粉﹑氧化铁皮﹑冶金辅料﹑材料（不锈\n钢带、电缆、工具等）及其他产品（劳保、办公用品等）；销售电﹑生活水﹑工\n业净水﹑高炉煤气﹑焦炉煤气﹑转炉煤气﹑蒸汽﹑压缩空气﹑其他气体及水渣\n等，各年度金额上限(不含税)分别为：2025 年人民币27,641,790,517 元",
+      "confidence": 1.0
+    },
+    {
+      "listed_company": "马鞍山钢铁股份有限公司",
+      "counterparty": "中国宝武",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购产品",
+      "goods_or_services": "采购矿石﹑石灰﹑废钢﹑钢坯﹑耐火材料﹑备件﹑成套设备﹑非标准备件及其他商品采购（焦炭、煤炭、合金、油品、煤气等）",
+      "estimated_amount": 38301245112.0,
+      "estimated_unit": "元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "采购产品，包括采购矿石﹑石灰﹑废钢﹑钢坯﹑耐火材料﹑备件﹑成套设备\n﹑非标准备件及其他商品采购（焦炭、煤炭、合金、油品、煤气等），各年度金\n额上限(不含税)分别为：2025 年人民币38,301,245,112 元",
+      "confidence": 1.0
+    }
+  ]
+}

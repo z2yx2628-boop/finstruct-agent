@@ -1,0 +1,59 @@
+{
+  "version": "final-test-gold-v1",
+  "frozen_at": "2026-09-27",
+  "hash_algorithm": "sha256",
+  "document_count": 8,
+  "record_count": 178,
+  "system_under_test_commit": "8a0abba",
+  "system_under_test_tag": "extraction-freeze-2026-09-24",
+  "files": [
+    {
+      "file": "final_001_000898_related_estimate.json",
+      "sha256": "dae017f9c32de0f7b53a0a3023fd2fa1667613a56f17102c119eb7c7c9a35e90",
+      "records": 38,
+      "source_sha256": "5473002d32d57035b52770cfd2d0b81e8448a9b735e7f0d018022729935de27a"
+    },
+    {
+      "file": "final_002_600010_related_estimate.json",
+      "sha256": "192bb57aaf8d84478597504c9582120b063e42d1e2d93a6b39d40a1c9f73edb5",
+      "records": 39,
+      "source_sha256": "73e09d33aa9641856f66a34bf428c7f211af6ea992c6f573b614be1ee2fcd3ca"
+    },
+    {
+      "file": "final_004_000825_related_estimate.json",
+      "sha256": "98e3e3528a0a786fef1a57c7b95f7a3b581e6f5fdc3a8c4ee0b88d670c4737c2",
+      "records": 48,
+      "source_sha256": "649365af35d9553d8dac89096fcbedf352921da168bad27fc1061c2e6e7a06a8"
+    },
+    {
+      "file": "final_005_600507_related_estimate.json",
+      "sha256": "7d8c782d904ee604da59cab83bdc587042f04cce9a17e2f0b58596760f393caf",
+      "records": 22,
+      "source_sha256": "ade801f69cf82d56b856526d2b0889863ed2b649191fbc98942b443bc93f7a84"
+    },
+    {
+      "file": "final_006_002075_related_adjustment.json",
+      "sha256": "c7982e3f39ea286fa7d91acb9bde2c59ab3d2f2c1047f9f85bb6c8e3b1939b1e",
+      "records": 28,
+      "source_sha256": "3be4c512221f2e90204ae0c2c0a60c8fb2c81c0f205d710087f301434d8c4f2f"
+    },
+    {
+      "file": "final_007_600782_related_execution.json",
+      "sha256": "c027425b42db7e24b67f2a2aaceb7fe368b2d23f48357d04d4494bcfb79e15b6",
+      "records": 0,
+      "source_sha256": "adce9ae89655b1495adbe9f3dcced55bf2ef97f1cf4a47bfeef99885f38f6492"
+    },
+    {
+      "file": "final_008_600808_related_agreement.json",
+      "sha256": "c3238a015791c73bb668d9e54af5fc47d66e08591d1584f15d88ec24bda7741d",
+      "records": 2,
+      "source_sha256": "8914f32c020ea9e5708c7990aa58cf0de7c463ecca56ae80255164463f95f592"
+    },
+    {
+      "file": "final_web_001.json",
+      "sha256": "981ef50bb8441b41298414981cf6a3e56999afc02d8ddcc2baf95866b6dc5624",
+      "records": 1,
+      "source_sha256": "0df14bdc9e39d97ca11ab309174463f2dd7b3f8922bd6eb5dae6ecc9d3f5e642"
+    }
+  ]
+}
