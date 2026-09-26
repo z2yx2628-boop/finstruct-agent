@@ -94,6 +94,23 @@ def load_signals(path: str | None) -> list[dict]:
     return out
 
 
+def add_guarantee_exposure(rows: list[dict], signals: list[dict], as_of: str) -> None:
+    """Guarantees to non-subsidiaries in force on as_of (direction 1) / equity (direction 2).
+    Companies with no such guarantee get 0; companies without equity data stay unknown."""
+    from src.validity import is_active
+
+    exposure: dict[str, float] = {}
+    for s in signals:
+        if (s.get("signal_type") in ("credit_exposure", "credit_event") and s.get("severity") in ("medium", "high")
+                and s.get("magnitude") not in (None, "") and is_active(s, as_of)):
+            exposure[s["entity_id"]] = exposure.get(s["entity_id"], 0.0) + float(s["magnitude"])
+    for r in rows:
+        equity = r.get("equity")
+        r["guarantee_to_equity"] = (exposure.get(r["security_code"], 0.0) * 1e4 / equity
+                                    if equity and equity > 0 else None)
+        r["guarantee_exposure_wan"] = exposure.get(r["security_code"], 0.0)
+
+
 def previous_snapshot(as_of: str) -> dict[str, dict]:
     older = sorted(d for d in SNAP.glob("*") if d.is_dir() and d.name < as_of and (d / "fragility.csv").exists())
     if not older:
@@ -157,7 +174,9 @@ def main() -> None:
         import subprocess
         subprocess.run([sys.executable, str(ROOT / "scripts" / "build_financial_indicators.py")], check=False)
 
-    results = score(rows, load_signals(args.signals), as_of, period, extra=extra_rows)
+    signals = load_signals(args.signals)
+    add_guarantee_exposure(rows + extra_rows, signals, as_of)
+    results = score(rows, signals, as_of, period, extra=extra_rows)
     rows = rows + extra_rows
     out = SNAP / as_of
     out.mkdir(parents=True, exist_ok=True)

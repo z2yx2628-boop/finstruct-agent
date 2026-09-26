@@ -48,6 +48,7 @@ table = [{
     "等级": f"{TIER_COLOR.get(r['tier'], '')} {r['tier_label']}", "企业": r["security_name"], "代码": r["security_code"],
     "总分(越高越弱)": r["total_score"], "杠杆": r["score_leverage"], "短期偿债": r["score_liquidity"],
     "造血": r["score_cash"], "盈利": r["score_profit"], "市场": r["score_market"],
+    "对外担保": r.get("score_contingent"),
     "财报后事件": r["events_after_report"], "原因": r["reasons"],
 } for r in rows]
 st.dataframe(table, use_container_width=True, hide_index=True)

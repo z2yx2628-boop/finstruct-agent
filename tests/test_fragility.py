@@ -87,3 +87,20 @@ def test_company_outside_peer_group_is_placed_without_moving_peers():
     after = {r["security_code"]: r for r in score(rows, [], "2026-09-24", "20260630", extra=[outsider])}
     assert all(after[c]["total_score"] == s for c, s in before.items())
     assert after["X"]["peer_group"] == "other" and after["X"]["tier"] == "weak"
+
+
+def test_guarantee_exposure_is_scored_absolutely_and_is_a_red_line_above_equity():
+    rows = peers()
+    for r in rows:
+        r["guarantee_to_equity"] = 0.0
+    rows[0]["guarantee_to_equity"] = 1.7          # 安泰-like: guarantees to a sister company = 170% of equity
+    out = {r["security_code"]: r for r in score(rows, [], "2026-09-24", "20260630")}
+    assert out["c0"]["tier"] == "weak" and "对外担保" in out["c0"]["reasons"]
+    assert out["c1"]["score_contingent"] == 0.0
+
+
+def test_one_extreme_balance_sheet_dimension_makes_a_company_weak():
+    rows = peers()
+    rows[0].update(current_ratio=0.1, quick_ratio=0.05, cash_ratio=0.01)   # otherwise the strongest mill
+    out = {r["security_code"]: r for r in score(rows, [], "2026-09-24", "20260630")}
+    assert out["c0"]["tier"] == "weak" and "单一维度极差" in out["c0"]["reasons"]

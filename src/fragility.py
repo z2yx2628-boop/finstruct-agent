@@ -27,8 +27,15 @@ METRICS = {
     "max_drawdown_60d": ("market", -1, "60日最大回撤", "pct"),
     "vol_20d": ("market", +1, "20日波动率", "pct"),
 }
-WEIGHTS = {"leverage": 0.2, "liquidity": 0.25, "cash": 0.15, "profit": 0.2, "market": 0.2}
-DIMENSION_LABEL = {"leverage": "杠杆", "liquidity": "短期偿债", "cash": "造血", "profit": "盈利", "market": "市场"}
+# v1 (2026-09-26, calibrated after the Antai backtest): guarantee exposure added as its own dimension.
+WEIGHTS = {"leverage": 0.2, "liquidity": 0.2, "cash": 0.15, "profit": 0.15, "market": 0.15, "contingent": 0.15}
+# Absolute (not peer-ranked) metrics: most mills guarantee nothing outside the group, so ranking ties at 0
+# would give them a middling score. Score = value / cap x 100, capped at 100.
+ABSOLUTE = {"guarantee_to_equity": ("contingent", "对外担保(非子公司)/净资产", 1.0)}
+EXTREME = 90            # one balance-sheet dimension this bad makes the company weak on its own
+EXTREME_DIMS = ("leverage", "liquidity")   # stock measures; half-year cash flow is too seasonal
+DIMENSION_LABEL = {"leverage": "杠杆", "liquidity": "短期偿债", "cash": "造血", "profit": "盈利", "market": "市场",
+                   "contingent": "对外担保"}
 TIERS = ["strong", "medium", "weak"]
 TIER_LABEL = {"strong": "强", "medium": "中", "weak": "弱"}
 EVENT_TYPES = {"credit_event", "supply_disruption", "share_pledge", "credit_exposure"}
@@ -66,6 +73,8 @@ def red_lines(row: dict) -> list[str]:
         reasons.append("资不抵债（净资产为负）")
     if row.get("debt_ratio") is not None and row["debt_ratio"] >= 0.85:
         reasons.append(f"资产负债率{fmt(row['debt_ratio'], 'pct')}≥85%")
+    if row.get("guarantee_to_equity") is not None and row["guarantee_to_equity"] >= 1.0:
+        reasons.append(f"对外担保(非子公司)达净资产的{fmt(row['guarantee_to_equity'], 'pct')}")
     return reasons
 
 
@@ -89,6 +98,12 @@ def score(rows: list[dict], signals: list[dict], as_of: str, period_public: str,
                 dims.setdefault(dim, []).append(s)
                 where = f"{n}家中第{rank}弱" if code in peer_codes else f"比{n}家核心钢厂中的{n - rank + 1}家更差"
                 notes.append((s, f"{label}{fmt(row[metric], kind)}（{where}）"))
+        for metric, (dim, label, cap) in ABSOLUTE.items():
+            value = row.get(metric)
+            if value is not None:
+                s = min(100.0, 100 * value / cap)
+                dims.setdefault(dim, []).append(s)
+                notes.append((s, f"{label}{fmt(value, 'pct')}"))
         dim_scores = {d: sum(v) / len(v) for d, v in dims.items()}
         weight = sum(WEIGHTS[d] for d in dim_scores)
         total = sum(WEIGHTS[d] * s for d, s in dim_scores.items()) / weight if weight else None
@@ -96,6 +111,8 @@ def score(rows: list[dict], signals: list[dict], as_of: str, period_public: str,
         reasons = [t for s, t in sorted(notes, reverse=True)[:3] if s >= 60]
         base_tier = tier
         lines = red_lines(row)
+        lines += [f"单一维度极差：{DIMENSION_LABEL[d]}{dim_scores[d]:.0f}分" for d in EXTREME_DIMS
+                  if dim_scores.get(d, 0) >= EXTREME]
         if lines:
             tier = "weak"
             reasons = lines + reasons
