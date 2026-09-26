@@ -1,0 +1,1416 @@
+[
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json 第4页：（共13行，合计274400.0万元；最大一行）金额单位：亿元 \n担保方 \n被担保方 \n债权方 \n担保金额 \n资金用途 \n凌源钢铁\n股份有限\n公司 \n凌源钢铁集",
+        "note": "",
+        "amount_wan": 274400.0
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌源钢铁国际贸易有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json 第1页：（共3行，合计80000.0万元；最大一行）公司的全资子公司国贸公司为公司与盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）签署的在2022 年6 ",
+        "note": "严重程度已降至最低",
+        "amount_wan": 80000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json 第4页：（共13行，合计274400.0万元；最大一行）金额单位：亿元 \n担保方 \n被担保方 \n债权方 \n担保金额 \n资金用途 \n凌源钢铁\n股份有限\n公司 \n凌源钢铁集",
+        "note": "",
+        "amount_wan": 274400.0
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json 第1页：（共3行，合计380000.0万元；最大一行）保国公司以其所持有的3 宗采矿权为公司与中国人民民生银行股份有限公司大连分行（以下简称“民生银行大连分行”）签署的",
+        "note": "严重程度已降至最低",
+        "amount_wan": 380000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json 第4页：（共13行，合计274400.0万元；最大一行）金额单位：亿元 \n担保方 \n被担保方 \n债权方 \n担保金额 \n资金用途 \n凌源钢铁\n股份有限\n公司 \n凌源钢铁集",
+        "note": "",
+        "amount_wan": 274400.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_建平磷铁",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：建平磷铁 \n12,000 \n6,312.21 \n注2 \n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 12000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json 第4页：（共13行，合计274400.0万元；最大一行）金额单位：亿元 \n担保方 \n被担保方 \n债权方 \n担保金额 \n资金用途 \n凌源钢铁\n股份有限\n公司 \n凌源钢铁集",
+        "note": "",
+        "amount_wan": 274400.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢矿业",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：鞍钢矿业 \n\n20,511.24 \n注3 \n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json 第4页：（共13行，合计274400.0万元；最大一行）金额单位：亿元 \n担保方 \n被担保方 \n债权方 \n担保金额 \n资金用途 \n凌源钢铁\n股份有限\n公司 \n凌源钢铁集",
+        "note": "",
+        "amount_wan": 274400.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢国贸",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：鞍钢国贸 \n30,000 \n\n注2 \n采购焦炭、备件材\n料等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json 第4页：（共13行，合计274400.0万元；最大一行）金额单位：亿元 \n担保方 \n被担保方 \n债权方 \n担保金额 \n资金用途 \n凌源钢铁\n股份有限\n公司 \n凌源钢铁集",
+        "note": "",
+        "amount_wan": 274400.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：（共2行，合计11300.0万元；最大一行）鞍钢集团其他子公司 \n9,000 \n956.72 \n注2 \n采购设备、备件、\n材料等",
+        "note": "集团参照等级（38.7分）；承压为强，风险在此被吸收",
+        "amount_wan": 11300.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json 第4页：（共13行，合计274400.0万元；最大一行）金额单位：亿元 \n担保方 \n被担保方 \n债权方 \n担保金额 \n资金用途 \n凌源钢铁\n股份有限\n公司 \n凌源钢铁集",
+        "note": "",
+        "amount_wan": 274400.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_赤峰九联",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：赤峰九联 \n\n25,667.01 \n注3 \n采购焦炭",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json 第4页：（共13行，合计274400.0万元；最大一行）金额单位：亿元 \n担保方 \n被担保方 \n债权方 \n担保金额 \n资金用途 \n凌源钢铁\n股份有限\n公司 \n凌源钢铁集",
+        "note": "",
+        "amount_wan": 274400.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌钢运输",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第7页：凌钢运输 \n7,000 \n7,625.98 \n\n运输服务",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第6页：（共3行，合计71500.0万元；最大一行）向关联人\n销售材料 \n凌钢集团 \n70,000 \n68,926.56 \n\n销售高炉煤气、转\n炉煤气等",
+        "note": "",
+        "amount_wan": 71500.0
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌源钢铁国际贸易有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json 第1页：（共3行，合计80000.0万元；最大一行）公司的全资子公司国贸公司为公司与盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）签署的在2022 年6 ",
+        "note": "严重程度已降至最低",
+        "amount_wan": 80000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第6页：（共3行，合计71500.0万元；最大一行）向关联人\n销售材料 \n凌钢集团 \n70,000 \n68,926.56 \n\n销售高炉煤气、转\n炉煤气等",
+        "note": "",
+        "amount_wan": 71500.0
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json 第1页：（共3行，合计380000.0万元；最大一行）保国公司以其所持有的3 宗采矿权为公司与中国人民民生银行股份有限公司大连分行（以下简称“民生银行大连分行”）签署的",
+        "note": "严重程度已降至最低",
+        "amount_wan": 380000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第6页：（共3行，合计71500.0万元；最大一行）向关联人\n销售材料 \n凌钢集团 \n70,000 \n68,926.56 \n\n销售高炉煤气、转\n炉煤气等",
+        "note": "",
+        "amount_wan": 71500.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_建平磷铁",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：建平磷铁 \n12,000 \n6,312.21 \n注2 \n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 12000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第6页：（共3行，合计71500.0万元；最大一行）向关联人\n销售材料 \n凌钢集团 \n70,000 \n68,926.56 \n\n销售高炉煤气、转\n炉煤气等",
+        "note": "",
+        "amount_wan": 71500.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢矿业",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：鞍钢矿业 \n\n20,511.24 \n注3 \n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第6页：（共3行，合计71500.0万元；最大一行）向关联人\n销售材料 \n凌钢集团 \n70,000 \n68,926.56 \n\n销售高炉煤气、转\n炉煤气等",
+        "note": "",
+        "amount_wan": 71500.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢国贸",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：鞍钢国贸 \n30,000 \n\n注2 \n采购焦炭、备件材\n料等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第6页：（共3行，合计71500.0万元；最大一行）向关联人\n销售材料 \n凌钢集团 \n70,000 \n68,926.56 \n\n销售高炉煤气、转\n炉煤气等",
+        "note": "",
+        "amount_wan": 71500.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：（共2行，合计11300.0万元；最大一行）鞍钢集团其他子公司 \n9,000 \n956.72 \n注2 \n采购设备、备件、\n材料等",
+        "note": "集团参照等级（38.7分）；承压为强，风险在此被吸收",
+        "amount_wan": 11300.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第6页：（共3行，合计71500.0万元；最大一行）向关联人\n销售材料 \n凌钢集团 \n70,000 \n68,926.56 \n\n销售高炉煤气、转\n炉煤气等",
+        "note": "",
+        "amount_wan": 71500.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_赤峰九联",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：赤峰九联 \n\n25,667.01 \n注3 \n采购焦炭",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第6页：（共3行，合计71500.0万元；最大一行）向关联人\n销售材料 \n凌钢集团 \n70,000 \n68,926.56 \n\n销售高炉煤气、转\n炉煤气等",
+        "note": "",
+        "amount_wan": 71500.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌钢运输",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第7页：凌钢运输 \n7,000 \n7,625.98 \n\n运输服务",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌源钢铁国际贸易有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json 第1页：（共3行，合计80000.0万元；最大一行）公司的全资子公司国贸公司为公司与盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）签署的在2022 年6 ",
+        "note": "严重程度已降至最低",
+        "amount_wan": 80000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json 第1页：（共3行，合计380000.0万元；最大一行）保国公司以其所持有的3 宗采矿权为公司与中国人民民生银行股份有限公司大连分行（以下简称“民生银行大连分行”）签署的",
+        "note": "严重程度已降至最低",
+        "amount_wan": 380000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_建平磷铁",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：建平磷铁 \n12,000 \n6,312.21 \n注2 \n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 12000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢矿业",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：鞍钢矿业 \n\n20,511.24 \n注3 \n采购矿粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢国贸",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：鞍钢国贸 \n30,000 \n\n注2 \n采购焦炭、备件材\n料等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：（共2行，合计11300.0万元；最大一行）鞍钢集团其他子公司 \n9,000 \n956.72 \n注2 \n采购设备、备件、\n材料等",
+        "note": "集团参照等级（38.7分）；承压为强，风险在此被吸收",
+        "amount_wan": 11300.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_赤峰九联",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：赤峰九联 \n\n25,667.01 \n注3 \n采购焦炭",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 27.44 亿元，占担保方净资产 39%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌钢运输",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第7页：凌钢运输 \n7,000 \n7,625.98 \n\n运输服务",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7000.0
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600019",
+    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600019",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2022-05-11 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌源钢铁国际贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json 第1页：（共3行，合计80000.0万元；最大一行）公司的全资子公司国贸公司为公司与盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）签署的在2022 年6 ",
+        "note": "",
+        "amount_wan": 80000.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2022-05-11 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "600231",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_019_600231_guarantee_backtest.json 第1页：（共3行，合计380000.0万元；最大一行）保国公司以其所持有的3 宗采矿权为公司与中国人民民生银行股份有限公司大连分行（以下简称“民生银行大连分行”）签署的",
+        "note": "",
+        "amount_wan": 380000.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2022-05-11 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：（共5行，合计737000.0万元；最大一行）向关联人\n购买原材\n料 \n凌钢集团 \n500,000 489,816.85 \n注1 \n采购矿粉、废钢、\n焦炭等",
+        "note": "集团参照等级（59.1分）",
+        "amount_wan": 737000.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2022-05-11 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_建平磷铁",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：建平磷铁 \n12,000 \n6,312.21 \n注2 \n采购矿粉",
+        "note": "",
+        "amount_wan": 12000.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2022-05-11 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢矿业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：鞍钢矿业 \n\n20,511.24 \n注3 \n采购矿粉",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2022-05-11 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_鞍钢国贸",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：鞍钢国贸 \n30,000 \n\n注2 \n采购焦炭、备件材\n料等",
+        "note": "",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2022-05-11 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_ANSTEEL_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：（共2行，合计11300.0万元；最大一行）鞍钢集团其他子公司 \n9,000 \n956.72 \n注2 \n采购设备、备件、\n材料等",
+        "note": "集团参照等级（38.7分）；承压为强，风险在此被吸收",
+        "amount_wan": 11300.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2022-05-11 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_赤峰九联",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第5页：赤峰九联 \n\n25,667.01 \n注3 \n采购焦炭",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2022-05-11 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/backtest_linggang_freeze/guarantee/backtest_linggang_004_600231_guarantee_backtest.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌钢运输",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_047_600231_related_estimate.json 第7页：凌钢运输 \n7,000 \n7,625.98 \n\n运输服务",
+        "note": "",
+        "amount_wan": 7000.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率95.3%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率95.3%（24家中第1弱）；现金比率0.05（24家中第1弱",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率95.3%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率95.3%（24家中第1弱）；现金比率0.05（24家中第1弱",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率95.3%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率95.3%（24家中第1弱）；现金比率0.05（24家中第1弱",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率95.3%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率95.3%（24家中第1弱）；现金比率0.05（24家中第1弱",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率95.3%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率95.3%（24家中第1弱）；现金比率0.05（24家中第1弱",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率95.3%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率95.3%（24家中第1弱）；现金比率0.05（24家中第1弱",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-9.1%（24家中第3弱）；速动比率0.27（24家中第5弱）；经营现金流/收入-6.4%（24家中第6弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-9.1%（24家中第3弱）；速动比率0.27（24家中第5弱）；经营现金流/收入-6.4%（24家中第6弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-9.1%（24家中第3弱）；速动比率0.27（24家中第5弱）；经营现金流/收入-6.4%（24家中第6弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-9.1%（24家中第3弱）；速动比率0.27（24家中第5弱）；经营现金流/收入-6.4%（24家中第6弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-9.1%（24家中第3弱）；速动比率0.27（24家中第5弱）；经营现金流/收入-6.4%（24家中第6弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-9.1%（24家中第3弱）；速动比率0.27（24家中第5弱）；经营现金流/收入-6.4%（24家中第6弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "601005",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；流动比率0.42（24家中第2弱）；收入增长-26.1%（24家中第2弱）；速动比率0.20（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "601005",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "601005",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；流动比率0.42（24家中第2弱）；收入增长-26.1%（24家中第2弱）；速动比率0.20（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "601005",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "601005",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；流动比率0.42（24家中第2弱）；收入增长-26.1%（24家中第2弱）；速动比率0.20（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "601005",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "601005",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；流动比率0.42（24家中第2弱）；收入增长-26.1%（24家中第2弱）；速动比率0.20（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "601005",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "601005",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；流动比率0.42（24家中第2弱）；收入增长-26.1%（24家中第2弱）；速动比率0.20（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "601005",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "601005",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；流动比率0.42（24家中第2弱）；收入增长-26.1%（24家中第2弱）；速动比率0.20（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "601005",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_FANGDA_GROUP",
+    "seed_reason": "2024-04-12 credit_exposure：guarantee_limit → 绥芬河方大国际贸易有限公司（outputs/analysis_freeze/guarantee/analysis_062_600507_guarantee_related.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_FANGDA_GROUP",
+        "dst": "600507",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_FANGDA",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  }
+]
