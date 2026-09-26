@@ -100,15 +100,25 @@ def add_guarantee_exposure(rows: list[dict], signals: list[dict], as_of: str) ->
     from src.validity import is_active
 
     exposure: dict[str, float] = {}
+    reported: dict[str, tuple[str, float]] = {}   # latest cumulative external balance: (date, amount)
+    for s in signals:
+        if s.get("signal_type") == "guarantee_balance" and s.get("magnitude") not in (None, "") and is_active(s, as_of):
+            day, amount = s.get("date", ""), float(s["magnitude"])
+            prev = reported.get(s["entity_id"])
+            if prev is None or day > prev[0] or (day == prev[0] and amount > prev[1]):
+                reported[s["entity_id"]] = (day, amount)
     for s in signals:
         if (s.get("signal_type") in ("credit_exposure", "credit_event") and s.get("severity") in ("medium", "high")
                 and s.get("magnitude") not in (None, "") and is_active(s, as_of)):
             exposure[s["entity_id"]] = exposure.get(s["entity_id"], 0.0) + float(s["magnitude"])
     for r in rows:
-        equity = r.get("equity")
-        r["guarantee_to_equity"] = (exposure.get(r["security_code"], 0.0) * 1e4 / equity
-                                    if equity and equity > 0 else None)
-        r["guarantee_exposure_wan"] = exposure.get(r["security_code"], 0.0)
+        code, equity = r["security_code"], r.get("equity")
+        summed = exposure.get(code, 0.0)
+        balance = reported.get(code, ("", 0.0))[1]
+        amount = max(summed, balance)      # the reported cumulative balance, unless new guarantees exceed it
+        r["guarantee_exposure_wan"] = amount
+        r["guarantee_exposure_basis"] = "累计余额" if balance >= summed and balance > 0 else "新增担保合计" if summed else ""
+        r["guarantee_to_equity"] = amount * 1e4 / equity if equity and equity > 0 else None
 
 
 def previous_snapshot(as_of: str) -> dict[str, dict]:

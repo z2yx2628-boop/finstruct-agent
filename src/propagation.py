@@ -53,10 +53,39 @@ def lower(level: str) -> str | None:
     return LEVELS[i - 1] if i > 0 else None
 
 
+def group_proxies(fragility: dict[str, dict], equity: dict[str, float], groups: dict[str, str],
+                  listed: set[str]) -> dict[str, dict]:
+    """Unlisted parent groups (鞍钢集团, 中国宝武 …) publish no accounts here. Their proxy tier is the
+    equity-weighted average fragility score of the group's listed members (same thresholds:
+    >=60 weak, >=40 medium, else strong), marked proxy=1 so it is never shown as a real score."""
+    from src.entity_resolver import load_entities
+
+    rows, _ = load_entities()
+    by_group: dict[str, list[tuple[str, float, float]]] = defaultdict(list)
+    for code in listed:
+        r = fragility.get(code)
+        if r and r.get("total_score") not in (None, "") and groups.get(code):
+            weight = equity.get(code) or 0.0
+            by_group[groups[code]].append((code, float(r["total_score"]), max(weight, 0.0)))
+    proxies = {}
+    for entity, row in rows.items():
+        members = by_group.get(row.get("group_id"))
+        if row.get("entity_type") != "parent_group" or not members:
+            continue
+        total_w = sum(w for _, _, w in members)
+        score = (sum(s * w for _, s, w in members) / total_w) if total_w else sum(s for _, s, _ in members) / len(members)
+        tier = "weak" if score >= 60 else "medium" if score >= 40 else "strong"
+        proxies[entity] = {"tier": tier, "total_score": round(score, 1), "proxy": 1,
+                           "reasons": "集团参照：上市成员按净资产加权 " + "、".join(
+                               f"{c}:{s:.0f}" for c, s, _ in sorted(members, key=lambda m: -m[2])[:4])}
+    return proxies
+
+
 class Graph:
     def __init__(self, edges: list[dict], fragility: dict[str, dict], equity: dict[str, float],
-                 groups: dict[str, str], listed: set[str]):
+                 groups: dict[str, str], listed: set[str], proxies: bool = True):
         self.fragility, self.equity, self.groups, self.listed = fragility, equity, groups, listed
+        self.proxy = group_proxies(fragility, equity, groups, listed) if proxies else {}
         self.out = defaultdict(list)          # (node, shock) -> [(next, rule, edge)]
         self.members = defaultdict(set)       # industry -> companies
         self.industry_of = {}
@@ -76,7 +105,7 @@ class Graph:
         self.industry_next = industry_next
 
     def tier(self, node: str) -> str:
-        return self.fragility.get(node, {}).get("tier") or "unknown"
+        return (self.fragility.get(node, {}).get("tier") or self.proxy.get(node, {}).get("tier") or "unknown")
 
     def material(self, edge: dict, node: str) -> bool:
         amount = edge.get("amount_wan")
@@ -147,8 +176,10 @@ def propagate(graph: Graph, seed: str, shock: str, severity: str, reason: str) -
                 step.decision, step.note = "immaterial", f"金额低于对方净资产的{MATERIALITY:.0%}"
                 finished.append(branch)
                 continue
+            if nxt in graph.proxy and nxt not in graph.fragility:
+                step.note = f"集团参照等级（{graph.proxy[nxt]['total_score']}分）"
             if tier == "strong":
-                step.decision, step.note = "absorbed", "承压评分为强，风险在此被吸收"
+                step.decision, step.note = "absorbed", (step.note + "；" if step.note else "") + "承压为强，风险在此被吸收"
                 finished.append(branch)
                 continue
             next_level = level if tier == "weak" else lower(level)

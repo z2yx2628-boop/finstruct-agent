@@ -78,3 +78,10 @@ def test_industry_links_are_marked_approximate_and_cover_the_chain():
 def test_disclosed_edges_default_to_disclosed_basis():
     edges, _ = edges_from(GUARANTEE, "g.json")
     assert edges[0].basis == "disclosed"
+
+
+def test_cumulative_external_guarantee_balance_becomes_an_info_signal():
+    doc = dict(GUARANTEE, external_guarantee_balance=28.58, external_guarantee_unit="亿元",
+               total_guarantee_net_asset_ratio=155.98)
+    s = [x for x in signals_from(doc, "g.json") if x.signal_type == "guarantee_balance"]
+    assert len(s) == 1 and s[0].magnitude == 285800.0 and s[0].severity == "info" and s[0].valid_to == "2027-03-30"

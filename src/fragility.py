@@ -115,7 +115,8 @@ def score(rows: list[dict], signals: list[dict], as_of: str, period_public: str,
                   if dim_scores.get(d, 0) >= EXTREME]
         if lines:
             tier = "weak"
-            reasons = lines + reasons
+            covered = ("对外担保" if any(l.startswith("对外担保") for l in lines) else None)
+            reasons = lines + [r for r in reasons if not (covered and r.startswith(covered))]
         events = [s for s in signals if s.get("entity_id") == code and report_public < s.get("date", "") <= as_of
                   and s.get("signal_type") in EVENT_TYPES]
         serious = [s for s in events if s.get("severity") == "high" or s.get("signal_type") == "credit_event"]

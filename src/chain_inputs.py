@@ -213,6 +213,18 @@ def signals_from(doc: dict, source_doc: str) -> list[Signal]:
                                    magnitude=c.get("capacity"), magnitude_unit=c.get("capacity_unit") or "",
                                    detail=f"{et} {c.get('facility_type') or ''} {c.get('product_name') or ''}".strip()))
     elif kind == "guarantee":
+        balance = to_wan(doc.get("external_guarantee_balance"), doc.get("external_guarantee_unit"))
+        if balance is not None:
+            # Document-level cumulative balance of guarantees to parties OUTSIDE the consolidated
+            # group (not the total, which also covers the issuer's own subsidiaries).
+            announced = doc.get("announcement_date") or ""
+            out.append(_signal(issuer, doc, source_doc, {}, window(announced, None, announced, 12),
+                               signal_type="guarantee_balance", severity="info",
+                               severity_rule="累计对外担保余额（合并报表外），用于承压评分的对外担保维度",
+                               magnitude=balance, magnitude_unit="万元",
+                               detail=f"累计对外担保余额 {balance / 1e4:.2f} 亿元"
+                                      + (f"（总担保占净资产 {doc['total_guarantee_net_asset_ratio']}%）"
+                                         if doc.get("total_guarantee_net_asset_ratio") is not None else "")))
         for e in doc.get("events") or []:
             rel, et = e.get("relationship") or "", e.get("event_type")
             if et == "guarantee_overdue":

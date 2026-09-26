@@ -6,8 +6,10 @@ entity_id,entity_name,group_id,date,signal_type,severity,severity_rule,magnitude
 601003,柳州钢铁股份有限公司,G_LIUGANG,2024-11-19,capacity_reduction,info,产能变化只作背景，严重程度由方向三结合供需关系判断,310.0,万吨/年,capacity_replacement 120吨转炉 炼钢,outputs/analysis_freeze/capacity/analysis_082_601003_capacity.json,1,本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。,2024-11-19,2025-11-19
 601003,柳州钢铁股份有限公司,G_LIUGANG,2024-11-19,capacity_reduction,info,产能变化只作背景，严重程度由方向三结合供需关系判断,310.0,万吨/年,capacity_replacement 150吨转炉 炼钢,outputs/analysis_freeze/capacity/analysis_082_601003_capacity.json,1,本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。,2024-11-19,2025-11-19
 N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,2024-12-04,credit_exposure,low,为子公司担保=low,250000.0,万元,guarantee_limit → 上海中特泰富钢管有限公司,outputs/analysis_freeze/guarantee/analysis_001_000708_guarantee_quota.json,1,公司子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟为公司子公司上海中特泰富钢管有限公司（以下简称“泰富钢管”）在向银行等金融机构申请的授信额度内提供不超过25 亿元人民币的担保额度，有效期自公司2024 年第二次临时股东大会审议通过之日起至满十二个月止。,2024-12-04,2025-12-04
+000708,中信泰富特钢集团股份有限公司,G_CITIC,2024-03-13,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,12000.0,万元,累计对外担保余额 1.20 亿元（总担保占净资产 12.67%）,outputs/analysis_freeze/guarantee/analysis_002_000708_guarantee_related.json,,,2024-03-13,2025-03-13
 N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,2024-03-13,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,12000.0,万元,guarantee_limit → 湖北中航冶钢特种钢材有限公司,outputs/analysis_freeze/guarantee/analysis_002_000708_guarantee_related.json,1,"公司的全资子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟对公司参股公司湖北中航冶钢特种钢材有限公司（以下简称“湖北中航”）提供不超过人民币1.2 亿元融资担保，具体情况如下：
 公司子公司兴澄特钢对参股公司湖北中航持股40%，湖北中航因经营发展所需，拟向银行等金融机构申请不超过人民币3 亿元授信。授信需要股东方兴澄特钢与中国航空工业供销中南有限公司（以下简称“中航中南”）按持股比例提供担保。其中公司子公司兴澄特钢拟按照持股比例为湖北中航提供不超过人民币1.2 亿元连带责任担保，中航中南为湖北中航提供同等条件同比例不超过人民币1.8 亿元连带责任担保，担保期限为经公司股东大会审议后签署相关协议后的三年。",2024-03-13,2025-03-13
+000708,中信泰富特钢集团股份有限公司,G_CITIC,2024-03-13,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,12000.0,万元,累计对外担保余额 1.20 亿元（总担保占净资产 12.78%）,outputs/analysis_freeze/guarantee/analysis_003_000708_guarantee_related.json,,,2024-03-13,2025-03-13
 N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,2024-03-13,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,4000.0,万元,guarantee_provided → 湖北中航冶钢特种钢材有限公司,outputs/analysis_freeze/guarantee/analysis_003_000708_guarantee_related.json,1,"公司的全资子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟对公司参股公司湖北中航冶钢特种钢材有限公司（以下简称“湖北中航”）提供人民币4,000 万元担保，具体情况如下：
 湖北中航向广发银行股份有限公司武汉分行（以下简称“广发银行”） 
 申请综合授信1 亿元，本次授信需要公司全资子公司兴澄特钢与湖北中
@@ -17,8 +19,10 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 信提供连带责任保证担保，中航中南为湖北中航在广发银行申请的 
 6,000 万元综合授信提供同等条件担保。担保期限为主债务合同债务期
 限届满之日起三年。本次担保不涉及反担保。",2024-03-13,2027-03-13
+000708,中信泰富特钢集团股份有限公司,G_CITIC,2025-03-20,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,12000.0,万元,累计对外担保余额 1.20 亿元（总担保占净资产 8.84%）,outputs/analysis_freeze/guarantee/analysis_004_000708_guarantee_related.json,,,2025-03-20,2026-03-20
 N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,2025-03-20,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,12000.0,万元,guarantee_limit → 湖北中航冶钢特种钢材有限公司,outputs/analysis_freeze/guarantee/analysis_004_000708_guarantee_related.json,1,"公司的全资子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟对公司参股公司湖北中航冶钢特种钢材有限公司（以下简称“湖北中航”）提供不超过人民币1.2 亿元融资担保，具体情况如下：
 湖北中航因经营发展所需，拟向银行等金融机构申请不超过人民币3 亿元授信。本次授信需要股东方兴澄特钢与中国航空工业供销中南有限公司（以下简称“中航中南”）按各自持股比例提供担保。公司子公司兴澄特钢拟按其持股比例为湖北中航提供不超过人民币1.2 亿元连带责任担保，中航中南为湖北中航提供同等条件同比例不超过人民币1.8亿元连带责任担保，担保期限为经公司股东大会审议后签署相关协议后的三年。",2025-03-20,2026-03-20
+000932,湖南华菱钢铁股份有限公司,G_HUNAN,2025-03-20,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,0.0,万元,累计对外担保余额 0.00 亿元（总担保占净资产 47.87%）,outputs/analysis_freeze/guarantee/analysis_018_000932_guarantee_quota.json,,,2025-03-20,2026-03-20
 000932,湖南华菱钢铁股份有限公司,G_HUNAN,2025-03-20,credit_exposure,low,为子公司担保=low,799900.0,万元,guarantee_limit → 湖南华菱湘潭钢铁有限公司,outputs/analysis_freeze/guarantee/analysis_018_000932_guarantee_quota.json,2,"华菱钢铁
 湖南华菱湘潭
 钢铁有限公司 
@@ -64,6 +68,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 15.2 
 2.33% 
 否",2025-03-20,2026-03-20
+000959,北京首钢股份有限公司,G_SHOUGANG,2025-04-16,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,19902.0,万元,累计对外担保余额 1.99 亿元（总担保占净资产 0.63%）,outputs/analysis_freeze/guarantee/analysis_021_000959_guarantee_related.json,,,2025-04-16,2026-04-16
 000959,北京首钢股份有限公司,G_SHOUGANG,2025-04-16,credit_exposure,low,为子公司担保=low,8000.0,万元,guarantee_limit → 上海首钢钢铁贸易有限公司,outputs/analysis_freeze/guarantee/analysis_021_000959_guarantee_related.json,3,"担保
 方 
 被担保方 
@@ -169,6 +174,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 21,000  
 0.42% 
 是",2025-04-16,2026-04-16
+000959,北京首钢股份有限公司,G_SHOUGANG,2025-05-16,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,19902.0,万元,累计对外担保余额 1.99 亿元（总担保占净资产 0.63%）,outputs/analysis_freeze/guarantee/analysis_022_000959_guarantee_related.json,,,2025-05-16,2026-05-16
 000959,北京首钢股份有限公司,G_SHOUGANG,2025-05-16,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,35000.0,万元,guarantee_limit → 迁安中化煤化工有限责任公司,outputs/analysis_freeze/guarantee/analysis_022_000959_guarantee_related.json,2,"二、担保额度预计 
 单位：万元 
 担保方 
@@ -205,6 +211,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 35,000 
 0.71% 
 是",2025-05-16,2026-05-16
+000959,北京首钢股份有限公司,G_SHOUGANG,2026-05-29,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,57815.0,万元,累计对外担保余额 5.78 亿元（总担保占净资产 1.16%）,outputs/analysis_freeze/guarantee/analysis_023_000959_guarantee_related.json,,,2026-05-29,2027-05-29
 000959,北京首钢股份有限公司,G_SHOUGANG,2026-05-29,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,35000.0,万元,guarantee_limit → 迁安中化煤化工有限责任公司,outputs/analysis_freeze/guarantee/analysis_023_000959_guarantee_related.json,3,"首钢
 股份
 中化公司
@@ -259,6 +266,7 @@ N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特�
 福建闽光云商有限公司 
 99.1687 
 900,000",2025-01-03,2026-01-03
+600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,2025-03-13,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,0.0,万元,累计对外担保余额 0.00 亿元（总担保占净资产 0.06%）,outputs/analysis_freeze/guarantee/analysis_032_600010_guarantee_quota.json,,,2025-03-13,2026-03-13
 600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,2025-03-13,credit_exposure,low,为子公司担保=low,3000.0,万元,guarantee_limit → 包钢钢业有限公司,outputs/analysis_freeze/guarantee/analysis_032_600010_guarantee_quota.json,2,"担保
 方 
 被担
@@ -700,6 +708,7 @@ N_辽宁方大集团国贸有限公司,辽宁方大集团国贸有限公司,G_FA
 开发区支行 
 50,000",2025-02-11,2026-02-11
 600507,方大特钢科技股份有限公司,G_FANGDA,2025-11-29,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,50000.0,万元,guarantee_limit → 方大炭素新材料科技股份有限公司,outputs/analysis_freeze/guarantee/analysis_065_600507_guarantee_related.json,1,公司于2025 年11 月28 日召开第九届董事会第八次会议，审议通过《关于调整与方大炭素关联担保额度的议案》，根据公司生产经营的需要，公司调整与方大炭素关联担保额度，由“不超过人民币10 亿元”调整为“不超过人民币5 亿元”，协议其他内容不变。,2025-11-29,2026-11-29
+600569,安阳钢铁股份有限公司,G_ANYANG,2025-11-07,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,11000.0,万元,累计对外担保余额 1.10 亿元（总担保占净资产 176.2%）,outputs/analysis_freeze/guarantee/analysis_072_600569_guarantee_related.json,,,2025-11-07,2026-11-07
 600569,安阳钢铁股份有限公司,G_ANYANG,2025-11-07,credit_exposure,low,为子公司担保=low,11000.0,万元,guarantee_limit → 安钢集团永通球墨铸铁管有限责任公司,outputs/analysis_freeze/guarantee/analysis_072_600569_guarantee_related.json,1,公司此前为永通公司与徽银金融租赁有限公司开展不超过人民币1.10 亿元融资租赁业务提供连带责任保证担保将形成关联担保。,2025-11-07,2026-11-07
 N_江西新华新材料科技股份有限公司,江西新华新材料科技股份有限公司,,2024-04-23,credit_exposure,low,为子公司担保=low,11000.0,万元,guarantee_limit → 张家港新华预应力钢绞线有限公司,outputs/analysis_freeze/guarantee/analysis_078_600782_guarantee_individual.json,1,为满足公司控股子公司江西新华新材料科技股份有限公司（以下简称“新华新材料”）的控股子公司张家港新华日常经营和建设项目的资金需求，促进其业务发展，张家港新华拟向商业银行申请2.20亿元的流动资金贷款。控股子公司新华新材料及张家港宏兴高线有限公司按持股比例对张家港新华提供同比例担保，控股子公司新华新材料为张家港新华提供担保额度不超过1.10 亿元。,2024-04-23,2025-04-23
 600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",78000.0,股,包钢集团 质押给 中信银行股份有限公司包头分行,outputs/analysis_freeze/pledge/analysis_033_600010_pledge.json,2,"股东名称

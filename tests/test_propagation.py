@@ -132,3 +132,15 @@ def test_evidence_is_shown_as_announcement_title_and_group_name():
     assert readable("data/reference/entities.csv：同属集团 G_ANSTEEL").startswith("同属鞍钢集团")
     text = readable("outputs/analysis_freeze/related_party/no_such_doc.json 第2页：甲\n乙")
     assert "第2页：甲 乙" in text
+
+
+def test_unlisted_parent_group_gets_equity_weighted_proxy_tier_and_can_absorb():
+    from src.propagation import group_proxies
+    frag = {"600019": {"tier": "strong", "total_score": "15"}, "600581": {"tier": "weak", "total_score": "70"}}
+    equity = {"600019": 2000e8, "600581": 10e8}
+    groups = {"600019": "G_BAOWU", "600581": "G_BAOWU", "E_BAOWU": "G_BAOWU"}
+    proxies = group_proxies(frag, equity, groups, {"600019", "600581"})
+    assert proxies["E_BAOWU"]["tier"] == "strong" and proxies["E_BAOWU"]["proxy"] == 1
+    g = Graph([edge("supply", "E_BAOWU", "600581", 10000)], frag, equity, groups, {"600019", "600581"})
+    p = next(x for x in propagate(g, "600581", "credit", "high", "资不抵债") if x.steps[0].dst == "E_BAOWU")
+    assert p.steps[0].decision == "absorbed" and "集团参照" in p.steps[0].note
