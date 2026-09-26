@@ -1,13 +1,13 @@
-entity_id,entity_name,group_id,date,signal_type,severity,severity_rule,magnitude,magnitude_unit,detail,source_doc,source_page,evidence_text
-000932,湖南华菱钢铁股份有限公司,G_HUNAN,2024-03-29,capacity_increase,info,产能变化只作背景，严重程度由方向三结合供需关系判断,50.0,万吨/年,capacity_construction 镀锌生产线 镀锌板,outputs/analysis_freeze/capacity/analysis_017_000932_capacity.json,1,华菱涟钢拟在冷轧板厂现有预留场地建设一条生产规模为50 万吨的镀锌生产线。
+entity_id,entity_name,group_id,date,signal_type,severity,severity_rule,magnitude,magnitude_unit,detail,source_doc,source_page,evidence_text,valid_from,valid_to
+000932,湖南华菱钢铁股份有限公司,G_HUNAN,2024-03-29,capacity_increase,info,产能变化只作背景，严重程度由方向三结合供需关系判断,50.0,万吨/年,capacity_construction 镀锌生产线 镀锌板,outputs/analysis_freeze/capacity/analysis_017_000932_capacity.json,1,华菱涟钢拟在冷轧板厂现有预留场地建设一条生产规模为50 万吨的镀锌生产线。,2024-03-29,2025-03-29
 000932,湖南华菱钢铁股份有限公司,G_HUNAN,2024-03-29,capacity_increase,info,产能变化只作背景，严重程度由方向三结合供需关系判断,50.0,万吨,capacity_construction 为 为产能,outputs/analysis_freeze/capacity/analysis_017_000932_capacity.json,1,"生产规模
-为50 万吨"
-601003,柳州钢铁股份有限公司,G_LIUGANG,2024-11-19,capacity_reduction,info,产能变化只作背景，严重程度由方向三结合供需关系判断,118.0,万吨/年,capacity_replacement 1250立方米高炉 炼铁,outputs/analysis_freeze/capacity/analysis_082_601003_capacity.json,1,本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。
-601003,柳州钢铁股份有限公司,G_LIUGANG,2024-11-19,capacity_reduction,info,产能变化只作背景，严重程度由方向三结合供需关系判断,310.0,万吨/年,capacity_replacement 120吨转炉 炼钢,outputs/analysis_freeze/capacity/analysis_082_601003_capacity.json,1,本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。
-601003,柳州钢铁股份有限公司,G_LIUGANG,2024-11-19,capacity_reduction,info,产能变化只作背景，严重程度由方向三结合供需关系判断,310.0,万吨/年,capacity_replacement 150吨转炉 炼钢,outputs/analysis_freeze/capacity/analysis_082_601003_capacity.json,1,本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。
-N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,2024-12-04,credit_exposure,low,为子公司担保=low,250000.0,万元,guarantee_limit → 上海中特泰富钢管有限公司,outputs/analysis_freeze/guarantee/analysis_001_000708_guarantee_quota.json,1,公司子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟为公司子公司上海中特泰富钢管有限公司（以下简称“泰富钢管”）在向银行等金融机构申请的授信额度内提供不超过25 亿元人民币的担保额度，有效期自公司2024 年第二次临时股东大会审议通过之日起至满十二个月止。
+为50 万吨",2024-03-29,2025-03-29
+601003,柳州钢铁股份有限公司,G_LIUGANG,2024-11-19,capacity_reduction,info,产能变化只作背景，严重程度由方向三结合供需关系判断,118.0,万吨/年,capacity_replacement 1250立方米高炉 炼铁,outputs/analysis_freeze/capacity/analysis_082_601003_capacity.json,1,本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。,2024-11-19,2025-11-19
+601003,柳州钢铁股份有限公司,G_LIUGANG,2024-11-19,capacity_reduction,info,产能变化只作背景，严重程度由方向三结合供需关系判断,310.0,万吨/年,capacity_replacement 120吨转炉 炼钢,outputs/analysis_freeze/capacity/analysis_082_601003_capacity.json,1,本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。,2024-11-19,2025-11-19
+601003,柳州钢铁股份有限公司,G_LIUGANG,2024-11-19,capacity_reduction,info,产能变化只作背景，严重程度由方向三结合供需关系判断,310.0,万吨/年,capacity_replacement 150吨转炉 炼钢,outputs/analysis_freeze/capacity/analysis_082_601003_capacity.json,1,本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。,2024-11-19,2025-11-19
+N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,2024-12-04,credit_exposure,low,为子公司担保=low,250000.0,万元,guarantee_limit → 上海中特泰富钢管有限公司,outputs/analysis_freeze/guarantee/analysis_001_000708_guarantee_quota.json,1,公司子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟为公司子公司上海中特泰富钢管有限公司（以下简称“泰富钢管”）在向银行等金融机构申请的授信额度内提供不超过25 亿元人民币的担保额度，有效期自公司2024 年第二次临时股东大会审议通过之日起至满十二个月止。,2024-12-04,2025-12-04
 N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,2024-03-13,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,12000.0,万元,guarantee_limit → 湖北中航冶钢特种钢材有限公司,outputs/analysis_freeze/guarantee/analysis_002_000708_guarantee_related.json,1,"公司的全资子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟对公司参股公司湖北中航冶钢特种钢材有限公司（以下简称“湖北中航”）提供不超过人民币1.2 亿元融资担保，具体情况如下：
-公司子公司兴澄特钢对参股公司湖北中航持股40%，湖北中航因经营发展所需，拟向银行等金融机构申请不超过人民币3 亿元授信。授信需要股东方兴澄特钢与中国航空工业供销中南有限公司（以下简称“中航中南”）按持股比例提供担保。其中公司子公司兴澄特钢拟按照持股比例为湖北中航提供不超过人民币1.2 亿元连带责任担保，中航中南为湖北中航提供同等条件同比例不超过人民币1.8 亿元连带责任担保，担保期限为经公司股东大会审议后签署相关协议后的三年。"
+公司子公司兴澄特钢对参股公司湖北中航持股40%，湖北中航因经营发展所需，拟向银行等金融机构申请不超过人民币3 亿元授信。授信需要股东方兴澄特钢与中国航空工业供销中南有限公司（以下简称“中航中南”）按持股比例提供担保。其中公司子公司兴澄特钢拟按照持股比例为湖北中航提供不超过人民币1.2 亿元连带责任担保，中航中南为湖北中航提供同等条件同比例不超过人民币1.8 亿元连带责任担保，担保期限为经公司股东大会审议后签署相关协议后的三年。",2024-03-13,2025-03-13
 N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,2024-03-13,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,4000.0,万元,guarantee_provided → 湖北中航冶钢特种钢材有限公司,outputs/analysis_freeze/guarantee/analysis_003_000708_guarantee_related.json,1,"公司的全资子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟对公司参股公司湖北中航冶钢特种钢材有限公司（以下简称“湖北中航”）提供人民币4,000 万元担保，具体情况如下：
 湖北中航向广发银行股份有限公司武汉分行（以下简称“广发银行”） 
 申请综合授信1 亿元，本次授信需要公司全资子公司兴澄特钢与湖北中
@@ -16,9 +16,9 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 合同》，其中兴澄特钢为湖北中航在广发银行申请的4,000 万元综合授
 信提供连带责任保证担保，中航中南为湖北中航在广发银行申请的 
 6,000 万元综合授信提供同等条件担保。担保期限为主债务合同债务期
-限届满之日起三年。本次担保不涉及反担保。"
+限届满之日起三年。本次担保不涉及反担保。",2024-03-13,2027-03-13
 N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,2025-03-20,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,12000.0,万元,guarantee_limit → 湖北中航冶钢特种钢材有限公司,outputs/analysis_freeze/guarantee/analysis_004_000708_guarantee_related.json,1,"公司的全资子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟对公司参股公司湖北中航冶钢特种钢材有限公司（以下简称“湖北中航”）提供不超过人民币1.2 亿元融资担保，具体情况如下：
-湖北中航因经营发展所需，拟向银行等金融机构申请不超过人民币3 亿元授信。本次授信需要股东方兴澄特钢与中国航空工业供销中南有限公司（以下简称“中航中南”）按各自持股比例提供担保。公司子公司兴澄特钢拟按其持股比例为湖北中航提供不超过人民币1.2 亿元连带责任担保，中航中南为湖北中航提供同等条件同比例不超过人民币1.8亿元连带责任担保，担保期限为经公司股东大会审议后签署相关协议后的三年。"
+湖北中航因经营发展所需，拟向银行等金融机构申请不超过人民币3 亿元授信。本次授信需要股东方兴澄特钢与中国航空工业供销中南有限公司（以下简称“中航中南”）按各自持股比例提供担保。公司子公司兴澄特钢拟按其持股比例为湖北中航提供不超过人民币1.2 亿元连带责任担保，中航中南为湖北中航提供同等条件同比例不超过人民币1.8亿元连带责任担保，担保期限为经公司股东大会审议后签署相关协议后的三年。",2025-03-20,2026-03-20
 000932,湖南华菱钢铁股份有限公司,G_HUNAN,2025-03-20,credit_exposure,low,为子公司担保=low,799900.0,万元,guarantee_limit → 湖南华菱湘潭钢铁有限公司,outputs/analysis_freeze/guarantee/analysis_018_000932_guarantee_quota.json,2,"华菱钢铁
 湖南华菱湘潭
 钢铁有限公司 
@@ -27,7 +27,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 0 
 79.99 
 12.28% 
-否"
+否",2025-03-20,2026-03-20
 000932,湖南华菱钢铁股份有限公司,G_HUNAN,2025-03-20,credit_exposure,low,为子公司担保=low,1016000.0,万元,guarantee_limit → 湖南华菱涟源钢铁有限公司,outputs/analysis_freeze/guarantee/analysis_018_000932_guarantee_quota.json,2,"华菱钢铁
 湖南华菱涟源
 钢铁有限公司 
@@ -36,7 +36,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 0 
 101.6 
 15.60% 
-否"
+否",2025-03-20,2026-03-20
 000932,湖南华菱钢铁股份有限公司,G_HUNAN,2025-03-20,credit_exposure,low,为子公司担保=low,520000.0,万元,guarantee_limit → 衡阳华菱钢管有限公司,outputs/analysis_freeze/guarantee/analysis_018_000932_guarantee_quota.json,2,"华菱钢铁
 衡阳华菱钢管
 有限公司 
@@ -45,7 +45,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 0 
 52.00  
 7.98% 
-否"
+否",2025-03-20,2026-03-20
 000932,湖南华菱钢铁股份有限公司,G_HUNAN,2025-03-20,credit_exposure,low,为子公司担保=low,80400.0,万元,guarantee_limit → 衡阳华菱连轧管有限公司,outputs/analysis_freeze/guarantee/analysis_018_000932_guarantee_quota.json,2,"华菱钢铁
 衡阳华菱连轧
 管有限公司 
@@ -54,7 +54,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 0 
 8.04 
 1.23% 
-否"
+否",2025-03-20,2026-03-20
 000932,湖南华菱钢铁股份有限公司,G_HUNAN,2025-03-20,credit_exposure,low,为子公司担保=low,152000.0,万元,guarantee_limit → 深圳华菱商业保理有限公司,outputs/analysis_freeze/guarantee/analysis_018_000932_guarantee_quota.json,2,"华菱钢铁
 深圳华菱商业
 保理有限公司 
@@ -63,7 +63,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 0 
 15.2 
 2.33% 
-否"
+否",2025-03-20,2026-03-20
 000959,北京首钢股份有限公司,G_SHOUGANG,2025-04-16,credit_exposure,low,为子公司担保=low,8000.0,万元,guarantee_limit → 上海首钢钢铁贸易有限公司,outputs/analysis_freeze/guarantee/analysis_021_000959_guarantee_related.json,3,"担保
 方 
 被担保方 
@@ -98,7 +98,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 11,295  
 8,000  
 0.16% 
-否"
+否",2025-04-16,2026-04-16
 000959,北京首钢股份有限公司,G_SHOUGANG,2025-04-16,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,4400.0,万元,guarantee_limit → 宁波首钢浙金钢材有限公司,outputs/analysis_freeze/guarantee/analysis_021_000959_guarantee_related.json,3,"担保
 方 
 被担保方 
@@ -133,7 +133,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 2,507  
 4,400  
 0.09% 
-是"
+是",2025-04-16,2026-04-16
 000959,北京首钢股份有限公司,G_SHOUGANG,2025-04-16,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,21000.0,万元,guarantee_limit → 首钢(青岛)钢业有限公司,outputs/analysis_freeze/guarantee/analysis_021_000959_guarantee_related.json,3,"担保
 方 
 被担保方 
@@ -168,7 +168,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 17,395  
 21,000  
 0.42% 
-是"
+是",2025-04-16,2026-04-16
 000959,北京首钢股份有限公司,G_SHOUGANG,2025-05-16,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,35000.0,万元,guarantee_limit → 迁安中化煤化工有限责任公司,outputs/analysis_freeze/guarantee/analysis_022_000959_guarantee_related.json,2,"二、担保额度预计 
 单位：万元 
 担保方 
@@ -204,7 +204,7 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 0 
 35,000 
 0.71% 
-是"
+是",2025-05-16,2026-05-16
 000959,北京首钢股份有限公司,G_SHOUGANG,2026-05-29,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,35000.0,万元,guarantee_limit → 迁安中化煤化工有限责任公司,outputs/analysis_freeze/guarantee/analysis_023_000959_guarantee_related.json,3,"首钢
 股份
 中化公司
@@ -213,28 +213,28 @@ N_江阴兴澄特种钢铁有限公司,江阴兴澄特种钢铁有限公司,,202
 35,000
 35,000
 0.70%
-是"
+是",2026-05-29,2027-05-29
 000959,北京首钢股份有限公司,G_SHOUGANG,2026-05-29,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,2200.0,万元,guarantee_limit → 宁波首钢浙金钢材有限公司,outputs/analysis_freeze/guarantee/analysis_023_000959_guarantee_related.json,3,"宁波浙金
 40%
 73%
 2,200
 2,200
 0.04%
-是"
+是",2026-05-29,2027-05-29
 000959,北京首钢股份有限公司,G_SHOUGANG,2026-05-29,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,21000.0,万元,guarantee_limit → 首钢（青岛）钢业有限公司,outputs/analysis_freeze/guarantee/analysis_023_000959_guarantee_related.json,3,"青岛钢业
 35%
 89%
 20,615
 21,000
 0.42%
-是"
-N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特钢股份有限公司,G_SHAGANG,2024-05-21,credit_exposure,low,为子公司担保=low,88000.0,万元,guarantee_limit → 江苏利淮钢铁有限公司,outputs/analysis_freeze/guarantee/analysis_025_002075_guarantee_individual.json,1,"淮钢公司为江苏利淮提供的担保期限即将到期，为支持江苏利淮生产经营业务的正常开展，淮钢公司同意为江苏利淮提供不超过88,000 万元的授信担保额度，担保期限自淮钢公司2023 年度股东大会审议通过之日起至2024 年度股东大会召开之日时止。"
-N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特钢股份有限公司,G_SHAGANG,2025-05-07,credit_exposure,low,为子公司担保=low,68000.0,万元,guarantee_limit → 江苏利淮钢铁有限公司,outputs/analysis_freeze/guarantee/analysis_026_002075_guarantee_individual.json,1,"淮钢公司为江苏利淮提供的担保期限即将到期，为支持江苏利淮生产经营业务的正常开展，淮钢公司同意为江苏利淮提供不超过68,000 万元的授信担保额度，担保期限自淮钢公司2024 年度股东大会审议通过之日起至2025 年度股东大会召开之日时止。"
+是",2026-05-29,2027-05-29
+N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特钢股份有限公司,G_SHAGANG,2024-05-21,credit_exposure,low,为子公司担保=low,88000.0,万元,guarantee_limit → 江苏利淮钢铁有限公司,outputs/analysis_freeze/guarantee/analysis_025_002075_guarantee_individual.json,1,"淮钢公司为江苏利淮提供的担保期限即将到期，为支持江苏利淮生产经营业务的正常开展，淮钢公司同意为江苏利淮提供不超过88,000 万元的授信担保额度，担保期限自淮钢公司2023 年度股东大会审议通过之日起至2024 年度股东大会召开之日时止。",2024-05-21,2025-05-21
+N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特钢股份有限公司,G_SHAGANG,2025-05-07,credit_exposure,low,为子公司担保=low,68000.0,万元,guarantee_limit → 江苏利淮钢铁有限公司,outputs/analysis_freeze/guarantee/analysis_026_002075_guarantee_individual.json,1,"淮钢公司为江苏利淮提供的担保期限即将到期，为支持江苏利淮生产经营业务的正常开展，淮钢公司同意为江苏利淮提供不超过68,000 万元的授信担保额度，担保期限自淮钢公司2024 年度股东大会审议通过之日起至2025 年度股东大会召开之日时止。",2025-05-07,2026-05-07
 N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特钢股份有限公司,G_SHAGANG,2026-05-27,credit_exposure,low,为子公司担保=low,68000.0,万元,guarantee_limit → 江苏利淮钢铁有限公司,outputs/analysis_freeze/guarantee/analysis_027_002075_guarantee_individual.json,1,"近日，江苏沙钢股份有限公司（以下简称“公司”）合并范围内控股子公司
 江苏沙钢集团淮钢特钢股份有限公司（以下简称“淮钢公司”）为满足其控股子
 公司江苏利淮钢铁有限公司（以下简称“江苏利淮”）生产经营发展的需求，同
 意为其提供不超过68,000 万元的授信担保额度，担保期限自淮钢公司2025 年度
-股东大会审议通过之日起至2026 年度股东大会召开之日止。"
+股东大会审议通过之日起至2026 年度股东大会召开之日止。",2026-05-27,2027-05-27
 002110,福建三钢闽光股份有限公司,G_FJYJ,2025-01-03,credit_exposure,low,为子公司担保=low,300000.0,万元,guarantee_limit → 福建泉州闽光钢铁有限责任公司,outputs/analysis_freeze/guarantee/analysis_030_002110_guarantee_quota.json,1,"序
 号 
 担保人 
@@ -247,18 +247,18 @@ N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特�
 福建泉州闽光钢铁有限
 责任公司 
 100 
-300,000"
+300,000",2025-01-03,2026-01-03
 002110,福建三钢闽光股份有限公司,G_FJYJ,2025-01-03,credit_exposure,low,为子公司担保=low,400000.0,万元,guarantee_limit → 福建罗源闽光钢铁有限责任公司,outputs/analysis_freeze/guarantee/analysis_030_002110_guarantee_quota.json,1,"2 
 三钢闽光 
 福建罗源闽光钢铁有限
 责任公司 
 100 
-400,000"
+400,000",2025-01-03,2026-01-03
 002110,福建三钢闽光股份有限公司,G_FJYJ,2025-01-03,credit_exposure,low,为子公司担保=low,900000.0,万元,guarantee_limit → 福建闽光云商有限公司,outputs/analysis_freeze/guarantee/analysis_030_002110_guarantee_quota.json,1,"3 
 三钢闽光 
 福建闽光云商有限公司 
 99.1687 
-900,000"
+900,000",2025-01-03,2026-01-03
 600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,2025-03-13,credit_exposure,low,为子公司担保=low,3000.0,万元,guarantee_limit → 包钢钢业有限公司,outputs/analysis_freeze/guarantee/analysis_032_600010_guarantee_quota.json,2,"担保
 方 
 被担
@@ -314,8 +314,8 @@ N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特�
 的担保额
 度止 
 否 
-是"
-600019,宝山钢铁股份有限公司,G_BAOWU,2024-01-29,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,,万元,guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）,outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json,1,公司决定为合资公司按持股比例提供不超过13.3亿美元本金的融资担保，受益人为沙特工业发展基金。
+是",2025-03-13,2026-03-13
+600019,宝山钢铁股份有限公司,G_BAOWU,2024-01-29,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,,万元,guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）,outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json,1,公司决定为合资公司按持股比例提供不超过13.3亿美元本金的融资担保，受益人为沙特工业发展基金。,2024-01-29,2025-01-29
 600282,南京钢铁股份有限公司,G_CITIC,2024-12-27,credit_exposure,low,为子公司担保=low,225245.0,万元,guarantee_limit → 南京钢铁集团国际经济贸易有限公司,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"1 
 南钢股份 
 南钢国贸 
@@ -328,7 +328,7 @@ N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特�
 以实际签署协
 议为准。 
 否 
-否"
+否",2024-12-27,2025-12-27
 600282,南京钢铁股份有限公司,G_CITIC,2024-12-27,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → PT. KinRui New Energy Technologies Indonesia,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"2 
 南钢股份 
 金瑞新能源 
@@ -337,7 +337,7 @@ N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特�
 145,415.94 
 303,440 
 11.43% 
-以实际发生为准"
+以实际发生为准",2024-12-27,2025-12-27
 600282,南京钢铁股份有限公司,G_CITIC,2024-12-27,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → PT. KinXiang New Energy Technologies Indonesia,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"3 
 南钢股份 
 金祥新能源 
@@ -346,7 +346,7 @@ N_江苏沙钢集团淮钢特钢股份有限公司,江苏沙钢集团淮钢特�
 134,823.28 
 144,000 
 5.43% 
-以实际发生为准"
+以实际发生为准",2024-12-27,2025-12-27
 N_安阳复星合力新材料科技有限公司,安阳复星合力新材料科技有限公司,,2024-12-27,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → 湖南复星合力新材料有限公司,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"4 
 安阳合力 
 湖南合力 
@@ -355,7 +355,7 @@ N_安阳复星合力新材料科技有限公司,安阳复星合力新材料科�
 16,141.10 
 7,315 
 0.28% 
-以实际发生为准"
+以实际发生为准",2024-12-27,2025-12-27
 N_安阳复星合力新材料科技有限公司,安阳复星合力新材料科技有限公司,,2024-12-27,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → 山西南钢合力新材料科技有限公司,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"5 
 安阳合力 
 山西南钢合力 
@@ -364,7 +364,7 @@ N_安阳复星合力新材料科技有限公司,安阳复星合力新材料科�
 - 
 500 
 0.02% 
-否"
+否",2024-12-27,2025-12-27
 600282,南京钢铁股份有限公司,G_CITIC,2024-12-27,credit_exposure,low,为子公司担保=low,6000.0,万元,guarantee_limit → 安阳复星合力新材料科技有限公司,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"1 
 南钢股份 
 安阳合力科技 
@@ -377,7 +377,7 @@ N_安阳复星合力新材料科技有限公司,安阳复星合力新材料科�
 以实际签署协
 议为准。 
 否 
-以实际发生为准"
+以实际发生为准",2024-12-27,2025-12-27
 600282,南京钢铁股份有限公司,G_CITIC,2024-12-27,credit_exposure,low,为子公司担保=low,5000.0,万元,guarantee_limit → 安阳复星合力新材料股份有限公司,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"2 
 南钢股份 
 安阳合力 
@@ -386,7 +386,7 @@ N_安阳复星合力新材料科技有限公司,安阳复星合力新材料科�
 2,800.00 
 5,000 
 0.19% 
-以实际发生为准"
+以实际发生为准",2024-12-27,2025-12-27
 600282,南京钢铁股份有限公司,G_CITIC,2024-12-27,credit_exposure,low,为子公司担保=low,6000.0,万元,guarantee_limit → 南京金博新材料科技有限公司,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"3 
 南钢股份 
 南京金博 
@@ -395,7 +395,7 @@ N_安阳复星合力新材料科技有限公司,安阳复星合力新材料科�
 - 
 6,000 
 0.23% 
-否"
+否",2024-12-27,2025-12-27
 N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股份有限公司,,2024-12-27,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → 柏中（菏泽）水务有限公司,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"4 
 柏中环境 
 菏泽水务 
@@ -404,7 +404,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 - 
 26,500 
 1.00% 
-否"
+否",2024-12-27,2025-12-27
 N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股份有限公司,,2024-12-27,credit_exposure,low,为子公司担保=low,6000.0,万元,guarantee_limit → 淮安柏环环保新材料科技有限公司,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"5 
 柏中环境 
 柏环环保 
@@ -413,7 +413,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 - 
 6,000 
 0.23% 
-以实际发生为准"
+以实际发生为准",2024-12-27,2025-12-27
 N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股份有限公司,,2024-12-27,credit_exposure,low,为子公司担保=low,20000.0,万元,guarantee_limit → 柏中环境科技（上海）股份有限公司,outputs/analysis_freeze/guarantee/analysis_048_600282_guarantee_quota.json,3,"6 
 柏中环境（含
 其子公司） 
@@ -424,8 +424,8 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 - 
 20,000 
 0.75% 
-否"
-600282,南京钢铁股份有限公司,G_CITIC,2024-12-27,credit_exposure,low,为子公司担保=low,30000.0,万元,guarantee_limit → 北京南钢钢材销售有限公司,outputs/analysis_freeze/guarantee/analysis_049_600282_guarantee_quota.json,1,南京钢铁股份有限公司（以下简称“南钢股份”或“公司”）2025 年度预计为北京南钢、上海南钢销售钢材提供担保，任一时点新增担保总额度不超过3 亿元（人民币，下同）的担保。
+否",2024-12-27,2025-12-27
+600282,南京钢铁股份有限公司,G_CITIC,2024-12-27,credit_exposure,low,为子公司担保=low,30000.0,万元,guarantee_limit → 北京南钢钢材销售有限公司,outputs/analysis_freeze/guarantee/analysis_049_600282_guarantee_quota.json,1,南京钢铁股份有限公司（以下简称“南钢股份”或“公司”）2025 年度预计为北京南钢、上海南钢销售钢材提供担保，任一时点新增担保总额度不超过3 亿元（人民币，下同）的担保。,2024-12-27,2025-12-27
 600282,南京钢铁股份有限公司,G_CITIC,2024-12-27,credit_exposure,low,为子公司担保=low,30000.0,万元,guarantee_limit → 上海南钢物资销售有限公司,outputs/analysis_freeze/guarantee/analysis_049_600282_guarantee_quota.json,2,"南钢股份 上海南钢 
 100% 
 82.74% 
@@ -434,7 +434,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 1.13% 
 具体担保期限以实际签署协议为准 
 否 
-否"
+否",2024-12-27,2025-12-27
 600282,南京钢铁股份有限公司,G_CITIC,2026-01-10,credit_exposure,low,为子公司担保=low,100000.0,万元,guarantee_limit → 南京钢铁集团国际经济贸易有限公司,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"1
 南钢股份
 南钢国贸
@@ -447,7 +447,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 实际签署协议为
 准。
 否
-否"
+否",2026-01-10,2027-01-10
 600282,南京钢铁股份有限公司,G_CITIC,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → PT. KinRui New Energy Technologies Indonesia,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"2
 南钢股份
 金瑞新能源
@@ -456,7 +456,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 165,928.03
 270,000.00
 10.37%
-以实际发生为准"
+以实际发生为准",2026-01-10,2027-01-10
 600282,南京钢铁股份有限公司,G_CITIC,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → PT. KinXiang New Energy Technologies Indonesia,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"3
 南钢股份
 金祥新能源
@@ -465,7 +465,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 232,498.71
 144,000.00
 5.53%
-以实际发生为准"
+以实际发生为准",2026-01-10,2027-01-10
 N_河南南钢合力新材料股份有限公司,河南南钢合力新材料股份有限公司,,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → 湖南南钢合力新材料有限公司,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"4
 河南合力
 湖南合力
@@ -474,7 +474,7 @@ N_河南南钢合力新材料股份有限公司,河南南钢合力新材料股�
 8,832.41
 11,500.00
 0.44%
-以实际发生为准"
+以实际发生为准",2026-01-10,2027-01-10
 600282,南京钢铁股份有限公司,G_CITIC,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → 河南南钢合力新材料科技有限公司,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"1
 南钢股份
 河南合力科技
@@ -487,7 +487,7 @@ N_河南南钢合力新材料股份有限公司,河南南钢合力新材料股�
 实际签署协议为
 准。
 否
-以实际发生为准"
+以实际发生为准",2026-01-10,2027-01-10
 600282,南京钢铁股份有限公司,G_CITIC,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → 河南南钢合力新材料股份有限公司,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"2
 南钢股份
 河南合力
@@ -496,7 +496,7 @@ N_河南南钢合力新材料股份有限公司,河南南钢合力新材料股�
 3,850.00
 2,500.00
 0.10%
-以实际发生为准"
+以实际发生为准",2026-01-10,2027-01-10
 600282,南京钢铁股份有限公司,G_CITIC,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → Singapore Jinteng International Pte. Ltd.,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"3
 南钢股份
 新加坡金腾
@@ -505,7 +505,7 @@ N_河南南钢合力新材料股份有限公司,河南南钢合力新材料股�
 -
 50,400.00
 1.94%
-否"
+否",2026-01-10,2027-01-10
 600282,南京钢铁股份有限公司,G_CITIC,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → Hong Kong Jinteng Development Limited,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"4
 南钢股份
 香港金腾发展
@@ -514,7 +514,7 @@ N_河南南钢合力新材料股份有限公司,河南南钢合力新材料股�
 -
 43,200.00
 1.66%
-否"
+否",2026-01-10,2027-01-10
 N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股份有限公司,,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → 柏中（菏泽）水务有限公司,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"5
 柏中环境
 菏泽水务
@@ -523,7 +523,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 -
 28,500.00
 1.09%
-否"
+否",2026-01-10,2027-01-10
 N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股份有限公司,,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → 榆林柏美水务有限公司,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"6
 柏中环境
 榆林柏美
@@ -532,7 +532,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 -
 11,200.00
 0.43%
-否"
+否",2026-01-10,2027-01-10
 N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股份有限公司,,2026-01-10,credit_exposure,low,为子公司担保=low,,万元,guarantee_limit → 柏中环境科技（上海）股份有限公司,outputs/analysis_freeze/guarantee/analysis_050_600282_guarantee_quota.json,3,"7
 柏中环境
 （含子公
@@ -544,7 +544,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 -
 20,000.00
 0.77%
-否"
+否",2026-01-10,2027-01-10
 600282,南京钢铁股份有限公司,G_CITIC,2026-01-10,credit_exposure,low,为子公司担保=low,30000.0,万元,guarantee_limit → 北京南钢钢材销售有限公司,outputs/analysis_freeze/guarantee/analysis_051_600282_guarantee_quota.json,2,"南钢股份
 北京南钢
 100%
@@ -557,7 +557,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 际签署协
 议为准
 否
-否"
+否",2026-01-10,2027-01-10
 600282,南京钢铁股份有限公司,G_CITIC,2026-01-10,credit_exposure,low,为子公司担保=low,30000.0,万元,guarantee_limit → 上海南钢物资销售有限公司,outputs/analysis_freeze/guarantee/analysis_051_600282_guarantee_quota.json,2,"南钢股份
 上海南钢
 100%
@@ -566,8 +566,8 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 （二）内部决策程序
 2026 年1 月9 日，公司召开第九届董事会第十四次会议，审议通过了《关
 于2026 年度预计为全资子公司销售钢材提供担保的议案》，该议案尚需经公司
-2026 年第一次临时股东会批准。"
-600507,方大特钢科技股份有限公司,G_FANGDA,2025-11-29,credit_exposure,low,为子公司担保=low,5000.0,万元,guarantee_limit → 宁波方大海鸥贸易有限公司,outputs/analysis_freeze/guarantee/analysis_058_600507_guarantee_individual.json,1,"方大特钢科技股份有限公司（以下简称“方大特钢”或“公司”）于2025 年11月28 日召开第九届董事会第八次会议，以15 票同意、0 票反对、0 票弃权审议通过《关于为全资子公司提供担保的议案》。根据生产经营的需要，公司为全资子公司宁波方大海鸥贸易有限公司（以下简称“宁波海鸥”）在徽商银行股份有限公司宁波分行申请综合授信提供连带责任担保，担保（敞口）金额人民币5,000万元。"
+2026 年第一次临时股东会批准。",2026-01-10,2027-01-10
+600507,方大特钢科技股份有限公司,G_FANGDA,2025-11-29,credit_exposure,low,为子公司担保=low,5000.0,万元,guarantee_limit → 宁波方大海鸥贸易有限公司,outputs/analysis_freeze/guarantee/analysis_058_600507_guarantee_individual.json,1,"方大特钢科技股份有限公司（以下简称“方大特钢”或“公司”）于2025 年11月28 日召开第九届董事会第八次会议，以15 票同意、0 票反对、0 票弃权审议通过《关于为全资子公司提供担保的议案》。根据生产经营的需要，公司为全资子公司宁波方大海鸥贸易有限公司（以下简称“宁波海鸥”）在徽商银行股份有限公司宁波分行申请综合授信提供连带责任担保，担保（敞口）金额人民币5,000万元。",2025-11-29,2026-11-29
 600507,方大特钢科技股份有限公司,G_FANGDA,2026-03-03,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,3000.0,万元,guarantee_limit → 绥芬河方大国际贸易有限公司,outputs/analysis_freeze/guarantee/analysis_059_600507_guarantee_individual.json,4,"序号
 担保方
 被担保方
@@ -580,14 +580,14 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 平安银行股份有限公司
 哈尔滨分行
 3,000.00
-一年"
+一年",2026-03-03,2027-03-03
 600507,方大特钢科技股份有限公司,G_FANGDA,2026-03-03,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,32500.0,万元,guarantee_limit → 绥芬河方大国际贸易有限公司,outputs/analysis_freeze/guarantee/analysis_059_600507_guarantee_individual.json,4,"2
 公司
 绥芬河方大
 龙江银行股份有限公司
 哈尔滨开发区支行
 32,500.00
-一年"
+一年",2026-03-03,2027-03-03
 600507,方大特钢科技股份有限公司,G_FANGDA,2026-06-27,credit_exposure,low,为子公司担保=low,8000.0,万元,guarantee_limit → 辽宁方大集团国贸有限公司,outputs/analysis_freeze/guarantee/analysis_060_600507_guarantee_individual.json,2,"担保
 方
 被担保方
@@ -619,7 +619,7 @@ N_柏中环境科技(上海)股份有限公司,柏中环境科技（上海）股
 六次董事会审议通
 过之日起一年
 否
-否"
+否",2026-06-27,2027-06-27
 N_辽宁方大集团国贸有限公司,辽宁方大集团国贸有限公司,G_FANGDA,2024-02-06,credit_exposure,low,为子公司担保=low,50000.0,万元,guarantee_limit → 绥芬河方大国际贸易有限公司,outputs/analysis_freeze/guarantee/analysis_061_600507_guarantee_related.json,2,"序号 
 担保方 
 被担保方 
@@ -631,7 +631,7 @@ N_辽宁方大集团国贸有限公司,辽宁方大集团国贸有限公司,G_FA
 钢铁 
 绥芬河方大 龙江银行股份有限公司哈尔滨
 开发区支行 
-50,000"
+50,000",2024-02-06,2025-02-06
 N_九江萍钢钢铁有限公司,九江萍钢钢铁有限公司,,2024-04-12,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,19000.0,万元,guarantee_limit → 辽宁方大集团国贸有限公司,outputs/analysis_freeze/guarantee/analysis_062_600507_guarantee_related.json,1,"序号 
 担保
 方 
@@ -649,7 +649,7 @@ N_九江萍钢钢铁有限公司,九江萍钢钢铁有限公司,,2024-04-12,cred
 国贸 
 阜新银行股份有限公司抚顺分行 
 三年 
-19,000.00"
+19,000.00",2024-04-12,2025-04-12
 E_FANGDA_GROUP,辽宁方大集团实业有限公司,G_FANGDA,2024-04-12,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,6500.0,万元,guarantee_limit → 绥芬河方大国际贸易有限公司,outputs/analysis_freeze/guarantee/analysis_062_600507_guarantee_related.json,1,"序号 
 担保
 方 
@@ -667,7 +667,7 @@ E_FANGDA_GROUP,辽宁方大集团实业有限公司,G_FANGDA,2024-04-12,credit_e
 方大 
 哈尔滨银行股份有限公司牡丹江分行 
 一年 
-6,500.00"
+6,500.00",2024-04-12,2025-04-12
 E_FANGDA_GROUP,辽宁方大集团实业有限公司,G_FANGDA,2024-04-12,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,5000.0,万元,guarantee_limit → 绥芬河方大国际贸易有限公司,outputs/analysis_freeze/guarantee/analysis_062_600507_guarantee_related.json,1,"序号 
 担保
 方 
@@ -685,8 +685,8 @@ E_FANGDA_GROUP,辽宁方大集团实业有限公司,G_FANGDA,2024-04-12,credit_e
 方大 
 兴业银行股份有限公司哈尔滨分行 
 一年 
-5,000.00"
-600507,方大特钢科技股份有限公司,G_FANGDA,2025-02-07,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,40000.0,万元,guarantee_provided → 方大炭素新材料科技股份有限公司,outputs/analysis_freeze/guarantee/analysis_063_600507_guarantee_related.json,2,近日，公司与中国进出口银行甘肃省分行再次签订《保证合同》，公司为关联方方大炭素在中国进出口银行甘肃省分行贷款本金最高额不超过4 亿元人民币（贷款期限为24 个月）、利息及其他应付款项提供连带责任保证担保，保证期间为方大炭素与贷款人签订的借款合同项下债务履行期届满之日起三年。对于本次担保事项，方大炭素为公司提供反担保。
+5,000.00",2024-04-12,2025-04-12
+600507,方大特钢科技股份有限公司,G_FANGDA,2025-02-07,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,40000.0,万元,guarantee_provided → 方大炭素新材料科技股份有限公司,outputs/analysis_freeze/guarantee/analysis_063_600507_guarantee_related.json,2,近日，公司与中国进出口银行甘肃省分行再次签订《保证合同》，公司为关联方方大炭素在中国进出口银行甘肃省分行贷款本金最高额不超过4 亿元人民币（贷款期限为24 个月）、利息及其他应付款项提供连带责任保证担保，保证期间为方大炭素与贷款人签订的借款合同项下债务履行期届满之日起三年。对于本次担保事项，方大炭素为公司提供反担保。,2025-02-07,2028-02-07
 N_辽宁方大集团国贸有限公司,辽宁方大集团国贸有限公司,G_FANGDA,2025-02-11,credit_exposure,low,为子公司担保=low,50000.0,万元,guarantee_limit → 绥芬河方大国际贸易有限公司,outputs/analysis_freeze/guarantee/analysis_064_600507_guarantee_related.json,2,"序号 
 担保方 
 被担保方 
@@ -698,10 +698,10 @@ N_辽宁方大集团国贸有限公司,辽宁方大集团国贸有限公司,G_FA
 钢铁 
 绥芬河方大 龙江银行股份有限公司哈尔滨
 开发区支行 
-50,000"
-600507,方大特钢科技股份有限公司,G_FANGDA,2025-11-29,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,50000.0,万元,guarantee_limit → 方大炭素新材料科技股份有限公司,outputs/analysis_freeze/guarantee/analysis_065_600507_guarantee_related.json,1,公司于2025 年11 月28 日召开第九届董事会第八次会议，审议通过《关于调整与方大炭素关联担保额度的议案》，根据公司生产经营的需要，公司调整与方大炭素关联担保额度，由“不超过人民币10 亿元”调整为“不超过人民币5 亿元”，协议其他内容不变。
-600569,安阳钢铁股份有限公司,G_ANYANG,2025-11-07,credit_exposure,low,为子公司担保=low,11000.0,万元,guarantee_limit → 安钢集团永通球墨铸铁管有限责任公司,outputs/analysis_freeze/guarantee/analysis_072_600569_guarantee_related.json,1,公司此前为永通公司与徽银金融租赁有限公司开展不超过人民币1.10 亿元融资租赁业务提供连带责任保证担保将形成关联担保。
-N_江西新华新材料科技股份有限公司,江西新华新材料科技股份有限公司,,2024-04-23,credit_exposure,low,为子公司担保=low,11000.0,万元,guarantee_limit → 张家港新华预应力钢绞线有限公司,outputs/analysis_freeze/guarantee/analysis_078_600782_guarantee_individual.json,1,为满足公司控股子公司江西新华新材料科技股份有限公司（以下简称“新华新材料”）的控股子公司张家港新华日常经营和建设项目的资金需求，促进其业务发展，张家港新华拟向商业银行申请2.20亿元的流动资金贷款。控股子公司新华新材料及张家港宏兴高线有限公司按持股比例对张家港新华提供同比例担保，控股子公司新华新材料为张家港新华提供担保额度不超过1.10 亿元。
+50,000",2025-02-11,2026-02-11
+600507,方大特钢科技股份有限公司,G_FANGDA,2025-11-29,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,50000.0,万元,guarantee_limit → 方大炭素新材料科技股份有限公司,outputs/analysis_freeze/guarantee/analysis_065_600507_guarantee_related.json,1,公司于2025 年11 月28 日召开第九届董事会第八次会议，审议通过《关于调整与方大炭素关联担保额度的议案》，根据公司生产经营的需要，公司调整与方大炭素关联担保额度，由“不超过人民币10 亿元”调整为“不超过人民币5 亿元”，协议其他内容不变。,2025-11-29,2026-11-29
+600569,安阳钢铁股份有限公司,G_ANYANG,2025-11-07,credit_exposure,low,为子公司担保=low,11000.0,万元,guarantee_limit → 安钢集团永通球墨铸铁管有限责任公司,outputs/analysis_freeze/guarantee/analysis_072_600569_guarantee_related.json,1,公司此前为永通公司与徽银金融租赁有限公司开展不超过人民币1.10 亿元融资租赁业务提供连带责任保证担保将形成关联担保。,2025-11-07,2026-11-07
+N_江西新华新材料科技股份有限公司,江西新华新材料科技股份有限公司,,2024-04-23,credit_exposure,low,为子公司担保=low,11000.0,万元,guarantee_limit → 张家港新华预应力钢绞线有限公司,outputs/analysis_freeze/guarantee/analysis_078_600782_guarantee_individual.json,1,为满足公司控股子公司江西新华新材料科技股份有限公司（以下简称“新华新材料”）的控股子公司张家港新华日常经营和建设项目的资金需求，促进其业务发展，张家港新华拟向商业银行申请2.20亿元的流动资金贷款。控股子公司新华新材料及张家港宏兴高线有限公司按持股比例对张家港新华提供同比例担保，控股子公司新华新材料为张家港新华提供担保额度不超过1.10 亿元。,2024-04-23,2025-04-23
 600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",78000.0,股,包钢集团 质押给 中信银行股份有限公司包头分行,outputs/analysis_freeze/pledge/analysis_033_600010_pledge.json,2,"股东名称
 是否为控
 股股东
@@ -736,7 +736,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 3.11%
 1.72%
 为包钢集团融
-资提供担保"
+资提供担保",2025-06-09,2027-06-08
 600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",62100.0,股,包钢集团 质押给 中信证券股份有限公司,outputs/analysis_freeze/pledge/analysis_034_600010_pledge.json,2,"股东名称
 是否为控
 股股东
@@ -771,7 +771,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 2.48%
 1.37%
 为包钢集团融
-资提供担保"
+资提供担保",2025-07-15,2026-07-15
 600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",77000.0,股,包钢集团 质押给 平安银行股份有限公司呼和浩特分行,outputs/analysis_freeze/pledge/analysis_035_600010_pledge.json,3,"包钢集团
 是
 77,000.00
@@ -785,7 +785,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 3.07%
 1.70%
 为包钢集团融
-资提供担保"
+资提供担保",2026-02-05,2029-02-04
 600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",68000.0,股,包钢集团 质押给 中信银行股份有限公司包头分行,outputs/analysis_freeze/pledge/analysis_035_600010_pledge.json,3,"包钢集团
 是
 68,000.00
@@ -799,7 +799,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 2.71%
 1.50%
 为包钢集团融
-资提供担保"
+资提供担保",2026-02-05,2028-09-28
 600231,凌源钢铁股份有限公司,G_ANSTEEL,,share_pledge,high,"本次质押占其持股 >=80% high, >=50% medium",311179639.0,股,九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司,outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json,1,"股东名称 
 是否为控
 股股东 
@@ -840,7 +840,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 100 
 10.91 
 生产经
-营"
+营",2025-01-20,2028-08-23
 600231,凌源钢铁股份有限公司,G_ANSTEEL,,share_pledge,medium,"本次质押占其持股 >=80% high, >=50% medium",211179639.0,股,九江萍钢 质押给 鞍资（天津）融资租赁有限公司,outputs/analysis_freeze/pledge/analysis_045_600231_pledge.json,2,"股东名称
 是否为控
 股股东
@@ -880,7 +880,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 67.86
 7.40
 生产
-经营"
+经营",2025-09-25,2028-09-28
 600231,凌源钢铁股份有限公司,G_ANSTEEL,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",100000000.0,股,九江萍钢 质押给 鞍钢集团成都融资租赁有限公司,outputs/analysis_freeze/pledge/analysis_045_600231_pledge.json,2,"九江萍钢
 否
 100,000,000
@@ -896,7 +896,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 32.14
 3.51
 生产
-经营"
+经营",2025-09-25,2028-09-28
 600399,抚顺特殊钢股份有限公司,G_SHAGANG,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",120876444.0,股,东北特钢及一致行动人 质押给 沙钢集团,outputs/analysis_freeze/pledge/analysis_055_600399_pledge.json,2,"二、再质押情况
 1、本次股份质押基本情况
 股东名称
@@ -948,7 +948,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 注：2024 年1 月3 日，东北特钢将持有的170,876,444 股公司股份质押给沙钢集团，
 为其借款业务提供担保。2025 年12 月30 日，双方对已签署的借款合同及质押担保合同进
 行变更，担保期限为2025 年12 月19 日至2028 年12 月19 日，质押股份在东北特钢向沙钢
-集团清偿完全部债务时解除，具体以实际办理股份解除质押登记时间为准。"
+集团清偿完全部债务时解除，具体以实际办理股份解除质押登记时间为准。",2025-12-30,2026-12-30
 600507,方大特钢科技股份有限公司,G_FANGDA,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",84040000.0,股,江西板簧 质押给 中泰证券股份有限公司,outputs/analysis_freeze/pledge/analysis_067_600507_pledge.json,2,"股东名称
 是否为
 控股股东
@@ -980,7 +980,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 份有限公司
 47.80%
 3.63%
-自身资金需要"
+自身资金需要",2025-07-22,2026-07-22
 600507,方大特钢科技股份有限公司,G_FANGDA,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",90000000.0,股,方大钢铁 质押给 中信证券股份有限公司,outputs/analysis_freeze/pledge/analysis_068_600507_pledge.json,2,"2、本次股份质押基本情况
 单位：股
 股东名称
@@ -1013,7 +1013,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 份有限公司
 11.95%
 3.89%
-自身资金需要"
+自身资金需要",2025-12-22,2026-12-22
 600507,方大特钢科技股份有限公司,G_FANGDA,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",10250000.0,股,江西板簧 质押给 中泰证券股份有限公司,outputs/analysis_freeze/pledge/analysis_069_600507_pledge.json,2,"2、本次股份补充质押情况
 股东名称
 是否为
@@ -1045,7 +1045,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 份有限公司
 5.83%
 0.44%
-自身资金需要"
+自身资金需要",2026-07-22,2027-07-22
 600569,安阳钢铁股份有限公司,G_ANYANG,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",54000.0,股,安钢集团 质押给 中原银行股份有限公司安阳分行,outputs/analysis_freeze/pledge/analysis_073_600569_pledge.json,1,"股东
 名称 
 是否
@@ -1091,7 +1091,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 27.94% 
 18.80% 
 补充流
-动资金"
+动资金",2025-03-10,2026-03-10
 600569,安阳钢铁股份有限公司,G_ANYANG,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",18400.0,股,安钢集团 质押给 中信信托有限责任公司,outputs/analysis_freeze/pledge/analysis_074_600569_pledge.json,1,"股东
 名称
 是否
@@ -1139,8 +1139,8 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 6.41%
 置换到
 期有息
-负债"
-N_山西宏安焦化科技有限公司,山西宏安焦化科技有限公司,,2024-04-02,credit_exposure,low,为子公司担保=low,27920.0,万元,guarantee_provided → 山西安泰集团股份有限公司,outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json,1,"宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴于该笔被担保的主债权到期，公司与山西银行晋中分行近日重新签署了《综合授信合同》，宏安焦化与该行签署了《最高额抵押合同》，继续为公司提供担保，所担保的授信额度为27,920 万元。"
+负债",2025-11-28,2026-11-28
+N_山西宏安焦化科技有限公司,山西宏安焦化科技有限公司,,2024-04-02,credit_exposure,low,为子公司担保=low,27920.0,万元,guarantee_provided → 山西安泰集团股份有限公司,outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json,1,"宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴于该笔被担保的主债权到期，公司与山西银行晋中分行近日重新签署了《综合授信合同》，宏安焦化与该行签署了《最高额抵押合同》，继续为公司提供担保，所担保的授信额度为27,920 万元。",2024-03-28,2025-03-28
 600408,山西安泰集团股份有限公司,G_ANTAI,2024-04-26,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,10000.0,万元,guarantee_limit → 山西新泰钢铁有限公司,outputs/backtest_antai_freeze/guarantee/backtest_antai_006_600408_guarantee_backtest.json,2,"新泰钢铁 
 民生银行 
 太原分行 
@@ -1149,7 +1149,7 @@ N_山西宏安焦化科技有限公司,山西宏安焦化科技有限公司,,202
 10,000.00 
 30,000.00 
 2024-06-20 
-30,000.00"
+30,000.00",2024-04-26,2025-04-26
 600408,山西安泰集团股份有限公司,G_ANTAI,2024-04-26,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,30000.0,万元,guarantee_limit → 山西新泰钢铁有限公司,outputs/backtest_antai_freeze/guarantee/backtest_antai_006_600408_guarantee_backtest.json,2,"新泰钢铁 
 民生银行 
 太原分行 
@@ -1158,7 +1158,7 @@ N_山西宏安焦化科技有限公司,山西宏安焦化科技有限公司,,202
 10,000.00 
 30,000.00 
 2024-06-20 
-30,000.00"
+30,000.00",2024-04-26,2025-04-26
 600408,山西安泰集团股份有限公司,G_ANTAI,2024-04-26,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,40650.0,万元,guarantee_limit → 山西新泰钢铁有限公司,outputs/backtest_antai_freeze/guarantee/backtest_antai_006_600408_guarantee_backtest.json,2,"新泰钢铁 
 工商银行 
 介休支行 
@@ -1167,7 +1167,7 @@ N_山西宏安焦化科技有限公司,山西宏安焦化科技有限公司,,202
 40,650.00 
 19,350.00 
 2024-11-14 
-19,350.00"
+19,350.00",2024-04-26,2025-04-26
 600408,山西安泰集团股份有限公司,G_ANTAI,2024-04-26,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,19350.0,万元,guarantee_limit → 山西新泰钢铁有限公司,outputs/backtest_antai_freeze/guarantee/backtest_antai_006_600408_guarantee_backtest.json,2,"新泰钢铁 
 工商银行 
 介休支行 
@@ -1176,13 +1176,13 @@ N_山西宏安焦化科技有限公司,山西宏安焦化科技有限公司,,202
 40,650.00 
 19,350.00 
 2024-11-14 
-19,350.00"
+19,350.00",2024-04-26,2025-04-26
 600408,山西安泰集团股份有限公司,G_ANTAI,2024-04-26,credit_exposure,low,为子公司担保=low,1200.0,万元,guarantee_limit → 山西宏安焦化科技有限公司,outputs/backtest_antai_freeze/guarantee/backtest_antai_007_600408_guarantee_backtest.json,1,"● 被担保人名称：山西宏安焦化科技有限公司（简称“宏安焦化”）
 ● 本次担保金额及已实际为其提供的担保余额：公司本次为宏安焦化提供担保金额不超过1,200 万元（为现有已提供担保的主债权办理续贷等手续时继续提供的担保）；截至本公告披露日，已实际为其提供的融资本金担保余额为1,200 万元
 ● 本次是否有反担保：无
 ● 对外担保逾期的累计数量：无
-● 本次担保尚需提交公司2023 年年度股东大会审议"
+● 本次担保尚需提交公司2023 年年度股东大会审议",2024-04-26,2025-04-26
 600408,山西安泰集团股份有限公司,G_ANTAI,2024-08-05,credit_exposure,medium,为非子公司（股东、兄弟公司、联营或无关方）担保=medium,24500.0,万元,guarantee_limit → 漳州龙泰供应链管理有限公司,outputs/backtest_antai_freeze/guarantee/backtest_antai_010_600408_guarantee_backtest.json,1,"被担保人：本公司的关联参股公司漳州龙泰供应链管理有限公司（以下简称“龙泰公司”）
 担保金额：本公司首次为龙泰公司提供担保，担保最高额为2.45 亿元。
 本次担保是否有反担保：否
-本次担保尚需提交公司股东大会审议"
+本次担保尚需提交公司股东大会审议",2024-08-05,2025-08-05

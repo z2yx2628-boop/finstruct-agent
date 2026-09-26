@@ -12,10 +12,26 @@ from src.sources import readable  # noqa: E402
 TIER = {"weak": "弱", "medium": "中", "strong": "强", "unknown": "未评分"}
 DECISION = {"continue": "继续传导", "weakened": "继续传导（减弱）", "absorbed": "被吸收，停止",
             "immaterial": "金额不重大，停止", "end": "已减弱至最低，停止"}
-CHAIN_LABEL = {"data/chain/analysis_v1": "真实图谱（84份公告，2024–2026）",
+CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/analysis_v1": "真实图谱（84份公告，2024–2026）",
                "data/chain/backtest_antai": "回测图谱（安泰）", "data/chain/gold_demo": "演示图谱（仅开发用）"}
 
 st.set_page_config(page_title="风险路径图 · FinStruct Agent", layout="wide")
+import subprocess  # noqa: E402
+
+with st.sidebar:
+    st.markdown("**每日更新**")
+    st.caption("查40家企业的新公告 → 冻结版系统提取 → 更新图谱（过期关系自动失效）→ 更新承压评分 → 对比风险路径。")
+    online = st.checkbox("联网查新公告（需本机网络与模型接口）", value=True)
+    if st.button("立即更新", type="primary"):
+        cmd = [sys.executable, str(ROOT / "scripts" / "daily_update.py")] + ([] if online else ["--no-network"])
+        with st.spinner("正在更新，联网时约5–15分钟…"):
+            out = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=ROOT)
+        st.cache_data.clear()
+        st.code((out.stdout or "")[-1500:] + (out.stderr or "")[-800:])
+    reports = sorted((ROOT / "data" / "live").glob("report_*.md"), reverse=True)
+    if reports:
+        with st.expander(f"最新日报 {reports[0].stem[7:]}"):
+            st.markdown(reports[0].read_text(encoding="utf-8"))
 st.title("风险路径图：风险从哪里来，会流向哪里？")
 st.caption("节点颜色 = 承压等级（🔴弱 🟡中 🟢强 ⚪未评分），粗边框 = 风险起点；边的颜色 = 传导规则"
            "（红=担保，蓝=供需，紫=同集团，灰虚线=行业近似），边上数字为交易或担保金额。")
@@ -23,7 +39,8 @@ st.caption("节点颜色 = 承压等级（🔴弱 🟡中 🟢强 ⚪未评分�
 chains = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "data" / "chain").glob("*") if (p / "edges.csv").exists())
 snaps = sorted((p.name for p in (ROOT / "data" / "snapshots").glob("*") if (p / "fragility.csv").exists()), reverse=True)
 c1, c2, c3 = st.columns([2, 1, 1])
-chain = c1.selectbox("产业链图谱", chains, index=chains.index("data/chain/analysis_v1") if "data/chain/analysis_v1" in chains else 0,
+default = next((c for c in ("data/chain/live", "data/chain/analysis_v1") if c in chains), chains[0])
+chain = c1.selectbox("产业链图谱", chains, index=chains.index(default),
                      format_func=lambda c: CHAIN_LABEL.get(c, c))
 snap = c2.selectbox("评估日（承压快照）", snaps)
 top = c3.slider("显示前 N 条关键路径", 3, 30, 10)

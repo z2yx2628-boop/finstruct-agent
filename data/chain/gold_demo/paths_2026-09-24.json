@@ -1,0 +1,1160 @@
+[
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日超额收益-6.8%（24家中第2弱）；速动比率0.21（24家中第4弱）；流动比率0.36（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      },
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第5页：（共15行，合计1004413.75万元；最大一行）498,253 422,920",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日超额收益-6.8%（24家中第2弱）；速动比率0.21（24家中第4弱）；流动比率0.36（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      },
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第6页：（共15行，合计343662.0万元；最大一行）119,986 118,499",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第5页：（共15行，合计1004413.75万元；最大一行）498,253 422,920",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAYI_GROUP",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第5页：（共15行，合计1004413.75万元；最大一行）498,253 422,920",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAYI_GROUP",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第5页：（共15行，合计1004413.75万元；最大一行）498,253 422,920",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAYI_GROUP",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "严重程度已降至最低"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第5页：（共15行，合计1004413.75万元；最大一行）498,253 422,920",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAYI_GROUP",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "严重程度已降至最低"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第5页：（共15行，合计1004413.75万元；最大一行）498,253 422,920",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAYI_GROUP",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "严重程度已降至最低"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第5页：（共15行，合计1004413.75万元；最大一行）498,253 422,920",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAYI_GROUP",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第6页：（共15行，合计343662.0万元；最大一行）119,986 118,499",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAOWU",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第6页：（共15行，合计343662.0万元；最大一行）119,986 118,499",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAOWU",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第6页：（共15行，合计343662.0万元；最大一行）119,986 118,499",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAOWU",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "严重程度已降至最低"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第6页：（共15行，合计343662.0万元；最大一行）119,986 118,499",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAOWU",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "严重程度已降至最低"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第6页：（共15行，合计343662.0万元；最大一行）119,986 118,499",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAOWU",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "严重程度已降至最低"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_002_600581_annual_estimate.json 第6页：（共15行，合计343662.0万元；最大一行）119,986 118,499",
+        "note": ""
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAOWU",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日超额收益-6.8%（24家中第2弱）；速动比率0.21（24家中第4弱）；流动比率0.36（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收"
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日超额收益-6.8%（24家中第2弱）；速动比率0.21（24家中第4弱）；流动比率0.36（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收"
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日超额收益-6.8%（24家中第2弱）；速动比率0.21（24家中第4弱）；流动比率0.36（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日超额收益-6.8%（24家中第2弱）；速动比率0.21（24家中第4弱）；流动比率0.36（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "000717",
+    "seed_reason": "承压评分为弱：60日超额收益-6.8%（24家中第2弱）；速动比率0.21（24家中第4弱）；流动比率0.36（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000717",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：资产负债率87.4%≥85%；速动比率0.15（24家中第2弱）；现金比率0.06（24家中第2弱）；毛利率-4.8%（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "000898",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：资产负债率87.4%≥85%；速动比率0.15（24家中第2弱）；现金比率0.06（24家中第2弱）；毛利率-4.8%（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "000761",
+    "seed_reason": "承压评分为弱：资产负债率87.4%≥85%；速动比率0.15（24家中第2弱）；现金比率0.06（24家中第2弱）；毛利率-4.8%（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000761",
+        "dst": "000629",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2023-06-29 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（data/gold/guarantee_test/guarantee_test_006_600231_related_controlling_shareholder.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000898",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2023-06-29 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（data/gold/guarantee_test/guarantee_test_006_600231_related_controlling_shareholder.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000761",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2023-06-29 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（data/gold/guarantee_test/guarantee_test_006_600231_related_controlling_shareholder.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600231",
+        "dst": "000629",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_汇丰工业制品",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：汇丰工业制品 447,331.45 12,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_润源环境",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：润源环境 261,566.87 305,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "E_JISCO_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：酒钢集团 118,013.35 122,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_酒钢物流",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：酒钢物流 292,637.80 300,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_聚东房地产",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：聚东房地产 293,563.02 2,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_西部重工",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：西部重工 83,657.48 20,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_华昌源",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：华昌源 41,748.45 45,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_上海嘉鑫",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：上海嘉鑫 43,750.46 45,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_工程技术公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：工程技术公司 60,697.60 65,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_嘉利兴",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：嘉利兴 101,435.40 110,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏晟电热",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：宏晟电热 215,281.59 250,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_上海峪鑫",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：上海峪鑫 18,013.97 20,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_紫玉酒店",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：紫玉酒店 9,766.47 10,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏大民爆",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第1页：宏大民爆 2,574.40 2,800",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_东兴铝业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第2页：东兴铝业 1,556.34 2,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_吉安保险",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第2页：吉安保险 2,331.04 3,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏基检测",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第2页：宏基检测 1,295.21 1,500",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏源实业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第2页：宏源实业 705.38 750",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_酒钢医院",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第2页：酒钢医院 1,196.33 2,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_天工矿业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第2页：天工矿业 1,326.85 3,000",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_中天置业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第2页：中天置业 49.33 100",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏汇能源",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第2页：宏汇能源 157.98 500",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：资产负债率89.7%≥85%；速动比率0.11（24家中第1弱）；流动比率0.28（24家中第1弱）；资产负债率89.7%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_钢铁技术学院",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "data/gold/related_test/related_test_004_600307_annual_estimate.json 第2页：钢铁技术学院 150",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600399",
+    "seed_reason": "承压评分为弱：经营现金流/收入-21.2%（24家中第1弱）；现金比率0.05（24家中第1弱）；净利率-6.0%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600399",
+        "dst": "002075",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHAGANG",
+        "note": "承压评分为强，风险在此被吸收"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压评分为强，风险在此被吸收"
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600782",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）；速动比率0.24（24家中",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": ""
+      }
+    ]
+  }
+]

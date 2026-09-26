@@ -21,6 +21,8 @@ from dataclasses import asdict, dataclass, fields
 from pathlib import Path
 
 from src.entity_resolver import ROOT, Resolution, load_entities, node_id, resolve
+from src.validity import (DEFAULT_MONTHS, guarantee_window, maintenance_window, pledge_window, related_window,
+                          window)
 
 TO_WAN = {"元": 1e-4, "千元": 0.1, "万元": 1.0, "百万元": 100.0, "亿元": 1e4}
 
@@ -59,6 +61,8 @@ class Edge:
     src_scope: str
     dst_scope: str
     basis: str = "disclosed"   # disclosed (company announcement) | industry_approx (segment-level dependence)
+    valid_from: str = ""       # in force from .. to (src/validity.py); empty = unbounded
+    valid_to: str = ""
 
 
 @dataclass
@@ -76,6 +80,8 @@ class Signal:
     source_doc: str
     source_page: int | None
     evidence_text: str
+    valid_from: str = ""
+    valid_to: str = ""
 
 
 EDGE_FIELDS = [f.name for f in fields(Edge)]
@@ -129,10 +135,14 @@ def edges_from(doc: dict, source_doc: str) -> tuple[list[Edge], int]:
             if not e.get("guarantor") or not e.get("guaranteed_party"):
                 skipped += 1
                 continue
+            if e.get("event_type") == "guarantee_released":
+                continue                      # a released guarantee no longer links the two companies
             rel = e.get("relationship") or ""
             src = resolve(e["guarantor"], issuer.entity_id)
             dst = resolve(e["guaranteed_party"], issuer.entity_id, rel)
+            frm, to = guarantee_window(e, common["announcement_date"])
             out.append(_edge("guarantee", src, dst, relationship=rel, status=e["event_type"],
+                             valid_from=frm, valid_to=to,
                              amount_wan=to_wan(e.get("guarantee_amount"), e.get("guarantee_unit")),
                              prior_actual_wan=None, category_text=e.get("guarantee_type") or "",
                              period=doc.get("announcement_date") or "", source_page=e.get("source_page"),
@@ -146,7 +156,9 @@ def edges_from(doc: dict, source_doc: str) -> tuple[list[Edge], int]:
             edge_type, issuer_supplies = TRADE.get(t.get("transaction_category") or "other", ("other", True))
             other = resolve(t["counterparty"], issuer.entity_id, rel)
             src, dst = (issuer, other) if issuer_supplies else (other, issuer)
+            frm, to = related_window(doc.get("estimate_year"), common["announcement_date"])
             out.append(_edge(edge_type, src, dst, relationship=rel, status="estimate",
+                             valid_from=frm, valid_to=to,
                              amount_wan=to_wan(t.get("estimated_amount"), t.get("estimated_unit")),
                              prior_actual_wan=to_wan(t.get("prior_year_actual_amount"), t.get("prior_year_actual_unit")),
                              category_text=t.get("category_text") or t.get("goods_or_services") or "",
@@ -155,9 +167,11 @@ def edges_from(doc: dict, source_doc: str) -> tuple[list[Edge], int]:
     return out, skipped
 
 
-def _signal(res: Resolution, doc: dict, source_doc: str, record: dict, **kw) -> Signal:
+def _signal(res: Resolution, doc: dict, source_doc: str, record: dict, window_=None, **kw) -> Signal:
+    announced = doc.get("announcement_date") or ""
+    frm, to = window_ if window_ else window(None, None, announced, DEFAULT_MONTHS["project"])
     return Signal(entity_id=node_id(res), entity_name=res.raw_name, group_id=res.group_id or "",
-                  date=doc.get("announcement_date") or "", source_doc=source_doc,
+                  date=announced, source_doc=source_doc, valid_from=frm, valid_to=to,
                   source_page=record.get("source_page"), evidence_text=record.get("evidence_text") or "", **kw)
 
 
@@ -179,7 +193,8 @@ def signals_from(doc: dict, source_doc: str) -> list[Signal]:
             et = e.get("event_type")
             if et == "maintenance":
                 sev, rule = maintenance_severity(e)
-                out.append(_signal(issuer, doc, source_doc, e, signal_type="supply_disruption", severity=sev,
+                out.append(_signal(issuer, doc, source_doc, e, maintenance_window(e, doc.get("announcement_date") or ""),
+                                   signal_type="supply_disruption", severity=sev,
                                    severity_rule=rule, magnitude=e.get("shutdown_days"), magnitude_unit="天",
                                    detail=f"{e.get('shutdown_facility') or ''} 影响 {e.get('output_loss_amount') or '-'}"
                                           f"{e.get('output_loss_unit') or ''} {e.get('output_loss_product') or ''}".strip()))
@@ -208,7 +223,10 @@ def signals_from(doc: dict, source_doc: str) -> list[Signal]:
                 sev, rule, stype = "low", "为子公司担保=low", "credit_exposure"
             else:
                 sev, rule, stype = "medium", "为非子公司（股东、兄弟公司、联营或无关方）担保=medium", "credit_exposure"
-            out.append(_signal(resolve(e.get("guarantor") or issuer.raw_name, issuer.entity_id), doc, source_doc, e,
+            announced = doc.get("announcement_date") or ""
+            span = (window(announced, None, announced, DEFAULT_MONTHS["credit_event"]) if stype == "credit_event"
+                    else guarantee_window(e, announced))
+            out.append(_signal(resolve(e.get("guarantor") or issuer.raw_name, issuer.entity_id), doc, source_doc, e, span,
                                signal_type=stype, severity=sev, severity_rule=rule,
                                magnitude=to_wan(e.get("guarantee_amount"), e.get("guarantee_unit")),
                                magnitude_unit="万元", detail=f"{et} → {e.get('guaranteed_party') or ''}"))
@@ -218,7 +236,8 @@ def signals_from(doc: dict, source_doc: str) -> list[Signal]:
                 continue
             ratio = e.get("shareholder_holding_ratio") or 0
             sev = "high" if ratio >= 80 else "medium" if ratio >= 50 else "low"
-            out.append(_signal(issuer, doc, source_doc, e, signal_type="share_pledge", severity=sev,
+            out.append(_signal(issuer, doc, source_doc, e, pledge_window(e, doc.get("announcement_date") or ""),
+                           signal_type="share_pledge", severity=sev,
                                severity_rule="本次质押占其持股 >=80% high, >=50% medium",
                                magnitude=e.get("shares"), magnitude_unit="股",
                                detail=f"{e.get('shareholder_name') or ''} 质押给 {e.get('pledgee') or ''}"))

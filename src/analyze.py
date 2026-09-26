@@ -21,6 +21,7 @@ from src.chain_inputs import as_row, edges_from, signals_from
 from src.entity_resolver import ROOT, load_entities
 from src.propagation import Graph, SUBSIDIARY, opaque_guarantee_seeds, propagate, summarize
 from src.sources import readable
+from src.validity import is_active
 
 TASK_KEYWORDS = [  # first match wins
     ("related_party", re.compile(r"日常关[联连]交易|日常经营相关的关[联连]交易|持续关[联连]交易")),
@@ -90,7 +91,7 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
     snap = snapshot_for(as_of)
     fragility = {r["security_code"]: r for r in _read(snap / "fragility.csv")} if snap else {}
     equity = {r["security_code"]: float(r["equity"]) for r in _read(snap / "quarterly_metrics.csv") if r.get("equity")} if snap else {}
-    base = [e for e in _read(chain / "edges.csv") if (e.get("announcement_date") or "") <= as_of]
+    base = [e for e in _read(chain / "edges.csv") if is_active(e, as_of)]
     rows, _ = load_entities()
     groups = {k: v["group_id"] for k, v in rows.items()}
     listed = {k for k, v in rows.items() if v.get("security_code")}

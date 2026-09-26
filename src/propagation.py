@@ -14,6 +14,8 @@ Each step carries its evidence: source document, page and sentence, or "industry
 from __future__ import annotations
 
 from collections import defaultdict
+
+from src.validity import is_active
 from dataclasses import dataclass, field
 
 MAX_HOPS = 3
@@ -183,7 +185,7 @@ def opaque_guarantee_seeds(edges: list[dict], fragility: dict[str, dict], equity
     for e in edges:
         if (e.get("edge_type") == "guarantee" and e.get("relationship") not in SUBSIDIARY
                 and e.get("dst_id") not in fragility and e.get("amount_wan") not in (None, "")
-                and (e.get("announcement_date") or "") <= as_of):
+                and is_active(e, as_of)):
             totals[(e["src_id"], e["dst_id"])] += float(e["amount_wan"])
     seeds = {}
     for (guarantor, party), amount_wan in totals.items():
@@ -205,7 +207,7 @@ def seeds_from(signals: list[dict], fragility: dict[str, dict], as_of: str, edge
     opaque guaranteed parties (see opaque_guarantee_seeds)."""
     seeds = dict(opaque_guarantee_seeds(edges or [], fragility, equity or {}, as_of))
     for s in signals:
-        if s.get("date", "") > as_of or s.get("severity") not in ("medium", "high"):
+        if not is_active(s, as_of) or s.get("severity") not in ("medium", "high"):
             continue
         t = s.get("signal_type")
         shock = "supply" if t in SUPPLY_SIGNALS else "credit" if t in CREDIT_SIGNALS else None

@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.entity_resolver import load_entities  # noqa: E402
 from src.propagation import Graph, propagate, seeds_from, summarize  # noqa: E402
+from src.validity import is_active  # noqa: E402
 
 LABEL = {"R1": "担保", "R2": "供需", "R3": "同集团", "R4": "行业(近似)"}
 TIER = {"weak": "弱", "medium": "中", "strong": "强", "unknown": "未评分"}
@@ -41,7 +42,7 @@ def main() -> None:
     groups = {k: v["group_id"] for k, v in rows.items()}
     listed = {k for k, v in rows.items() if v.get("security_code")}
     # Point in time: an edge from an announcement published after the evaluation date does not exist yet.
-    edges = [e for e in read(chain / "edges.csv") if (e.get("announcement_date") or "") <= as_of]
+    edges = [e for e in read(chain / "edges.csv") if is_active(e, as_of)]   # in force on the evaluation date
     graph = Graph(edges, fragility, equity, groups, listed)
     names = {k: v["short_name"] for k, v in rows.items()}
 

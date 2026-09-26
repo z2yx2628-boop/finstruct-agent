@@ -6,6 +6,7 @@ from pathlib import Path
 
 from src.entity_resolver import ROOT, load_entities
 from src.propagation import Graph, propagate, seeds_from, summarize
+from src.validity import is_active
 
 TIER_STYLE = {"weak": ("#fde2e2", "#c0392b"), "medium": ("#fff4d6", "#b9770e"),
               "strong": ("#e3f4e8", "#1e8449"), "unknown": ("#f0f0f0", "#7f8c8d")}
@@ -28,7 +29,7 @@ def key_paths(chain: Path, snapshot: Path) -> tuple[list[dict], dict[str, dict],
     groups = {k: v["group_id"] for k, v in rows.items()}
     listed = {k for k, v in rows.items() if v.get("security_code")}
     names = {k: v["short_name"] for k, v in rows.items()}
-    edges = [e for e in _read(chain / "edges.csv") if (e.get("announcement_date") or "") <= as_of]
+    edges = [e for e in _read(chain / "edges.csv") if is_active(e, as_of)]
     graph = Graph(edges, fragility, equity, groups, listed)
     paths = []
     for node, shock, severity, reason in seeds_from(_read(chain / "signals.csv"), fragility, as_of, edges, equity):

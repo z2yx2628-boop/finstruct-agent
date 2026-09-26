@@ -30,51 +30,6 @@
         "amount_wan": 15936.0
       },
       {
-        "rule": "R1",
-        "src": "600231",
-        "dst": "N_凌钢股份北票保国铁矿有限公司",
-        "shock": "credit",
-        "severity": "low",
-        "dst_tier": "unknown",
-        "decision": "end",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
-        "note": "严重程度已降至最低",
-        "amount_wan": 190000.0
-      }
-    ]
-  },
-  {
-    "seed": "000761",
-    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
-    "steps": [
-      {
-        "rule": "R2",
-        "src": "000761",
-        "dst": "E_ANSTEEL_GROUP",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
-        "note": "",
-        "amount_wan": 111466.36
-      },
-      {
-        "rule": "R2",
-        "src": "E_ANSTEEL_GROUP",
-        "dst": "600231",
-        "shock": "credit",
-        "severity": "low",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：（共2行，合计15936.0万元；最大一行）鞍钢集团其他\n子公司 \n11,075 \n4,012.12 \n注2 \n销售钢材",
-        "note": "",
-        "amount_wan": 15936.0
-      },
-      {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
@@ -435,51 +390,6 @@
         "amount_wan": null
       },
       {
-        "rule": "R1",
-        "src": "600231",
-        "dst": "N_凌钢股份北票保国铁矿有限公司",
-        "shock": "credit",
-        "severity": "low",
-        "dst_tier": "unknown",
-        "decision": "end",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
-        "note": "严重程度已降至最低",
-        "amount_wan": 190000.0
-      }
-    ]
-  },
-  {
-    "seed": "000761",
-    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
-    "steps": [
-      {
-        "rule": "R2",
-        "src": "000761",
-        "dst": "E_ANSTEEL_GROUP",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第1页：（共5行，合计111466.36万元；最大一行）鞍钢集团其他子\n公司 \n采购主要\n原材料 \n市场化原则 \n 73,506.08  \n 68,645.45  \n ",
-        "note": "",
-        "amount_wan": 111466.36
-      },
-      {
-        "rule": "R3",
-        "src": "E_ANSTEEL_GROUP",
-        "dst": "600231",
-        "shock": "credit",
-        "severity": "low",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "entity_table",
-        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
-        "note": "",
-        "amount_wan": null
-      },
-      {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
@@ -716,51 +626,6 @@
         "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：凌钢运输 \n8,820 \n6,086.00 \n注3  \n运输服务",
         "note": "严重程度已降至最低",
         "amount_wan": 8820.0
-      }
-    ]
-  },
-  {
-    "seed": "000761",
-    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
-    "steps": [
-      {
-        "rule": "R2",
-        "src": "000761",
-        "dst": "E_BENGANG_GROUP",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/related_party/analysis_013_000761_related_estimate.json 第2页：本钢集团有限公\n司 \n采购钢材\n产品 \n市场化原则 \n 53,250.00  \n -    \n 561.97  ",
-        "note": "",
-        "amount_wan": 53250.0
-      },
-      {
-        "rule": "R3",
-        "src": "E_BENGANG_GROUP",
-        "dst": "600231",
-        "shock": "credit",
-        "severity": "low",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "entity_table",
-        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
-        "note": "",
-        "amount_wan": null
-      },
-      {
-        "rule": "R1",
-        "src": "600231",
-        "dst": "N_凌钢股份北票保国铁矿有限公司",
-        "shock": "credit",
-        "severity": "low",
-        "dst_tier": "unknown",
-        "decision": "end",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
-        "note": "严重程度已降至最低",
-        "amount_wan": 190000.0
       }
     ]
   },
@@ -2292,38 +2157,6 @@
         "amount_wan": null
       },
       {
-        "rule": "R1",
-        "src": "600231",
-        "dst": "N_凌钢股份北票保国铁矿有限公司",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
-        "note": "",
-        "amount_wan": 190000.0
-      }
-    ]
-  },
-  {
-    "seed": "000761",
-    "seed_reason": "承压评分为弱：毛利率-5.5%（24家中第2弱）；20日波动率47.4%（24家中第3弱）；净利率-7.8%（24家中第4弱）",
-    "steps": [
-      {
-        "rule": "R3",
-        "src": "000761",
-        "dst": "600231",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "entity_table",
-        "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
-        "note": "",
-        "amount_wan": null
-      },
-      {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
@@ -2527,38 +2360,6 @@
         "evidence": "outputs/analysis_freeze/related_party/analysis_046_600231_related_estimate.json 第5页：凌钢运输 \n8,820 \n6,086.00 \n注3  \n运输服务",
         "note": "",
         "amount_wan": 8820.0
-      }
-    ]
-  },
-  {
-    "seed": "600019",
-    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
-    "steps": [
-      {
-        "rule": "R3",
-        "src": "600019",
-        "dst": "600808",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "medium",
-        "decision": "weakened",
-        "basis": "entity_table",
-        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
-        "note": "",
-        "amount_wan": null
-      },
-      {
-        "rule": "R2",
-        "src": "600808",
-        "dst": "N_中国宝武钢铁集团有限公司及其附属公司",
-        "shock": "credit",
-        "severity": "low",
-        "dst_tier": "unknown",
-        "decision": "end",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/related_party/analysis_081_600808_related_estimate.json 第2页：（共2行，合计4682610.9541万元；最大一行）（2）公司及其附属公司向中国宝武及其附属公司采购产品，包括采购矿石﹑石灰﹑废钢﹑钢坯﹑耐火材料﹑备件﹑成套",
-        "note": "严重程度已降至最低",
-        "amount_wan": 4682610.9541
       }
     ]
   },
@@ -3175,38 +2976,6 @@
     "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 10.00 亿元，占担保方净资产 64%",
     "steps": [
       {
-        "rule": "R2",
-        "src": "E_XINTAI",
-        "dst": "600408",
-        "shock": "credit",
-        "severity": "high",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "disclosed",
-        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_001_600408_related_estimate.json 第2页：（共15行，合计757950.0万元；最大一行）出售商品\n新泰钢铁\n冶炼公司\n富安新材\n焦炭\n378,000.00\n45.00\n255,236.85\n44.11",
-        "note": "",
-        "amount_wan": 757950.0
-      },
-      {
-        "rule": "R1",
-        "src": "600408",
-        "dst": "N_山西宏安焦化科技有限公司",
-        "shock": "credit",
-        "severity": "high",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
-        "note": "",
-        "amount_wan": 27920.0
-      }
-    ]
-  },
-  {
-    "seed": "E_XINTAI",
-    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 10.00 亿元，占担保方净资产 64%",
-    "steps": [
-      {
         "rule": "R3",
         "src": "E_XINTAI",
         "dst": "600408",
@@ -3263,102 +3032,6 @@
         "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
         "note": "",
         "amount_wan": 27920.0
-      }
-    ]
-  },
-  {
-    "seed": "N_漳州龙泰供应链管理有限公司",
-    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 2.45 亿元，占担保方净资产 16%",
-    "steps": [
-      {
-        "rule": "R1",
-        "src": "N_漳州龙泰供应链管理有限公司",
-        "dst": "600408",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "disclosed",
-        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_010_600408_guarantee_backtest.json 第1页：被担保人：本公司的关联参股公司漳州龙泰供应链管理有限公司（以下简称“龙泰公司”）\n担保金额：本公司首次为龙泰公司提供担保，担保最高额为2.45 亿元。\n本次担保",
-        "note": "",
-        "amount_wan": 24500.0
-      },
-      {
-        "rule": "R2",
-        "src": "600408",
-        "dst": "E_XINTAI",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_005_600408_related_estimate.json 第2页：（共8行，合计501610.0万元；最大一行）采购商品 \n新泰钢铁\n冶炼公司 \n富安新材 \n钢坯 \n482,800.00 \n100.00 \n475,855.52",
-        "note": "",
-        "amount_wan": 501610.0
-      }
-    ]
-  },
-  {
-    "seed": "N_漳州龙泰供应链管理有限公司",
-    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 2.45 亿元，占担保方净资产 16%",
-    "steps": [
-      {
-        "rule": "R2",
-        "src": "N_漳州龙泰供应链管理有限公司",
-        "dst": "600408",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "disclosed",
-        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_009_600408_related_estimate.json 第2页：（共2行，合计100000.0万元；最大一行）公司与龙泰公司预计2024 年度发生的日常关联交易包括：安泰型钢向龙泰公司销售H 型钢，宏安焦化向龙泰公司销售焦炭",
-        "note": "",
-        "amount_wan": 100000.0
-      },
-      {
-        "rule": "R1",
-        "src": "600408",
-        "dst": "N_山西宏安焦化科技有限公司",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
-        "note": "",
-        "amount_wan": 27920.0
-      }
-    ]
-  },
-  {
-    "seed": "N_漳州龙泰供应链管理有限公司",
-    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 2.45 亿元，占担保方净资产 16%",
-    "steps": [
-      {
-        "rule": "R2",
-        "src": "N_漳州龙泰供应链管理有限公司",
-        "dst": "600408",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "disclosed",
-        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_009_600408_related_estimate.json 第2页：（共2行，合计100000.0万元；最大一行）公司与龙泰公司预计2024 年度发生的日常关联交易包括：安泰型钢向龙泰公司销售H 型钢，宏安焦化向龙泰公司销售焦炭",
-        "note": "",
-        "amount_wan": 100000.0
-      },
-      {
-        "rule": "R2",
-        "src": "600408",
-        "dst": "E_XINTAI",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_005_600408_related_estimate.json 第2页：（共8行，合计501610.0万元；最大一行）采购商品 \n新泰钢铁\n冶炼公司 \n富安新材 \n钢坯 \n482,800.00 \n100.00 \n475,855.52",
-        "note": "",
-        "amount_wan": 501610.0
       }
     ]
   },
@@ -3686,120 +3359,6 @@
     ]
   },
   {
-    "seed": "600019",
-    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
-    "steps": [
-      {
-        "rule": "R3",
-        "src": "600019",
-        "dst": "600782",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "medium",
-        "decision": "weakened",
-        "basis": "entity_table",
-        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
-        "note": "",
-        "amount_wan": null
-      }
-    ]
-  },
-  {
-    "seed": "600019",
-    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
-    "steps": [
-      {
-        "rule": "R3",
-        "src": "600019",
-        "dst": "601005",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "medium",
-        "decision": "weakened",
-        "basis": "entity_table",
-        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
-        "note": "",
-        "amount_wan": null
-      }
-    ]
-  },
-  {
-    "seed": "600019",
-    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
-    "steps": [
-      {
-        "rule": "R3",
-        "src": "600019",
-        "dst": "600581",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "entity_table",
-        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
-        "note": "",
-        "amount_wan": null
-      }
-    ]
-  },
-  {
-    "seed": "600019",
-    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
-    "steps": [
-      {
-        "rule": "R3",
-        "src": "600019",
-        "dst": "000825",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "strong",
-        "decision": "absorbed",
-        "basis": "entity_table",
-        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
-        "note": "承压评分为强，风险在此被吸收",
-        "amount_wan": null
-      }
-    ]
-  },
-  {
-    "seed": "600019",
-    "seed_reason": "2024-01-29 credit_exposure：guarantee_limit → 沙特宝海钢铁公司（暂定名，英文名为BAP Al-Khair Steel Company）（outputs/analysis_freeze/guarantee/analysis_037_600019_guarantee_individual.json）",
-    "steps": [
-      {
-        "rule": "R3",
-        "src": "600019",
-        "dst": "000717",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "weak",
-        "decision": "continue",
-        "basis": "entity_table",
-        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
-        "note": "",
-        "amount_wan": null
-      }
-    ]
-  },
-  {
-    "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
-    "steps": [
-      {
-        "rule": "R1",
-        "src": "600231",
-        "dst": "N_凌钢股份北票保国铁矿有限公司",
-        "shock": "credit",
-        "severity": "high",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/guarantee/analysis_043_600231_guarantee_individual.json 第1页：2022年12月27日，公司全资子公司凌钢股份北票保国铁矿有限公司（简称“保国公司”）与中国民生银行股份有限公司大连分行（简称“民生银行大连分行”）签署了《最高",
-        "note": "",
-        "amount_wan": 190000.0
-      }
-    ]
-  },
-  {
     "seed": "600231",
     "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
@@ -3948,25 +3507,6 @@
         "evidence": "outputs/backtest_antai_freeze/guarantee/backtest_antai_004_600408_guarantee_backtest.json 第1页：宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴",
         "note": "",
         "amount_wan": 27920.0
-      }
-    ]
-  },
-  {
-    "seed": "600408",
-    "seed_reason": "2024-04-26 credit_exposure：guarantee_limit → 山西新泰钢铁有限公司（outputs/backtest_antai_freeze/guarantee/backtest_antai_006_600408_guarantee_backtest.json）",
-    "steps": [
-      {
-        "rule": "R2",
-        "src": "600408",
-        "dst": "E_XINTAI",
-        "shock": "credit",
-        "severity": "medium",
-        "dst_tier": "unknown",
-        "decision": "weakened",
-        "basis": "disclosed",
-        "evidence": "outputs/backtest_antai_freeze/related_party/backtest_antai_005_600408_related_estimate.json 第2页：（共8行，合计501610.0万元；最大一行）采购商品 \n新泰钢铁\n冶炼公司 \n富安新材 \n钢坯 \n482,800.00 \n100.00 \n475,855.52",
-        "note": "",
-        "amount_wan": 501610.0
       }
     ]
   },

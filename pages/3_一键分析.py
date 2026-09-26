@@ -21,9 +21,10 @@ chains = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "data" / "chain"
 c1, c2, c3 = st.columns(3)
 task_label = c1.selectbox("公告类型", list(TASKS))
 as_of = c2.date_input("评估日", value=date.today())
-CHAIN_LABEL = {"data/chain/analysis_v1": "真实图谱（84份公告，2024–2026）", "data/chain/backtest_antai": "回测图谱（安泰，评估日选 2025-01-31）",
+CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/analysis_v1": "真实图谱（84份公告，2024–2026）", "data/chain/backtest_antai": "回测图谱（安泰，评估日选 2025-01-31）",
                "data/chain/gold_demo": "演示图谱（测试答案，仅开发用）"}
-chain = c3.selectbox("产业链图谱", chains, index=chains.index("data/chain/analysis_v1") if "data/chain/analysis_v1" in chains else 0,
+default = next((c for c in ("data/chain/live", "data/chain/analysis_v1") if c in chains), chains[0])
+chain = c3.selectbox("产业链图谱", chains, index=chains.index(default),
                      format_func=lambda c: CHAIN_LABEL.get(c, c))
 
 tab_new, tab_demo = st.tabs(["上传新公告（调用模型，约30–90秒）", "用已提取结果演示（不调用模型）"])
@@ -37,6 +38,7 @@ with tab_new:
         with st.spinner("正在提取、评分、推导传导路径…"):
             try:
                 card = analyze(target, TASKS[task_label], as_of.isoformat(), chain)
+                st.session_state["last_card"] = card
             except Exception as error:
                 st.error(f"分析失败：{type(error).__name__}: {error}")
 with tab_demo:
@@ -79,3 +81,14 @@ if card:
             for s in p["steps"]:
                 st.markdown(f"- **{s['rule_label']}**：{s['src_name']} → {s['dst_name']}（{s['tier_label']}），{s['decision_label']}  \n  依据：{s['evidence']}")
     st.download_button("下载预警卡片（Markdown）", card_markdown(card), file_name=f"alert_{card['as_of']}.md")
+
+last = st.session_state.get("last_card")
+if last and last.get("task") and (ROOT / last["source"]).exists():
+    st.caption("这份公告目前只用于本次分析。加入图谱后，它的关系和信号会进入实时图谱，参与今后的每日更新与路径推导。")
+    if st.button("加入实时图谱"):
+        import shutil
+        src = ROOT / last["source"]
+        dest = ROOT / "outputs" / "manual_freeze" / last["task"] / f"{src.parent.parent.name}.json"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dest)
+        st.success(f"已加入：{dest.relative_to(ROOT).as_posix()}。下次点“风险路径图 → 立即更新”（可不联网）后生效。")
