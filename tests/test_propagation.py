@@ -112,3 +112,16 @@ def test_task_is_detected_from_the_title():
     assert detect_task("关于为全资子公司提供担保的公告") == "guarantee"
     assert detect_task("关于控股股东部分股份质押的公告") == "pledge"
     assert detect_task("关于3号高炉停产检修的公告") == "capacity"
+
+
+def test_alert_card_renders_with_chinese_labels():
+    from src.analyze import build_card, card_markdown
+    from pathlib import Path
+    doc = {"security_code": "600408", "company_name": "山西安泰集团股份有限公司", "announcement_date": "2024-04-26",
+           "external_guarantee_balance": 0.0,
+           "events": [{"event_type": "guarantee_limit", "relationship": "sister_company", "guarantee_amount": 10000,
+                       "guarantee_unit": "万元", "guarantor": "山西安泰集团股份有限公司", "guaranteed_party": "山西新泰钢铁有限公司",
+                       "source_page": 2, "evidence_text": "新泰钢铁\n民生银行"}]}
+    card = build_card(doc, "doc.json", "2025-01-31", Path("no_such_chain"))
+    text = card_markdown(card)
+    assert "担保额度" in text and "同一控制下的兄弟公司" in text and "guarantee_limit" not in text

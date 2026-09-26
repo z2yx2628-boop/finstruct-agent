@@ -40,6 +40,33 @@ def detect_task(text: str) -> str:
     return "capacity"
 
 
+RULE_LABEL = {"R1": "担保", "R2": "供需", "R3": "同集团", "R4": "行业(近似)"}
+TIER_LABEL = {"weak": "弱", "medium": "中", "strong": "强", "unknown": "未评分"}
+SIGNAL_LABEL = {"credit_exposure": "担保敞口", "credit_event": "担保违约/代偿", "supply_disruption": "供应中断",
+                "capacity_reduction": "产能减少", "capacity_increase": "产能增加", "project_delay": "项目延期/终止",
+                "share_pledge": "股权质押"}
+SEVERITY_LABEL = {"high": "高", "medium": "中", "low": "低", "info": "提示"}
+DECISION_LABEL = {"continue": "继续传导", "weakened": "继续传导（减弱）", "absorbed": "被吸收，停止",
+                  "immaterial": "金额不重大，停止", "end": "已减弱至最低，停止"}
+EDGE_LABEL = {"guarantee": "担保", "supply": "购销", "service": "劳务", "lease": "租赁", "finance": "金融服务", "other": "其他"}
+RELATION_LABEL = {"wholly_owned_subsidiary": "全资子公司", "controlled_subsidiary": "控股子公司",
+                  "parent_or_controlling_shareholder": "控股股东", "sister_company": "同一控制下的兄弟公司",
+                  "associate_or_joint_venture": "联营/合营企业", "other_related_party": "其他关联方",
+                  "unrelated_party": "非关联方", "": "未注明"}
+STATUS_LABEL = {"guarantee_provided": "已提供担保", "guarantee_limit": "担保额度", "guarantee_released": "担保解除",
+                "guarantee_overdue": "逾期担保"}
+
+
+def flat(text: str | None, limit: int = 120) -> str:
+    return re.sub(r"\s+", " ", text or "").strip()[:limit]
+
+
+def zh_detail(detail: str) -> str:
+    for en, zh in STATUS_LABEL.items():
+        detail = detail.replace(en, zh)
+    return detail
+
+
 def _read(path: Path) -> list[dict]:
     if not path.exists():
         return []

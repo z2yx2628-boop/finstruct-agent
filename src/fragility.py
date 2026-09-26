@@ -87,7 +87,7 @@ def score(rows: list[dict], signals: list[dict], as_of: str, period_public: str,
             if code in per_metric[metric]:
                 s, rank, n = per_metric[metric][code]
                 dims.setdefault(dim, []).append(s)
-                where = f"{n}家中第{rank}弱" if code in peer_codes else f"弱于{n}家核心钢厂中的{n - rank + 1}家"
+                where = f"{n}家中第{rank}弱" if code in peer_codes else f"比{n}家核心钢厂中的{n - rank + 1}家更差"
                 notes.append((s, f"{label}{fmt(row[metric], kind)}（{where}）"))
         dim_scores = {d: sum(v) / len(v) for d, v in dims.items()}
         weight = sum(WEIGHTS[d] for d in dim_scores)
