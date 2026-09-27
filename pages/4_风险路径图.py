@@ -6,7 +6,7 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.network_view import (DECISION_LABEL, RULE_LABEL, SEVERITY_LABEL, TIER_LABEL, edge_windows,  # noqa: E402
+from src.network_view import (DECISION_LABEL, GRADE_HELP, GRADE_LABEL, RULE_LABEL, evidence_grade, path_grade, SEVERITY_LABEL, TIER_LABEL, edge_windows,  # noqa: E402
                               evidence_ref, filter_paths, focus_entries, key_paths, name_of, page_png,
                               overview_chart, overview_layout, path_rows, route, score_parts, source_file,
                               stop_reason, to_dot)
@@ -38,6 +38,8 @@ with st.sidebar:
         with st.expander(f"最新日报 {reports[0].stem[7:]}"):
             st.markdown(reports[0].read_text(encoding="utf-8"))
 st.title("风险路径图", icon=":material/account_tree:")
+st.info("**当前范围：集团关联与担保风险网络（原型）。** 企业之间的边来自公告披露的关联交易与担保（A 级）和集团股权关系；"
+        "跨集团的上下游关系目前只有行业近似（C 级），仅作情景提示、不计入路径得分，不代表真实交易。", icon=":material/info:")
 st.caption("总图上点企业 = 只看经过它的路径；点连线上的标签 = 打开那条路径。也可以在下方清单里点一行。"
            "② 看它一步步怎么传、为什么停、得分怎么来；③ 核对每一步的公告原文。")
 
@@ -117,14 +119,15 @@ if st.session_state.get("company_pick") not in [None] + companies:
     st.session_state["company_pick"] = None
 
 # ---------------------------------------------------------------- filters
-f1, f2, f3, f4 = st.columns([2, 1, 2, 1.4])
+f1, f2, f3, f4, f5 = st.columns([2, 1, 2, 1.4, 1.4])
 rule_pick = f1.multiselect("传导规则", list(RULE_LABEL), default=list(RULE_LABEL), format_func=RULE_LABEL.get)
 min_amount = f2.number_input("最小金额（亿元）", min_value=0.0, value=0.0, step=1.0)
 company = f3.selectbox("只看经过某企业", [None] + companies, key="company_pick",
                        format_func=lambda n: "全部企业" if n is None else name_of(n, names))
 hide_low = f4.toggle("隐藏金额为0的同集团路径", value=True,
                      help="只由“同属一个集团”构成、没有披露金额的路径信息量低；仅隐藏显示，不改变排名。")
-items = filter_paths(ranked, set(rule_pick), min_amount, company, hide_low)
+show_c = f5.toggle("显示 C 级情景路径", value=False, help=GRADE_HELP["C"])
+items = filter_paths(ranked, set(rule_pick), min_amount, company, hide_low, show_scenarios=show_c)
 if not items:
     st.info("没有符合筛选条件的路径。")
     st.button("清除选择", on_click=reset_focus)
@@ -132,7 +135,7 @@ if not items:
 ranks = [i for i, _ in items]
 
 # which path is open: an edge click on the chart, else a row click in the list, else the top one
-table_key = f"paths_{chain}_{snap}_{'-'.join(sorted(rule_pick))}_{min_amount}_{company}_{hide_low}"
+table_key = f"paths_{chain}_{snap}_{'-'.join(sorted(rule_pick))}_{min_amount}_{company}_{hide_low}_{show_c}"
 rows = (st.session_state.get(table_key) or {}).get("selection", {}).get("rows") or []
 row_now = ranks[rows[0]] if rows and rows[0] < len(ranks) else None
 if row_now is not None and row_now != st.session_state.get("_seen_row"):
@@ -194,10 +197,14 @@ html = [chip(entry["seed"], seed_tier, seed=True)]
 for s in entry["steps"]:
     amount = f" {s.amount_wan / 1e4:.2f}亿" if s.amount_wan else ""
     html.append(f'<span style="display:inline-block;margin:0 8px;text-align:center;font-size:0.85em">'
-                f'{RULE_LABEL[s.rule]}{amount}<br>──▶<br><small>{DECISION_LABEL.get(s.decision, s.decision)}</small></span>')
+                f'{RULE_LABEL[s.rule]}{amount} · <b>{evidence_grade(s)}级</b><br>──▶<br>'
+                f'<small>{DECISION_LABEL.get(s.decision, s.decision)}</small></span>')
     html.append(chip(s.dst, s.dst_tier))
 st.markdown('<div style="line-height:1.4">' + "".join(html) + "</div>", unsafe_allow_html=True)
-st.caption(f"起点原因：{entry['reason']}")
+if entry.get("scenario"):
+    st.warning(f"情景路径：含 C 级（行业推断）关系，不是实际交易，得分不计入排名（参考值 {entry.get('scenario_score', 0):.2f}）。")
+st.caption(f"起点原因：{entry['reason']}  \n证据等级：{GRADE_LABEL[path_grade(entry)]}（取最弱一步）。"
+           "A = 公告披露确认；B = 部分确认；C = 行业推断。")
 st.caption(stop_reason(entry, names) + (f"；另有 {entry['alternatives']} 条经不同集团子公司的同类路线" if entry.get("alternatives") else ""))
 
 parts = score_parts(entry)
@@ -215,7 +222,8 @@ with st.expander("局部关系图（这条路径及与它相连的其他路径�
 st.subheader("③ 每一步的依据", divider="gray")
 for k, s in enumerate(entry["steps"], 1):
     ref = evidence_ref(s.evidence)
-    head = f"第 {k} 步 · {RULE_LABEL[s.rule]}：{name_of(s.src, names)} → {name_of(s.dst, names)}"
+    head = (f"第 {k} 步 · {RULE_LABEL[s.rule]}：{name_of(s.src, names)} → {name_of(s.dst, names)}"
+            f" · 证据 {GRADE_LABEL[evidence_grade(s)]}")
     with st.expander(head, expanded=(k == 1)):
         if s.rule == "R3":
             st.markdown(f"**依据：** {readable(s.evidence)}")

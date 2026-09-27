@@ -112,6 +112,7 @@ def test_task_is_detected_from_the_title():
     assert detect_task("关于为全资子公司提供担保的公告") == "guarantee"
     assert detect_task("关于控股股东部分股份质押的公告") == "pledge"
     assert detect_task("关于3号高炉停产检修的公告") == "capacity"
+    assert detect_task("关于召开2026年第一次临时股东大会的通知") is None      # no silent default any more
 
 
 def test_alert_card_renders_with_chinese_labels():
@@ -144,3 +145,13 @@ def test_unlisted_parent_group_gets_equity_weighted_proxy_tier_and_can_absorb():
     g = Graph([edge("supply", "E_BAOWU", "600581", 10000)], frag, equity, groups, {"600019", "600581"})
     p = next(x for x in propagate(g, "600581", "credit", "high", "资不抵债") if x.steps[0].dst == "E_BAOWU")
     assert p.steps[0].decision == "absorbed" and "集团参照" in p.steps[0].note
+
+
+def test_industry_level_paths_are_scenarios_not_scored_v1_1():
+    from src.propagation import Step, summarize
+    from src.propagation import Path as P
+    disclosed = P("S", "r", [Step("R2", "S", "600001", "supply", "high", "weak", "continue", "disclosed", "e", amount_wan=1e4)])
+    industry = P("S", "r", [Step("R4", "S", "600002", "supply", "high", "weak", "continue", "industry_approx", "e")])
+    ranked, _ = summarize([industry, disclosed], {"600001", "600002"})
+    assert [e["steps"][0].rule for e in ranked] == ["R2", "R4"]
+    assert ranked[1]["scenario"] and ranked[1]["score"] == 0 and ranked[1]["scenario_score"] > 0

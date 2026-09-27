@@ -290,6 +290,11 @@ def summarize(paths: list[Path], listed: set[str]) -> tuple[list[dict], list[dic
         reach = sum(TIER_WEIGHT.get(s.dst_tier, 0) for s in entry["steps"] if s.dst in listed)
         severity = entry["steps"][0].severity
         entry["score"] = round(SEVERITY_WEIGHT[severity] * (1 + math.log10(1 + amount_yi)) * reach, 2)
+        # v1.1 (2026-09-27): a path that needs an industry-level (C-grade) link is a scenario, not a finding:
+        # it keeps its would-be score for reference but ranks after every path built on disclosed relations.
+        entry["scenario"] = any(s.rule == "R4" for s in entry["steps"])
+        if entry["scenario"]:
+            entry["scenario_score"], entry["score"] = entry["score"], 0.0
         entry["amount_yi"] = round(amount_yi, 2)
         entry["listed_reach"] = reach
         ranked.append(entry)

@@ -8,7 +8,7 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.analyze import analyze, build_card, card_markdown  # noqa: E402
+from src.analyze import TaskNotDetected, analyze, build_card, card_markdown  # noqa: E402
 
 TASKS = {"自动识别": None, "日常关联交易": "related_party", "对外担保": "guarantee", "产能/检修": "capacity", "股权质押": "pledge"}
 TIER_ICON = {"弱": "🔴", "中": "🟡", "强": "🟢"}
@@ -64,6 +64,9 @@ with tab_new:
                     state="complete",
                     expanded=False,
                 )
+            except TaskNotDetected as error:
+                status.update(label="需要选择公告类型", state="error", expanded=True)
+                st.warning(str(error))
             except Exception as error:
                 status.update(
                     label="分析失败",

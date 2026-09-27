@@ -86,6 +86,30 @@ DECISION_LABEL = {"continue": "继续传导", "weakened": "继续传导（减弱
                   "immaterial": "金额不重大，停止", "end": "已减弱至最低，停止"}
 
 
+GRADE_LABEL = {"A": "A 披露确认", "B": "B 部分确认", "C": "C 行业推断"}
+GRADE_HELP = {"A": "公告或年报写明双方（和金额），或股权关系已核对来源",
+              "B": "产品暴露或集团归属：有依据但未写明具体交易对手，或集团归属未逐一核对",
+              "C": "按行业分类推断的潜在关系，只作情景提示，不是实际交易，不计入路径得分"}
+
+
+def evidence_grade(step) -> str:
+    """A = disclosed by an announcement (or a verified shareholding), B = partly confirmed,
+    C = industry-level inference. Stated on every edge so a C-grade link is never read as a real trade."""
+    if step.rule == "R4" or step.basis == "industry_approx":
+        return "C"
+    if step.rule == "R3":
+        rows, _ = load_entities()
+        verified = any(rows.get(n, {}).get("group_verified") == "Y" for n in (step.src, step.dst))
+        return "A" if verified else "B"
+    if step.basis == "product_exposure":
+        return "B"
+    return "A" if step.basis == "disclosed" else "B"
+
+
+def path_grade(entry: dict) -> str:
+    return max(evidence_grade(s) for s in entry["steps"])        # the weakest link decides ("A" < "B" < "C")
+
+
 def route(entry: dict, names: dict[str, str]) -> str:
     return " → ".join([name_of(entry["seed"], names)] + [name_of(s.dst, names) for s in entry["steps"]])
 
@@ -96,10 +120,13 @@ def is_low_information(entry: dict) -> bool:
 
 
 def filter_paths(ranked: list[dict], rules: set[str] | None = None, min_amount_yi: float = 0.0,
-                 company: str | None = None, hide_low_information: bool = False) -> list[tuple[int, dict]]:
+                 company: str | None = None, hide_low_information: bool = False,
+                 show_scenarios: bool = True) -> list[tuple[int, dict]]:
     """Display filter only: returns (original rank index, entry); the ranking itself is never changed."""
     out = []
     for i, e in enumerate(ranked):
+        if not show_scenarios and e.get("scenario"):
+            continue
         if rules is not None and not {s.rule for s in e["steps"]} & rules:
             continue
         if e.get("amount_yi", 0) < min_amount_yi:
@@ -120,6 +147,7 @@ def path_rows(items: list[tuple[int, dict]], names: dict[str, str]) -> list[dict
                      "规则": "+".join(RULE_LABEL[s.rule] for s in e["steps"]),
                      "金额(亿元)": e.get("amount_yi", 0.0),
                      "终点": name_of(last.dst, names), "终点承压": TIER_LABEL.get(last.dst_tier, last.dst_tier),
+                     "证据等级": path_grade(e) + ("（情景）" if e.get("scenario") else ""),
                      "得分": e["score"]})
     return rows
 
@@ -231,7 +259,7 @@ def overview_layout(items: list[tuple[int, dict]], fragility: dict[str, dict], n
         for s in e["steps"]:
             tier[s.dst] = s.dst_tier or tier.get(s.dst, "unknown")
             key = (s.src, s.dst, s.rule)
-            info = edges.setdefault(key, {"amount_wan": 0.0, "paths": []})
+            info = edges.setdefault(key, {"amount_wan": 0.0, "paths": [], "grade": evidence_grade(s)})
             info["amount_wan"] = max(info["amount_wan"], s.amount_wan or 0.0)
             info["paths"].append(i)
     # longest-path layering on the displayed subgraph, cycles broken by DFS back edges, so almost every
@@ -308,7 +336,7 @@ def overview_layout(items: list[tuple[int, dict]], fragility: dict[str, dict], n
             y1, y2 = y1 + dx / length * off, y2 + dx / length * off
         amount = info["amount_wan"] / 1e4
         edge_rows.append({"edge": f"{a}|{b}|{rule}", "src": name_of(a, names), "dst": name_of(b, names),
-                          "rule": RULE_LABEL[rule], "rule_code": rule, "x": x1, "y": y1, "x2": x2, "y2": y2,
+                          "rule": RULE_LABEL[rule], "rule_code": rule, "grade": GRADE_LABEL[info["grade"]], "x": x1, "y": y1, "x2": x2, "y2": y2,
                           "mx": x1 + (x2 - x1) * 0.62, "my": y1 + (y2 - y1) * 0.62,
                           "amount_yi": round(amount, 2),
                           # only disclosed amounts are labelled; same-group links carry no amount and would only add clutter
@@ -339,6 +367,7 @@ def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 90
     # read as passing through the companies they cross
     edge_fade = {"condition": [{"test": "!datum.on", "value": 0.12}, {"test": "datum.span > 1", "value": 0.4}], "value": 0.9}
     tip_edge = [{"field": "src", "title": "从"}, {"field": "dst", "title": "到"}, {"field": "rule", "title": "规则"},
+                {"field": "grade", "title": "证据等级"},
                 {"field": "amount_yi", "type": "quantitative", "title": "金额(亿元)", "format": ".2f"},
                 {"field": "paths", "type": "quantitative", "title": "经过的路径数"}]
     tip_node = [{"field": "name", "title": "企业"}, {"field": "tier_label", "title": "承压"},

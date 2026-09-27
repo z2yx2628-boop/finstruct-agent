@@ -711,7 +711,7 @@ N_辽宁方大集团国贸有限公司,辽宁方大集团国贸有限公司,G_FA
 600569,安阳钢铁股份有限公司,G_ANYANG,2025-11-07,guarantee_balance,info,累计对外担保余额（合并报表外），用于承压评分的对外担保维度,11000.0,万元,累计对外担保余额 1.10 亿元（总担保占净资产 176.2%）,outputs/analysis_freeze/guarantee/analysis_072_600569_guarantee_related.json,,,2025-11-07,2026-11-07
 600569,安阳钢铁股份有限公司,G_ANYANG,2025-11-07,credit_exposure,low,为子公司担保=low,11000.0,万元,guarantee_limit → 安钢集团永通球墨铸铁管有限责任公司,outputs/analysis_freeze/guarantee/analysis_072_600569_guarantee_related.json,1,公司此前为永通公司与徽银金融租赁有限公司开展不超过人民币1.10 亿元融资租赁业务提供连带责任保证担保将形成关联担保。,2025-11-07,2026-11-07
 N_江西新华新材料科技股份有限公司,江西新华新材料科技股份有限公司,,2024-04-23,credit_exposure,low,为子公司担保=low,11000.0,万元,guarantee_limit → 张家港新华预应力钢绞线有限公司,outputs/analysis_freeze/guarantee/analysis_078_600782_guarantee_individual.json,1,为满足公司控股子公司江西新华新材料科技股份有限公司（以下简称“新华新材料”）的控股子公司张家港新华日常经营和建设项目的资金需求，促进其业务发展，张家港新华拟向商业银行申请2.20亿元的流动资金贷款。控股子公司新华新材料及张家港宏兴高线有限公司按持股比例对张家港新华提供同比例担保，控股子公司新华新材料为张家港新华提供担保额度不超过1.10 亿元。,2024-04-23,2025-04-23
-600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",78000.0,股,包钢集团 质押给 中信银行股份有限公司包头分行,outputs/analysis_freeze/pledge/analysis_033_600010_pledge.json,2,"股东名称
+600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",78000.0,股,包钢集团（持股约55.31%） 质押给 中信银行股份有限公司包头分行,outputs/analysis_freeze/pledge/analysis_033_600010_pledge.json,2,"股东名称
 是否为控
 股股东
 本次质押股数
@@ -746,7 +746,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 1.72%
 为包钢集团融
 资提供担保",2025-06-09,2027-06-08
-600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",62100.0,股,包钢集团 质押给 中信证券股份有限公司,outputs/analysis_freeze/pledge/analysis_034_600010_pledge.json,2,"股东名称
+600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",62100.0,股,包钢集团（持股约55.24%） 质押给 中信证券股份有限公司,outputs/analysis_freeze/pledge/analysis_034_600010_pledge.json,2,"股东名称
 是否为控
 股股东
 本次质押股数
@@ -781,7 +781,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 1.37%
 为包钢集团融
 资提供担保",2025-07-15,2026-07-15
-600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",77000.0,股,包钢集团 质押给 平安银行股份有限公司呼和浩特分行,outputs/analysis_freeze/pledge/analysis_035_600010_pledge.json,3,"包钢集团
+600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",77000.0,股,包钢集团（持股约55.37%） 质押给 平安银行股份有限公司呼和浩特分行,outputs/analysis_freeze/pledge/analysis_035_600010_pledge.json,3,"包钢集团
 是
 77,000.00
 否
@@ -795,7 +795,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 1.70%
 为包钢集团融
 资提供担保",2026-02-05,2029-02-04
-600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",68000.0,股,包钢集团 质押给 中信银行股份有限公司包头分行,outputs/analysis_freeze/pledge/analysis_035_600010_pledge.json,3,"包钢集团
+600010,内蒙古包钢钢联股份有限公司,G_BAOTOU,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",68000.0,股,包钢集团（持股约55.35%） 质押给 中信银行股份有限公司包头分行,outputs/analysis_freeze/pledge/analysis_035_600010_pledge.json,3,"包钢集团
 是
 68,000.00
 否
@@ -809,7 +809,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 1.50%
 为包钢集团融
 资提供担保",2026-02-05,2028-09-28
-600231,凌源钢铁股份有限公司,G_ANSTEEL,,share_pledge,high,"本次质押占其持股 >=80% high, >=50% medium",311179639.0,股,九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司,outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json,1,"股东名称 
+600231,凌源钢铁股份有限公司,G_ANSTEEL,,share_pledge,medium,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",311179639.0,股,九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司,outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json,1,"股东名称 
 是否为控
 股股东 
 本次质押股数
@@ -850,7 +850,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 10.91 
 生产经
 营",2025-01-20,2028-08-23
-600231,凌源钢铁股份有限公司,G_ANSTEEL,,share_pledge,medium,"本次质押占其持股 >=80% high, >=50% medium",211179639.0,股,九江萍钢 质押给 鞍资（天津）融资租赁有限公司,outputs/analysis_freeze/pledge/analysis_045_600231_pledge.json,2,"股东名称
+600231,凌源钢铁股份有限公司,G_ANSTEEL,,share_pledge,medium,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",211179639.0,股,九江萍钢（持股约10.9%） 质押给 鞍资（天津）融资租赁有限公司,outputs/analysis_freeze/pledge/analysis_045_600231_pledge.json,2,"股东名称
 是否为控
 股股东
 本次质押股数
@@ -890,7 +890,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 7.40
 生产
 经营",2025-09-25,2028-09-28
-600231,凌源钢铁股份有限公司,G_ANSTEEL,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",100000000.0,股,九江萍钢 质押给 鞍钢集团成都融资租赁有限公司,outputs/analysis_freeze/pledge/analysis_045_600231_pledge.json,2,"九江萍钢
+600231,凌源钢铁股份有限公司,G_ANSTEEL,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",100000000.0,股,九江萍钢（持股约10.92%） 质押给 鞍钢集团成都融资租赁有限公司,outputs/analysis_freeze/pledge/analysis_045_600231_pledge.json,2,"九江萍钢
 否
 100,000,000
 否
@@ -906,7 +906,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 3.51
 生产
 经营",2025-09-25,2028-09-28
-600399,抚顺特殊钢股份有限公司,G_SHAGANG,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",120876444.0,股,东北特钢及一致行动人 质押给 沙钢集团,outputs/analysis_freeze/pledge/analysis_055_600399_pledge.json,2,"二、再质押情况
+600399,抚顺特殊钢股份有限公司,G_SHAGANG,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",120876444.0,股,东北特钢及一致行动人（持股约31.01%） 质押给 沙钢集团,outputs/analysis_freeze/pledge/analysis_055_600399_pledge.json,2,"二、再质押情况
 1、本次股份质押基本情况
 股东名称
 是否
@@ -958,7 +958,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 为其借款业务提供担保。2025 年12 月30 日，双方对已签署的借款合同及质押担保合同进
 行变更，担保期限为2025 年12 月19 日至2028 年12 月19 日，质押股份在东北特钢向沙钢
 集团清偿完全部债务时解除，具体以实际办理股份解除质押登记时间为准。",2025-12-30,2026-12-30
-600507,方大特钢科技股份有限公司,G_FANGDA,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",84040000.0,股,江西板簧 质押给 中泰证券股份有限公司,outputs/analysis_freeze/pledge/analysis_067_600507_pledge.json,2,"股东名称
+600507,方大特钢科技股份有限公司,G_FANGDA,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",84040000.0,股,江西板簧（持股约7.59%） 质押给 中泰证券股份有限公司,outputs/analysis_freeze/pledge/analysis_067_600507_pledge.json,2,"股东名称
 是否为
 控股股东
 本次质押股数
@@ -990,7 +990,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 47.80%
 3.63%
 自身资金需要",2025-07-22,2026-07-22
-600507,方大特钢科技股份有限公司,G_FANGDA,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",90000000.0,股,方大钢铁 质押给 中信证券股份有限公司,outputs/analysis_freeze/pledge/analysis_068_600507_pledge.json,2,"2、本次股份质押基本情况
+600507,方大特钢科技股份有限公司,G_FANGDA,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",90000000.0,股,方大钢铁（持股约32.55%） 质押给 中信证券股份有限公司,outputs/analysis_freeze/pledge/analysis_068_600507_pledge.json,2,"2、本次股份质押基本情况
 单位：股
 股东名称
 是否为
@@ -1023,7 +1023,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 11.95%
 3.89%
 自身资金需要",2025-12-22,2026-12-22
-600507,方大特钢科技股份有限公司,G_FANGDA,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",10250000.0,股,江西板簧 质押给 中泰证券股份有限公司,outputs/analysis_freeze/pledge/analysis_069_600507_pledge.json,2,"2、本次股份补充质押情况
+600507,方大特钢科技股份有限公司,G_FANGDA,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",10250000.0,股,江西板簧（持股约7.55%） 质押给 中泰证券股份有限公司,outputs/analysis_freeze/pledge/analysis_069_600507_pledge.json,2,"2、本次股份补充质押情况
 股东名称
 是否为
 控股股东
@@ -1055,7 +1055,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 5.83%
 0.44%
 自身资金需要",2026-07-22,2027-07-22
-600569,安阳钢铁股份有限公司,G_ANYANG,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",54000.0,股,安钢集团 质押给 中原银行股份有限公司安阳分行,outputs/analysis_freeze/pledge/analysis_073_600569_pledge.json,1,"股东
+600569,安阳钢铁股份有限公司,G_ANYANG,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",54000.0,股,安钢集团（持股约67.29%） 质押给 中原银行股份有限公司安阳分行,outputs/analysis_freeze/pledge/analysis_073_600569_pledge.json,1,"股东
 名称 
 是否
 为控
@@ -1101,7 +1101,7 @@ N_江西新华新材料科技股份有限公司,江西新华新材料科技股�
 18.80% 
 补充流
 动资金",2025-03-10,2026-03-10
-600569,安阳钢铁股份有限公司,G_ANYANG,,share_pledge,low,"本次质押占其持股 >=80% high, >=50% medium",18400.0,股,安钢集团 质押给 中信信托有限责任公司,outputs/analysis_freeze/pledge/analysis_074_600569_pledge.json,1,"股东
+600569,安阳钢铁股份有限公司,G_ANYANG,,share_pledge,low,"本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",18400.0,股,安钢集团（持股约67.9%） 质押给 中信信托有限责任公司,outputs/analysis_freeze/pledge/analysis_074_600569_pledge.json,1,"股东
 名称
 是否
 为控

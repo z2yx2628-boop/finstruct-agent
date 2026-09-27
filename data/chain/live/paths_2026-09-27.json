@@ -3061,14 +3061,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3081,7 +3081,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3094,26 +3094,26 @@
         "src": "000761",
         "dst": "N_鞍钢集团国际经济贸易有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n鞍钢集团国际\n经济贸易有限\n公司\n采购主要\n原材料\n市场化原\n则\n16,728.00\n-\n18,589.30",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 16728.0
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3126,7 +3126,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3139,26 +3139,26 @@
         "src": "000761",
         "dst": "N_鞍山钢铁集团有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共3行，合计87553.31999999999万元；最大一行）采购商品/提供服务\n鞍山钢铁集团\n有限公司\n接受支持\n性服务\n市场化原\n则\n55,025.92\n",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 87553.31999999999
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3171,7 +3171,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3184,26 +3184,26 @@
         "src": "000761",
         "dst": "N_本溪北营钢铁(集团)股份有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共2行，合计1577771.54万元；最大一行）采购商品/提供服务\n本溪北营钢铁\n（集团）股份\n有限公司\n采购主要\n原材料\n市场化原\n则\n1,488,320.",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 1577771.54
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3216,7 +3216,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3229,26 +3229,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)矿业有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n本溪钢铁（集\n团）矿业有限\n责任公司\n采购主要\n原材料\n市场化原\n则\n803,992.35\n515,191.14\n709,536.00",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 803992.35
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3261,7 +3261,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3274,26 +3274,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)实业发展有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n本溪钢铁（集\n团）实业发展\n有限责任公司\n采购主要\n原材料\n市场化原\n则\n67,546.76\n20,001.33\n22,314.12",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 67546.76
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3306,7 +3306,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3319,26 +3319,26 @@
         "src": "000761",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "medium",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：（共5行，合计112134.78万元；最大一行）鞍钢集团其他\n子公司\n接受支持\n性服务\n市场化原\n则\n54,536.12\n21,420.64\n65,084.65",
-        "note": "集团参照等级（40.1分）",
+        "note": "严重程度已降至最低",
         "amount_wan": 112134.78
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3351,7 +3351,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3364,26 +3364,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)机械制造有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共2行，合计49977.62万元；最大一行）采购商品/提供服务\n本溪钢铁（集\n团）机械制造\n有限责任公司\n采购辅助\n材料\n市场化原\n则\n37,708.00\n2",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 49977.62
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3396,7 +3396,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3409,26 +3409,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)建设有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：（共2行，合计42682.86万元；最大一行）本溪钢铁（集\n团）建设有限\n责任公司\n接受支持\n性服务\n市场化原\n则\n34,366.69\n21,999.70\n36",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 42682.86
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3441,7 +3441,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3454,26 +3454,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)设备工程有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：（共2行，合计78912.35万元；最大一行）本溪钢铁（集\n团）设备工程\n有限公司\n接受支持\n性服务\n市场化原\n则\n70,229.35\n63,590.97\n11",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 78912.35
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3486,7 +3486,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3499,26 +3499,26 @@
         "src": "000761",
         "dst": "E_BENGANG_GROUP",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "medium",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共2行，合计194274.65万元；最大一行）采购商品/提供服务\n本钢集团有限\n公司\n采购钢材\n产品\n市场化原\n则\n161,595.12\n532.41\n-",
-        "note": "集团参照等级（40.1分）",
+        "note": "严重程度已降至最低",
         "amount_wan": 194274.65
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3531,7 +3531,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3544,26 +3544,26 @@
         "src": "000761",
         "dst": "N_鞍钢集团工程技术发展有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n鞍钢集团工程\n技术发展有限\n公司\n接受支持\n性服务\n市场化原\n则\n19,744.00\n19,243.50\n2,544.30",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 19744.0
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3576,7 +3576,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -3589,26 +3589,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：本溪钢铁（集\n团）有限责任\n公司\n接受支持\n性服务\n市场化原\n则\n17,195.85\n4,470.79\n9,333.24",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 17195.85
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3621,7 +3621,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -3634,26 +3634,26 @@
         "src": "000761",
         "dst": "N_鞍钢集团国际经济贸易有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n鞍钢集团国际\n经济贸易有限\n公司\n采购主要\n原材料\n市场化原\n则\n16,728.00\n-\n18,589.30",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 16728.0
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3666,7 +3666,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -3679,26 +3679,26 @@
         "src": "000761",
         "dst": "N_鞍山钢铁集团有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共3行，合计87553.31999999999万元；最大一行）采购商品/提供服务\n鞍山钢铁集团\n有限公司\n接受支持\n性服务\n市场化原\n则\n55,025.92\n",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 87553.31999999999
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3711,7 +3711,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -3724,26 +3724,26 @@
         "src": "000761",
         "dst": "N_本溪北营钢铁(集团)股份有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共2行，合计1577771.54万元；最大一行）采购商品/提供服务\n本溪北营钢铁\n（集团）股份\n有限公司\n采购主要\n原材料\n市场化原\n则\n1,488,320.",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 1577771.54
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3756,7 +3756,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -3769,26 +3769,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)矿业有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n本溪钢铁（集\n团）矿业有限\n责任公司\n采购主要\n原材料\n市场化原\n则\n803,992.35\n515,191.14\n709,536.00",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 803992.35
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3801,7 +3801,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -3814,26 +3814,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)实业发展有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n本溪钢铁（集\n团）实业发展\n有限责任公司\n采购主要\n原材料\n市场化原\n则\n67,546.76\n20,001.33\n22,314.12",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 67546.76
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3846,7 +3846,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -3859,26 +3859,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)机械制造有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共2行，合计49977.62万元；最大一行）采购商品/提供服务\n本溪钢铁（集\n团）机械制造\n有限责任公司\n采购辅助\n材料\n市场化原\n则\n37,708.00\n2",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 49977.62
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3891,7 +3891,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -3904,26 +3904,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)建设有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：（共2行，合计42682.86万元；最大一行）本溪钢铁（集\n团）建设有限\n责任公司\n接受支持\n性服务\n市场化原\n则\n34,366.69\n21,999.70\n36",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 42682.86
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3936,7 +3936,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -3949,26 +3949,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)设备工程有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：（共2行，合计78912.35万元；最大一行）本溪钢铁（集\n团）设备工程\n有限公司\n接受支持\n性服务\n市场化原\n则\n70,229.35\n63,590.97\n11",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 78912.35
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -3981,7 +3981,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -3994,26 +3994,26 @@
         "src": "000761",
         "dst": "E_BENGANG_GROUP",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "medium",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共2行，合计194274.65万元；最大一行）采购商品/提供服务\n本钢集团有限\n公司\n采购钢材\n产品\n市场化原\n则\n161,595.12\n532.41\n-",
-        "note": "集团参照等级（40.1分）",
+        "note": "严重程度已降至最低",
         "amount_wan": 194274.65
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4026,7 +4026,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -4039,26 +4039,26 @@
         "src": "000761",
         "dst": "N_鞍钢集团工程技术发展有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n鞍钢集团工程\n技术发展有限\n公司\n接受支持\n性服务\n市场化原\n则\n19,744.00\n19,243.50\n2,544.30",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 19744.0
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4071,7 +4071,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -4084,26 +4084,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：本溪钢铁（集\n团）有限责任\n公司\n接受支持\n性服务\n市场化原\n则\n17,195.85\n4,470.79\n9,333.24",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 17195.85
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4116,7 +4116,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -4129,26 +4129,26 @@
         "src": "000761",
         "dst": "000898",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "medium",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "entity_table",
         "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": null
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4161,7 +4161,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "disclosed",
@@ -4174,7 +4174,7 @@
         "src": "000761",
         "dst": "000629",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "strong",
         "decision": "absorbed",
         "basis": "entity_table",
@@ -4186,14 +4186,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4206,7 +4206,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4219,26 +4219,26 @@
         "src": "000761",
         "dst": "N_鞍钢集团国际经济贸易有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n鞍钢集团国际\n经济贸易有限\n公司\n采购主要\n原材料\n市场化原\n则\n16,728.00\n-\n18,589.30",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 16728.0
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4251,7 +4251,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4264,26 +4264,26 @@
         "src": "000761",
         "dst": "N_鞍山钢铁集团有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共3行，合计87553.31999999999万元；最大一行）采购商品/提供服务\n鞍山钢铁集团\n有限公司\n接受支持\n性服务\n市场化原\n则\n55,025.92\n",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 87553.31999999999
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4296,7 +4296,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4309,26 +4309,26 @@
         "src": "000761",
         "dst": "N_本溪北营钢铁(集团)股份有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共2行，合计1577771.54万元；最大一行）采购商品/提供服务\n本溪北营钢铁\n（集团）股份\n有限公司\n采购主要\n原材料\n市场化原\n则\n1,488,320.",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 1577771.54
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4341,7 +4341,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4354,26 +4354,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)矿业有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n本溪钢铁（集\n团）矿业有限\n责任公司\n采购主要\n原材料\n市场化原\n则\n803,992.35\n515,191.14\n709,536.00",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 803992.35
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4386,7 +4386,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4399,26 +4399,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)实业发展有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n本溪钢铁（集\n团）实业发展\n有限责任公司\n采购主要\n原材料\n市场化原\n则\n67,546.76\n20,001.33\n22,314.12",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 67546.76
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4431,7 +4431,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4444,26 +4444,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)机械制造有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共2行，合计49977.62万元；最大一行）采购商品/提供服务\n本溪钢铁（集\n团）机械制造\n有限责任公司\n采购辅助\n材料\n市场化原\n则\n37,708.00\n2",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 49977.62
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4476,7 +4476,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4489,26 +4489,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)建设有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：（共2行，合计42682.86万元；最大一行）本溪钢铁（集\n团）建设有限\n责任公司\n接受支持\n性服务\n市场化原\n则\n34,366.69\n21,999.70\n36",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 42682.86
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4521,7 +4521,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4534,26 +4534,26 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)设备工程有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：（共2行，合计78912.35万元；最大一行）本溪钢铁（集\n团）设备工程\n有限公司\n接受支持\n性服务\n市场化原\n则\n70,229.35\n63,590.97\n11",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 78912.35
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4566,7 +4566,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4579,26 +4579,26 @@
         "src": "000761",
         "dst": "E_BENGANG_GROUP",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "medium",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共2行，合计194274.65万元；最大一行）采购商品/提供服务\n本钢集团有限\n公司\n采购钢材\n产品\n市场化原\n则\n161,595.12\n532.41\n-",
-        "note": "集团参照等级（40.1分）",
+        "note": "严重程度已降至最低",
         "amount_wan": 194274.65
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4611,7 +4611,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4624,26 +4624,26 @@
         "src": "000761",
         "dst": "N_鞍钢集团工程技术发展有限公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：采购商品/提供服务\n鞍钢集团工程\n技术发展有限\n公司\n接受支持\n性服务\n市场化原\n则\n19,744.00\n19,243.50\n2,544.30",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 19744.0
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -4656,7 +4656,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000761",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -4669,12 +4669,12 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)有限责任公司",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "unknown",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "disclosed",
         "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第3页：本溪钢铁（集\n团）有限责任\n公司\n接受支持\n性服务\n市场化原\n则\n17,195.85\n4,470.79\n9,333.24",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": 17195.85
       }
     ]
@@ -5353,14 +5353,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5373,26 +5373,26 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000898",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "medium",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "entity_table",
         "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": null
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_LINGGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5405,7 +5405,7 @@
         "src": "E_LINGGANG_GROUP",
         "dst": "000629",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "strong",
         "decision": "absorbed",
         "basis": "entity_table",
@@ -5417,14 +5417,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5437,26 +5437,26 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000898",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "medium",
-        "decision": "weakened",
+        "decision": "end",
         "basis": "entity_table",
         "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
-        "note": "",
+        "note": "严重程度已降至最低",
         "amount_wan": null
       }
     ]
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5469,7 +5469,7 @@
         "src": "E_ANSTEEL_GROUP",
         "dst": "000629",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "low",
         "dst_tier": "strong",
         "decision": "absorbed",
         "basis": "entity_table",
@@ -5481,14 +5481,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5501,7 +5501,7 @@
         "src": "000761",
         "dst": "N_鞍钢集团国际经济贸易有限公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5513,14 +5513,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5533,7 +5533,7 @@
         "src": "000761",
         "dst": "N_鞍山钢铁集团有限公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5545,14 +5545,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5565,7 +5565,7 @@
         "src": "000761",
         "dst": "N_本溪北营钢铁(集团)股份有限公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5577,14 +5577,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5597,7 +5597,7 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)矿业有限责任公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5609,14 +5609,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5629,7 +5629,7 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)实业发展有限责任公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5641,14 +5641,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5661,7 +5661,7 @@
         "src": "000761",
         "dst": "E_ANSTEEL_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5673,14 +5673,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5693,7 +5693,7 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)机械制造有限责任公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5705,14 +5705,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5725,7 +5725,7 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)建设有限责任公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5737,14 +5737,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5757,7 +5757,7 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)设备工程有限公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5769,14 +5769,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5789,7 +5789,7 @@
         "src": "000761",
         "dst": "E_BENGANG_GROUP",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5801,14 +5801,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5821,7 +5821,7 @@
         "src": "000761",
         "dst": "N_鞍钢集团工程技术发展有限公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -5833,14 +5833,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000761",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "weak",
         "decision": "continue",
         "basis": "entity_table",
@@ -5853,7 +5853,7 @@
         "src": "000761",
         "dst": "N_本溪钢铁(集团)有限责任公司",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6490,14 +6490,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_红山矿业",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6509,14 +6509,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_鞍钢矿业",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6528,14 +6528,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_建平磷铁",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6547,14 +6547,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_鞍钢国贸",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6566,14 +6566,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_德邻工业品",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6585,14 +6585,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_绿金资源",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6604,14 +6604,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_荣程数字科技",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6623,14 +6623,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_凌钢热电",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6642,14 +6642,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_凌钢运输",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6661,14 +6661,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_凌钢屿朔",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6680,14 +6680,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_德邻供应链",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6699,14 +6699,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_鞍钢自动化",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6718,14 +6718,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_鞍钢工程技术",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6737,14 +6737,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_鞍钢建设",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6756,14 +6756,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R2",
         "src": "600231",
         "dst": "N_本钢建设",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
@@ -6775,14 +6775,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000898",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "entity_table",
@@ -6794,14 +6794,14 @@
   },
   {
     "seed": "600231",
-    "seed_reason": " share_pledge：九江萍钢钢铁有限公司 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
+    "seed_reason": " share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）",
     "steps": [
       {
         "rule": "R3",
         "src": "600231",
         "dst": "000629",
         "shock": "credit",
-        "severity": "high",
+        "severity": "medium",
         "dst_tier": "strong",
         "decision": "absorbed",
         "basis": "entity_table",

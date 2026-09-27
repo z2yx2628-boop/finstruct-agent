@@ -248,11 +248,19 @@ def signals_from(doc: dict, source_doc: str) -> list[Signal]:
                 continue
             ratio = e.get("shareholder_holding_ratio") or 0
             sev = "high" if ratio >= 80 else "medium" if ratio >= 50 else "low"
+            # v1.1 (2026-09-27): a pledge is a risk to the company when the pledgor is a major holder. The
+            # shareholder's stake = pledged share of total capital / pledged share of its holding. A 10.9%
+            # holder pledging everything (九江萍钢 in 凌钢) is not the controlling shareholder's pledge.
+            total = e.get("total_share_capital_ratio")
+            stake = round(total * 100 / ratio, 2) if total and ratio else None
+            if sev == "high" and stake is not None and stake < 20:
+                sev = "medium"
             out.append(_signal(issuer, doc, source_doc, e, pledge_window(e, doc.get("announcement_date") or ""),
                            signal_type="share_pledge", severity=sev,
-                               severity_rule="本次质押占其持股 >=80% high, >=50% medium",
+                               severity_rule="本次质押占其持股 >=80% high（仅当该股东持股 >=20%，否则 medium）, >=50% medium",
                                magnitude=e.get("shares"), magnitude_unit="股",
-                               detail=f"{e.get('shareholder_name') or ''} 质押给 {e.get('pledgee') or ''}"))
+                               detail=f"{e.get('shareholder_name') or ''}"
+                                      f"{f'（持股约{stake:g}%）' if stake is not None else ''} 质押给 {e.get('pledgee') or ''}"))
     return out
 
 

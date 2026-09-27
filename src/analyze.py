@@ -32,14 +32,19 @@ TASK_KEYWORDS = [  # first match wins
 SEVERITY_ORDER = {"high": 3, "medium": 2, "low": 1, "info": 0}
 
 
-def detect_task(text: str) -> str:
+class TaskNotDetected(ValueError):
+    """The announcement type could not be recognised; the user must choose it."""
+
+
+def detect_task(text: str) -> str | None:
     """Decide from the title area first (pledge notices say "为融资提供担保" in the body,
-    which must not turn them into guarantee notices), then from the first pages."""
+    which must not turn them into guarantee notices), then from the first pages.
+    None when nothing matches: guessing a task would run the wrong extractor silently."""
     for window in (text[:300], text[:3000]):
         for task, pattern in TASK_KEYWORDS:
             if pattern.search(window):
                 return task
-    return "capacity"
+    return None
 
 
 RULE_LABEL = {"R1": "担保", "R2": "供需", "R3": "同集团", "R4": "行业(近似)"}
@@ -202,6 +207,8 @@ def analyze(path: str | Path, task: str | None = None, as_of: str | None = None,
     if task is None:
         parsed = parse_document(path)
         task = detect_task("\n".join(p.text for p in parsed.pages[:2]))
+        if task is None:
+            raise TaskNotDetected("无法从标题和前两页识别公告类型（关联交易、担保、产能/检修、质押），请手动选择公告类型后重试。")
     result = run_pipeline(path, task=task)
     doc = json.loads(Path(result["prediction_path"]).read_text(encoding="utf-8"))
     card = build_card(doc, str(Path(result["prediction_path"]).relative_to(ROOT)), as_of, ROOT / chain)

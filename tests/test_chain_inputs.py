@@ -85,3 +85,16 @@ def test_cumulative_external_guarantee_balance_becomes_an_info_signal():
                total_guarantee_net_asset_ratio=155.98)
     s = [x for x in signals_from(doc, "g.json") if x.signal_type == "guarantee_balance"]
     assert len(s) == 1 and s[0].magnitude == 285800.0 and s[0].severity == "info" and s[0].valid_to == "2027-03-30"
+
+
+def test_pledge_by_minor_holder_is_not_high_v1_1():
+    """九江萍钢 pledged all of its 10.91% stake in 凌钢: pledged 100% of holding, but not a controlling stake."""
+    def pledge(holding, total, name):
+        return {"security_code": "600231", "company_name": "凌源钢铁股份有限公司", "announcement_date": "2025-01-21",
+                "events": [{"event_type": "pledge", "shareholder_name": name, "shares": 1.0, "shares_unit": "股",
+                            "shareholder_holding_ratio": holding, "total_share_capital_ratio": total,
+                            "pledge_start_date": "2025-01-20", "source_page": 1, "evidence_text": "x"}]}
+    minor = signals_from(pledge(100.0, 10.91, "九江萍钢钢铁有限公司"), "x.json")
+    major = signals_from(pledge(90.0, 28.4, "李安民"), "x.json")
+    assert minor[0].severity == "medium" and "持股约10.91%" in minor[0].detail
+    assert major[0].severity == "high"
