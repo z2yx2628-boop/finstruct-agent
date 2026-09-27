@@ -16,3 +16,10 @@ def test_latest_annual_product_breakdown_is_used():
     e = exposure_from_composition(rows)
     assert e["period"] == "2025-12-31" and e["products"]["P_LONG"]["share"] == 0.6 and e["products"]["P_FLAT"]["share"] == 0.24
     assert e["unmapped_share"] == 0.16
+
+
+def test_price_shock_section_always_carries_the_caveat():
+    from src.price_shock import CAVEAT, report_section
+    lines = report_section("2024-09-30", {})
+    assert any(CAVEAT in line for line in lines)
+    assert any("焦炭上涨" in line for line in lines)          # 20-day coke move on 2024-09-30 was +13%

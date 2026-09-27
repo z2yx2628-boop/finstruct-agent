@@ -132,6 +132,16 @@ def main() -> None:
             f"当前关键路径 {len(now)} 条；新增 {len(added)}，消失 {len(gone)}。", ""]
     log += [f"- 新增：{r['path']}（得分 {r['score']}；起因 {readable(r['reason'], 80)}）" for r in sorted(added, key=lambda r: -float(r['score']))[:15]]
     log += [f"- 消失：{r['path']}" for r in gone[:15]]
+    # product prices (daily) -> price-shock scenario hints, ranked by disclosed product exposure x fragility
+    if not args.no_network:
+        run("scripts/build_product_exposure.py", "--prices")
+    from src.price_shock import report_section
+    frag_path = ROOT / "data" / "snapshots" / today / "fragility.csv"
+    fragility = {}
+    if frag_path.exists():
+        with frag_path.open(encoding="utf-8-sig", newline="") as f:
+            fragility = {r["security_code"]: r for r in csv.DictReader(f)}
+    log += [""] + report_section(today, fragility)
     changes = ROOT / "data" / "snapshots" / today / "changes.md"
     if changes.exists():
         log += ["", changes.read_text(encoding="utf-8").replace("# ", "## ", 1)]

@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.fragility_view import (compared_snapshot, data_sources, events_after_report, explain,  # noqa: E402
                                 guarantee_evidence, report_links, snapshot_meta, version_note)
+from src.product_layer import exposure_as_of, products  # noqa: E402
 SNAP = ROOT / "data" / "snapshots"
 TIER_COLOR = {"weak": "🔴", "medium": "🟡", "strong": "🟢"}
 
@@ -112,6 +113,21 @@ with right:
     links = st.columns(4)
     for col, (label, url) in zip(links, report_links(code).items()):
         col.link_button(label, url, use_container_width=True)
+
+exposure = exposure_as_of(code, chosen)
+st.markdown("**主要产品构成**（B 级：公司定期报告披露的分产品收入，东方财富主营构成；按评估日可得的最新年报）")
+if exposure and exposure.get("products"):
+    names = {p["product_id"]: p["name"] for p in products()}
+    split = "" if exposure["split_from"] == exposure["period"] else \
+        f"；该年报只披露“钢材”合计，品种比例取自 {exposure['split_from'][:4]} 年报"
+    st.dataframe([{"产品": names.get(k, k), "占收入": f"{v['share']:.1%}" if v.get("share") is not None else "—",
+                   "原文条目": v.get("items", "")} for k, v in sorted(exposure["products"].items(),
+                                                             key=lambda kv: -(kv[1].get("share") or 0))],
+                 hide_index=True, use_container_width=True)
+    st.caption(f"年报期 {exposure['period'][:4] or '—'}{split}。产品暴露用于价格冲击的情景提示；"
+               "经两次预先登记的检验，方向一致但不显著，不作为预测（docs/product_price_validation.md）。")
+else:
+    st.caption("没有可用的分产品披露。")
 
 if detail is not None or version == "v1":
     g = guarantee_evidence(folder, code)
