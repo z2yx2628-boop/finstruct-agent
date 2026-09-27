@@ -1,10 +1,10 @@
-security_code,security_name,sector_id,sector,steel_input_evidence,evidence_source
+﻿security_code,security_name,sector_id,sector,steel_input_evidence,evidence_source
 600104,上汽集团,S_AUTO,汽车,,
 601633,长城汽车,S_AUTO,汽车,,
-600031,三一重工,S_MACHINERY,工程机械,,
+600031,三一重工,S_MACHINERY,工程机械,2、公司的经营模式公司生产所需的主要原材料及零部件为汽车底盘、发动机、钢材、液压泵、主油泵、分动箱、各种液压阀、回转轴承等。,2025年年度报告 第9页（公司自身披露；2026-09-27 由 Claude 核对原文确认）
 000425,徐工机械,S_MACHINERY,工程机械,,
 000333,美的集团,S_APPLIANCE,家电,,
-000651,格力电器,S_APPLIANCE,家电,,
-600150,中国船舶,S_SHIP,船舶,,
+000651,格力电器,S_APPLIANCE,家电,（2）生产要素价格波动风险公司产品的主要原材料为各种等级的铜材、钢材、铝材和塑料等。,2025年年度报告 第39页（公司自身披露；2026-09-27 由 Claude 核对原文确认）
+600150,中国船舶,S_SHIP,船舶,对预期采购的造船板价格波动风险进行套期公司使用螺纹钢期货合约对预期未来采购造船板市场价格变动风险进行套期，规避采购成本上升风险。,2025年年度报告 第214页（公司自身披露；2026-09-27 由 Claude 核对原文确认）
 601668,中国建筑,S_BUILD,建筑与基建,,
 601857,中国石油,S_ENERGY,油气与能源工程,,
