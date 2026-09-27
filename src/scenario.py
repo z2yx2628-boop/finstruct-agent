@@ -124,9 +124,13 @@ def _downstream(b: Builder, pid: str, sign: str, as_of: str, user_effect: str) -
         b.edge(pid, s, "S3", "C", f"{link['sector']}用钢{user_effect}", link["basis"])
         for u in (u for u in end_users() if u["sector_id"] == link["sector_id"]):
             c = b.company(u["security_code"])
-            grade = "B" if u["steel_input_evidence"] else "C"
-            ev = (f"{u['evidence_source']}：{u['steel_input_evidence']}" if u["steel_input_evidence"] else
-                  "年报未点名钢材为原材料，按所属行业推断")
+            # point in time: an annual report counts only after it was due (30 April of the next year)
+            year = re.search(r"(20\d\d)年年度报告", u["evidence_source"] or "")
+            public = bool(u["steel_input_evidence"]) and (not year or f"{int(year.group(1)) + 1}-04-30" <= as_of)
+            grade = "B" if public else "C"
+            ev = (f"{u['evidence_source']}：{u['steel_input_evidence']}" if public else
+                  f"该证据来自评估日之后才公布的年报（{u['evidence_source'][:10]}），评估日按行业推断" if u["steel_input_evidence"]
+                  else "年报未点名钢材为原材料，按所属行业推断")
             b.edge(s, c, "S4", grade, f"用钢{user_effect}", ev)
 
 

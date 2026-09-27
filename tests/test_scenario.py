@@ -21,3 +21,10 @@ def test_every_shock_kind_builds_a_graded_scenario_graph():
     assert any(e["dst"] == "600408" and e["grade"] == "B" for e in coke["edges"])        # 安泰 sells coke (own disclosure)
     long_down = build("price_down", "2026-09-27", FRAG, [], product_id="P_LONG")
     assert "002541" not in {e["dst"] for e in long_down["edges"]}                         # a steel-structure maker buys steel
+
+
+def test_downstream_evidence_is_point_in_time():
+    early = build("price_up", "2024-09-30", FRAG, [], product_id="P_FLAT")
+    late = build("price_up", "2026-09-27", FRAG, [], product_id="P_FLAT")
+    grade = lambda r, code: next(e["grade"] for e in r["edges"] if e["dst"] == code)
+    assert grade(early, "000651") == "C" and grade(late, "000651") == "B"      # 格力 2025 annual report due 2026-04-30
