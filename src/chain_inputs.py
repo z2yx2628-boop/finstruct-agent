@@ -161,7 +161,9 @@ def edges_from(doc: dict, source_doc: str) -> tuple[list[Edge], int]:
                              valid_from=frm, valid_to=to,
                              amount_wan=to_wan(t.get("estimated_amount"), t.get("estimated_unit")),
                              prior_actual_wan=to_wan(t.get("prior_year_actual_amount"), t.get("prior_year_actual_unit")),
-                             category_text=t.get("category_text") or t.get("goods_or_services") or "",
+                             # v1.1: keep the goods named in the row ("原辅料：铁矿石、焦炭"), so product scenarios can
+                             # find disclosed purchases of a product (A-grade) instead of relying on industry links
+                             category_text="：".join(x for x in (t.get("category_text"), t.get("goods_or_services")) if x),
                              period=str(doc.get("estimate_year") or ""), source_page=t.get("source_page"),
                              evidence_text=t.get("evidence_text") or "", **common))
     return out, skipped

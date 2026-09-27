@@ -348,7 +348,12 @@ def overview_layout(items: list[tuple[int, dict]], fragility: dict[str, dict], n
     return node_rows, edge_rows
 
 
-def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 900, height: int = 440) -> dict:
+SCENARIO_RULE_SCALE = (["冲击", "产品暴露（B）", "披露采购/销售（A）", "行业用钢（C）", "下游企业"],
+                       ["#222222", "#2e86c1", "#c0392b", "#7f8c8d", "#8e44ad"])
+
+
+def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 900, height: int = 440,
+                   rule_scale: tuple[list[str], list[str]] | None = None) -> dict:
     """Plain Vega-Lite spec (no Altair API, rendered by st.vega_lite_chart): edges, arrowheads, clickable edge
     labels, clickable company nodes, names. Selections are top-level params `company` (node click) and
     `link` (edge-label click), bound to their layers by name, which is the form Streamlit reads."""
@@ -360,8 +365,9 @@ def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 90
     edges = [dict(e, angle=round((90 - math.degrees(math.atan2((e["y2"] - e["y"]) * sy, (e["x2"] - e["x"]) * sx))) % 360, 1))
              for e in edge_rows]
     q = lambda field, domain: {"field": field, "type": "quantitative", "scale": {"domain": domain}, "axis": None}
-    rule_color = {"field": "rule", "type": "nominal", "legend": None,
-                  "scale": {"domain": [RULE_LABEL[r] for r in RULE_ORDER], "range": [RULE_COLOR[r] for r in RULE_ORDER]}}
+    domain, colors = rule_scale or ([RULE_LABEL[r] for r in RULE_ORDER], [RULE_COLOR[r] for r in RULE_ORDER])
+    rule_color = {"field": "rule", "type": "nominal", "legend": None, "scale": {"domain": domain, "range": colors}}
+    node_rows = [dict(n, kind=n.get("kind", "企业")) for n in node_rows]
     fade = {"condition": {"test": "datum.on", "value": 0.95}, "value": 0.15}
     # edges: faded when not on the chosen path; links that skip a column are drawn lighter so they do not
     # read as passing through the companies they cross
@@ -392,10 +398,15 @@ def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 90
         {"name": "rings", "data": {"values": [n for n in node_rows if n["seed"]]},
          "mark": {"type": "point", "shape": "circle", "filled": False, "stroke": "#222222", "strokeWidth": 2.5, "size": 2000},
          "encoding": {**at_node, "opacity": fade}},
-        {"name": "nodes", "data": {"values": node_rows}, "mark": {"type": "circle", "stroke": "white", "strokeWidth": 1.5, "cursor": "pointer"},
+        {"name": "nodes", "data": {"values": node_rows},
+         "mark": {"type": "point", "filled": True, "stroke": "white", "strokeWidth": 1.5, "cursor": "pointer"},
          "encoding": {**at_node, "size": {"field": "paths", "type": "quantitative", "scale": {"range": [420, 1500]}, "legend": None},
+                      "shape": {"field": "kind", "type": "nominal",
+                                "scale": {"domain": ["企业", "产品", "行业", "冲击"], "range": ["circle", "square", "diamond", "triangle-down"]},
+                                "legend": None if len({n["kind"] for n in node_rows}) == 1 else {"title": "节点", "orient": "bottom"}},
                       "color": {"field": "tier_label", "type": "nominal",
-                                "scale": {"domain": [TIER_LABEL[t] for t in TIER_ORDER], "range": [TIER_STYLE[t][1] for t in TIER_ORDER]},
+                                "scale": {"domain": [TIER_LABEL[t] for t in TIER_ORDER] + ["产品", "行业", "冲击"],
+                                          "range": [TIER_STYLE[t][1] for t in TIER_ORDER] + ["#2e86c1", "#95a5a6", "#222222"]},
                                 "legend": {"title": "承压等级（点企业筛选）", "orient": "bottom"}},
                       "opacity": fade, "tooltip": tip_node}},
         {"name": "names", "data": {"values": node_rows}, "mark": {"type": "text", "dy": 28, "fontSize": 13, "fontWeight": "bold"},
@@ -407,5 +418,6 @@ def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 90
                        {"name": "link", "select": {"type": "point", "fields": ["edge"], "on": "click", "clear": "dblclick"},
                         "views": ["edge_labels"]}],
             "layer": layers,
-            "resolve": {"scale": {"color": "independent", "size": "independent"}, "legend": {"color": "independent"}},
+            "resolve": {"scale": {"color": "independent", "size": "independent", "shape": "independent"},
+                        "legend": {"color": "independent", "shape": "independent"}},
             "config": {"view": {"stroke": None}, "font": "Microsoft YaHei, PingFang SC, sans-serif"}}

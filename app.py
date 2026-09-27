@@ -30,6 +30,11 @@ page = st.navigation(
             title="风险路径图",
             icon=":material/account_tree:",
         ),
+        st.Page(
+            "pages/5_上下游情景.py",
+            title="上下游情景",
+            icon=":material/swap_horiz:",
+        ),
     ],
     position="top",
 )
