@@ -86,12 +86,10 @@ if st.session_state.get("app_schema_version") != APP_SCHEMA_VERSION:
     st.session_state.pop("pipeline_result", None)
     st.session_state["app_schema_version"] = APP_SCHEMA_VERSION
 
-from src.ui import page_header  # noqa: E402
-page_header("① 公告结构化", ":material/description:", "这份公告说了什么？每个字段出自原文哪一页？")
-st.caption(
-    "将公告转换为带页码和原文证据的结构化记录。"
-    "支持股份质押、产能事件、对外担保和日常关联交易。"
-)
+from src.ui import PUBLIC_NOTE, page_header, public_mode  # noqa: E402
+page_header("公告事实抽取", ":material/description:", "这份公告说了什么？每个字段出自原文哪一页？",
+            about="将公告转换为带页码和原文证据的结构化记录。主线任务：日常关联交易、对外担保、产能/检修；"
+                  "股份质押保留为辅助信号。想直接得到风险预警，请用“分析新公告”。")
 
 task_name = st.selectbox(
     "公告类型",
@@ -110,10 +108,12 @@ page_url = st.text_input(
     placeholder="https://",
 ).strip()
 
+if public_mode():
+    st.info(PUBLIC_NOTE + "要看抽取结果，请用“分析新公告 → 演示案例”。", icon=":material/cloud_off:")
 run_clicked = st.button(
     "运行提取",
     type="primary",
-    disabled=uploaded_file is None and not page_url,
+    disabled=public_mode() or (uploaded_file is None and not page_url),
     width="stretch",
 )
 

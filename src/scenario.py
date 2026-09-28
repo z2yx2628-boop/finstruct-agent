@@ -22,7 +22,8 @@ from src.product_layer import REF, ROOT, exposure_as_of, exposure_table, product
 KINDS = {"price_up": "价格上涨", "price_down": "价格下跌", "outage": "企业停产", "demand_down": "下游需求下降"}
 TIER_WEIGHT = {"weak": 1.0, "medium": 0.5, "strong": 0.2}
 TIER_LABEL = {"weak": "弱", "medium": "中", "strong": "强"}
-RULES = {"S0": "冲击", "S1": "产品暴露（B）", "S2": "披露采购/销售（A）", "S3": "行业用钢（C）", "S4": "下游企业"}
+RULES = {"S0": "冲击", "S1": "产品暴露（B）", "S2": "披露采购/销售（A）", "S3": "行业用钢（C）",
+         "S4": "下游企业", "S5": "企业级采购/应用（B）"}
 CAVEAT = ("情景路径：说明谁暴露在这个冲击上、承压如何，不预测谁会受损；不计入正式风险得分。"
           "产品暴露经两次预先登记的检验，方向一致但不显著。")
 MIN_SHARE = 0.10
@@ -45,6 +46,17 @@ def sector_links() -> list[dict]:
 
 def end_users() -> list[dict]:
     return _read(REF / "downstream_users.csv")
+
+
+def verified_product_links(as_of: str, product_id: str | None = None) -> list[dict]:
+    """Point-in-time company/product links confirmed by a named company's own disclosure.
+
+    These B-grade links prove procurement exposure or product application, not an undisclosed
+    transaction amount, supplier share, or causal loss. The CSV preserves that boundary per row.
+    """
+    rows = _read(REF / "verified_product_links.csv")
+    return [r for r in rows if (not product_id or r["product_id"] == product_id)
+            and r["valid_from"] <= as_of and (not r["valid_to"] or as_of <= r["valid_to"])]
 
 
 def core_mills() -> list[str]:
@@ -111,6 +123,41 @@ def _b_evidence(e: dict, pid: str) -> str:
     return f"公司定期报告 {e['period'][:4]} 年分产品收入（东方财富主营构成）：{v.get('items', '')} 占 {v['share']:.0%}{split}"
 
 
+def _verified_evidence(link: dict) -> str:
+    page = f" 第{link['source_page']}页" if link["source_page"] else ""
+    return (f"{link['source_title']}{page}：{link['evidence_text']} "
+            f"边界：{link['scope_note']} 来源：{link['source_url']}")
+
+
+def _verified_input_buyers(b: Builder, pid: str, sign: str, as_of: str) -> list[str]:
+    """B-grade input exposure disclosed by the mill itself or its parent."""
+    buyers = []
+    for link in verified_product_links(as_of, pid):
+        if link["relation"] != "input_exposure" or link["src_id"] != pid:
+            continue
+        code = link["dst_id"]
+        b.edge(pid, b.company(code), "S5", "B", f"采购成本{sign}（披露原料采购暴露）", _verified_evidence(link))
+        buyers.append(code)
+    return buyers
+
+
+def _verified_downstream(b: Builder, pid: str, sign: str, as_of: str, sellers_only: set[str] | None = None) -> None:
+    """Add named producer -> end-user application links without inventing a sales amount."""
+    for link in verified_product_links(as_of, pid):
+        if link["relation"] != "product_application" or (sellers_only is not None and link["src_id"] not in sellers_only):
+            continue
+        src, dst = link["src_id"], link["dst_id"]
+        exposure = exposure_as_of(src, as_of) or {}
+        product = exposure.get("products", {}).get(pid)
+        if product and product.get("share"):
+            b.edge(pid, b.company(src), "S1", "B", f"收入暴露（占 {product['share']:.0%}）",
+                   _b_evidence(exposure, pid), product["share"])
+        else:
+            b.company(src)
+        b.edge(src, b.company(dst), "S5", "B", f"若价格传导：采购成本{sign}（披露产品应用）",
+               _verified_evidence(link))
+
+
 def disclosed_trades(pid: str, chain_edges: list[dict], buyer_side: bool = True) -> list[dict]:
     """A-grade: disclosed related-party trade rows whose goods name the product."""
     pattern = product_map()[pid]["keywords"]
@@ -159,24 +206,29 @@ def build(kind: str, as_of: str, fragility: dict[str, dict], chain_edges: list[d
                 b.edge(product_id, b.company(code), "S2", "A", f"采购成本{arrow}（披露采购 {float(t['amount_wan'] or 0) / 1e4:.1f} 亿元）",
                        f"{Path(t['source_doc']).stem} 第{t['source_page']}页：{(t['evidence_text'] or '')[:80]}",
                        amount_wan=float(t["amount_wan"] or 0))
+            verified_buyers = _verified_input_buyers(b, product_id, arrow, as_of)
             # every blast-furnace mill buys this input, but mills do not disclose purchase shares: C-grade,
             # shown for the most fragile mills only
-            fragile = sorted((c for c in core_mills() if c not in buyers), key=lambda c: -TIER_WEIGHT.get(b.tier(c), 0.5))[:3]
+            fragile = sorted((c for c in core_mills() if c not in buyers and c not in verified_buyers),
+                             key=lambda c: -TIER_WEIGHT.get(b.tier(c), 0.5))[:3]
             for code in fragile:
                 b.edge(product_id, b.company(code), "S3", "C", f"采购成本{arrow}（采购比例未披露）",
                        f"长流程钢厂以{p['name']}为主要原料（行业常识，未披露采购比例）")
             # cost pass-through: the fragile buyers' main steel products and who uses them
-            for code in list(buyers)[:2] + fragile[:2]:
+            pass_through = list(dict.fromkeys(list(buyers)[:2] + verified_buyers + fragile[:2]))
+            for code in pass_through:
                 e = exposure_as_of(code, as_of) or {}
                 main = sorted(((k, v) for k, v in e.get("products", {}).items() if k in ("P_FLAT", "P_LONG", "P_SPECIAL", "P_PIPE")
                                and (v.get("share") or 0) >= 0.2), key=lambda kv: -kv[1]["share"])[:1]
                 for pid, v in main:
                     b.edge(code, b.product(pid), "S1", "B", f"若成本转嫁：{product_map()[pid]['name']}价格{arrow}", _b_evidence(e, pid), v["share"])
                     _downstream(b, pid, arrow, as_of, f"成本{arrow}")
+                    _verified_downstream(b, pid, arrow, as_of, {code})
         else:
             for code, share, e in sorted(sellers(product_id, as_of), key=lambda x: -b.impact(x[0], x[1]))[:top]:
                 b.edge(product_id, b.company(code), "S1", "B", f"收入{arrow}（占 {share:.0%}）", _b_evidence(e, product_id), share)
             _downstream(b, product_id, arrow, as_of, f"成本{arrow}")
+            _verified_downstream(b, product_id, arrow, as_of)
     elif kind == "outage":
         shock = b.node("SHOCK", f"{company_name(company)}停产", "冲击")
         b.edge(shock, b.company(company), "S0", "—", "产量↓、收入↓", "情景设定（可由方向一的检修/停产事件触发）")
@@ -186,6 +238,7 @@ def build(kind: str, as_of: str, fragility: dict[str, dict], chain_edges: list[d
             if pid in ("P_FLAT", "P_LONG", "P_SPECIAL", "P_PIPE") and (v.get("share") or 0) >= MIN_SHARE:
                 b.edge(company, b.product(pid), "S1", "B", f"{product_map()[pid]['name']}供给↓（占其收入 {v['share']:.0%}）", _b_evidence(e, pid), v["share"])
                 _downstream(b, pid, "↓", as_of, "供给↓")
+                _verified_downstream(b, pid, "↓", as_of, {company})
         sales = sorted((t for t in chain_edges if t.get("edge_type") == "supply" and t.get("basis") == "disclosed"
                         and t.get("src_id") == company), key=lambda t: -float(t.get("amount_wan") or 0))[:top]
         for t in sales:

@@ -23,3 +23,14 @@ def test_price_shock_section_always_carries_the_caveat():
     lines = report_section("2024-09-30", {})
     assert any(CAVEAT in line for line in lines)
     assert any("焦炭上涨" in line for line in lines)          # 20-day coke move on 2024-09-30 was +13%
+
+
+def test_stress_index_is_transparent_and_refuses_missing_exposure():
+    from src.price_shock import scenario_stress, stress_index
+    assert stress_index(0.20, 0.60, "weak") == 12.0
+    assert stress_index(-0.20, 0.60, "medium") == 6.0
+    assert stress_index(0.20, None, "weak") is None
+    rows = scenario_stress([{"name": "甲", "share": 0.6, "tier": "weak"},
+                            {"name": "乙", "share": 0, "tier": "weak"}], 0.2)
+    assert rows[0]["name"] == "甲" and rows[0]["stress_index"] == 12.0
+    assert rows[1]["name"] == "乙" and not rows[1]["quantifiable"]

@@ -19,6 +19,27 @@ TIER_LABEL = {"weak": "弱", "medium": "中", "strong": "强", "": "未评分"}
 CAVEAT = "情景提示：依据企业自己披露的产品构成（B 级）；产品暴露经两次预先登记的检验，方向一致但不显著，不作为预测。"
 
 
+def stress_index(price_change: float, exposure_share: float | None, tier: str) -> float | None:
+    """Dimensionless scenario index, not an earnings or loss forecast.
+
+    |price move| x disclosed product exposure x fragility multiplier x 100.
+    Missing exposure stays missing instead of being replaced with an assumption.
+    """
+    if exposure_share is None or exposure_share <= 0:
+        return None
+    return round(abs(price_change) * exposure_share * TIER_WEIGHT.get(tier, 0.5) * 100, 2)
+
+
+def scenario_stress(companies: list[dict], price_change: float) -> list[dict]:
+    rows = []
+    for company in companies:
+        share = company.get("share") or None
+        index = stress_index(price_change, share, company.get("tier", ""))
+        rows.append({**company, "price_change": price_change, "buffer_factor": TIER_WEIGHT.get(company.get("tier", ""), 0.5),
+                     "stress_index": index, "quantifiable": index is not None})
+    return sorted(rows, key=lambda r: (r["stress_index"] is None, -(r["stress_index"] or 0), r["name"]))
+
+
 def price_moves(as_of: str) -> list[dict]:
     out = []
     for p in products():
