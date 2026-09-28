@@ -17,8 +17,9 @@ page = st.navigation(
         "分项分析": [
             st.Page("pages/1_公告结构化.py", title="公告事实抽取", icon=":material/description:"),
             st.Page("pages/2_承压评分.py", title="企业承压", icon=":material/monitoring:"),
-            st.Page("pages/4_风险路径图.py", title="披露关系传导", icon=":material/account_tree:"),
-            st.Page("pages/5_上下游情景.py", title="上下游情景", icon=":material/swap_horiz:"),
+            st.Page("pages/8_风险传导总图.py", title="风险传导总图", icon=":material/hub:"),
+            st.Page("pages/4_风险路径图.py", title="集团信用通道", icon=":material/account_tree:"),
+            st.Page("pages/5_上下游情景.py", title="供需情景通道", icon=":material/swap_horiz:"),
         ],
         "可信度": [
             st.Page("pages/6_验证与证据.py", title="验证与证据", icon=":material/verified:"),

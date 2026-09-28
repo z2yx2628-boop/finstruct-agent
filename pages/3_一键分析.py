@@ -84,7 +84,9 @@ with tab_new:
                 st.warning(str(error) + "（在“分析设置”里选择公告类型。）")
             except Exception as error:
                 status.update(label="分析失败", state="error", expanded=True)
-                st.error(f"分析失败：{type(error).__name__}: {error}")
+                import re as _re
+                message = _re.sub(r"(sk-|key[=:]\s*)[A-Za-z0-9*_\-]{4,}", r"\1***", str(error))   # never echo key fragments
+                st.error(f"分析失败：{type(error).__name__}: {message}")
 
 with tab_saved:
     st.caption("开发与复核用：直接读取 outputs/ 里已保存的抽取结果，使用“上传新公告 → 分析设置”里的评估日和图谱。")
