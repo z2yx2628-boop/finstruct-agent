@@ -175,12 +175,13 @@ def _prospectus_inputs(b: Builder, pid: str, sign: str, as_of: str, top: int = 5
     best: dict[tuple[str, str], dict] = {}
     for r in hits:                                   # latest period per (group, supplier), purchases before balances
         key = (r["issuer_id"], r["counterparty"])
-        rank = (r["role"] == "supplier", r["period"])
-        if key not in best or rank > (best[key]["role"] == "supplier", best[key]["period"]):
+        rank = (r["role"] == "supplier", r["period"].endswith("-12"), r["period"])   # full-year purchases first
+        old = best.get(key)
+        if old is None or rank > (old["role"] == "supplier", old["period"].endswith("-12"), old["period"]):
             best[key] = r
     for r in sorted(best.values(), key=lambda r: -_yi(r))[:top]:
         sup = b.node("N_" + r["counterparty"], r["counterparty"].replace("有限责任公司", "").replace("股份有限公司", "").replace("有限公司", ""), "企业")
-        grp = b.node(r["issuer_id"], r["issuer"], "企业")
+        grp = b.company(r["issuer_id"]) if r["issuer_id"].isdigit() else b.node(r["issuer_id"], r["issuer"], "企业")
         label = {"supplier": "采购", "payable": "应付", "prepayment": "预付"}[r["role"]]
         b.edge(pid, sup, "S6", "A", f"收入{sign}（{r['issuer']}向其{label} {_yi(r):.1f} 亿元）", _prospectus_evidence(r), amount_wan=_yi(r) * 1e4)
         b.edge(sup, grp, "S6", "A", f"采购成本{sign}（{label} {_yi(r):.1f} 亿元，{r['period']}）", _prospectus_evidence(r), amount_wan=_yi(r) * 1e4)
