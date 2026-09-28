@@ -91,16 +91,17 @@ def test_app_loads_without_a_result():
     app = AppTest.from_file(APP_PATH, default_timeout=10).run()
 
     assert not app.exception
-    assert app.title[0].value == "钢铁产业链风险传导预警"        # 今日看板 is the home page
+    assert app.title[0].value == "链证 · 钢铁产业链风险传导预警"  # 今日看板 is the home page
 
     app.switch_page("pages/3_一键分析.py").run()
     assert not app.exception
     assert app.title[0].value == "分析新公告"
-    assert app.button[0].disabled is True
+    assert app.button(key="run_upload").disabled is True
 
 
 def test_every_page_renders_without_error():
-    for page in ("pages/2_承压评分.py", "pages/4_风险路径图.py", "pages/5_上下游情景.py", "pages/6_验证与证据.py"):
+    for page in ("pages/2_承压评分.py", "pages/4_风险路径图.py", "pages/5_上下游情景.py",
+                 "pages/6_验证与证据.py", "pages/7_企业档案.py"):
         app = AppTest.from_file(APP_PATH, default_timeout=30).run()
         app.switch_page(page).run()
         assert not app.exception, (page, app.exception)

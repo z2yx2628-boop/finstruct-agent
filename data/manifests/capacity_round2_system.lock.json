@@ -1,0 +1,15 @@
+{
+  "version": "capacity-round2-system-v1",
+  "frozen_at": "2026-09-28",
+  "commit": "06a370e2f751fffc369cb1b45999785e475fba5c",
+  "hash_algorithm": "sha256",
+  "note": "Frozen before the six selected source documents were downloaded or opened. Product-layer and UI worktree changes are outside this extraction file list.",
+  "files": [
+    {"file": "prompts/capacity_extraction_v5.txt", "sha256": "870d3781eed6ea723dddd0b3c8ba67f38f10fe56b22f1b48c2f33d4e7d736985"},
+    {"file": "schemas/capacity.py", "sha256": "36267b5d5c89db05f7ed42d74b87a687551e87587f86dd16479c4201c50262a6"},
+    {"file": "src/llm_extractor.py", "sha256": "1f1f97841be986080857aafd6d156e9ffb970b9e7a0015247785c9b3bfe8c879"},
+    {"file": "src/capacity_normalizer.py", "sha256": "e03c60276c5e727a4df220f37fe9b774710593b0d44d09523726159ad94e9b98"},
+    {"file": "src/capacity_evidence_validator.py", "sha256": "8f7665d77b1c568e565181054db7485bc9b53ccd28fa0bbc0f36acdb7e8e157e"},
+    {"file": "src/pipeline.py", "sha256": "0610d0951e951b7ed547de3540381bda0a22651104cfd9727641e374b8bce53d"}
+  ]
+}

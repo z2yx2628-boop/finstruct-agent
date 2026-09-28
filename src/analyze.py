@@ -144,13 +144,14 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
     return {
         "as_of": as_of, "source": source, "snapshot": snap.name if snap else None,
         "company": doc.get("company_name") or doc.get("security_name") or issuer,
+        "code": issuer,
         "announcement_date": doc.get("announcement_date"),
         "what_happened": list(happened.values()),
         "relations": [dict(r, amount_yi=round(r["amount_yi"], 2)) for r in relations.values()],
-        "can_they_absorb": [{"entity": nm(c), "tier": fragility[c].get("tier_label") or fragility[c].get("tier"),
+        "can_they_absorb": [{"code": c, "entity": nm(c), "tier": fragility[c].get("tier_label") or fragility[c].get("tier"),
                              "score": fragility[c].get("total_score"), "reasons": fragility[c].get("reasons")}
                             for c in involved if c in fragility] or
-                           ([{"entity": nm(issuer), "tier": issuer_row.get("tier_label"), "score": issuer_row.get("total_score"),
+                           ([{"code": issuer, "entity": nm(issuer), "tier": issuer_row.get("tier_label"), "score": issuer_row.get("total_score"),
                               "reasons": issuer_row.get("reasons")}] if issuer_row else []),
         "who_is_next": [{"rank": i, "score": e["score"],
                          "path": nm(e["seed"]) + "".join(f" →[{RULE_LABEL[s.rule]}] {nm(s.dst)}({TIER_LABEL.get(s.dst_tier, s.dst_tier)})"

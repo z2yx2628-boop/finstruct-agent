@@ -193,6 +193,12 @@ def _raw_index() -> dict[str, str]:
     for p in (ROOT / "data" / "raw").glob("*/*"):
         if p.suffix.lower() in (".pdf", ".html", ".htm", ".docx", ".doc", ".xls", ".xlsx"):
             out.setdefault(p.stem, str(p))
+    # a fresh clone has no data/raw/: the offline demo pack still carries a few original announcements
+    manifest = ROOT / "data" / "demo" / "manifest.json"
+    if manifest.exists():
+        import json
+        for case in json.loads(manifest.read_text(encoding="utf-8")):
+            out.setdefault(Path(case["prediction_from"]).stem, str(ROOT / case["source"]))
     return out
 
 

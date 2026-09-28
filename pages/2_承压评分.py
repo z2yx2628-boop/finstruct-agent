@@ -11,17 +11,20 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.fragility_view import (compared_snapshot, data_sources, events_after_report, explain,  # noqa: E402
                                 guarantee_evidence, report_links, snapshot_meta, version_note)
+from src.fragility_sensitivity import profile_rows, profile_summary, threshold_rows  # noqa: E402
 from src.product_layer import exposure_as_of, products  # noqa: E402
 SNAP = ROOT / "data" / "snapshots"
 TIER_COLOR = {"weak": "🔴", "medium": "🟡", "strong": "🟢"}
 
-from src.ui import page_header  # noqa: E402
-page_header("② 企业承压", ":material/monitoring:", "这家企业扛不扛得住冲击？分数从哪来？")
-st.caption("财报层（最新法定披露期，同行排名）+ 市场层（60日超额收益、回撤、波动）+ 事件层（财报后的高风险公告）。"
-           "每个等级都附原因；红线（资不抵债、负债率≥85%）和财报后事件只会使等级变差。")
+from src.ui import page_header, profile_button  # noqa: E402
+page_header("企业承压", ":material/monitoring:", "这家企业扛不扛得住冲击？分数从哪来？",
+            about="**三层评分**：财报层（最新法定披露期，在 24 家核心钢厂中排名）+ 市场层（60 日超额收益、回撤、波动）"
+                  "+ 事件层（财报后的高风险公告）。总分越高越弱，≥60 为弱、≥40 为中。  \n"
+                  "红线（资不抵债、负债率 ≥85%）和财报后事件只会使等级变差。每个等级都附原因和数据来源。")
 
-col1, col2 = st.columns([1, 3])
-with col1:
+col2, col1 = st.columns([3, 1.2], vertical_alignment="bottom")
+with col1.popover("更新数据并重新评分", icon=":material/refresh:"):
+    st.caption("联网约 3–5 分钟；演示时不要点。")
     as_of = st.date_input("评估日期", value=date.today())
     offline = st.checkbox("只用已缓存数据（历史回测用）", value=as_of < date.today())
     if st.button("更新数据并重新评分", type="primary"):
@@ -34,7 +37,7 @@ with col1:
 
 snapshots = sorted((d for d in SNAP.glob("*") if (d / "fragility.csv").exists()), reverse=True)
 if not snapshots:
-    st.info("还没有评分快照。点击左侧按钮生成第一份。")
+    st.info("还没有评分快照。点击右上角“更新数据并重新评分”生成第一份。")
     st.stop()
 with col2:
     chosen = st.selectbox("查看快照", [d.name for d in snapshots])
@@ -47,7 +50,7 @@ if (folder / "quarterly_metrics.csv").exists():
         metrics = {r["security_code"]: r for r in csv.DictReader(f)}
 meta = snapshot_meta(folder)
 version = meta.get("version", "?")
-with col2:
+if True:
     st.caption(f"评分方法 **{version}**：{version_note(version)}"
                + ("（版本由快照字段推断）" if meta.get("inferred") else "")
                + f"；担保与事件来源：{meta.get('signals') or '未记录'}")
@@ -73,7 +76,7 @@ table = [{
     "财报期": period_label(r.get("period", "")), "行情截至": metrics.get(r["security_code"], {}).get("last_trade_date", ""),
     "原因": r["reasons"],
 } for r in rows]
-st.caption("点击一行，查看该企业的评分拆解与数据来源。")
+st.caption("点击一行，查看该企业的评分拆解与数据来源；默认显示最弱的一家。")
 picked = st.dataframe(table, width="stretch", hide_index=True, on_select="rerun",
                       selection_mode="single-row", key=f"frag_{chosen}")
 index = picked.selection.rows[0] if picked.selection.rows else 0
@@ -81,17 +84,51 @@ code = rows[min(index, len(rows) - 1)]["security_code"]
 
 # ---------------------------------------------------------------- 评分拆解
 r = next(x for x in rows if x["security_code"] == code)
-st.subheader(f"{TIER_COLOR.get(r['tier'], '')} {r['security_name']}（{code}）：{r['tier_label']}，"
+h1, h2 = st.columns([4, 1], vertical_alignment="bottom")
+h1.subheader(f"{TIER_COLOR.get(r['tier'], '')} {r['security_name']}（{code}）：{r['tier_label']}，"
              f"总分 {r['total_score'] or '—'}", divider="gray")
+with h2:
+    profile_button(code, "打开企业档案", key="frag_profile", snapshot=chosen, width="stretch")
 detail = explain(folder, code) if version == "v1" else None
 if detail and detail["rules"]:
     st.error("直接判为弱的规则：" + "；".join(detail["rules"]))
 if r.get("events_after_report") not in (None, "", "0") and r["tier"] != r.get("base_tier"):
-    st.warning("财报后出现高风险事件，等级在分数基础上下调一档（见下方“财报后事件”）。")
+    st.warning("财报后出现高风险事件，等级在分数基础上下调一档（见“担保与事件”）。")
+tab_score, tab_source, tab_product, tab_events, tab_sens, tab_change = st.tabs(
+    ["评分拆解", "数据来源", "产品构成", "担保与事件", "敏感性", "本期变化"])
 
-left, right = st.columns([3, 2])
-with left:
-    st.markdown("**各维度如何得出总分**")
+with tab_sens:
+    st.caption("不修改正式结果，只检查结论对阈值和权重是否稳健。")
+    core_rows = [item for item in rows if item.get("peer_group") == "core"] or rows
+    selected_threshold = threshold_rows([r])[0]
+    selected_scope = core_rows if any(item["security_code"] == code for item in core_rows) else [*core_rows, r]
+    labels = {"strong": "强", "medium": "中", "weak": "弱", "": "—"}
+    threshold_table = [{
+        "弱档阈值": threshold,
+        "该企业结果": labels[selected_threshold[f"threshold_{threshold}"]],
+        "说明": "正式口径" if threshold == 60 else "敏感性情景",
+    } for threshold in (55, 60, 65)]
+    st.markdown("**阈值敏感性**")
+    st.dataframe(threshold_table, hide_index=True, width="stretch")
+    unstable = [item for item in threshold_rows(core_rows) if not item["threshold_stable"]]
+    st.caption(f"核心样本中有 {len(unstable)}/{len(core_rows)} 家在弱档阈值 55/60/65 下发生档位变化。"
+               "红线与已确认的财报后事件下调规则始终保留。")
+
+    summaries = profile_summary(core_rows)
+    summary_table = [{
+        "权重情景": item["profile"], "档位变化企业数": item["tier_changes"],
+        "最大排名变化": item["max_rank_shift"], "平均排名变化": item["mean_rank_shift"],
+    } for item in summaries]
+    st.markdown("**权重敏感性**")
+    st.dataframe(summary_table, hide_index=True, width="stretch")
+    selected_profiles = [item for item in profile_rows(selected_scope) if item["security_code"] == code]
+    st.dataframe([{
+        "权重情景": item["profile"], "重算分数": item["score"], "重算等级": labels[item["tier"]],
+        "风险排名（核心企业+本企业）": item["rank"], "相对当前权重排名变化": item["rank_change"],
+    } for item in selected_profiles], hide_index=True, width="stretch")
+    st.caption("当前权重：杠杆/短期偿债各20%，造血/盈利/市场/对外担保各15%。备选情景仅用于稳健性检查；"
+               "缺失维度仍按可用权重重新归一化，不将缺失值填成0。")
+with tab_score:
     if detail:
         flat = [{"维度": d["dimension"], "指标": m["metric"], "原值": m["value"], "同行位置": m["rank"],
                  "指标得分": m["score"], "维度得分": d["score"], "权重": d["effective_weight"], "对总分贡献": d["contribution"]}
@@ -103,8 +140,7 @@ with left:
                    f"总分 = Σ 权重 × 维度得分 = {detail['total_recomputed']}{ok}{missing}。≥60 为弱，≥40 为中。")
     else:
         st.info("逐项拆解只提供给当前评分方法（v1）的快照。")
-with right:
-    st.markdown("**数据来源**")
+with tab_source:
     if code in metrics:
         m = metrics[code]
         for label, value in data_sources({"period": m.get("period"), "available_by": m.get("available_by"),
@@ -116,36 +152,40 @@ with right:
         col.link_button(label, url, width="stretch")
 
 exposure = exposure_as_of(code, chosen)
-st.markdown("**主要产品构成**（B 级：公司定期报告披露的分产品收入，东方财富主营构成；按评估日可得的最新年报）")
-if exposure and exposure.get("products"):
-    names = {p["product_id"]: p["name"] for p in products()}
-    split = "" if exposure["split_from"] == exposure["period"] else \
-        f"；该年报只披露“钢材”合计，品种比例取自 {exposure['split_from'][:4]} 年报"
-    st.dataframe([{"产品": names.get(k, k), "占收入": f"{v['share']:.1%}" if v.get("share") is not None else "—",
-                   "原文条目": v.get("items", "")} for k, v in sorted(exposure["products"].items(),
-                                                             key=lambda kv: -(kv[1].get("share") or 0))],
-                 hide_index=True, width="stretch")
-    st.caption(f"年报期 {exposure['period'][:4] or '—'}{split}。产品暴露用于价格冲击的情景提示；"
-               "经两次预先登记的检验，方向一致但不显著，不作为预测（docs/product_price_validation.md）。")
-else:
-    st.caption("没有可用的分产品披露。")
-
-if detail is not None or version == "v1":
-    g = guarantee_evidence(folder, code)
-    st.markdown("**对外担保的依据公告**（评估日有效；取公告披露的累计余额与新增担保合计中的较大者）")
-    if g:
-        st.dataframe(g, hide_index=True, width="stretch")
+with tab_product:
+    st.caption("B 级：公司定期报告披露的分产品收入（东方财富主营构成），按评估日可得的最新年报。")
+    if exposure and exposure.get("products"):
+        names = {p["product_id"]: p["name"] for p in products()}
+        split = "" if exposure["split_from"] == exposure["period"] else \
+            f"；该年报只披露“钢材”合计，品种比例取自 {exposure['split_from'][:4]} 年报"
+        st.dataframe([{"产品": names.get(k, k), "占收入": f"{v['share']:.1%}" if v.get("share") is not None else "—",
+                       "原文条目": v.get("items", "")} for k, v in sorted(exposure["products"].items(),
+                                                                 key=lambda kv: -(kv[1].get("share") or 0))],
+                     hide_index=True, width="stretch")
+        st.caption(f"年报期 {exposure['period'][:4] or '—'}{split}。产品暴露用于价格冲击的情景提示；"
+                   "经两次预先登记的检验，方向一致但不显著，不作为预测（docs/product_price_validation.md）。")
     else:
-        st.caption("评估日没有有效的非子公司担保记录。")
-    ev = events_after_report(folder, code, metrics.get(code, {}).get("period", ""))
-    st.markdown("**财报后事件**（财报可使用日之后、评估日之前发布的风险公告）")
-    if ev:
-        st.dataframe(ev, hide_index=True, width="stretch")
-    else:
-        st.caption("无。")
+        st.caption("没有可用的分产品披露。")
 
-if (folder / "changes.md").exists():
-    with st.expander("本次变化与弱档说明", expanded=False):
+with tab_events:
+    if detail is not None or version == "v1":
+        g = guarantee_evidence(folder, code)
+        st.markdown("**对外担保的依据公告**（评估日有效；取公告披露的累计余额与新增担保合计中的较大者）")
+        if g:
+            st.dataframe(g, hide_index=True, width="stretch")
+        else:
+            st.caption("评估日没有有效的非子公司担保记录。")
+        ev = events_after_report(folder, code, metrics.get(code, {}).get("period", ""))
+        st.markdown("**财报后事件**（财报可使用日之后、评估日之前发布的风险公告）")
+        if ev:
+            st.dataframe(ev, hide_index=True, width="stretch")
+        else:
+            st.caption("无。")
+    else:
+        st.caption("只提供给当前评分方法（v1）的快照。")
+
+with tab_change:
+    if (folder / "changes.md").exists():
         before = compared_snapshot(folder)
         before_version = snapshot_meta(before)["version"] if before else version
         text = (folder / "changes.md").read_text(encoding="utf-8")
@@ -153,3 +193,5 @@ if (folder / "changes.md").exists():
             st.warning(f"对比的上期快照 {before.name} 使用评分方法 {before_version}（{version_note(before_version)}），"
                        f"本期为 {version}。下列等级变化主要来自评分方法调整，不代表企业经营变化。")
         st.markdown(text)
+    else:
+        st.caption("本期没有变化记录。")

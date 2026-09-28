@@ -1,0 +1,7 @@
+holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url,expected_role
+capacity_round2_001,002443,金洲管道,2022-03-24,commissioning,关于年产3万吨高品质薄壁不锈钢管材管件项目投产的公告,https://static.cninfo.com.cn/finalpage/2022-03-25/1212666747.PDF,positive
+capacity_round2_002,002478,常宝股份,2023-03-21,construction,关于子公司投资新建新能源汽车用精密管项目的公告,https://static.cninfo.com.cn/finalpage/2023-03-22/1216181104.PDF,positive
+capacity_round2_003,002756,永兴材料,2024-06-21,technical_upgrade,关于全资子公司投资建设锂云母绿色智能高效提锂综合技改项目的公告,https://static.cninfo.com.cn/finalpage/2024-06-22/1220425354.PDF,positive
+capacity_round2_004,000923,河钢资源,2023-04-27,delay,河钢资源关于非公开发行募投项目延期的公告,https://static.cninfo.com.cn/finalpage/2023-04-28/1216662343.PDF,positive
+capacity_round2_005,601005,重庆钢铁,2025-06-16,hard_negative_asset_purchase_progress,关于购买4100mm宽厚板生产线等资产的进展公告,https://static.cninfo.com.cn/finalpage/2025-06-17/1223889196.PDF,hard_negative
+capacity_round2_006,600808,马钢股份,2024-06-21,hard_negative_noncompete_delay,关于间接控股股东中国宝武钢铁集团有限公司避免同业竞争承诺延期履行的公告,https://static.cninfo.com.cn/finalpage/2024-06-22/1220427070.PDF,hard_negative

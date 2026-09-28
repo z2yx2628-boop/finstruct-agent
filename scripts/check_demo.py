@@ -82,7 +82,7 @@ def main(pages: bool) -> int:
                 problems.append(f"页面 {page.name}: {app.exception[0].value if app.exception else ''}")
             if page.name.startswith("3_") and ok:
                 app.button(key="build_pack_card").click().run()
-                infos = " ".join(i.value for i in app.info)
+                infos = " ".join(str(i.value) for i in [*app.info, *app.caption])
                 if app.exception or "离线回放" not in infos:
                     problems.append("分析新公告：演示包按钮没有生成离线回放卡片")
                 else:

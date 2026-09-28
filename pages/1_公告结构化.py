@@ -87,11 +87,9 @@ if st.session_state.get("app_schema_version") != APP_SCHEMA_VERSION:
     st.session_state["app_schema_version"] = APP_SCHEMA_VERSION
 
 from src.ui import page_header  # noqa: E402
-page_header("① 公告结构化", ":material/description:", "这份公告说了什么？每个字段出自原文哪一页？")
-st.caption(
-    "将公告转换为带页码和原文证据的结构化记录。"
-    "支持股份质押、产能事件、对外担保和日常关联交易。"
-)
+page_header("公告事实抽取", ":material/description:", "这份公告说了什么？每个字段出自原文哪一页？",
+            about="将公告转换为带页码和原文证据的结构化记录。主线任务：日常关联交易、对外担保、产能/检修；"
+                  "股份质押保留为辅助信号。想直接得到风险预警，请用“分析新公告”。")
 
 task_name = st.selectbox(
     "公告类型",

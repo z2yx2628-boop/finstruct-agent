@@ -1,7 +1,7 @@
 import json
 
 from src.network_view import SCENARIO_RULE_SCALE, overview_chart
-from src.scenario import CAVEAT, build, layout
+from src.scenario import CAVEAT, build, layout, verified_product_links
 
 FRAG = {"600231": {"tier": "weak"}, "600408": {"tier": "weak"}, "000761": {"tier": "weak"}}
 
@@ -28,3 +28,19 @@ def test_downstream_evidence_is_point_in_time():
     late = build("price_up", "2026-09-27", FRAG, [], product_id="P_FLAT")
     grade = lambda r, code: next(e["grade"] for e in r["edges"] if e["dst"] == code)
     assert grade(early, "000651") == "C" and grade(late, "000651") == "B"      # 格力 2025 annual report due 2026-04-30
+
+
+def test_named_company_chains_are_point_in_time_and_keep_their_boundary():
+    before_baosteel = verified_product_links("2024-01-23", "P_IRON_ORE")
+    after_baosteel = verified_product_links("2024-01-24", "P_IRON_ORE")
+    assert not any(r["dst_id"] == "600019" for r in before_baosteel)
+    assert any(r["dst_id"] == "600019" and r["grade"] == "B" and r["scope_note"] for r in after_baosteel)
+
+    result = build("price_up", "2026-09-28", FRAG, [], product_id="P_IRON_ORE")
+    pairs = {(e["src"], e["dst"]): e for e in result["edges"]}
+    assert pairs[("P_IRON_ORE", "600019")]["grade"] == "B"
+    assert pairs[("600019", "600104")]["grade"] == "B"
+    assert pairs[("P_IRON_ORE", "000932")]["grade"] == "B"
+    assert pairs[("000932", "600031")]["grade"] == "B"
+    assert all("边界：" in pairs[p]["evidence"] for p in (("P_IRON_ORE", "600019"), ("600019", "600104"),
+                                                             ("P_IRON_ORE", "000932"), ("000932", "600031")))

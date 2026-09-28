@@ -19,35 +19,20 @@ CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/
                "data/chain/backtest_linggang_fix1": "回测图谱·修复后（凌钢，2024-04-30）",
                "data/chain/analysis_v1_fix1": "真实图谱·修复后（方大回测用 2025-02-28）"}
 
-import subprocess  # noqa: E402
-
 import pandas as pd  # noqa: E402
 
-with st.sidebar:
-    st.markdown("**每日更新**")
-    st.caption("查40家企业的新公告 → 冻结版系统提取 → 更新图谱（过期关系自动失效）→ 更新承压评分 → 对比风险路径。")
-    online = st.checkbox("联网查新公告（需本机网络与模型接口）", value=True)
-    if st.button("立即更新", type="primary"):
-        cmd = [sys.executable, str(ROOT / "scripts" / "daily_update.py")] + ([] if online else ["--no-network"])
-        with st.spinner("正在更新，联网时约5–15分钟…"):
-            out = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=ROOT)
-        st.cache_data.clear()
-        st.code((out.stdout or "")[-1500:] + (out.stderr or "")[-800:])
-    reports = sorted((ROOT / "data" / "live").glob("report_*.md"), reverse=True)
-    if reports:
-        with st.expander(f"最新日报 {reports[0].stem[7:]}"):
-            st.markdown(reports[0].read_text(encoding="utf-8"))
-from src.ui import page_header  # noqa: E402
-page_header("③ 关联与担保传导", ":material/account_tree:", "风险会沿公告披露的关联交易、担保和集团关系传给谁？", grades=True)
-st.info("**当前范围：集团关联与担保风险网络（原型）。** 企业之间的边来自公告披露的关联交易与担保（A 级）和集团股权关系；"
-        "跨集团的上下游关系目前只有行业近似（C 级），仅作情景提示、不计入路径得分，不代表真实交易。", icon=":material/info:")
-st.caption("总图上点企业 = 只看经过它的路径；点连线上的标签 = 打开那条路径。也可以在下方清单里点一行。"
-           "② 看它一步步怎么传、为什么停、得分怎么来；③ 核对每一步的公告原文。")
+from src.ui import page_header, profile_button  # noqa: E402
+page_header("关联与担保传导", ":material/account_tree:", "风险会沿公告披露的关联交易、担保和集团关系传给谁？", grades=True,
+            about="**范围：集团关联与担保风险网络（原型）。** 企业之间的边来自公告披露的关联交易与担保（A 级）和集团股权关系；"
+                  "跨集团的上下游只有行业近似（C 级），默认不显示，显示时也不计入得分。  \n"
+                  "**怎么用：** 总图上点企业 = 只看经过它的路径；点连线上的金额 = 打开那条路径；也可以在清单里点一行。"
+                  "下方依次是路径详情（怎么传、为什么停、得分怎么来）和每一步的公告原文。  \n"
+                  "**得分** = 起点严重度 × 金额系数 × 途经上市公司承压（弱 1、中 0.5、强 0）。")
 
 chains = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "data" / "chain").glob("*") if (p / "edges.csv").exists())
 snaps = sorted((p.name for p in (ROOT / "data" / "snapshots").glob("*") if (p / "fragility.csv").exists()), reverse=True)
-DEMOS = [("今日实时", "data/chain/live", None), ("安泰回测", "data/chain/backtest_antai", "2025-01-31"),
-         ("凌钢回测", "data/chain/backtest_linggang", "2024-04-30"), ("方大回测", "data/chain/analysis_v1", "2025-02-28")]
+DEMOS = [("今日实时", "data/chain/live", None), ("安泰回测", "data/chain/backtest_antai_fix1", "2025-01-31"),
+         ("凌钢回测", "data/chain/backtest_linggang_fix1", "2024-04-30"), ("方大回测", "data/chain/analysis_v1_fix1", "2025-02-28")]
 
 
 def reset_focus() -> None:
@@ -63,19 +48,26 @@ def use_demo(chain_name: str, snap_name: str | None) -> None:
     reset_focus()
 
 
-st.caption("演示场景")
-demo_cols = st.columns(len(DEMOS) + 2)
-for col, (label, chain_name, snap_name) in zip(demo_cols, DEMOS):
-    if chain_name in chains and (snap_name is None or snap_name in snaps):
-        col.button(label, on_click=use_demo, args=(chain_name, snap_name), width="stretch")
-c1, c2 = st.columns([2, 1])
+chains = [c for c in chains if c != "data/chain/gold_demo"]            # test answers: development only
+goto = st.session_state.pop("_goto_network", None)                   # arriving from 企业档案
+if goto and goto["chain"] in chains and goto["snapshot"] in snaps:
+    use_demo(goto["chain"], goto["snapshot"])
+    st.session_state["company_pick"] = goto["company"]
 default = next((c for c in ("data/chain/live", "data/chain/analysis_v1") if c in chains), chains[0])
 if st.session_state.get("chain_pick") not in chains:
     st.session_state["chain_pick"] = default
 if st.session_state.get("snap_pick") not in snaps:
     st.session_state["snap_pick"] = snaps[0]
-chain = c1.selectbox("产业链图谱", chains, key="chain_pick", format_func=lambda c: CHAIN_LABEL.get(c, c))
-snap = c2.selectbox("评估日（承压快照）", snaps, key="snap_pick")
+
+demo_cols = st.columns([1] + [1.2] * len(DEMOS) + [2.5], vertical_alignment="center")
+demo_cols[0].caption("演示场景")
+for col, (label, chain_name, snap_name) in zip(demo_cols[1:], DEMOS):
+    if chain_name in chains and (snap_name is None or snap_name in snaps):
+        col.button(label, on_click=use_demo, args=(chain_name, snap_name), width="stretch")
+with demo_cols[-1].popover("选择图谱与评估日", icon=":material/tune:"):
+    chain = st.selectbox("产业链图谱", chains, key="chain_pick", format_func=lambda c: CHAIN_LABEL.get(c, c))
+    snap = st.selectbox("评估日（承压快照）", snaps, key="snap_pick")
+st.caption(f"当前：{CHAIN_LABEL.get(chain, chain)} · 评估日 {snap}")
 if "backtest_antai" in chain and snap > "2025-02-05":
     st.warning("安泰回测图谱应配合事件发生前的评估日 2025-01-31，否则会用到当时还不存在的信息。")
 if "backtest_linggang" in chain and snap not in ("2024-04-30", "2025-04-30"):
@@ -120,14 +112,19 @@ if st.session_state.get("company_pick") not in [None] + companies:
     st.session_state["company_pick"] = None
 
 # ---------------------------------------------------------------- filters
-f1, f2, f3, f4, f5 = st.columns([2, 1, 2, 1.4, 1.4])
-rule_pick = f1.multiselect("传导规则", list(RULE_LABEL), default=list(RULE_LABEL), format_func=RULE_LABEL.get)
-min_amount = f2.number_input("最小金额（亿元）", min_value=0.0, value=0.0, step=1.0)
+f3, f_more, f_profile = st.columns([2.5, 1.2, 1.2], vertical_alignment="bottom")
 company = f3.selectbox("只看经过某企业", [None] + companies, key="company_pick",
                        format_func=lambda n: "全部企业" if n is None else name_of(n, names))
-hide_low = f4.toggle("隐藏金额为0的同集团路径", value=True,
-                     help="只由“同属一个集团”构成、没有披露金额的路径信息量低；仅隐藏显示，不改变排名。")
-show_c = f5.toggle("显示 C 级情景路径", value=False, help=GRADE_HELP["C"])
+with f_more.popover("更多筛选", icon=":material/filter_list:"):
+    rule_pick = st.multiselect("传导规则", list(RULE_LABEL), default=list(RULE_LABEL), format_func=RULE_LABEL.get)
+    min_amount = st.number_input("最小金额（亿元）", min_value=0.0, value=0.0, step=1.0)
+    hide_low = st.toggle("隐藏金额为0的同集团路径", value=True,
+                         help="只由“同属一个集团”构成、没有披露金额的路径信息量低；仅隐藏显示，不改变排名。")
+    show_c = st.toggle("显示 C 级情景路径", value=False, help=GRADE_HELP["C"])
+if company and company in fragility:
+    with f_profile:
+        profile_button(company, f"{name_of(company, names)} 档案", key="net_profile", snapshot=snap, chain=chain,
+                       width="stretch")
 items = filter_paths(ranked, set(rule_pick), min_amount, company, hide_low, show_scenarios=show_c)
 if not items:
     st.info("没有符合筛选条件的路径。")
@@ -174,7 +171,7 @@ st.vega_lite_chart(overview_chart(nodes_df, edges_df, width=min(1150, max(640, 2
                    on_select="rerun", key=chart_key, width="content")
 
 # ---------------------------------------------------------------- ① list
-st.subheader("① 关键路径清单", divider="gray")
+st.subheader("关键路径清单", divider="gray")
 st.caption(f"共 {len(ranked)} 条关键路径，符合筛选的 {len(items)} 条；“排名”为全部路径中的原始名次。点击一行查看详情。")
 st.dataframe(pd.DataFrame(path_rows(items, names)), hide_index=True, width="stretch",
              on_select="rerun", selection_mode="single-row", key=table_key,
@@ -182,7 +179,7 @@ st.dataframe(pd.DataFrame(path_rows(items, names)), hide_index=True, width="stre
                             "得分": st.column_config.NumberColumn(format="%.2f")})
 
 # ---------------------------------------------------------------- ② 传导过程
-st.subheader(f"② 第 {index + 1} 名：{route(entry, names)}", divider="gray")
+st.subheader(f"路径详情 · 第 {index + 1} 名：{route(entry, names)}", divider="gray")
 COLOR = {"weak": "#c0392b", "medium": "#b9770e", "strong": "#1e8449", "unknown": "#7f8c8d"}
 
 
@@ -220,7 +217,7 @@ with st.expander("局部关系图（这条路径及与它相连的其他路径�
     st.graphviz_chart(to_dot(focus_entries(ranked, index), fragility, names, highlight=0), width="stretch")
 
 # ---------------------------------------------------------------- ③ 证据
-st.subheader("③ 每一步的依据", divider="gray")
+st.subheader("每一步的公告依据", divider="gray")
 for k, s in enumerate(entry["steps"], 1):
     ref = evidence_ref(s.evidence)
     head = (f"第 {k} 步 · {RULE_LABEL[s.rule]}：{name_of(s.src, names)} → {name_of(s.dst, names)}"
