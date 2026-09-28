@@ -12,7 +12,7 @@ from src.network_view import edge_index, filter_paths, key_paths, name_of, path_
 from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
 from src.product_layer import exposure_as_of, products  # noqa: E402
 from src.profile import company_signals, fragility_rows, headline, peer_rank, snapshots, split_paths  # noqa: E402
-from src.ui import TIER_BADGE, page_header, verdict  # noqa: E402
+from src.ui import TIER_BADGE, deposit_block, page_header, verdict  # noqa: E402
 
 page_header("企业档案", ":material/badge:", "这家企业自身扛不扛得住？风险会从哪里传进来、传到哪里去？", grades=True,
             about="把其他页面的结果按企业重新组合：**自身风险**来自企业承压评分；**关联风险**来自披露关系传导路径"
@@ -81,8 +81,9 @@ mine = split_paths(filter_paths(ranked, company=code, hide_low_information=True,
 level, text = headline(name, row, len(mine["incoming"]), len(mine["outgoing"]), len(mine["absorbed"]))
 verdict(level, text)
 
-tab_own, tab_links, tab_products, tab_events = st.tabs([":material/monitoring: 自身风险", ":material/account_tree: 关联风险",
-                                                        ":material/inventory_2: 产品暴露（情景）", ":material/feed: 公告信号"])
+tab_own, tab_links, tab_chain, tab_products, tab_events = st.tabs(
+    [":material/monitoring: 自身风险", ":material/account_tree: 关联风险", ":material/swap_horiz: 主要客户与供应商",
+     ":material/inventory_2: 产品暴露（情景）", ":material/feed: 公告信号"])
 
 # ---------------------------------------------------------------- own risk
 with tab_own:
@@ -132,10 +133,31 @@ with tab_links:
             st.dataframe(pd.DataFrame(path_rows(mine[key], names, eindex)), hide_index=True, width="stretch",
                          column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f"),
                                         "得分": st.column_config.NumberColumn(format="%.2f")})
+    st.divider()
+    deposit_block(code, snap)
     if mine["incoming"] or mine["outgoing"] or mine["absorbed"]:
         if st.button("在传导图上查看每一步的公告原文", icon=":material/account_tree:"):
             st.session_state["_goto_network"] = {"chain": chain, "snapshot": snap, "company": code}
             st.switch_page("pages/4_风险路径图.py")
+
+# ---------------------------------------------------------------- named trading partners (bond prospectuses)
+with tab_chain:
+    from src.prospectus_links import DIRECTION, ROLE_LABEL, for_company
+    partners = for_company(code, snap)
+    if not partners:
+        st.caption("还没有收集到该企业或其集团的债券募集说明书。已收集：河钢、鞍钢、包钢、沙钢的集团或上市公司说明书。")
+    else:
+        st.caption("来源：该企业或其所属集团的债券募集说明书中“前五大”表（A 级：写明对方名称和金额）。"
+                   "“是否关联方”照抄原表；非关联方就是公开材料里少见的**跨集团真实交易对手**。数字尚未逐行人工核对。")
+        for side, label in (("upstream", "上游：供应商、预付与应付"), ("downstream", "下游：客户、应收与合同负债")):
+            part = [r for r in partners if DIRECTION.get(r["role"]) == side]
+            if part:
+                st.markdown(f"**{label}**")
+                st.dataframe(pd.DataFrame([{"表": ROLE_LABEL.get(r["role"], r["role"]), "对方": r["counterparty"],
+                                            "上市代码": r["counterparty_code"], "金额": f"{r['amount']} {r['unit']}",
+                                            "期末": r["period"], "关联方": r["related_party"], "说明": r["note"],
+                                            "出处": f"{r['issuer']}·{r['source_title'][:22]}… 第{r['page']}页"} for r in part]),
+                             hide_index=True, width="stretch")
 
 # ---------------------------------------------------------------- product exposure
 with tab_products:

@@ -72,3 +72,28 @@ def profile_button(code: str, label: str = "企业档案", key: str | None = Non
     if st.button(label, key=key or f"profile_{code}", icon=":material/badge:", **kwargs):
         open_profile(code, snapshot, chain)
         st.switch_page(PROFILE_PAGE)
+
+
+def deposit_block(code: str, as_of: str) -> None:
+    """集团财务公司存款（资金归集）for one company, with its source; scenario information, not scored."""
+    import csv as _csv
+    from src.finance_channel import exposure
+    metrics = ROOT / "data" / "snapshots" / as_of / "quarterly_metrics.csv"
+    equity = None
+    if metrics.exists():
+        with metrics.open(encoding="utf-8-sig", newline="") as f:
+            row = next((r for r in _csv.DictReader(f) if r["security_code"] == code), None)
+        equity = float(row["equity"]) if row and row.get("equity") else None
+    e = exposure(code, as_of, equity)
+    st.markdown("**资金归集：集团财务公司存款**（情景信息，不计入风险得分）")
+    if not e:
+        st.caption("评估日前没有收集到该企业在集团财务公司存款的披露。")
+        return
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("存款余额", f"{e['deposit_yi']:.2f} 亿元", help=f"截至 {e['period']}")
+    c2.metric("占净资产", f"{e['deposit_to_equity']:.1%}" if e["deposit_to_equity"] is not None else "—")
+    c3.metric("占自身存款", f"{e['deposit_share']:.1%}" if e["deposit_share"] is not None else "未披露")
+    c4.metric("从财务公司借款", f"{e['loan_yi']:.2f} 亿元" if e["loan_yi"] is not None else "未披露")
+    st.caption(f"{e['finance_company']} · 截至 {e['period']} · 来源：{e['source_label']}《{e['source_title']}》（{e['source_date']}）"
+               + ("" if e["verified"] == "Y" else " · 数字尚未人工对照原文核对"))
+    st.markdown(f"> {e['evidence_text']}  \n[原文链接]({e['source_url']})")
