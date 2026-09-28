@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 from pathlib import Path
 
 import streamlit as st
@@ -16,6 +17,15 @@ GRADES = ("**证据等级**  \n"
           "- **B 部分确认**：公司自己披露的产品暴露、未逐一核对的集团归属；只证明一半。\n"
           "- **C 行业推断**：按行业推断的潜在关系，只作情景提示，不计入风险得分。")
 TIER_BADGE = {"weak": "🔴 弱", "medium": "🟡 中", "strong": "🟢 强"}
+
+
+def public_mode() -> bool:
+    """Public read-only deployment (e.g. Streamlit Community Cloud with secret CHAINPROOF_PUBLIC = "1"):
+    no model calls, no data updates, no writes; the offline demo pack and the committed data only."""
+    return os.environ.get("CHAINPROOF_PUBLIC", "").strip().lower() in ("1", "true", "yes")
+
+
+PUBLIC_NOTE = ("公开演示版：不调用模型、不联网更新，数据截至最近一次提交。现场抽取新公告需在本机运行（见 README）。")
 
 
 def freshness() -> dict[str, str]:

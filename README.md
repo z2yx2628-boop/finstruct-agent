@@ -96,6 +96,10 @@ C 行业推断（只作情景）。钢企公开材料通常不披露客户和供
    答辩演示路线：今日看板 → 企业档案（安泰回测）→ 分析新公告（演示案例）→ 披露关系传导 → 上下游情景 → 验证与证据。
    没有网络或模型 API 时：“分析新公告”的“演示案例”不需要联网；演示前运行 `python scripts/check_demo.py --pages`，见 `docs/offline_demo.md`。
 
+   **在线演示版**（Streamlit Community Cloud，从 GitHub `main` 分支部署）：在应用的 Secrets 里设置 `CHAINPROOF_PUBLIC = "1"`，
+   页面进入只读模式：不调用模型、不联网更新、不写文件，只用仓库里提交的数据和离线演示包。不要把 `LLM_API_KEY` 放进公开应用。
+   更新在线数据的方法：本机更新并提交、推送到 `main`，应用会自动重新部署。
+
 4. 命令行处理单份公告：
 
    ```powershell

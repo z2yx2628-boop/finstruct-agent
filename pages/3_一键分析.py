@@ -9,7 +9,7 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.analyze import TaskNotDetected, analyze, build_card, card_markdown, demo_cases, replay  # noqa: E402
-from src.ui import page_header, profile_button, verdict  # noqa: E402
+from src.ui import PUBLIC_NOTE, page_header, profile_button, public_mode, verdict  # noqa: E402
 
 TASKS = {"自动识别": None, "日常关联交易": "related_party", "对外担保": "guarantee", "产能/检修": "capacity",
          "股权质押（辅助信号）": "pledge"}
@@ -53,9 +53,11 @@ with tab_new:
         task_label = s1.selectbox("公告类型", list(TASKS))
         as_of = s2.date_input("评估日", value=date.today())
         chain = s3.selectbox("产业链图谱", chains, index=chains.index(default_chain), format_func=lambda c: CHAIN_LABEL.get(c, c))
-        offline = st.toggle("离线模式",
+        offline = True if public_mode() else st.toggle("离线模式",
                             help="不调用模型、不联网：只能分析演示包（data/demo/）里的公告，结果来自冻结系统此前对同一文件的抽取。"
                                  "关闭时正常调用模型；如果模型调用失败而文件在演示包里，也会自动改用离线回放。")
+    if public_mode():
+        st.caption(PUBLIC_NOTE + "这里只能分析演示包里的原文件（与演示案例相同）。")
     if st.button("生成风险预警", type="primary", icon=":material/bolt:", disabled=upload is None, key="run_upload"):
         target = ROOT / "data" / "raw" / "uploads" / upload.name
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -138,7 +140,8 @@ if card:
                        icon=":material/download:")
 
 last = st.session_state.get("last_card")
-if last and last.get("task") and (ROOT / last["source"]).exists() and last.get("extraction_status") != "offline_replay":
+if last and last.get("task") and (ROOT / last["source"]).exists() and last.get("extraction_status") != "offline_replay" \
+        and not public_mode():
     with st.expander("把这份公告加入实时图谱", icon=":material/add_link:"):
         st.caption("这份公告目前只用于本次分析。加入后，它的关系和信号会进入实时图谱，参与今后的每日更新与路径推导。")
         if st.button("加入实时图谱"):

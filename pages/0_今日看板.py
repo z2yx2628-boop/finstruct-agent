@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.fragility_view import snapshot_meta  # noqa: E402
 from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
-from src.ui import page_header, profile_button, verdict  # noqa: E402
+from src.ui import PUBLIC_NOTE, page_header, profile_button, public_mode, verdict  # noqa: E402
 
 page_header("链证 · 钢铁产业链风险传导预警", ":material/dashboard:", "今天有什么风险？先看哪家企业？这个系统凭什么可信？",
             grades=True,
@@ -105,15 +105,21 @@ g3.page_link("pages/1_公告结构化.py", label="看公告被抽取成了什么
 g4.page_link("pages/5_上下游情景.py", label="模拟一次冲击", icon=":material/swap_horiz:")
 
 # ---------------------------------------------------------------- maintenance (folded)
-with st.expander("数据更新（查新公告并重算，联网约 5–15 分钟；演示时不要点）", icon=":material/refresh:"):
-    st.caption("查 40 家企业的新公告 → 冻结版系统抽取 → 更新图谱（过期关系自动失效）→ 更新承压评分 → 对比风险路径。")
-    online = st.checkbox("联网查新公告（需本机网络与模型接口）", value=True)
-    if st.button("立即更新", type="primary"):
-        cmd = [sys.executable, str(ROOT / "scripts" / "daily_update.py")] + ([] if online else ["--no-network"])
-        with st.spinner("正在更新…"):
-            out = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=ROOT)
-        st.cache_data.clear()
-        st.code((out.stdout or "")[-1500:] + (out.stderr or "")[-800:])
+if public_mode():
+    st.caption(PUBLIC_NOTE)
     if reports:
-        st.markdown(f"**最新日报 {reports[-1].stem[7:]}**")
-        st.markdown(reports[-1].read_text(encoding="utf-8"))
+        with st.expander(f"最新日报 {reports[-1].stem[7:]}", icon=":material/article:"):
+            st.markdown(reports[-1].read_text(encoding="utf-8"))
+else:
+    with st.expander("数据更新（查新公告并重算，联网约 5–15 分钟；演示时不要点）", icon=":material/refresh:"):
+        st.caption("查 40 家企业的新公告 → 冻结版系统抽取 → 更新图谱（过期关系自动失效）→ 更新承压评分 → 对比风险路径。")
+        online = st.checkbox("联网查新公告（需本机网络与模型接口）", value=True)
+        if st.button("立即更新", type="primary"):
+            cmd = [sys.executable, str(ROOT / "scripts" / "daily_update.py")] + ([] if online else ["--no-network"])
+            with st.spinner("正在更新…"):
+                out = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=ROOT)
+            st.cache_data.clear()
+            st.code((out.stdout or "")[-1500:] + (out.stderr or "")[-800:])
+        if reports:
+            st.markdown(f"**最新日报 {reports[-1].stem[7:]}**")
+            st.markdown(reports[-1].read_text(encoding="utf-8"))

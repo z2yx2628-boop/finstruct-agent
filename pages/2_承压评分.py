@@ -16,24 +16,25 @@ from src.product_layer import exposure_as_of, products  # noqa: E402
 SNAP = ROOT / "data" / "snapshots"
 TIER_COLOR = {"weak": "🔴", "medium": "🟡", "strong": "🟢"}
 
-from src.ui import page_header, profile_button  # noqa: E402
+from src.ui import page_header, profile_button, public_mode  # noqa: E402
 page_header("企业承压", ":material/monitoring:", "这家企业扛不扛得住冲击？分数从哪来？",
             about="**三层评分**：财报层（最新法定披露期，在 24 家核心钢厂中排名）+ 市场层（60 日超额收益、回撤、波动）"
                   "+ 事件层（财报后的高风险公告）。总分越高越弱，≥60 为弱、≥40 为中。  \n"
                   "红线（资不抵债、负债率 ≥85%）和财报后事件只会使等级变差。每个等级都附原因和数据来源。")
 
 col2, col1 = st.columns([3, 1.2], vertical_alignment="bottom")
-with col1.popover("更新数据并重新评分", icon=":material/refresh:"):
-    st.caption("联网约 3–5 分钟；演示时不要点。")
-    as_of = st.date_input("评估日期", value=date.today())
-    offline = st.checkbox("只用已缓存数据（历史回测用）", value=as_of < date.today())
-    if st.button("更新数据并重新评分", type="primary"):
-        cmd = [sys.executable, str(ROOT / "scripts" / "update_all.py"), "--as-of", as_of.isoformat()]
-        if offline:
-            cmd.append("--offline")
-        with st.spinner("正在更新（联网时约3–5分钟）…"):
-            run = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=ROOT)
-        st.code((run.stdout or "")[-2000:] + (run.stderr or "")[-1500:])
+if not public_mode():
+    with col1.popover("更新数据并重新评分", icon=":material/refresh:"):
+        st.caption("联网约 3–5 分钟；演示时不要点。")
+        as_of = st.date_input("评估日期", value=date.today())
+        offline = st.checkbox("只用已缓存数据（历史回测用）", value=as_of < date.today())
+        if st.button("更新数据并重新评分", type="primary"):
+            cmd = [sys.executable, str(ROOT / "scripts" / "update_all.py"), "--as-of", as_of.isoformat()]
+            if offline:
+                cmd.append("--offline")
+            with st.spinner("正在更新（联网时约3–5分钟）…"):
+                run = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=ROOT)
+            st.code((run.stdout or "")[-2000:] + (run.stderr or "")[-1500:])
 
 snapshots = sorted((d for d in SNAP.glob("*") if (d / "fragility.csv").exists()), reverse=True)
 if not snapshots:
