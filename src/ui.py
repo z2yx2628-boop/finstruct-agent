@@ -25,6 +25,51 @@ def public_mode() -> bool:
     return os.environ.get("CHAINPROOF_PUBLIC", "").strip().lower() in ("1", "true", "yes")
 
 
+def online_model() -> bool:
+    """Public deployment WITH a model key in its secrets: new announcements can be analysed, within quotas."""
+    return public_mode() and bool(os.environ.get("LLM_API_KEY", "").strip())
+
+
+def _limit(name: str, default: int) -> int:
+    try:
+        return int(os.environ.get(name, default))
+    except ValueError:
+        return default
+
+
+def quota_check(data: bytes, name: str) -> str | None:
+    """None if this online analysis may run; otherwise the reason it may not (size, pages, per-session, per-day)."""
+    import datetime
+    import tempfile
+    max_mb, max_pages = _limit("CHAINPROOF_MAX_MB", 10), _limit("CHAINPROOF_MAX_PAGES", 60)
+    if len(data) > max_mb * 1024 * 1024:
+        return f"文件超过 {max_mb} MB。"
+    if name.lower().endswith(".pdf"):
+        try:
+            import fitz
+            with fitz.open(stream=data, filetype="pdf") as doc:
+                if doc.page_count > max_pages:
+                    return f"PDF 超过 {max_pages} 页（本文件 {doc.page_count} 页）；长文件请在本机运行。"
+        except Exception:  # noqa: BLE001 - unreadable PDFs are left to the parser's own error message
+            pass
+    if st.session_state.get("_online_runs", 0) >= _limit("CHAINPROOF_SESSION_LIMIT", 3):
+        return "本次访问的在线分析次数已用完（防止额度被滥用）。可以用“演示案例”，或在本机运行。"
+    counter = Path(tempfile.gettempdir()) / f"chainproof_runs_{datetime.date.today().isoformat()}.txt"
+    used = int(counter.read_text() or 0) if counter.exists() else 0
+    if used >= _limit("CHAINPROOF_DAILY_LIMIT", 30):
+        return "今日在线分析总次数已达上限，请明天再试，或使用“演示案例”。"
+    return None
+
+
+def quota_consume() -> None:
+    import datetime
+    import tempfile
+    st.session_state["_online_runs"] = st.session_state.get("_online_runs", 0) + 1
+    counter = Path(tempfile.gettempdir()) / f"chainproof_runs_{datetime.date.today().isoformat()}.txt"
+    used = int(counter.read_text() or 0) if counter.exists() else 0
+    counter.write_text(str(used + 1))
+
+
 PUBLIC_NOTE = ("公开演示版：不调用模型、不联网更新，数据截至最近一次提交。现场抽取新公告需在本机运行（见 README）。")
 
 

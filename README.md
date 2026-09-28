@@ -99,6 +99,10 @@ C 行业推断（只作情景）。钢企公开材料通常不披露客户和供
    **在线演示版**（Streamlit Community Cloud，从 GitHub `main` 分支部署）：在应用的 Secrets 里设置 `CHAINPROOF_PUBLIC = "1"`，
    页面进入只读模式：不调用模型、不联网更新、不写文件，只用仓库里提交的数据和离线演示包。不要把 `LLM_API_KEY` 放进公开应用。
    更新在线数据的方法：本机更新并提交、推送到 `main`，应用会自动重新部署。
+   **在线分析新公告（可选）**：在 Secrets 里再加一个**专用、设了额度上限**的模型密钥（`LLM_API_KEY`，以及与本机一致的
+   `LLM_BASE_URL`、`LLM_MODEL`），“分析新公告”就能在线调用冻结版抽取系统。应用侧限额：每次访问 3 份、每份 ≤10 MB / ≤60 页、
+   全站每日 30 次（可用 `CHAINPROOF_SESSION_LIMIT`、`CHAINPROOF_MAX_MB`、`CHAINPROOF_MAX_PAGES`、`CHAINPROOF_DAILY_LIMIT` 调整）；
+   在线结果不写入实时图谱。不在评分范围的上市公司可以点“临时计算承压”，以 24 家核心钢厂为参照现算，不写入快照。
 
 4. 命令行处理单份公告：
 

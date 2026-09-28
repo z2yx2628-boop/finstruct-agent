@@ -89,13 +89,17 @@ def snapshot_for(as_of: str) -> Path | None:
     return snaps[-1] if snaps else None
 
 
-def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
+def build_card(doc: dict, source: str, as_of: str, chain: Path, extra_fragility: dict[str, dict] | None = None) -> dict:
     """Directions 2 and 3 for an already-extracted document (no model call; testable)."""
     new_edges = [as_row(e) for e in edges_from(doc, source)[0]]
     new_signals = [as_row(s) for s in signals_from(doc, source)]
     snap = snapshot_for(as_of)
     fragility = {r["security_code"]: r for r in _read(snap / "fragility.csv")} if snap else {}
+    from src.extension import rows as extension_rows   # coal/coke and downstream leaders, scored in their own groups
+    fragility = {**extension_rows(as_of), **fragility}
+    fragility.update(extra_fragility or {})        # 临时评分 of a company outside the universe (labelled adhoc)
     equity = {r["security_code"]: float(r["equity"]) for r in _read(snap / "quarterly_metrics.csv") if r.get("equity")} if snap else {}
+    equity.update({c: float(r["equity"]) for c, r in (extra_fragility or {}).items() if r.get("equity")})
     base = [e for e in _read(chain / "edges.csv") if is_active(e, as_of)]
     rows, _ = load_entities()
     from src.entity_resolver import groups_as_of
@@ -145,6 +149,8 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
         "as_of": as_of, "source": source, "snapshot": snap.name if snap else None,
         "company": doc.get("company_name") or doc.get("security_name") or issuer,
         "code": issuer,
+        "in_scope": issuer in fragility,
+        "adhoc": bool(issuer and fragility.get(issuer, {}).get("peer_group") == "adhoc"),
         "announcement_date": doc.get("announcement_date"),
         "what_happened": list(happened.values()),
         "relations": [dict(r, amount_yi=round(r["amount_yi"], 2)) for r in relations.values()],
@@ -217,7 +223,8 @@ def replay(case: dict, as_of: str | None = None, chain: str | Path | None = None
     """Card from the frozen system's saved extraction (no model call, no network)."""
     doc = json.loads((ROOT / case["prediction"]).read_text(encoding="utf-8"))
     card = build_card(doc, case["prediction_from"], as_of or case["as_of"], ROOT / (chain or case["chain"]))
-    card.update({"task": case["task"], "extraction_status": "offline_replay",
+    card.update({"task": case["task"], "extraction_status": "offline_replay", "doc_path": str(ROOT / case["prediction"]),
+                 "chain": str(chain or case["chain"]),
                  "offline_note": f"离线回放：未调用模型，使用冻结系统此前对同一文件（SHA-256 一致）的抽取结果（{case['prediction_from']}）。"})
     return card
 
@@ -251,7 +258,8 @@ def analyze(path: str | Path, task: str | None = None, as_of: str | None = None,
         return card
     doc = json.loads(Path(result["prediction_path"]).read_text(encoding="utf-8"))
     card = build_card(doc, str(Path(result["prediction_path"]).relative_to(ROOT)), as_of, ROOT / chain)
-    card.update({"task": task, "extraction_status": result["status"]})
+    card.update({"task": task, "extraction_status": result["status"], "doc_path": str(result["prediction_path"]),
+                 "chain": str(chain)})
     out = Path(result["run_directory"])
     (out / "alert_card.json").write_text(json.dumps(card, ensure_ascii=False, indent=2), encoding="utf-8")
     (out / "alert_card.md").write_text(card_markdown(card), encoding="utf-8")
