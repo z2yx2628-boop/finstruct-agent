@@ -44,3 +44,18 @@ def test_named_company_chains_are_point_in_time_and_keep_their_boundary():
     assert pairs[("000932", "600031")]["grade"] == "B"
     assert all("边界：" in pairs[p]["evidence"] for p in (("P_IRON_ORE", "600019"), ("600019", "600104"),
                                                              ("P_IRON_ORE", "000932"), ("000932", "600031")))
+
+
+def test_prospectus_suppliers_enter_coking_coal_scenario_as_a_grade():
+    import csv
+    from pathlib import Path
+    from src.scenario import build
+    root = Path(__file__).resolve().parents[1]
+    with (root / "data" / "snapshots" / "2026-09-27" / "fragility.csv").open(encoding="utf-8-sig", newline="") as f:
+        fr = {r["security_code"]: r for r in csv.DictReader(f)}
+    r = build("price_up", "2026-09-27", fr, [], product_id="P_COKING_COAL")
+    s6 = [e for e in r["edges"] if e["rule"] == "S6"]
+    assert s6 and all(e["grade"] == "A" and "募集说明书" in e["evidence"] for e in s6)
+    assert any("G_ANSTEEL" == e["dst"] for e in s6)
+    early = build("price_up", "2024-06-30", fr, [], product_id="P_COKING_COAL")      # 2024-12 tables not yet known
+    assert not [e for e in early["edges"] if e["rule"] == "S6" and "2024-12" in e["effect"]]

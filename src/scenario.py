@@ -23,7 +23,7 @@ KINDS = {"price_up": "价格上涨", "price_down": "价格下跌", "outage": "�
 TIER_WEIGHT = {"weak": 1.0, "medium": 0.5, "strong": 0.2}
 TIER_LABEL = {"weak": "弱", "medium": "中", "strong": "强"}
 RULES = {"S0": "冲击", "S1": "产品暴露（B）", "S2": "披露采购/销售（A）", "S3": "行业用钢（C）",
-         "S4": "下游企业", "S5": "企业级采购/应用（B）"}
+         "S4": "下游企业", "S5": "企业级采购/应用（B）", "S6": "募集说明书具名交易（A）"}
 CAVEAT = ("情景路径：说明谁暴露在这个冲击上、承压如何，不预测谁会受损；不计入正式风险得分。"
           "产品暴露经两次预先登记的检验，方向一致但不显著。")
 MIN_SHARE = 0.10
@@ -158,6 +158,52 @@ def _verified_downstream(b: Builder, pid: str, sign: str, as_of: str, sellers_on
                _verified_evidence(link))
 
 
+def _yi(r: dict) -> float:
+    v = float(r["amount"])
+    return v if r["unit"] == "亿元" else v / 1e4 if r["unit"] == "万元" else 0.0
+
+
+def _prospectus_evidence(r: dict) -> str:
+    return (f"{r['source_title']} 第{r['page']}页：{r['counterparty']} {r['amount']}{r['unit']}"
+            f"（{r['period']}，{'非关联方' if r['related_party'] == '否' else '关联方' if r['related_party'] == '是' else '原表未注明是否关联'}）")
+
+
+def _prospectus_inputs(b: Builder, pid: str, sign: str, as_of: str, top: int = 5) -> None:
+    """A-grade: named non-related suppliers of this input to a steel group, from bond prospectus top-5 tables."""
+    from src.prospectus_links import rows as p_rows
+    hits = [r for r in p_rows() if r.get("product_id") == pid and r["related_party"] == "否" and r["period"][:7] <= as_of[:7]]
+    best: dict[tuple[str, str], dict] = {}
+    for r in hits:                                   # latest period per (group, supplier), purchases before balances
+        key = (r["issuer_id"], r["counterparty"])
+        rank = (r["role"] == "supplier", r["period"])
+        if key not in best or rank > (best[key]["role"] == "supplier", best[key]["period"]):
+            best[key] = r
+    for r in sorted(best.values(), key=lambda r: -_yi(r))[:top]:
+        sup = b.node("N_" + r["counterparty"], r["counterparty"].replace("有限责任公司", "").replace("股份有限公司", "").replace("有限公司", ""), "企业")
+        grp = b.node(r["issuer_id"], r["issuer"], "企业")
+        label = {"supplier": "采购", "payable": "应付", "prepayment": "预付"}[r["role"]]
+        b.edge(pid, sup, "S6", "A", f"收入{sign}（{r['issuer']}向其{label} {_yi(r):.1f} 亿元）", _prospectus_evidence(r), amount_wan=_yi(r) * 1e4)
+        b.edge(sup, grp, "S6", "A", f"采购成本{sign}（{label} {_yi(r):.1f} 亿元，{r['period']}）", _prospectus_evidence(r), amount_wan=_yi(r) * 1e4)
+
+
+def _prospectus_customers(b: Builder, code: str, as_of: str, top: int = 5) -> None:
+    """A-grade: named customers of the stopped mill's group (top-5 customers / receivables / contract liabilities)."""
+    from src.prospectus_links import for_company
+    # buyers only: top-5 customers and customers who prepaid for steel (contract liabilities). Receivables are left
+    # out here: some are land, notes or finance-company balances, not steel customers (see 企业档案 for them).
+    rows_ = [r for r in for_company(code, as_of) if r["role"] in ("customer", "contract_liability")
+             and r["related_party"] != "是" and r["unit"] in ("亿元", "万元")]
+    best: dict[str, dict] = {}
+    for r in rows_:
+        if r["counterparty"] not in best or r["period"] > best[r["counterparty"]]["period"]:
+            best[r["counterparty"]] = r
+    for r in sorted(best.values(), key=lambda r: -_yi(r))[:top]:
+        cust = b.node("N_" + r["counterparty"], r["counterparty"].replace("有限责任公司", "").replace("股份有限公司", "").replace("有限公司", ""), "企业")
+        what = {"customer": "前五大客户", "contract_liability": "预收货款客户"}[r["role"]]
+        b.edge(code, cust, "S6", "A", f"供货中断（{r['issuer']}{what} {_yi(r):.1f} 亿元，{r['period']}）", _prospectus_evidence(r),
+               amount_wan=_yi(r) * 1e4)
+
+
 def disclosed_trades(pid: str, chain_edges: list[dict], buyer_side: bool = True) -> list[dict]:
     """A-grade: disclosed related-party trade rows whose goods name the product."""
     pattern = product_map()[pid]["keywords"]
@@ -207,6 +253,7 @@ def build(kind: str, as_of: str, fragility: dict[str, dict], chain_edges: list[d
                        f"{Path(t['source_doc']).stem} 第{t['source_page']}页：{(t['evidence_text'] or '')[:80]}",
                        amount_wan=float(t["amount_wan"] or 0))
             verified_buyers = _verified_input_buyers(b, product_id, arrow, as_of)
+            _prospectus_inputs(b, product_id, arrow, as_of)
             # every blast-furnace mill buys this input, but mills do not disclose purchase shares: C-grade,
             # shown for the most fragile mills only
             fragile = sorted((c for c in core_mills() if c not in buyers and c not in verified_buyers),
@@ -241,6 +288,7 @@ def build(kind: str, as_of: str, fragility: dict[str, dict], chain_edges: list[d
                 _verified_downstream(b, pid, "↓", as_of, {company})
         sales = sorted((t for t in chain_edges if t.get("edge_type") == "supply" and t.get("basis") == "disclosed"
                         and t.get("src_id") == company), key=lambda t: -float(t.get("amount_wan") or 0))[:top]
+        _prospectus_customers(b, company, as_of)
         for t in sales:
             b.edge(company, b.company(t["dst_id"]), "S2", "A", f"供货中断（披露销售 {float(t['amount_wan'] or 0) / 1e4:.1f} 亿元）",
                    f"{Path(t['source_doc']).stem} 第{t['source_page']}页：{(t['evidence_text'] or '')[:80]}",
