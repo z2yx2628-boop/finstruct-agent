@@ -16,7 +16,7 @@ from src.product_layer import exposure_as_of, products  # noqa: E402
 SNAP = ROOT / "data" / "snapshots"
 TIER_COLOR = {"weak": "🔴", "medium": "🟡", "strong": "🟢"}
 
-from src.ui import page_header, profile_button, public_mode  # noqa: E402
+from src.ui import deposit_block, page_header, profile_button, public_mode  # noqa: E402
 page_header("企业承压", ":material/monitoring:", "这家企业扛不扛得住冲击？分数从哪来？",
             about="**三层评分**：财报层（最新法定披露期，在 24 家核心钢厂中排名）+ 市场层（60 日超额收益、回撤、波动）"
                   "+ 事件层（财报后的高风险公告）。总分越高越弱，≥60 为弱、≥40 为中。  \n"
@@ -96,7 +96,7 @@ if detail and detail["rules"]:
 if r.get("events_after_report") not in (None, "", "0") and r["tier"] != r.get("base_tier"):
     st.warning("财报后出现高风险事件，等级在分数基础上下调一档（见“担保与事件”）。")
 tab_score, tab_source, tab_product, tab_events, tab_sens, tab_change = st.tabs(
-    ["评分拆解", "数据来源", "产品构成", "担保与事件", "敏感性", "本期变化"])
+    ["评分拆解", "数据来源", "产品构成", "担保、事件与资金归集", "敏感性", "本期变化"])
 
 with tab_sens:
     st.caption("不修改正式结果，只检查结论对阈值和权重是否稳健。")
@@ -184,6 +184,7 @@ with tab_events:
             st.caption("无。")
     else:
         st.caption("只提供给当前评分方法（v1）的快照。")
+    deposit_block(code, chosen)
 
 with tab_change:
     if (folder / "changes.md").exists():

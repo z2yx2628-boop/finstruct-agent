@@ -26,6 +26,13 @@ page_header("上下游情景", ":material/swap_horiz:", "一次产品价格、�
 st.caption("⚠ 情景提示：跨集团上下游多为 B/C 级证据，不计入风险得分，不代表真实交易或损失预测。")
 
 snaps = sorted(p.name for p in (ROOT / "data" / "snapshots").glob("*") if (p / "fragility.csv").exists())
+
+source = st.segmented_control("冲击来源", ["产品与需求", "政策"], default="产品与需求", key="sc_source")
+if source == "政策":
+    from src.policy_render import render_policy          # noqa: E402
+    render_policy(snaps)
+    st.stop()
+
 DEMOS = {"演示：2024-09-30 焦炭 20 日 +13%": ("price_up", "P_COKE", None, None, "2024-09-30"),
          "演示：凌钢停产": ("outage", None, "600231", None, None),
          "演示：汽车需求下降": ("demand_down", None, None, "S_AUTO", None)}

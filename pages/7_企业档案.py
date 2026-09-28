@@ -12,7 +12,7 @@ from src.network_view import edge_index, filter_paths, key_paths, name_of, path_
 from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
 from src.product_layer import exposure_as_of, products  # noqa: E402
 from src.profile import company_signals, fragility_rows, headline, peer_rank, snapshots, split_paths  # noqa: E402
-from src.ui import TIER_BADGE, page_header, verdict  # noqa: E402
+from src.ui import TIER_BADGE, deposit_block, page_header, verdict  # noqa: E402
 
 page_header("企业档案", ":material/badge:", "这家企业自身扛不扛得住？风险会从哪里传进来、传到哪里去？", grades=True,
             about="把其他页面的结果按企业重新组合：**自身风险**来自企业承压评分；**关联风险**来自披露关系传导路径"
@@ -132,6 +132,8 @@ with tab_links:
             st.dataframe(pd.DataFrame(path_rows(mine[key], names, eindex)), hide_index=True, width="stretch",
                          column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f"),
                                         "得分": st.column_config.NumberColumn(format="%.2f")})
+    st.divider()
+    deposit_block(code, snap)
     if mine["incoming"] or mine["outgoing"] or mine["absorbed"]:
         if st.button("在传导图上查看每一步的公告原文", icon=":material/account_tree:"):
             st.session_state["_goto_network"] = {"chain": chain, "snapshot": snap, "company": code}

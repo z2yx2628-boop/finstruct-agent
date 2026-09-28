@@ -178,6 +178,25 @@ st.vega_lite_chart(overview_chart(nodes_df, edges_df, width=min(1150, max(640, 2
                    on_select="rerun", key=chart_key, width="content")
 
 # ---------------------------------------------------------------- ① list
+with st.expander("集团财务公司通道：若财务公司出现兑付问题，哪些上市公司的钱被困住（情景，不计分）", icon=":material/account_balance:"):
+    from src.finance_channel import by_finance_company
+    _eq = {}
+    _qm = ROOT / "data" / "snapshots" / snap / "quarterly_metrics.csv"
+    if _qm.exists():
+        _eq = {r["security_code"]: float(r["equity"]) for r in pd.read_csv(_qm, dtype=str).fillna("").to_dict("records") if r.get("equity")}
+    _groups = by_finance_company(snap, fragility, _eq)
+    if not _groups:
+        st.caption("评估日前没有收集到财务公司存款披露。")
+    for g in _groups:
+        st.markdown(f"**{g['finance_company']}**：{len(g['members'])} 家上市公司存款合计 {g['total_yi']:.2f} 亿元")
+        st.dataframe(pd.DataFrame([{"企业": m["name"], "承压": {"weak": "🔴 弱", "medium": "🟡 中", "strong": "🟢 强"}.get(m["tier"], "未评分"),
+                                    "存款(亿元)": round(m["deposit_yi"], 2),
+                                    "占净资产": f"{m['deposit_to_equity']:.1%}" if m["deposit_to_equity"] is not None else "—",
+                                    "截至": m["period"], "来源": m["source_label"]} for m in g["members"]]),
+                     hide_index=True, width="stretch")
+    st.caption("来源：各公司的财务公司风险评估报告等披露（A 级，data/reference/finance_company_deposits.csv），按发布日期使用；"
+               "部分数字尚未人工对照原文核对。这条通道目前不计入路径得分：钢铁业内还没有可用于回测的财务公司兑付事件。")
+
 st.subheader("关键路径清单", divider="gray")
 st.caption(f"共 {len(ranked)} 条关键路径，符合筛选的 {len(items)} 条；“排名”为全部路径中的原始名次。点击一行查看详情。")
 st.dataframe(pd.DataFrame(path_rows(items, names, eindex)), hide_index=True, width="stretch",

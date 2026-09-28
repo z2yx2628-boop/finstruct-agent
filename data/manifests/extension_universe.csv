@@ -1,0 +1,19 @@
+security_code,security_name,layer,segment,why,verified
+000983,山西焦煤,upstream,焦煤,焦煤主要供应商,N
+601699,潞安环能,upstream,喷吹煤/焦煤,高炉喷吹煤,N
+601666,平煤股份,upstream,焦煤,焦煤；平煤神马焦化向三钢闽光供焦炭（已在图谱中）,N
+600985,淮北矿业,upstream,焦煤/焦炭,焦煤与焦炭,N
+600395,盘江股份,upstream,焦煤,西南焦煤,N
+600997,开滦股份,upstream,焦煤/焦化,焦煤与焦化,N
+000723,美锦能源,upstream,焦炭,独立焦化,N
+601015,陕西黑猫,upstream,焦炭,独立焦化,N
+600740,山西焦化,upstream,焦炭,独立焦化,N
+600104,上汽集团,downstream,汽车,已有 B 级链：宝钢股份→上汽集团,N
+601633,长城汽车,downstream,汽车,年报点名用钢（待核）,N
+600031,三一重工,downstream,工程机械,已有 B 级链：华菱钢铁→三一重工,N
+000425,徐工机械,downstream,工程机械,年报点名用钢（待核）,N
+000157,中联重科,downstream,工程机械,工程机械龙头,N
+600150,中国船舶,downstream,造船,年报点名用钢（B 级）,N
+000651,格力电器,downstream,家电,年报点名用钢（B 级）,N
+000333,美的集团,downstream,家电,家电用钢,N
+601668,中国建筑,downstream,建筑,建筑用钢,N
