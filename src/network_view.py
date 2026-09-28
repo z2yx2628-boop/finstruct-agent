@@ -360,8 +360,9 @@ def overview_layout(items: list[tuple[int, dict]], fragility: dict[str, dict], n
     return node_rows, edge_rows
 
 
-SCENARIO_RULE_SCALE = (["冲击", "产品暴露（B）", "披露采购/销售（A）", "行业用钢（C）", "下游企业"],
-                       ["#222222", "#2e86c1", "#c0392b", "#7f8c8d", "#8e44ad"])
+SCENARIO_RULE_SCALE = (["冲击", "产品暴露（B）", "披露采购/销售（A）", "行业用钢（C）", "下游企业", "企业级采购/应用（B）",
+                        "募集说明书具名交易（A）"],
+                       ["#222222", "#2e86c1", "#c0392b", "#7f8c8d", "#8e44ad", "#16a085", "#d35400"])
 
 
 def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 900, height: int = 440,
