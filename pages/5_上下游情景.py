@@ -18,7 +18,8 @@ from src.validity import is_active  # noqa: E402
 TIER = {"weak": "🔴 弱", "medium": "🟡 中", "strong": "🟢 强", "": "未评分"}
 GRADE = {"A": "A 披露确认", "B": "B 部分确认", "C": "C 行业推断", "—": "—"}
 
-st.title("上下游情景", icon=":material/swap_horiz:")
+from src.ui import page_header  # noqa: E402
+page_header("③ 上下游情景", ":material/swap_horiz:", "一次产品价格、停产或需求冲击，会经产品波及哪些企业？", grades=True)
 st.info(CAVEAT, icon=":material/info:")
 st.caption("冲击 → 暴露于该产品的企业（公司自己披露的分产品收入 B 级；公告披露的采购/销售 A 级）→ 企业承压 → "
            "钢材产品 → 下游行业（C 级）→ 下游代表企业（年报点名钢材为主要原材料 B 级，否则 C 级）。")
@@ -41,7 +42,7 @@ def use_demo(kind, pid, company, sector, day):
 
 cols = st.columns(len(DEMOS))
 for col, (label, args) in zip(cols, DEMOS.items()):
-    col.button(label, on_click=use_demo, args=args, use_container_width=True)
+    col.button(label, on_click=use_demo, args=args, width="stretch")
 
 c1, c2, c3 = st.columns([1.2, 2, 1.2])
 kind = c1.selectbox("冲击类型", list(KINDS), format_func=KINDS.get, key="sc_kind")
@@ -81,13 +82,13 @@ nodes, links = layout(result)
 columns_n = int(max(n["x"] for n in nodes)) + 1
 rows_n = max(sum(1 for n in nodes if n["x"] == x) for x in range(columns_n))
 st.vega_lite_chart(overview_chart(nodes, links, width=min(1150, max(640, 230 * columns_n)), height=max(300, 70 * rows_n),
-                                  rule_scale=SCENARIO_RULE_SCALE), use_container_width=False)
+                                  rule_scale=SCENARIO_RULE_SCALE), width="content")
 st.caption("三角 = 冲击；圆 = 企业（颜色为承压等级）；方块 = 产品；菱形 = 下游行业。线的颜色是关系类型，悬停可看证据等级。")
 
 st.markdown("**暴露企业**（按承压由弱到强、暴露由大到小排序，仅用于提示关注顺序）")
 st.dataframe(pd.DataFrame([{"企业": r["name"], "承压": TIER.get(r["tier"], "未评分"), "影响": r["effect"],
                             "证据等级": GRADE.get(r["grade"], r["grade"])} for r in result["companies"]]),
-             hide_index=True, use_container_width=True)
+             hide_index=True, width="stretch")
 
 with st.expander("每条关系的依据", expanded=False):
     names = {n["node"]: n["name"] for n in result["nodes"]}

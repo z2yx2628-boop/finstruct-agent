@@ -11,3 +11,4 @@ data/external/probe/
 data/external/financials/raw/
 data/external/financials/quarterly/
 data/external/market/
+*.exe

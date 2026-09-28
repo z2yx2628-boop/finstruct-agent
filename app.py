@@ -8,34 +8,21 @@ st.set_page_config(
 )
 
 page = st.navigation(
-    [
-        st.Page(
-            "pages/3_一键分析.py",
-            title="一键风险分析",
-            icon=":material/bolt:",
-            default=True,
-        ),
-        st.Page(
-            "pages/1_公告结构化.py",
-            title="公告结构化",
-            icon=":material/description:",
-        ),
-        st.Page(
-            "pages/2_承压评分.py",
-            title="企业承压评分",
-            icon=":material/monitoring:",
-        ),
-        st.Page(
-            "pages/4_风险路径图.py",
-            title="风险路径图",
-            icon=":material/account_tree:",
-        ),
-        st.Page(
-            "pages/5_上下游情景.py",
-            title="上下游情景",
-            icon=":material/swap_horiz:",
-        ),
-    ],
+    {
+        "总览": [
+            st.Page("pages/0_今日看板.py", title="今日看板", icon=":material/dashboard:", default=True),
+            st.Page("pages/3_一键分析.py", title="分析新公告", icon=":material/bolt:"),
+        ],
+        "三个方向": [
+            st.Page("pages/1_公告结构化.py", title="① 公告结构化", icon=":material/description:"),
+            st.Page("pages/2_承压评分.py", title="② 企业承压", icon=":material/monitoring:"),
+            st.Page("pages/4_风险路径图.py", title="③ 关联与担保传导", icon=":material/account_tree:"),
+            st.Page("pages/5_上下游情景.py", title="③ 上下游情景", icon=":material/swap_horiz:"),
+        ],
+        "可信度": [
+            st.Page("pages/6_验证与证据.py", title="验证与证据", icon=":material/verified:"),
+        ],
+    },
     position="top",
 )
 

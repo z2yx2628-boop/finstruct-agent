@@ -1,0 +1,42 @@
+{
+  "security_code": null,
+  "security_name": null,
+  "company_name": "方大特钢",
+  "announcement_number": null,
+  "announcement_date": "2026-05-09",
+  "events": [
+    {
+      "event_type": "maintenance",
+      "project_name": null,
+      "project_entity": null,
+      "project_location": null,
+      "project_country": null,
+      "decision_reasons": [],
+      "decision_reason_text": null,
+      "project_status": "temporarily_shut_down",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "于4月28日启动为期7天的设备“一条龙”集中检修，并于5月4日顺利完成全部检修任务。",
+      "shutdown_facility": "高炉、烧结机、转炉、高线、优特钢线、TRT及热电系统等重点设备",
+      "shutdown_start_date": "2026-04-28",
+      "expected_restart_date": "2026-05-04",
+      "shutdown_days": 7.0,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": null,
+      "project_purpose": "应对行业变局、优化生产供给，夯实设备运维基础、提升生产运营效率",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "方大特钢主动统筹生产节奏，于4月28日启动为期7天的设备“一条龙”集中检修，并于5月4日顺利完成全部检修任务，既助力区域市场平稳运行，又完成设备深度维保，为下半年安全高效生产夯实硬件基础。",
+      "confidence": 0.95
+    }
+  ]
+}

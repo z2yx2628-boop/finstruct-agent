@@ -98,7 +98,8 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path) -> dict:
     equity = {r["security_code"]: float(r["equity"]) for r in _read(snap / "quarterly_metrics.csv") if r.get("equity")} if snap else {}
     base = [e for e in _read(chain / "edges.csv") if is_active(e, as_of)]
     rows, _ = load_entities()
-    groups = {k: v["group_id"] for k, v in rows.items()}
+    from src.entity_resolver import groups_as_of
+    groups = groups_as_of(as_of)          # group membership on the evaluation date, as in run_propagation
     listed = {k for k, v in rows.items() if v.get("security_code")}
     names = {k: v["short_name"] for k, v in rows.items()}
     graph = Graph(base + new_edges, fragility, equity, groups, listed)
@@ -197,19 +198,56 @@ def card_markdown(card: dict) -> str:
     return "\n".join(lines)
 
 
-def analyze(path: str | Path, task: str | None = None, as_of: str | None = None,
-            chain: str | Path = "data/chain/analysis_v1") -> dict:
-    from src.document_parser import parse_document
-    from src.pipeline import run_pipeline
+DEMO_MANIFEST = ROOT / "data" / "demo" / "manifest.json"
 
+
+def demo_cases() -> list[dict]:
+    return json.loads(DEMO_MANIFEST.read_text(encoding="utf-8")) if DEMO_MANIFEST.exists() else []
+
+
+def offline_case(path: str | Path) -> dict | None:
+    """The demo-pack entry whose source file has exactly these bytes (sha256), if any."""
+    import hashlib
+    digest = hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    return next((c for c in demo_cases() if c["source_sha256"] == digest), None)
+
+
+def replay(case: dict, as_of: str | None = None, chain: str | Path | None = None) -> dict:
+    """Card from the frozen system's saved extraction (no model call, no network)."""
+    doc = json.loads((ROOT / case["prediction"]).read_text(encoding="utf-8"))
+    card = build_card(doc, case["prediction_from"], as_of or case["as_of"], ROOT / (chain or case["chain"]))
+    card.update({"task": case["task"], "extraction_status": "offline_replay",
+                 "offline_note": f"离线回放：未调用模型，使用冻结系统此前对同一文件（SHA-256 一致）的抽取结果（{case['prediction_from']}）。"})
+    return card
+
+
+def analyze(path: str | Path, task: str | None = None, as_of: str | None = None,
+            chain: str | Path = "data/chain/analysis_v1", offline: bool = False) -> dict:
+    """offline=True never calls the model: the file must be in the demo pack. With offline=False the model
+    is called; if that fails and the file is in the demo pack, the saved extraction is replayed instead."""
     path = Path(path)
     as_of = as_of or date.today().isoformat()
+    case = offline_case(path)
+    if offline:
+        if case is None:
+            raise TaskNotDetected("离线模式只能分析演示包里的文件（data/demo/）。请关闭离线模式，或选择演示包中的公告。")
+        return replay(case, as_of, chain)
+    from src.document_parser import parse_document  # model/parser dependencies only when really extracting
+    from src.pipeline import run_pipeline
+
     if task is None:
         parsed = parse_document(path)
         task = detect_task("\n".join(p.text for p in parsed.pages[:2]))
         if task is None:
             raise TaskNotDetected("无法从标题和前两页识别公告类型（关联交易、担保、产能/检修、质押），请手动选择公告类型后重试。")
-    result = run_pipeline(path, task=task)
+    try:
+        result = run_pipeline(path, task=task)
+    except Exception:
+        if case is None:
+            raise
+        card = replay(case, as_of, chain)
+        card["offline_note"] = "模型调用失败，已自动切换为" + card["offline_note"]
+        return card
     doc = json.loads(Path(result["prediction_path"]).read_text(encoding="utf-8"))
     card = build_card(doc, str(Path(result["prediction_path"]).relative_to(ROOT)), as_of, ROOT / chain)
     card.update({"task": task, "extraction_status": result["status"]})

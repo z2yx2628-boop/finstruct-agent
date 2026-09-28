@@ -37,7 +37,8 @@ with st.sidebar:
     if reports:
         with st.expander(f"最新日报 {reports[0].stem[7:]}"):
             st.markdown(reports[0].read_text(encoding="utf-8"))
-st.title("风险路径图", icon=":material/account_tree:")
+from src.ui import page_header  # noqa: E402
+page_header("③ 关联与担保传导", ":material/account_tree:", "风险会沿公告披露的关联交易、担保和集团关系传给谁？", grades=True)
 st.info("**当前范围：集团关联与担保风险网络（原型）。** 企业之间的边来自公告披露的关联交易与担保（A 级）和集团股权关系；"
         "跨集团的上下游关系目前只有行业近似（C 级），仅作情景提示、不计入路径得分，不代表真实交易。", icon=":material/info:")
 st.caption("总图上点企业 = 只看经过它的路径；点连线上的标签 = 打开那条路径。也可以在下方清单里点一行。"
@@ -66,7 +67,7 @@ st.caption("演示场景")
 demo_cols = st.columns(len(DEMOS) + 2)
 for col, (label, chain_name, snap_name) in zip(demo_cols, DEMOS):
     if chain_name in chains and (snap_name is None or snap_name in snaps):
-        col.button(label, on_click=use_demo, args=(chain_name, snap_name), use_container_width=True)
+        col.button(label, on_click=use_demo, args=(chain_name, snap_name), width="stretch")
 c1, c2 = st.columns([2, 1])
 default = next((c for c in ("data/chain/live", "data/chain/analysis_v1") if c in chains), chains[0])
 if st.session_state.get("chain_pick") not in chains:
@@ -158,7 +159,7 @@ shown = items[:max_show]
 if index not in [i for i, _ in shown]:
     shown = shown + [(index, entry)]
 g2.write("")
-g2.button("清除选择", on_click=reset_focus, use_container_width=True)
+g2.button("清除选择", on_click=reset_focus, width="stretch")
 notes = ["从左到右 = 传导方向；粗黑圈 = 风险起点；圆越大，经过的路径越多；线越粗，金额越大；虚线 = 同集团或行业近似（无金额）。"
          "点企业筛选，点金额标签打开该路径，双击空白处取消。"]
 if company:
@@ -170,12 +171,12 @@ nodes_df, edges_df = overview_layout(shown, fragility, names, chosen=highlight)
 columns_n = int(max(n["x"] for n in nodes_df)) + 1
 rows_n = max(sum(1 for n in nodes_df if n["x"] == x) for x in range(columns_n))
 st.vega_lite_chart(overview_chart(nodes_df, edges_df, width=min(1150, max(640, 240 * columns_n)), height=max(300, 95 * rows_n)),
-                   on_select="rerun", key=chart_key, use_container_width=False)
+                   on_select="rerun", key=chart_key, width="content")
 
 # ---------------------------------------------------------------- ① list
 st.subheader("① 关键路径清单", divider="gray")
 st.caption(f"共 {len(ranked)} 条关键路径，符合筛选的 {len(items)} 条；“排名”为全部路径中的原始名次。点击一行查看详情。")
-st.dataframe(pd.DataFrame(path_rows(items, names)), hide_index=True, use_container_width=True,
+st.dataframe(pd.DataFrame(path_rows(items, names)), hide_index=True, width="stretch",
              on_select="rerun", selection_mode="single-row", key=table_key,
              column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f"),
                             "得分": st.column_config.NumberColumn(format="%.2f")})
@@ -216,7 +217,7 @@ m3.metric("途经上市公司承压", f"×{parts['reach']:g}",
 m4.metric("得分", f"{entry['score']:.2f}", help="起点严重度 × 金额系数 × 途经上市公司承压（弱1、中0.5、强0）")
 
 with st.expander("局部关系图（这条路径及与它相连的其他路径）", expanded=False):
-    st.graphviz_chart(to_dot(focus_entries(ranked, index), fragility, names, highlight=0), use_container_width=True)
+    st.graphviz_chart(to_dot(focus_entries(ranked, index), fragility, names, highlight=0), width="stretch")
 
 # ---------------------------------------------------------------- ③ 证据
 st.subheader("③ 每一步的依据", divider="gray")

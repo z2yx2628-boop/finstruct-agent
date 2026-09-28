@@ -1,0 +1,74 @@
+[
+  {
+    "id": "antai_guarantee",
+    "label": "安泰集团：为山西新泰钢铁提供担保（安泰回测）",
+    "task": "guarantee",
+    "source": "data/demo/antai_guarantee.pdf",
+    "source_sha256": "91616ed5fc9e9dbfac4d66cc8e23b3768323d972dd366dc2b4d949dd55f7cb80",
+    "prediction": "data/demo/antai_guarantee.prediction.json",
+    "prediction_from": "outputs/backtest_antai_freeze/guarantee/backtest_antai_006_600408_guarantee_backtest.json",
+    "as_of": "2025-01-31",
+    "chain": "data/chain/backtest_antai_fix1",
+    "why": "回测：违约事件前 6 天；校准后担保路径排第 1（原始回测排第 2，记为部分通过）"
+  },
+  {
+    "id": "linggang_guarantee",
+    "label": "凌钢股份：为控股股东凌钢集团提供担保（凌钢回测）",
+    "task": "guarantee",
+    "source": "data/demo/linggang_guarantee.pdf",
+    "source_sha256": "1f15ad57e6c5a93c857dd171420d03649aa1bcc363d14f92ece051a88e1a8467",
+    "prediction": "data/demo/linggang_guarantee.prediction.json",
+    "prediction_from": "outputs/backtest_linggang_freeze/guarantee/backtest_linggang_033_600231_guarantee_backtest.json",
+    "as_of": "2024-04-30",
+    "chain": "data/chain/backtest_linggang_fix1",
+    "why": "样本外正例：亏损披露前约 11 个月"
+  },
+  {
+    "id": "fangda_guarantee",
+    "label": "方大特钢：为方大炭素提供担保（方大回测）",
+    "task": "guarantee",
+    "source": "data/demo/fangda_guarantee.pdf",
+    "source_sha256": "8249e44c06ec1d05c0e789b39febf6b1d1174b1fceaaaae1c6773e8a45ae75c3",
+    "prediction": "data/demo/fangda_guarantee.prediction.json",
+    "prediction_from": "outputs/analysis_freeze/guarantee/analysis_063_600507_guarantee_related.json",
+    "as_of": "2025-02-28",
+    "chain": "data/chain/analysis_v1_fix1",
+    "why": "样本外反例：有关联担保但不误报"
+  },
+  {
+    "id": "linggang_pledge",
+    "label": "凌钢股份：股东九江萍钢质押所持股份",
+    "task": "pledge",
+    "source": "data/demo/linggang_pledge.pdf",
+    "source_sha256": "84e944cef0250ef246eed711ca6d3fc557f7bf2697346f8abe8e609fab07eba2",
+    "prediction": "data/demo/linggang_pledge.prediction.json",
+    "prediction_from": "outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json",
+    "as_of": "2025-01-31",
+    "chain": "data/chain/live",
+    "why": "质押严重度按股东持股比例（10.91% 股东，判为中）"
+  },
+  {
+    "id": "ansteel_related",
+    "label": "鞍钢股份：2026 年度日常关联交易预计（最终测试文档）",
+    "task": "related_party",
+    "source": "data/demo/ansteel_related.pdf",
+    "source_sha256": "5473002d32d57035b52770cfd2d0b81e8448a9b735e7f0d018022729935de27a",
+    "prediction": "data/demo/ansteel_related.prediction.json",
+    "prediction_from": "outputs/final_test/r1/related_party/predictions_fix1/final_001_000898_related_estimate.json",
+    "as_of": "2026-09-27",
+    "chain": "data/chain/live",
+    "why": "最终盲测文档之一（修复后抽取结果）"
+  },
+  {
+    "id": "fangda_maintenance",
+    "label": "方大特钢“一条龙”检修（新闻网页）",
+    "task": "capacity",
+    "source": "data/demo/fangda_maintenance.html",
+    "source_sha256": "0df14bdc9e39d97ca11ab309174463f2dd7b3f8922bd6eb5dae6ecc9d3f5e642",
+    "prediction": "data/demo/fangda_maintenance.prediction.json",
+    "prediction_from": "outputs/final_test/r1/capacity/predictions/final_web_001.json",
+    "as_of": "2026-09-27",
+    "chain": "data/chain/live",
+    "why": "网页格式；检修事件"
+  }
+]

@@ -15,7 +15,8 @@ from src.product_layer import exposure_as_of, products  # noqa: E402
 SNAP = ROOT / "data" / "snapshots"
 TIER_COLOR = {"weak": "🔴", "medium": "🟡", "strong": "🟢"}
 
-st.title("企业承压评分", icon=":material/monitoring:")
+from src.ui import page_header  # noqa: E402
+page_header("② 企业承压", ":material/monitoring:", "这家企业扛不扛得住冲击？分数从哪来？")
 st.caption("财报层（最新法定披露期，同行排名）+ 市场层（60日超额收益、回撤、波动）+ 事件层（财报后的高风险公告）。"
            "每个等级都附原因；红线（资不抵债、负债率≥85%）和财报后事件只会使等级变差。")
 
@@ -73,7 +74,7 @@ table = [{
     "原因": r["reasons"],
 } for r in rows]
 st.caption("点击一行，查看该企业的评分拆解与数据来源。")
-picked = st.dataframe(table, use_container_width=True, hide_index=True, on_select="rerun",
+picked = st.dataframe(table, width="stretch", hide_index=True, on_select="rerun",
                       selection_mode="single-row", key=f"frag_{chosen}")
 index = picked.selection.rows[0] if picked.selection.rows else 0
 code = rows[min(index, len(rows) - 1)]["security_code"]
@@ -95,7 +96,7 @@ with left:
         flat = [{"维度": d["dimension"], "指标": m["metric"], "原值": m["value"], "同行位置": m["rank"],
                  "指标得分": m["score"], "维度得分": d["score"], "权重": d["effective_weight"], "对总分贡献": d["contribution"]}
                 for d in detail["dimensions"] for m in d["metrics"]]
-        st.dataframe(flat, hide_index=True, use_container_width=True)
+        st.dataframe(flat, hide_index=True, width="stretch")
         ok = "，与快照一致 ✓" if r["total_score"] and abs(detail["total_recomputed"] - float(r["total_score"])) < 0.05 else ""
         missing = f"；缺少数据的维度（{('、'.join(detail['missing_weight']))}）不计，权重按比例重新分配" if detail["missing_weight"] else ""
         st.caption(f"指标得分 = 在 24 家核心钢厂中的分位（0 最强、100 最弱）；维度得分 = 维度内指标平均；"
@@ -112,7 +113,7 @@ with right:
     st.markdown("**核对原始定期报告（新浪财经公告列表）**")
     links = st.columns(4)
     for col, (label, url) in zip(links, report_links(code).items()):
-        col.link_button(label, url, use_container_width=True)
+        col.link_button(label, url, width="stretch")
 
 exposure = exposure_as_of(code, chosen)
 st.markdown("**主要产品构成**（B 级：公司定期报告披露的分产品收入，东方财富主营构成；按评估日可得的最新年报）")
@@ -123,7 +124,7 @@ if exposure and exposure.get("products"):
     st.dataframe([{"产品": names.get(k, k), "占收入": f"{v['share']:.1%}" if v.get("share") is not None else "—",
                    "原文条目": v.get("items", "")} for k, v in sorted(exposure["products"].items(),
                                                              key=lambda kv: -(kv[1].get("share") or 0))],
-                 hide_index=True, use_container_width=True)
+                 hide_index=True, width="stretch")
     st.caption(f"年报期 {exposure['period'][:4] or '—'}{split}。产品暴露用于价格冲击的情景提示；"
                "经两次预先登记的检验，方向一致但不显著，不作为预测（docs/product_price_validation.md）。")
 else:
@@ -133,13 +134,13 @@ if detail is not None or version == "v1":
     g = guarantee_evidence(folder, code)
     st.markdown("**对外担保的依据公告**（评估日有效；取公告披露的累计余额与新增担保合计中的较大者）")
     if g:
-        st.dataframe(g, hide_index=True, use_container_width=True)
+        st.dataframe(g, hide_index=True, width="stretch")
     else:
         st.caption("评估日没有有效的非子公司担保记录。")
     ev = events_after_report(folder, code, metrics.get(code, {}).get("period", ""))
     st.markdown("**财报后事件**（财报可使用日之后、评估日之前发布的风险公告）")
     if ev:
-        st.dataframe(ev, hide_index=True, use_container_width=True)
+        st.dataframe(ev, hide_index=True, width="stretch")
     else:
         st.caption("无。")
 

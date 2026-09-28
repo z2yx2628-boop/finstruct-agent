@@ -1,0 +1,29 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "announcement_number": "临2025-006",
+  "company_name": "凌源钢铁股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "九江萍钢钢铁有限公司",
+      "shares": 311179639.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 100.0,
+      "total_share_capital_ratio": 10.91,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-01-20",
+      "pledge_end_date": "2028-08-23",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "鞍资（天津）融资租赁有限公司",
+      "purpose": "生产经营",
+      "source_page": 1,
+      "evidence_text": "股东名称 \n是否为控\n股股东 \n本次质押股数\n(股) \n是否为限售\n股 \n是否补\n充质押 \n质押起始\n日 \n质押到期\n日 \n质权人 \n占其所\n持股份\n比例（%） \n占公司\n总股本\n比例（%） \n质押融\n资资金\n用途 \n九江萍钢钢\n铁有限公司 \n否 \n311,179,639 \n否 \n否 \n2025 年01\n月20 日 \n2028 年08\n月23 日 \n鞍资（天\n津）融资\n租赁有限\n公司 \n100 \n10.91 \n生产经\n营",
+      "confidence": 1.0
+    }
+  ]
+}
