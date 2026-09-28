@@ -4,3 +4,5 @@ data/gold/** -text
 experiments/** -text
 # Prompts are hashed in run manifests and sent verbatim to the model.
 prompts/** -text
+# Demo-pack sources are matched by SHA-256 (offline replay).
+data/demo/*.html -text
