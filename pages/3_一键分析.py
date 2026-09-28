@@ -9,7 +9,8 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.analyze import TaskNotDetected, analyze, build_card, card_markdown, demo_cases, replay  # noqa: E402
-from src.ui import PUBLIC_NOTE, page_header, profile_button, public_mode, verdict  # noqa: E402
+from src.ui import (PUBLIC_NOTE, online_model, page_header, profile_button, public_mode, quota_check,  # noqa: E402
+                    quota_consume, verdict)
 
 TASKS = {"自动识别": None, "日常关联交易": "related_party", "对外担保": "guarantee", "产能/检修": "capacity",
          "股权质押（辅助信号）": "pledge"}
@@ -31,6 +32,7 @@ default_chain = next((c for c in ("data/chain/live", "data/chain/analysis_v1") i
 tab_demo, tab_new, tab_saved = st.tabs([":material/play_circle: 演示案例（离线可用）", ":material/upload_file: 上传新公告",
                                         ":material/history: 全部已提取结果"])
 card = None
+TIER_KEY = {"weak": "弱", "medium": "中", "strong": "强"}
 with tab_demo:
     cases = demo_cases()
     if not cases:
@@ -53,18 +55,27 @@ with tab_new:
         task_label = s1.selectbox("公告类型", list(TASKS))
         as_of = s2.date_input("评估日", value=date.today())
         chain = s3.selectbox("产业链图谱", chains, index=chains.index(default_chain), format_func=lambda c: CHAIN_LABEL.get(c, c))
-        offline = True if public_mode() else st.toggle("离线模式",
+        offline = (not online_model()) if public_mode() else st.toggle("离线模式",
                             help="不调用模型、不联网：只能分析演示包（data/demo/）里的公告，结果来自冻结系统此前对同一文件的抽取。"
                                  "关闭时正常调用模型；如果模型调用失败而文件在演示包里，也会自动改用离线回放。")
-    if public_mode():
+    if public_mode() and not online_model():
         st.caption(PUBLIC_NOTE + "这里只能分析演示包里的原文件（与演示案例相同）。")
+    elif online_model():
+        st.caption("在线版可以分析新公告（调用冻结版抽取系统）。为防止额度被滥用：每次访问最多 3 份、每份不超过 10 MB / 60 页，"
+                   "全站每日有总次数上限。分析结果不会写入实时图谱。")
     if st.button("生成风险预警", type="primary", icon=":material/bolt:", disabled=upload is None, key="run_upload"):
+        blocked = quota_check(upload.getvalue(), upload.name) if online_model() else None
+        if blocked:
+            st.warning(blocked, icon=":material/block:")
+            st.stop()
         target = ROOT / "data" / "raw" / "uploads" / upload.name
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(upload.getvalue())
         with st.status("正在分析公告", expanded=True) as status:
             try:
                 st.write("正在提取结构化事件与证据…")
+                if online_model():
+                    quota_consume()
                 card = analyze(target, TASKS[task_label], as_of.isoformat(), chain, offline=offline)
                 st.session_state["last_card"] = card
                 status.update(label="风险预警已生成", state="complete", expanded=False)
@@ -86,15 +97,23 @@ with tab_saved:
         card = build_card(doc, chosen, as_of.isoformat(), ROOT / chain)
 
 if card:
+    st.session_state["shown_card"] = card
+card = st.session_state.get("shown_card")
+
+if card:
     st.divider()
     absorb = card["can_they_absorb"]
     own = next((c for c in absorb if c.get("code") == card.get("code")), absorb[0] if absorb else None)
+    out_of_scope = not card.get("in_scope", True)
     paths = card["who_is_next"]
     level = "error" if paths and own and own["tier"] == "弱" else "warning" if paths else "success"
     summary = (f"**{card['company']}**（评估日 {card['as_of']}）：识别 {card['counts']['signals']} 个风险信号、"
                f"{card['counts']['edges']} 条关系；自身承压 **{own['tier'] if own else '未评分'}**；"
                + (f"**{len(paths)} 条传导路径需要关注**，首条：{paths[0]['path']}。" if paths else
+                  "图谱内没有可评估的传导路径：该企业及其交易对手不在评分范围，**不代表没有风险**。" if out_of_scope else
                   "没有需要关注的传导路径（风险被强企业吸收、金额不重大，或只有低严重度信号）。"))
+    if out_of_scope:
+        level = "info" if level == "success" else level
     h1, h2 = st.columns([5, 1.2], vertical_alignment="center")
     with h1:
         verdict(level, summary)
@@ -106,6 +125,32 @@ if card:
     if card.get("extraction_status") == "needs_review":
         st.warning("结构化证据检查发现需人工复核的字段，以下结果不能直接作为最终判断。", icon=":material/rule:")
     st.caption(f"来源 {card['source']} · 公告日 {card['announcement_date']} · 承压快照 {card['snapshot']}")
+    if card.get("adhoc"):
+        st.caption(":material/science: 自身承压为**临时评分**：以最近一期 24 家核心钢厂为参照现算，未写入快照、不进入排名。")
+    if out_of_scope:
+        with st.container(border=True):
+            st.markdown("**图谱外企业**：发公告的企业不在 42 家评分范围内。下面仍展示公告事实和它牵涉的全部关系；"
+                        "风险推导按“未评分”处理（继续传导但降一级），推到非上市企业时汇总如下。")
+            if card.get("unlisted_reach"):
+                st.dataframe([{"起点": r["from"], "涉及非上市企业": r["parties"], "涉及金额(亿元)": r["amount_yi"]}
+                              for r in card["unlisted_reach"]], hide_index=True, width="stretch")
+            code = card.get("code") or ""
+            if code.isdigit() and len(code) == 6 and card.get("doc_path"):
+                st.caption("它是上市公司：可以联网抓取财报和股价，以 24 家核心钢厂为参照现算一个临时承压分（约 10–30 秒）。")
+                if st.button("临时计算承压", icon=":material/science:", key="adhoc_score"):
+                    from src.adhoc_score import score_one
+                    try:
+                        with st.spinner("正在抓取财报与股价…"):
+                            row = score_one(code, card["company"], card["as_of"])
+                        doc = json.loads(Path(card["doc_path"]).read_text(encoding="utf-8"))
+                        chain_dir = Path(card.get("chain") or default_chain)
+                        chain_dir = chain_dir if chain_dir.is_absolute() else ROOT / chain_dir
+                        new = build_card(doc, card["source"], card["as_of"], chain_dir, extra_fragility={code: row})
+                        new.update({k: card[k] for k in ("task", "extraction_status", "offline_note", "doc_path", "chain") if k in card})
+                        st.session_state["shown_card"] = new
+                        st.rerun()
+                    except Exception as error:  # noqa: BLE001
+                        st.error(f"临时评分失败：{type(error).__name__}: {error}")
 
     t1, t2, t3 = st.tabs([f":material/fact_check: 发生了什么（{len(card['what_happened']) + len(card['relations'])}）",
                           ":material/monitoring: 扛不扛得住（自身风险）",

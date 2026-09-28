@@ -6873,6 +6873,8 @@ supply,601003,柳州钢铁股份有限公司,N_其他关联方,其他关联方,G
 其他
 55,000.00
 21,291.49",exact,unresolved,self,self,disclosed,2026-03-12,2026-12-31
+guarantee,N_河南南钢合力新材料股份有限公司,河南南钢合力新材料股份有限公司,N_河南南钢合力新材料科技有限公司,河南南钢合力新材料科技有限公司,,G_CITIC,0,wholly_owned_subsidiary,guarantee_provided,2500.0,,joint_and_several,2026-09-29,600282,2026-09-29,outputs/live_20260929_freeze/guarantee/live_20260929_001_600282_guarantee_live.json,2,"2026 年9 月28 日，南京钢铁股份有限公司（以下简称公司）控股子公司河南南钢合力新材料股份有限公司（以下简称河南合力）与招商银行股份有限公司安阳分行（以下简称招商银行安阳分行）签署《最高额不可撤销担保书》，河南合力对本次河南合力科技与招商银行安阳分行发生的授信业务提供连带责任保证，担保的最高限额为人民币2,500 万元。",unresolved,relationship,self,self,disclosed,2026-09-29,2029-09-29
+guarantee,600282,南京钢铁股份有限公司,N_PT.KinXiangNewEnergyTechnologiesIndonesia,PT. KinXiang New Energy Technologies Indonesia,G_CITIC,G_CITIC,1,controlled_subsidiary,guarantee_provided,18550.0,,joint_and_several,2026-09-29,600282,2026-09-29,outputs/live_20260929_freeze/guarantee/live_20260929_001_600282_guarantee_live.json,2,"同日，公司与江苏银行股份有限公司南京分行（以下简称江苏银行南京分行）签署《最高额保证合同》，公司按股权比例对本次金祥新能源与江苏银行南京分行发生的授信业务提供连带责任保证，担保的最高债权本金为人民币18,550 万元。",exact,relationship,self,self,disclosed,2026-09-29,2029-09-29
 industry,S_铁矿,铁矿,S_普钢,普钢,,,0,,,,,铁矿石（依赖度 high）,,,,data/reference/industry_links.csv,,高炉-转炉长流程的主要原料,industry,industry,self,self,industry_approx,,
 industry,S_铁矿,铁矿,S_特钢,特钢,,,0,,,,,铁矿石（依赖度 medium）,,,,data/reference/industry_links.csv,,特钢部分采用长流程,industry,industry,self,self,industry_approx,,
 industry,S_焦炭,焦炭,S_普钢,普钢,,,0,,,,,焦炭（依赖度 high）,,,,data/reference/industry_links.csv,,高炉燃料和还原剂,industry,industry,self,self,industry_approx,,
