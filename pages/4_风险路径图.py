@@ -22,7 +22,7 @@ CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/
 import pandas as pd  # noqa: E402
 
 from src.ui import page_header, profile_button  # noqa: E402
-page_header("集团信用通道", ":material/account_tree:", "风险会沿公告披露的关联交易、担保和集团关系传给谁？", grades=True,
+page_header("信用通道明细", ":material/account_tree:", "风险会沿公告披露的关联交易、担保和集团关系传给谁？", grades=True,
             about="**范围：公告披露的关系网络（A 级）**，包括**集团内**（子公司、控股股东、同一控制下企业）和"
                   "**跨集团关联方**（联营/合营企业、其他关联方，例如关联方焦化厂、贸易商向钢厂供焦炭和铁矿石）。"
                   "没有股权或人事关系的普通客户和供应商，公告不披露名字，只能在“供需情景通道”里按产品暴露（B 级）或行业（C 级）推断，"

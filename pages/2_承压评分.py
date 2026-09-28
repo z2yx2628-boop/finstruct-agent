@@ -17,7 +17,7 @@ SNAP = ROOT / "data" / "snapshots"
 TIER_COLOR = {"weak": "🔴", "medium": "🟡", "strong": "🟢"}
 
 from src.ui import deposit_block, page_header, profile_button, public_mode  # noqa: E402
-page_header("企业承压", ":material/monitoring:", "这家企业扛不扛得住冲击？分数从哪来？",
+page_header("承压评分全表", ":material/monitoring:", "这家企业扛不扛得住冲击？分数从哪来？",
             about="**三层评分**：财报层（最新法定披露期，在 24 家核心钢厂中排名）+ 市场层（60 日超额收益、回撤、波动）"
                   "+ 事件层（财报后的高风险公告）。总分越高越弱，≥60 为弱、≥40 为中。  \n"
                   "红线（资不抵债、负债率 ≥85%）和财报后事件只会使等级变差。每个等级都附原因和数据来源。")

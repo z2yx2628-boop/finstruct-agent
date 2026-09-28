@@ -12,16 +12,18 @@ sys.path.insert(0, str(ROOT))
 from src.extension import merged as with_extension  # noqa: E402
 from src.network_view import filter_paths, key_paths, overview_chart, path_rows, second_order  # noqa: E402
 from src.scenario import KINDS, build, company_name, core_mills, product_map, sector_links  # noqa: E402
-from src.ui import TIER_BADGE, page_header, verdict  # noqa: E402
+from src.ui import TIER_BADGE, next_step, page_header, verdict  # noqa: E402
 from src.unified import SCALE, credit_edges, layout, merge  # noqa: E402
 
-page_header("风险传导总图", ":material/hub:", "一家企业出事或一次冲击发生，风险会沿哪些通道、传给谁？", grades=True,
+page_header("风险传导", ":material/hub:", "一家企业出事或一次冲击发生，风险会沿哪些通道、传给谁？", grades=True,
             about="**一张图，两条通道。** 红色系是**集团信用通道**：公告披露的担保、关联交易和集团关系，经过盲测与 3 个预注册回测，"
                   "**计入风险得分**。蓝色系是**供需情景通道**：产品暴露、公告与债券募集说明书中的具名采购和销售、行业推断，"
                   "两次预注册检验不显著，**只作情景、不计分**。虚线表示仅凭集团名义或行业推断的连接。  \n"
                   "两条通道共用同一批企业和同一份承压评分。冲击从供需通道转入信用通道，必须满足衔接条件："
-                  "暴露证据为 A/B 级、有披露的收入占比、企业承压为弱或中，且只沿担保或关联交易继续推。")
-st.caption("🟥 红色系 = 集团信用通道（计分）　🟦 蓝色系 = 供需情景通道（情景，不计分）　┄ 虚线 = 集团名义或行业推断")
+                  "暴露证据为 A/B 级、有披露的收入占比、企业承压为弱或中，且只沿担保或关联交易继续推。",
+            step=3)
+st.caption("图例　🟪 紫色粗线 = 集团信用通道（计分）　🟦 蓝灰细线 = 供需情景通道（情景，不计分）　┄ 虚线 = 集团名义或行业推断　"
+           "●  节点颜色 = 企业承压（🔴 弱　🟡 中　🟢 强）")
 
 snaps = sorted((p.name for p in (ROOT / "data" / "snapshots").glob("*") if (p / "fragility.csv").exists()), reverse=True)
 CHAIN = ROOT / "data" / "chain" / "live"
@@ -39,6 +41,14 @@ def bridge(snap: str, codes: tuple[str, ...], shock: str):
     return {c: [e for e in found[c] if all(s.rule in ("R1", "R2") for s in e["steps"])] for c in codes}
 
 
+goto = st.session_state.pop("_goto_unified", None)             # arriving from 企业档案 or the home page
+if goto:
+    st.session_state["u_mode"] = "从一家企业出发"
+    if goto.get("code"):
+        st.session_state["u_company"] = goto["code"]
+    if goto.get("snapshot") in snaps:
+        st.session_state["u_snap"] = goto["snapshot"]
+
 mode = st.segmented_control("起点", ["从一家企业出发", "从一次冲击出发"], default="从一家企业出发", key="u_mode")
 c1, c2, c3 = st.columns([2, 1.2, 1.2])
 snap = c3.selectbox("评估日（承压快照）", snaps, key="u_snap")
@@ -48,6 +58,8 @@ fragility = with_extension(dict(fragility), snap)
 credit_entries, bridged, supply, bridge_note = [], [], None, ""
 if mode == "从一家企业出发":
     options = sorted(fragility, key=lambda c: (fragility[c].get("peer_group") != "core", -float(fragility[c].get("total_score") or 0)))
+    if st.session_state.get("u_company") not in options:
+        st.session_state.pop("u_company", None)
     code = c1.selectbox("企业", options, key="u_company",
                         format_func=lambda c: f"{TIER_BADGE.get(fragility[c].get('tier', ''), '')} {fragility[c]['security_name']}（{c}）")
     show_absorbed = c2.toggle("显示被吸收的路径", value=False, help="途经企业承压为强、得分为 0 的路径")
@@ -82,37 +94,40 @@ cn, ce = credit_edges(credit_entries + bridged, names, fragility)
 graph = merge(supply, cn, ce)
 if not graph["edges"]:
     st.info("这个起点在两条通道上都没有可展示的连接。")
-    st.stop()
-level = "error" if any(e["score"] > 0 for e in credit_entries) else "warning" if supply and supply["companies"] else "success"
-verdict(level, f"**{title}**" + (f"　{bridge_note}" if bridge_note else ""))
+else:
+    level = "error" if any(e["score"] > 0 for e in credit_entries) else "warning" if supply and supply["companies"] else "success"
+    verdict(level, f"**{title}**" + (f"　{bridge_note}" if bridge_note else ""))
 
-nodes, edges = layout(graph)
-cols = int(max(n["x"] for n in nodes)) + 1
-rows_n = max(sum(1 for n in nodes if n["x"] == x) for x in range(cols))
-st.vega_lite_chart(overview_chart(nodes, edges, width=min(1200, max(680, 230 * cols)), height=max(320, 70 * rows_n), rule_scale=SCALE),
-                   width="content")
+    nodes, edges = layout(graph)
+    cols = int(max(n["x"] for n in nodes)) + 1
+    rows_n = max(sum(1 for n in nodes if n["x"] == x) for x in range(cols))
+    st.vega_lite_chart(overview_chart(nodes, edges, width=min(1200, max(680, 230 * cols)), height=max(320, 70 * rows_n), rule_scale=SCALE),
+                       width="content")
 
-left, right = st.columns(2, gap="large")
-with left:
-    st.subheader("集团信用通道（计分）", divider="red")
-    rows = [dict(r, 性质="正式计分") for r in path_rows(list(enumerate(credit_entries)), names)] + \
-           [dict(r, 性质="衔接线索（不计分）") for r in path_rows(list(enumerate(bridged)), names)]
-    if rows:
-        st.dataframe(pd.DataFrame(rows).drop(columns=["排名"]), hide_index=True, width="stretch",
-                     column_config={"得分": st.column_config.NumberColumn(format="%.2f")})
-        if bridged:
-            st.caption("“衔接线索”是冲击经衔接条件转入信用通道后推出的路径：假设严重度为中，得分只作线索，不进入正式排名。")
-    else:
-        st.caption("没有经过它的计分路径。")
-    if st.button("看每一步的公告原文", icon=":material/article:", key="u_to_credit"):
-        target = code if mode == "从一家企业出发" else None
-        st.session_state["_goto_network"] = {"chain": "data/chain/live", "snapshot": snap, "company": target}
-        st.switch_page("pages/4_风险路径图.py")
-with right:
-    st.subheader("供需情景通道（不计分）", divider="blue")
-    if supply and supply["companies"]:
-        st.dataframe(pd.DataFrame([{"企业": r["name"], "承压": TIER_BADGE.get(r["tier"], "未评分"), "影响": r["effect"][:40],
-                                    "证据": r["grade"]} for r in supply["companies"]]), hide_index=True, width="stretch")
-    else:
-        st.caption("没有供需通道上的暴露企业。")
-    st.page_link("pages/5_上下游情景.py", label="调整冲击幅度、看压力指数与政策冲击", icon=":material/tune:")
+    left, right = st.columns(2, gap="large")
+    with left:
+        st.subheader("集团信用通道（计分）", divider="violet")
+        rows = [dict(r, 性质="正式计分") for r in path_rows(list(enumerate(credit_entries)), names)] + \
+               [dict(r, 性质="衔接线索（不计分）") for r in path_rows(list(enumerate(bridged)), names)]
+        if rows:
+            st.dataframe(pd.DataFrame(rows).drop(columns=["排名"]), hide_index=True, width="stretch",
+                         column_config={"得分": st.column_config.NumberColumn(format="%.2f")})
+            if bridged:
+                st.caption("“衔接线索”是冲击经衔接条件转入信用通道后推出的路径：假设严重度为中，得分只作线索，不进入正式排名。")
+        else:
+            st.caption("没有经过它的计分路径。")
+        if st.button("看每一步的公告原文", icon=":material/article:", key="u_to_credit"):
+            target = code if mode == "从一家企业出发" else None
+            st.session_state["_goto_network"] = {"chain": "data/chain/live", "snapshot": snap, "company": target}
+            st.switch_page("pages/4_风险路径图.py")
+    with right:
+        st.subheader("供需情景通道（不计分）", divider="blue")
+        if supply and supply["companies"]:
+            st.dataframe(pd.DataFrame([{"企业": r["name"], "承压": TIER_BADGE.get(r["tier"], "未评分"), "影响": r["effect"][:40],
+                                        "证据": r["grade"]} for r in supply["companies"]]), hide_index=True, width="stretch")
+        else:
+            st.caption("没有供需通道上的暴露企业。")
+        st.page_link("pages/5_上下游情景.py", label="调整冲击幅度、看压力指数与政策冲击", icon=":material/tune:")
+
+next_step("拿一份新公告试试：系统会抽出事实、判断企业扛不扛得住，并推出它会传给谁", "分析新公告", "pages/3_一键分析.py",
+          key="u_next")

@@ -8,9 +8,9 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.ui import page_header  # noqa: E402
+from src.ui import next_step, page_header  # noqa: E402
 
-page_header("验证与证据", ":material/verified:", "凭什么相信这个系统？每个说法经过了什么检验？")
+page_header("可信度：验证与证据", ":material/verified:", "凭什么相信这个系统？每个说法经过了什么检验？", step=5)
 st.info("原则：系统版本和标准答案（Gold）在运行前冻结；回测和检验的判定标准在运行前写定并提交；"
         "结果出来后才做的修改，只能称为“修复后/校准后”，与原成绩并列报告。没有通过的检验同样列出。", icon=":material/rule:")
 
@@ -96,3 +96,5 @@ st.markdown("""
 - 回测案例数量少（3 个），结论是“能在事前给出有证据的路径”，不是统计意义上的预测准确率。
 - 新一轮 6 份冻结小测已锁定系统和样本清单，但公告站点当前无法解析，尚未下载、标 Gold 或运行，不计作成绩。
 """)
+
+next_step("回到今日预警，从当天最需要关注的企业重新开始", "今日预警", "pages/0_今日看板.py", key="val_next")

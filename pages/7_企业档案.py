@@ -12,12 +12,14 @@ from src.network_view import edge_index, filter_paths, key_paths, name_of, path_
 from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
 from src.product_layer import exposure_as_of, products  # noqa: E402
 from src.profile import company_signals, fragility_rows, headline, peer_rank, snapshots, split_paths  # noqa: E402
-from src.ui import TIER_BADGE, deposit_block, page_header, verdict  # noqa: E402
+from src.ui import TIER_BADGE, UNIFIED_PAGE, deposit_block, next_step, page_header, verdict  # noqa: E402
 
 page_header("企业档案", ":material/badge:", "这家企业自身扛不扛得住？风险会从哪里传进来、传到哪里去？", grades=True,
             about="把其他页面的结果按企业重新组合：**自身风险**来自企业承压评分；**关联风险**来自集团信用通道的路径"
                   "（只含公告披露的关系，C 级情景不计入）；**产品暴露**是 B 级情景信息；**公告信号**列出抽取到的原始事件。"
-                  "本页不产生新的分数或排名。")
+                  "本页不产生新的分数或排名。  \n"
+                  "右上角“数据版本”可切换评估日和关系图谱；“回测案例”一键载入三个预注册回测当时的状态。",
+            step=2)
 
 CHAINS = {"data/chain/live": "实时图谱（每日更新）", "data/chain/backtest_antai_fix1": "安泰回测图谱",
           "data/chain/backtest_linggang_fix1": "凌钢回测图谱", "data/chain/analysis_v1_fix1": "84 份公告图谱（方大回测用）"}
@@ -44,11 +46,6 @@ if goto:
 st.session_state.setdefault("pf_snap", snaps[0])
 st.session_state.setdefault("pf_chain", "data/chain/live")
 
-cols = st.columns(len(DEMOS) + 1)
-cols[0].caption("回测演示")
-for col, (label, code, day, chain) in zip(cols[1:], DEMOS):
-    col.button(label, on_click=choose, args=(code, day, chain), width="stretch")
-
 rows = fragility_rows(st.session_state["pf_snap"])
 by_code = {r["security_code"]: r for r in rows}
 order = sorted(by_code, key=lambda c: (by_code[c].get("peer_group") != "core", by_code[c].get("peer_group", "").startswith("extension"),
@@ -56,12 +53,19 @@ order = sorted(by_code, key=lambda c: (by_code[c].get("peer_group") != "core", b
 if st.session_state.get("pf_code") not in order:
     st.session_state["pf_code"] = order[0] if order else None
 
-c1, c2, c3 = st.columns([2, 1, 1.4])
+c1, c2, c3 = st.columns([3, 1, 1], vertical_alignment="bottom")
 code = c1.selectbox("企业（按承压由弱到强排列）", order, key="pf_code",
                     format_func=lambda c: f"{TIER_BADGE.get(by_code[c]['tier'], '')} {by_code[c]['security_name']}（{c}）"
                     + ("·扩展组" if by_code[c].get("peer_group", "").startswith("extension") else ""))
-snap = c2.selectbox("评估日（承压快照）", snaps, key="pf_snap")
-chain = c3.selectbox("关系图谱", list(CHAINS), key="pf_chain", format_func=CHAINS.get)
+with c2.popover("数据版本", icon=":material/tune:", width="stretch"):
+    snap = st.selectbox("评估日（承压快照）", snaps, key="pf_snap")
+    chain = st.selectbox("关系图谱", list(CHAINS), key="pf_chain", format_func=CHAINS.get)
+with c3.popover("回测案例", icon=":material/history:", width="stretch"):
+    st.caption("载入预注册回测当时的企业、评估日和图谱")
+    for label, demo_code, day, demo_chain in DEMOS:
+        st.button(label, on_click=choose, args=(demo_code, day, demo_chain), width="stretch", key=f"demo_{demo_code}")
+if snap != snaps[0] or chain != "data/chain/live":
+    st.caption(f"当前数据版本：评估日 {snap} · {CHAINS[chain]}")
 if code is None:
     st.stop()
 rows = fragility_rows(snap)                                   # the snapshot may just have changed
@@ -191,3 +195,7 @@ with tab_events:
     else:
         st.caption(f"{CHAINS[chain]}中没有 {name} 在评估日前的公告信号。")
     st.page_link("pages/3_一键分析.py", label="分析这家企业的一份新公告", icon=":material/bolt:")
+
+# ---------------------------------------------------------------- where next
+next_step(f"看 {name} 出事时，风险会沿集团信用通道和供需通道传给谁", "风险传导", UNIFIED_PAGE, key="pf_next",
+          state={"code": code, "snapshot": snap if chain == "data/chain/live" else None}, state_key="_goto_unified")

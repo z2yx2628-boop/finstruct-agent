@@ -87,17 +87,45 @@ def freshness() -> dict[str, str]:
             "prices": last_price or "—"}
 
 
-def page_header(title: str, icon: str, question: str, grades: bool = False, about: str | None = None) -> None:
-    """Title, one caption line, and (optionally) everything explanatory folded into a single box."""
+STORY = ["今日预警", "企业档案", "风险传导", "分析新公告", "可信度"]
+UNIFIED_PAGE = "pages/8_风险传导总图.py"
+
+
+def page_header(title: str, icon: str, question: str, grades: bool = False, about: str | None = None,
+                step: int | None = None, fresh: bool = False) -> None:
+    """Title, one caption line (story step + the question the page answers), and everything explanatory
+    folded into a single box. Data freshness is shown only where asked (the home page)."""
     st.title(title, icon=icon)
-    f = freshness()
-    st.caption(f"{question}　·　数据截至 {f['snapshot']}（公告检查至 {f['announcements']}，价格至 {f['prices']}）")
+    line = question
+    if step:
+        line = f"第 {step} 步 / 共 {len(STORY)} 步　·　{question}"
+    if fresh:
+        f = freshness()
+        line += f"　·　数据截至 {f['snapshot']}（公告检查至 {f['announcements']}，价格至 {f['prices']}）"
+    st.caption(line)
     if about or grades:
         with st.expander("说明：范围、方法与证据等级", icon=":material/info:"):
             if about:
                 st.markdown(about)
             if grades:
                 st.markdown(GRADES)
+
+
+def next_step(text: str, label: str, page: str, key: str, state: dict | None = None, state_key: str | None = None) -> None:
+    """A closing box that says where the story goes next; the button carries the current company along."""
+    st.divider()
+    with st.container(border=True):
+        a, b = st.columns([3, 1], vertical_alignment="center")
+        a.markdown(f"**下一步** · {text}")
+        if b.button(label, key=key, type="primary", icon=":material/arrow_forward:", width="stretch"):
+            if state_key:
+                st.session_state[state_key] = state or {}
+            st.switch_page(page)
+
+
+def open_unified(code: str | None = None, snapshot: str | None = None) -> None:
+    """Hand a company to the 风险传导 page (it preselects it once)."""
+    st.session_state["_goto_unified"] = {"code": code, "snapshot": snapshot}
 
 
 def verdict(level: str, text: str) -> None:
