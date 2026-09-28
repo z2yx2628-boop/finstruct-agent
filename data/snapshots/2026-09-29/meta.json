@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "as_of": "2026-09-29",
+  "period": "20260630",
+  "weights": {
+    "leverage": 0.2,
+    "liquidity": 0.2,
+    "cash": 0.15,
+    "profit": 0.15,
+    "market": 0.15,
+    "contingent": 0.15
+  },
+  "signals": "all data/chain/*/signals.csv",
+  "generated_at": "2026-09-28T22:42:20+00:00"
+}
