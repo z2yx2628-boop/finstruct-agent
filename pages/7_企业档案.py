@@ -51,13 +51,15 @@ for col, (label, code, day, chain) in zip(cols[1:], DEMOS):
 
 rows = fragility_rows(st.session_state["pf_snap"])
 by_code = {r["security_code"]: r for r in rows}
-order = sorted(by_code, key=lambda c: (by_code[c].get("peer_group") != "core", -float(by_code[c]["total_score"] or 0)))
+order = sorted(by_code, key=lambda c: (by_code[c].get("peer_group") != "core", by_code[c].get("peer_group", "").startswith("extension"),
+                                      -float(by_code[c]["total_score"] or 0)))
 if st.session_state.get("pf_code") not in order:
     st.session_state["pf_code"] = order[0] if order else None
 
 c1, c2, c3 = st.columns([2, 1, 1.4])
 code = c1.selectbox("企业（按承压由弱到强排列）", order, key="pf_code",
-                    format_func=lambda c: f"{TIER_BADGE.get(by_code[c]['tier'], '')} {by_code[c]['security_name']}（{c}）")
+                    format_func=lambda c: f"{TIER_BADGE.get(by_code[c]['tier'], '')} {by_code[c]['security_name']}（{c}）"
+                    + ("·扩展组" if by_code[c].get("peer_group", "").startswith("extension") else ""))
 snap = c2.selectbox("评估日（承压快照）", snaps, key="pf_snap")
 chain = c3.selectbox("关系图谱", list(CHAINS), key="pf_chain", format_func=CHAINS.get)
 if code is None:
@@ -90,6 +92,9 @@ with tab_own:
     if not row:
         st.caption("该企业不在这一期承压评分范围内。")
     else:
+        if row.get("peer_group", "").startswith("extension"):
+            st.info(f"扩展组企业：只在本组内排名（{row.get('snapshot', '')} 评分），不进入 24 家核心钢厂排名。{row.get('caveat', '')}",
+                    icon=":material/info:")
         rank = peer_rank(rows, code)
         m1, m2, m3, m4 = st.columns(4)
         m1.metric("承压等级", TIER_BADGE.get(row["tier"], row.get("tier_label", "")))

@@ -91,6 +91,8 @@ if snap is None:
     st.stop()
 with (ROOT / "data" / "snapshots" / snap / "fragility.csv").open(encoding="utf-8-sig", newline="") as f:
     fragility = {r["security_code"]: r for r in csv.DictReader(f)}
+from src.extension import merged as _with_extension  # noqa: E402
+fragility = _with_extension(fragility, day)          # 焦煤焦炭、下游龙头按各自组内评分（不进 24 家排名）
 with (ROOT / "data" / "chain" / "live" / "edges.csv").open(encoding="utf-8-sig", newline="") as f:
     edges = [e for e in csv.DictReader(f) if is_active(e, day)]
 if snap != day:

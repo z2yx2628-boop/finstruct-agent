@@ -30,7 +30,11 @@ def snapshots() -> list[str]:
 
 
 def fragility_rows(snapshot: str) -> list[dict]:
-    return _read(ROOT / "data" / "snapshots" / snapshot / "fragility.csv")
+    """Core and other companies of the snapshot, plus extension peer groups known on that date (listed last)."""
+    from src.extension import rows as extension_rows
+    base = _read(ROOT / "data" / "snapshots" / snapshot / "fragility.csv")
+    known = {r["security_code"] for r in base}
+    return base + [r for c, r in extension_rows(snapshot).items() if c not in known]
 
 
 def peer_rank(rows: list[dict], code: str) -> tuple[int, int] | None:
