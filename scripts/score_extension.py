@@ -51,6 +51,12 @@ def main() -> None:
                 time.sleep(1.5)
             print("[updated]", m["security_code"], m["security_name"])
     period = latest_public_period(args.as_of)
+    cached = [m for m in companies if (QDIR / f"{m['security_code']}_abstract.csv").exists()]
+    if len(cached) < 5:
+        print(f"only {len(cached)} companies have cached financials; nothing written. Check the network and run again.")
+        if failures:
+            print("FAILED:", *failures, sep="\n  ")
+        return
     out = OUT / args.as_of
     out.mkdir(parents=True, exist_ok=True)
     summary = {}
