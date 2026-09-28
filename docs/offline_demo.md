@@ -37,7 +37,7 @@ python -m pytest -q
 ```
 
 `check_demo.py` 会断网、移除 `LLM_API_KEY`，然后检查：演示包文件完整且哈希一致；6 个案例都能生成卡片；
-三个回测案例的结论与 `docs/backtest_cases.md` 一致；`--pages` 时逐页渲染全部 8 个页面，并点击演示包按钮。
+三个回测案例的结论与 `docs/backtest_cases.md` 一致；`--pages` 时逐页渲染全部 9 个页面，并点击演示包按钮。
 最后一行显示“离线演示就绪”即可。
 
 现场备用：

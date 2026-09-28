@@ -101,7 +101,7 @@ def test_app_loads_without_a_result():
 
 def test_every_page_renders_without_error():
     for page in ("pages/2_承压评分.py", "pages/4_风险路径图.py", "pages/5_上下游情景.py",
-                 "pages/6_验证与证据.py", "pages/7_企业档案.py"):
+                 "pages/6_验证与证据.py", "pages/7_企业档案.py", "pages/8_风险传导总图.py"):
         app = AppTest.from_file(APP_PATH, default_timeout=30).run()
         app.switch_page(page).run()
         assert not app.exception, (page, app.exception)
@@ -126,7 +126,7 @@ def test_app_displays_event_summary():
 def test_public_mode_renders_every_page_without_update_buttons(monkeypatch):
     monkeypatch.setenv("CHAINPROOF_PUBLIC", "1")
     for page in ("pages/0_今日看板.py", "pages/1_公告结构化.py", "pages/2_承压评分.py", "pages/3_一键分析.py",
-                 "pages/4_风险路径图.py", "pages/5_上下游情景.py", "pages/6_验证与证据.py", "pages/7_企业档案.py"):
+                 "pages/4_风险路径图.py", "pages/5_上下游情景.py", "pages/6_验证与证据.py", "pages/7_企业档案.py", "pages/8_风险传导总图.py"):
         app = AppTest.from_file(APP_PATH, default_timeout=30).run()
         app.switch_page(page).run()
         assert not app.exception, (page, app.exception)

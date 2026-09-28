@@ -77,7 +77,7 @@ with right:
     for r in key_now[:4]:
         tag = " · **新增**" if r in new_paths else ""
         st.markdown(f"- {r['path']}{tag}  \n  <small>得分 {r['score']}</small>", unsafe_allow_html=True)
-    st.page_link("pages/4_风险路径图.py", label="打开披露关系传导图", icon=":material/account_tree:")
+    st.page_link("pages/8_风险传导总图.py", label="打开风险传导总图", icon=":material/account_tree:")
     st.subheader("产品价格", divider="gray")
     st.caption(f"近 {WINDOW} 个交易日；加粗为冲击（涨跌 ≥ {THRESHOLD:.0%}）  \n" + "；".join(
         f"{'**' if m['shock'] else ''}{m['product']} {m['ret']:+.1%}{'**' if m['shock'] else ''}" for m in moves) or "无价格数据")

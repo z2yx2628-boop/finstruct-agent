@@ -15,7 +15,7 @@ from src.profile import company_signals, fragility_rows, headline, peer_rank, sn
 from src.ui import TIER_BADGE, deposit_block, page_header, verdict  # noqa: E402
 
 page_header("企业档案", ":material/badge:", "这家企业自身扛不扛得住？风险会从哪里传进来、传到哪里去？", grades=True,
-            about="把其他页面的结果按企业重新组合：**自身风险**来自企业承压评分；**关联风险**来自披露关系传导路径"
+            about="把其他页面的结果按企业重新组合：**自身风险**来自企业承压评分；**关联风险**来自集团信用通道的路径"
                   "（只含公告披露的关系，C 级情景不计入）；**产品暴露**是 B 级情景信息；**公告信号**列出抽取到的原始事件。"
                   "本页不产生新的分数或排名。")
 
