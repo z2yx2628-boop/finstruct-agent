@@ -23,7 +23,7 @@ def _read(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def key_paths(chain: Path, snapshot: Path) -> tuple[list[dict], dict[str, dict], dict[str, str]]:
+def _context(chain: Path, snapshot: Path):
     as_of = snapshot.name
     fragility = {r["security_code"]: r for r in _read(snapshot / "fragility.csv")}
     equity = {r["security_code"]: float(r["equity"]) for r in _read(snapshot / "quarterly_metrics.csv") if r.get("equity")}
@@ -33,6 +33,11 @@ def key_paths(chain: Path, snapshot: Path) -> tuple[list[dict], dict[str, dict],
     names = {k: v["short_name"] for k, v in rows.items()}
     edges = [e for e in _read(chain / "edges.csv") if is_active(e, as_of)]
     graph = Graph(edges, fragility, equity, groups, listed)
+    return as_of, fragility, equity, listed, names, edges, graph
+
+
+def key_paths(chain: Path, snapshot: Path) -> tuple[list[dict], dict[str, dict], dict[str, str]]:
+    as_of, fragility, equity, listed, names, edges, graph = _context(chain, snapshot)
     paths = []
     for node, shock, severity, reason in seeds_from(_read(chain / "signals.csv"), fragility, as_of, edges, equity):
         paths += propagate(graph, node, shock, severity, reason)
@@ -139,11 +144,12 @@ def filter_paths(ranked: list[dict], rules: set[str] | None = None, min_amount_y
     return out
 
 
-def path_rows(items: list[tuple[int, dict]], names: dict[str, str]) -> list[dict]:
+def path_rows(items: list[tuple[int, dict]], names: dict[str, str], index: dict | None = None) -> list[dict]:
     rows = []
     for i, e in items:
         last = e["steps"][-1]
-        rows.append({"排名": i + 1, "传导路径": route(e, names),
+        scope = {"范围": SCOPE_LABEL[path_scope(e, index)]} if index is not None else {}
+        rows.append({"排名": i + 1, "传导路径": route(e, names), **scope,
                      "规则": "+".join(RULE_LABEL[s.rule] for s in e["steps"]),
                      "金额(亿元)": e.get("amount_yi", 0.0),
                      "终点": name_of(last.dst, names), "终点承压": TIER_LABEL.get(last.dst_tier, last.dst_tier),
@@ -427,3 +433,68 @@ def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 90
             "resolve": {"scale": {"color": "independent", "size": "independent", "shape": "independent"},
                         "legend": {"color": "independent", "shape": "independent"}},
             "config": {"view": {"stroke": None}, "font": "Microsoft YaHei, PingFang SC, sans-serif"}}
+
+
+# ---------------------------------------------------------------- group scope (display only)
+IN_GROUP_RELATIONS = {"wholly_owned_subsidiary", "controlled_subsidiary", "parent_or_controlling_shareholder",
+                      "sister_company"}
+SCOPE_LABEL = {"in_group": "集团内", "cross_group": "跨集团关联方", "industry": "行业近似"}
+
+
+def edge_scope(edge: dict) -> str:
+    """集团内 / 跨集团关联方 / 行业近似, from what the announcement itself says about the counterparty.
+    A subsidiary, the controlling shareholder or a company under common control is in the group by definition,
+    even when the unlisted counterparty's group could not be resolved (same_group = 0)."""
+    if edge.get("edge_type") in ("industry", "member_of"):
+        return "industry"
+    if edge.get("same_group") == "1" or edge.get("relationship") in IN_GROUP_RELATIONS:
+        return "in_group"
+    return "cross_group"
+
+
+def edge_index(chain: Path) -> dict[tuple[str, str, str], dict]:
+    """(src_id, dst_id, document stem) -> edge row, for looking up what a path step rests on."""
+    out = {}
+    for e in _read(chain / "edges.csv"):
+        out.setdefault((e["src_id"], e["dst_id"], Path(e.get("source_doc", "")).stem), e)
+    return out
+
+
+def step_scope(step, index: dict) -> str:
+    if step.rule == "R3":
+        return "in_group"
+    if step.rule == "R4":
+        return "industry"
+    stem = evidence_ref(step.evidence)["stem"] or ""
+    edge = index.get((step.src, step.dst, stem)) or index.get((step.dst, step.src, stem))   # guarantees run reversed
+    return edge_scope(edge) if edge else "in_group"
+
+
+def path_scope(entry: dict, index: dict) -> str:
+    """跨集团 if any step rests on a cross-group related-party relation, else 集团内."""
+    scopes = {step_scope(s, index) for s in entry["steps"]}
+    return "cross_group" if "cross_group" in scopes else "industry" if scopes == {"industry"} else "in_group"
+
+
+def scope_counts(chain: Path) -> dict[str, dict[str, float]]:
+    """Edges and disclosed amount (亿元) per scope and edge type, for the page texts."""
+    out: dict[str, dict[str, float]] = {}
+    for e in _read(chain / "edges.csv"):
+        key = f"{edge_scope(e)}:{e['edge_type']}"
+        row = out.setdefault(key, {"edges": 0, "amount_yi": 0.0})
+        row["edges"] += 1
+        row["amount_yi"] += float(e["amount_wan"]) / 1e4 if e.get("amount_wan") not in (None, "") else 0.0
+    return out
+
+
+def second_order(chain: Path, snapshot: Path, seeds: list[str], shock: str = "credit",
+                 severity: str = "medium") -> dict[str, list[dict]]:
+    """Scenario bridge: if a product shock hits these companies, where would it go next along DISCLOSED
+    relations? Same engine and rules as the key paths, seeded with an assumed severity. The result is a
+    scenario (its first step is B/C-grade product exposure) and is never added to the ranking."""
+    _, _, _, listed, _, _, graph = _context(chain, snapshot)
+    out = {}
+    for code in seeds:
+        ranked, _ = summarize(propagate(graph, code, shock, severity, "情景冲击（假设严重度：中）"), listed)
+        out[code] = [e for e in ranked if e["score"] > 0]
+    return out

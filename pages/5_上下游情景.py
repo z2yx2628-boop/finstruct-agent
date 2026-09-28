@@ -9,7 +9,7 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.network_view import SCENARIO_RULE_SCALE, overview_chart  # noqa: E402
+from src.network_view import SCENARIO_RULE_SCALE, key_paths, overview_chart, route, second_order  # noqa: E402
 from src.price_shock import THRESHOLD, WINDOW, price_moves, scenario_stress  # noqa: E402
 from src.scenario import (CAVEAT, KINDS, RULES, build, company_name, core_mills, layout, product_map, sector_links,
                           verified_product_links)  # noqa: E402
@@ -129,6 +129,50 @@ if price_change is not None:
         missing = sum(not r["quantifiable"] for r in quantified)
         if missing:
             st.caption(f"{missing} 家企业没有可核验的产品占比，因此不计算指数，不用行业均值补填。")
+
+# ---------------------------------------------------------------- bridge: operating channel -> group credit channel
+st.subheader("衔接检查：冲击能否转入集团信用通道", divider="gray")
+st.caption("上下游（经营与供需）通道和集团信用与担保通道分开计算、分开验证。只有同时满足下列条件，才把受冲击企业作为起点，"
+           "沿**担保或关联交易**（不含仅凭集团名义的“同集团”一步）继续推：① 产品暴露证据为 A/B 级；② 有披露的产品收入占比；"
+           "③ 企业承压为弱或中。冲击强度阈值尚未预先登记，因此结果只作线索，不计入风险得分。")
+BRIDGE_RULES = {"R1", "R2"}
+
+
+@st.cache_data(show_spinner="正在检查衔接条件…")
+def bridge(snap: str, codes: tuple[str, ...], shock: str):
+    chain = ROOT / "data" / "chain" / "live"
+    folder = ROOT / "data" / "snapshots" / snap
+    _, _, names = key_paths(chain, folder)
+    found = second_order(chain, folder, list(codes), shock)
+    return {c: [{"路径": route(e, names), "得分(线索)": round(e["score"], 2), "金额(亿元)": round(e.get("amount_yi", 0), 2)}
+                for e in found[c] if all(st_.rule in BRIDGE_RULES for st_ in e["steps"])] for c in codes}
+
+
+listed_hit = [r for r in result["companies"] if r.get("code") in fragility]
+eligible = [r for r in listed_hit if r["grade"] in ("A", "B") and (r.get("share") or 0) > 0 and r["tier"] in ("weak", "medium")]
+onward = bridge(snap, tuple(r["code"] for r in eligible), "supply" if kind == "outage" else "credit") if eligible else {}
+rows_b = []
+for r in listed_hit:
+    missing = [m for ok, m in ((r["grade"] in ("A", "B"), "证据仅 C 级"), ((r.get("share") or 0) > 0, "无披露占比"),
+                               (r["tier"] in ("weak", "medium"), "承压为强或未评分")) if not ok]
+    paths_r = onward.get(r["code"], [])
+    rows_b.append({"受冲击企业": r["name"], "承压": TIER.get(r["tier"], "未评分"), "证据": GRADE.get(r["grade"], r["grade"]),
+                   "披露占比": f"{r['share']:.1%}" if r.get("share") else "—",
+                   "未满足的条件": "、".join(missing) or "—",
+                   "可衔接路径": len(paths_r) if not missing else None})
+if rows_b:
+    st.dataframe(pd.DataFrame(rows_b), hide_index=True, width="stretch")
+ready = [r for r in eligible if onward.get(r["code"])]
+if not ready:
+    st.info("本情景下没有满足全部条件、并能沿担保或关联交易继续传导的企业。这说明两条通道目前还缺一个经过检验的联合案例，"
+            "而不是说冲击没有影响。", icon=":material/info:")
+else:
+    b1, b2 = st.columns([2, 1], vertical_alignment="bottom")
+    pick = b1.selectbox("查看衔接路径", [r["code"] for r in ready], format_func=lambda c: next(r["name"] for r in ready if r["code"] == c))
+    if b2.button("在传导图上看每一步的公告原文", icon=":material/account_tree:"):
+        st.session_state["_goto_network"] = {"chain": "data/chain/live", "snapshot": snap, "company": pick}
+        st.switch_page("pages/4_风险路径图.py")
+    st.dataframe(pd.DataFrame(onward[pick]), hide_index=True, width="stretch")
 
 with st.expander("每条关系的依据", expanded=False):
     names = {n["node"]: n["name"] for n in result["nodes"]}

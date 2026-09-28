@@ -6,7 +6,7 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.network_view import (DECISION_LABEL, GRADE_HELP, GRADE_LABEL, RULE_LABEL, evidence_grade, path_grade, SEVERITY_LABEL, TIER_LABEL, edge_windows,  # noqa: E402
+from src.network_view import (SCOPE_LABEL, edge_index, path_scope, step_scope, DECISION_LABEL, GRADE_HELP, GRADE_LABEL, RULE_LABEL, evidence_grade, path_grade, SEVERITY_LABEL, TIER_LABEL, edge_windows,  # noqa: E402
                               evidence_ref, filter_paths, focus_entries, key_paths, name_of, page_png,
                               overview_chart, overview_layout, path_rows, route, score_parts, source_file,
                               stop_reason, to_dot)
@@ -22,9 +22,11 @@ CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/
 import pandas as pd  # noqa: E402
 
 from src.ui import page_header, profile_button  # noqa: E402
-page_header("关联与担保传导", ":material/account_tree:", "风险会沿公告披露的关联交易、担保和集团关系传给谁？", grades=True,
-            about="**范围：集团关联与担保风险网络（原型）。** 企业之间的边来自公告披露的关联交易与担保（A 级）和集团股权关系；"
-                  "跨集团的上下游只有行业近似（C 级），默认不显示，显示时也不计入得分。  \n"
+page_header("披露关系传导", ":material/account_tree:", "风险会沿公告披露的关联交易、担保和集团关系传给谁？", grades=True,
+            about="**范围：公告披露的关系网络（A 级）**，包括**集团内**（子公司、控股股东、同一控制下企业）和"
+                  "**跨集团关联方**（联营/合营企业、其他关联方，例如关联方焦化厂、贸易商向钢厂供焦炭和铁矿石）。"
+                  "没有股权或人事关系的普通客户和供应商，公告不披露名字，只能在“上下游情景”里按产品暴露（B 级）或行业（C 级）推断，"
+                  "那部分不计入得分；这里的“显示 C 级情景路径”默认关闭。  \n"
                   "**怎么用：** 总图上点企业 = 只看经过它的路径；点连线上的金额 = 打开那条路径；也可以在清单里点一行。"
                   "下方依次是路径详情（怎么传、为什么停、得分怎么来）和每一步的公告原文。  \n"
                   "**得分** = 起点严重度 × 金额系数 × 途经上市公司承压（弱 1、中 0.5、强 0）。")
@@ -79,10 +81,10 @@ if "analysis" in chain and snap < "2025-02-01":
 @st.cache_data(show_spinner="正在推导传导路径…")
 def load(chain: str, snap: str):
     ranked, fragility, names = key_paths(ROOT / chain, ROOT / "data" / "snapshots" / snap)
-    return ranked, fragility, names, edge_windows(ROOT / chain)
+    return ranked, fragility, names, edge_windows(ROOT / chain), edge_index(ROOT / chain)
 
 
-ranked, fragility, names, windows = load(chain, snap)
+ranked, fragility, names, windows, eindex = load(chain, snap)
 if not ranked:
     st.info("该评估日下没有需要关注的传导路径。")
     st.stop()
@@ -121,11 +123,16 @@ with f_more.popover("更多筛选", icon=":material/filter_list:"):
     hide_low = st.toggle("隐藏金额为0的同集团路径", value=True,
                          help="只由“同属一个集团”构成、没有披露金额的路径信息量低；仅隐藏显示，不改变排名。")
     show_c = st.toggle("显示 C 级情景路径", value=False, help=GRADE_HELP["C"])
+    scope_pick = st.radio("关系范围", ["全部", "in_group", "cross_group"], horizontal=True,
+                          format_func=lambda k: k if k == "全部" else "只看" + SCOPE_LABEL[k],
+                          help="跨集团 = 路径中至少一步是联营/合营企业或其他关联方之间的披露交易")
 if company and company in fragility:
     with f_profile:
         profile_button(company, f"{name_of(company, names)} 档案", key="net_profile", snapshot=snap, chain=chain,
                        width="stretch")
 items = filter_paths(ranked, set(rule_pick), min_amount, company, hide_low, show_scenarios=show_c)
+if scope_pick != "全部":
+    items = [(i, e) for i, e in items if path_scope(e, eindex) == scope_pick]
 if not items:
     st.info("没有符合筛选条件的路径。")
     st.button("清除选择", on_click=reset_focus)
@@ -133,7 +140,7 @@ if not items:
 ranks = [i for i, _ in items]
 
 # which path is open: an edge click on the chart, else a row click in the list, else the top one
-table_key = f"paths_{chain}_{snap}_{'-'.join(sorted(rule_pick))}_{min_amount}_{company}_{hide_low}_{show_c}"
+table_key = f"paths_{chain}_{snap}_{'-'.join(sorted(rule_pick))}_{min_amount}_{company}_{hide_low}_{show_c}_{scope_pick}"
 rows = (st.session_state.get(table_key) or {}).get("selection", {}).get("rows") or []
 row_now = ranks[rows[0]] if rows and rows[0] < len(ranks) else None
 if row_now is not None and row_now != st.session_state.get("_seen_row"):
@@ -173,7 +180,7 @@ st.vega_lite_chart(overview_chart(nodes_df, edges_df, width=min(1150, max(640, 2
 # ---------------------------------------------------------------- ① list
 st.subheader("关键路径清单", divider="gray")
 st.caption(f"共 {len(ranked)} 条关键路径，符合筛选的 {len(items)} 条；“排名”为全部路径中的原始名次。点击一行查看详情。")
-st.dataframe(pd.DataFrame(path_rows(items, names)), hide_index=True, width="stretch",
+st.dataframe(pd.DataFrame(path_rows(items, names, eindex)), hide_index=True, width="stretch",
              on_select="rerun", selection_mode="single-row", key=table_key,
              column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f"),
                             "得分": st.column_config.NumberColumn(format="%.2f")})
@@ -221,7 +228,7 @@ st.subheader("每一步的公告依据", divider="gray")
 for k, s in enumerate(entry["steps"], 1):
     ref = evidence_ref(s.evidence)
     head = (f"第 {k} 步 · {RULE_LABEL[s.rule]}：{name_of(s.src, names)} → {name_of(s.dst, names)}"
-            f" · 证据 {GRADE_LABEL[evidence_grade(s)]}")
+            f" · {SCOPE_LABEL[step_scope(s, eindex)]} · 证据 {GRADE_LABEL[evidence_grade(s)]}")
     with st.expander(head, expanded=(k == 1)):
         if s.rule == "R3":
             st.markdown(f"**依据：** {readable(s.evidence)}")
