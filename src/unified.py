@@ -18,9 +18,11 @@ from src.scenario import TIER_LABEL
 
 CREDIT = {"R1": "担保（信用·计分）", "R2": "关联交易（信用·计分）", "R3": "同集团（信用·计分）"}
 SUPPLY = {code: f"{label}·情景" for code, label in SUPPLY_RULES.items()}
+# Company nodes are coloured by fragility (red / amber / green), so the channels use other hues: the scored
+# credit channel is purple and drawn thick, the scenario supply channel is blue-grey and drawn thin.
 SCALE = ([*CREDIT.values(), *SUPPLY.values()],
-         ["#c0392b", "#e67e22", "#922b21",                                  # credit: reds
-          "#222222", "#2e86c1", "#1f618d", "#7f8c8d", "#5b2c6f", "#16a085", "#2874a6"])   # supply: blues/greys
+         ["#7b2cbf", "#b5179e", "#5a189a",                                  # credit: purples
+          "#495057", "#4c8bc4", "#1c5d99", "#9aa5b1", "#6c8ead", "#3a7ca5", "#0b4f6c"])   # supply: blue-greys
 DASHED = {"R3", "S3"}                     # membership-only / industry-inferred links are drawn dashed
 
 
@@ -80,10 +82,15 @@ def layout(graph: dict) -> tuple[list[dict], list[dict]]:
         x1, y1, x2, y2 = float(depth[e["src"]]), y[e["src"]], float(depth[e["dst"]]), y[e["dst"]]
         amount = (e.get("amount_wan") or 0) / 1e4
         label = (CREDIT if e["channel"] == "credit" else SUPPLY)[e["rule"]]
+        credit = e["channel"] == "credit"
+        # a supply edge keeps its text only when it carries a number or named (A-grade) evidence; the rest
+        # (product-use and industry links) are many and identical, and their labels would pile up
+        text = e["effect"].split("（")[0][:10] if credit or amount or e["grade"] == "A" or len(graph["edges"]) <= 10 else ""
         edges.append({"edge": f"{e['src']}|{e['dst']}|{e['rule']}", "src": kinds[e["src"]]["name"], "dst": kinds[e["dst"]]["name"],
                       "rule": label, "rule_code": "R3" if e["rule"] in DASHED else e["rule"], "grade": e["grade"],
                       "x": x1, "y": y1, "x2": x2, "y2": y2, "mx": x1 + (x2 - x1) * 0.62, "my": y1 + (y2 - y1) * 0.62,
-                      "amount_yi": round(amount, 2), "label": e["effect"].split("（")[0][:10], "span": abs(x2 - x1),
-                      "width": 1.4 + (min(math.log10(1 + amount), 2.5) * 1.6 if amount else (e.get("share") or 0) * 3),
+                      "amount_yi": round(amount, 2), "label": text, "span": abs(x2 - x1),
+                      "width": (2.6 + min(math.log10(1 + amount), 2.5) * 1.6) if credit
+                      else 1.1 + (e.get("share") or 0) * 1.5,
                       "paths": 1, "first_path": 0, "on": True})
     return nodes, edges

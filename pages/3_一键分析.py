@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.analyze import TaskNotDetected, analyze, build_card, card_markdown, demo_cases, replay  # noqa: E402
 from src.ui import (PUBLIC_NOTE, online_model, page_header, profile_button, public_mode, quota_check,  # noqa: E402
-                    quota_consume, verdict)
+                    quota_consume, next_step, verdict)
 
 TASKS = {"自动识别": None, "日常关联交易": "related_party", "对外担保": "guarantee", "产能/检修": "capacity",
          "股权质押（辅助信号）": "pledge"}
@@ -23,7 +23,8 @@ CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/
 page_header("分析新公告", ":material/bolt:", "这份新公告意味着什么：发生了什么、企业扛不扛得住、风险会传给谁？", grades=True,
             about="**演示案例**：6 份真实公告，使用冻结系统当时保存的抽取结果，不联网、不调用模型也能用；评估日和图谱按案例自动设定。  \n"
                   "**上传新公告**：调用冻结版抽取系统（需要模型接口）；打开“离线模式”时只能分析演示包里的文件。  \n"
-                  "结果卡片先给一句结论，再分三部分：公告事实、自身风险（承压评分）、关联风险（传导路径），每条都带原文页码。")
+                  "结果卡片先给一句结论，再分三部分：公告事实、自身风险（承压评分）、关联风险（传导路径），每条都带原文页码。",
+            step=4)
 
 chains = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "data" / "chain").glob("*")
                 if (p / "edges.csv").exists() and p.name != "gold_demo")
@@ -197,4 +198,7 @@ if last and last.get("task") and (ROOT / last["source"]).exists() and last.get("
             dest = ROOT / "outputs" / "manual_freeze" / last["task"] / f"{src.parent.parent.name}.json"
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dest)
-            st.success(f"已加入：{dest.relative_to(ROOT).as_posix()}。下次在今日看板“数据更新”里点“立即更新”（可不联网）后生效。")
+            st.success(f"已加入：{dest.relative_to(ROOT).as_posix()}。下次在今日预警“数据更新”里点“立即更新”（可不联网）后生效。")
+
+next_step("看这些结论经过了哪些检验：盲测、年报抽查、预注册回测，以及没通过的检验", "可信度", "pages/6_验证与证据.py",
+          key="an_next")

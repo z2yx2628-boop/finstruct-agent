@@ -132,3 +132,21 @@ def test_public_mode_renders_every_page_without_update_buttons(monkeypatch):
         assert not app.exception, (page, app.exception)
         labels = [b.label for b in app.button]
         assert "立即更新" not in labels and "更新数据并重新评分" not in labels, page
+
+
+def test_story_pages_end_with_a_next_step():
+    for page, key in (("pages/0_今日看板.py", "home_next"), ("pages/7_企业档案.py", "pf_next"),
+                      ("pages/8_风险传导总图.py", "u_next"), ("pages/3_一键分析.py", "an_next"),
+                      ("pages/6_验证与证据.py", "val_next")):
+        app = AppTest.from_file(APP_PATH, default_timeout=30).run()
+        app.switch_page(page).run()
+        assert not app.exception, (page, app.exception)
+        assert app.button(key=key), page
+
+
+def test_a_company_is_carried_into_the_risk_map():
+    app = AppTest.from_file(APP_PATH, default_timeout=30).run()
+    app.session_state["_goto_unified"] = {"code": "600231", "snapshot": None}
+    app.switch_page("pages/8_风险传导总图.py").run()
+    assert not app.exception
+    assert app.selectbox(key="u_company").value == "600231"
