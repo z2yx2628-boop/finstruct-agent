@@ -10,6 +10,6 @@
     "market": 0.15,
     "contingent": 0.15
   },
-  "signals": "all data/chain/*/signals.csv",
-  "generated_at": "2026-09-28T22:42:20+00:00"
+  "signals": "data/chain/live/signals.csv",
+  "generated_at": "2026-09-28T23:05:23+00:00"
 }
