@@ -159,8 +159,22 @@ def _verified_downstream(b: Builder, pid: str, sign: str, as_of: str, sellers_on
 
 
 def _yi(r: dict) -> float:
-    v = float(r["amount"])
-    return v if r["unit"] == "亿元" else v / 1e4 if r["unit"] == "万元" else 0.0
+    """Money in 亿元; 0 for a volume (吨) or a unit that cannot be converted (src/amounts.py)."""
+    if r.get("amount_kind") == "volume":
+        return 0.0
+    if r.get("amount_wan"):
+        return float(r["amount_wan"]) / 1e4
+    from src.amounts import to_wan
+    wan = to_wan(r.get("amount"), r.get("unit"))
+    return wan / 1e4 if wan else 0.0
+
+
+def _share(r: dict) -> str:
+    """'，占采购总额 12.3%' from the share printed in the prospectus table, or ''."""
+    if not r.get("share"):
+        return ""
+    basis = re.sub(r"（.*?）|\(.*?\)", "", r.get("share_basis") or "占比")
+    return f"，{basis if basis.startswith('占') else '占' + basis} {float(r['share']):.1%}"
 
 
 def _prospectus_evidence(r: dict) -> str:
@@ -179,12 +193,12 @@ def _prospectus_inputs(b: Builder, pid: str, sign: str, as_of: str, top: int = 5
         old = best.get(key)
         if old is None or rank > (old["role"] == "supplier", old["period"].endswith("-12"), old["period"]):
             best[key] = r
-    for r in sorted(best.values(), key=lambda r: -_yi(r))[:top]:
+    for r in sorted((r for r in best.values() if _yi(r) > 0), key=lambda r: -_yi(r))[:top]:
         sup = b.node("N_" + r["counterparty"], r["counterparty"].replace("有限责任公司", "").replace("股份有限公司", "").replace("有限公司", ""), "企业")
         grp = b.company(r["issuer_id"]) if r["issuer_id"].isdigit() else b.node(r["issuer_id"], r["issuer"], "企业")
         label = {"supplier": "采购", "payable": "应付", "prepayment": "预付"}[r["role"]]
         b.edge(pid, sup, "S6", "A", f"收入{sign}（{r['issuer']}向其{label} {_yi(r):.1f} 亿元）", _prospectus_evidence(r), amount_wan=_yi(r) * 1e4)
-        b.edge(sup, grp, "S6", "A", f"采购成本{sign}（{label} {_yi(r):.1f} 亿元，{r['period']}）", _prospectus_evidence(r), amount_wan=_yi(r) * 1e4)
+        b.edge(sup, grp, "S6", "A", f"采购成本{sign}（{label} {_yi(r):.1f} 亿元{_share(r)}，{r['period']}）", _prospectus_evidence(r), amount_wan=_yi(r) * 1e4)
 
 
 def _prospectus_customers(b: Builder, code: str, as_of: str, top: int = 5) -> None:
@@ -193,7 +207,7 @@ def _prospectus_customers(b: Builder, code: str, as_of: str, top: int = 5) -> No
     # buyers only: top-5 customers and customers who prepaid for steel (contract liabilities). Receivables are left
     # out here: some are land, notes or finance-company balances, not steel customers (see 企业档案 for them).
     rows_ = [r for r in for_company(code, as_of) if r["role"] in ("customer", "contract_liability")
-             and r["related_party"] != "是" and r["unit"] in ("亿元", "万元")]
+             and r["related_party"] != "是" and _yi(r) > 0]
     best: dict[str, dict] = {}
     for r in rows_:
         if r["counterparty"] not in best or r["period"] > best[r["counterparty"]]["period"]:
@@ -201,7 +215,7 @@ def _prospectus_customers(b: Builder, code: str, as_of: str, top: int = 5) -> No
     for r in sorted(best.values(), key=lambda r: -_yi(r))[:top]:
         cust = b.node("N_" + r["counterparty"], r["counterparty"].replace("有限责任公司", "").replace("股份有限公司", "").replace("有限公司", ""), "企业")
         what = {"customer": "前五大客户", "contract_liability": "预收货款客户"}[r["role"]]
-        b.edge(code, cust, "S6", "A", f"供货中断（{r['issuer']}{what} {_yi(r):.1f} 亿元，{r['period']}）", _prospectus_evidence(r),
+        b.edge(code, cust, "S6", "A", f"供货中断（{r['issuer']}{what} {_yi(r):.1f} 亿元{_share(r)}，{r['period']}）", _prospectus_evidence(r),
                amount_wan=_yi(r) * 1e4)
 
 

@@ -136,7 +136,14 @@ def main() -> None:
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--signals")
     ap.add_argument("--extra", nargs="*", default=[], help="companies outside the 24-mill peer group to score")
+    ap.add_argument("--no-guarantee", action="store_true",
+                    help="historical runs (event study): no guarantee dimension and no event downgrades, because the "
+                         "announcement extraction does not cover those years; the dimension is left missing, not zero")
+    ap.add_argument("--out", help="snapshot root other than data/snapshots (e.g. data/event_study/snapshots)")
     args = ap.parse_args()
+    global SNAP
+    if args.out:
+        SNAP = ROOT / args.out
     as_of = args.as_of
     mills = select([], False)                      # the peer group is always the full core set
     extras = select(args.extra, False) if args.extra else []
@@ -184,8 +191,9 @@ def main() -> None:
         import subprocess
         subprocess.run([sys.executable, str(ROOT / "scripts" / "build_financial_indicators.py")], check=False)
 
-    signals = load_signals(args.signals)
-    add_guarantee_exposure(rows + extra_rows, signals, as_of)
+    signals = [] if args.no_guarantee else load_signals(args.signals)
+    if not args.no_guarantee:
+        add_guarantee_exposure(rows + extra_rows, signals, as_of)
     results = score(rows, signals, as_of, period, extra=extra_rows)
     rows = rows + extra_rows
     out = SNAP / as_of
@@ -202,7 +210,8 @@ def main() -> None:
     from src.fragility_view import compared_snapshot, snapshot_meta, version_note
     (out / "meta.json").write_text(json.dumps({
         "version": VERSION, "as_of": as_of, "period": period, "weights": WEIGHTS,
-        "signals": Path(args.signals).as_posix() if args.signals else "all data/chain/*/signals.csv",
+        "signals": "none (--no-guarantee)" if args.no_guarantee else
+                   Path(args.signals).as_posix() if args.signals else "all data/chain/*/signals.csv",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}, ensure_ascii=False, indent=2), encoding="utf-8")
 
     prev = previous_snapshot(as_of)

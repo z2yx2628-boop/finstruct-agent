@@ -101,9 +101,13 @@ with right:
 st.subheader("凭什么可信", divider="gray")
 summary = ROOT / "experiments" / "final_test" / "summary.json"
 final = json.loads(summary.read_text(encoding="utf-8"))["aggregate"]["related_party"] if summary.exists() else None
-t1, t2, t3, t4 = st.columns(4)
+t1, t5, t2, t3, t4 = st.columns(5)
 t1.metric("公告抽取 · 最终盲测 F1", f"{final['f1']['mean']:.1%}" if final else "—",
           help="关联交易 7 份 × 3 次，记录级 F1；冻结系统、Gold 在运行前锁定（AI 预标注、人工抽查 53/178）。修复单位缺陷后（非盲）为 92.15%")
+t5.metric("承压评分 · 预注册事件研究", "44.9% vs 12.6%",
+          help="2019–2025 年 7 个评估日 × 24 家核心钢厂：被判为“弱”的企业 12 个月内发生信用事件（硬事件或年度亏损 ≥ 净资产 5%）"
+               "的比例 vs 其他企业；提升 3.6 倍，AUC 0.75（企业重抽样区间 0.64–0.85）；2019–2023 样本外提升 2.6 倍（p = 0.035）。"
+               "事后分析：以亏损为主的事件上不优于净利率单指标")
 t2.metric("财务数据 · 年报抽查", "30 / 30", help="6 家企业 × 5 个科目，与年报原文逐位一致")
 t3.metric("风险传导 · 预注册回测", "3 个案例", help="安泰（标准 1、3 通过，2 部分通过）、凌钢（2、3 通过，1 部分通过）、方大（全部通过，无误报）")
 t4.metric("上下游产品层 · 预注册检验", "2 次未显著", help="利润检验未通过；股价检验方向一致但 p = 0.28。因此只作情景提示")

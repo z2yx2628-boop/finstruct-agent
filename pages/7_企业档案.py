@@ -149,24 +149,58 @@ with tab_links:
             st.session_state["_goto_network"] = {"chain": chain, "snapshot": snap, "company": code}
             st.switch_page("pages/4_风险路径图.py")
 
-# ---------------------------------------------------------------- named trading partners (bond prospectuses)
+# ---------------------------------------------------------------- customers and suppliers: how much, what share, how long
 with tab_chain:
-    from src.prospectus_links import DIRECTION, ROLE_LABEL, for_company
-    partners = for_company(code, snap)
-    if not partners:
-        st.caption("还没有收集到该企业或其集团的债券募集说明书。已收集：河钢、鞍钢、包钢、沙钢的集团或上市公司说明书。")
-    else:
-        st.caption("来源：该企业或其所属集团的债券募集说明书中“前五大”表（A 级：写明对方名称和金额）。"
-                   "“是否关联方”照抄原表；非关联方就是公开材料里少见的**跨集团真实交易对手**。数字尚未逐行人工核对。")
-        for side, label in (("upstream", "上游：供应商、预付与应付"), ("downstream", "下游：客户、应收与合同负债")):
-            part = [r for r in partners if DIRECTION.get(r["role"]) == side]
-            if part:
-                st.markdown(f"**{label}**")
-                st.dataframe(pd.DataFrame([{"表": ROLE_LABEL.get(r["role"], r["role"]), "对方": r["counterparty"],
-                                            "上市代码": r["counterparty_code"], "金额": f"{r['amount']} {r['unit']}",
-                                            "期末": r["period"], "关联方": r["related_party"], "说明": r["note"],
-                                            "出处": f"{r['issuer']}·{r['source_title'][:22]}… 第{r['page']}页"} for r in part]),
-                             hide_index=True, width="stretch")
+    from src.supply_relations import SIDE, concentration, summary
+    conc = concentration(code, snap)
+    if conc:
+        st.markdown("**客户与供应商集中度**（年报“前五名客户 / 供应商”，A 级：公司自己披露）")
+        latest = {side: max((c for c in conc if c["side"] == side), key=lambda c: c["fy"]) for side in ("customer", "supplier")
+                  if any(c["side"] == side for c in conc)}
+        cols = st.columns(4)
+        for col, side, label in ((cols[0], "customer", "前五大客户占销售"), (cols[2], "supplier", "前五大供应商占采购")):
+            c = latest.get(side)
+            if not c:
+                continue
+            col.metric(f"{label}（{c['fy']}）", f"{c['top5_share']:.1%}" if c["top5_share"] is not None else "—",
+                       help=f"前五名合计 {c['top5_yi']:.2f} 亿元" if c["top5_yi"] else None)
+            nxt = cols[1] if side == "customer" else cols[3]
+            nxt.metric("其中关联方" if c["related_share"] is not None else "最大单一对象",
+                       f"{c['related_share']:.1%}" if c["related_share"] is not None else
+                       (f"{c['largest_share']:.1%}" if c["largest_share"] is not None else "—"),
+                       help=(f"最大单一{'客户' if side == 'customer' else '供应商'}占 {c['largest_share']:.1%}；"
+                             if c["largest_share"] is not None else "") +
+                            (f"年度{'销售' if side == 'customer' else '采购'}总额约 {c['total_yi']:.0f} 亿元（前五名金额 ÷ 其占比）"
+                             if c["total_yi"] else ""))
+        st.dataframe(pd.DataFrame([{"年度": c["fy"], "方向": "客户（销售）" if c["side"] == "customer" else "供应商（采购）",
+                                    "前五名合计(亿元)": c["top5_yi"], "占总额": c["top5_share"], "其中关联方": c["related_share"],
+                                    "最大单一": c["largest_share"], "年度总额(亿元)": c["total_yi"],
+                                    "出处": f"{c['source']} 第{c['page']}页" + ("" if c["check"] == "ok" else f"（{c['check']}）")}
+                                   for c in conc]), hide_index=True, width="stretch",
+                     column_config={k: st.column_config.NumberColumn(format="percent") for k in ("占总额", "其中关联方", "最大单一")} |
+                                   {k: st.column_config.NumberColumn(format="%.2f") for k in ("前五名合计(亿元)", "年度总额(亿元)")})
+    partners = summary(code, snap)
+    if not (conc or partners):
+        st.caption("还没有该企业的年报前五名表、募集说明书或关联交易金额。")
+    for side in ("upstream", "downstream"):
+        part = [r for r in partners if r["direction"] == side]
+        if not part:
+            continue
+        st.markdown(f"**{SIDE[side]}**（按占比排序；金额统一为亿元，销量单列）")
+        st.dataframe(pd.DataFrame([{
+            "对方": r["counterparty"], "披露主体": "本公司" if r["company_id"] == code else r["company_name"],
+            "关联方": r["related_party"], "年份": r["year"], "口径": r["amount_type"],
+            "金额(亿元)": r["amount_yi"], "销量": r["quantity"], "占比": r["share"],
+            "占比口径": (r["share_basis"] or "") + (f"（{r['share_method']}）" if r["share_method"] else ""),
+            "实际发生年数": r["years_seen"] or None, "连续年数": r["run_years"] or None,
+            "来源": f"{r['source_type']}：{r['source'][:40]}"} for r in part]),
+            hide_index=True, width="stretch",
+            column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f"),
+                           "占比": st.column_config.NumberColumn(format="percent")})
+    if partners:
+        st.caption("口径说明：“预计额度”是关联交易公告给出的下一年上限，不算作实际发生的年份；“期末余额”是应收、预付等余额，"
+                   "不是全年交易额；占比优先用原表披露，没有时用公司当年营业收入（销售）或年度采购总额（采购；缺年报时用营业成本近似）计算。"
+                   "匿名的“客户一”无法跨年追踪，不计入连续年数。")
 
 # ---------------------------------------------------------------- product exposure
 with tab_products:
