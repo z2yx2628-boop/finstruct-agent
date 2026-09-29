@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "as_of": "2022-04-30",
+  "period": "20220331",
+  "weights": {
+    "leverage": 0.2,
+    "liquidity": 0.2,
+    "cash": 0.15,
+    "profit": 0.15,
+    "market": 0.15,
+    "contingent": 0.15
+  },
+  "signals": "none (--no-guarantee)",
+  "generated_at": "2026-09-29T10:17:34+00:00"
+}
