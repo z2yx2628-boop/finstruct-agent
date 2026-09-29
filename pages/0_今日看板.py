@@ -10,17 +10,21 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.fragility_view import snapshot_meta  # noqa: E402
+from src.network_view import NATURE_COLOR, risk_sources, seed_nature  # noqa: E402
 from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
-from src.ui import (UNIFIED_PAGE, next_step, online_model, open_unified, page_header, profile_button,  # noqa: E402
-                    public_mode, verdict)
+from src.ui import (UNIFIED_PAGE, glossary, next_step, online_model, open_unified, page_header,  # noqa: E402
+                    profile_button, public_mode, verdict)
 
-page_header("链证 · 钢铁产业链风险传导预警", ":material/dashboard:", "今天有什么风险？先看哪家企业？",
-            grades=True, step=1, fresh=True,
-            about="链证把上市公司公告变成可核查的风险链条：**公告事实**（关联交易、担保、产能、质押）→ "
-                  "**企业承压**（财报、市场、事件三层评分）→ **风险传导**（沿公告披露的关系传给谁）。"
+page_header("链证 · 钢铁产业链风险传导预警", ":material/dashboard:", "今天谁可能先出问题？会传给谁？",
+            step=1, fresh=True,
+            about="链证分两段预警：**① 风险源预警**——谁可能先出问题（公告中的风险事件 + 承压能力评分）；"
+                  "**② 风险传导预警**——它的问题会沿担保、关联交易和集团关系传给谁、涉及多少钱。"
                   "页面上的每个结论都能点回公告原文和页码。  \n"
                   "**建议阅读顺序**（顶部导航从左到右）：① 今日预警 → ② 企业档案 → ③ 风险传导 → ④ 分析新公告 → ⑤ 可信度。"
                   "“明细工具”里是每一层的完整表格与参数，供深入核查。")
+
+
+glossary()
 
 
 def read(path: Path) -> list[dict]:
@@ -41,14 +45,17 @@ key_now = [r for r in (read(paths[-1]) if paths else []) if float(r["score"]) > 
 key_before = {r["path"] for r in read(paths[-2])} if len(paths) > 1 else set()
 new_paths = [r for r in key_now if key_before and r["path"] not in key_before]
 moves = price_moves(live[-1].name if live else "9999-12-31")
-shocks = [m for m in moves if m["shock"]]
 
-# ---------------------------------------------------------------- conclusion first
-parts = [f"{len(weak)} 家企业承压为弱" + (f"（新进入 {len(new_weak)} 家）" if new_weak else ""),
-         f"{len(key_now)} 条关键风险路径" + (f"（新增 {len(new_paths)} 条）" if new_paths else ""),
-         f"{len(shocks)} 个产品价格冲击" if shocks else "产品价格无明显冲击"]
-verdict("error" if new_weak or new_paths else "warning" if weak or key_now else "success",
-        f"**今日结论**（{live[-1].name if live else '—'}）：" + "；".join(parts) + "。")
+
+@st.cache_data(show_spinner="正在识别风险源…")
+def sources(snapshot: str) -> list[dict]:
+    return risk_sources(ROOT / "data" / "chain" / "live", ROOT / "data" / "snapshots" / snapshot)
+
+
+src_all = sources(live[-1].name) if live else []
+facts = [r for r in src_all if r["nature"] == "已发生事件"]
+exposures = [r for r in src_all if r["nature"] == "风险敞口"]
+shocks = [m for m in moves if m["shock"]]
 
 RULE_WORD = {"R1": "担保", "R2": "关联交易", "R3": "同集团", "R4": "集团名义"}
 
@@ -59,43 +66,87 @@ def short_reasons(text: str, n: int = 2) -> str:
     return "；".join(parts[:n]) + ("…" if len(parts) > n else "")
 
 
-m1, m2, m3 = st.columns(3)
-m1.metric("承压为弱的企业", len(weak),
-          delta=(len(weak) - sum(1 for r in before.values() if r["tier"] == "weak")) if before else None, delta_color="inverse",
-          help="24 家核心钢厂中承压评分为弱的企业数；delta = 与上一期相比")
-m2.metric("关键风险路径", len(key_now), delta=len(new_paths) if key_before else None, delta_color="inverse",
-          help="集团信用通道上得分 > 0 的路径；delta = 与上一期相比新增的路径数")
-m3.metric(f"产品价格冲击（{WINDOW} 日涨跌 ≥ {THRESHOLD:.0%}）", len(shocks))
+def badge(nature: str) -> str:
+    return f":{NATURE_COLOR.get(nature, 'gray')}-badge[{nature}]"
+
+
+# ---------------------------------------------------------------- the day in one sentence
+day = live[-1].name if live else "—"
+said = []
+if facts:
+    said.append(f"**{len(facts)} 起已发生的风险事件**（" + "；".join(f"{r['name']}：{r['kind_label']}"
+                                                     for r in facts[:2]) + ("等" if len(facts) > 2 else "") + "）")
+said.append(f"**{len(exposures)} 个风险敞口**" if exposures else "没有新的风险敞口")
+said.append(f"**{len(weak)} 家企业抗冲击能力弱**" + (f"（新进入 {len(new_weak)} 家）" if new_weak else ""))
+top = key_now[0] if key_now else None
+tail = f"；得分最高的传导路径是 **{top['path']}**" if top else "；暂无得分为正的传导路径"
+verdict("error" if facts or new_weak or new_paths else "warning" if weak or key_now else "success",
+        f"**今日结论**（{day}）：" + "，".join(said) + tail + "。")
+
+# ---------------------------------------------------------------- the four questions, left to right
+steps = [("① 发生了什么", len(facts), "已发生事件", "公告里已公开的事实：冻结、风险警示、违约、停产等"),
+         ("② 谁有敞口", len(exposures), "风险敞口", "别人出事才会变成损失：担保、质押、不透明的借款方"),
+         ("③ 扛不扛得住", len(weak), "模型预警", "抗冲击能力弱：负债、偿债、现金流、盈利、股价、担保"),
+         ("④ 会传给谁", len(key_now), None, "沿担保、关联交易、同集团关系传给其他上市公司")]
+cols = st.columns([1, 0.08, 1, 0.08, 1, 0.08, 1], vertical_alignment="center")
+for k, (title, n, nature, note) in enumerate(steps):
+    with cols[2 * k].container(border=True, height=150):
+        st.markdown(f"**{title}**" + (f"　{badge(nature)}" if nature else "　:gray-badge[传导]"))
+        st.markdown(f"<span style='font-size:2rem;font-weight:700'>{n}</span>", unsafe_allow_html=True)
+        st.caption(note)
+    if k < 3:
+        cols[2 * k + 1].markdown("<div style='text-align:center;font-size:1.6rem;color:#999'>→</div>", unsafe_allow_html=True)
 reports = sorted((ROOT / "data" / "live").glob("report_*.md"))
 
-# ---------------------------------------------------------------- what to look at
-left, right = st.columns(2, gap="large")
+# ---------------------------------------------------------------- sources (stage 1) and where they go (stage 2)
+left, right = st.columns([1.05, 1], gap="large")
 with left:
-    st.subheader("先看这些企业", divider="red")
+    st.subheader("风险源：谁可能先出问题", divider="red")
+    for nature, rows, empty in (("已发生事件", facts, "评估日前 12 个月内，公告中没有已发生的信用事件或停产。"),
+                                ("风险敞口", exposures, "没有中、高严重度的风险敞口。")):
+        st.markdown(f"{badge(nature)}　" + ("公告中已公开的事实" if nature == "已发生事件" else "别人出事才会变成损失的承诺"))
+        if not rows:
+            st.caption(empty)
+        for i, r in enumerate(rows[:5]):
+            with st.container(border=True):
+                a, b = st.columns([5, 1.3], vertical_alignment="center")
+                reach = ("　→ 可能波及 " + "、".join(r["reached"][:3]) + ("等" if len(r["reached"]) > 3 else "")) if r["reached"] else ""
+                a.markdown(f"**{r['name']}** · {r['kind_label']} · 严重度{r['severity']}  \n"
+                           f"<small>{r['reason'][:80]}{reach}</small>", unsafe_allow_html=True)
+                if r["listed"] and r["node"].isdigit():
+                    with b:
+                        profile_button(r["node"], "档案", key=f"home_src_{nature}_{i}", width="stretch")
+    st.markdown(f"{badge('模型预警')}　尚未出事，但抗冲击能力弱（0–100 分，≥ 60 为弱，越高越脆弱）")
     if not weak:
-        st.caption("今天没有承压为弱的企业。")
+        st.caption("今天没有抗冲击能力弱的企业。")
     for r in weak:
-        a, b = st.columns([5, 1.2], vertical_alignment="center")
-        tag = " · **新进入**" if r in new_weak else ""
-        a.markdown(f"🔴 **{r['security_name']}** · {r['total_score']} 分{tag}  \n"
-                   f"<small>{short_reasons(r['reasons'])}</small>", unsafe_allow_html=True)
-        with b:
-            profile_button(r["security_code"], "档案", key=f"home_{r['security_code']}", width="stretch")
+        with st.container(border=True):
+            a, b = st.columns([5, 1.3], vertical_alignment="center")
+            tag = " · **新进入**" if r in new_weak else ""
+            a.markdown(f"**{r['security_name']}** · {r['total_score']} 分{tag}  \n<small>{short_reasons(r['reasons'])}</small>",
+                       unsafe_allow_html=True)
+            with b:
+                profile_button(r["security_code"], "档案", key=f"home_{r['security_code']}", width="stretch")
 with right:
-    st.subheader("得分最高的传导路径", divider="violet")
+    st.subheader("传导：会传给谁", divider="violet")
+    st.caption("从左边的风险源出发，沿担保、关联交易和集团关系推出的得分最高的路径；标签是起点的性质")
     if not key_now:
         st.caption("没有需要关注的传导路径。")
-    for i, r in enumerate(key_now[:5]):
-        a, b = st.columns([5, 1.2], vertical_alignment="center")
-        tag = " · **新增**" if r in new_paths else ""
-        via = " → ".join(RULE_WORD.get(x, x) for x in (r.get("rules") or "").split("+") if x)
-        amount = f" · 涉及 {float(r['amount_yi']):.2f} 亿元" if float(r.get("amount_yi") or 0) > 0 else ""
-        a.markdown(f"**{r['path']}**{tag}  \n<small>得分 {r['score']} · 经 {via}{amount}</small>", unsafe_allow_html=True)
-        if b.button("传导图", key=f"home_path_{i}", icon=":material/hub:", width="stretch"):
-            open_unified(r["seed"], live[-1].name if live else None)
-            st.switch_page(UNIFIED_PAGE)
-    st.caption(f"产品价格（近 {WINDOW} 个交易日，加粗为冲击）：" + ("；".join(
-        f"{'**' if m['shock'] else ''}{m['product']} {m['ret']:+.1%}{'**' if m['shock'] else ''}" for m in moves) or "无价格数据"))
+    for i, r in enumerate(key_now[:6]):
+        with st.container(border=True):
+            a, b = st.columns([5, 1.3], vertical_alignment="center")
+            tag = "　:green-badge[新增]" if r in new_paths else ""
+            via = " → ".join(RULE_WORD.get(x, x) for x in (r.get("rules") or "").split("+") if x)
+            amount = f" · 涉及 {float(r['amount_yi']):.2f} 亿元" if float(r.get("amount_yi") or 0) > 0 else ""
+            a.markdown(f"{badge(seed_nature(r.get('reason', '')))}{tag}  \n**{r['path']}**  \n"
+                       f"<small>得分 {r['score']} · 经 {via}{amount}</small>", unsafe_allow_html=True)
+            if b.button("传导图", key=f"home_path_{i}", icon=":material/hub:", width="stretch"):
+                open_unified(r["seed"], live[-1].name if live else None)
+                st.switch_page(UNIFIED_PAGE)
+    st.markdown(f"{badge('情景假设')}　产品价格（近 {WINDOW} 个交易日，加粗为涨跌 ≥ {THRESHOLD:.0%}）")
+    st.caption("；".join(f"{'**' if m['shock'] else ''}{m['product']} {m['ret']:+.1%}{'**' if m['shock'] else ''}" for m in moves)
+               or "无价格数据")
+    st.page_link("pages/5_上下游情景.py", label="假设一次价格、停产或政策冲击，看会波及谁", icon=":material/swap_horiz:")
 
 # ---------------------------------------------------------------- trust (one line of numbers; details on 可信度)
 st.subheader("凭什么可信", divider="gray")

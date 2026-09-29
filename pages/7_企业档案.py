@@ -93,6 +93,8 @@ tab_own, tab_links, tab_chain, tab_products, tab_events = st.tabs(
 
 # ---------------------------------------------------------------- own risk
 with tab_own:
+    st.caption("自身风险 = 这家企业会不会成为**风险源**。抗冲击能力（承压评分）：在 24 家核心钢厂中比较杠杆、短期偿债、造血、盈利、市场、"
+               "对外担保六方面，0–100 分，**越高越脆弱**，≥ 60 为弱；它是模型预警，不是违约概率。公告中已发生的冻结、逾期、风险警示等事件会直接下调等级。")
     if not row:
         st.caption("该企业不在这一期承压评分范围内。")
     else:
@@ -101,7 +103,7 @@ with tab_own:
                     icon=":material/info:")
         rank = peer_rank(rows, code)
         m1, m2, m3, m4 = st.columns(4)
-        m1.metric("承压等级", TIER_BADGE.get(row["tier"], row.get("tier_label", "")))
+        m1.metric("抗冲击能力", TIER_BADGE.get(row["tier"], row.get("tier_label", "")))
         m2.metric("总分（越高越弱）", row["total_score"] or "—")
         m3.metric("核心钢厂中排名", f"第 {rank[0]} 弱 / {rank[1]}" if rank else "非核心样本")
         m4.metric("财报后风险事件", row.get("events_after_report") or "0")

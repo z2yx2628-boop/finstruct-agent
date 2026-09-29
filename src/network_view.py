@@ -8,6 +8,7 @@ from pathlib import Path
 
 from src.entity_resolver import ROOT, groups_as_of, load_entities
 from src.propagation import SEVERITY_WEIGHT, TIER_WEIGHT, Graph, propagate, seeds_from, summarize
+from src.live_events import chain_signals
 from src.validity import is_active
 
 TIER_STYLE = {"weak": ("#fde2e2", "#c0392b"), "medium": ("#fff4d6", "#b9770e"),
@@ -39,10 +40,67 @@ def _context(chain: Path, snapshot: Path):
 def key_paths(chain: Path, snapshot: Path) -> tuple[list[dict], dict[str, dict], dict[str, str]]:
     as_of, fragility, equity, listed, names, edges, graph = _context(chain, snapshot)
     paths = []
-    for node, shock, severity, reason in seeds_from(_read(chain / "signals.csv"), fragility, as_of, edges, equity):
+    for node, shock, severity, reason in seeds_from(chain_signals(chain, as_of), fragility, as_of, edges, equity):
         paths += propagate(graph, node, shock, severity, reason)
     ranked, _ = summarize(paths, listed)
     return ranked, fragility, names
+
+
+SOURCE_KIND = {"weak": "抗冲击能力弱（财务与市场）", "signal": "公告风险事件", "opaque": "财务不公开的被担保方"}
+SEVERITY_CN = {"high": "高", "medium": "中", "low": "低"}
+SIGNAL_CN = {"credit_event": "已发生的信用事件", "credit_exposure": "大额对外担保（或有负债）",
+             "share_pledge": "股东股权质押", "supply_disruption": "停产或供应中断", "capacity_reduction": "减产或检修"}
+# What a risk source IS - shown on every source and every path, so a model warning is never mistaken for a fact:
+#   已发生事件  something that happened and was announced (frozen accounts, risk warning, default, outage ...)
+#   风险敞口    a commitment that turns into a loss only if someone else fails (guarantees, pledges, opaque borrowers)
+#   模型预警    nothing has happened; the fragility score says the company absorbs shocks badly
+NATURE_COLOR = {"已发生事件": "red", "风险敞口": "orange", "模型预警": "violet", "情景假设": "blue"}
+FACT_SIGNALS = {"credit_event", "supply_disruption", "capacity_reduction"}
+
+
+def seed_nature(reason: str) -> str:
+    """已发生事件 / 风险敞口 / 模型预警 from a seed reason (as written by seeds_from)."""
+    if reason.startswith("承压评分为弱"):
+        return "模型预警"
+    if reason.startswith("未评分的非子公司被担保方"):
+        return "风险敞口"
+    m = re.match(r"\s*(\d{4}-\d{2}-\d{2})?\s*(\w+)：", reason)
+    return "已发生事件" if m and m.group(2) in FACT_SIGNALS else "风险敞口"
+
+
+def readable_reason(reason: str) -> str:
+    m = re.match(r"\s*(\d{4}-\d{2}-\d{2})?\s*(\w+)：", reason)
+    if m and m.group(2) in SIGNAL_CN:
+        reason = reason.replace(f"{m.group(2)}：", f"{SIGNAL_CN[m.group(2)]}：", 1).strip()
+    for code, cn in (("guarantee_provided", "已提供担保"), ("guarantee_limit", "担保额度"), ("guarantee_balance", "担保余额")):
+        reason = reason.replace(code, cn)
+    return re.sub(r"（(?:outputs/|https?://)[^）]*）$", "", reason).strip()
+
+
+def risk_sources(chain: Path, snapshot: Path) -> list[dict]:
+    """The ORIGINAL risks (stage 1), before any propagation: every seed the path search starts from, what it is
+    (fact / exposure / model warning), and which other listed companies its scored paths reach (stage 2)."""
+    as_of, fragility, equity, listed, names, edges, graph = _context(chain, snapshot)
+    out = []
+    for node, shock, severity, reason in seeds_from(chain_signals(chain, as_of), fragility, as_of, edges, equity):
+        kind = ("weak" if reason.startswith("承压评分为弱") else "opaque" if reason.startswith("未评分的非子公司被担保方")
+                else "signal")
+        m = re.match(r"\s*(\d{4}-\d{2}-\d{2})?\s*(\w+)：", reason)
+        label = SIGNAL_CN.get(m.group(2), SOURCE_KIND[kind]) if kind == "signal" and m else SOURCE_KIND[kind]
+        ranked, _ = summarize(propagate(graph, node, shock, severity, reason), listed)
+        reached = {s.dst for e in ranked if e["score"] > 0 for s in e["steps"] if s.dst in listed and s.dst != node}
+        nature = seed_nature(reason)
+        text = readable_reason(reason)
+        event = re.match(r"^(\d{4}-\d{2}-\d{2} )?已发生的信用事件：([^：]+)：(.*)$", text)
+        if event:                                     # title-recognised event: say what it is, then the title
+            label, text = event.group(2), (event.group(1) or "") + event.group(3)
+        out.append({"node": node, "name": name_of(node, names), "kind": kind, "kind_label": label, "nature": nature,
+                    "channel": "供应中断" if shock == "supply" else "信用", "severity": SEVERITY_CN.get(severity, severity),
+                    "reason": text, "date": (m.group(1) or "") if m else "",
+                    "tier": fragility.get(node, {}).get("tier", ""), "reached": sorted(name_of(n, names) for n in reached),
+                    "listed": node in listed})
+    order = {"已发生事件": 0, "风险敞口": 1, "模型预警": 2}
+    return sorted(out, key=lambda r: (order[r["nature"]], r["severity"] != "高", -len(r["reached"]), r["name"]))
 
 
 def name_of(node: str, names: dict[str, str]) -> str:

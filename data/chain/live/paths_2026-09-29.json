@@ -1366,9 +1366,9 @@
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共3行，合计87553.31999999999万元；最大一行）采购商品/提供服务\r\n鞍山钢铁集团\r\n有限公司\r\n接受支持\r\n性服务\r\n市场化原\r\n则\r\n55,",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共3行，合计87553.32万元；最大一行）采购商品/提供服务\r\n鞍山钢铁集团\r\n有限公司\r\n接受支持\r\n性服务\r\n市场化原\r\n则\r\n55,025.92\r\n4",
         "note": "",
-        "amount_wan": 87553.31999999999
+        "amount_wan": 87553.32
       }
     ]
   },
@@ -1724,9 +1724,9 @@
         "dst_tier": "unknown",
         "decision": "weakened",
         "basis": "disclosed",
-        "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共3行，合计87553.31999999999万元；最大一行）采购商品/提供服务\r\n鞍山钢铁集团\r\n有限公司\r\n接受支持\r\n性服务\r\n市场化原\r\n则\r\n55,",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_014_000761_related_estimate.json 第2页：（共3行，合计87553.32万元；最大一行）采购商品/提供服务\r\n鞍山钢铁集团\r\n有限公司\r\n接受支持\r\n性服务\r\n市场化原\r\n则\r\n55,025.92\r\n4",
         "note": "",
-        "amount_wan": 87553.31999999999
+        "amount_wan": 87553.32
       }
     ]
   },
@@ -1936,6 +1936,196 @@
         "evidence": "data/reference/entities.csv：同属集团 G_ANSTEEL",
         "note": "承压为强，风险在此被吸收",
         "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "E_SHANGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：山东钢铁集团有限公司及其子公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n2,800,266\r\n1,974,904",
+        "note": "集团参照等级（52.7分）",
+        "amount_wan": 1974904.0
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东耐火材料集团有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：1.山东耐火材料集团有限公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n4,096\r\n10,000",
+        "note": "",
+        "amount_wan": 10000.0
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东金岭矿业股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：2.山东金岭矿业股份有限公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n15,000\r\n50,000",
+        "note": "",
+        "amount_wan": 50000.0
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱芜钢铁集团有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：3.莱芜钢铁集团有限公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n220,000\r\n130,000",
+        "note": "",
+        "amount_wan": 130000.0
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东钢铁集团国际贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：（共2行，合计3160000.0万元；最大一行）4.山东钢铁集团国际贸易有限公司及其\r\n子公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n1,512,000\r\n",
+        "note": "",
+        "amount_wan": 3160000.0
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东钢铁集团日照国际贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：4.2 山东钢铁集团日照国际贸易有限\r\n公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n107,000\r\n110,000",
+        "note": "",
+        "amount_wan": 110000.0
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东莱钢国际贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：4.3 山东莱钢国际贸易有限公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n240,000\r\n260,000",
+        "note": "",
+        "amount_wan": 260000.0
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山钢资本控股(深圳)有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：5.山钢资本控股(深圳)有限公司及其子\r\n公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n5,422\r\n15,044",
+        "note": "",
+        "amount_wan": 15044.0
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱芜钢铁集团银山型钢有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：6.莱芜钢铁集团银山型钢有限公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n1,040,044\r\n0",
+        "note": "",
+        "amount_wan": 0.0
+      }
+    ]
+  },
+  {
+    "seed": "600022",
+    "seed_reason": "2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "immaterial",
+        "basis": "disclosed",
+        "evidence": "outputs/analysis_freeze/related_party/analysis_040_600022_related_estimate.json 第5页：宝山钢铁股份有限公司\r\n向关联方购买原料动\r\n力、接受劳务等\r\n2,703\r\n0",
+        "note": "金额低于对方净资产的1%",
+        "amount_wan": 0.0
       }
     ]
   },
@@ -2720,14 +2910,14 @@
   },
   {
     "seed": "600581",
-    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；单一维度极差：杠杆100分；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）",
+    "seed_reason": "2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）",
     "steps": [
       {
         "rule": "R3",
         "src": "600581",
         "dst": "600019",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "high",
         "dst_tier": "strong",
         "decision": "absorbed",
         "basis": "entity_table",
@@ -2739,14 +2929,14 @@
   },
   {
     "seed": "600581",
-    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；单一维度极差：杠杆100分；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）",
+    "seed_reason": "2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）",
     "steps": [
       {
         "rule": "R3",
         "src": "600581",
         "dst": "600808",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "high",
         "dst_tier": "strong",
         "decision": "absorbed",
         "basis": "entity_table",
@@ -2758,14 +2948,14 @@
   },
   {
     "seed": "600581",
-    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；单一维度极差：杠杆100分；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）",
+    "seed_reason": "2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）",
     "steps": [
       {
         "rule": "R3",
         "src": "600581",
         "dst": "600782",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "high",
         "dst_tier": "strong",
         "decision": "absorbed",
         "basis": "entity_table",
@@ -2777,14 +2967,14 @@
   },
   {
     "seed": "600581",
-    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；单一维度极差：杠杆100分；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）",
+    "seed_reason": "2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）",
     "steps": [
       {
         "rule": "R3",
         "src": "600581",
         "dst": "601005",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "high",
         "dst_tier": "strong",
         "decision": "absorbed",
         "basis": "entity_table",
@@ -2796,14 +2986,14 @@
   },
   {
     "seed": "600581",
-    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；单一维度极差：杠杆100分；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）",
+    "seed_reason": "2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）",
     "steps": [
       {
         "rule": "R3",
         "src": "600581",
         "dst": "000825",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "high",
         "dst_tier": "strong",
         "decision": "absorbed",
         "basis": "entity_table",
@@ -2815,14 +3005,14 @@
   },
   {
     "seed": "600581",
-    "seed_reason": "承压评分为弱：资不抵债（净资产为负）；资产负债率101.8%≥85%；单一维度极差：杠杆100分；资产负债率101.8%（24家中第1弱）；流动比率0.34（24家中第3弱）",
+    "seed_reason": "2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）",
     "steps": [
       {
         "rule": "R3",
         "src": "600581",
         "dst": "000717",
         "shock": "credit",
-        "severity": "medium",
+        "severity": "high",
         "dst_tier": "medium",
         "decision": "weakened",
         "basis": "entity_table",
