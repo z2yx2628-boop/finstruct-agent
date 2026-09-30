@@ -48,7 +48,8 @@ def find_new(since: str, today: str) -> list[dict]:
     for company in universe():
         code, name = company["security_code"], company["security_name"]
         try:
-            for page in range(1, 4):
+            # a normal day needs the newest page or two; a backfill (--since months ago) pages back until it passes `since`
+            for page in range(1, 41):
                 items = fetch_page(code, page)
                 for item in items:
                     day, title = item["notice_date"], item["title"]

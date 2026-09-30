@@ -134,7 +134,29 @@ items = filter_paths(ranked, set(rule_pick), min_amount, company, hide_low, show
 if scope_pick != "全部":
     items = [(i, e) for i, e in items if path_scope(e, eindex) == scope_pick]
 if not items:
-    st.info("没有符合筛选条件的路径。")
+    if company:
+        from src.network_view import EDGE_CN, coverage
+        cov = coverage(ROOT / chain, ROOT / "data" / "snapshots" / snap, company)
+        who = name_of(company, names)
+        why = []
+        if not cov["active"] and cov["expired"]:
+            why.append(f"它在图谱中的 {len(cov['expired'])} 条披露关系都已过期（最近一份相关公告 {cov['latest']}；"
+                       "关联交易预计只在预计年度内有效，担保按合同期限有效），评估日之后还没有抽取到它的新公告。")
+        elif not cov["active"]:
+            why.append("图谱里还没有它披露的关联交易、担保或资金往来（只知道它属于哪个集团）。")
+        if cov["tier"] == "strong":
+            why.append("它的抗冲击能力为“强”：风险传到它这里会被吸收，这类路径得分为 0，默认不列出。")
+        if cov["active"]:
+            why.append(f"它有 {len(cov['active'])} 条仍有效的披露关系，但这些关系附近没有风险源，或金额低于对方净资产的 1%，风险不会沿它们传导。")
+        st.info(f"**没有经过{who}的关键传导路径。**  \n" + "  \n".join(f"- {w}" for w in why), icon=":material/info:")
+        if cov["active"]:
+            st.dataframe(pd.DataFrame([{"关系": EDGE_CN.get(e["edge_type"], e["edge_type"]), "从": e["src_name"], "到": e["dst_name"],
+                                        "金额(亿元)": round(float(e["amount_wan"]) / 1e4, 2) if e.get("amount_wan") else None,
+                                        "公告日": e.get("announcement_date", ""), "有效至": e.get("valid_to", "")}
+                                       for e in cov["active"][:30]]), hide_index=True, width="stretch")
+            st.caption("以上是它评估日仍有效的披露关系（最多 30 条）：有关系不等于有风险，只有起点出事时才会沿这些关系传导。")
+    else:
+        st.info("没有符合筛选条件的路径。")
     st.button("清除选择", on_click=reset_focus)
     st.stop()
 ranks = [i for i, _ in items]
