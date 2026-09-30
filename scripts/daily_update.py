@@ -43,7 +43,10 @@ def run(*args: str) -> int:
 def find_new(since: str, today: str) -> list[dict]:
     from scripts.find_analysis_corpus import classify, fetch_page, pdf_url, used_registry
 
-    by_title, by_date = used_registry()
+    from scripts.find_analysis_corpus import used_exact
+
+    _, by_date = used_registry()
+    dated, undated = used_exact()
     found = []
     for company in universe():
         code, name = company["security_code"], company["security_name"]
@@ -57,10 +60,11 @@ def find_new(since: str, today: str) -> list[dict]:
                     if since <= day <= today and task:
                         from scripts.find_analysis_corpus import norm
                         same_day = by_date.get((code, day), "")
-                        # already used (dev / test / final test / corpus): the same title, or a document of the SAME task
+                        # already used (dev / test / final test / corpus): the same document (company, date, title), or a
+                        # document of the SAME task
                         # published by the same company that day (a guarantee test document must not hide that day's
                         # related-party estimate)
-                        if by_title.get((code, norm(title))) or (same_day and (same_day.startswith(task.split("_")[0])
+                        if (code, day, norm(title)) in dated or (code, norm(title)) in undated or (same_day and (same_day.startswith(task.split("_")[0])
                                                                                or same_day.startswith("final"))):
                             continue
                         found.append({"code": code, "name": name, "day": day, "task": task, "title": title,

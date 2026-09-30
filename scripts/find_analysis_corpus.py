@@ -72,6 +72,24 @@ def used_registry() -> tuple[dict, dict]:
     return by_title, by_date
 
 
+def used_exact() -> tuple[set, set]:
+    """Documents already used, identified EXACTLY: {(code, date, normalized title)}, plus {(code, normalized title)}
+    for manifest rows without a date. Generic titles recur every year ("关于为控股子公司提供担保的进展公告"), so a
+    title alone must not mark next year's announcement as used."""
+    dated, undated = set(), set()
+    for path in (ROOT / "data" / "manifests").glob("*.csv"):
+        if path.name.startswith("analysis_corpus"):
+            continue
+        with path.open(encoding="utf-8-sig", newline="") as f:
+            for row in csv.DictReader(f):
+                code = (row.get("security_code") or "").zfill(6)
+                title = row.get("announcement_title") or row.get("title") or ""
+                day = row.get("announcement_date") or row.get("publish_date") or ""
+                if code.strip("0") and title:
+                    (dated.add((code, day, norm(title))) if day else undated.add((code, norm(title))))
+    return dated, undated
+
+
 def pdf_url(code: str, day: str, doc_id: str) -> str:
     board = "CNSESH_STOCK" if code.startswith("6") else "CNSESZ_STOCK"
     y, m = day[:4], str(int(day[5:7]))

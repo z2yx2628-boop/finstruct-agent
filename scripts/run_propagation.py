@@ -82,6 +82,7 @@ def main() -> None:
     summary = [{"rank": i, "score": e["score"], "seed": e["seed"], "reason": e["reason"],
                 "path": " → ".join([nm(e["seed"])] + [nm(s.dst) for s in e["steps"]]),
                 "rules": "+".join(s.rule for s in e["steps"]), "amount_yi": e["amount_yi"],
+                "nodes": ">".join([e["seed"]] + [s.dst for s in e["steps"]]),
                 "beyond_unlisted": len(e["beyond"]), "alternatives": e.get("alternatives", 0)} for i, e in enumerate(ranked, 1)]
     with (chain / f"key_paths_{as_of}.csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(summary[0]) if summary else ["rank"], lineterminator="\n")
