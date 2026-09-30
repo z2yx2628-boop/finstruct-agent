@@ -46,7 +46,8 @@ with tab_demo:
         c = by_id[picked]
         st.caption(f"{c['why']} · 评估日 {c['as_of']} · {CHAIN_LABEL.get(c['chain'], c['chain'])}")
         if run_demo:
-            card = replay(c)
+            from src.orchestrator import run as run_agent
+            card = run_agent(case=c)
 
 with tab_new:
     upload = st.file_uploader("公告文件", type=["pdf", "png", "jpg", "jpeg", "html", "htm", "docx", "doc", "xlsx", "xls", "csv"],
@@ -77,7 +78,9 @@ with tab_new:
                 st.write("正在提取结构化事件与证据…")
                 if online_model():
                     quota_consume()
-                card = analyze(target, TASKS[task_label], as_of.isoformat(), chain, offline=offline)
+                from src.orchestrator import run as run_agent
+                st.write("调度智能体：识别类型 → 选择工具 → 抽取 → 检查证据 → 入图决策 → 计算敞口 → 推演传导 …")
+                card = run_agent(path=target, task=TASKS[task_label], as_of=as_of.isoformat(), chain=chain, offline=offline)
                 st.session_state["last_card"] = card
                 status.update(label="风险预警已生成", state="complete", expanded=False)
             except TaskNotDetected as error:
@@ -155,6 +158,19 @@ if card:
                     except Exception as error:  # noqa: BLE001
                         st.error(f"临时评分失败：{type(error).__name__}: {error}")
 
+    trace = card.get("trace") or []
+    if trace:
+        decision = card.get("graph_decision") or {}
+        with st.expander(f"调度智能体：{len(trace)} 步 · 入图决策：{'自动入图' if decision.get('auto') else '转人工复核'}"
+                         " · 点开看每一步用了什么工具、为什么这样决定", icon=":material/route:", expanded=False):
+            st.caption("只有“结构化抽取”一步使用大模型（测试前冻结）；其余每一步都是写明的规则、查询或计算，同样的输入得到同样的轨迹。")
+            icon = {"ok": "✅", "warn": "⚠️", "stop": "⛔"}
+            st.dataframe([{"": icon.get(x["status"], ""), "步骤": x["step"], "工具": x["tool"], "类型": x["kind"], "结果": x["output"],
+                           "决策": x["decision"], "理由": x["reason"], "用时(ms)": x["ms"]} for x in trace],
+                         hide_index=True, width="stretch")
+            for x in trace:
+                if x["detail"]:
+                    st.caption(f"{x['step']} 明细：" + "；".join(x["detail"]))
     t1, t2, t3 = st.tabs([f":material/fact_check: 发生了什么（{len(card['what_happened']) + len(card['relations'])}）",
                           ":material/monitoring: 扛不扛得住（自身风险）",
                           f":material/account_tree: 会传给谁（{len(paths)} 条路径）"])
@@ -170,6 +186,10 @@ if card:
         if len(card["relations"]) > 10:
             st.caption(f"另有 {len(card['relations']) - 10} 条关系未列出，见下载的预警卡片。")
     with t2:
+        if card.get("exposures"):
+            st.markdown("**本公告带来的敞口**（担保 = 代偿上限；关联交易额是业务规模，不是可能的损失）")
+            st.dataframe([dict(e, 占承担方净资产=f"{e['占承担方净资产']:.1%}" if e["占承担方净资产"] is not None else "—")
+                          for e in card["exposures"]], hide_index=True, width="stretch")
         if not absorb:
             st.markdown(f"- ⚪ **{card['company']}**：不在承压评分范围内（24家核心钢厂及手动加入的企业）。")
         for c in absorb:
@@ -184,15 +204,19 @@ if card:
                 for s in p["steps"]:
                     st.markdown(f"- **{s['rule_label']}**：{s['src_name']} → {s['dst_name']}（{s['tier_label']}），"
                                 f"{s['decision_label']}  \n  依据：{s['evidence']}")
-    st.download_button("下载预警卡片（Markdown）", card_markdown(card), file_name=f"alert_{card['as_of']}.md",
+    from src.orchestrator import full_markdown
+    st.download_button("下载预警卡片（Markdown，含调度轨迹）", full_markdown(card), file_name=f"alert_{card['as_of']}.md",
                        icon=":material/download:")
 
 last = st.session_state.get("last_card")
 if last and last.get("task") and (ROOT / last["source"]).exists() and last.get("extraction_status") != "offline_replay" \
         and not public_mode():
-    with st.expander("把这份公告加入实时图谱", icon=":material/add_link:"):
+    auto = (last.get("graph_decision") or {}).get("auto", False)
+    with st.expander("把这份公告加入实时图谱" + ("" if auto else "（调度智能体建议人工复核）"), icon=":material/add_link:"):
         st.caption("这份公告目前只用于本次分析。加入后，它的关系和信号会进入实时图谱，参与今后的每日更新与路径推导。")
-        if st.button("加入实时图谱"):
+        if not auto:
+            st.warning("入图规则未全部满足（见“调度智能体”轨迹第 ⑥ 步）。请先核对原文，再确认加入。", icon=":material/rule:")
+        if st.button("加入实时图谱" if auto else "已人工核对，确认加入"):
             import shutil
             src = ROOT / last["source"]
             dest = ROOT / "outputs" / "manual_freeze" / last["task"] / f"{src.parent.parent.name}.json"
