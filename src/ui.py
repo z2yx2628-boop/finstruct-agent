@@ -39,8 +39,12 @@ GLOSSARY = """
 """
 
 
-def glossary(expanded: bool = False) -> None:
-    with st.expander("怎么读这个系统：风险源、抗冲击能力、传导、证据等级", icon=":material/menu_book:", expanded=expanded):
+def glossary(expanded: bool = False, intro: str | None = None) -> None:
+    """The one explanation box of a page: what the page does (intro) and how to read the system."""
+    with st.expander("说明：怎么读这个系统（风险源、抗冲击能力、传导、证据等级）", icon=":material/menu_book:", expanded=expanded):
+        if intro:
+            st.markdown(intro)
+            st.divider()
         st.markdown(GLOSSARY)
 
 

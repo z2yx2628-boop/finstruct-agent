@@ -9,7 +9,7 @@ sys.path.insert(0, str(ROOT))
 from src.network_view import (SCOPE_LABEL, edge_index, path_scope, step_scope, DECISION_LABEL, GRADE_HELP, GRADE_LABEL, RULE_LABEL, evidence_grade, path_grade, SEVERITY_LABEL, TIER_LABEL, edge_windows,  # noqa: E402
                               evidence_ref, filter_paths, focus_entries, key_paths, name_of, page_png,
                               overview_chart, overview_layout, path_rows, route, score_parts, source_file,
-                              stop_reason, to_dot)
+                              snapshot_equity, stop_reason, to_dot)
 from src.sources import readable, titles  # noqa: E402
 
 CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/analysis_v1": "真实图谱（84份公告，2024–2026）",
@@ -221,7 +221,7 @@ with st.expander("集团财务公司通道：若财务公司出现兑付问题�
 
 st.subheader("关键路径清单", divider="gray")
 st.caption(f"共 {len(ranked)} 条关键路径，符合筛选的 {len(items)} 条；“排名”为全部路径中的原始名次。点击一行查看详情。")
-st.dataframe(pd.DataFrame(path_rows(items, names, eindex)), hide_index=True, width="stretch",
+st.dataframe(pd.DataFrame(path_rows(items, names, eindex, snapshot_equity(ROOT / "data" / "snapshots" / snap))), hide_index=True, width="stretch",
              on_select="rerun", selection_mode="single-row", key=table_key,
              column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f"),
                             "得分": st.column_config.NumberColumn(format="%.2f")})
