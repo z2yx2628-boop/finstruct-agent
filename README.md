@@ -1,4 +1,6 @@
-# 链证 ChainProof
+# 钢铁上市公司上下游冲击传导与经营风险智能体
+
+### 链证 ChainProof
 
 **钢铁产业链风险传导预警系统 · 每一步可追溯到公告原文**（金融人工智能比赛作品）。
 在线演示：https://chainproof-steel.streamlit.app/

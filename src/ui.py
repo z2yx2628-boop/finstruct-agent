@@ -124,10 +124,12 @@ UNIFIED_PAGE = "pages/8_风险传导总图.py"
 
 
 def page_header(title: str, icon: str, question: str, grades: bool = False, about: str | None = None,
-                step: int | None = None, fresh: bool = False) -> None:
+                step: int | None = None, fresh: bool = False, subtitle: str | None = None) -> None:
     """Title, one caption line (story step + the question the page answers), and everything explanatory
     folded into a single box. Data freshness is shown only where asked (the home page)."""
     st.title(title, icon=icon)
+    if subtitle:
+        st.subheader(subtitle, divider=False)
     line = question
     if step:
         line = f"第 {step} 步 / 共 {len(STORY)} 步　·　{question}"

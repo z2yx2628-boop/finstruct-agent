@@ -15,8 +15,8 @@ from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
 from src.ui import (UNIFIED_PAGE, glossary, next_step, online_model, open_unified, page_header,  # noqa: E402
                     profile_button, public_mode, verdict)
 
-page_header("链证 · 钢铁产业链风险传导预警", ":material/dashboard:", "今天谁可能先出问题？会传给谁？",
-            step=1, fresh=True)
+page_header("钢铁上市公司上下游冲击传导与经营风险智能体", ":material/dashboard:", "今天谁可能先出问题？会传给谁？",
+            step=1, fresh=True, subtitle="链证 ChainProof · 钢铁产业链风险传导预警")
 glossary(intro="链证分两段预警：**① 风险源预警**——谁可能先出问题（公告中的风险事件 + 抗冲击能力评分）；"
                "**② 风险传导预警**——它的问题会沿担保、关联交易和集团关系传给谁、涉及多少钱。"
                "页面上的每个结论都能点回公告原文和页码。  \n"

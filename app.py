@@ -2,7 +2,7 @@ import streamlit as st
 
 
 st.set_page_config(
-    page_title="链证 · 钢铁产业链风险传导预警",
+    page_title="钢铁上市公司上下游冲击传导与经营风险智能体 · 链证 ChainProof",
     page_icon=":material/account_tree:",
     layout="wide",
 )
