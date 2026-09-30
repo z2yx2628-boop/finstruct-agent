@@ -1,0 +1,5 @@
+﻿security_code,security_name,date,event_type,event_label,severity,title,source_url,status,valid_to
+600581,八一钢铁,2026-03-30,audit,非标准审计意见,high,2025年度关于财务报表发表非标准审计意见的专项说明,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF,人工核对,2027-03-30
+600581,八一钢铁,2026-03-30,st,被实施风险警示,high,关于股票被实施退市风险警示暨停牌的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034624.PDF,人工核对,2027-03-30
+600581,八一钢铁,2026-01-26,st_warning,可能被实施风险警示（预告）,medium,关于股票可能被实施退市风险警示的风险提示公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-1/2026-01-26/11933520.PDF,人工核对,2027-01-26
+600022,山东钢铁,2025-11-21,restructuring,破产重整或清算,medium,关于控股子公司拟申请破产清算的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF,人工核对,2026-11-21

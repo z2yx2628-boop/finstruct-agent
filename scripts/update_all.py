@@ -192,6 +192,9 @@ def main() -> None:
         subprocess.run([sys.executable, str(ROOT / "scripts" / "build_financial_indicators.py")], check=False)
 
     signals = [] if args.no_guarantee else load_signals(args.signals)
+    if args.signals and Path(args.signals).parent.name == "live" and not args.no_guarantee:
+        from src.live_events import as_signals   # title-recognised credit events (frozen accounts, ST, ...) count as events
+        signals += as_signals(as_of)
     if not args.no_guarantee:
         add_guarantee_exposure(rows + extra_rows, signals, as_of)
     results = score(rows, signals, as_of, period, extra=extra_rows)

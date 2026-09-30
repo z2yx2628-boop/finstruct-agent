@@ -111,6 +111,9 @@ def main() -> None:
     else:
         log.append("- 未联网：只用已有数据重建")
 
+    print("   识别已发生的信用事件（公告标题）…")
+    run("scripts/scan_credit_events.py", *(["--offline"] if args.no_network else []))
+
     print("3/5 重建实时图谱 …")
     sources = [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / "outputs").glob("*_freeze"))
                if p.name.startswith(("analysis", "live_", "manual"))]

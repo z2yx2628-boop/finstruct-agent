@@ -10,7 +10,7 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.extension import merged as with_extension  # noqa: E402
-from src.network_view import filter_paths, key_paths, overview_chart, path_rows, second_order  # noqa: E402
+from src.network_view import filter_paths, key_paths, overview_chart, path_rows, second_order, seed_nature  # noqa: E402
 from src.scenario import KINDS, build, company_name, core_mills, product_map, sector_links  # noqa: E402
 from src.ui import TIER_BADGE, next_step, page_header, verdict  # noqa: E402
 from src.unified import SCALE, credit_edges, layout, merge  # noqa: E402
@@ -107,8 +107,9 @@ else:
     left, right = st.columns(2, gap="large")
     with left:
         st.subheader("集团信用通道（计分）", divider="violet")
-        rows = [dict(r, 性质="正式计分") for r in path_rows(list(enumerate(credit_entries)), names)] + \
-               [dict(r, 性质="衔接线索（不计分）") for r in path_rows(list(enumerate(bridged)), names)]
+        rows = [dict(r, 起点性质=seed_nature(e.get("reason", "")), 性质="正式计分")
+                for r, e in zip(path_rows(list(enumerate(credit_entries)), names), credit_entries)] + \
+               [dict(r, 起点性质="情景假设", 性质="衔接线索（不计分）") for r in path_rows(list(enumerate(bridged)), names)]
         if rows:
             st.dataframe(pd.DataFrame(rows).drop(columns=["排名"]), hide_index=True, width="stretch",
                          column_config={"得分": st.column_config.NumberColumn(format="%.2f")})

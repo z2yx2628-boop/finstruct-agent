@@ -11,7 +11,7 @@ from pathlib import Path
 from src.entity_resolver import ROOT
 from src.validity import is_active
 
-SIGNAL_LABEL = {"credit_exposure": "新增担保/担保敞口", "credit_event": "担保违约/代偿", "guarantee_balance": "累计对外担保余额",
+SIGNAL_LABEL = {"credit_exposure": "新增担保/担保敞口", "credit_event": "信用事件（冻结、违约、风险警示等）", "guarantee_balance": "累计对外担保余额",
                 "supply_disruption": "供应中断", "capacity_reduction": "产能减少", "capacity_increase": "产能增加",
                 "project_delay": "项目延期/终止", "share_pledge": "股权质押"}
 SEVERITY_LABEL = {"high": "高", "medium": "中", "low": "低", "info": "提示"}
@@ -66,7 +66,8 @@ def company_signals(chain: Path, code: str, as_of: str, limit: int = 12) -> list
     """The company's announcement signals known on the evaluation date, newest first, with their source."""
     from src.sources import titles
     rows = []
-    for s in _read(chain / "signals.csv"):
+    from src.live_events import chain_signals
+    for s in chain_signals(chain, as_of):
         if s.get("entity_id") != code or not s.get("date") or s["date"] > as_of:
             continue
         stem = Path(s.get("source_doc", "")).stem
@@ -75,7 +76,8 @@ def company_signals(chain: Path, code: str, as_of: str, limit: int = 12) -> list
                      "严重度": SEVERITY_LABEL.get(s.get("severity", ""), s.get("severity", "")),
                      "仍有效": "是" if is_active(s, as_of) else "否",
                      "说明": (s.get("detail") or "")[:50],
-                     "来源": f"{titles().get(stem, stem)}{f' 第{page}页' if page else ''}"})
+                     "来源": (f"公告标题识别：{s.get('evidence_text', '')[:30]}" if s.get("source_doc", "").startswith("http")
+                            else f"{titles().get(stem, stem)}{f' 第{page}页' if page else ''}")})
     seen, unique = set(), []
     for r in sorted(rows, key=lambda r: r["日期"], reverse=True):
         key = (r["日期"], r["类型"], r["说明"], r["来源"])

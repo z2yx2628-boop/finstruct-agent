@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.live_events import chain_signals  # noqa: E402
 from src.entity_resolver import groups_as_of, load_entities  # noqa: E402
 from src.propagation import Graph, propagate, seeds_from, summarize  # noqa: E402
 from src.validity import is_active  # noqa: E402
@@ -47,7 +48,7 @@ def main() -> None:
     names = {k: v["short_name"] for k, v in rows.items()}
 
     paths = []
-    for node, shock, severity, reason in seeds_from(read(chain / "signals.csv"), fragility, as_of, edges, equity):
+    for node, shock, severity, reason in seeds_from(chain_signals(chain, as_of), fragility, as_of, edges, equity):
         paths += propagate(graph, node, shock, severity, reason)
     paths.sort(key=lambda p: (-len(p.steps), p.seed))
 
