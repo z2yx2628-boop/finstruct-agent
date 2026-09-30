@@ -153,7 +153,20 @@ with tab_links:
 
 # ---------------------------------------------------------------- customers and suppliers: how much, what share, how long
 with tab_chain:
+    from src.policy_shock import iron_ore_import, overseas_share
     from src.supply_relations import SIDE, concentration, summary
+    ov, ore = overseas_share(code, snap), iron_ore_import(code, snap)
+    if ov or ore:
+        st.markdown("**对外贸易暴露**（出口端看境外收入，进口端看铁矿石来源）")
+        e1, e2, e3 = st.columns(3)
+        if ov:
+            e1.metric(f"境外收入占比（{ov['period'][:4]}）", f"{ov['share']:.1%}", help=f"{ov['source']}，{ov['grade']} 级；{ov['items']}")
+        if ore:
+            e2.metric(f"铁矿石进口占比（{ore['fy']}，按吨）", f"{ore['import_share_t']:.1%}" if ore["import_share_t"] is not None else "—",
+                      help=ore["source"])
+            e3.metric("按金额", f"{ore['import_share_amount']:.1%}" if ore["import_share_amount"] is not None else "—",
+                      help="进口铁矿石支出 ÷ 铁矿石总支出")
+        st.caption("出口受海外关税、反倾销和碳关税影响（可在“供需情景与政策冲击 → 政策”模拟）；进口受海外矿价和汇率影响。")
     conc = concentration(code, snap)
     if conc:
         st.markdown("**客户与供应商集中度**（年报“前五名客户 / 供应商”，A 级：公司自己披露）")
