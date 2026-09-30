@@ -219,7 +219,28 @@ def filter_paths(ranked: list[dict], rules: set[str] | None = None, min_amount_y
     return out
 
 
-def path_rows(items: list[tuple[int, dict]], names: dict[str, str], index: dict | None = None) -> list[dict]:
+def snapshot_equity(snapshot: Path) -> dict[str, float]:
+    """Equity (元) by company from a fragility snapshot's quarterly_metrics.csv."""
+    return {r["security_code"]: float(r["equity"]) for r in _read(snapshot / "quarterly_metrics.csv") if r.get("equity")}
+
+
+def exposure_text(e: dict, names: dict[str, str], equity: dict[str, float] | None = None) -> str:
+    """Y2 of a path (docs/target_definition.md): guarantees are a loss cap for the guarantor; a trade amount is
+    business volume, not exposure; a group link has no amount."""
+    parts = []
+    for s in e["steps"]:
+        if s.rule == "R1" and s.amount_wan:
+            amt = s.amount_wan / 1e4
+            eq = (equity or {}).get(s.dst)
+            parts.append(f"{name_of(s.dst, names)} 担保 {amt:.2f} 亿" + (f"，占其净资产 {amt * 1e8 / eq:.0%}" if eq and eq > 0 else ""))
+    if parts:
+        return "；".join(parts)
+    trade = sum(s.amount_wan or 0 for s in e["steps"] if s.rule == "R2") / 1e4
+    return f"无（交易额 {trade:.2f} 亿，非敞口）" if trade else "无（仅集团关系，无金额）"
+
+
+def path_rows(items: list[tuple[int, dict]], names: dict[str, str], index: dict | None = None,
+              equity: dict[str, float] | None = None) -> list[dict]:
     rows = []
     for i, e in items:
         last = e["steps"][-1]
@@ -227,6 +248,7 @@ def path_rows(items: list[tuple[int, dict]], names: dict[str, str], index: dict 
         rows.append({"排名": i + 1, "传导路径": route(e, names), **scope,
                      "规则": "+".join(RULE_LABEL[s.rule] for s in e["steps"]),
                      "金额(亿元)": e.get("amount_yi", 0.0),
+                     "可计量敞口": exposure_text(e, names, equity),
                      "终点": name_of(last.dst, names), "终点承压": TIER_LABEL.get(last.dst_tier, last.dst_tier),
                      "证据等级": path_grade(e) + ("（情景）" if e.get("scenario") else ""),
                      "得分": e["score"]})

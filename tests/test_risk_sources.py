@@ -27,3 +27,15 @@ def test_live_titles_use_the_preregistered_patterns():
     assert classify("关于股票被实施退市风险警示暨停牌的公告") == "st"
     assert classify("关于部分银行账户资金被冻结暨诉讼进展公告") == "freeze"
     assert classify("关于为全资子公司提供担保的公告") is None
+
+
+def test_path_exposure_is_a_guarantee_cap_and_never_a_trade_amount():
+    from src.network_view import exposure_text
+    from src.propagation import Step
+    g = Step(rule="R1", src="N_X", dst="600408", shock="credit", severity="high", dst_tier="weak", decision="continue",
+             basis="disclosed", evidence="", amount_wan=100000.0)
+    t = Step(rule="R2", src="600408", dst="000761", shock="credit", severity="medium", dst_tier="weak", decision="continue",
+             basis="disclosed", evidence="", amount_wan=50000.0)
+    names = {"600408": "安泰集团"}
+    assert exposure_text({"steps": [g]}, names, {"600408": 2e9}) == "安泰集团 担保 10.00 亿，占其净资产 50%"
+    assert exposure_text({"steps": [t]}, names).startswith("无（交易额 5.00 亿")

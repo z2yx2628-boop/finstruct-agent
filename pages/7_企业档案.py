@@ -8,7 +8,7 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.fragility_view import events_after_report, explain, guarantee_evidence, report_links, snapshot_meta  # noqa: E402
-from src.network_view import edge_index, filter_paths, key_paths, name_of, path_rows  # noqa: E402
+from src.network_view import edge_index, filter_paths, key_paths, name_of, path_rows, snapshot_equity  # noqa: E402
 from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
 from src.product_layer import exposure_as_of, products  # noqa: E402
 from src.profile import company_signals, fragility_rows, headline, peer_rank, snapshots, split_paths  # noqa: E402
@@ -141,7 +141,7 @@ with tab_links:
                              ("absorbed", "被吸收（不预警）", "途经的上市公司承压为强，得分为 0，不计入预警")):
         if mine[key]:
             st.markdown(f"**{title}**（{len(mine[key])} 条）：{note}")
-            st.dataframe(pd.DataFrame(path_rows(mine[key], names, eindex)), hide_index=True, width="stretch",
+            st.dataframe(pd.DataFrame(path_rows(mine[key], names, eindex, snapshot_equity(ROOT / "data" / "snapshots" / snap))), hide_index=True, width="stretch",
                          column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f"),
                                         "得分": st.column_config.NumberColumn(format="%.2f")})
     st.divider()
