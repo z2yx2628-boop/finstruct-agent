@@ -2,7 +2,8 @@
 changes, and production cuts. Company-level, transparent, parameterised; SCENARIO ONLY, never scored.
 
 Every number comes from a named source or is an explicit, user-adjustable assumption:
-  * overseas revenue share  : 东方财富主营构成“按地区分类”(company's own annual report), point-in-time (B)
+  * overseas revenue share  : the annual report's own 分地区 revenue rows with page (A, scripts/extract_annual_trade.py);
+                              otherwise 东方财富主营构成“按地区分类” (B); point-in-time either way
   * CO2 intensity by route  : worldsteel Sustainability Indicators 2025 (2024 data): BF-BOF 2.34, scrap-EAF 0.69,
                               DRI-EAF 1.47 t CO2 / t crude steel (industry averages, not company data -> C)
   * production route        : data/reference/mill_routes.csv; unverified rows default to BF-BOF and are flagged
@@ -25,9 +26,9 @@ ROUTES = ROOT / "data" / "reference" / "mill_routes.csv"
 INTENSITY = {"BF-BOF": 2.34, "EAF": 0.69, "DRI-EAF": 1.47}          # worldsteel 2025 report, 2024 data
 CBAM_FACTOR = {2026: 0.025, 2027: 0.05, 2028: 0.10, 2029: 0.225, 2030: 0.485, 2031: 0.61, 2032: 0.735,
                2033: 0.86, 2034: 1.0}
-KINDS = {"carbon": "碳成本（欧盟 CBAM / 国内碳市场）", "export": "出口退税或关税调整", "cut": "限产"}
+KINDS = {"carbon": "碳成本（欧盟 CBAM / 国内碳市场）", "export": "出口退税、关税或反倾销", "cut": "限产"}
 SOURCES = {
-    "overseas": "东方财富主营构成·按地区分类（公司年报披露，B 级；境外≠欧盟）",
+    "overseas": "年报“营业收入分地区”行（A 级，附页码；scripts/extract_annual_trade.py），缺失时用东方财富主营构成·按地区分类（B 级）；境外≠欧盟",
     "intensity": "worldsteel Sustainability Indicators 2025（2024 年行业平均：长流程 2.34、废钢电炉 0.69 t CO₂/t 粗钢，C 级）",
     "cbam": "欧盟排放交易指令 2003/87/EC 第 10a(1a) 条：CBAM 系数 2026 年 2.5%，逐年提高至 2034 年 100%",
     "price": "热卷主力合约 HC0 收盘价（评估日）",
@@ -46,8 +47,38 @@ def usable_from(report_date: str) -> str:
     return f"{int(report_date[:4]) + 1}-04-30"
 
 
+ANNUAL_OVERSEAS = ROOT / "data" / "reference" / "annual_overseas_revenue.csv"
+ANNUAL_ORE = ROOT / "data" / "reference" / "annual_iron_ore_supply.csv"
+
+
 def overseas_share(code: str, as_of: str) -> dict | None:
-    """Latest annual overseas revenue share known on as_of: {'share', 'period', 'items'} or None."""
+    """Latest annual overseas revenue share known on as_of: {'share', 'period', 'items', 'grade', 'source'} or None.
+    The annual report itself (A, with page) first; the Eastmoney breakdown (B) when the report's table was not read."""
+    own = [r for r in _read(ANNUAL_OVERSEAS) if r["company_id"] == code and r["check"] in ("ok", "only_domestic_reported")
+           and r.get("overseas_share") not in (None, "") and usable_from(f"{r['fy']}-12-31") <= as_of]
+    b = _eastmoney_share(code, as_of)
+    if own:
+        r = max(own, key=lambda r: r["fy"])
+        if not b or f"{r['fy']}-12-31" >= b["period"]:          # the newest year wins; A before B within a year
+            return {"share": float(r["overseas_share"]), "period": f"{r['fy']}-12-31",
+                    "items": r.get("overseas_labels") or "（仅境内）", "grade": "A", "source": f"{r['fy']}年年报 第{r['page']}页"}
+    return dict(b, grade="B", source="东方财富主营构成·按地区分类") if b else None
+
+
+def iron_ore_import(code: str, as_of: str) -> dict | None:
+    """Share of iron ore IMPORTED (by tonnes and by money) from the annual report's 铁矿石供应情况 table (A)."""
+    own = [r for r in _read(ANNUAL_ORE) if r["company_id"] == code and r["check"] == "ok"
+           and usable_from(f"{r['fy']}-12-31") <= as_of]
+    if not own:
+        return None
+    r = max(own, key=lambda r: r["fy"])
+    f = lambda k: float(r[k]) if r.get(k) not in (None, "") else None  # noqa: E731
+    return {"fy": r["fy"], "import_share_t": f("import_share_t"), "import_share_amount": f("import_share_amount"),
+            "import_t": f("import_t"), "total_t": f("total_t"), "import_wan": f("import_wan"),
+            "source": f"{r['fy']}年年报 第{r['page']}页（铁矿石供应情况）"}
+
+
+def _eastmoney_share(code: str, as_of: str) -> dict | None:
     rows = [r for r in _read(RAW / f"{code}.csv") if r.get("分类类型") == "按地区分类"
             and r["报告日期"].endswith("12-31") and usable_from(r["报告日期"]) <= as_of]
     if not rows:
@@ -104,6 +135,7 @@ def carbon(fragility: dict[str, dict], as_of: str, eu_price: float, year: int, d
         dom_idx = stress_index(dom_ratio, 1.0, f.get("tier", "")) if dom_ratio else None
         rows.append({"code": code, "name": f["security_name"], "tier": f.get("tier", ""), "route": route,
                      "route_verified": verified, "overseas_share": exp["share"] if exp else None,
+                     "overseas_source": f"{exp['source']}（{exp['grade']}）" if exp else "",
                      "period": exp["period"] if exp else "", "cbam_per_ton": cost["cbam"], "domestic_per_ton": cost["domestic"],
                      "cbam_index": cbam_idx, "domestic_index": dom_idx,
                      "index": round((cbam_idx or 0) + (dom_idx or 0), 2) if (cbam_idx or dom_idx) else None})
@@ -119,7 +151,8 @@ def export_change(fragility: dict[str, dict], as_of: str, change: float) -> list
         exp = overseas_share(code, as_of)
         idx = stress_index(change, exp["share"], f.get("tier", "")) if exp else None
         rows.append({"code": code, "name": f["security_name"], "tier": f.get("tier", ""),
-                     "overseas_share": exp["share"] if exp else None, "period": exp["period"] if exp else "", "index": idx})
+                     "overseas_share": exp["share"] if exp else None, "period": exp["period"] if exp else "",
+                     "overseas_source": f"{exp['source']}（{exp['grade']}）" if exp else "", "index": idx})
     return sorted(rows, key=lambda r: (r["index"] is None, -(r["index"] or 0), r["name"]))
 
 

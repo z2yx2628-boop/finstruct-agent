@@ -34,3 +34,10 @@ def test_carbon_ranking_is_deterministic():
     a = carbon(fragility(), "2026-09-27", 600, 2027, 60)
     b = carbon(fragility(), "2026-09-27", 600, 2027, 60)
     assert [r["code"] for r in a] == [r["code"] for r in b] and len(a) == 24
+
+
+def test_trade_extraction_reads_iron_ore_rows_with_empty_cells():
+    from scripts.extract_annual_trade import numbers
+    assert numbers("自供                           /          /                    /          /") == [None, None, None, None]
+    assert numbers("国外进口                    9,091,366   8,953,785            7,051,611   8,087,631")[:3] == [9091366.0, 8953785.0, 7051611.0]
+    assert numbers("自供                              -           -                    -           -") == [None, None, None, None]

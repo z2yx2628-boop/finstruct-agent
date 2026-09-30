@@ -45,14 +45,22 @@ def render_policy(snaps: list[str]) -> None:
                     f"热卷价 {price:,.0f} 元/吨（{day} 前最近交易日）。境外收入不等于对欧收入，CBAM 部分是**上限**。")
         table = [{"企业": r["name"], "承压": TIER.get(r["tier"], "未评分"),
                   "工艺路线": r["route"] + ("" if r["route_verified"] else "（默认，未核对）"),
-                  "境外收入占比": _pct(r["overseas_share"]), "CBAM 成本(元/吨出口)": r["cbam_per_ton"],
+                  "境外收入占比": _pct(r["overseas_share"]), "占比来源": r["overseas_source"], "CBAM 成本(元/吨出口)": r["cbam_per_ton"],
                   "国内碳成本(元/吨)": r["domestic_per_ton"], "压力指数": r["index"]} for r in rows]
         sources = [SOURCES["overseas"], SOURCES["intensity"], SOURCES["cbam"], SOURCES["price"]]
     elif kind == "export":
         change = st.slider("出口退税下调或新增关税（占出口收入）", 0.0, 0.25, 0.05, 0.01, format="%.2f", key="pol_export")
         rows = export_change(fragility, day, change)
-        table = [{"企业": r["name"], "承压": TIER.get(r["tier"], "未评分"), "境外收入占比": _pct(r["overseas_share"]),
-                  "年报期": r["period"][:4], "压力指数": r["index"]} for r in rows]
+        from src.policy_shock import iron_ore_import
+        table = []
+        for r in rows:
+            ore = iron_ore_import(r["code"], day)
+            table.append({"企业": r["name"], "承压": TIER.get(r["tier"], "未评分"), "境外收入占比": _pct(r["overseas_share"]),
+                          "年报期": r["period"][:4], "占比来源": r["overseas_source"],
+                          "铁矿石进口占比（吨）": _pct(ore["import_share_t"]) if ore else "未披露",
+                          "压力指数": r["index"]})
+        st.caption("境外收入占比 = 出口端暴露；铁矿石进口占比 = 进口端依赖（沪市钢企年报“铁矿石供应情况”表，按吨计；深市年报无此表）。"
+                   "两者方向相反：出口受关税和反倾销影响，进口受海外矿价和汇率影响。")
         sources = [SOURCES["overseas"]]
     else:
         core = {c: r for c, r in fragility.items() if r.get("peer_group") == "core"}
