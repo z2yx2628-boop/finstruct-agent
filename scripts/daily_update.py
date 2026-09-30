@@ -56,8 +56,13 @@ def find_new(since: str, today: str) -> list[dict]:
                     task = classify(title)
                     if since <= day <= today and task:
                         from scripts.find_analysis_corpus import norm
-                        if by_title.get((code, norm(title))) or by_date.get((code, day)):
-                            continue            # already used (dev / test / final test / corpus)
+                        same_day = by_date.get((code, day), "")
+                        # already used (dev / test / final test / corpus): the same title, or a document of the SAME task
+                        # published by the same company that day (a guarantee test document must not hide that day's
+                        # related-party estimate)
+                        if by_title.get((code, norm(title))) or (same_day and (same_day.startswith(task.split("_")[0])
+                                                                               or same_day.startswith("final"))):
+                            continue
                         found.append({"code": code, "name": name, "day": day, "task": task, "title": title,
                                       "url": pdf_url(code, day, item["doc_id"]), "doc_id": item["doc_id"]})
                 if not items or min(i["notice_date"] for i in items) < since:
