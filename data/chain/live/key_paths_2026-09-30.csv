@@ -1,0 +1,29 @@
+rank,score,seed,reason,path,rules,amount_yi,beyond_unlisted,alternatives
+1,8.64,000761,承压评分为弱：资产负债率87.4%≥85%；单一维度极差：短期偿债91分；速动比率0.15（24家中第2弱）；现金比率0.06（24家中第2弱）；毛利率-4.8%（24家中第,本钢板材 → 凌钢股份 → 凌钢集团 → 鞍钢股份,R3+R2+R2,74.77,0,2
+2,6.93,600231, share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）,凌钢股份 → 本钢板材 → 本钢集团 → 鞍钢股份,R3+R2+R2,19.43,0,4
+3,5.76,600231, share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）,凌钢股份 → 凌钢集团 → 本钢板材,R2+R3,74.77,12,3
+4,5.49,600231, share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）,凌钢股份 → 本钢板材 → 鞍钢集团 → 钒钛股份,R3+R2+R2,54.41,0,1
+5,5.32,000761,承压评分为弱：资产负债率87.4%≥85%；单一维度极差：短期偿债91分；速动比率0.15（24家中第2弱）；现金比率0.06（24家中第2弱）；毛利率-4.8%（24家中第,本钢板材 → 凌钢股份 → 鞍钢集团 → 钒钛股份,R3+R2+R2,44.69,0,1
+6,4.91,000761,承压评分为弱：资产负债率87.4%≥85%；单一维度极差：短期偿债91分；速动比率0.15（24家中第2弱）；现金比率0.06（24家中第2弱）；毛利率-4.8%（24家中第,本钢板材 → 鞍钢股份 → 凌钢股份,R3+R2,3.33,20,0
+7,4.62,000761,承压评分为弱：资产负债率87.4%≥85%；单一维度极差：短期偿债91分；速动比率0.15（24家中第2弱）；现金比率0.06（24家中第2弱）；毛利率-4.8%（24家中第,本钢板材 → 本钢集团 → 凌钢股份,R2+R3,19.43,20,3
+8,2.88,600231, share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）,凌钢股份 → 凌钢集团 → 鞍钢股份,R2+R2,74.77,0,4
+9,2.31,000761,承压评分为弱：资产负债率87.4%≥85%；单一维度极差：短期偿债91分；速动比率0.15（24家中第2弱）；现金比率0.06（24家中第2弱）；毛利率-4.8%（24家中第,本钢板材 → 本钢集团 → 鞍钢股份,R2+R2,19.43,0,6
+10,1.5,600581,2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）,八一钢铁 → 中南股份,R3,0.0,3,0
+11,1.29,N_江苏攀森智能科技有限公司,2026-06-25 credit_exposure：guarantee_provided → 江苏锐美汽车零部件有限公司（outputs/live_20260930_freeze/guarantee/live_20260930_118_300881_guarantee_live.json）,江苏攀森智能科技有限公司 → 江苏锐美汽车零部件有限公司 → 盛德鑫泰,R1+R1,0.96,0,2
+12,1.25,N_广州市锐美汽车零部件有限公司,2026-06-25 credit_exposure：guarantee_provided → 江苏锐美汽车零部件有限公司（outputs/live_20260930_freeze/guarantee/live_20260930_118_300881_guarantee_live.json）,广州市锐美汽车零部件有限公司 → 江苏锐美汽车零部件有限公司 → 盛德鑫泰,R1+R1,0.78,0,1
+13,1.24,N_江苏锐美汽车零部件有限公司,2026-09-01 credit_exposure：guarantee_provided → 江西省锐美电驱动系统有限公司（outputs/live_20260930_freeze/guarantee/live_20260930_115_300881_guarantee_live.json）,江苏锐美汽车零部件有限公司 → 广州市锐美汽车零部件有限公司 → 盛德鑫泰,R1+R1,0.74,0,2
+14,0.0,000761,承压评分为弱：资产负债率87.4%≥85%；单一维度极差：短期偿债91分；速动比率0.15（24家中第2弱）；现金比率0.06（24家中第2弱）；毛利率-4.8%（24家中第,本钢板材 → 鞍钢集团 → 钒钛股份,R2+R2,54.41,0,3
+15,0.0,600231, share_pledge：九江萍钢钢铁有限公司（持股约10.91%） 质押给 鞍资（天津）融资租赁有限公司（outputs/analysis_freeze/pledge/analysis_044_600231_pledge.json）,凌钢股份 → 凌钢集团 → 钒钛股份,R2+R3,74.77,0,3
+16,0.0,002318,2026-01-28 credit_exposure：guarantee_limit → Eisenbau Krämer GmbH（outputs/live_20260930_freeze/guarantee/live_20260930_069_002318_guarantee_live.json）,久立特材 → 永兴材料,R2,21.07,0,0
+17,0.0,002756,2025-10-30 credit_exposure：guarantee_limit → 湖州久立永兴特种合金材料有限公司（outputs/live_20260930_freeze/guarantee/live_20260930_160_002756_guarantee_live.json）,永兴材料 → 久立特材,R2,1.57,0,0
+18,0.0,600022,2025-11-21 credit_event：破产重整或清算：关于控股子公司拟申请破产清算的公告（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2025/2025-11/2025-11-21/11621903.PDF）,山东钢铁 → 宝钢股份,R2,0.0,0,0
+19,0.0,600581,2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）,八一钢铁 → 宝钢股份,R3,0.0,0,0
+20,0.0,600581,2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）,八一钢铁 → 马钢股份,R3,0.0,0,0
+21,0.0,600581,2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）,八一钢铁 → 新钢股份,R3,0.0,0,0
+22,0.0,600581,2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）,八一钢铁 → 重庆钢铁,R3,0.0,0,0
+23,0.0,600581,2026-03-30 credit_event：非标准审计意见：2025年度关于财务报表发表非标准审计意见的专项说明（http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF）,八一钢铁 → 太钢不锈,R3,0.0,0,0
+24,0.0,N_四川云钢联供应链管理有限公司,2025-12-10 credit_exposure：guarantee_limit → 成都云钢联物流有限公司（outputs/live_20260930_freeze/guarantee/live_20260930_097_601686_guarantee_live.json）,四川云钢联供应链管理有限公司 → 友发集团,R1,2.45,0,0
+25,0.0,N_天津友发供应链管理有限公司,2025-12-10 credit_exposure：guarantee_limit → 天津友发钢管集团股份有限公司（outputs/live_20260930_freeze/guarantee/live_20260930_097_601686_guarantee_live.json）,天津友发供应链管理有限公司 → 友发集团,R1,6.09,0,0
+26,0.0,N_天津友发管道科技有限公司,2026-04-01 credit_exposure：guarantee_provided → 安徽友发管道科技有限公司（outputs/live_20260930_freeze/guarantee/live_20260930_089_601686_guarantee_live.json）,天津友发管道科技有限公司 → 友发集团,R1,17.65,0,0
+27,0.0,N_天津市友发德众钢管有限公司,2025-12-10 credit_exposure：guarantee_limit → 天津友发钢管集团股份有限公司（outputs/live_20260930_freeze/guarantee/live_20260930_097_601686_guarantee_live.json）,天津市友发德众钢管有限公司 → 友发集团,R1,18.48,0,0
+28,0.0,N_成都友发管业有限公司,2026-06-02 credit_exposure：guarantee_provided → （outputs/live_20260930_freeze/guarantee/live_20260930_085_601686_guarantee_live.json）,成都友发管业有限公司 → 友发集团,R1,12.1,0,0

@@ -103,6 +103,23 @@ def risk_sources(chain: Path, snapshot: Path) -> list[dict]:
     return sorted(out, key=lambda r: (order[r["nature"]], r["severity"] != "高", -len(r["reached"]), r["name"]))
 
 
+EDGE_CN = {"guarantee": "担保", "supply": "关联购销", "service": "关联劳务", "lease": "租赁", "finance": "资金往来",
+           "equity": "股权", "member_of": "集团成员"}
+
+
+def coverage(chain: Path, snapshot: Path, code: str) -> dict:
+    """Why a company has (no) paths: its disclosed relations in force vs expired, the newest announcement behind
+    them, its own tier and whether it is a risk source - so an empty result explains itself instead of looking broken."""
+    as_of = snapshot.name
+    rows = [e for e in _read(chain / "edges.csv") if e["edge_type"] != "member_of"
+            and (code in (e["src_id"], e["dst_id"]) or e.get("issuer_id") == code)]
+    live = [e for e in rows if is_active(e, as_of)]
+    fragility = {r["security_code"]: r for r in _read(snapshot / "fragility.csv")}
+    return {"active": live, "expired": [e for e in rows if not is_active(e, as_of)],
+            "latest": max((e.get("announcement_date") or "" for e in rows), default=""),
+            "tier": fragility.get(code, {}).get("tier", ""), "as_of": as_of}
+
+
 def name_of(node: str, names: dict[str, str]) -> str:
     return names.get(node, node[2:] if node.startswith(("N_", "S_")) else node)
 
