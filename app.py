@@ -23,9 +23,14 @@ page = st.navigation(
             st.Page("pages/4_风险路径图.py", title="信用通道明细", icon=":material/account_tree:"),
             st.Page("pages/5_上下游情景.py", title="供需情景与政策冲击", icon=":material/swap_horiz:"),
             st.Page("pages/1_公告结构化.py", title="公告事实抽取", icon=":material/description:"),
+            st.Page("pages/9_问一句.py", title="问一句（全屏）", icon=":material/forum:"),
         ],
     },
     position="top",
 )
 
+# 问一句: a round, draggable button on every page (opens a dialog; see src/ask_view.py)
+from src.ask_view import floating_button  # noqa: E402
+
+floating_button()
 page.run()
