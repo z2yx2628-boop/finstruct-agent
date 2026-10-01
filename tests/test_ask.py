@@ -65,3 +65,10 @@ def test_page_answers_an_example():
     app.text_input(key="ask_q").set_value("承压最弱的钢厂有哪些？").run()
     assert not app.exception
     assert any("问题类型" in m.value for m in app.markdown)
+
+
+def test_floating_button_is_rendered_by_the_app():
+    # app.py draws it before running the selected page, so every page has it
+    app = AppTest.from_file(APP_PATH, default_timeout=60).run()
+    assert not app.exception
+    assert "ask_fab_btn" in [b.key for b in app.button]
