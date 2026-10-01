@@ -1,4 +1,5 @@
-"""Recognise credit events that have already happened from announcement titles (the 24 core mills, last 12 months).
+"""Recognise credit events that have already happened from announcement titles (last 12 months): all 42 chain
+companies plus the other A-share steel companies listed in data/manifests/extension_universe.csv (layer steel_other).
 
 Titles: the newest pages of each company's Sina announcement list (cached in data/live/announcement_titles/),
 plus the titles already collected for the event study (data/event_study/titles/, read only).
@@ -27,7 +28,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.collect_credit_events import TITLE_FIELDS, classify, read, write  # noqa: E402
-from scripts.fetch_financials import core_mills  # noqa: E402
+from scripts.fetch_financials import universe  # noqa: E402
 from src.live_events import EVENT_CN, FIELDS, TABLE  # noqa: E402
 
 CACHE = ROOT / "data" / "live" / "announcement_titles"
@@ -48,13 +49,22 @@ def fetch_recent(code: str, name: str) -> list[dict]:
     return rows
 
 
+def companies() -> list[dict]:
+    """The 42 chain companies, then the other A-share steel companies (extension layer steel_other)."""
+    out = universe()
+    ext = ROOT / "data" / "manifests" / "extension_universe.csv"
+    seen = {m["security_code"] for m in out}
+    out += [m for m in read(ext) if m.get("layer") == "steel_other" and m["security_code"] not in seen]
+    return out
+
+
 def main() -> None:
     offline = "--offline" in sys.argv
     today = date.today().isoformat()
     since = (date.today() - timedelta(days=400)).isoformat()
     reviewed = {(r["security_code"], r["notice_date"], r["title"]): r for r in read(STUDY / "events_reviewed.csv")}
     failures, found = [], []
-    for m in core_mills():
+    for m in companies():
         code, name = m["security_code"], m["security_name"]
         cache = CACHE / f"{code}.csv"
         titles = {r["doc_id"]: r for r in read(cache)}

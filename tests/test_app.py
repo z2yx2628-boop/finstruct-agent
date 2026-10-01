@@ -91,7 +91,7 @@ def test_app_loads_without_a_result():
     app = AppTest.from_file(APP_PATH, default_timeout=10).run()
 
     assert not app.exception
-    assert app.title[0].value == "链证 · 钢铁产业链风险传导预警"  # 今日看板 is the home page
+    assert app.title[0].value == "钢铁上市公司上下游冲击传导与经营风险智能体"  # 今日看板 is the home page
 
     app.switch_page("pages/3_一键分析.py").run()
     assert not app.exception
