@@ -1,4 +1,4 @@
-"""⑭ Extension companies (coking coal / coke upstream, steel-using downstream leaders): fetch their quarterly
+"""⑭ Extension companies (coking coal / coke upstream, steel-using downstream leaders, the other A-share steel companies): fetch their quarterly
 summary and prices, then score each layer AGAINST ITS OWN PEERS with the same fragility method.
 They are never mixed into the 24-mill ranking; results go to data/snapshots_extension/<as_of>/.
 
@@ -29,6 +29,7 @@ from src.quarterly import latest_public_period, parse_abstract  # noqa: E402
 MANIFEST = ROOT / "data" / "manifests" / "extension_universe.csv"
 OUT = ROOT / "data" / "snapshots_extension"
 CAVEAT = {"upstream": "焦煤、焦炭企业互为同行，按同一方法评分。",
+          "steel_other": "其余 A 股钢铁企业：按 24 家核心钢厂的分布打分（与核心钢厂可比），但不进入核心钢厂排名；只用财务与行情，没有公告抽取。",
           "downstream": "下游组跨汽车、机械、家电、建筑等行业，杠杆和毛利率天然不同，只作粗筛，不作结论。"}
 
 
@@ -60,16 +61,30 @@ def main() -> None:
     out = OUT / args.as_of
     out.mkdir(parents=True, exist_ok=True)
     summary = {}
-    for layer in ("upstream", "downstream"):
-        rows = []
-        for m in (c for c in companies if c["layer"] == layer):
+    def metric_rows(members: list[dict]) -> list[dict]:
+        out = []
+        for m in members:
             path = QDIR / f"{m['security_code']}_abstract.csv"
             periods = parse_abstract(read_rows(path)) if path.exists() else {}
             metrics = dict(periods.get(period) or {"period": period})
             metrics.update(market_metrics(prices(m["security_code"]), args.as_of))
-            rows.append({"security_code": m["security_code"], "security_name": m["security_name"], **metrics})
-        add_excess_return(rows)
-        results = score(rows, [], args.as_of, period)
+            out.append({"security_code": m["security_code"], "security_name": m["security_name"], **metrics})
+        return out
+
+    for layer in sorted({c["layer"] for c in companies}):
+        rows = metric_rows([c for c in companies if c["layer"] == layer])
+        if not rows:
+            continue
+        if layer == "steel_other":
+            # scored against the 24 core mills' distribution, so the scores read like the core mills' scores
+            from scripts.fetch_financials import core_mills
+            core = metric_rows(core_mills())
+            add_excess_return(core + rows)
+            others = {r["security_code"] for r in rows}
+            results = [r for r in score(core, [], args.as_of, period, extra=rows) if r["security_code"] in others]
+        else:
+            add_excess_return(rows)
+            results = score(rows, [], args.as_of, period)
         for r in results:
             r["peer_group"] = f"extension_{layer}"
         fields = list(dict.fromkeys(k for r in results for k in r))

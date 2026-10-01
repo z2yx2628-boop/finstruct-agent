@@ -1,0 +1,20 @@
+{
+  "version": "v1",
+  "as_of": "2026-10-01",
+  "period": "20260630",
+  "caveat": {
+    "upstream": "焦煤、焦炭企业互为同行，按同一方法评分。",
+    "steel_other": "其余 A 股钢铁企业：按 24 家核心钢厂的分布打分（与核心钢厂可比），但不进入核心钢厂排名；只用财务与行情，没有公告抽取。",
+    "downstream": "下游组跨汽车、机械、家电、建筑等行业，杠杆和毛利率天然不同，只作粗筛，不作结论。"
+  },
+  "failures": [
+    "002359 北讯退 prices: ConnectionError",
+    "600001 邯郸钢铁 prices: ConnectionError",
+    "600005 武钢股份 prices: ConnectionError",
+    "600102 莱钢股份 prices: ConnectionError",
+    "600193 退市创兴 prices: ConnectionError",
+    "600357 承德钒钛 prices: ConnectionError",
+    "600532 退市未来 prices: ConnectionError",
+    "601028 玉龙股份 prices: ConnectionError"
+  ]
+}
