@@ -13,6 +13,7 @@ page = st.navigation(
     {
         "": [
             st.Page("pages/0_今日看板.py", title="今日预警", icon=":material/dashboard:", default=True),
+            st.Page("pages/9_问一句.py", title="问一句", icon=":material/forum:"),
             st.Page("pages/7_企业档案.py", title="企业档案", icon=":material/badge:"),
             st.Page("pages/8_风险传导总图.py", title="风险传导", icon=":material/hub:"),
             st.Page("pages/3_一键分析.py", title="分析新公告", icon=":material/bolt:"),
