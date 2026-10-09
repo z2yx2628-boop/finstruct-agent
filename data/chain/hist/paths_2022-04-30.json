@@ -1,0 +1,4997 @@
+[
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；现金比率0.10（24家中第2弱）；流动比率0.50（24家中第2弱）；速动比率0.35（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "N_其他关联方",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_163_000959_related_estimate.json 第2页：（共2行，合计31015.0万元；最大一行）接受生产、生活等服务 \n协议价格 \n30,055  \n25,046  \n5,198",
+        "note": "",
+        "amount_wan": 31015.0
+      },
+      {
+        "rule": "R2",
+        "src": "N_其他关联方",
+        "dst": "601003",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "immaterial",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第5页：其他关联方 \n其他 \n 21,789.00 \n0.08 \n1,422.78 \n30,315.11 \n0.09",
+        "note": "金额低于对方净资产的1%",
+        "amount_wan": 21789.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2019-09-12 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：（共5行，合计720686.0万元；最大一行）向关联人购买材料 \n凌源钢铁集团有限责任公司 \n491,832 619,159.49",
+        "note": "集团参照等级（46.7分）",
+        "amount_wan": 720686.0
+      },
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_310_600231_guarantee_live.json 第1页：2019 年9 月6 日，根据《相互担保协议》和《相互担保协议之补充协议》约定，公司全资子公司凌钢股份北票保国铁矿有限公司(以下简称“保国公司”)与民生银行大连",
+        "note": "严重程度已降至最低",
+        "amount_wan": 280000.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600808",
+        "dst": "N_中国宝武钢铁集团有限公司及其附属公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_128_600808_related_estimate.json 第3页：（共2行，合计5114606.67万元；最大一行）（2）公司及其附属公司向中国宝武及其附属公司采购产品，包括采购矿石﹑石灰﹑废钢﹑耐火材料﹑备件﹑成套设备﹑非标",
+        "note": "严重程度已降至最低",
+        "amount_wan": 5114606.67
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000717",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_148_000717_related_estimate.json 第1页：（共4行，合计1209953.0万元；最大一行）原辅材料 \n宝武集团 \n市场价格 \n998,740 \n129,738 \n1,106,054",
+        "note": "集团参照等级（33.2分）；承压为强，风险在此被吸收",
+        "amount_wan": 1209953.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000717",
+        "dst": "N_宝武杰富意",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_148_000717_related_estimate.json 第1页：（共3行，合计14053.0万元；最大一行）原辅材料 \n宝武杰富意 \n市场价格 \n12,093 \n1,624 \n15,645",
+        "note": "严重程度已降至最低",
+        "amount_wan": 14053.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000717",
+        "dst": "N_韶关市矿投",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_148_000717_related_estimate.json 第1页：原辅材料 \n韶关市矿投 \n市场价格 \n1,200 \n0 \n121",
+        "note": "严重程度已降至最低",
+        "amount_wan": 1200.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "000717",
+        "dst": "N_中南钢铁",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_148_000717_related_estimate.json 第1页：（共4行，合计156775.0万元；最大一行）原辅材料 \n中南钢铁 \n市场价格 \n65,684 \n1,787 \n101,779",
+        "note": "严重程度已降至最低",
+        "amount_wan": 156775.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_其他关联方",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：其他关联方 \n其他 \n8,580.00 \n1.21 \n1,942.32 \n9,099.89 \n1.23",
+        "note": "",
+        "amount_wan": 8580.0
+      },
+      {
+        "rule": "R2",
+        "src": "N_其他关联方",
+        "dst": "000959",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "immaterial",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_163_000959_related_estimate.json 第2页：（共2行，合计7698.0万元；最大一行）八、其他关联方 \n销售产品、固废、动力等 \n市场价格 \n7,325  \n5,689  \n1,012",
+        "note": "金额低于对方净资产的1%",
+        "amount_wan": 7698.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：（共3行，合计67833.0万元；最大一行）向关联人销售材料 \n凌源钢铁集团有限责任公司 \n63,001 \n58,046.68",
+        "note": "",
+        "amount_wan": 67833.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_赤峰九联煤化有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：向关联人购买材料 \n赤峰九联煤化有限责任公司 \n28,200",
+        "note": "",
+        "amount_wan": 28200.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：（共3行，合计67833.0万元；最大一行）向关联人销售材料 \n凌源钢铁集团有限责任公司 \n63,001 \n58,046.68",
+        "note": "",
+        "amount_wan": 67833.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_融通物贸(天津)电子商务有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：向关联人购买材料 \n融通物贸（天津）电子商务有限\n公司 \n\n2,449.67",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：（共3行，合计67833.0万元；最大一行）向关联人销售材料 \n凌源钢铁集团有限责任公司 \n63,001 \n58,046.68",
+        "note": "",
+        "amount_wan": 67833.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源钢铁运输有限责任公司 \n6,892 \n6,439.63",
+        "note": "",
+        "amount_wan": 6892.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：（共3行，合计67833.0万元；最大一行）向关联人销售材料 \n凌源钢铁集团有限责任公司 \n63,001 \n58,046.68",
+        "note": "",
+        "amount_wan": 67833.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁集团设计研究有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源钢铁集团设计研究有限公司 \n1,264 \n1,310.28",
+        "note": "",
+        "amount_wan": 1264.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：（共3行，合计67833.0万元；最大一行）向关联人销售材料 \n凌源钢铁集团有限责任公司 \n63,001 \n58,046.68",
+        "note": "",
+        "amount_wan": 67833.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源滨河会务中心",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源滨河会务中心 \n105 \n106.17",
+        "note": "",
+        "amount_wan": 105.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json 第2页：（共19行，合计596547.8041万元；最大一行）2019 年9 月6 日，根据《相互担保协议》和《相互担保协议之补充协议》约定，公司与民生银行大连分行续签",
+        "note": "",
+        "amount_wan": 596547.8041
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_赤峰九联煤化有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：向关联人购买材料 \n赤峰九联煤化有限责任公司 \n28,200",
+        "note": "",
+        "amount_wan": 28200.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json 第2页：（共19行，合计596547.8041万元；最大一行）2019 年9 月6 日，根据《相互担保协议》和《相互担保协议之补充协议》约定，公司与民生银行大连分行续签",
+        "note": "",
+        "amount_wan": 596547.8041
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_融通物贸(天津)电子商务有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：向关联人购买材料 \n融通物贸（天津）电子商务有限\n公司 \n\n2,449.67",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json 第2页：（共19行，合计596547.8041万元；最大一行）2019 年9 月6 日，根据《相互担保协议》和《相互担保协议之补充协议》约定，公司与民生银行大连分行续签",
+        "note": "",
+        "amount_wan": 596547.8041
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源钢铁运输有限责任公司 \n6,892 \n6,439.63",
+        "note": "",
+        "amount_wan": 6892.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json 第2页：（共19行，合计596547.8041万元；最大一行）2019 年9 月6 日，根据《相互担保协议》和《相互担保协议之补充协议》约定，公司与民生银行大连分行续签",
+        "note": "",
+        "amount_wan": 596547.8041
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁集团设计研究有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源钢铁集团设计研究有限公司 \n1,264 \n1,310.28",
+        "note": "",
+        "amount_wan": 1264.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json 第2页：（共19行，合计596547.8041万元；最大一行）2019 年9 月6 日，根据《相互担保协议》和《相互担保协议之补充协议》约定，公司与民生银行大连分行续签",
+        "note": "",
+        "amount_wan": 596547.8041
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源滨河会务中心",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源滨河会务中心 \n105 \n106.17",
+        "note": "",
+        "amount_wan": 105.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_赤峰九联煤化有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：向关联人购买材料 \n赤峰九联煤化有限责任公司 \n28,200",
+        "note": "",
+        "amount_wan": 28200.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_融通物贸(天津)电子商务有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：向关联人购买材料 \n融通物贸（天津）电子商务有限\n公司 \n\n2,449.67",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源钢铁运输有限责任公司 \n6,892 \n6,439.63",
+        "note": "",
+        "amount_wan": 6892.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁集团设计研究有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源钢铁集团设计研究有限公司 \n1,264 \n1,310.28",
+        "note": "",
+        "amount_wan": 1264.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源滨河会务中心",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源滨河会务中心 \n105 \n106.17",
+        "note": "",
+        "amount_wan": 105.0
+      }
+    ]
+  },
+  {
+    "seed": "N_南京南钢产业发展有限公司",
+    "seed_reason": "2019-07-25 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_297_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_南京南钢产业发展有限公司",
+        "dst": "600282",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_424_600282_guarantee_live.json 第4页：（共13行，合计582000.0万元；最大一行）被担保单位名称\n2022 年担保额度上限（万元）\n南钢发展（含南钢环宇、南钢国贸、鑫拓钢铁、香港\n金腾发展、新加",
+        "note": "",
+        "amount_wan": 582000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_海南矿业",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：（共4行，合计9620.0万元；最大一行）向关联人购买原材料\n海南矿业\n11,263\n9,000\n铁矿石产品",
+        "note": "严重程度已降至最低",
+        "amount_wan": 9620.0
+      }
+    ]
+  },
+  {
+    "seed": "N_南京南钢产业发展有限公司",
+    "seed_reason": "2019-07-25 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_297_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_南京南钢产业发展有限公司",
+        "dst": "600282",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_424_600282_guarantee_live.json 第4页：（共13行，合计582000.0万元；最大一行）被担保单位名称\n2022 年担保额度上限（万元）\n南钢发展（含南钢环宇、南钢国贸、鑫拓钢铁、香港\n金腾发展、新加",
+        "note": "",
+        "amount_wan": 582000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_南钢联合",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：（共3行，合计74478.0万元；最大一行）向关联人购买燃料及动力等\n南钢联合\n70,275\n72,000\n氧气、氮气、氩气",
+        "note": "严重程度已降至最低",
+        "amount_wan": 74478.0
+      }
+    ]
+  },
+  {
+    "seed": "N_南京南钢产业发展有限公司",
+    "seed_reason": "2019-07-25 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_297_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_南京南钢产业发展有限公司",
+        "dst": "600282",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_424_600282_guarantee_live.json 第4页：（共13行，合计582000.0万元；最大一行）被担保单位名称\n2022 年担保额度上限（万元）\n南钢发展（含南钢环宇、南钢国贸、鑫拓钢铁、香港\n金腾发展、新加",
+        "note": "",
+        "amount_wan": 582000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_南钢嘉华",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买原材料\n南钢嘉华\n2,155\n2,200\n矿渣微粉",
+        "note": "严重程度已降至最低",
+        "amount_wan": 2200.0
+      }
+    ]
+  },
+  {
+    "seed": "N_南京南钢产业发展有限公司",
+    "seed_reason": "2019-07-25 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_297_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_南京南钢产业发展有限公司",
+        "dst": "600282",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_424_600282_guarantee_live.json 第4页：（共13行，合计582000.0万元；最大一行）被担保单位名称\n2022 年担保额度上限（万元）\n南钢发展（含南钢环宇、南钢国贸、鑫拓钢铁、香港\n金腾发展、新加",
+        "note": "",
+        "amount_wan": 582000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_福斯罗",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买原材料\n福斯罗\n48\n100\n废钢",
+        "note": "严重程度已降至最低",
+        "amount_wan": 100.0
+      }
+    ]
+  },
+  {
+    "seed": "N_南京南钢产业发展有限公司",
+    "seed_reason": "2019-07-25 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_297_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_南京南钢产业发展有限公司",
+        "dst": "600282",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_424_600282_guarantee_live.json 第4页：（共13行，合计582000.0万元；最大一行）被担保单位名称\n2022 年担保额度上限（万元）\n南钢发展（含南钢环宇、南钢国贸、鑫拓钢铁、香港\n金腾发展、新加",
+        "note": "",
+        "amount_wan": 582000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_宿迁金鑫",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买原材料\n宿迁金鑫\n188\n1,500\n钢材（含球扁钢、角钢、L 型钢、履带钢等）、废钢",
+        "note": "严重程度已降至最低",
+        "amount_wan": 1500.0
+      }
+    ]
+  },
+  {
+    "seed": "N_南京南钢产业发展有限公司",
+    "seed_reason": "2019-07-25 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_297_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_南京南钢产业发展有限公司",
+        "dst": "600282",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_424_600282_guarantee_live.json 第4页：（共13行，合计582000.0万元；最大一行）被担保单位名称\n2022 年担保额度上限（万元）\n南钢发展（含南钢环宇、南钢国贸、鑫拓钢铁、香港\n金腾发展、新加",
+        "note": "",
+        "amount_wan": 582000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_江苏复星商社",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买原材料\n江苏复星商社\n15,000\n41,000\n铁矿石产品、煤、焦炭等",
+        "note": "严重程度已降至最低",
+        "amount_wan": 41000.0
+      }
+    ]
+  },
+  {
+    "seed": "N_南京南钢产业发展有限公司",
+    "seed_reason": "2019-07-25 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_297_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_南京南钢产业发展有限公司",
+        "dst": "600282",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_424_600282_guarantee_live.json 第4页：（共13行，合计582000.0万元；最大一行）被担保单位名称\n2022 年担保额度上限（万元）\n南钢发展（含南钢环宇、南钢国贸、鑫拓钢铁、香港\n金腾发展、新加",
+        "note": "",
+        "amount_wan": 582000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_金珂水务",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买燃料及动力等\n金珂水务\n13,300\n14,000\n生活水、工业清水和中水处理服务",
+        "note": "严重程度已降至最低",
+        "amount_wan": 14000.0
+      }
+    ]
+  },
+  {
+    "seed": "N_南京南钢产业发展有限公司",
+    "seed_reason": "2019-07-25 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_297_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_南京南钢产业发展有限公司",
+        "dst": "600282",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_424_600282_guarantee_live.json 第4页：（共13行，合计582000.0万元；最大一行）被担保单位名称\n2022 年担保额度上限（万元）\n南钢发展（含南钢环宇、南钢国贸、鑫拓钢铁、香港\n金腾发展、新加",
+        "note": "",
+        "amount_wan": 582000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_江苏通恒",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：接受关联人提供服务、商品\n江苏通恒\n980\n1,500\n钢材深加工",
+        "note": "严重程度已降至最低",
+        "amount_wan": 1500.0
+      }
+    ]
+  },
+  {
+    "seed": "N_南京南钢产业发展有限公司",
+    "seed_reason": "2019-07-25 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_297_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_南京南钢产业发展有限公司",
+        "dst": "600282",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_424_600282_guarantee_live.json 第4页：（共13行，合计582000.0万元；最大一行）被担保单位名称\n2022 年担保额度上限（万元）\n南钢发展（含南钢环宇、南钢国贸、鑫拓钢铁、香港\n金腾发展、新加",
+        "note": "",
+        "amount_wan": 582000.0
+      },
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_上海钢银",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：接受关联人提供服务、商品\n上海钢银\n355\n1,000\n运输服务",
+        "note": "严重程度已降至最低",
+        "amount_wan": 1000.0
+      }
+    ]
+  },
+  {
+    "seed": "000709",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；资产负债率74.9%（24家中第3弱）；流动比率0.53（24家中第3弱）；净利率1.2%（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000709",
+        "dst": "N_承德钢铁集团有限责任公司及其控/参股公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_157_000709_related_estimate.json 第2页：（共2行，合计804996.87万元；最大一行）采购\n商品 \n承德钢铁集团有限责任公司及其控/参股公司 \n701,418.86 \n69,213.60 \n587,",
+        "note": "",
+        "amount_wan": 804996.87
+      }
+    ]
+  },
+  {
+    "seed": "000709",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；资产负债率74.9%（24家中第3弱）；流动比率0.53（24家中第3弱）；净利率1.2%（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000709",
+        "dst": "N_邯郸钢铁集团有限责任公司及其控/参股公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_157_000709_related_estimate.json 第2页：邯郸钢铁集团有限责任公司及其控/参股公司 \n1,932,026.24 \n313,576.97 \n2,154,621.50",
+        "note": "",
+        "amount_wan": 1932026.24
+      }
+    ]
+  },
+  {
+    "seed": "000709",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；资产负债率74.9%（24家中第3弱）；流动比率0.53（24家中第3弱）；净利率1.2%（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000709",
+        "dst": "N_河北钢铁集团矿业有限公司及其控/参股公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_157_000709_related_estimate.json 第2页：河北钢铁集团矿业有限公司及其控/参股公司 \n512,809.23 \n12,809.23 \n713,834.65",
+        "note": "",
+        "amount_wan": 512809.23
+      }
+    ]
+  },
+  {
+    "seed": "000709",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；资产负债率74.9%（24家中第3弱）；流动比率0.53（24家中第3弱）；净利率1.2%（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000709",
+        "dst": "N_河钢集团有限公司及其控/参股公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_157_000709_related_estimate.json 第2页：（共2行，合计1421520.42万元；最大一行）河钢集团有限公司及其控/参股公司 \n1,402,929.43 \n194,599.77 \n1,361,578.2",
+        "note": "",
+        "amount_wan": 1421520.42
+      }
+    ]
+  },
+  {
+    "seed": "000709",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；资产负债率74.9%（24家中第3弱）；流动比率0.53（24家中第3弱）；净利率1.2%（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000709",
+        "dst": "N_石家庄钢铁有限责任公司及其控/参股公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_157_000709_related_estimate.json 第2页：石家庄钢铁有限责任公司及其控/参股公司 \n5,002.21 \n833.70 \n36,092.28",
+        "note": "",
+        "amount_wan": 5002.21
+      }
+    ]
+  },
+  {
+    "seed": "000709",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；资产负债率74.9%（24家中第3弱）；流动比率0.53（24家中第3弱）；净利率1.2%（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000709",
+        "dst": "N_唐山钢铁集团有限责任公司及其控/参股公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_157_000709_related_estimate.json 第2页：（共2行，合计3916099.1500000004万元；最大一行）唐山钢铁集团有限责任公司及其控/参股公司 \n3,724,842.18 \n443,603.15 ",
+        "note": "",
+        "amount_wan": 3916099.1500000004
+      }
+    ]
+  },
+  {
+    "seed": "000709",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；资产负债率74.9%（24家中第3弱）；流动比率0.53（24家中第3弱）；净利率1.2%（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000709",
+        "dst": "N_舞阳钢铁有限公司及其控/参股公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_157_000709_related_estimate.json 第2页：舞阳钢铁有限公司及其控/参股公司 \n2,525.95 \n\n2,525.95",
+        "note": "",
+        "amount_wan": 2525.95
+      }
+    ]
+  },
+  {
+    "seed": "000709",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；资产负债率74.9%（24家中第3弱）；流动比率0.53（24家中第3弱）；净利率1.2%（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000709",
+        "dst": "N_宣化钢铁集团有限公司及其控/参股公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_157_000709_related_estimate.json 第2页：宣化钢铁集团有限公司及其控/参股公司 \n\n\n141,309.25",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000709",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；资产负债率74.9%（24家中第3弱）；流动比率0.53（24家中第3弱）；净利率1.2%（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "000709",
+        "dst": "000923",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_HBIS",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；现金比率0.10（24家中第2弱）；流动比率0.50（24家中第2弱）；速动比率0.35（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "E_SHOUGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_163_000959_related_estimate.json 第2页：（共3行，合计6176064.0万元；最大一行）一、首钢集团有限公司及下属企业 \n购买原材料、燃料、动力等 \n市场价格 \n5,573,352  \n5,734,7",
+        "note": "集团参照等级（74.8分）",
+        "amount_wan": 6176064.0
+      }
+    ]
+  },
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；现金比率0.10（24家中第2弱）；流动比率0.50（24家中第2弱）；速动比率0.35（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "N_迁安中化煤化工有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_163_000959_related_estimate.json 第2页：二、迁安中化煤化工有限责任公司 \n购买原材料、燃料、动力等 \n市场价格 \n756,968  \n574,782  \n89,282",
+        "note": "",
+        "amount_wan": 756968.0
+      }
+    ]
+  },
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；现金比率0.10（24家中第2弱）；流动比率0.50（24家中第2弱）；速动比率0.35（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "N_唐山首钢京唐西山焦化有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_163_000959_related_estimate.json 第2页：（共2行，合计1670086.0万元；最大一行）三、唐山首钢京唐西山焦化有限责任公司 \n购买原材料、燃料、动力等 \n市场价格 \n1,653,406  \n1,42",
+        "note": "",
+        "amount_wan": 1670086.0
+      }
+    ]
+  },
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；现金比率0.10（24家中第2弱）；流动比率0.50（24家中第2弱）；速动比率0.35（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "N_首钢(青岛)钢业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_163_000959_related_estimate.json 第2页：四、首钢(青岛)钢业有限公司 \n购买原材料、燃料、动力等 \n市场价格 \n4,304  \n2,800  \n626",
+        "note": "",
+        "amount_wan": 4304.0
+      }
+    ]
+  },
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债93分；现金比率0.10（24家中第2弱）；流动比率0.50（24家中第2弱）；速动比率0.35（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "N_广州京海航运有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_163_000959_related_estimate.json 第2页：五、广州京海航运有限公司 \n接受生产、生活等服务 \n协议价格 \n42,551  \n40,792  \n5,800",
+        "note": "",
+        "amount_wan": 42551.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "E_SANGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第5页：（共4行，合计4500.0万元；最大一行）接受关联人提供的综合服务 \n福建省三钢（集团）有限责任公司 \n综合服务 \n协议约定 \n25,000,000.00 \n2",
+        "note": "集团参照等级（44.0分）",
+        "amount_wan": 4500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明市三钢汽车运输有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第5页：（共2行，合计8300.0万元；最大一行）接受关联人提供的劳务 \n三明市三钢汽车运输有限公司 \n运输、修理服务 \n参考市价 \n80,000,000.00 \n4,",
+        "note": "",
+        "amount_wan": 8300.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明市三钢矿山开发有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第3页：向关联人采购原、燃材料等 \n三明市三钢矿山开发有限公司 \n石灰、石灰粉采购 \n参考市价 \n   200,000,000.00     24,799,963.82",
+        "note": "",
+        "amount_wan": 20000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_明溪县三钢矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第3页：向关联人采购原、燃材料等 \n明溪县三钢矿业有限责任公司 \n石灰、石灰粉采购 \n参考市价 \n   100,000,000.00      1,028,024.95",
+        "note": "",
+        "amount_wan": 10000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明市钢岩矿业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第3页：向关联人采购原、燃材料等 \n三明市钢岩矿业有限公司 \n石灰、石灰粉采购 \n参考市价 \n150,000,000.00 \n33,128,980.68 \n123,30",
+        "note": "",
+        "amount_wan": 15000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_山西闽光新材料科技有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第3页：向关联人采购原、燃材料等 \n山西闽光新材料科技有限责任公司 \n焦炭采购 \n参考市价 \n2,540,000,000.00 \n135,319,840.47 \n1,4",
+        "note": "",
+        "amount_wan": 254000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省三钢明光实业发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第3页：（共2行，合计32000.0万元；最大一行）向关联人采购原、燃材料等 \n福建省三钢明光实业发展有限公司及其子公司 \n备品、备件、耐材采购 \n参考市价 \n250,",
+        "note": "",
+        "amount_wan": 32000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建三钢冶金建设有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第5页：（共2行，合计66000.0万元；最大一行）接受关联人提供的劳务 \n福建三钢冶金建设有限公司 \n工程技改、修理服务 \n参考市价 \n510,000,000.00 ",
+        "note": "",
+        "amount_wan": 66000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省三明钢联有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第3页：向关联人采购原、燃材料等 \n福建省三明钢联有限责任公司 \n采购油料、轮胎等 \n参考市价 \n35,000,000.00 \n4,259,133.16 \n30,046",
+        "note": "",
+        "amount_wan": 3500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建三钢(集团)三明化工有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第3页：（共2行，合计350250.0万元；最大一行）向关联人采购原、燃材料等 \n福建三钢（集团）三明化工有限责任公司及下属子公司 \n采购焦炭等 \n参考市价 \n3,50",
+        "note": "",
+        "amount_wan": 350250.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建闽鹭矿业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第3页：向关联人采购原、燃材料等 \n福建闽鹭矿业有限公司 \n石灰等采购 \n参考市价 \n10,000,000.00 \n\n",
+        "note": "",
+        "amount_wan": 1000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省闽光文化旅游发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第5页：接受关联人提供的劳务 \n福建省闽光文化旅游发展有限公司及子公司 \n零星服务 \n参考市价 \n24,000,000.00 \n2,185,225.25 \n19,579",
+        "note": "",
+        "amount_wan": 2400.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明市三钢建筑工程有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第5页：接受关联人提供的劳务 \n三明市三钢建筑工程有限公司 \n工程技改、修理服务 \n参考市价 \n270,000,000.00 \n35,087,895.43 \n150,1",
+        "note": "",
+        "amount_wan": 27000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建闽光软件股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第5页：接受关联人提供的劳务 \n福建闽光软件股份有限公司 \n软件技术、修理服务 \n参考市价 \n60,000,000.00 \n1,440,073.25 \n33,839,4",
+        "note": "",
+        "amount_wan": 6000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省闽光现代物流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第5页：接受关联人提供的劳务 \n福建省闽光现代物流有限公司 \n装卸劳务 \n参考市价 \n5,000,000.00 \n25,910.61 \n1,253,739.38",
+        "note": "",
+        "amount_wan": 500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明钢联电力发展有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第5页：租入土地、办公楼、设备 \n三明钢联电力发展有限责任公司 \n租入设备 \n协议约定 \n       800,000.00                 -    ",
+        "note": "",
+        "amount_wan": 80.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_中国平煤神马集团焦化销售有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第6页：向关联人采购原、燃材料等 \n中国平煤神马集团焦化销售有限公司 \n煤、焦炭采购 \n参考市价 \n800,000,000.00 \n55,761,488.22 \n318",
+        "note": "",
+        "amount_wan": 80000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_国投闽光(三明)城市资源有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第6页：向关联人采购原、燃材料等 \n国投闽光（三明)城市资源有限公司 \n废钢采购 \n参考市价 \n3,500,000,000.00 \n88,823,734.61 \n1,7",
+        "note": "",
+        "amount_wan": 350000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建三钢国贸有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第6页：向关联人采购原、燃材料等 \n福建三钢国贸有限公司 \n铁矿石采购 \n参考市价 \n17,100,000,000.00 \n1,158,426,398.85 \n11,9",
+        "note": "",
+        "amount_wan": 1710000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建天尊新材料制造有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第6页：向关联人采购原、燃材料等 \n福建天尊新材料制造有限公司 \n废钢采购 \n参考市价 \n120,000,000.00 \n3,369,536.28 \n57,461,64",
+        "note": "",
+        "amount_wan": 12000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省闽光新型材料有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第7页：租入土地、办公楼、设备 \n福建省闽光新型材料有限公司 \n租入设备 \n协议约定 \n30,000,000.00 \n1,310,577.88 \n20,257,008.",
+        "note": "",
+        "amount_wan": 3000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省潘洛铁矿有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第8页：向关联人采购原、燃材料等 \n福建省潘洛铁矿有限责任公司 \n铁矿石采购 \n参考市价 \n300,000,000.00 \n14,098,754.00 \n220,517",
+        "note": "",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省德化鑫阳矿业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第8页：向关联人采购原、燃材料等 \n福建省德化鑫阳矿业有限公司 \n球团矿采购 \n参考市价 \n550,000,000.00 \n41,276,448.85 \n308,094",
+        "note": "",
+        "amount_wan": 55000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省连城锰矿有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第8页：（共2行，合计5100.0万元；最大一行）向关联人采购原、燃材料等 \n福建省连城锰矿有限责任公司 \n硅铁等合金 \n参考市价 \n50,000,000.00 \n1,",
+        "note": "",
+        "amount_wan": 5100.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建马坑矿业股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第8页：向关联人采购原、燃材料等 \n福建马坑矿业股份有限公司及下属子公司 \n铁矿石采购 \n参考市价 \n1,000,000,000.00 \n- \n624,918,004.",
+        "note": "",
+        "amount_wan": 100000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_厦门钨业股份有限公司及下属公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第8页：向关联人采购原、燃材料等 \n厦门钨业股份有限公司及下属公司 \n零星采购 \n参考市价 \n5,000,000.00",
+        "note": "",
+        "amount_wan": 500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省冶金工业设计院有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第8页：接受关联人提供的劳务 \n福建省冶金工业设计院有限公司及下属子公司 \n设计劳务 \n参考市价 \n15,000,000.00 \n395,050.93 \n11,598,",
+        "note": "",
+        "amount_wan": 1500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省冶金产品质量检验站有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第8页：接受关联人提供的劳务 \n福建省冶金产品质量检验站有限公司 \n零星劳务 \n参考市价 \n2,000,000.00 \n- \n1,150,819.10",
+        "note": "",
+        "amount_wan": 200.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2020-12-10 credit_exposure：guarantee_provided → （outputs/hist_freeze/guarantee/hist_369_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省南平铝业股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_149_002110_related_estimate.json 第8页：接受关联人提供的劳务 \n福建省南平铝业股份有限公司及下属子公司 \n工程技改、修理服务 \n参考市价 \n30,000,000.00 \n11,046,891.26 \n",
+        "note": "",
+        "amount_wan": 3000.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "E_BAOTOU_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：（共4行，合计510777.35万元；最大一行）包头钢铁（集团）有限责任公司 \n原矿、石灰石、\n废钢等 \n393,100.00 \n393,080.55",
+        "note": "集团参照等级（61.7分）",
+        "amount_wan": 510777.35
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古包钢庆华煤化工有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古包钢庆华煤化工有限公司 \n焦炭 \n327,000.00 \n326,549.32",
+        "note": "",
+        "amount_wan": 327000.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头钢铁(集团)铁捷物流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包头钢铁（集团）铁捷物流有限公司 \n运费，装卸费，\n合金 \n270,000.00 \n269,597.50",
+        "note": "",
+        "amount_wan": 270000.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_北方稀土平源(内蒙古)镁铝新材料科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：北方稀土平源（内蒙古）镁铝新材料科\n技有限公司 \n废钢 \n91,700.00 \n91,694.70",
+        "note": "",
+        "amount_wan": 91700.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_乌拉特中旗丰达贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：乌拉特中旗丰达贸易有限公司 \n燃料 \n84,000.00 \n83,840.19",
+        "note": "",
+        "amount_wan": 84000.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古包钢浩通能源有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古包钢浩通能源有限公司 \n燃料 \n77,000.00 \n76,762.02",
+        "note": "",
+        "amount_wan": 77000.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢矿业有限责任公司 \n原燃料、合金 \n54,000.00 \n53,997.57",
+        "note": "",
+        "amount_wan": 54000.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古包钢钢联物流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古包钢钢联物流有限公司 \n运费，装卸费、\n修理费 \n46,700.00 \n46,621.28",
+        "note": "",
+        "amount_wan": 46700.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢西北创业建设有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢西北创业建设有限公司 \n工程款，检修费 41,514.00 \n41,513.53",
+        "note": "",
+        "amount_wan": 41514.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢(乌兰察布市)普华实业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢（乌兰察布市）普华实业有限公司 原燃料 \n33,000.00 \n32,616.07",
+        "note": "",
+        "amount_wan": 33000.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团冶金渣综合利用开发有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团冶金渣综合利用开发有限责\n任公司 \n维修费，废钢 \n30,740.00 \n30,736.79",
+        "note": "",
+        "amount_wan": 30740.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团冶金轧辊制造有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团冶金轧辊制造有限公司 \n维修费，劳务费，\n原材料 \n24,510.00 \n24,503.25",
+        "note": "",
+        "amount_wan": 24510.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_乌海包钢矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：乌海包钢矿业有限责任公司 \n原辅料 \n24,440.00 \n24,430.76",
+        "note": "",
+        "amount_wan": 24440.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古稀奥科贮氢合金有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古稀奥科贮氢合金有限公司 \n合金 \n22,250.00 \n22,247.75",
+        "note": "",
+        "amount_wan": 22250.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_中国北方稀土(集团)高科技股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：中国北方稀土（集团）高科技股份有限\n公司 \n废钢、非炼焦煤、\n辅材 \n18,480.00 \n18,471.89",
+        "note": "",
+        "amount_wan": 18480.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团电气有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团电气有限公司 \n维修费，检测费 15,440.00 \n15,439.17",
+        "note": "",
+        "amount_wan": 15440.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古大中矿业股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古大中矿业股份有限公司 \n原料 \n11,390.00 \n11,381.71",
+        "note": "",
+        "amount_wan": 11390.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢绿化有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢绿化有限责任公司 \n绿化费、养护费、\n运费、修理费 \n10,690.00 \n10,686.24",
+        "note": "",
+        "amount_wan": 10690.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_北京包钢金属材料有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：北京包钢金属材料有限公司 \n燃料 \n10,090.00 \n10,085.57",
+        "note": "",
+        "amount_wan": 10090.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团机械设备制造有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团机械设备制造有限公司 \n修理费 \n9,450.00 \n9,445.76",
+        "note": "",
+        "amount_wan": 9450.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团工业与民用建筑工程有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团工业与民用建筑工程有限公\n司 \n维修费 \n8,430.00 \n8,425.47",
+        "note": "",
+        "amount_wan": 8430.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市安力铁运器材有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包头市安力铁运器材有限责任公司 \n装卸费 \n8,040.00 \n8,036.69",
+        "note": "",
+        "amount_wan": 8040.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团万开实业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团万开实业有限公司 \n餐费、水费、印\n刷费、通勤费、\n住宿费、租车费 \n7,615.00 \n7,610.05",
+        "note": "",
+        "amount_wan": 7615.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古包钢安力金属科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古包钢安力金属科技有限公司 \n生产总包费、劳\n务费 \n11,035.00 \n11,037.27",
+        "note": "",
+        "amount_wan": 11035.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢勘察测绘研究院",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢勘察测绘研究院 \n工程款 \n5,670.00 \n5,964.39",
+        "note": "",
+        "amount_wan": 5670.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团节能环保科技产业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团节能环保科技产业有限责任\n公司 \n水渣处置费、咨\n询费 \n5,760.00 \n5,759.15",
+        "note": "",
+        "amount_wan": 5760.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢万开环保科技有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢万开环保科技有限责任公司 \n加工费 \n4,890.00 \n4,886.57",
+        "note": "",
+        "amount_wan": 4890.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团设计研究院",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团设计研究院（有限公司） \n设计费、工程款 4,845.00 \n4,843.01",
+        "note": "",
+        "amount_wan": 4845.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团国际经济贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团国际经济贸易有限公司 \n代理运费，生铁\n废钢 \n4,590.00 \n4,588.87",
+        "note": "",
+        "amount_wan": 4590.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢蒙普矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢蒙普矿业有限责任公司 \n原料 \n4,060.00 \n4,053.81",
+        "note": "",
+        "amount_wan": 4060.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_天津绥津国际贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：天津绥津国际贸易有限公司 \n原料 \n3,735.00 \n3,730.16",
+        "note": "",
+        "amount_wan": 3735.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古包钢同业金属新材料有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古包钢同业金属新材料有限公司 \n辅材 \n3,270.00 \n3,269.14",
+        "note": "",
+        "amount_wan": 3270.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头钢铁(集团)环境监测服务有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：（共2行，合计2907.0万元；最大一行）包头钢铁（集团）环境监测服务有限责\n任公司 \n监测费 \n2,890.00 \n2,888.24",
+        "note": "",
+        "amount_wan": 2907.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团电信有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团电信有限责任公司 \n通讯费，维修费 2,780.00 \n2,378.64",
+        "note": "",
+        "amount_wan": 2780.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古包钢集团铁盈投资有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古包钢集团铁盈投资有限公司 \n合金 \n2,245.00 \n2,240.38",
+        "note": "",
+        "amount_wan": 2245.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古新联信息产业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古新联信息产业有限公司 \n服务费 \n2,030.00 \n2,029.29",
+        "note": "",
+        "amount_wan": 2030.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团鹿畅达物流有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团鹿畅达物流有限责任公司 \n装卸费，仓储费 1,990.00 \n1,988.37",
+        "note": "",
+        "amount_wan": 1990.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古铁花文化产业投资有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古铁花文化产业投资有限责任公\n司 \n培训费，劳务费、\n服务费 \n1,890.00 \n1,889.37",
+        "note": "",
+        "amount_wan": 1890.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市绿源危险废物处置有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包头市绿源危险废物处置有限责任公\n司 \n处置费 \n1,840.00 \n1,837.09",
+        "note": "",
+        "amount_wan": 1840.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古万开现代农牧业发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古万开现代农牧业发展有限公司 \n劳务费 \n1,725.00 \n1,724.04",
+        "note": "",
+        "amount_wan": 1725.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团宝山矿业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢集团宝山矿业有限公司 \n租赁费 \n1,645.00 \n1,640.00",
+        "note": "",
+        "amount_wan": 1645.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市铁卫安防有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包头市铁卫安防有限责任公司 \n消防设施，维修\n费，劳务费 \n1,605.00 \n1,602.99",
+        "note": "",
+        "amount_wan": 1605.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢中铁轨道有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包钢中铁轨道有限责任公司 \n运费，废钢 \n1,185.00 \n1,183.67",
+        "note": "",
+        "amount_wan": 1185.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_北京包钢新源科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：北京包钢新源科技有限公司 \n备件 \n1,140.00 \n1,137.85",
+        "note": "",
+        "amount_wan": 1140.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市包钢万开化学试剂有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包头市包钢万开化学试剂有限责任公\n司 \n辅材 \n890 \n886.94",
+        "note": "",
+        "amount_wan": 890.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市诚信达工程咨询监理有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：包头市诚信达工程咨询监理有限责任\n公司 \n监理费，设计费，\n工程款 \n770 \n766.32",
+        "note": "",
+        "amount_wan": 770.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市冶通电信工程有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：（共2行，合计520.05万元；最大一行）包头市冶通电信工程有限责任公司 \n维修费 \n520 \n519.51",
+        "note": "",
+        "amount_wan": 520.05
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古包钢集团环境工程研究院有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第3页：内蒙古包钢集团环境工程研究院有限\n公司 \n咨询服务费 \n430 \n429.08",
+        "note": "",
+        "amount_wan": 430.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市方圆高士德工程造价咨询有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包头市方圆高士德工程造价咨询有限\n责任公司 \n修理费、工程款 420 \n415.08",
+        "note": "",
+        "amount_wan": 420.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头冶金建筑研究院",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包头冶金建筑研究院 \n鉴定费 \n410 \n409.23",
+        "note": "",
+        "amount_wan": 410.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古冶通信息工程技术有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：内蒙古冶通信息工程技术有限公司 \n修理费、安措费 410 \n405.3",
+        "note": "",
+        "amount_wan": 410.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头冶金建筑研究防水防腐特种工程有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包头冶金建筑研究防水防腐特种工程\n有限公司 \n工程款，防水维\n修费 \n330 \n325.12",
+        "note": "",
+        "amount_wan": 330.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古铁花众悦商贸有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：内蒙古铁花众悦商贸有限公司 \n服务费 \n157 \n155.11",
+        "note": "",
+        "amount_wan": 157.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢集团矿山研究院",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包钢集团矿山研究院（有限责任公司） 化检验费 \n150 \n148.94",
+        "note": "",
+        "amount_wan": 150.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市铁花文化发展交流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包头市铁花文化发展交流有限公司 \n服务费 \n135 \n132.95",
+        "note": "",
+        "amount_wan": 135.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市绿冶环能技术有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包头市绿冶环能技术有限公司 \n劳务费 \n120 \n117.81",
+        "note": "",
+        "amount_wan": 120.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_瑞科稀土冶金及功能材料国家工程研究中心有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：瑞科稀土冶金及功能材料国家工程研\n究中心有限公司 \n计量、检验费 \n86 \n85.06",
+        "note": "",
+        "amount_wan": 86.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市铁花建设监理有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包头市铁花建设监理有限责任公司 \n服务费 \n5 \n4.48",
+        "note": "",
+        "amount_wan": 5.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头市铁花体育运动有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包头市铁花体育运动有限公司 \n服务费 \n4 \n3.52",
+        "note": "",
+        "amount_wan": 4.0
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包钢神马建筑安装有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包钢神马建筑安装有限责任公司 \n劳务费 \n5.30 \n5.28",
+        "note": "",
+        "amount_wan": 5.3
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_内蒙古包钢稀土磁性材料有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：内蒙古包钢稀土磁性材料有限责任公\n司 \n计量费 \n1.70 \n1.69",
+        "note": "",
+        "amount_wan": 1.7
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_包头科日稀土材料有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第5页：包头科日稀土材料有限公司 \n计量费 \n0.50 \n0.37",
+        "note": "",
+        "amount_wan": 0.5
+      }
+    ]
+  },
+  {
+    "seed": "600010",
+    "seed_reason": "承压评分为弱：60日超额收益-13.9%（24家中第2弱）；60日最大回撤-33.5%（24家中第3弱）；速动比率0.36（24家中第5弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600010",
+        "dst": "N_铁融国际融资租赁(天津)有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_165_600010_related_estimate.json 第8页：铁融国际融资租赁（天津）有限责任公司 融资租设备 \n33,505.02 \n33,505.02",
+        "note": "",
+        "amount_wan": 33505.02
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2019-09-12 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_赤峰九联煤化有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：向关联人购买材料 \n赤峰九联煤化有限责任公司 \n28,200",
+        "note": "",
+        "amount_wan": 28200.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2019-09-12 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_融通物贸(天津)电子商务有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：向关联人购买材料 \n融通物贸（天津）电子商务有限\n公司 \n\n2,449.67",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2019-09-12 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源钢铁运输有限责任公司 \n6,892 \n6,439.63",
+        "note": "",
+        "amount_wan": 6892.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2019-09-12 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁集团设计研究有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源钢铁集团设计研究有限公司 \n1,264 \n1,310.28",
+        "note": "",
+        "amount_wan": 1264.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2019-09-12 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/hist_freeze/guarantee/hist_304_600231_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源滨河会务中心",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/backtest_linggang_freeze/related_party/backtest_linggang_002_600231_related_estimate.json 第3页：接受关联人提供的劳\n务 \n凌源滨河会务中心 \n105 \n106.17",
+        "note": "",
+        "amount_wan": 105.0
+      }
+    ]
+  },
+  {
+    "seed": "600282",
+    "seed_reason": "2020-03-13 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_328_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_海南矿业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：（共4行，合计9620.0万元；最大一行）向关联人购买原材料\n海南矿业\n11,263\n9,000\n铁矿石产品",
+        "note": "",
+        "amount_wan": 9620.0
+      }
+    ]
+  },
+  {
+    "seed": "600282",
+    "seed_reason": "2020-03-13 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_328_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_南钢联合",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：（共3行，合计74478.0万元；最大一行）向关联人购买燃料及动力等\n南钢联合\n70,275\n72,000\n氧气、氮气、氩气",
+        "note": "",
+        "amount_wan": 74478.0
+      }
+    ]
+  },
+  {
+    "seed": "600282",
+    "seed_reason": "2020-03-13 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_328_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_南钢嘉华",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买原材料\n南钢嘉华\n2,155\n2,200\n矿渣微粉",
+        "note": "",
+        "amount_wan": 2200.0
+      }
+    ]
+  },
+  {
+    "seed": "600282",
+    "seed_reason": "2020-03-13 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_328_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_福斯罗",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买原材料\n福斯罗\n48\n100\n废钢",
+        "note": "",
+        "amount_wan": 100.0
+      }
+    ]
+  },
+  {
+    "seed": "600282",
+    "seed_reason": "2020-03-13 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_328_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_宿迁金鑫",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买原材料\n宿迁金鑫\n188\n1,500\n钢材（含球扁钢、角钢、L 型钢、履带钢等）、废钢",
+        "note": "",
+        "amount_wan": 1500.0
+      }
+    ]
+  },
+  {
+    "seed": "600282",
+    "seed_reason": "2020-03-13 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_328_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_江苏复星商社",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买原材料\n江苏复星商社\n15,000\n41,000\n铁矿石产品、煤、焦炭等",
+        "note": "",
+        "amount_wan": 41000.0
+      }
+    ]
+  },
+  {
+    "seed": "600282",
+    "seed_reason": "2020-03-13 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_328_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_金珂水务",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：向关联人购买燃料及动力等\n金珂水务\n13,300\n14,000\n生活水、工业清水和中水处理服务",
+        "note": "",
+        "amount_wan": 14000.0
+      }
+    ]
+  },
+  {
+    "seed": "600282",
+    "seed_reason": "2020-03-13 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_328_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_江苏通恒",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：接受关联人提供服务、商品\n江苏通恒\n980\n1,500\n钢材深加工",
+        "note": "",
+        "amount_wan": 1500.0
+      }
+    ]
+  },
+  {
+    "seed": "600282",
+    "seed_reason": "2020-03-13 credit_exposure：guarantee_provided → 南京鑫武海运有限公司（outputs/hist_freeze/guarantee/hist_328_600282_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600282",
+        "dst": "N_上海钢银",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_142_600282_related_estimate.json 第3页：接受关联人提供服务、商品\n上海钢银\n355\n1,000\n运输服务",
+        "note": "",
+        "amount_wan": 1000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "E_JISCO_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n动力能源、进口矿、材料备件、水费、合金、培训\n费、检测费、租赁费、卡点费、餐饮费、技术服务\n费、公寓管理费、其他 \n 酒钢集团 \n396,000.00 ",
+        "note": "集团参照等级（69.5分）",
+        "amount_wan": 396000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏电铁合金",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n硅锰、硅铁、铬铁 \n 宏电铁合金 \n150,000.00 \n143,961.68",
+        "note": "",
+        "amount_wan": 150000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_酒钢物流",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n原燃料、矿料、生铁、合金、运输费、其他 \n 酒钢物流 \n100,000.00 \n91,842.76",
+        "note": "",
+        "amount_wan": 100000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_华昌源",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n原燃料、进口矿 \n 华昌源 \n80,000.00 \n77,754.18",
+        "note": "",
+        "amount_wan": 80000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_嘉利兴",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n原料、合金 \n 嘉利兴 \n80,000.00 \n78,100.61",
+        "note": "",
+        "amount_wan": 80000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_科力耐材",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n辅材、备件、废钢、劳务服务、机械加工、其他 \n 科力耐材 \n48,000.00 \n47,496.07",
+        "note": "",
+        "amount_wan": 48000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_上海峪鑫",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n镍铁等原燃料 \n 上海峪鑫 \n40,000.00 \n31,931.44",
+        "note": "",
+        "amount_wan": 40000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_上海嘉鑫",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n焦煤、镍铁等原燃料 \n 上海嘉鑫 \n40,000.00 \n37,086.27",
+        "note": "",
+        "amount_wan": 40000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏晟电热",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n废钢、动力产品、检测费、其他 \n 宏晟电热 \n43,000.00 \n38,756.70",
+        "note": "",
+        "amount_wan": 43000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_丝路宏聚",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n原燃料 \n 丝路宏聚 \n35,000.00 \n34,243.63",
+        "note": "",
+        "amount_wan": 35000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_筑鼎建设",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n工程劳务、废钢、设计费、维修费、备件及辅材 \n 筑鼎建设 \n30,000.00 \n23,944.86",
+        "note": "",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_润源环境",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n原料、备件、检修及工程服务、合金、劳务、其他 \n 润源环境 \n25,000.00 \n25,142.32",
+        "note": "",
+        "amount_wan": 25000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_西部重工",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n备件、废钢、辅助材料、劳务、加工、其他 \n 西部重工 \n18,000.00 \n30,515.39",
+        "note": "",
+        "amount_wan": 18000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏联自控",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n维修费、工程服务、备品备件、安措费、修理费、其他 \n 宏联自控 \n15,000.00 \n15,722.18",
+        "note": "",
+        "amount_wan": 15000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_汇丰工业制品",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第1页：采购 \n废钢、辅材、劳务服务、材料备件 \n 汇丰工业制品 \n10,000.00 \n8,658.89",
+        "note": "",
+        "amount_wan": 10000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_东兴铝业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n废钢、原料、耐材 \n 东兴铝业 \n6,000.00 \n3,000.27",
+        "note": "",
+        "amount_wan": 6000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_智美广告",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n设计服务费、工程服务 \n 智美广告 \n4,500.00 \n4,142.69",
+        "note": "",
+        "amount_wan": 4500.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_兴安民爆",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n辅助材料 \n 兴安民爆 \n3,500.00 \n2,014.91",
+        "note": "",
+        "amount_wan": 3500.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_紫玉酒店",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n配餐费、住宿费 \n 紫玉酒店 \n3,500.00 \n3,815.90",
+        "note": "",
+        "amount_wan": 3500.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏源实业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n防暑降温费、卡点费、其他 \n 宏源实业 \n1,500.00 \n1,518.41",
+        "note": "",
+        "amount_wan": 1500.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_天工矿业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n矿料、进口蒙古粉 \n 天工矿业 \n1,000.00 \n903.97",
+        "note": "",
+        "amount_wan": 1000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_中天置业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n工程劳务 \n 中天置业 \n600 \n581.74",
+        "note": "",
+        "amount_wan": 600.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_吉安保险",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n保险费 \n 吉安保险 \n290 \n243.21",
+        "note": "",
+        "amount_wan": 290.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_长虹焊接",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n备件、辅助材料、其他 \n 长虹焊接 \n200 \n186.29",
+        "note": "",
+        "amount_wan": 200.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_酒钢医院",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n体检费、应急药品 \n 酒钢医院 \n160 \n131.92",
+        "note": "",
+        "amount_wan": 160.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏汇能源",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n材料备件、生铁废钢 \n 宏汇能源 \n18 \n13.96",
+        "note": "",
+        "amount_wan": 18.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：速动比率0.22（24家中第1弱）；20日波动率78.8%（24家中第3弱）；资产负债率67.3%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_钢铁技术学院",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_168_600307_related_estimate.json 第2页：采购 \n培训费 \n 钢铁技术学院 \n0.05 \n0.03",
+        "note": "",
+        "amount_wan": 0.05
+      }
+    ]
+  },
+  {
+    "seed": "600507",
+    "seed_reason": "2020-12-24 credit_exposure：guarantee_provided → 方大炭素新材料科技股份有限公司（outputs/hist_freeze/guarantee/hist_372_600507_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600507",
+        "dst": "E_FANGDA_STEEL",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_146_600507_related_estimate.json 第5页：3 \n方大钢铁 \n公司 \n合同 \n租赁资产 \n市场 \n价格 \n合同 \n约定 \n2022 年1 月\n-2023 年12 月 \n1,000",
+        "note": "集团参照等级（19.7分）；承压为强，风险在此被吸收",
+        "amount_wan": 1000.0
+      }
+    ]
+  },
+  {
+    "seed": "600507",
+    "seed_reason": "2020-12-24 credit_exposure：guarantee_provided → 方大炭素新材料科技股份有限公司（outputs/hist_freeze/guarantee/hist_372_600507_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600507",
+        "dst": "N_方大炭素新材料科技股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_146_600507_related_estimate.json 第5页：5 \n方大炭素\n及子公司 \n公司 \n合同 \n采购碳化硅、\n电极等 \n市场 \n价格 \n合同 \n约定 \n2022 年1-12 月 \n6,176",
+        "note": "",
+        "amount_wan": 6176.0
+      }
+    ]
+  },
+  {
+    "seed": "600507",
+    "seed_reason": "2020-12-24 credit_exposure：guarantee_provided → 方大炭素新材料科技股份有限公司（outputs/hist_freeze/guarantee/hist_372_600507_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600507",
+        "dst": "N_辽宁方大集团国贸有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_146_600507_related_estimate.json 第5页：6 \n方大国贸 \n公司 \n合同 \n合金、石灰石\n中块、废钢、\n无烟煤等 \n市场 \n价格 \n合同 \n约定 \n2022 年1-12 月 120,000",
+        "note": "",
+        "amount_wan": 120000.0
+      }
+    ]
+  },
+  {
+    "seed": "600507",
+    "seed_reason": "2020-12-24 credit_exposure：guarantee_provided → 方大炭素新材料科技股份有限公司（outputs/hist_freeze/guarantee/hist_372_600507_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600507",
+        "dst": "N_江西海鸥贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_146_600507_related_estimate.json 第5页：7 \n海鸥贸易 \n公司 \n合同 \n采购废钢、铁\n矿石等 \n市场 \n价格 \n合同 \n约定 \n2022 年1-12 月 \n30,000",
+        "note": "",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "600507",
+    "seed_reason": "2020-12-24 credit_exposure：guarantee_provided → 方大炭素新材料科技股份有限公司（outputs/hist_freeze/guarantee/hist_372_600507_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600507",
+        "dst": "N_北京方大炭素科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_146_600507_related_estimate.json 第5页：9 \n北京方大 \n公司 \n合同 \n无烟煤、耐材\n等 \n市场 \n价格 \n合同 \n约定 \n2022 年1-12 月 \n15,600",
+        "note": "",
+        "amount_wan": 15600.0
+      }
+    ]
+  },
+  {
+    "seed": "600507",
+    "seed_reason": "2020-12-24 credit_exposure：guarantee_provided → 方大炭素新材料科技股份有限公司（outputs/hist_freeze/guarantee/hist_372_600507_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600507",
+        "dst": "N_九江萍钢钢铁有限公司丰南分公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_146_600507_related_estimate.json 第5页：10 \n九江钢铁\n丰南分公\n司 \n公司 \n合同 \n钢厂用物资 \n市场 \n价格 \n合同 \n约定 \n2022 年1-12 月 \n1,000",
+        "note": "",
+        "amount_wan": 1000.0
+      }
+    ]
+  },
+  {
+    "seed": "600507",
+    "seed_reason": "2020-12-24 credit_exposure：guarantee_provided → 方大炭素新材料科技股份有限公司（outputs/hist_freeze/guarantee/hist_372_600507_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600507",
+        "dst": "N_北方重工集团有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_146_600507_related_estimate.json 第5页：11 \n北方重工\n及子公司 \n公司 \n合同 \n机械设备、备\n件制造及加\n工、工程服务、\n设计服务等 \n市场 \n价格 \n合同 \n约定 \n2022 年1-12 月 ",
+        "note": "",
+        "amount_wan": 2200.0
+      }
+    ]
+  },
+  {
+    "seed": "600507",
+    "seed_reason": "2020-12-24 credit_exposure：guarantee_provided → 方大炭素新材料科技股份有限公司（outputs/hist_freeze/guarantee/hist_372_600507_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600507",
+        "dst": "N_天津一商国际贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_146_600507_related_estimate.json 第5页：12 \n一商国贸 \n公司 \n合同 \n采购废钢、冶\n金煤等 \n市场 \n价格 \n合同 \n约定 \n2022 年1-12 月 \n10,000",
+        "note": "",
+        "amount_wan": 10000.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团国际贸易有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第2页：（共4行，合计1230955.0万元；最大一行）矿石 \n安钢集团国际贸易有限责任公司 \n595.00 \n630,000.00 \n20.44% \n547,846.",
+        "note": "",
+        "amount_wan": 1230955.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南安钢集团舞阳矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第2页：（共2行，合计84051.0万元；最大一行）安钢集团舞阳矿业有限责任公司 \n70.00 \n83,000.00 \n58,268.48",
+        "note": "",
+        "amount_wan": 84051.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳易联物流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第2页：（共4行，合计328100.0万元；最大一行）煤 \n安阳易联物流有限公司 \n166.00 \n270,000.00 \n20.00% \n272,911.98",
+        "note": "",
+        "amount_wan": 328100.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_日照永盛国际物流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第2页：日照永盛国际物流有限公司 \n\n16,000.00 \n14,553.19",
+        "note": "",
+        "amount_wan": 16000.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南钢铁控股集团有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第2页：（共4行，合计719280.0万元；最大一行）河南钢铁控股集团有限公司 \n125.00 \n390,000.00",
+        "note": "",
+        "amount_wan": 719280.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "E_ANYANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：（共4行，合计43363.0万元；最大一行）材料、 \n劳务 \n安阳钢铁集团有限责任公司 \n\n31,658.00 \n4.67% \n25,393.30",
+        "note": "集团参照等级（71.5分）",
+        "amount_wan": 43363.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团附属企业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：（共3行，合计10021.0万元；最大一行）安钢集团附属企业有限责任公司 \n\n5,843.00 \n6,091.70",
+        "note": "",
+        "amount_wan": 10021.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团冶金炉料有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：（共3行，合计68880.0万元；最大一行）白灰 \n安钢集团冶金炉料有限责任公司 \n75.00 \n55,000.00 \n42,891.71",
+        "note": "",
+        "amount_wan": 68880.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团福利实业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：（共2行，合计13552.0万元；最大一行）安钢集团福利实业有限责任公司 \n\n13,442.00 \n14,413.10",
+        "note": "",
+        "amount_wan": 13552.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团新峰冶金材料有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：（共2行，合计9749.0万元；最大一行）安钢集团新峰冶金材料有限责任\n公司 \n1.10 \n7,000.00 \n2,897.43",
+        "note": "",
+        "amount_wan": 9749.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南安钢物流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：河南安钢物流有限公司 \n\n37,156.00 \n36,659.97",
+        "note": "",
+        "amount_wan": 37156.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳市西区综合污水处理有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：安阳市西区综合污水处理有限公\n司 \n\n4,091.00 \n4,091.15",
+        "note": "",
+        "amount_wan": 4091.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南安钢泽众冶金设计有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：河南安钢泽众冶金设计有限责任\n公司 \n\n1,524.00 \n1,181.75",
+        "note": "",
+        "amount_wan": 1524.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南缔拓实业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：河南缔拓实业有限公司 \n\n9,417.00 \n8,808.51",
+        "note": "",
+        "amount_wan": 9417.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳安铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：安阳安铁运输有限责任公司 \n\n7,423.00 \n9,688.86",
+        "note": "",
+        "amount_wan": 7423.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳市殷都区钢城小额贷款有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：安阳市殷都区钢城小额贷款有限\n责任公司 \n\n200.00 \n180.00",
+        "note": "",
+        "amount_wan": 200.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳三维物流公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：安阳三维物流公司 \n\n19,059.00 \n12,199.98",
+        "note": "",
+        "amount_wan": 19059.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南水鑫环保有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：河南水鑫环保有限公司 \n\n10,994.00 \n8,666.79",
+        "note": "",
+        "amount_wan": 10994.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢自动化软件股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：安钢自动化软件股份有限公司 \n\n22,000.00 \n21,314.37",
+        "note": "",
+        "amount_wan": 22000.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_上海鼎易融资租赁有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：上海鼎易融资租赁有限公司 \n\n4,864.00 \n4,251.99",
+        "note": "",
+        "amount_wan": 4864.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南安钢招标代理有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：河南安钢招标代理有限公司 \n\n416.00 \n442.26",
+        "note": "",
+        "amount_wan": 416.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南安钢集团工程管理有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：河南安钢集团工程管理有限公司 \n\n3,000.00 \n2,773.71",
+        "note": "",
+        "amount_wan": 3000.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；毛利率-1.4%（24家中第1弱）；收入增长-19.3%（24家中第1弱）；净利率-6.6%（24家中第1弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南缔拓农业发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_170_600569_related_estimate.json 第3页：河南缔拓农业发展有限公司 \n\n560.00 \n680.07",
+        "note": "",
+        "amount_wan": 560.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_164_600581_related_estimate.json 第2页：（共22行，合计8100.0万元；最大一行）采购商品 \n八钢公司及子公司（废钢) \n8,100.00 \n6,378.70",
+        "note": "集团参照等级（33.2分）；承压为强，风险在此被吸收",
+        "amount_wan": 8100.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_164_600581_related_estimate.json 第2页：（共10行，合计-万元；最大一行）宝武集团之子公司(合金） \n25,269.50 \n24,066.19",
+        "note": "集团参照等级（33.2分）；承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "601005",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：资产负债率87.2%≥85%；单一维度极差：杠杆100分；单一维度极差：短期偿债99分；资产负债率87.2%（24家中第1弱）；经营现金流/收入-8.8%（24",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "000825",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "承压为强，风险在此被吸收",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_防城港桂和技术服务有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第3页：防城港桂和技术服务有限责任公司 \n装卸劳\n务 \n 15,000.00 \n37.23 \n 2,158.63 \n 10,574.06 \n35.12",
+        "note": "",
+        "amount_wan": 15000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_防城港市强实科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第3页：防城港市强实科技有限公司 \n材料 \n 5,000.00 \n0.34 \n 368.81 \n 1,351.77 \n0.07",
+        "note": "",
+        "amount_wan": 5000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西防钢新材料科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第3页：广西防钢新材料科技有限公\n司 \n熔剂等 \n 20,000.00 \n60.03 \n 7,829.70 \n 16,862.61 \n59.29",
+        "note": "",
+        "amount_wan": 20000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西凤鑫投资实业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第3页：广西凤鑫投资实业有限责任\n公司 \n原料 \n 60,000.00 \n25.02 \n 19,085.12 \n 60,629.38 \n25.17",
+        "note": "",
+        "amount_wan": 60000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西华锐钢铁工程设计咨询有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第3页：广西华锐钢铁工程设计咨询\n有限责任公司 \n工程设\n计、建\n造 \n 6,000.00 \n0.01 \n 511.25 \n 4,293.91 \n0.01",
+        "note": "",
+        "amount_wan": 6000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳钢东信科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第3页：广西柳钢东信科技有限公司 \n服务费 \n 5,000.00 \n5.16 \n 520.66 \n 2,978.31 \n2.89",
+        "note": "",
+        "amount_wan": 5000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳钢工程技术有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：广西柳钢工程技术有限公司 \n工程、\n废旧物\n资 \n 35,000.00 \n31.01 \n - \n 31,661.79 \n30.75",
+        "note": "",
+        "amount_wan": 35000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳钢国际贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：广西柳钢国际贸易有限公司 \n矿石、\n煤 \n1,500,000.00 \n50.11 \n 336,479.05 \n1,467,668.63 \n49.65",
+        "note": "",
+        "amount_wan": 1500000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳钢华创科技研发有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：广西柳钢华创科技研发有限\n公司 \n钢材、\n服务费 \n 65,000.00 \n4.97 \n 18,174.67 \n 54,822.74 \n3.58",
+        "note": "",
+        "amount_wan": 65000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳钢环保股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：广西柳钢环保股份有限公司 \n环保处\n理、服\n务费 \n 30,000.00 \n100.00 \n 4,823.51 \n 26,341.34 \n100.00",
+        "note": "",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳钢环保股份有限公司防城港分公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：广西柳钢环保股份有限公司\n防城港分公司 \n环保处\n理、服\n务费 \n 20,000.00 \n100.00 \n 3,701.08 \n 3,073.07 \n100.0",
+        "note": "",
+        "amount_wan": 20000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳钢物流有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：广西柳钢物流有限责任公司 \n运费 \n 70,000.00 \n65.05 \n 8,652.51 \n 61,459.35 \n64.13",
+        "note": "",
+        "amount_wan": 70000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳钢新材料科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：广西柳钢新材料科技有限公\n司 \n熔剂 \n 80,000.00 \n54.08 \n 13,264.38 \n 76,158.10 \n52.21",
+        "note": "",
+        "amount_wan": 80000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳钢中金不锈钢有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：广西柳钢中金不锈钢有限公\n司 \n生铁、\n钢坯等 \n 500,000.00 \n48.28 \n 112,933.65 \n 237,261.53 \n42.94",
+        "note": "",
+        "amount_wan": 500000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_广西柳州岑海金属材料有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：广西柳州岑海金属材料有限\n公司 \n钢材 \n 20,000.00 \n48.12 \n 3,680.42 \n 19,356.76 \n48.15",
+        "note": "",
+        "amount_wan": 20000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "E_LIUGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：（共3行，合计484000.0万元；最大一行）广西柳州钢铁集团有限公司 \n能源动\n力 \n 400,000.00 \n68.50 \n 70,280.22 \n 367",
+        "note": "集团参照等级（67.9分）",
+        "amount_wan": 484000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_柳州市钢裕科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：柳州市钢裕科技有限公司 \n废钢 \n 300,000.00 \n14.02 \n 34,718.56 \n 271,860.71 \n13.19",
+        "note": "",
+        "amount_wan": 300000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_柳州市强实科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：柳州市强实科技有限公司 \n材料 \n 40,000.00 \n8.03 \n 314.01 \n 33,734.76 \n7.16",
+        "note": "",
+        "amount_wan": 40000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_柳州市瑞中运钢材储运有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：柳州市瑞中运钢材储运有限\n公司 \n吊装费 \n 15,000.00 \n3.40 \n 96.85 \n 15,302.30 \n3.48",
+        "note": "",
+        "amount_wan": 15000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_柳州市运天运运输有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：柳州市运天运运输有限公司 \n运输、\n劳务 \n 20,000.00 \n20.73 \n 4,211.95 \n 18,244.90 \n21.78",
+        "note": "",
+        "amount_wan": 20000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_柳州兴远劳务有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：柳州兴远劳务有限公司 \n劳务、\n装卸费 \n 6,500.00 \n13.59 \n 2,191.02 \n 7,027.37 \n14.02",
+        "note": "",
+        "amount_wan": 6500.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_十一冶建设集团有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：十一冶建设集团有限责任公\n司 \n工程建\n设 \n 150,000.00 \n9.11 \n 21,043.56 \n 95,906.67 \n8.72",
+        "note": "",
+        "amount_wan": 150000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_兴业柳钢新材料科技有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：兴业柳钢新材料科技有限公\n司 \n熔剂 \n 20,000.00 \n60.15 \n 6,560.64 \n 17,577.75 \n59.63",
+        "note": "",
+        "amount_wan": 20000.0
+      }
+    ]
+  },
+  {
+    "seed": "601003",
+    "seed_reason": "承压评分为弱：毛利率1.2%（24家中第3弱）；净利率-3.4%（24家中第3弱）；60日超额收益-9.2%（24家中第4弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "601003",
+        "dst": "N_志港实业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_172_601003_related_estimate.json 第4页：志港实业有限公司 \n矿石、\n煤 \n1,000,000.00 \n23.10 \n 102,537.16 \n 816,575.30 \n25.05",
+        "note": "",
+        "amount_wan": 1000000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 59.65 亿元，占担保方净资产 64%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "N_凌钢股份北票保国铁矿有限公司",
+        "shock": "credit",
+        "severity": "high",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_310_600231_guarantee_live.json 第1页：2019 年9 月6 日，根据《相互担保协议》和《相互担保协议之补充协议》约定，公司全资子公司凌钢股份北票保国铁矿有限公司(以下简称“保国公司”)与民生银行大连",
+        "note": "",
+        "amount_wan": 280000.0
+      }
+    ]
+  },
+  {
+    "seed": "N_江阴兴澄特种钢铁有限公司",
+    "seed_reason": "2022-03-11 credit_exposure：guarantee_limit → 湖北中航冶钢特种钢销售有限公司（outputs/hist_freeze/guarantee/hist_441_000708_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "N_江阴兴澄特种钢铁有限公司",
+        "dst": "N_江阴兴澄合金材料有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_344_000708_guarantee_live.json 第1页：（共3行，合计240000.0万元；最大一行）兴澄合金于8 月份在江阴与广发银行股份有限公司江阴支行（以下简称“广发银行”）签署《最高额保证合同》，为兴澄特钢在",
+        "note": "",
+        "amount_wan": 240000.0
+      }
+    ]
+  }
+]

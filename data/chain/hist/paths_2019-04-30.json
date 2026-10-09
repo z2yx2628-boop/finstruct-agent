@@ -1,0 +1,3261 @@
+[
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-11.6%（24家中第1弱）；经营现金流/收入-12.9%（24家中第2弱）；毛利率5.5%（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_011_600581_related_estimate.json 第2页：（共7行，合计37842.15万元；最大一行）宝武集团之子公司(合金） \n           25,479.25  \n24,517.21",
+        "note": "集团参照等级（46.7分）",
+        "amount_wan": 37842.15
+      },
+      {
+        "rule": "R2",
+        "src": "E_BAOWU",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_013_000717_related_estimate.json 第1页：（共2行，合计1767266.17万元；最大一行）销售及 \n提供劳务 \n钢材 \n宝武集团 \n市场价格 \n1,739,302.95 \n182,869.81 \n1,",
+        "note": "严重程度已降至最低",
+        "amount_wan": 1767266.17
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆100分；单一维度极差：短期偿债99分；速动比率0.11（24家中第1弱）；资产负债率79.4%（24家中第1弱）；现金比率0.03（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_011_600581_related_estimate.json 第2页：（共20行，合计1051746.74万元；最大一行）八钢公司（焦煤、焦炭） \n          476,266.16  \n459,790.24",
+        "note": "集团参照等级（46.7分）",
+        "amount_wan": 1051746.74
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAYI_GROUP",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆100分；单一维度极差：短期偿债99分；速动比率0.11（24家中第1弱）；资产负债率79.4%（24家中第1弱）；现金比率0.03（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_011_600581_related_estimate.json 第2页：（共20行，合计1051746.74万元；最大一行）八钢公司（焦煤、焦炭） \n          476,266.16  \n459,790.24",
+        "note": "集团参照等级（46.7分）",
+        "amount_wan": 1051746.74
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAYI_GROUP",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆100分；单一维度极差：短期偿债99分；速动比率0.11（24家中第1弱）；资产负债率79.4%（24家中第1弱）；现金比率0.03（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_011_600581_related_estimate.json 第2页：（共7行，合计37842.15万元；最大一行）宝武集团之子公司(合金） \n           25,479.25  \n24,517.21",
+        "note": "集团参照等级（46.7分）",
+        "amount_wan": 37842.15
+      },
+      {
+        "rule": "R2",
+        "src": "E_BAOWU",
+        "dst": "000717",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_013_000717_related_estimate.json 第1页：（共2行，合计1767266.17万元；最大一行）销售及 \n提供劳务 \n钢材 \n宝武集团 \n市场价格 \n1,739,302.95 \n182,869.81 \n1,",
+        "note": "严重程度已降至最低",
+        "amount_wan": 1767266.17
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆100分；单一维度极差：短期偿债99分；速动比率0.11（24家中第1弱）；资产负债率79.4%（24家中第1弱）；现金比率0.03（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_011_600581_related_estimate.json 第2页：（共7行，合计37842.15万元；最大一行）宝武集团之子公司(合金） \n           25,479.25  \n24,517.21",
+        "note": "集团参照等级（46.7分）",
+        "amount_wan": 37842.15
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAOWU",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "medium",
+        "decision": "end",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "严重程度已降至最低",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆100分；单一维度极差：短期偿债99分；速动比率0.11（24家中第1弱）；资产负债率79.4%（24家中第1弱）；现金比率0.03（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAOWU",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_011_600581_related_estimate.json 第2页：（共7行，合计37842.15万元；最大一行）宝武集团之子公司(合金） \n           25,479.25  \n24,517.21",
+        "note": "集团参照等级（46.7分）",
+        "amount_wan": 37842.15
+      },
+      {
+        "rule": "R3",
+        "src": "E_BAOWU",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆100分；单一维度极差：短期偿债99分；速动比率0.11（24家中第1弱）；资产负债率79.4%（24家中第1弱）；现金比率0.03（24家中",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600019",
+        "dst": "N_中国宝武钢铁集团有限公司及其下属控股子公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_022_600019_related_estimate.json 第3页：（共3行，合计6870700.0万元；最大一行）一 采购商品 \n市场价 \n或协议价 \n60,623 \n25.06% \n52,676 \n20.33%",
+        "note": "严重程度已降至最低",
+        "amount_wan": 6870700.0
+      }
+    ]
+  },
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-11.6%（24家中第1弱）；经营现金流/收入-12.9%（24家中第2弱）；毛利率5.5%（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "600019",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600019",
+        "dst": "N_中国宝武钢铁集团有限公司及其下属控股子公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_022_600019_related_estimate.json 第3页：（共3行，合计6870700.0万元；最大一行）一 采购商品 \n市场价 \n或协议价 \n60,623 \n25.06% \n52,676 \n20.33%",
+        "note": "严重程度已降至最低",
+        "amount_wan": 6870700.0
+      }
+    ]
+  },
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-11.6%（24家中第1弱）；经营现金流/收入-12.9%（24家中第2弱）；毛利率5.5%（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "N_金业公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_011_600581_related_estimate.json 第2页：关联采购 \n金业公司(生铁块、废钢) \n           53,800.00  \n50,886.26",
+        "note": "",
+        "amount_wan": 53800.0
+      }
+    ]
+  },
+  {
+    "seed": "600808",
+    "seed_reason": "承压评分为弱：60日超额收益-11.6%（24家中第1弱）；经营现金流/收入-12.9%（24家中第2弱）；毛利率5.5%（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600808",
+        "dst": "600581",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "E_BAYI_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_011_600581_related_estimate.json 第2页：（共20行，合计1051746.74万元；最大一行）八钢公司（焦煤、焦炭） \n          476,266.16  \n459,790.24",
+        "note": "集团参照等级（46.7分）",
+        "amount_wan": 1051746.74
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 10.66 亿元，占担保方净资产 14%",
+    "steps": [
+      {
+        "rule": "R1",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/guarantee/hist_286_600231_guarantee_live.json 第2页：（共4行，合计106600.0万元；最大一行）2019 年3 月8 日，根据《相互担保协议》和《相互担保协议之补充协议》\n约定，公司为控股股东凌钢集团与锦州银行",
+        "note": "",
+        "amount_wan": 106600.0
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_005_600231_related_estimate.json 第3页：凌源钢铁运输有限责任公司 \n7,074.00   6,807.24",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7074.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 10.66 亿元，占担保方净资产 14%",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_005_600231_related_estimate.json 第3页：（共3行，合计59782.99万元；最大一行）向关联人销售材料 \n凌源钢铁集团有限责任公司 \n56,492.00 \n67,647.80",
+        "note": "",
+        "amount_wan": 59782.99
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_005_600231_related_estimate.json 第3页：凌源钢铁运输有限责任公司 \n7,074.00   6,807.24",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7074.0
+      }
+    ]
+  },
+  {
+    "seed": "E_LINGGANG_GROUP",
+    "seed_reason": "未评分的非子公司被担保方（财务不公开）：获担保 10.66 亿元，占担保方净资产 14%",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_LINGGANG_GROUP",
+        "dst": "600231",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_LINGGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_005_600231_related_estimate.json 第3页：凌源钢铁运输有限责任公司 \n7,074.00   6,807.24",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7074.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_贝斯山钢(山东)钢板有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：贝斯山钢（山东）钢板有限公司 \n向关联人购买原材料 \n63.47  \n75.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 75.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_济钢城市矿产科技有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：（共2行，合计42000.0万元；最大一行）济钢城市矿产科技有限公司 \n向关联人购买原材料 \n19,254.47  \n34,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 42000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_济钢集团国际贸易有限责任公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：济钢集团国际贸易有限责任公司 \n向关联人购买原材料 \n1,342.51  \n6,500.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 6500.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_济钢集团有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：（共2行，合计6600.0万元；最大一行）济钢集团有限公司 \n向关联人购买原材料 \n331.15  \n3,800.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 6600.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_济南鲍德炉料有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：济南鲍德炉料有限公司 \n向关联人购买原材料 \n9,030.14  \n10,800.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 10800.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_济南钢城矿业有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：济南钢城矿业有限公司 \n向关联人购买原材料 \n4,877.31  \n5,852.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 5852.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_济南钢铁集团耐火材料有限责任公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：济南钢铁集团耐火材料有限责任公司 向关联人购买原材料 \n\n1,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 1000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱钢集团矿山建设有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：（共2行，合计30800.0万元；最大一行）莱钢集团矿山建设有限公司 \n向关联人购买原材料 \n15,685.03  \n18,800.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 30800.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱钢集团蓝天商旅车业有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第8页：（共2行，合计6400.0万元；最大一行）莱钢集团蓝天商旅车业有限公司 \n接受关联人提供的劳务 \n3,775.15  \n4,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 6400.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱芜钢铁集团金鼎实业有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：莱芜钢铁集团金鼎实业有限公司 \n向关联人购买原材料 \n5,917.97  \n7,100.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 7100.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱芜钢铁集团莱芜矿业有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：莱芜钢铁集团莱芜矿业有限公司 \n向关联人购买原材料 \n56,208.50  \n70,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 70000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱芜钢铁集团鲁南矿业有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：莱芜钢铁集团鲁南矿业有限公司 \n向关联人购买原材料 \n9,682.17  \n11,618.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 11618.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱芜钢铁集团泰东实业有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：莱芜钢铁集团泰东实业有限公司 \n向关联人购买原材料 \n50,168.03  \n60,201.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 60201.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱芜钢铁集团新泰铜业有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：莱芜钢铁集团新泰铜业有限公司 \n向关联人购买原材料 \n18,064.26  \n21,600.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 21600.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱芜钢铁集团银山型钢有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：（共2行，合计1070000.0万元；最大一行）莱芜钢铁集团银山型钢有限公司 \n向关联人购买原材料 \n811,126.20  \n970,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 1070000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_莱芜钢铁集团有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：（共3行，合计780000.0万元；最大一行）莱芜钢铁集团有限公司 \n向关联人购买原材料 \n388,204.97  \n450,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 780000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_青岛保税区济钢国际物流有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：（共2行，合计8780.0万元；最大一行）青岛保税区济钢国际物流有限公司 \n向关联人购买原材料 \n5,687.20  \n8,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 8780.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东钢铁集团国际贸易有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东钢铁集团国际贸易有限公司 \n向关联人购买原材料 \n379,598.11  \n80,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 80000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东钢铁集团济钢板材有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东钢铁集团济钢板材有限公司 \n向关联人购买原材料 \n1,103.35  \n30,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东钢铁集团日照国际贸易有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东钢铁集团日照国际贸易有限公司 向关联人购买原材料 \n77,732.47  \n660,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 660000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东济钢合金材料科技有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东济钢合金材料科技有限公司 \n向关联人购买原材料 \n9,156.71  \n10,988.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 10988.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东金岭矿业股份有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东金岭矿业股份有限公司 \n向关联人购买原材料 \n8,087.79  \n10,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 10000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东莱钢国际贸易有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东莱钢国际贸易有限公司 \n向关联人购买原材料 \n580,672.24  \n650,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 650000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东莱钢物流发展有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第8页：（共2行，合计53185.0万元；最大一行）山东莱钢物流发展有限公司 \n接受关联人提供的劳务 \n41,481.27  \n50,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 53185.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东鲁碧建材有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东鲁碧建材有限公司 \n向关联人购买原材料 \n2,843.04  \n20,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 20000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东鲁冶瑞宝电气自动化有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东鲁冶瑞宝电气自动化有限公司 \n向关联人购买原材料 \n712.92  \n855.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 855.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东耐火材料集团有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东耐火材料集团有限公司 \n向关联人购买原材料 \n2,095.14  \n2,500.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 2500.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东省冶金科学研究院",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第7页：山东省冶金科学研究院 \n向关联人购买原材料 \n7.44  \n12.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 12.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_济钢集团国际工程技术有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第8页：济钢集团国际工程技术有限公司 \n接受关联人提供的劳务 \n34,232.80  \n45,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 45000.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_济南济钢生产服务有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第8页：济南济钢生产服务有限公司 \n接受关联人提供的劳务 \n\n1,200.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 1200.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_日照港山钢码头有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第8页：日照港山钢码头有限公司 \n接受关联人提供的劳务 \n53.19  \n100.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 100.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东莱钢建设有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第8页：山东莱钢建设有限公司 \n接受关联人提供的劳务 \n25,434.54  \n30,521.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 30521.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东鲁冶项目管理有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第8页：山东鲁冶项目管理有限公司 \n接受关联人提供的劳务 \n621.70  \n750.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 750.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东省冶金地质水文勘察公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第8页：山东省冶金地质水文勘察公司 \n接受关联人提供的劳务 \n436.30  \n520.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 520.0
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_SHANGANG",
+        "note": "",
+        "amount_wan": null
+      },
+      {
+        "rule": "R2",
+        "src": "600022",
+        "dst": "N_山东省冶金设计院股份有限公司",
+        "shock": "credit",
+        "severity": "low",
+        "dst_tier": "unknown",
+        "decision": "end",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第8页：山东省冶金设计院股份有限公司 \n接受关联人提供的劳务 \n372,691.21  \n200,000.00",
+        "note": "严重程度已降至最低",
+        "amount_wan": 200000.0
+      }
+    ]
+  },
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债97分；流动比率0.28（24家中第1弱）；速动比率0.20（24家中第2弱）；现金比率0.05（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "E_SHOUGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_025_000959_related_estimate.json 第2页：（共9行，合计3365347.0万元；最大一行）原燃料 \n采购原燃料 \n市场价格 \n 2,740,542 \n520,703 \n2,025,033",
+        "note": "集团参照等级（67.9分）",
+        "amount_wan": 3365347.0
+      }
+    ]
+  },
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债97分；流动比率0.28（24家中第1弱）；速动比率0.20（24家中第2弱）；现金比率0.05（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "N_迁安中化煤化工有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_025_000959_related_estimate.json 第2页：（共2行，合计649144.0万元；最大一行）原燃料 \n采购原燃料 \n市场价格 \n  606,192 \n  144,880 \n  563,771",
+        "note": "",
+        "amount_wan": 649144.0
+      }
+    ]
+  },
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债97分；流动比率0.28（24家中第1弱）；速动比率0.20（24家中第2弱）；现金比率0.05（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "N_唐山首钢京唐西山焦化有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_025_000959_related_estimate.json 第2页：（共2行，合计988362.0万元；最大一行）原燃料 \n采购原燃料 \n市场价格 \n  895,201 \n  197,839 \n  623,044",
+        "note": "",
+        "amount_wan": 988362.0
+      }
+    ]
+  },
+  {
+    "seed": "000959",
+    "seed_reason": "承压评分为弱：单一维度极差：短期偿债97分；流动比率0.28（24家中第1弱）；速动比率0.20（24家中第2弱）；现金比率0.05（24家中第2弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "000959",
+        "dst": "N_唐山国兴实业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_025_000959_related_estimate.json 第2页：（共2行，合计3560.0万元；最大一行）生产服务 \n接受生产服务 \n协议价格 \n    3,141 \n      669 \n    1,336",
+        "note": "",
+        "amount_wan": 3560.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "E_SANGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "strong",
+        "decision": "absorbed",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第4页：（共4行，合计4800.0万元；最大一行）接受关联人提供的综合服务 \n福建省三钢（集团）有限责任公司 \n付综合服务费 \n30,000,000.00 \n28,49",
+        "note": "集团参照等级（19.9分）；承压为强，风险在此被吸收",
+        "amount_wan": 4800.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明市三钢汽车运输有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第3页：（共2行，合计10500.0万元；最大一行）三明市三钢汽车运输有限公司 \n运费、装卸费 \n100,000,000.00 \n64,922,196.64 \n99.8",
+        "note": "",
+        "amount_wan": 10500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明市三钢矿山开发有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第2页：三明市三钢矿山开发有限公司 \n采购石灰石等原辅材料 \n200,000,000.00 \n136,437,748.02 \n0.54",
+        "note": "",
+        "amount_wan": 20000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_明溪县三钢矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第2页：明溪县三钢矿业有限责任公司 \n采购石灰石等原辅材料 \n100,000,000.00 \n56,166,056.22 \n0.22",
+        "note": "",
+        "amount_wan": 10000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明市钢岩矿业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第2页：三明市钢岩矿业有限公司 \n采购石灰石等原辅材料 \n150,000,000.00 \n96,916,329.78 \n0.38",
+        "note": "",
+        "amount_wan": 15000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省闽光现代物流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第2页：（共2行，合计1300.0万元；最大一行）福建省闽光现代物流有限公司 \n采购钢材等 \n10,000,000.00 \n4,219,842.90 \n0.28",
+        "note": "",
+        "amount_wan": 1300.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_曲沃县闽光焦化有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第2页：曲沃县闽光焦化有限责任公司 \n采购焦炭等原辅材料 \n1,200,000,000.00 \n514,472,640.99 \n2.04",
+        "note": "",
+        "amount_wan": 120000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建三钢冶金建设有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第3页：（共2行，合计52000.0万元；最大一行）福建三钢冶金建设有限公司 \n工程、维修等 \n400,000,000.00 \n152,723,236.23 \n14.6",
+        "note": "",
+        "amount_wan": 52000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省三明钢联有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第2页：（共2行，合计35300.0万元；最大一行）福建省三明钢联有限责任公司 \n采购焦炭等原辅材料 \n350,000,000.00 \n96,694,533.21 \n0",
+        "note": "",
+        "amount_wan": 35300.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建三钢(集团)三明化工有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第2页：（共2行，合计250350.0万元；最大一行）福建三钢（集团）三明化工有限责任公司 \n采购焦炭等原辅材料 \n2,500,000,000.00 \n39,417,9",
+        "note": "",
+        "amount_wan": 250350.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建闽鹭矿业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第2页：福建闽鹭矿业有限公司 \n采购石灰石等原辅材料 \n5,000,000.00 \n0.00 \n0.00",
+        "note": "",
+        "amount_wan": 500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "E_LUOYUAN_MG",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第2页：福建罗源闽光钢铁有限责任公司 \n采购钢坯等 \n9,200,000,000.00 \n308,264,366.98 \n99.71",
+        "note": "",
+        "amount_wan": 920000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建钢松物产有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第3页：福建钢松物产有限责任公司 \n餐饮服务 \n5,000,000.00 \n0.00 \n0.00",
+        "note": "",
+        "amount_wan": 500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明市三钢建筑工程有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第3页：三明市三钢建筑工程有限公司 \n工程、维修等 \n300,000,000.00 \n93,962,243.42 \n9.00",
+        "note": "",
+        "amount_wan": 30000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建闽光软件股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第3页：福建闽光软件股份有限公司 \n软件服务等 \n80,000,000.00 \n28,764,492.22 \n2.76",
+        "note": "",
+        "amount_wan": 8000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_三明钢联电力发展有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第4页：三明钢联电力发展有限责任公司 \n租赁设备 \n800,000.00 \n713,822.56 \n2.77",
+        "note": "",
+        "amount_wan": 80.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_中国平煤神马集团焦化销售有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第4页：（共2行，合计130050.0万元；最大一行）中国平煤神马集团焦化销售有限公司 \n采购焦炭等原辅材料 \n1300,000,000.00 \n506,038,304",
+        "note": "",
+        "amount_wan": 130050.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_萍乡焦化有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第4页：萍乡焦化有限责任公司 \n采购焦炭等原辅材料 \n10,000,000.00 \n0.00 \n0.00",
+        "note": "",
+        "amount_wan": 1000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_国投闽光(三明)城市资源有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第4页：（共2行，合计220050.0万元；最大一行）国投闽光（三明)城市资源有限公司 \n采购废钢等原辅材料 \n2,200,000,000.00 \n205,927,55",
+        "note": "",
+        "amount_wan": 220050.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建三钢国贸有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第4页：福建三钢国贸有限公司 \n采购矿石等原辅材料 \n7,000,000,000.00 3,685,444,718.70 \n14.59",
+        "note": "",
+        "amount_wan": 700000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_丰城新高焦化有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第4页：丰城新高焦化有限公司 \n采购焦炭等原辅材料 \n30,000,000.00 \n0.00 \n0.00",
+        "note": "",
+        "amount_wan": 3000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省闽光新型材料有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第4页：福建省闽光新型材料有限公司 \n租赁设备 \n25,000,000.00    20,994,872.63 \n81.36",
+        "note": "",
+        "amount_wan": 2500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省潘洛铁矿有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第5页：（共2行，合计25500.0万元；最大一行）福建省潘洛铁矿有限责任公司 \n采购矿石等原辅材料 \n250,000,000.00 106,439,361.35 \n0",
+        "note": "",
+        "amount_wan": 25500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省德化鑫阳矿业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第5页：福建省德化鑫阳矿业有限公司 \n采购矿石等原辅材料 \n550,000,000.00 224,857,825.40 \n0.89",
+        "note": "",
+        "amount_wan": 55000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省华侨实业集团有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第5页：福建省华侨实业集团有限责任公司 \n采购矿石等原辅材料 \n5,000,000.00 \n0.00 \n0.00",
+        "note": "",
+        "amount_wan": 500.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省连城锰矿有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第5页：（共2行，合计5100.0万元；最大一行）福建省连城锰矿有限责任公司 \n采购矿石等原辅材料 \n50,000,000.00 \n20,980,111.47 \n0.0",
+        "note": "",
+        "amount_wan": 5100.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建马坑矿业股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第5页：福建马坑矿业股份有限公司 采购矿石等原辅材料 \n550,000,000.00 194,235,314.73 \n0.77",
+        "note": "",
+        "amount_wan": 55000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省冶金(控股)有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第5页：福建省冶金（控股）有限责任公司 \n餐饮服务 \n500,000.00 \n5,075.47 \n0.00",
+        "note": "",
+        "amount_wan": 50.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省冶金产品质量监督检验站",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第5页：（共2行，合计150.0万元；最大一行）福建省冶金产品质量监督检验站 \n接受工程劳务 \n1,000,000.00 \n341,563.17 \n0.03",
+        "note": "",
+        "amount_wan": 150.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省冶金工业设计院有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第5页：（共2行，合计1050.0万元；最大一行）福建省冶金工业设计院有限公司 \n\n10,000,000.00 \n1,401,103.77 \n0.13",
+        "note": "",
+        "amount_wan": 1050.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建省南平铝业股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第5页：福建省南平铝业股份有限公司及下属子公司 \n接受工程劳务 \n20,000,000.00 \n6,505,056.35 \n0.58",
+        "note": "",
+        "amount_wan": 2000.0
+      }
+    ]
+  },
+  {
+    "seed": "002110",
+    "seed_reason": "2019-01-17 credit_exposure：guarantee_limit → （outputs/hist_freeze/guarantee/hist_279_002110_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "002110",
+        "dst": "N_福建三安集团有限公司及下属公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_017_002110_related_estimate.json 第6页：福建三安集团有限公司及下属公司 \n采购零星材料 \n5,000,000.00 \n1,020,808.02 \n0.00",
+        "note": "",
+        "amount_wan": 500.0
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2019-01-22 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/hist_freeze/guarantee/hist_280_600231_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "E_LINGGANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_005_600231_related_estimate.json 第3页：（共5行，合计625102.88万元；最大一行）向关联人购买材料 \n凌源钢铁集团有限责任公司 \n434,416.00 512,135.24",
+        "note": "集团参照等级（52.1分）",
+        "amount_wan": 625102.88
+      }
+    ]
+  },
+  {
+    "seed": "600231",
+    "seed_reason": "2019-01-22 credit_exposure：guarantee_provided → 凌源钢铁集团有限责任公司（outputs/hist_freeze/guarantee/hist_280_600231_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600231",
+        "dst": "N_凌源钢铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_005_600231_related_estimate.json 第3页：凌源钢铁运输有限责任公司 \n7,074.00   6,807.24",
+        "note": "",
+        "amount_wan": 7074.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_长虹焊接",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n备件、辅助材料 \n长虹焊接 \n110 \n127",
+        "note": "",
+        "amount_wan": 110.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_东兴铝业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n废钢、铝锭、耐材 \n东兴铝业 \n6,897 \n2,704",
+        "note": "",
+        "amount_wan": 6897.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏电铁合金",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n合金 \n宏电铁合金 \n88,357 \n94,882",
+        "note": "",
+        "amount_wan": 88357.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏联自控",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n备品备件、其他 \n宏联自控 \n6,000 \n6,070",
+        "note": "",
+        "amount_wan": 6000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏晟电热",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n动力产品、不锈钢废钢、其他 \n宏晟电热 \n10,996 \n24,678",
+        "note": "",
+        "amount_wan": 10996.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_宏运客运",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n服务、其他 \n宏运客运 \n1,080 \n1,307",
+        "note": "",
+        "amount_wan": 1080.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_华昌源",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n钢坯 \n华昌源 \n3,000 \n3,910",
+        "note": "",
+        "amount_wan": 3000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_汇丰工业制品",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n废钢、辅材、合金、服务、其他 \n汇丰工业制品 \n8,045 \n9,052",
+        "note": "",
+        "amount_wan": 8045.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_吉安保险",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n保险费 \n吉安保险 \n500 \n887",
+        "note": "",
+        "amount_wan": 500.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "E_JISCO_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n原料及备件、动力、DL 生活水、其他 \n酒钢集团 \n134,896 \n287,866",
+        "note": "集团参照等级（64.5分）",
+        "amount_wan": 134896.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_酒钢物流",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n矿料、服务 \n酒钢物流 \n25,000 \n25,920",
+        "note": "",
+        "amount_wan": 25000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_科力耐材",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n备件、辅助材料、工程、其他 \n科力耐材 \n39,400 \n46,528",
+        "note": "",
+        "amount_wan": 39400.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_龙泰货运",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n运费 \n龙泰货运 \n800 \n880",
+        "note": "",
+        "amount_wan": 800.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_祁牧乳业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n其他 \n祁牧乳业 \n761 \n869",
+        "note": "",
+        "amount_wan": 761.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_庆华矿产",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n矿料 \n庆华矿产 \n26,724 \n34,246",
+        "note": "",
+        "amount_wan": 26724.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_润源环境",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n废钢、合金、钢渣、矿料、其他 \n润源环境 \n12,470 \n21,558",
+        "note": "",
+        "amount_wan": 12470.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_上海嘉鑫",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n焦煤、镍铁 \n上海嘉鑫 \n3,000 \n6,123",
+        "note": "",
+        "amount_wan": 3000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_上海捷思科",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n焦煤、肥煤 \n上海捷思科 \n352,151 \n279",
+        "note": "",
+        "amount_wan": 352151.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_上海峪鑫",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第1页：采购 \n镍铁 \n上海峪鑫 \n12,931 \n18,527",
+        "note": "",
+        "amount_wan": 12931.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_天工矿业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第2页：采购 \n矿料、进口蒙古粉 \n天工矿业 \n11,638 \n17,909",
+        "note": "",
+        "amount_wan": 11638.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_西部重工",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第2页：采购 \n备件、废钢、辅助材料、精矿、铁块 \n西部重工 \n20,100 \n19,649",
+        "note": "",
+        "amount_wan": 20100.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_兴安民爆",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第2页：采购 \n辅助材料 \n兴安民爆 \n3,600 \n3,591",
+        "note": "",
+        "amount_wan": 3600.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_中天置业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第2页：采购 \n工程劳务 \n中天置业 \n3,000 \n3,010",
+        "note": "",
+        "amount_wan": 3000.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_中兴铁路",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第2页：采购 \n合金、矿料 \n中兴铁路 \n149,638 \n109,405",
+        "note": "",
+        "amount_wan": 149638.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_筑鼎建设",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第2页：采购 \n工程劳务 \n筑鼎建设 \n24,600 \n31,892",
+        "note": "",
+        "amount_wan": 24600.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_紫玉酒店",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第2页：采购 \n其他 \n紫玉酒店 \n1,300 \n1,244",
+        "note": "",
+        "amount_wan": 1300.0
+      }
+    ]
+  },
+  {
+    "seed": "600307",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆91分；净利率0.3%（24家中第2弱）；速动比率0.25（24家中第3弱）；资产负债率73.1%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600307",
+        "dst": "N_紫轩酒业",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_027_600307_related_estimate.json 第2页：采购 \n其他 \n紫轩酒业 \n0 \n3",
+        "note": "",
+        "amount_wan": 0.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团国际贸易有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第2页：（共4行，合计485021.42万元；最大一行）矿石 \n安钢集团国际贸易有限责任公司 \n650.00 \n335,000.00  \n15.34% \n283,283",
+        "note": "",
+        "amount_wan": 485021.42
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南安钢集团舞阳矿业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第2页：安钢集团舞阳矿业有限责任公司 \n64.00 \n45,800.00  \n38,568.86",
+        "note": "",
+        "amount_wan": 45800.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_日照永盛国际物流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第2页：（共2行，合计5384.55万元；最大一行）日照永盛国际物流有限公司 \n5,228.92",
+        "note": "",
+        "amount_wan": 5384.55
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "E_ANYANG_GROUP",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：（共4行，合计32550.0万元；最大一行）材料、 \n劳务 \n安阳钢铁集团有限责任公司 \n\n13,000.00  \n6.22% \n8,601.46",
+        "note": "集团参照等级（62.4分）",
+        "amount_wan": 32550.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团汽车运输有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：（共2行，合计34220.0万元；最大一行）安钢集团汽车运输有限责任公司 \n\n34,000.00  \n23,726.17",
+        "note": "",
+        "amount_wan": 34220.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳易联物流有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第2页：（共3行，合计136900.0万元；最大一行）煤 \n安阳易联物流有限公司 \n95.00 \n115,000.00  \n6.04% \n104,738.11  ",
+        "note": "",
+        "amount_wan": 136900.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团附属企业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：（共3行，合计23857.0万元；最大一行）安钢集团附属企业有限责任公司 \n\n20,400.00  \n23,892.45",
+        "note": "",
+        "amount_wan": 23857.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团冶金炉料有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：（共2行，合计51905.0万元；最大一行）白灰 \n安钢集团冶金炉料有限责任公司 \n51,000.00  2.05% \n54,222.50",
+        "note": "",
+        "amount_wan": 51905.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团福利实业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：安钢集团福利实业有限责任公司 \n\n9,200.00  \n10,648.53",
+        "note": "",
+        "amount_wan": 9200.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳市西区综合污水处理有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：安阳市西区综合污水处理有限公司 \n\n3,900.00  \n3,894.37",
+        "note": "",
+        "amount_wan": 3900.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南安钢泽众冶金设计有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：河南安钢泽众冶金设计有限责任公司 \n\n1,650.00  \n1,263.19",
+        "note": "",
+        "amount_wan": 1650.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南安淇农业发展有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：河南安淇农业发展有限公司 \n\n750.00  \n665.61",
+        "note": "",
+        "amount_wan": 750.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团永通钢花物流贸易有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：安钢集团永通钢花物流贸易有限公司 \n\n1,100.00  \n10,006.18",
+        "note": "",
+        "amount_wan": 1100.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南缔拓实业有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：河南缔拓实业有限公司 \n\n750.00  \n549.15",
+        "note": "",
+        "amount_wan": 750.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南缔恒实业有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：河南缔恒实业有限责任公司 \n\n35.00  \n30.90",
+        "note": "",
+        "amount_wan": 35.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳安铁运输有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：安阳安铁运输有限责任公司 \n\n7,200.00  \n1,153.76",
+        "note": "",
+        "amount_wan": 7200.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳市殷都区钢城小额贷款有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：安阳市殷都区钢城小额贷款有限责任公司 \n\n800.00  ",
+        "note": "",
+        "amount_wan": 800.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安阳三维物流公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：安阳三维物流公司 \n\n20,205.00  \n9,861.84",
+        "note": "",
+        "amount_wan": 20205.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团钢材加工配送中心有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：安钢集团钢材加工配送中心有限责任公司 \n\n2,450.00  ",
+        "note": "",
+        "amount_wan": 2450.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_河南水鑫环保有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：河南水鑫环保有限公司 \n\n950.00  \n1,093.87",
+        "note": "",
+        "amount_wan": 950.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢自动化软件股份有限公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：安钢自动化软件股份有限公司 \n\n16,800.00  \n13,100.66",
+        "note": "",
+        "amount_wan": 16800.0
+      }
+    ]
+  },
+  {
+    "seed": "600569",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆96分；资产负债率75.3%（24家中第2弱）；收入增长-9.9%（24家中第2弱）；净利率0.9%（24家中第3弱）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600569",
+        "dst": "N_安钢集团新峰冶金材料有限责任公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_008_600569_related_estimate.json 第3页：安钢集团新峰冶金材料有限责任公司 \n\n7,700.00  ",
+        "note": "",
+        "amount_wan": 7700.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆100分；单一维度极差：短期偿债99分；速动比率0.11（24家中第1弱）；资产负债率79.4%（24家中第1弱）；现金比率0.03（24家中",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "600581",
+        "dst": "N_金业公司",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "unknown",
+        "decision": "weakened",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_011_600581_related_estimate.json 第2页：关联采购 \n金业公司(生铁块、废钢) \n           53,800.00  \n50,886.26",
+        "note": "",
+        "amount_wan": 53800.0
+      }
+    ]
+  },
+  {
+    "seed": "600581",
+    "seed_reason": "承压评分为弱：单一维度极差：杠杆100分；单一维度极差：短期偿债99分；速动比率0.11（24家中第1弱）；资产负债率79.4%（24家中第1弱）；现金比率0.03（24家中",
+    "steps": [
+      {
+        "rule": "R3",
+        "src": "600581",
+        "dst": "600808",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "weak",
+        "decision": "continue",
+        "basis": "entity_table",
+        "evidence": "data/reference/entities.csv：同属集团 G_BAOWU",
+        "note": "",
+        "amount_wan": null
+      }
+    ]
+  },
+  {
+    "seed": "E_SHANGANG_GROUP",
+    "seed_reason": "2019-04-26 credit_exposure：guarantee_limit → 山东钢铁股份有限公司（outputs/hist_freeze/guarantee/hist_291_600022_guarantee_live.json）",
+    "steps": [
+      {
+        "rule": "R2",
+        "src": "E_SHANGANG_GROUP",
+        "dst": "600022",
+        "shock": "credit",
+        "severity": "medium",
+        "dst_tier": "medium",
+        "decision": "immaterial",
+        "basis": "disclosed",
+        "evidence": "outputs/hist_freeze/related_party/hist_014_600022_related_estimate.json 第5页：山东钢铁集团有限公司 \n向关联人销售产品、商品等 \n90.39  \n100.00",
+        "note": "金额低于对方净资产的1%",
+        "amount_wan": 100.0
+      }
+    ]
+  }
+]
