@@ -16,7 +16,8 @@ PRICES = ROOT / "data" / "external" / "prices"
 WINDOW, THRESHOLD = 20, 0.10          # 20 trading days, |return| >= 10% (a scenario trigger, not calibrated)
 TIER_WEIGHT = {"weak": 1.0, "medium": 0.5, "strong": 0.2, "": 0.5}
 TIER_LABEL = {"weak": "弱", "medium": "中", "strong": "强", "": "未评分"}
-CAVEAT = "情景提示：依据企业自己披露的产品构成（B 级）；产品暴露经两次预先登记的检验，方向一致但不显著，不作为预测。"
+CAVEAT = ("情景提示：依据企业自己披露的产品构成（B 级）；产品暴露经两次预先登记的检验，方向一致但不显著；"
+          "铁矿石外购比例的冲击检验也未达显著。均不作为预测。")
 
 
 def stress_index(price_change: float, exposure_share: float | None, tier: str) -> float | None:

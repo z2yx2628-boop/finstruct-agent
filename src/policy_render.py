@@ -19,7 +19,8 @@ def _pct(x):
 
 
 def render_policy(snaps: list[str]) -> None:
-    st.caption("政策冲击按企业计算，不经过产品图。每个数字都来自下方列出的来源或可调整的假设；结果是情景排序，不是利润或损失预测，不计入风险得分。")
+    st.caption("政策冲击按企业计算，不经过产品图。每个数字都来自下方列出的来源或可调整的假设；结果是情景排序，不是利润或损失预测，不计入风险得分。"
+               "境外收入占比对汇率冲击的预登记检验未通过，出口情景只表示暴露程度。")
     c1, c2 = st.columns([2, 1])
     kind = c1.selectbox("政策类型", list(KINDS), format_func=KINDS.get, key="pol_kind")
     day = c2.date_input("评估日", value=date.today(), key="pol_day").isoformat()
