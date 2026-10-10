@@ -24,6 +24,10 @@ CASES = [
     ("出口退税下调怎么办", "export", None), ("这个系统准不准？", "trust", None), ("你们的结论经过验证了吗", "trust", None),
     ("帮我分析这份公告", "document", None), ("明天股价会涨吗", "unsupported", None), ("推荐一只股票", "unsupported", None),
     ("北京天气怎么样", "unsupported", None),
+    # added after the 2026-10-09 blind test (development cases from now on)
+    ("今天中午吃什么好？", "unsupported", None), ("你能帮我写一首钢铁行业的诗吗？", "unsupported", None),
+    ("我该不该现在抄底买入鞍钢？", "unsupported", "鞍钢股份"), ("现在买哪只钢铁股最赚钱？", "unsupported", None),
+    ("铁矿商和焦化厂要是出事，会不会拖累马钢？", "exposure", "马钢股份"), ("按风险承压，柳钢大概排第几？", "ranking", "柳钢股份"),
 ]
 
 

@@ -1,4 +1,11 @@
 ﻿security_code,security_name,date,event_type,event_label,severity,title,source_url,status,valid_to
+002743,ST富煌,2026-09-30,freeze,资产、账户或股份被司法冻结,high,关于控股股东部分股份被轮候冻结的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-9/2026-09-30/12627302.PDF,标题自动识别,2027-09-30
+002743,ST富煌,2026-09-05,st,被实施风险警示,high,关于公司主要银行账号被冻结暨股票交易被实施其他风险警示及股票停复牌的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-9/2026-09-05/12585262.PDF,标题自动识别,2027-09-05
+002743,ST富煌,2026-08-29,debt_default,债务逾期或违约,high,关于公司部分债务逾期的进展公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-8/2026-08-29/12567448.PDF,标题自动识别,2027-08-29
+002743,ST富煌,2026-08-19,restructuring,破产重整或清算,high,关于公司被债权人申请预重整及重整的提示性公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-8/2026-08-19/12502432.PDF,标题自动识别,2027-08-19
+002743,ST富煌,2026-06-17,freeze,资产、账户或股份被司法冻结,high,关于控股股东部分股份被轮候冻结的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-6/2026-06-17/12396617.PDF,标题自动识别,2027-06-17
+002743,ST富煌,2026-05-08,debt_default,债务逾期或违约,high,关于公司部分债务逾期的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-5/2026-05-08/12303203.PDF,标题自动识别,2027-05-08
+002743,ST富煌,2026-04-29,audit,非标准审计意见,high,关于对安徽富煌钢构股份有限公司2025年度财务报表发表非标准审计意见的专项说明,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-29/12267128.PDF,标题自动识别,2027-04-29
 600581,八一钢铁,2026-03-30,audit,非标准审计意见,high,2025年度关于财务报表发表非标准审计意见的专项说明,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034649.PDF,人工核对,2027-03-30
 600581,八一钢铁,2026-03-30,st,被实施风险警示,high,关于股票被实施退市风险警示暨停牌的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-30/12034624.PDF,人工核对,2027-03-30
 600581,八一钢铁,2026-01-26,st_warning,可能被实施风险警示（预告）,medium,关于股票可能被实施退市风险警示的风险提示公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-1/2026-01-26/11933520.PDF,人工核对,2027-01-26

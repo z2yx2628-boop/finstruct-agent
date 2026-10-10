@@ -41,9 +41,14 @@ KEYWORDS = [  # (intent, pattern) - first match wins; company-specific intents n
     ("export", r"出口|关税|反倾销|退税|海外|境外"),
     ("spread", r"传给|传到谁|传导到哪|影响谁|影响哪些|波及|连累|拖累|殃及|出事.*谁|出问题.*谁|暴雷.*谁"),
     ("exposure", r"传到|来自|被.*影响|受.*影响|谁会影响|风险来源|哪些企业的风险|上游.*风险|被谁"),
-    ("ranking", r"最弱|最差|最危险|风险最大|排名|排行|哪些.*(弱|危险)|前几|前十"),
+    ("ranking", r"最弱|最差|最危险|风险最大|排名|排行|排第|第几|哪些.*(弱|危险)|前几|前十"),
     ("today", r"今天|今日|当前|现在|最近|最该|关注什么|预警"),
 ]
+# Asked to pick stocks, time the market or forecast prices: never answered (the system is not an investment adviser).
+ADVICE = re.compile(r"买入|卖出|抄底|荐股|推荐.{0,6}股|该不该买|买哪|哪只.{0,6}股|赚钱|股价|走势|涨停|目标价|仓位|加仓|减仓|多买|投资建议")
+# A question must be about the steel chain at all; otherwise "今天…" or "最…" alone would route to a tool.
+DOMAIN = re.compile(r"钢|铁|焦|矿|煤|产业链|行业|企业|公司|厂|风险|预警|承压|担保|关联|公告|出口|关税|系统|你们|结论|验证|关注")
+SPREAD_VERBS = re.compile(r"传给|影响谁|影响哪些|波及|连累|拖累|殃及")
 MOVE = re.compile(r"(涨|上涨|上升|提高|增加|跌|下跌|下降|降低|减少|下调|上调)?\s*(\d+(?:\.\d+)?)\s*(%|％|个百分点|成)")
 DOWN = re.compile(r"跌|下跌|下降|降低|减少|下调")
 
@@ -81,6 +86,9 @@ def find_companies(text: str) -> list[tuple[str, str]]:
     found, taken = [], []
     for key, code, name in name_index():
         start = text.find(key)
+        # a two-character short name inside a longer word ("一首钢铁行业的诗" is not 首钢) does not count
+        if start >= 0 and len(key) == 2 and text[start + 2:start + 3] in ("铁", "材"):
+            start = -1
         if start < 0 or any(a <= start < b for a, b in taken) or code in (c for c, _ in found):
             continue
         taken.append((start, start + len(key)))
@@ -114,6 +122,8 @@ def rule_route(question: str) -> dict:
     companies = find_companies(q)
     product = find_product(q)
     move = find_move(q)
+    if ADVICE.search(q) or not (companies or product or DOMAIN.search(q)):
+        return {"intent": "unsupported", "companies": companies, "product": product, "move": move, "by": "规则（超出范围）"}
     intent = None
     for name, pattern in KEYWORDS:
         if re.search(pattern, q):
@@ -123,6 +133,12 @@ def rule_route(question: str) -> dict:
                 continue
             intent = name
             break
+    if intent == "spread" and companies:
+        # "X 出事会拖累 Y": the company AFTER the verb is the one hit, so the question is where Y's risk comes from
+        verb = SPREAD_VERBS.search(q)
+        first = min(q.find(k) for k, c, _ in name_index() if c == companies[0][0] and q.find(k) >= 0)
+        if verb and first > verb.start():
+            intent = "exposure"
     if intent is None and product and (move is not None or re.search(r"涨|跌|价格|价", q)):
         intent = "price"
     if intent in (None, "today") and product and move is not None:
@@ -277,7 +293,7 @@ def answer_today(snapshot: Path, trace: Trace) -> dict:
             "note": "", "goto": ("pages/0_今日看板.py", "打开今日预警", None)}
 
 
-def answer_ranking(snapshot: Path, trace: Trace) -> dict:
+def answer_ranking(snapshot: Path, trace: Trace, company: tuple[str, str] | None = None) -> dict:
     t = time.perf_counter()
     core = [r for r in _fragility(snapshot).values() if r.get("peer_group") == "core" and r.get("total_score")]
     order = sorted(core, key=lambda r: -float(r["total_score"]))
@@ -285,7 +301,12 @@ def answer_ranking(snapshot: Path, trace: Trace) -> dict:
     weak = [r["security_name"] for r in order if r.get("tier") == "weak"]
     rows = [{"排名": i, "企业": r["security_name"], "总分": r["total_score"], "档位": TIER_CN.get(r.get("tier"), ""),
              "红线与极差": (r.get("red_lines") or "")[:50]} for i, r in enumerate(order[:10], 1)]
-    return {"verdict": ("warning", f"核心钢厂中抗冲击能力为“弱”的有 {len(weak)} 家：{'、'.join(weak)}。"),
+    text = f"核心钢厂中抗冲击能力为“弱”的有 {len(weak)} 家：{'、'.join(weak)}。"
+    if company:
+        rank = next((i for i, r in enumerate(order, 1) if r["security_code"] == company[0]), None)
+        text = (f"{company[1]}在 {len(order)} 家核心钢厂中按承压从弱到强排第 {rank}。" if rank
+                else f"{company[1]}不在 24 家核心钢厂的排名中。") + text
+    return {"verdict": ("warning", text),
             "tables": [("承压最弱的 10 家（模型预警，不是违约预测）", rows)], "note": "", "goto": ("pages/2_承压评分.py", "打开承压评分全表", None)}
 
 
@@ -369,7 +390,7 @@ def ask(question: str, use_model: bool = True, snapshot: Path | None = None) -> 
     elif intent == "today":
         result = answer_today(snapshot, trace)
     elif intent == "ranking":
-        result = answer_ranking(snapshot, trace)
+        result = answer_ranking(snapshot, trace, route["companies"][0] if route["companies"] else None)
     elif intent == "price" and route["product"]:
         result = answer_price(route["product"], route["move"], snapshot, trace)
     elif intent == "export":

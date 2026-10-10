@@ -1,0 +1,31 @@
+Open each link in a browser and save the PDF into
+E:\金融人工智能比赛9..10-10.18\data\raw\hist
+using exactly the file name shown, then rerun this script.
+
+hist_171_600782_related_estimate.pdf
+http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2022/2022-4/2022-04-26/8078836.PDF
+
+hist_192_002075_related_estimate.pdf
+http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2022/2022-12/2022-12-17/8734224.PDF
+
+hist_196_000825_related_estimate.pdf
+http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2023/2023-1/2023-01-20/8803026.PDF
+
+hist_197_000825_related_estimate.pdf
+http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2023/2023-1/2023-01-20/8803025.PDF
+
+hist_471_000708_guarantee_live.pdf
+http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2022/2022-11/2022-11-01/8642512.PDF
+
+hist_485_000708_guarantee_live.pdf
+http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2023/2023-1/2023-01-17/8793196.PDF
+
+hist_489_600507_guarantee_live.pdf
+http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2023/2023-2/2023-02-01/8811503.PDF
+
+hist_506_600282_guarantee_live.pdf
+http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2023/2023-5/2023-05-09/9195834.PDF
+
+hist_520_600282_guarantee_live.pdf
+http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2023/2023-6/2023-06-21/9302717.PDF
+
