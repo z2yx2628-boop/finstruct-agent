@@ -1,0 +1,29 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "announcement_number": "临2023-088",
+  "company_name": "凌源钢铁股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "凌源钢铁集团有限责任公司",
+      "shares": 222112000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 21.93,
+      "total_share_capital_ratio": 7.79,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": "2022-08-03",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2023-12-27",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "盛京银行股份有限公司朝阳分行",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "二、解除质押具体情况 \n股东名称 \n凌源钢铁集团有限责任公司 \n本次解除质押股份（股） \n222,112,000 \n占其所持股份比例（%） \n21.93 \n占公司总股本比例（%） \n7.79 \n解除质押时间 \n2023 年12 月27 日",
+      "confidence": 0.98
+    }
+  ]
+}

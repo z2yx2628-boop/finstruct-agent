@@ -1,0 +1,29 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "announcement_number": "临2023-032",
+  "company_name": "凌源钢铁股份有限公司",
+  "events": [
+    {
+      "event_type": "extension",
+      "shareholder_name": "宏运（深圳）资本有限公司",
+      "shares": 180209475.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 6.32,
+      "total_share_capital_ratio": 6.32,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2023-05-16",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": "2023-11-16",
+      "pledgee": "东吴证券股份有限公司",
+      "purpose": "自身资金需求",
+      "source_page": 1,
+      "evidence_text": "股东名称 \n是否为控\n股股东 \n本次质押股数 \n是否为\n限售股 \n是否补\n充质押 \n质押起始日 \n质押到期\n日 \n质权人 \n占其所持\n股份比例 \n占公司总\n股本比例 \n质押融资\n资金用途 \n宏运（深圳）\n资本有限公司 \n否 \n180,209,475 股 \n否 \n否 \n2023 年5 月\n16 日 \n2023 年11\n月16 日 \n东吴证券股份\n有限公司 \n100% \n6.32% \n自身资金\n需求",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2019-031",
+  "announcement_date": "2019-04-08",
+  "total_guarantee_balance": 35.81,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 48.09,
+  "external_guarantee_balance": 35.81,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 1.3,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "葫芦岛农村商业银行股份有限公司朝阳分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2019-04-04",
+      "end_date": "2021-04-03",
+      "period_text": "主合同履行期限：24个月，自2019年4月4日起至2021年4月3日止。",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 70.57,
+      "source_page": 2,
+      "evidence_text": "2019 年4 月4 日，根据《相互担保协议》和《相互担保协议之补充协议》\n约定，公司为控股股东凌钢集团与葫芦岛农村商业银行股份有限公司朝阳分行\n(以下简称“葫芦岛农商行朝阳分行”)签订的人民币1.3 亿元的《借款合同》（合\n同编号：葫农商行2019 年朝分借字第002 号）提供保证担保，与葫芦岛农商行\n朝阳分行签订了《保证合同》（合同编号：葫农商行2019 年朝分保字第001 号）。",
+      "confidence": 1.0
+    }
+  ]
+}

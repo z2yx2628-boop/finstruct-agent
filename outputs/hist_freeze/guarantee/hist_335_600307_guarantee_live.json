@@ -1,0 +1,37 @@
+{
+  "security_code": "600307",
+  "security_name": "酒钢宏兴",
+  "company_name": "甘肃酒钢集团宏兴钢铁股份有限公司",
+  "announcement_number": "2020-017",
+  "announcement_date": "2020-04-30",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "甘肃酒钢集团宏兴钢铁股份有限公司",
+      "guaranteed_party": "酒钢集团榆中钢铁有限责任公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 3.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": "签发承兑汇票",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "为保证榆钢2020年度融资业务顺利开展，满足金融机构的借款担保条件，确保融资渠道畅通和提高筹资效率",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": 97.65,
+      "source_page": 1,
+      "evidence_text": "被担保人名称：公司全资子公司—酒钢集团榆中钢铁有限责任公司（以下简称“榆钢”）。\n本次担保金额及已实际为其提供的担保余额：公司为下属全资子公司的金融机构贷款提供总额度为3 亿元的连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

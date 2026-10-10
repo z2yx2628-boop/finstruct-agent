@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2025-059",
+  "announcement_date": "2025-08-27",
+  "estimate_year": 2025,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "南昌方大太阳城房地产开发有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "lease_in",
+      "category_text": "租赁房产",
+      "goods_or_services": null,
+      "estimated_amount": 700.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "租赁房产\n南昌太阳城\n0\n0",
+      "confidence": 0.95
+    }
+  ]
+}

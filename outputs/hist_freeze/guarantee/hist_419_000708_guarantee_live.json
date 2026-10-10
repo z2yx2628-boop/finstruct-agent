@@ -1,0 +1,37 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2021-053",
+  "announcement_date": "2021-11-30",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": 6.99,
+  "external_guarantee_balance": 53300.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "中信泰富特钢经贸有限公司",
+      "guaranteed_party": "上海电气集团钢管有限公司",
+      "relationship": "associate_or_joint_venture",
+      "is_related_transaction": true,
+      "guarantee_amount": 5.33,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中信银行股份有限公司上海分行",
+      "guaranteed_debt_purpose": "综合授信",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主债务合同项下债务履行期限届满之日起三年",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "中信泰富特钢集团股份有限公司（以下简称“公司”）的全资子公司中信泰富特钢经贸有限公司（以下简称“特钢经贸”）拟对公司参股公司上海电气集团钢管有限公司（以下简称“上电钢管”）提供5.33 亿元担保，具体情况如下：\n2021 年2 月公司子公司特钢经贸竞得上电钢管40%股权并完成了工商变更，上电钢管成为公司的参股公司。上电钢管拟从中信银行股份有限公司上海分行（以下简称“中信银行”）申请综合授信13.33 亿元，本次授信需要股东方特钢经贸与上海电气（集团）总公司按持股比例提供担保，并签署《保证合同》，其中公司子公司特钢经贸拟按照持股比例为上电钢管在中信银行申请的5.33 亿元综合授信提供全额连带责任担保，上电钢管另一股东上海电气（集团）总公司为上电钢管在中信银行申请的8 亿元综合授信提供同等条件同比例担保。担保期限为主债务合同项下债务履行期限届满之日起三年。",
+      "confidence": 1.0
+    }
+  ]
+}

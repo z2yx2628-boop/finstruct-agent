@@ -1,0 +1,44 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2022-043",
+  "announcement_date": "2022-09-01",
+  "events": [
+    {
+      "event_type": "capacity_replacement",
+      "project_name": "炼钢产能置换建设项目",
+      "project_entity": "凌源钢铁股份有限公司",
+      "project_location": null,
+      "project_country": "中国",
+      "decision_reasons": [
+        "industrial_policy"
+      ],
+      "decision_reason_text": "炼钢产能置换建设项目",
+      "project_status": "approved",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2020年11月16日董事会审议通过；2020年12月2日股东大会审议通过；2021年6月1日取得项目备案证明；2022年8月31日取得建筑工程施工许可证。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": null,
+      "project_purpose": "实施炼钢产能置换",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "凌源钢铁股份有限公司关于炼钢产能置换建设项目进展的公告",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600019",
+  "security_name": "宝钢股份",
+  "company_name": "宝山钢铁股份有限公司",
+  "announcement_number": "临2021-018",
+  "announcement_date": "2021-01-26",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": null,
+  "overdue_guarantee_unit": null,
+  "events": [
+    {
+      "event_type": "guarantee_released",
+      "guarantor": "中国宝武钢铁集团有限公司",
+      "guaranteed_party": null,
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": null,
+      "guarantee_amount": 2850000000.0,
+      "guarantee_unit": "股",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "pledge",
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": "2021-01-18",
+      "period_text": null,
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "公司于近日收到控股股东中国宝武的通知，中国宝武完成了“中国宝武集团-中金公司-17 宝武EB 担保及信托财产专户”（以下称“17\n宝武EB 专户”）解除担保及信托登记事宜，该担保及信托财产专户\n持有的公司股份已划转回中国宝武证券账户，具体事项如下：\n股东名称 \n中国宝武 \n本次解除担保及信托登记的股份（股） \n2,850,000,000 \n占其所持股份比例 \n26.36% \n占公司总股本比例 \n12.80% \n解质时间 \n2021 年1 月18 日",
+      "confidence": 0.95
+    }
+  ]
+}

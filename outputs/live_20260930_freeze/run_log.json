@@ -1,0 +1,1309 @@
+{
+  "runs": {
+    "live_20260930_001_600019_pledge.pdf": {
+      "task": "pledge",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_001_600019_pledge.json",
+      "sha256": "2d9a5c5dfa7881608d6d046a91012787ea23381f5065e961ffdcb947f911c69d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_001_600019_pledge\\20260930T015238Z"
+    },
+    "live_20260930_002_000932_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_002_000932_related_estimate.json",
+      "sha256": "334c7978546700d9a2397132e42bbdb371fac31c0bac64d6dad5eee24cb5ca58",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_002_000932_related_estimate\\20260930T015249Z"
+    },
+    "live_20260930_003_600282_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_003_600282_related_estimate.json",
+      "sha256": "8c21baa1499b5307d3ad95b7bfa4930dce3c347ca403b62fe608fbb9889d0d1c",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_003_600282_related_estimate\\20260930T015310Z"
+    },
+    "live_20260930_004_600282_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_004_600282_guarantee_live.json",
+      "sha256": "5ef8042bbe1c37beb2a6d2f09800146475cd1f67d6ee3f4f223fb7abf7b03cab",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_004_600282_guarantee_live\\20260930T015320Z"
+    },
+    "live_20260930_005_600282_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_005_600282_guarantee_live.json",
+      "sha256": "edb37b73ba23996a4a9c9aa710ef02624b5242609d0a5fd706365ce57a4a5018",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_005_600282_guarantee_live\\20260930T015346Z"
+    },
+    "live_20260930_006_600282_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_006_600282_related_estimate.json",
+      "sha256": "fb1c299c7ca9587a3f63ea4eade1a1a80dd7384c1127cd13e174ec9bf06db6bb",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_006_600282_related_estimate\\20260930T015406Z"
+    },
+    "live_20260930_007_600282_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_007_600282_guarantee_live.json",
+      "sha256": "b4b94bbd470febacf37618ff64c8652f06a0da97b261ebeff88f585c1cec3acb",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_007_600282_guarantee_live\\20260930T015645Z"
+    },
+    "live_20260930_008_600282_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_008_600282_guarantee_live.json",
+      "sha256": "8e4dea1c1b1d0909a9b107f03d7411b1cb52db3eab0e2fdc587dc1739b7a2f3c",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_008_600282_guarantee_live\\20260930T015710Z"
+    },
+    "live_20260930_009_600282_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_009_600282_related_estimate.json",
+      "sha256": "e0d02c709b3a8adb58a34f893f3f17997581a8a8878dd9f5915706e5b864063f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_009_600282_related_estimate\\20260930T015723Z"
+    },
+    "live_20260930_010_600808_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_010_600808_guarantee_live.json",
+      "sha256": "15185f4d25a355d1b3f264745568f054f228381bb31c2f7967f548f3423494d7",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_010_600808_guarantee_live\\20260930T015733Z"
+    },
+    "live_20260930_011_600010_pledge.pdf": {
+      "task": "pledge",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_011_600010_pledge.json",
+      "sha256": "689f49f2e4d1059980c5f85feb5ad7da9bb561adacaa8d0447c37e83b0bf820b",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_011_600010_pledge\\20260930T015737Z"
+    },
+    "live_20260930_012_600507_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_012_600507_related_estimate.json",
+      "sha256": "c3cd83b6d8fa1a139620c26f04d06277033c13ceeae51c82e25638c1c3743bea",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_012_600507_related_estimate\\20260930T015746Z"
+    },
+    "live_20260930_013_600507_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_013_600507_related_estimate.json",
+      "sha256": "674d82fbc0d15be714ae65195ed84116e9291ad5efcb5b81bed8d57e8b108d5a",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_013_600507_related_estimate\\20260930T015801Z"
+    },
+    "live_20260930_014_600507_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_014_600507_related_estimate.json",
+      "sha256": "ff19703cefb630364f06305a06746f2ce979886966adcd91cdc040e1111966f4",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_014_600507_related_estimate\\20260930T015809Z"
+    },
+    "live_20260930_015_600507_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_015_600507_guarantee_live.json",
+      "sha256": "21c72265c7c81f3228a47b64f6cfba7ab3826e7469730a5bfdeadab2cb82f4ef",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_015_600507_guarantee_live\\20260930T015817Z"
+    },
+    "live_20260930_016_600782_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_016_600782_related_estimate.json",
+      "sha256": "12a47408aa3ec151c14230f20b9cfe6af910d48275082e57675e659704a30d52",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_016_600782_related_estimate\\20260930T015822Z"
+    },
+    "live_20260930_017_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_017_600569_guarantee_live.json",
+      "sha256": "59ee9556ad2d11a73167d8e631930367da2a89ba29ac2a2d85f04ef724c0a818",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_017_600569_guarantee_live\\20260930T015847Z"
+    },
+    "live_20260930_018_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_018_600569_guarantee_live.json",
+      "sha256": "106db4f95453846b2accf1aea37d743721d8ac120fc5488a7b434ac4cb06a4a0",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_018_600569_guarantee_live\\20260930T015907Z"
+    },
+    "live_20260930_019_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_019_600569_guarantee_live.json",
+      "sha256": "15b7f16d9ee67f2e70dbf2a8c904e8a3e43944b51c52c540cd1fc1ddebf7122a",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_019_600569_guarantee_live\\20260930T015928Z"
+    },
+    "live_20260930_020_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_020_600569_guarantee_live.json",
+      "sha256": "281ad3dabfa02fc6c4cb8305f39d8230282e26ef070bfb71a99339159fca7e12",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_020_600569_guarantee_live\\20260930T015950Z"
+    },
+    "live_20260930_021_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_021_600569_guarantee_live.json",
+      "sha256": "7afe5f19d134481309087b2963a16e09a94708b17978af31f573b5d56b41e9bc",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_021_600569_guarantee_live\\20260930T020004Z"
+    },
+    "live_20260930_022_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_022_600569_guarantee_live.json",
+      "sha256": "6d4583ae8db7df621013647850bd851b8b4ae2f90bf7e1d9075f5d713c0cb2c9",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_022_600569_guarantee_live\\20260930T020017Z"
+    },
+    "live_20260930_023_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_023_600569_guarantee_live.json",
+      "sha256": "0fa5241f1877b17f45f99f6753269809c19cbfd68a71584474a5ad6b8223515b",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_023_600569_guarantee_live\\20260930T020029Z"
+    },
+    "live_20260930_024_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_024_600569_guarantee_live.json",
+      "sha256": "a9a842b5c6e057f3d248094805e348dec5c92beea9cc80083373ddf1d7273b18",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_024_600569_guarantee_live\\20260930T020042Z"
+    },
+    "live_20260930_025_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_025_600569_guarantee_live.json",
+      "sha256": "d3ee4322b262dc8d37a354ffedb252f42976d1366775c723653bc5326f2de06c",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_025_600569_guarantee_live\\20260930T020054Z"
+    },
+    "live_20260930_026_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_026_600569_guarantee_live.json",
+      "sha256": "1e1940b1546f4a8aa9409e445009776fc4a26c73f8add1ed8eff82a8c4bf343c",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_026_600569_guarantee_live\\20260930T020108Z"
+    },
+    "live_20260930_027_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_027_600569_guarantee_live.json",
+      "sha256": "68e0b53142a51c9b4aa604bdd8179bb54b4609b0f6ace4d8e7efdf8582728ac2",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_027_600569_guarantee_live\\20260930T020120Z"
+    },
+    "live_20260930_028_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_028_600569_guarantee_live.json",
+      "sha256": "32ca7d28d28a3ce314131a9720c67c9f07132ba5c578a1c2ffdf5b28147c3636",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_028_600569_guarantee_live\\20260930T020134Z"
+    },
+    "live_20260930_029_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_029_600569_guarantee_live.json",
+      "sha256": "1fcc91587f59bdd4233b87fe533a4f9883a013eb5b5d6e3d18af334efe60fd5e",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_029_600569_guarantee_live\\20260930T020148Z"
+    },
+    "live_20260930_030_600569_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_030_600569_guarantee_live.json",
+      "sha256": "13d570a2a7d0a6501effd1cc59c8ad5ac0163037603214584424bd0799d45243",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_030_600569_guarantee_live\\20260930T020201Z"
+    },
+    "live_20260930_031_600581_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_031_600581_related_estimate.json",
+      "sha256": "31f95af95b2d6d6eb8a84c06fbb7041aae66d4ff418f48ebc83e5f1451d61ed3",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_031_600581_related_estimate\\20260930T020212Z"
+    },
+    "live_20260930_032_600231_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_032_600231_related_estimate.json",
+      "sha256": "6eff5bb4a3ec3d5facffa9d1a9949953da27085e649cf5ad3550a9c78acde64c",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_032_600231_related_estimate\\20260930T020244Z"
+    },
+    "live_20260930_033_600231_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_033_600231_related_estimate.json",
+      "sha256": "0fd2c5af9e8f35d967754cf1e3234530d328c912aafc97f882c2b74907ae0108",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_033_600231_related_estimate\\20260930T020312Z"
+    },
+    "live_20260930_034_600307_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_034_600307_related_estimate.json",
+      "sha256": "85f3a710a9c2b1c353e1499813543541c4b178b20e118c30ebb8407f843b6399",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_034_600307_related_estimate\\20260930T020442Z"
+    },
+    "live_20260930_035_600307_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_035_600307_related_estimate.json",
+      "sha256": "0679b6331cb9eb47d45373ba33b09217dc35676b61100d9a7a4aa9fb4be38031",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_035_600307_related_estimate\\20260930T020502Z"
+    },
+    "live_20260930_036_002075_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_036_002075_related_estimate.json",
+      "sha256": "70f45fa41dd6ee385a6e59237b83ef8e28c26fa8310eb9668e9bfe9f62c1e856",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_036_002075_related_estimate\\20260930T020800Z"
+    },
+    "live_20260930_037_002075_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_037_002075_related_estimate.json",
+      "sha256": "4998b7504feae524a5ae04ade714a57c1a5189285c4b4f9a894dfe933d1898a8",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_037_002075_related_estimate\\20260930T021008Z"
+    },
+    "live_20260930_038_000708_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_038_000708_related_estimate.json",
+      "sha256": "7d18a4d94737723ec573b47244efcc447df6d82b88b9dfd223c6840099417efe",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_038_000708_related_estimate\\20260930T021208Z"
+    },
+    "live_20260930_039_000708_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_039_000708_related_estimate.json",
+      "sha256": "e8b1780ee65b898618f025606b78ec7411dcda26426b850d565b0635c5a4b88d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_039_000708_related_estimate\\20260930T021243Z"
+    },
+    "live_20260930_040_600399_pledge.pdf": {
+      "task": "pledge",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_040_600399_pledge.json",
+      "sha256": "0a45ef426be6f5910d3aa5136df43fe7619abf004e07321fc85170f34bad16ff",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_040_600399_pledge\\20260930T021337Z"
+    },
+    "live_20260930_041_600399_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_041_600399_related_estimate.json",
+      "sha256": "e07caaee2a13343dcecac514726687afffc531c09e656c96f6f8535f0e8f3423",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_041_600399_related_estimate\\20260930T021349Z"
+    },
+    "live_20260930_042_000717_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_042_000717_related_estimate.json",
+      "sha256": "64dfa85292d0ad4ad2e3ea87fd99c75b023834ad171afab0e0d4fe5aec362345",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_042_000717_related_estimate\\20260930T021401Z"
+    },
+    "live_20260930_043_600117_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_043_600117_related_estimate.json",
+      "sha256": "a12a0833c438ff89452fa94d576771250d684a8592ccb77bc8d410791157334e",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_043_600117_related_estimate\\20260930T021517Z"
+    },
+    "live_20260930_044_600117_pledge.pdf": {
+      "task": "pledge",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_044_600117_pledge.json",
+      "sha256": "9642def280021ab8478d9efc64f271fe3203fa223807c8bb91570d72372fae2b",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_044_600117_pledge\\20260930T021549Z"
+    },
+    "live_20260930_045_600117_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_045_600117_related_estimate.json",
+      "sha256": "93e167094f412cf898223ab291bc82861d8d97394fd51c0f2e5814d8b3d2d8c4",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_045_600117_related_estimate\\20260930T021601Z"
+    },
+    "live_20260930_046_600117_pledge.pdf": {
+      "task": "pledge",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_046_600117_pledge.json",
+      "sha256": "065ebfedcbdfb2ea8d038c9e65a7cd9bb59d9cf26e26b4b5bb09cc34a575b3a4",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_046_600117_pledge\\20260930T021708Z"
+    },
+    "live_20260930_047_600117_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_047_600117_related_estimate.json",
+      "sha256": "23fbedda23191ce18c3bf498a8ac63de47be737d4b6f7339e88b51e77898d17d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_047_600117_related_estimate\\20260930T021720Z"
+    },
+    "live_20260930_048_600117_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_048_600117_related_estimate.json",
+      "sha256": "79f2317de4cb8af00761f5a45f0ebb88c908fb71200e70fefe2a1e697333eed0",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_048_600117_related_estimate\\20260930T021821Z"
+    },
+    "live_20260930_049_600117_pledge.pdf": {
+      "task": "pledge",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_049_600117_pledge.json",
+      "sha256": "b03771e93df3c85f67875942f6cb9628d6f0fd5453b027dedd7ee6f2f4ba8a8b",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_049_600117_pledge\\20260930T021834Z"
+    },
+    "live_20260930_050_600117_pledge.pdf": {
+      "task": "pledge",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_050_600117_pledge.json",
+      "sha256": "34be1cb56b05c8c96f514a44b24dd50a3cd9fc43a30ff95b520d57dc5d38e983",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_050_600117_pledge\\20260930T021844Z"
+    },
+    "live_20260930_051_600117_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_051_600117_related_estimate.json",
+      "sha256": "15a8473f6c9994e247ab229a561f3a19ac9eee606f4df6cfb0f0c4b29ac3f7bd",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_051_600117_related_estimate\\20260930T021855Z"
+    },
+    "live_20260930_052_600126_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_052_600126_guarantee_live.json",
+      "sha256": "170eda299ef646755f9401a27ed368ff99ad9d0c3696e54cffad9d562b01f6fa",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_052_600126_guarantee_live\\20260930T021905Z"
+    },
+    "live_20260930_053_600126_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_053_600126_related_estimate.json",
+      "sha256": "da79e7c2dbefbd906579080f9685981017f3216957c4c219a4d214aff7d1c7df",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_053_600126_related_estimate\\20260930T021945Z"
+    },
+    "live_20260930_054_000923_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_054_000923_related_estimate.json",
+      "sha256": "c411230f1bd88afee2ad5ae5d456f85fce5af06fd14bb30a855fbe0ba7c8deab",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_054_000923_related_estimate\\20260930T022009Z"
+    },
+    "live_20260930_055_000923_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_055_000923_related_estimate.json",
+      "sha256": "e43b1b778601c6f0c9035bd4ae49eabcf8feb18c9b200a9265fadc676bc1d716",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_055_000923_related_estimate\\20260930T022031Z"
+    },
+    "live_20260930_056_600408_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_056_600408_guarantee_live.json",
+      "sha256": "47d9d5c052a0d059aef93ceb9fee390eaf1cffa04968dbdca087fa0dccf15a8d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_056_600408_guarantee_live\\20260930T022042Z"
+    },
+    "live_20260930_057_600408_pledge.pdf": {
+      "task": "pledge",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_057_600408_pledge.json",
+      "sha256": "2721bbd05e21f717c4e96ae8df5a2ec2e363526e6683d0205089fdfa4ff6339b",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_057_600408_pledge\\20260930T022107Z"
+    },
+    "live_20260930_058_600408_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_058_600408_related_estimate.json",
+      "sha256": "2fbf0fe305f12762dff090c8e2679e7affc571f87f16018029c2224c03b71401",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_058_600408_related_estimate\\20260930T022111Z"
+    },
+    "live_20260930_059_600408_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_059_600408_guarantee_live.json",
+      "sha256": "933db3dbb433360b9638905c8e468ec521b5ed3345f9f5a6dd040019f43fd6a8",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_059_600408_guarantee_live\\20260930T022219Z"
+    },
+    "live_20260930_060_600408_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_060_600408_guarantee_live.json",
+      "sha256": "2ac3f84f8366429c0afbe92d6b643e4837440cdab2b6af98af6abcf1a0a765a6",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_060_600408_guarantee_live\\20260930T022233Z"
+    },
+    "live_20260930_061_000629_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_061_000629_related_estimate.json",
+      "sha256": "032e2399b9bd4dd708b54ff02ce17861418d1475d4ffda92577bf22f54ba9c7d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_061_000629_related_estimate\\20260930T022250Z"
+    },
+    "live_20260930_062_600295_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_062_600295_related_estimate.json",
+      "sha256": "b9bae180fb0c88c4275eac1703e3f5dfe22a099f56cfb4670b42783d5504f002",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_062_600295_related_estimate\\20260930T022352Z"
+    },
+    "live_20260930_063_600295_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_063_600295_guarantee_live.json",
+      "sha256": "4d39c2f50544f9ac8667cca5c2097603a45f805e66e98081c5a3db39e0394b9c",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_063_600295_guarantee_live\\20260930T022419Z"
+    },
+    "live_20260930_064_600295_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_064_600295_related_estimate.json",
+      "sha256": "3ca5d80e47f88904f8d2432f127c54635c1b6f536f1fc08f0bcd96256fd5d415",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_064_600295_related_estimate\\20260930T022433Z"
+    },
+    "live_20260930_065_600295_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_065_600295_guarantee_live.json",
+      "sha256": "1e1f21bcccf7da1d073885656a4cb3164d3c217f7060b45dafd9977ccf8605e0",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_065_600295_guarantee_live\\20260930T022516Z"
+    },
+    "live_20260930_066_600295_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_066_600295_related_estimate.json",
+      "sha256": "35d8e4b4aa2ce9544aa0a9f4eaf6a75bf57f80e15c1be27e7288b6298e4e8831",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_066_600295_related_estimate\\20260930T022527Z"
+    },
+    "live_20260930_067_600295_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_067_600295_guarantee_live.json",
+      "sha256": "7640412b09a0bf2d35ce0cf1bbc3c9537361d88c5748ba037b5bee03eb5211d1",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_067_600295_guarantee_live\\20260930T022551Z"
+    },
+    "live_20260930_068_002318_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_068_002318_related_estimate.json",
+      "sha256": "9ed9e2b24ad6988d437e5e2f3d00ef6e822f98e73e3e3fda999e95377924e6a1",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_068_002318_related_estimate\\20260930T022603Z"
+    },
+    "live_20260930_069_002318_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_069_002318_guarantee_live.json",
+      "sha256": "26059026b43df6ca23590441398f03fc475e1de35c420afcaf6a05e003ccc1ec",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_069_002318_guarantee_live\\20260930T022655Z"
+    },
+    "live_20260930_070_002318_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_070_002318_guarantee_live.json",
+      "sha256": "425c35160ea8fee9a3447119d1ac4970220b7c05e6a07938a65318aa740bbd12",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_070_002318_guarantee_live\\20260930T022707Z"
+    },
+    "live_20260930_071_002443_pledge.pdf": {
+      "task": "pledge",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_071_002443_pledge.json",
+      "sha256": "f4e12495ddbc6ff4340b7cfff2b43ab1d3152913368cf90a7d96e4d6e31a4886",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_071_002443_pledge\\20260930T022719Z"
+    },
+    "live_20260930_072_002443_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_072_002443_related_estimate.json",
+      "sha256": "ad584fc0c9925dd81e520af4d484d4eeb865e3d80321179c44f6064c6ccb1927",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_072_002443_related_estimate\\20260930T022746Z"
+    },
+    "live_20260930_073_002443_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_073_002443_guarantee_live.json",
+      "sha256": "2533e721a4abc8875bdf2e4a16e606619f4f8c597181b922f0b778691fd532b5",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_073_002443_guarantee_live\\20260930T022810Z"
+    },
+    "live_20260930_074_002443_pledge.pdf": {
+      "task": "pledge",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_074_002443_pledge.json",
+      "sha256": "702609da09809adfabda2f7fab5cdecad0d18e5cab0fd0bc925a056dcb27efda",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_074_002443_pledge\\20260930T022835Z"
+    },
+    "live_20260930_075_002443_pledge.pdf": {
+      "task": "pledge",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/pledge/live_20260930_075_002443_pledge.json",
+      "sha256": "a9beb8a201143431d9a9b1106cdb2ee3b751eaf537c3910f774f72a807b914df",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_075_002443_pledge\\20260930T022856Z"
+    },
+    "live_20260930_076_002443_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_076_002443_guarantee_live.json",
+      "sha256": "8864be162c1fc1023bb7d736f9336da559b3ba9a55e21d26d4fc6370351bfaa4",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_076_002443_guarantee_live\\20260930T022908Z"
+    },
+    "live_20260930_077_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_077_601686_guarantee_live.json",
+      "sha256": "5d82324f8681280c2aad36637a88d9e279f421e45636250dcb72508d12d4524f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_077_601686_guarantee_live\\20260930T022934Z"
+    },
+    "live_20260930_078_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_078_601686_guarantee_live.json",
+      "sha256": "ef77993850726a9104789d65fed06c40feef958925721c90a31c33552e4f360d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_078_601686_guarantee_live\\20260930T023019Z"
+    },
+    "live_20260930_079_601686_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_079_601686_related_estimate.json",
+      "sha256": "88553ebda5c99502c6e930eb69f428ba6a9c7ab5ead4c5b6ac490681a926bc00",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_079_601686_related_estimate\\20260930T023131Z"
+    },
+    "live_20260930_080_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_080_601686_guarantee_live.json",
+      "sha256": "36d9cdedf2053c9ec5b3799273dcd1ae396b281a73ab50f1af3a8ee19c210bb5",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_080_601686_guarantee_live\\20260930T023139Z"
+    },
+    "live_20260930_081_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_081_601686_guarantee_live.json",
+      "sha256": "ec65ecc03d58d8d7b278734c572b189a975f9d192760b30d97e67e664bdf4123",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_081_601686_guarantee_live\\20260930T023258Z"
+    },
+    "live_20260930_082_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_082_601686_guarantee_live.json",
+      "sha256": "a4e17f15d70c5aa155b8e4461b21f203897fc4d499f8979e52541ffffa7607bf",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_082_601686_guarantee_live\\20260930T023351Z"
+    },
+    "live_20260930_083_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_083_601686_guarantee_live.json",
+      "sha256": "260d150b618e6f5afb7e31db8e8868828f044a665b70bd4399604665b22f9d62",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_083_601686_guarantee_live\\20260930T023533Z"
+    },
+    "live_20260930_084_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_084_601686_guarantee_live.json",
+      "sha256": "e67971c2a15d1ae13ea251dd35c3df70dc1535f0365aab390295e7e069a3271d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_084_601686_guarantee_live\\20260930T023657Z"
+    },
+    "live_20260930_085_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_085_601686_guarantee_live.json",
+      "sha256": "d489b76ce16e00cb6cf84dff957145bf9e6a36f593c3ebd5b13ecd90c0b4c4d3",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_085_601686_guarantee_live\\20260930T023934Z"
+    },
+    "live_20260930_086_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_086_601686_guarantee_live.json",
+      "sha256": "af1beb7bda5f60855d347fe854ec9b82cb19d59d4389f91ac499db5c284bd9c9",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_086_601686_guarantee_live\\20260930T024107Z"
+    },
+    "live_20260930_087_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_087_601686_guarantee_live.json",
+      "sha256": "22728ccba94516f8ab044ef16b237a11cbdb928570a25f6bb62c31503f75de6e",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_087_601686_guarantee_live\\20260930T024240Z"
+    },
+    "live_20260930_088_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_088_601686_guarantee_live.json",
+      "sha256": "6daac489e08236d35dedc1ad4c265d6b3c066f90c931cf9501ba605824dd1c5b",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_088_601686_guarantee_live\\20260930T024416Z"
+    },
+    "live_20260930_089_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_089_601686_guarantee_live.json",
+      "sha256": "8a931fa779da87f1d0c491806de4dcf48f5e407301ebe333500d3c61bb86d678",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_089_601686_guarantee_live\\20260930T024509Z"
+    },
+    "live_20260930_090_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_090_601686_guarantee_live.json",
+      "sha256": "47e5358f4de18434635fcd2770b99c57a31eaf47c7ee5d6ed30881d0b23c00f1",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_090_601686_guarantee_live\\20260930T024814Z"
+    },
+    "live_20260930_091_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_091_601686_guarantee_live.json",
+      "sha256": "74121fe4615acc39ec5db7b9ad24d01395c9e5fad737c0df7c8b72370b56643f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_091_601686_guarantee_live\\20260930T024916Z"
+    },
+    "live_20260930_092_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_092_601686_guarantee_live.json",
+      "sha256": "d509e8f3a7763a0d87334ae2bda4b5aa71dc8556a12127e63c3d5c49bb83d10f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_092_601686_guarantee_live\\20260930T024934Z"
+    },
+    "live_20260930_093_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_093_601686_guarantee_live.json",
+      "sha256": "a675facd0b99c8188f6bb7390a0bbbe884da0bf9c42923741dcc6a29f74c9189",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_093_601686_guarantee_live\\20260930T024958Z"
+    },
+    "live_20260930_094_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_094_601686_guarantee_live.json",
+      "sha256": "ebb6cf1caebffe9ac6531d9e8e6786739d65b68840a4dfe82c623edad123ae5d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_094_601686_guarantee_live\\20260930T025230Z"
+    },
+    "live_20260930_095_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_095_601686_guarantee_live.json",
+      "sha256": "bc96a558c059b1c53b2e6fedaae4adcd5e6a2af7e6b63c2c1db0282d5912af1e",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_095_601686_guarantee_live\\20260930T025305Z"
+    },
+    "live_20260930_096_601686_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_096_601686_related_estimate.json",
+      "sha256": "2457540b503a322fe65775b2085d547a2e648de4ab4d4618a45c0961f475bfb3",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_096_601686_related_estimate\\20260930T025317Z"
+    },
+    "live_20260930_097_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_097_601686_guarantee_live.json",
+      "sha256": "888ba929ceff38e08b3a3c6bede89a8bd325512c4b26fe49883a98b8dba72a43",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_097_601686_guarantee_live\\20260930T025601Z"
+    },
+    "live_20260930_098_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_098_601686_guarantee_live.json",
+      "sha256": "a4fd7b8dbdb085433b511c686a5a76952a8e90d8e355cd866191c5f22a91d720",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_098_601686_guarantee_live\\20260930T025816Z"
+    },
+    "live_20260930_099_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_099_601686_guarantee_live.json",
+      "sha256": "d01e1d5843871704947eac19c59150be9d3bda71b2904a483475b6b72b96a88b",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_099_601686_guarantee_live\\20260930T030004Z"
+    },
+    "live_20260930_100_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_100_601686_guarantee_live.json",
+      "sha256": "31f8622ec3fac371047e916e7995429d22a58e776a12767cbfcd28f53e7bf495",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_100_601686_guarantee_live\\20260930T030109Z"
+    },
+    "live_20260930_101_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_101_601686_guarantee_live.json",
+      "sha256": "ea85aa296a7d78901a3f00f1e6fd8198c53cb46a5f827228456a504455945a02",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_101_601686_guarantee_live\\20260930T030138Z"
+    },
+    "live_20260930_102_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_102_601686_guarantee_live.json",
+      "sha256": "4811aaa96a6b532ae89c90ce1a079c9f3d256e54dcf742a7b5b196a93f3b36eb",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_102_601686_guarantee_live\\20260930T030224Z"
+    },
+    "live_20260930_103_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_103_601686_guarantee_live.json",
+      "sha256": "6ad9a64d79cbd83a58d949035caca2b8c8dce3badde3388702d80dc29bfc36bb",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_103_601686_guarantee_live\\20260930T030242Z"
+    },
+    "live_20260930_104_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_104_601686_guarantee_live.json",
+      "sha256": "ef13081d5af83d247a786f18ddcb9241cc68adfb7865dbfae26efbe538e90657",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_104_601686_guarantee_live\\20260930T030331Z"
+    },
+    "live_20260930_105_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_105_601686_guarantee_live.json",
+      "sha256": "47fca79f23087eedc19138ae41dcd2d3c84374f03c62d8f93a2b0fe82e92e044",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_105_601686_guarantee_live\\20260930T030421Z"
+    },
+    "live_20260930_106_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_106_601686_guarantee_live.json",
+      "sha256": "0fd312aeaa19cd6afa466fc0a013f0cb935bd8538e8811c922131896105e680a",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_106_601686_guarantee_live\\20260930T030509Z"
+    },
+    "live_20260930_107_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_107_601686_guarantee_live.json",
+      "sha256": "445cd33f592024604e58325452f8c5e42b36869fb777894db672ebf640b6cc2d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_107_601686_guarantee_live\\20260930T030541Z"
+    },
+    "live_20260930_108_601686_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_108_601686_related_estimate.json",
+      "sha256": "5e3eb02c6a0cbd7bdede12d679c0eb18666707f851e72ed461bd9f2b5b46b05a",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_108_601686_related_estimate\\20260930T030559Z"
+    },
+    "live_20260930_109_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_109_601686_guarantee_live.json",
+      "sha256": "49d45200fb4a7d744635d52c07e07a610bd9cf85986910c88939f988add85167",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_109_601686_guarantee_live\\20260930T030623Z"
+    },
+    "live_20260930_110_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_110_601686_guarantee_live.json",
+      "sha256": "ec7e14863a3fdbcf7e518b19039726adeb968d43e0a7816771727432db5a0191",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_110_601686_guarantee_live\\20260930T030642Z"
+    },
+    "live_20260930_111_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_111_601686_guarantee_live.json",
+      "sha256": "350763bb010c30bb3e3c10a5a4c9b454f790a5f10656fa1267d42cba4eca5957",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_111_601686_guarantee_live\\20260930T030718Z"
+    },
+    "live_20260930_112_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_112_601686_guarantee_live.json",
+      "sha256": "7c41a64e0cc917a697ae09c460b8183ed29daab6dce8632d26ce2dc9c604ef9c",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_112_601686_guarantee_live\\20260930T030750Z"
+    },
+    "live_20260930_113_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_113_601686_guarantee_live.json",
+      "sha256": "1317f3176a237c47380b567d23f47c9c00220f3513d61c18c4cd147ab9677f42",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_113_601686_guarantee_live\\20260930T030820Z"
+    },
+    "live_20260930_114_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_114_601686_guarantee_live.json",
+      "sha256": "df7b4887f758cf51c86d39265972bfb53d1d323c0a0265f65db7df519968a50d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_114_601686_guarantee_live\\20260930T030837Z"
+    },
+    "live_20260930_115_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_115_300881_guarantee_live.json",
+      "sha256": "e4a3c790c6eeebab4faba2869368d7569a8d4ff4fce513992aede3fccc455d80",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_115_300881_guarantee_live\\20260930T030949Z"
+    },
+    "live_20260930_116_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_116_300881_guarantee_live.json",
+      "sha256": "f15a7854b1389a99e6c1668f0922526c257ac067769199c5c9b8386927fcd413",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_116_300881_guarantee_live\\20260930T031002Z"
+    },
+    "live_20260930_117_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_117_300881_guarantee_live.json",
+      "sha256": "46b89e71d7184b02ee9ab0b023f656f27c67d4e0e3cb2079b46c213fc832d289",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_117_300881_guarantee_live\\20260930T031027Z"
+    },
+    "live_20260930_118_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_118_300881_guarantee_live.json",
+      "sha256": "a2da7c8fe7e35361a44d8c2014719608832e55c9ad24a0c6f5c7d637ddac45d2",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_118_300881_guarantee_live\\20260930T031039Z"
+    },
+    "live_20260930_119_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_119_300881_guarantee_live.json",
+      "sha256": "968891a0ecc4a66477568a8f669e0bad253d01d10e463b7434eac72cdb4a82e6",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_119_300881_guarantee_live\\20260930T031100Z"
+    },
+    "live_20260930_120_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_120_300881_guarantee_live.json",
+      "sha256": "08a7bad4bbce6fe7446504b95757865435e7b0b1cbfe6471e159f7b030358e1b",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_120_300881_guarantee_live\\20260930T031125Z"
+    },
+    "live_20260930_121_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_121_300881_guarantee_live.json",
+      "sha256": "a4d29ac7a14a3fff2133d2dffd952fd0f66bc68650dc6629a40443c03bb8351a",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_121_300881_guarantee_live\\20260930T031137Z"
+    },
+    "live_20260930_122_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_122_300881_guarantee_live.json",
+      "sha256": "445d3727ae75e1dd5ba5bae767203026119b0960b7688ca0f2e9a9289cbb7d95",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_122_300881_guarantee_live\\20260930T031202Z"
+    },
+    "live_20260930_123_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_123_300881_guarantee_live.json",
+      "sha256": "167d3958ba5192fd4cc43c17ec40ada2eb328cee1eacddd513ce52e8f28bc3e2",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_123_300881_guarantee_live\\20260930T031215Z"
+    },
+    "live_20260930_124_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_124_300881_guarantee_live.json",
+      "sha256": "765c052c701d7ed3f8962c54e4ecc760a1add9709475615bba7abf37ccab642a",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_124_300881_guarantee_live\\20260930T031227Z"
+    },
+    "live_20260930_125_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_125_300881_guarantee_live.json",
+      "sha256": "eb9e2a8e596ed2c3ce8b77d8796fb89863a9c5be0b79bbf0389f34528e54d460",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_125_300881_guarantee_live\\20260930T031248Z"
+    },
+    "live_20260930_126_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_126_300881_guarantee_live.json",
+      "sha256": "15b3b4c7617c1990a534f9dd73bd2047b797ddd8f06255967edb107e5f1a0de4",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_126_300881_guarantee_live\\20260930T031301Z"
+    },
+    "live_20260930_127_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_127_300881_guarantee_live.json",
+      "sha256": "cbf04a3d8b18a9a46aa90cea79f10c21ab1364d3397fdf6c663240998f78c361",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_127_300881_guarantee_live\\20260930T031312Z"
+    },
+    "live_20260930_128_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_128_300881_guarantee_live.json",
+      "sha256": "4b671cbc502d391fea033e5596e6635307cc36eabced47f8dcbb34cbfe01802d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_128_300881_guarantee_live\\20260930T031324Z"
+    },
+    "live_20260930_129_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_129_300881_guarantee_live.json",
+      "sha256": "c2692fa5035ec4c81a5d39d846f94f0724c57437d69ab66244430b9da04cb963",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_129_300881_guarantee_live\\20260930T031337Z"
+    },
+    "live_20260930_130_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_130_300881_guarantee_live.json",
+      "sha256": "4b10858941b3d1fbd9b8330f25ed58fa26382c390cda2ffef04e258bcc3feb4a",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_130_300881_guarantee_live\\20260930T031351Z"
+    },
+    "live_20260930_131_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_131_300881_guarantee_live.json",
+      "sha256": "6acfed61f2c5aa4a670e85b8e0a2e980c175e370e6f437de5c65e3ed09be7e1f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_131_300881_guarantee_live\\20260930T031411Z"
+    },
+    "live_20260930_132_300881_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_132_300881_guarantee_live.json",
+      "sha256": "409a452117bb155131a492f1d9a26f05de3be9ac308f791dd645722d42aa96bf",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_132_300881_guarantee_live\\20260930T031423Z"
+    },
+    "live_20260930_133_000778_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_133_000778_guarantee_live.json",
+      "sha256": "47d7ffa41de95d3d078940f934ffe690375308e7a4dded7037397220816abf70",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_133_000778_guarantee_live\\20260930T031437Z"
+    },
+    "live_20260930_134_000778_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_134_000778_related_estimate.json",
+      "sha256": "ac83de531131814367859214241e07ee54d3fb17d9d4cc5fa86d64c496c0a48d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_134_000778_related_estimate\\20260930T031449Z"
+    },
+    "live_20260930_135_000778_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_135_000778_related_estimate.json",
+      "sha256": "eb0ee7ffeb97efef0352a2cd5159e727068a439c5fe09a97a31c9e18a7bb8a3f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_135_000778_related_estimate\\20260930T031807Z"
+    },
+    "live_20260930_136_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_136_603995_guarantee_live.json",
+      "sha256": "c6adae93e99f0fe872ae38f691c11928dc2d0747719b9a7b19a099661e092cbf",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_136_603995_guarantee_live\\20260930T031824Z"
+    },
+    "live_20260930_137_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_137_603995_guarantee_live.json",
+      "sha256": "890d7108a6e5d1ee9d50471186d68553d9713addae26ca83d25bebe9b8371cd3",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_137_603995_guarantee_live\\20260930T031851Z"
+    },
+    "live_20260930_138_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_138_603995_guarantee_live.json",
+      "sha256": "578b6a21a6dffb6932da6f01d2cf908d39b816a6acbfd765c7a22792d34913c6",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_138_603995_guarantee_live\\20260930T031914Z"
+    },
+    "live_20260930_139_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_139_603995_guarantee_live.json",
+      "sha256": "ba924e8b10c30c0b4ea35f951d3a24ffe27be70c4a04d00126989ce626c197e1",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_139_603995_guarantee_live\\20260930T031928Z"
+    },
+    "live_20260930_140_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_140_603995_guarantee_live.json",
+      "sha256": "2f89d0d463722412d1b9c8ffd7ca2af2312114c9d59b489a22a9d43f630e0daf",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_140_603995_guarantee_live\\20260930T031949Z"
+    },
+    "live_20260930_141_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_141_603995_guarantee_live.json",
+      "sha256": "7f8dda1ea01cb1debce05af8c117dfc3a9a5a1974057a49bf71b98ed07b91220",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_141_603995_guarantee_live\\20260930T032016Z"
+    },
+    "live_20260930_142_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_142_603995_guarantee_live.json",
+      "sha256": "ff6fa5d1e23af9aafdae340b01772eb24fd810443c306ec66228f801b87d3a95",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_142_603995_guarantee_live\\20260930T032031Z"
+    },
+    "live_20260930_143_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_143_603995_guarantee_live.json",
+      "sha256": "92eaa381206151901544a760f67c24954587258c5e3405e62648d026057314d9",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_143_603995_guarantee_live\\20260930T032046Z"
+    },
+    "live_20260930_144_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_144_603995_guarantee_live.json",
+      "sha256": "d582d787ff807598c608d18cee03c16babeb93a952d6c3856ba32eac4a3a589e",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_144_603995_guarantee_live\\20260930T032235Z"
+    },
+    "live_20260930_145_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_145_603995_guarantee_live.json",
+      "sha256": "27e745b9b9d2e4ecb53245068bc826ef1f711bea2e29ebf0318bc692177ff4eb",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_145_603995_guarantee_live\\20260930T032248Z"
+    },
+    "live_20260930_146_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_146_603995_guarantee_live.json",
+      "sha256": "68d5f1befb4d679b0ff6404aa0c5d755a789637b3922a200d6a7bf104c63b62b",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_146_603995_guarantee_live\\20260930T032309Z"
+    },
+    "live_20260930_147_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_147_603995_guarantee_live.json",
+      "sha256": "0cec6b01b5b5daced4118f70b5f92cdb061d254813a2bc928556cbdfb7f2f448",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_147_603995_guarantee_live\\20260930T032342Z"
+    },
+    "live_20260930_148_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_148_603995_guarantee_live.json",
+      "sha256": "83bf596435e85566b49b13dfa0e186995dbf1694d2373f86929e48eaeab47300",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_148_603995_guarantee_live\\20260930T032401Z"
+    },
+    "live_20260930_149_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_149_603995_guarantee_live.json",
+      "sha256": "00e93aa2887a397eac16fa0eef62600d6b422e1b43e81e5a0a95de00f18472c4",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_149_603995_guarantee_live\\20260930T032444Z"
+    },
+    "live_20260930_150_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_150_603995_guarantee_live.json",
+      "sha256": "28e067d1175f14cefed79c4f164ae74ecd0f4b3c6293b97e34e6e647bd622f17",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_150_603995_guarantee_live\\20260930T032506Z"
+    },
+    "live_20260930_151_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_151_603995_guarantee_live.json",
+      "sha256": "e37e9449d39a956092a68e720ee360ab3d286022916c84d6ccba3e419fda1ae3",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_151_603995_guarantee_live\\20260930T032527Z"
+    },
+    "live_20260930_152_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_152_603995_guarantee_live.json",
+      "sha256": "35a331bc2e541a4864d8e7e39c1212497a9585781dd5ec97abe88d51ace43940",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_152_603995_guarantee_live\\20260930T032543Z"
+    },
+    "live_20260930_153_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_153_603995_guarantee_live.json",
+      "sha256": "85a000666659f583158c7fe59f5aeb68e9b3cd2d182ca50f73b8e35e6c4215a8",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_153_603995_guarantee_live\\20260930T032604Z"
+    },
+    "live_20260930_154_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_154_603995_guarantee_live.json",
+      "sha256": "9093c8ba8f17dd95c7b876dea6082b790cadf94b87cc764fb5b31157a1ad1823",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_154_603995_guarantee_live\\20260930T032634Z"
+    },
+    "live_20260930_155_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_155_603995_guarantee_live.json",
+      "sha256": "ce8b16c0935959e2d73988c76a0d52009bd8e72a323b6b8faa025fa063e9fb9a",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_155_603995_guarantee_live\\20260930T032657Z"
+    },
+    "live_20260930_156_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "failed",
+      "error": "ValidationError: 6 validation errors for GuaranteeDocument\nevents.1\n  Value error, Guarantee unit or currency requires an amount [type=value_error, input_value={'event_type': 'guarantee...否', 'confidence': 0.9}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nevents."
+    },
+    "live_20260930_157_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_157_603995_guarantee_live.json",
+      "sha256": "09062071e846ceceb11d73fdf6d0ca4dab682de0d06b83d8640e083d28297f32",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_157_603995_guarantee_live\\20260930T032838Z"
+    },
+    "live_20260930_158_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_158_603995_guarantee_live.json",
+      "sha256": "b730c75b1d72662bfc918c136c268cd33674c6c6691885899337c14e1ce097e5",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_158_603995_guarantee_live\\20260930T032852Z"
+    },
+    "live_20260930_159_002756_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_159_002756_related_estimate.json",
+      "sha256": "37f547927308190561bc12998693c5d3e279ca102254966d00cea3bfd73a6a6f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_159_002756_related_estimate\\20260930T032910Z"
+    },
+    "live_20260930_160_002756_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_160_002756_guarantee_live.json",
+      "sha256": "471cba5a9337e305dd198076aa1f65cdaec446b48b7f4179a2066f34cfd00905",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_160_002756_guarantee_live\\20260930T032938Z"
+    },
+    "live_20260930_161_300034_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_161_300034_guarantee_live.json",
+      "sha256": "10ae8cdafeef659319d1d5318649cbdb148bcbb96cafffa8fcbee1f92fa111c9",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_161_300034_guarantee_live\\20260930T032950Z"
+    },
+    "live_20260930_162_300034_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_162_300034_guarantee_live.json",
+      "sha256": "71e646c0634826d6a79c2c6a08dca1c8c9a33fed4cbdae2e6b2a1da15df460f0",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_162_300034_guarantee_live\\20260930T033012Z"
+    },
+    "live_20260930_163_300034_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/related_party/live_20260930_163_300034_related_estimate.json",
+      "sha256": "483d95ff318b5ebfa669138b05f5ccd5d85c97c783984f5911ef0047386c5d22",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_163_300034_related_estimate\\20260930T033041Z"
+    },
+    "live_20260930_164_300034_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_164_300034_guarantee_live.json",
+      "sha256": "e6a12cf4827d8097b1374cb3778383d21e47518d7cc02769427a08f0fe72e51c",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_164_300034_guarantee_live\\20260930T033113Z"
+    },
+    "live_20260930_165_300034_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_165_300034_guarantee_live.json",
+      "sha256": "4e23b1921465d4ea82ab158b48aa1533154dfc8500f00f4f60166edb42393897",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_165_300034_guarantee_live\\20260930T033126Z"
+    },
+    "live_20260930_166_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_166_002541_guarantee_live.json",
+      "sha256": "6d5599531e8bd5026d82a5f430322597368957a30fad7854f1f6f44ec888370a",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_166_002541_guarantee_live\\20260930T033149Z"
+    },
+    "live_20260930_167_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_167_002541_guarantee_live.json",
+      "sha256": "beee938a599dea35d6997a19863ddcb9f81b2862750b8c5dc193b800c6433cdf",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_167_002541_guarantee_live\\20260930T034134Z"
+    },
+    "live_20260930_168_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_168_002541_guarantee_live.json",
+      "sha256": "8f414fd63e040df01559d0f49aaf6bfeecba0b70bb40fedee2a6b6d14d1fa8ba",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_168_002541_guarantee_live\\20260930T041053Z"
+    },
+    "live_20260930_169_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_169_002541_guarantee_live.json",
+      "sha256": "ea7dc5e6308213de3aec0be89df806048dadef47e1cb6bd913a32a7a897ca443",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_169_002541_guarantee_live\\20260930T041907Z"
+    },
+    "live_20260930_170_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_170_002541_guarantee_live.json",
+      "sha256": "de1cf1a0d7dcfcd4e738e890cbf0acbab0a752a99b2f7d1778ec6974afd2620c",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_170_002541_guarantee_live\\20260930T042827Z"
+    },
+    "live_20260930_171_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_171_002541_guarantee_live.json",
+      "sha256": "c397994f443e8f6f404fd7e51978607d2038d8b72e85a63be94ec07db217a856",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_171_002541_guarantee_live\\20260930T043456Z"
+    },
+    "live_20260930_172_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_172_002541_guarantee_live.json",
+      "sha256": "3422aa6ee0895178d8ea480e9eab7f2de0e4e915482e9405d8cafaba71496b45",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_172_002541_guarantee_live\\20260930T043625Z"
+    },
+    "live_20260930_173_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_173_002541_guarantee_live.json",
+      "sha256": "08b6aa9f5c8083ee2d598f361f18a2a02beef487431cb3c6c80eb15c838e7578",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_173_002541_guarantee_live\\20260930T044314Z"
+    },
+    "live_20260930_174_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_174_002541_guarantee_live.json",
+      "sha256": "eeebc9e9a8d5aa34bbcbe1bd7c1c4102fbd85f955806e0afcbf362e0e13e6635",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_174_002541_guarantee_live\\20260930T044948Z"
+    },
+    "live_20260930_175_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_175_002541_guarantee_live.json",
+      "sha256": "61f844932550a6bebbb3b80203bf6356895e404e111f00ca954d20db1fbdc5eb",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_175_002541_guarantee_live\\20260930T045722Z"
+    },
+    "live_20260930_176_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_176_002541_guarantee_live.json",
+      "sha256": "b26136aeaad75d5a85734abc1677a3251984204449cfbba1661c83bfae5c82d4",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_176_002541_guarantee_live\\20260930T045739Z"
+    },
+    "live_20260930_177_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_177_002541_guarantee_live.json",
+      "sha256": "3c00acb745591705606ad81b4c3741451e858e7249228786f5181d9a0b1101cc",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_177_002541_guarantee_live\\20260930T050522Z"
+    },
+    "live_20260930_178_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_178_002541_guarantee_live.json",
+      "sha256": "cf723f6aecd251e876c5aa4cb1432faa08d0de5ef812be75bf9104a1c474121f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_178_002541_guarantee_live\\20260930T051144Z"
+    },
+    "live_20260930_179_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_179_002541_guarantee_live.json",
+      "sha256": "aab27bfabd808015aae521cc85634cd35b5fb11829472bcedd0f1e6341a5e27d",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_179_002541_guarantee_live\\20260930T051150Z"
+    },
+    "live_20260930_180_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_180_002541_guarantee_live.json",
+      "sha256": "55186bf0ad1af6ecbf8982495d93bafd057c0ef9628dfdb4f7f34f85f2b9d4be",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_180_002541_guarantee_live\\20260930T051822Z"
+    },
+    "live_20260930_181_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_181_002541_guarantee_live.json",
+      "sha256": "34a1b4366d7631f07b177f3fe318efd59d44297a510c92472c80d229cb9138c0",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_181_002541_guarantee_live\\20260930T052427Z"
+    },
+    "live_20260930_182_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_182_002541_guarantee_live.json",
+      "sha256": "599917894c9ebcc5b39e38053727a53cf71f5cace8378b789ab612da55b903c2",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_182_002541_guarantee_live\\20260930T053103Z"
+    },
+    "live_20260930_183_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_183_002541_guarantee_live.json",
+      "sha256": "7fad7a4ae790249471e1c0713741dc4ddda3e79e983e98841dc5d91d81d76543",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_183_002541_guarantee_live\\20260930T053746Z"
+    },
+    "live_20260930_184_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_184_002541_guarantee_live.json",
+      "sha256": "eaeee3be19719b7b851f210e683bd86f21d2335c4705e839c0bbebb6e77dfe50",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_184_002541_guarantee_live\\20260930T054347Z"
+    },
+    "live_20260930_185_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_185_002541_guarantee_live.json",
+      "sha256": "1ccf35560e6c442101c992ab3e6126bebb459bbe5c8735aa48ef768e9add1894",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_185_002541_guarantee_live\\20260930T055034Z"
+    },
+    "live_20260930_186_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_186_002541_guarantee_live.json",
+      "sha256": "f1c63ee21031f7b5788088820f25342e624ab8783ba2b8cf3517bd2359a0615f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_186_002541_guarantee_live\\20260930T055709Z"
+    }
+  },
+  "commit": "2da72bbfd19bce26de0492c9a914688db04987dd",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "8a0abbaf1507f15d6a94a8e26eb939f6229072fb",
+  "started_at": "2026-09-30T01:52:38.099119+00:00",
+  "completed_at": "2026-09-30T06:02:25.883346+00:00"
+}

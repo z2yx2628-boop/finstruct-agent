@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "announcement_number": "临2025-048",
+  "company_name": "方大特钢科技股份有限公司",
+  "events": [
+    {
+      "event_type": "extension",
+      "shareholder_name": "方大钢铁",
+      "shares": 140000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 18.59,
+      "total_share_capital_ratio": 6.05,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2022-12-21",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": "2025-12-21",
+      "pledgee": "中信证券股份有限公司",
+      "purpose": "自身资金需要",
+      "source_page": 2,
+      "evidence_text": "股东名称\n是否为\n控股股东\n本次质押\n展期股数\n是否为\n限售股\n是否补充\n质押\n质押\n起始日\n展期后质押\n到期日\n质权人\n占其所持\n股份比例\n占公司\n总股本比\n例\n质押融资\n资金用途\n方大钢铁\n是\n140,000,000\n否\n否\n2022/12/21\n2025/12/21\n中信证券股\n份有限公司\n18.59%\n6.05%\n自身资金需要",
+      "confidence": 1.0
+    }
+  ]
+}

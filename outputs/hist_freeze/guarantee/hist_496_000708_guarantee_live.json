@@ -1,0 +1,37 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2023-021",
+  "announcement_date": "2023-03-18",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": 8.78,
+  "external_guarantee_balance": 12000.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "江阴兴澄特种钢铁有限公司",
+      "guaranteed_party": "湖北中航冶钢特种钢销售有限公司",
+      "relationship": "associate_or_joint_venture",
+      "is_related_transaction": true,
+      "guarantee_amount": 12000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "担保期限为经公司股东大会审议后签署相关协议后的三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 77.51,
+      "source_page": 2,
+      "evidence_text": "担保额度预计情况如下：\n担保\n方 \n被担\n保方 \n担保方\n持股比\n例 \n被担保方\n最近一期\n资产负债\n率 \n截至目\n前担保\n余额（万\n元） \n本次新\n增担保\n额度（万\n元） \n担保额度占上市\n公司最近一期经\n审计归母净资产\n比例 \n是否\n关联\n担保 \n兴澄\n特钢 \n湖北\n中航 \n40% \n77.51% \n0 \n12000 \n0.33% \n是",
+      "confidence": 1.0
+    }
+  ]
+}

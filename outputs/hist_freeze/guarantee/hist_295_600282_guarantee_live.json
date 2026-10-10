@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2019—062",
+  "announcement_date": "2019-06-26",
+  "total_guarantee_balance": 228740.93,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 14.87,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京钢铁股份有限公司",
+      "guaranteed_party": "南京钢铁集团国际经济贸易有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 80000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国进出口银行江苏省分行",
+      "guaranteed_debt_purpose": "流动资金贷款",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主合同约定的债务履行期限届满之日起2年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "2019 年6 月24 日，公司与中国进出口银行江苏省分行（以下简称“进出口银行”）签订《保证合同》和《机器设备最高额抵押合同》，为南钢国贸与进出口银行发生的流动资金贷款，提供主债权最高余额80,000 万元的连带责任保证担保。",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2021-039",
+  "announcement_date": "2021-08-14",
+  "estimate_year": 2021,
+  "total_estimated_amount": 20000.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "辽宁方大集团国贸有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购锰硅合金、石灰石中块、废钢、无烟煤等",
+      "goods_or_services": "锰硅合金、石灰石中块、废钢、无烟煤等",
+      "estimated_amount": 7900.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "1 \n方大 \n国贸 \n公司 \n合同 \n煤炭、合金、\n废钢等 \n市场 \n价格 \n合同 \n约定 \n2021年8-12月 \n7,900",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "北京方大炭素科技有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购无烟煤、耐材等",
+      "goods_or_services": "无烟煤、耐材等",
+      "estimated_amount": 2100.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "2 \n北京 \n方大 \n公司 \n合同 \n煤炭等 \n市场 \n价格 \n合同 \n约定 \n2021年8-12月 \n2,100",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "北京方大炭素科技有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "钢材等",
+      "goods_or_services": "钢材等",
+      "estimated_amount": 10000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "3 \n公司 \n北京 \n方大 \n合同 \n钢材等 \n市场 \n价格 \n合同 \n约定 \n2021年8-12月 \n10,000",
+      "confidence": 0.95
+    }
+  ]
+}

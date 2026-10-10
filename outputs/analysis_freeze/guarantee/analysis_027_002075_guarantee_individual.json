@@ -1,0 +1,37 @@
+{
+  "security_code": "002075",
+  "security_name": "沙钢股份",
+  "company_name": "江苏沙钢股份有限公司",
+  "announcement_number": "临2026-029",
+  "announcement_date": "2026-05-27",
+  "total_guarantee_balance": 2000.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 0.3,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "江苏沙钢集团淮钢特钢股份有限公司",
+      "guaranteed_party": "江苏利淮钢铁有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 68000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": null,
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自淮钢公司2025年度股东大会审议通过之日起至2026年度股东大会召开之日止",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "近日，江苏沙钢股份有限公司（以下简称“公司”）合并范围内控股子公司\n江苏沙钢集团淮钢特钢股份有限公司（以下简称“淮钢公司”）为满足其控股子\n公司江苏利淮钢铁有限公司（以下简称“江苏利淮”）生产经营发展的需求，同\n意为其提供不超过68,000 万元的授信担保额度，担保期限自淮钢公司2025 年度\n股东大会审议通过之日起至2026 年度股东大会召开之日止。",
+      "confidence": 0.95
+    }
+  ]
+}

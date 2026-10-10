@@ -1,0 +1,37 @@
+{
+  "security_code": "002541",
+  "security_name": "鸿路钢构",
+  "company_name": "安徽鸿路钢结构（集团）股份有限公司",
+  "announcement_number": "2026-039",
+  "announcement_date": "2026-05-09",
+  "total_guarantee_balance": 86.79,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 86.93,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "安徽鸿路钢结构（集团）股份有限公司",
+      "guaranteed_party": "涡阳县鸿锦新型建材科技有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 30000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "交通银行股份有限公司安徽省分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2026-04-13",
+      "end_date": "2029-04-13",
+      "period_text": null,
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 4,
+      "evidence_text": "2026 年4 月13 日，公司与交通银行股份有限公司安徽省分行签订《保证\n合同》，约定为全资子公司涡阳县鸿锦新型建材科技有限公司综合授信业务提供\n担保，担保金额不超过30,000 万元人民币，担保期限为2026 年4 月13 日至2029\n年4 月13 日。",
+      "confidence": 1.0
+    }
+  ]
+}

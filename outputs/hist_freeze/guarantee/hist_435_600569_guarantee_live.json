@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2022—004",
+  "announcement_date": "2022-01-12",
+  "total_guarantee_balance": 148934.67,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 14.95,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢周口钢铁有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 21252.67,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "徽银金融租赁有限公司",
+      "guaranteed_debt_purpose": "融资租赁（直租16,252.67万元、售后回租5,000万元）",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "融资期限均为5年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "● 被担保人名称：河南安钢周口钢铁有限责任公司（以下简称“周口公司”） \n● 本次担保金额：公司控股子公司周口公司拟与徽银金融租赁有限公司开展融资租赁业务，其中直租方式融资16,252.67 万元，售后回租方式融资5,000万元，共计融资21,252.67 万元，租赁物为周口公司脱硫脱硝与供配电系统部分设备，融资期限均为5 年。公司拟为周口公司与徽银金融租赁有限公司开展以上融资租赁业务提供连带责任保证担保。",
+      "confidence": 0.98
+    }
+  ]
+}

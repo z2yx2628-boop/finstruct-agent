@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2023-061",
+  "announcement_date": "2023-07-01",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "九江萍钢钢铁有限公司及其子公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售废钢、增碳剂、碳化硅、硅锰合金、焦炭、石灰粉、铁粉等",
+      "goods_or_services": "废钢、增碳剂、碳化硅、硅锰合金、焦炭、石灰粉、铁粉",
+      "estimated_amount": 2000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "方大国贸\n及其\n子公\n司 \n九江\n钢铁\n及其\n子公\n司 \n合\n同 \n销售废钢、\n增碳剂、碳\n化硅、硅锰\n合金、焦\n炭、石灰\n粉、铁粉等 \n市\n场\n价\n格 \n合\n同\n约\n定 \n2023 年\n1-12 月 \n81,301.30 \n2,000 83,301.30 \n77,783.65",
+      "confidence": 0.98
+    }
+  ]
+}

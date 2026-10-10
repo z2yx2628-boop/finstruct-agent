@@ -1,0 +1,37 @@
+{
+  "security_code": "600019",
+  "security_name": "宝钢股份",
+  "company_name": "宝山钢铁股份有限公司",
+  "announcement_number": "临2024-044",
+  "announcement_date": "2024-07-25",
+  "total_guarantee_balance": 0.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "宝山钢铁股份有限公司",
+      "guaranteed_party": "沙特厚板公司",
+      "relationship": "associate_or_joint_venture",
+      "is_related_transaction": null,
+      "guarantee_amount": 10.67,
+      "guarantee_unit": "亿美元",
+      "guarantee_currency": "USD",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": "项目建设资金",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自借款合同生效至项目达到贷款协议中规定的完工条件或其它银行认可的条件，且转为合资公司抵押借款后解除，担保期限不超过被担保债务的借款期限。",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "根据项目最新资本结构安排，资本金金额提高，融资金额下降，需对项目融资担保金额作相应变更，按照持股比例计算，担保本金金额由13.3亿美元变更为10.67亿美元，其余担保要素不变。",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "security_code": "000717",
+  "security_name": "中南股份",
+  "company_name": "广东中南钢铁股份有限公司",
+  "announcement_number": "2026-5",
+  "announcement_date": "2026-04-08",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "2026年度基建技改项目投资框架计划",
+      "project_entity": "广东中南钢铁股份有限公司",
+      "project_location": null,
+      "project_country": "中国",
+      "decision_reasons": [
+        "environmental_policy",
+        "cost_reduction",
+        "market_demand"
+      ],
+      "decision_reason_text": null,
+      "project_status": "approved",
+      "investment_amount": 56324.7,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2026年度投资计划安排基建技改项目52项（不含尾款项目，含零固），投资总额56,324.7万元；具体项目计划2026-2027年陆续改造完毕投入使用。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": "涵盖节能环保、装备措施、品种调整、信息化、质量改善等多类技术改造，包括超低排适应性改造、氢氧切割工艺替代、AI+除尘风机能效提升、智能化运输与管控系统建设等。",
+      "project_purpose": "贯彻职代会精神，坚持四化发展和四有经营，聚焦主责主业，严控非主业及超财务承受能力投资，防范风险，合理控制节奏，提升投资收益。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "广东中南钢铁股份有限公司\n2026 年度基建技改项目投资框架计划的公告",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2025-022",
+  "announcement_date": "2025-03-29",
+  "total_guarantee_balance": 420200.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 45.2,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "方大特钢科技股份有限公司",
+      "guaranteed_party": "辽宁方大集团国贸有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 8000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "华夏银行股份有限公司沈阳中山广场支行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自本次董事会审议通过之日起一年内有效",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 61.11,
+      "source_page": 1,
+      "evidence_text": "公司为全资子公司方大国贸在华夏银行股份有限公司沈阳中山广场支行申请综合授信提供连带责任担保，担保金额（敞口）人民币8,000 万元；截至本公告披露日，公司为方大国贸提供的担保余额为387,989,000.00 元。",
+      "confidence": 1.0
+    }
+  ]
+}

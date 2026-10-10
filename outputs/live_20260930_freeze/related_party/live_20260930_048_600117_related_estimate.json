@@ -1,0 +1,45 @@
+{
+  "security_code": "600117",
+  "security_name": "西宁特钢",
+  "company_name": "西宁特殊钢股份有限公司",
+  "announcement_number": "临2025-088",
+  "announcement_date": "2025-12-09",
+  "estimate_year": 2025,
+  "total_estimated_amount": 2350.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "西宁特殊钢股份有限公司",
+      "counterparty": "西矿集团及附属公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联方销售产品、商品、提供服务",
+      "goods_or_services": null,
+      "estimated_amount": 350.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "西宁特殊钢股\n份有限公司\n向关联方销售产\n品、商品、提供\n服务\n西矿集团\n及附属公\n司\n2,000\n350\n2,350",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "西宁特殊钢股份有限公司",
+      "counterparty": "宁波宁兴西钢机械有限公司",
+      "relationship": "associate_or_joint_venture",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联方销售产品、商品、提供服务等",
+      "goods_or_services": null,
+      "estimated_amount": 2000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "西宁特殊钢股\n份有限公司\n向关联方销售产\n品、商品、提供\n服务等\n宁波宁兴\n西钢机械\n有限公司\n2,928\n2,000\n4,928",
+      "confidence": 0.98
+    }
+  ]
+}

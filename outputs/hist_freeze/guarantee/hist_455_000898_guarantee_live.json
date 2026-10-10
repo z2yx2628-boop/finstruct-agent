@@ -1,0 +1,37 @@
+{
+  "security_code": "000898",
+  "security_name": "鞍钢股份",
+  "company_name": "鞍钢股份有限公司",
+  "announcement_number": "2022-033",
+  "announcement_date": "2022-05-19",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": null,
+  "overdue_guarantee_unit": null,
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "鞍钢股份有限公司",
+      "guaranteed_party": "鞍山钢铁集团有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 3.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "上海期货交易所",
+      "guaranteed_debt_purpose": "螺纹钢交割厂库业务",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自公司与上期所签订《上海期货交易所指定螺纹钢期货厂库协议》之日起到合同终止日（即合同存续期）及合同存续期结束后两年",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "公司拟根据担保函的有关条款约定向鞍山钢铁进行反担保，反担保保证额度不超过3亿元。",
+      "confidence": 0.95
+    }
+  ]
+}

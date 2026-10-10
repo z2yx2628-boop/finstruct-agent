@@ -1,0 +1,29 @@
+{
+  "security_code": "600010",
+  "security_name": "包钢股份",
+  "company_name": "内蒙古包钢钢联股份有限公司",
+  "announcement_number": "（临）2023-015",
+  "announcement_date": "2023-03-14",
+  "estimate_year": 2023,
+  "total_estimated_amount": 150.0,
+  "total_estimated_unit": "亿元",
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "内蒙古包钢钢联股份有限公司",
+      "counterparty": "中国北方稀土（集团）高科技股份有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "稀土精矿",
+      "goods_or_services": "稀土精矿（干量，REO=50%）",
+      "estimated_amount": 150.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 4,
+      "evidence_text": "2023 年，稀土精矿关联交易总金额预计人民币150 亿元（含税）。",
+      "confidence": 0.98
+    }
+  ]
+}

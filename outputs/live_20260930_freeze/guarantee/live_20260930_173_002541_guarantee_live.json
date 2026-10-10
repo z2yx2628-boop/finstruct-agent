@@ -1,0 +1,37 @@
+{
+  "security_code": "002541",
+  "security_name": "鸿路钢构",
+  "company_name": "安徽鸿路钢结构（集团）股份有限公司",
+  "announcement_number": "2026-022",
+  "announcement_date": "2026-03-10",
+  "total_guarantee_balance": 82.94,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 86.27,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "安徽鸿路钢结构（集团）股份有限公司",
+      "guaranteed_party": "湖北鸿路钢结构有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 30000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "平安银行股份有限公司合肥分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2026-02-11",
+      "end_date": "2027-02-10",
+      "period_text": null,
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 4,
+      "evidence_text": "2026 年2 月5 日，公司与平安银行股份有限公司合肥分行签订《最高额保证合同》，约定为全资子公司湖北鸿路钢结构有限公司综合授信业务提供担保，担保金额不超过30,000 万元人民币，担保期限为2026 年2 月11 日至2027 年2 月10 日。",
+      "confidence": 1.0
+    }
+  ]
+}

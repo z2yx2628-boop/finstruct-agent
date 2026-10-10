@@ -1,0 +1,37 @@
+{
+  "security_code": "603995",
+  "security_name": "甬金股份",
+  "company_name": "甬金科技集团股份有限公司",
+  "announcement_number": "2025-068",
+  "announcement_date": "2025-12-09",
+  "total_guarantee_balance": 548314.51,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 80.0,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "甬金科技集团股份有限公司",
+      "guaranteed_party": "甬金金属科技（越南）有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": false,
+      "guarantee_amount": 40279.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "越南外贸股份商业银行前江分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2025-12-05",
+      "end_date": "2028-12-31",
+      "period_text": "担保合同自签发之日起生效至2028年12月31日止，或担保方在本协议上第一条所述授信合同项下的全部义务全部履行完毕时止。",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "甬金科技集团股份有限公司（下称“公司”）与越南外贸股份商业银行前江分行于2025 年12 月5 日签署了《贷款担保协议》，为控股子公司甬金金属科技（越南）有限公司（下称“越南甬金”）申请的授信提供最高不超过15,000 亿越南盾（约合人民币40,279 万元）的连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

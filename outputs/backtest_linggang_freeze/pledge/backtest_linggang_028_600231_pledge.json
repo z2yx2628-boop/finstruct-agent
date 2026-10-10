@@ -1,0 +1,50 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "announcement_number": "临2023-018",
+  "company_name": "凌源钢铁股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "凌钢集团",
+      "shares": 242000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 23.89,
+      "total_share_capital_ratio": 8.48,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": null,
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2023-03-27",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中国民生银行股份有限公司大连分行",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "一、股份被解除质押情况 \n股东名称 \n凌钢集团 \n本次解除质押股份（股） \n242,000,000 \n占其所持股份比例（%） \n23.89 \n占公司总股本比例（%） \n8.48 \n解除质押时间 \n2023 年3 月27 日",
+      "confidence": 1.0
+    },
+    {
+      "event_type": "pledge",
+      "shareholder_name": "凌钢集团",
+      "shares": 242000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 23.89,
+      "total_share_capital_ratio": 8.48,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2023-03-27",
+      "pledge_end_date": null,
+      "pledge_end_condition": "无",
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "民生银行大连分行",
+      "purpose": "用于生产经营",
+      "source_page": 2,
+      "evidence_text": "二、股份质押情况 \n1.本次股份质押基本情况 \n股东名称 \n是否\n为控\n股股\n东 \n本次质押股\n数（股） \n是否\n为限\n售股 \n是否\n补充\n质押 \n质押起\n始日 \n质押到期\n日 \n质权人 \n占其\n所持\n股份\n比例\n（%） \n占公\n司总\n股本\n比例\n（%） \n质押融资\n资金用途 \n凌钢集团 \n是 \n242,000,000 \n否 \n否 \n2023 年\n3 月27\n日 \n无 \n民生银行大连分\n行 \n23.89 \n8.48 \n用于生产\n经营",
+      "confidence": 1.0
+    }
+  ]
+}

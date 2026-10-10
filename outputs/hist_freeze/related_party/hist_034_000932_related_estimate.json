@@ -1,0 +1,45 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2019-98",
+  "announcement_date": "2019-10-30",
+  "estimate_year": 2019,
+  "total_estimated_amount": 26704.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": null,
+  "transactions": [
+    {
+      "listed_company": "湖南华菱钢铁股份有限公司",
+      "counterparty": "湖南瑞嘉金属资源综合利用有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "关联采购",
+      "goods_or_services": "原材料",
+      "estimated_amount": 26400.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "关联采购 \n瑞嘉金属 \n原材料 \n市场价 \n26,400 \n0 \n0",
+      "confidence": 1.0
+    },
+    {
+      "listed_company": "湖南华菱钢铁股份有限公司",
+      "counterparty": "湖南东安湘钢瑞和钙业有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "关联采购",
+      "goods_or_services": "原材料",
+      "estimated_amount": 304.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "瑞和钙业 \n原材料 \n市场价 \n304 \n0 \n0",
+      "confidence": 1.0
+    }
+  ]
+}

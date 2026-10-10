@@ -1,0 +1,61 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2022-038",
+  "announcement_date": "2022-08-31",
+  "estimate_year": 2022,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "凌源钢铁股份有限公司",
+      "counterparty": "赤峰九联煤化有限责任公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联人购买材料",
+      "goods_or_services": "焦炭",
+      "estimated_amount": 55200.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人购买材料 \n赤峰九联煤化有限责任公司 \n28,200 \n27,000 \n55,200",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "凌源钢铁股份有限公司",
+      "counterparty": "天津融诚物产新材料科技有限责任公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售材料",
+      "goods_or_services": null,
+      "estimated_amount": 5000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人销售材料 \n天津融诚物产新材料科技有限\n责任公司 \n\n5,000 \n5,000",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "凌源钢铁股份有限公司",
+      "counterparty": "天津融诚物产能源资源发展有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售材料",
+      "goods_or_services": null,
+      "estimated_amount": 300.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人销售材料 \n天津融诚物产能源资源发展有\n限公司 \n\n300 \n300",
+      "confidence": 0.95
+    }
+  ]
+}

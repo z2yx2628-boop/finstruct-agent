@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2021-087",
+  "announcement_date": "2021-12-29",
+  "total_guarantee_balance": 34.09,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 41.19,
+  "external_guarantee_balance": 34.09,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁国际贸易有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "盛京银行股份有限公司朝阳分行",
+      "guaranteed_debt_purpose": "流动资金贷款",
+      "start_date": "2021-12-28",
+      "end_date": "2022-03-27",
+      "period_text": null,
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "在上述综合授信和担保范围内，2021年12月28日，国贸公司与盛京银行朝阳分行签订了《流动资金贷款合同》（合同编号：1502110221000080），盛京银行为国贸公司提供1.0亿元借款，借款期限为3个月，自2021年12月28日至2022年3月27日。公司与凌钢集团分别对该笔借款相应承担连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

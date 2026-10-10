@@ -1,0 +1,37 @@
+{
+  "security_code": "603995",
+  "security_name": "甬金股份",
+  "company_name": "甬金科技集团股份有限公司",
+  "announcement_number": "2026-009",
+  "announcement_date": "2026-01-23",
+  "total_guarantee_balance": 526424.51,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 76.81,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "甬金科技集团股份有限公司",
+      "guaranteed_party": "浙江镨赛新材料有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": false,
+      "guarantee_amount": 4180.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国建设银行股份有限公司兰溪支行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自本合同生效之日起至主合同项下债务履行期限届满之日后三年止。",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "甬金科技集团股份有限公司（下称“公司”）与中国建设银行股份有限公司兰溪支行于2026 年1 月20 日签署了《保证合同》（合同编号：HTC330676100YBDB2026N001），为全资子公司浙江镨赛新材料有限公司（下称“浙江镨赛”）申请的借款提供最高不超过4,180 万元的连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

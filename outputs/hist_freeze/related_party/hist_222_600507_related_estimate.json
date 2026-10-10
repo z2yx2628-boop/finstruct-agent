@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2023-084",
+  "announcement_date": "2023-08-30",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "天津一商集团有限公司及其子公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售焦炭、煤、废钢等",
+      "goods_or_services": "焦炭、煤、废钢",
+      "estimated_amount": 50000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "方大国贸及其子公司\t天津一商及其子公司\t合同\t销售焦炭、煤、废钢等\t市场价格\t合同约定\t2023年1-12月\t43,877.28\t50,000\t93,877.28\t43,735.79",
+      "confidence": 0.98
+    }
+  ]
+}

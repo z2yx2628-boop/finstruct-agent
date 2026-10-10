@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2023-018",
+  "announcement_date": "2023-02-11",
+  "total_guarantee_balance": 568468.37,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 21.54,
+  "external_guarantee_balance": 18072.14,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京南钢产业发展有限公司",
+      "guaranteed_party": "南京鑫武海运有限公司",
+      "relationship": "associate_or_joint_venture",
+      "is_related_transaction": null,
+      "guarantee_amount": 2500.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "招商银行股份有限公司南京分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自本担保书生效之日起至《授信协议》项下每笔贷款或其他融资或招商银行受让的应收账款债权的到期日或每笔垫款的垫款日另加三年。任一项具体授信展期，则保证期间延续至展期期间届满后另加三年止。",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "2023年2月10日，南钢发展与招商银行股份有限公司南京分行（以下简称“招商银行”）签署《最高额不可撤销担保书》，为鑫武海运与招商银行发生的授信业务提供不超过2,500万元连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

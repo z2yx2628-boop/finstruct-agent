@@ -1,0 +1,45 @@
+{
+  "security_code": "601003",
+  "security_name": "柳钢股份",
+  "company_name": "柳州钢铁股份有限公司",
+  "announcement_number": "2019-044",
+  "announcement_date": "2019-12-06",
+  "estimate_year": 2019,
+  "total_estimated_amount": 16600.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "柳州钢铁股份有限公司",
+      "counterparty": "广西柳钢熔剂产业有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "熔剂",
+      "goods_or_services": null,
+      "estimated_amount": 7000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "广西柳钢\n熔剂产业\n有限公司 \n熔\n剂 \n/ \n7,000.00 \n0.14 \n0 \n/ \n/",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "柳州钢铁股份有限公司",
+      "counterparty": "柳州兴远劳务有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "receive_services",
+      "category_text": "劳务",
+      "goods_or_services": null,
+      "estimated_amount": 9600.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 8260.86,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "柳州兴远\n劳务有限\n公司 \n劳\n务 \n8500.00 \n9,600.00 \n0.24 \n8770.00 \n8,260.86 \n0.23 \n/",
+      "confidence": 0.95
+    }
+  ]
+}

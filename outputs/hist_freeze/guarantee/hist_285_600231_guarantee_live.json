@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2019-019",
+  "announcement_date": "2019-03-08",
+  "total_guarantee_balance": 28.42,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 38.17,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁热电有限责任公司",
+      "relationship": "sister_company",
+      "is_related_transaction": true,
+      "guarantee_amount": 3.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中航国际租赁有限公司",
+      "guaranteed_debt_purpose": "融资租赁合同（售后回租）",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "租赁合同约定的债务履行期限届满之日起两年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 64.79,
+      "source_page": 2,
+      "evidence_text": "2019 年2 月28 日，根据《相互担保协议》和《相互担保协议之补充协议》\n约定，公司为凌源钢铁热电有限责任公司（以下简称“热电公司”）与中航国际\n租赁有限公司（以下简称“中航租赁”）签订的3 亿元人民币的《融资租赁合同》\n（售后回租，合同编号： ZHZL(19)02HZ014）提供连带责任保证担保，与中航租\n赁签订了《保证合同》（合同编号：ZHZL(19)02HZ014-BZ001）。",
+      "confidence": 1.0
+    }
+  ]
+}

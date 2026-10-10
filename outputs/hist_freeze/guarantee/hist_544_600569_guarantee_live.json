@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2023—091",
+  "announcement_date": "2023-11-30",
+  "total_guarantee_balance": 399463.128,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 53.53,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "安钢集团永通球墨铸铁管有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.1,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "徽银金融租赁有限公司",
+      "guaranteed_debt_purpose": "融资租赁（直租方式，租赁物为热模法铸管生产线等设备类资产）",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "融资期限为5年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "被担保人名称：安钢集团永通球墨铸铁管有限责任公司（以下简称“永通公司”）\n● 本次担保金额：公司控股子公司永通公司拟与徽银金融租赁有限公司以直租方式开展融资租赁业务，租赁物为永通公司热模法铸管生产线等设备类资产，计划融资金额不超过人民币1.1 亿元，融资期限为5 年。公司拟为永通公司与徽银金融租赁有限公司开展以上融资租赁业务提供连带责任保证担保。",
+      "confidence": 0.98
+    }
+  ]
+}

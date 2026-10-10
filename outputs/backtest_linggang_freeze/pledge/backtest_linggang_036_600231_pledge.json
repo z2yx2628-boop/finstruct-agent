@@ -1,0 +1,29 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "announcement_number": "临2023-043",
+  "company_name": "凌源钢铁股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "天津泰悦投资管理有限公司",
+      "shares": 11000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 1.86,
+      "total_share_capital_ratio": 0.39,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": true,
+      "pledge_start_date": "2023-06-29",
+      "pledge_end_date": "2024-06-27",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "国金证券股份有限公司",
+      "purpose": "补充质押",
+      "source_page": 1,
+      "evidence_text": "股东名称 \n是否为控股\n股东 \n本次质押股数\n(股) \n是否为限售股 \n是否补\n充质押 \n质押起始日 \n质押到期日 \n质权人 \n占其所持\n股份比例\n（%） \n占公司总\n股本比例\n（%） \n质押融资\n资金用途 \n天津泰悦投资\n管理有限公司 \n否 \n11,000,000 \n否 \n是 \n2023 年6 月\n29 日 \n2024 年6 月\n27 日 \n国金证券股\n份有限公司 \n1.86 \n0.39 \n补充质押",
+      "confidence": 1.0
+    }
+  ]
+}

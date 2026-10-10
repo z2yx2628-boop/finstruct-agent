@@ -1,0 +1,45 @@
+{
+  "security_code": "600408",
+  "security_name": "安泰集团",
+  "company_name": "山西安泰集团股份有限公司",
+  "announcement_number": "临2024—030",
+  "announcement_date": "2024-07-03",
+  "estimate_year": 2024,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "山西安泰集团股份有限公司",
+      "counterparty": "漳州龙泰供应链管理有限公司",
+      "relationship": "associate_or_joint_venture",
+      "transaction_category": "sell_goods",
+      "category_text": "销售H型钢",
+      "goods_or_services": "H型钢",
+      "estimated_amount": 8.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "公司与龙泰公司预计2024 年度发生的日常关联交易包括：安泰型钢向龙泰公司销售H 型钢，宏安焦化向龙泰公司销售焦炭，预计2024 年7-12 月，H 型钢产品的交易总额不超过8 亿元，焦炭产品的交易总额不超过2 亿元。",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "山西安泰集团股份有限公司",
+      "counterparty": "漳州龙泰供应链管理有限公司",
+      "relationship": "associate_or_joint_venture",
+      "transaction_category": "sell_goods",
+      "category_text": "销售焦炭",
+      "goods_or_services": "焦炭",
+      "estimated_amount": 2.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "公司与龙泰公司预计2024 年度发生的日常关联交易包括：安泰型钢向龙泰公司销售H 型钢，宏安焦化向龙泰公司销售焦炭，预计2024 年7-12 月，H 型钢产品的交易总额不超过8 亿元，焦炭产品的交易总额不超过2 亿元。",
+      "confidence": 0.98
+    }
+  ]
+}

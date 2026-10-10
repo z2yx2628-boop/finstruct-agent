@@ -1,0 +1,37 @@
+{
+  "security_code": "600408",
+  "security_name": "安泰集团",
+  "company_name": "山西安泰集团股份有限公司",
+  "announcement_number": "临2024—014",
+  "announcement_date": "2024-04-02",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "山西宏安焦化科技有限公司",
+      "guaranteed_party": "山西安泰集团股份有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 27920.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "mortgage",
+      "creditor": "山西银行股份有限公司晋中分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2024-03-28",
+      "end_date": "2025-03-28",
+      "period_text": "2024年3月28日至2025年3月28日期间",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "宏安焦化为公司向山西银行股份有限公司晋中分行（以下简称“山西银行晋中分行”）申请的综合授信业务提供了最高额抵押担保，截至目前的主债权余额为27,920 万元。鉴于该笔被担保的主债权到期，公司与山西银行晋中分行近日重新签署了《综合授信合同》，宏安焦化与该行签署了《最高额抵押合同》，继续为公司提供担保，所担保的授信额度为27,920 万元。",
+      "confidence": 1.0
+    }
+  ]
+}

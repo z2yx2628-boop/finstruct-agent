@@ -1,0 +1,29 @@
+{
+  "security_code": "600399",
+  "security_name": "抚顺特钢",
+  "company_name": "抚顺特殊钢股份有限公司",
+  "announcement_number": "临2024-031",
+  "announcement_date": "2024-05-09",
+  "estimate_year": 2024,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "抚顺特殊钢股份有限公司",
+      "counterparty": "江苏沙钢盛德再生资源有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联人购买原材料",
+      "goods_or_services": null,
+      "estimated_amount": 50000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人购买原材料 \n江苏沙钢盛德再生资源有限公司 \n0 \n50,000 50,000 \n8.48 \n0",
+      "confidence": 1.0
+    }
+  ]
+}

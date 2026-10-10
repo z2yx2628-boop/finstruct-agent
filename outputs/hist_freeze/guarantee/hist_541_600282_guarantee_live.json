@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2023-104",
+  "announcement_date": "2023-11-07",
+  "total_guarantee_balance": 554938.86,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 21.29,
+  "external_guarantee_balance": 18771.42,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "柏中环境科技（上海）股份有限公司",
+      "guaranteed_party": "滁州城东污水处理有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 18600.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "交通银行股份有限公司江苏省分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2023-11-03",
+      "end_date": null,
+      "period_text": "自该笔债务履行期限届满之日（或债权人垫付款项之日）起，计至全部主合同项下最后到期的主债务的债务履行期限届满之日（或债权人垫付款项之日）后三年止",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "（一）滁州污水处理 \n1、银行：交通银行股份有限公司江苏省分行 \n2、担保方式：连带责任保证 \n3、担保的贷款金额：18,600万元 \n4、业务期间：2023年11月3日-2034年9月26日 \n5、担保期限：自该笔债务履行期限届满之日（或债权人垫付款项之日）起，\n计至全部主合同项下最后到期的主债务的债务履行期限届满之日（或债权人垫付款项之日）后三年止",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2021-65",
+  "announcement_date": "2021-08-27",
+  "estimate_year": 2021,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "湖南华菱钢铁股份有限公司",
+      "counterparty": "湖南华菱钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "financial_services",
+      "category_text": "金融服务利息、佣金及手续费收入",
+      "goods_or_services": null,
+      "estimated_amount": 16500.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 6171.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "金融服务利息、佣金及手续费收入 \n9,000 \n7,500 \n6,171 \n16,500",
+      "confidence": 1.0
+    },
+    {
+      "listed_company": "湖南华菱钢铁股份有限公司",
+      "counterparty": "湖南华菱钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "financial_services",
+      "category_text": "金融服务利息支出",
+      "goods_or_services": null,
+      "estimated_amount": 9000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 3797.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "金融服务利息支出 \n2,300 \n6,700 \n3,797 \n9,000",
+      "confidence": 1.0
+    }
+  ]
+}

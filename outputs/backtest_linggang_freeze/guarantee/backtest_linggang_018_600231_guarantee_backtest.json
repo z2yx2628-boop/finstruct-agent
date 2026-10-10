@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2022-063",
+  "announcement_date": "2022-12-21",
+  "total_guarantee_balance": 32.29,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 34.9,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "pledge",
+      "creditor": "盛京银行股份有限公司朝阳分行",
+      "guaranteed_debt_purpose": "银行承兑汇票",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "银行承兑汇票签发日为2022年12月19日，到期日为2023年6月9日",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": 65.66,
+      "source_page": 1,
+      "evidence_text": "公司本次为凌钢集团与盛京银行股份有限公司朝阳分行（以下简称“盛京银行朝阳分行”）签订的1.0 亿元《银行承兑协议》提供质押担保。",
+      "confidence": 1.0
+    }
+  ]
+}

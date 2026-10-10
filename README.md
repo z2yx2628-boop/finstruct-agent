@@ -188,6 +188,10 @@ tests/                 自动测试
 
 ## 日常运行
 
+线上数据由 GitHub 定时任务（`.github/workflows/daily-update.yml`）每天北京时间 06:30 自动更新：在 GitHub 的服务器上运行下面第一条命令，
+把结果提交到 `main`，Streamlit Cloud 随后自动重新部署；也可在仓库 Actions 页面手动运行。模型密钥保存在仓库的 Secrets 中。
+本机仍可手动运行：
+
 ```powershell
 python scripts/daily_update.py                       # 查新公告 → 冻结系统抽取 → 识别信用事件 → 重建图谱 → 承压评分 → 传导路径 → 日报
 python scripts/daily_update.py --since 2025-05-01     # 补抓一段时间的公告

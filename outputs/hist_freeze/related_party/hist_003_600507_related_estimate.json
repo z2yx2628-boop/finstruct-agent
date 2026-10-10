@@ -1,0 +1,61 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2019-017",
+  "announcement_date": "2019-02-22",
+  "estimate_year": 2019,
+  "total_estimated_amount": 74385.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "中国平煤神马集团焦化销售有限公司",
+      "relationship": "associate_or_joint_venture",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购焦炭等原料",
+      "goods_or_services": "焦炭等原料",
+      "estimated_amount": 58000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "1 \n平煤销售\n公司 \n公司及控\n股子公司 \n合同 \n采购焦炭\n等原料 \n市场价格 \n协议约定 \n2019 年\n2-12 月 \n58,000\n万元",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "江西海鸥贸易有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "水渣等产品",
+      "goods_or_services": "水渣等产品",
+      "estimated_amount": 16385.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "2 \n公司及控\n股子公司 \n江西贸易 \n合同 \n水渣等产\n品 \n市场价格 \n协议约定 \n2019 年\n3-12 月 \n16,385\n万元",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "江西海鸥贸易有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购废钢、合金",
+      "goods_or_services": "废钢、合金",
+      "estimated_amount": 160500.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "江西贸易 \n公司及控\n股子公司 \n合同 \n采购废\n钢、合金 \n市场价格 \n协议约定 \n2019 年\n1-12 月 \n160,500 万元",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2024—014",
+  "announcement_date": "2024-03-29",
+  "total_guarantee_balance": 503463.128,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 67.47,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢周口钢铁有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 5.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "华融金融租赁股份有限公司",
+      "guaranteed_debt_purpose": "融资租赁业务（直租方式，租赁物为焦化项目焦炉、水处理的部分设备）",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "融资期限为5年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "● 本次担保金额：周口公司拟与华融金融租赁股份有限公司以直租方式开展融资租赁业务，租赁物为周口公司焦化项目焦炉、水处理的部分设备，计划融资金额为不超过人民币5 亿元，融资期限为5 年。\n公司拟为周口公司与华融金融租赁股份有限公司开展以上融资租赁业务提供连带责任保证担保。同时授权董事长签署公司上述交易所需要的合同及相关文件。\n●本次担保事项尚需提交公司股东大会审议。",
+      "confidence": 0.98
+    }
+  ]
+}

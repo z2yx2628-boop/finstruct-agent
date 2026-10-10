@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2023-019",
+  "announcement_date": "2023-02-21",
+  "total_guarantee_balance": 560450.6,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 21.24,
+  "external_guarantee_balance": 20572.14,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京南钢产业发展有限公司",
+      "guaranteed_party": "宁波北仑船务有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 3040.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国光大银行股份有限公司宁波分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自具体授信业务合同或协议约定的受信人履行债务期限届满之日起三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "2023年2月17日，南钢发展与中国光大银行股份有限公司宁波分行（以下简称“光大银行”）签署《最高额保证合同》，为宁波北仑与光大银行发生的授信业务提供不超过3,040万元连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

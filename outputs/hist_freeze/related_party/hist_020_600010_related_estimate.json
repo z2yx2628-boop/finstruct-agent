@@ -1,0 +1,29 @@
+{
+  "security_code": "600010",
+  "security_name": "包钢股份",
+  "company_name": "内蒙古包钢钢联股份有限公司",
+  "announcement_number": "（临）2019-024",
+  "announcement_date": "2019-04-19",
+  "estimate_year": 2019,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "内蒙古包钢钢联股份有限公司",
+      "counterparty": "中国北方稀土（集团）高科技股份有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售稀土精矿",
+      "goods_or_services": "稀土精矿",
+      "estimated_amount": null,
+      "estimated_unit": null,
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": null,
+      "source_page": 2,
+      "evidence_text": "公司与北方稀土根据实际需要及生产安排，协商确定稀土精矿供应量。2019年度供应量不超过20万吨，交易价格为12600元/吨（不含税）。",
+      "confidence": 0.95
+    }
+  ]
+}

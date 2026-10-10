@@ -1,0 +1,29 @@
+{
+  "security_code": "600408",
+  "security_name": "安泰集团",
+  "announcement_number": "临2023—024",
+  "company_name": "山西安泰集团股份有限公司",
+  "events": [
+    {
+      "event_type": "extension",
+      "shareholder_name": "李安民",
+      "shares": 317807116.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 100.0,
+      "total_share_capital_ratio": 31.57,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2016-07-19",
+      "pledge_end_date": null,
+      "pledge_end_condition": "被担保的主债权期限至2024年6月20日",
+      "release_date": null,
+      "original_end_date": "2023-06-20",
+      "extended_end_date": "2024-06-20",
+      "pledgee": "中国民生银行股份有限公司太原分行",
+      "purpose": "为山西新泰钢铁有限公司在该行申请的综合授信下的融资业务提供担保",
+      "source_page": 1,
+      "evidence_text": "股东 \n名称 \n是否为\n控股 \n股东 \n本次质押股数\n（股） \n是否\n为限\n售股 \n是否\n补充\n质押 \n质押起始日 \n质押到期日 \n（被担保的\n主债权期限） \n质权\n人 \n占其\n所持\n股份\n比例 \n占公\n司总\n股本\n比例 \n质押\n融资\n资金\n用途 \n李安民 \n是 \n317,807,116 \n否 \n否 \n2016-07-19 2024-06-20 \n民生\n银行 100% 31.57% 担保",
+      "confidence": 0.98
+    }
+  ]
+}

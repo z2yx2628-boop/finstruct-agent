@@ -1,0 +1,37 @@
+{
+  "security_code": "300881",
+  "security_name": "盛德鑫泰",
+  "company_name": "盛德鑫泰新材料股份有限公司",
+  "announcement_number": "2026-013",
+  "announcement_date": "2026-03-26",
+  "total_guarantee_balance": 52790.25,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 45.61,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "盛德鑫泰新材料股份有限公司",
+      "guaranteed_party": "江苏攀森智能科技有限公司",
+      "relationship": "sister_company",
+      "is_related_transaction": null,
+      "guarantee_amount": 680.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "苏州银行股份有限公司常州分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主债权履行期限届满之日起三年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "盛德鑫泰新材料股份有限公司（以下简称“公司”）重孙公司江苏攀森智能\n科技有限公司（以下简称“江苏攀森”）为满足自身经营的资金需求，拟向苏州\n银行股份有限公司常州分行（以下简称“苏州银行常州分行”）申请1,000 万元\n的综合授信额度，公司为其担保680 万元，担保期限为主债权履行期限届满之日\n起三年。",
+      "confidence": 1.0
+    }
+  ]
+}

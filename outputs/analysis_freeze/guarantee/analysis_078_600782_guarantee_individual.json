@@ -1,0 +1,37 @@
+{
+  "security_code": "600782",
+  "security_name": "新钢股份",
+  "company_name": "新余钢铁股份有限公司",
+  "announcement_number": "临2024-017",
+  "announcement_date": "2024-04-23",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "江西新华新材料科技股份有限公司",
+      "guaranteed_party": "张家港新华预应力钢绞线有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.1,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "商业银行",
+      "guaranteed_debt_purpose": "流动资金贷款",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "期限一年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": 23.41,
+      "source_page": 1,
+      "evidence_text": "为满足公司控股子公司江西新华新材料科技股份有限公司（以下简称“新华新材料”）的控股子公司张家港新华日常经营和建设项目的资金需求，促进其业务发展，张家港新华拟向商业银行申请2.20亿元的流动资金贷款。控股子公司新华新材料及张家港宏兴高线有限公司按持股比例对张家港新华提供同比例担保，控股子公司新华新材料为张家港新华提供担保额度不超过1.10 亿元。",
+      "confidence": 0.95
+    }
+  ]
+}

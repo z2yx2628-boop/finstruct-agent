@@ -1,0 +1,29 @@
+{
+  "security_code": "600808",
+  "security_name": "马钢股份",
+  "company_name": "马鞍山钢铁股份有限公司",
+  "announcement_number": "临2020-017",
+  "announcement_date": "2020-05-07",
+  "estimate_year": 2020,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "马鞍山钢铁股份有限公司",
+      "counterparty": "欧冶链金再生资源有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购产品，包括采购废钢成品",
+      "goods_or_services": "废钢成品",
+      "estimated_amount": 7508500000.0,
+      "estimated_unit": "元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "（1）采购产品，包括采购废钢成品，各年度金额上限(不含税)分别为：2019 年人民币3,282,400,000 元，2020 年人民币7,508,500,000 元，2021 年人民币9,592,500,000 元。",
+      "confidence": 1.0
+    }
+  ]
+}

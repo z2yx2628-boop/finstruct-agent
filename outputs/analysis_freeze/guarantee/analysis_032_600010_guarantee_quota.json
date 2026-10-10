@@ -1,0 +1,37 @@
+{
+  "security_code": "600010",
+  "security_name": "包钢股份",
+  "company_name": "内蒙古包钢钢联股份有限公司",
+  "announcement_number": "（临）2025-013",
+  "announcement_date": "2025-03-13",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": 0.06,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "内蒙古包钢钢联股份有限公司",
+      "guaranteed_party": "包钢钢业有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": false,
+      "guarantee_amount": 0.3,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自公司股东大会审议批准之日起至下一年度股东大会审议批准新的担保额度止",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": 36.71,
+      "source_page": 2,
+      "evidence_text": "担保\n方 \n被担\n保方 \n担保\n方持\n股比\n例 \n被担保\n方最近\n一期资\n产负债\n率 \n截至目\n前担保\n余额 \n本次新\n增担保\n额度\n（亿\n元） \n担保额度\n占上市公\n司最近一\n期净资产\n比例\n（%） \n担保预计\n有效期 \n是否\n关联\n担保 \n是否有\n反担保 \n一、对控股子公司的担保预计 \n1、资产负债率低于70%的控股子公司 \n包钢\n股份 \n包钢\n钢业 \n60% \n36.71% \n0 \n0.3 \n0.06 \n自公司股\n东大会审\n议批准之\n日起至下\n一年度股\n东大会审\n议批准新\n的担保额\n度止 \n否 \n是",
+      "confidence": 1.0
+    }
+  ]
+}

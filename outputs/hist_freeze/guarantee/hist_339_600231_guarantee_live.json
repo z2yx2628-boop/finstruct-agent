@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2020-052",
+  "announcement_date": "2020-05-22",
+  "total_guarantee_balance": 34.99,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 45.15,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 2.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "盛京银行股份有限公司朝阳分行",
+      "guaranteed_debt_purpose": "支付货款",
+      "start_date": "2020-05-20",
+      "end_date": "2020-11-19",
+      "period_text": "借款合同期限6个月，自2020年5月20日至2020年11月19日；保证期间为从借款合同生效之日开始到借款合同中债务履行期届满（包括提前届满及展期后届满）之日后三年。",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 68.53,
+      "source_page": 2,
+      "evidence_text": "2020 年5 月20 日，根据《相互担保协议》约定，公司为控股股东凌钢集团与盛京银行股份有限公司朝阳分行签订的期限为6 个月的2 亿元人民币的《盛京银行流动资金借款合同》(合同编号：1502190220000010)提供保证担保, 公司与盛京银行股份有限公司朝阳分行签订了《借款保证合同》(合同编号：1502199420000007)。",
+      "confidence": 1.0
+    }
+  ]
+}

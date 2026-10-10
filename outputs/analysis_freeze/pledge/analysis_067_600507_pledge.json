@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "announcement_number": "临2025-051",
+  "company_name": "方大特钢科技股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "江西板簧",
+      "shares": 84040000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 47.8,
+      "total_share_capital_ratio": 3.63,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-07-22",
+      "pledge_end_date": "2026-07-22",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中泰证券股份有限公司",
+      "purpose": "自身资金需要",
+      "source_page": 2,
+      "evidence_text": "股东名称\n是否为\n控股股东\n本次质押股数\n是否为\n限售股\n是否补充\n质押\n质押\n起始日\n质押\n到期日\n质权人\n占其所持\n股份比例\n占公司\n总股本比\n例\n质押融资\n资金用途\n江西板簧\n否\n84,040,000\n否\n否\n2025/7/22\n2026/7/22\n中泰证券股\n份有限公司\n47.80%\n3.63%\n自身资金需要",
+      "confidence": 1.0
+    }
+  ]
+}

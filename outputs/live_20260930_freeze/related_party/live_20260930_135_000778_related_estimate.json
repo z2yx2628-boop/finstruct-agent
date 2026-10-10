@@ -1,0 +1,61 @@
+{
+  "security_code": "000778",
+  "security_name": "新兴铸管",
+  "company_name": "新兴铸管股份有限公司",
+  "announcement_number": "2025-42",
+  "announcement_date": "2025-10-28",
+  "estimate_year": 2025,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "新兴铸管股份有限公司",
+      "counterparty": "沧州新兴新能源科技有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "receive_services",
+      "category_text": "接受劳务",
+      "goods_or_services": "球团加工",
+      "estimated_amount": 41731.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "接受劳务沧州新兴新能源\n科技有限公司\n球团加\n工\n参照市场价\n格，协议定价\n0\n18,570\n41,731\n41,731",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "新兴铸管股份有限公司",
+      "counterparty": "沧州新兴新能源科技有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购商品",
+      "goods_or_services": "矿粉、电池",
+      "estimated_amount": 51500.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "采购商品沧州新兴新能源\n科技有限公司\n矿粉、电\n池\n参照市场价\n格，协议定价\n65,500\n29,310\n-14,000\n51,500",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "新兴铸管股份有限公司",
+      "counterparty": "沧州新兴新能源科技有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售商品",
+      "goods_or_services": "矿石",
+      "estimated_amount": 58310.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "销售商品沧州新兴新能源\n科技有限公司\n矿石\n参照市场价\n格，协议定价\n75,310\n12,101\n-17,000\n58,310",
+      "confidence": 0.98
+    }
+  ]
+}

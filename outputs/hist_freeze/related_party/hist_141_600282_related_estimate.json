@@ -1,0 +1,29 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2021-109",
+  "announcement_date": "2021-12-16",
+  "estimate_year": 2021,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "南京钢铁股份有限公司",
+      "counterparty": "江苏复星商社国际贸易有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购铁矿石、煤、焦炭等原料",
+      "goods_or_services": "铁矿石、煤、焦炭",
+      "estimated_amount": 15000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 5051.26,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "公司全资子公司南京钢铁集团国际经济贸易有限公司及其子公司因业务发展需要，向关联方江苏复星商社采购铁矿石、煤、焦炭等原料，截至本公告出具日，上述关联交易累计发生金额5,051.26 万元，预计2021 年全年新增日常关联交易金额15,000 万元。",
+      "confidence": 1.0
+    }
+  ]
+}

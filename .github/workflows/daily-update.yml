@@ -1,0 +1,55 @@
+# 每日更新（定时任务）：每天北京时间 06:30 在 GitHub 的服务器上运行 scripts/daily_update.py，
+# 把新公告、图谱、评分和日报提交回 main；Streamlit Cloud 检测到 main 有新提交后自动重新部署。
+# 也可以在 GitHub 仓库的 Actions 页面手动点 “Run workflow” 立即运行。
+name: 每日更新
+
+on:
+  schedule:
+    - cron: "30 22 * * *"   # UTC 22:30 = 北京时间次日 06:30
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      TZ: Asia/Shanghai
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 运行每日更新（冻结版抽取系统）
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: python scripts/daily_update.py
+
+      - name: 提交结果
+        run: |
+          git config user.name "chainproof-daily-update"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data outputs
+          if git diff --cached --quiet; then
+            echo "没有新变化"
+            exit 0
+          fi
+          git commit -m "Daily update $(date +%F) (GitHub Actions)"
+          git push

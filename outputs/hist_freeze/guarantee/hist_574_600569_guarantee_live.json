@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2024—077",
+  "announcement_date": "2024-10-24",
+  "total_guarantee_balance": 523463.128,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 88.72,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "安钢集团冷轧有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "工商银行安阳高新支行",
+      "guaranteed_debt_purpose": "流动资金贷款、银行承兑汇票、国内信用证",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "期限1年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "被担保人名称：安钢集团冷轧有限责任公司（以下简称冷轧公司）\n● 本次担保金额：公司控股子公司冷轧公司向工商银行安阳高新支行申请\n新增1 亿元银行综合授信（可用于流动资金贷款、银行承兑汇票、国内信用证\n等），期限1 年。\n公司拟为冷轧公司的上述银行授信业务提供连带责任保证担保。同时授权\n董事长签署公司上述交易所需要的合同及相关文件。\n●本次担保事项尚需提交公司股东大会审议。",
+      "confidence": 0.98
+    }
+  ]
+}

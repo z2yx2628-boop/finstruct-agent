@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2019-004",
+  "announcement_date": "2019-01-22",
+  "total_guarantee_balance": 27.37,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 42.85,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 1.36,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "平安国际融资租赁（天津）有限公司",
+      "guaranteed_debt_purpose": "售后回租赁合同",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自本合同签署之日至主合同项下主债务履行期届满之日起两年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 66.1,
+      "source_page": 1,
+      "evidence_text": "2019 年1 月21 日，根据《相互担保协议》和《相互担保协议之补充协议》\n约定，公司为控股股东凌钢集团与平安国际融资租赁（天津）有限公司(以下简\n称“平安租赁”)签订的1.36 亿元人民币的《售后回租赁合同》（合同编号： \n2018PAZL(TJ)0102404-ZL-01）提供连带责任保证担保，与平安租赁签订了《保\n证合同》（合同编号：2018PAZL(TJ)0102404-BZ-01）。",
+      "confidence": 1.0
+    }
+  ]
+}

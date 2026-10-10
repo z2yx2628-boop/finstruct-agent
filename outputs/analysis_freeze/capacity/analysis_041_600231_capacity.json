@@ -1,0 +1,42 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2025-010",
+  "announcement_date": "2025-02-18",
+  "events": [
+    {
+      "event_type": "capacity_construction",
+      "project_name": "1#-4#高炉装备升级建设项目—新建2290m³高炉工程",
+      "project_entity": "凌源钢铁股份有限公司",
+      "project_location": null,
+      "project_country": "中国",
+      "decision_reasons": [],
+      "decision_reason_text": null,
+      "project_status": "under_construction",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2023年8月29日董事会审议通过；2023年9月15日股东大会审议通过；2023年11月24日董事会审议通过方案变更；2023年12月5日完成产能置换方案公示；2025年2月13日取得建筑工程施工许可证。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": "高炉装备升级",
+      "project_purpose": "高炉装备升级建设",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "近日，公司收到朝阳凌源经济开发区管理委员会下发的《建筑工程施工许可证》（证书编号：211392202502130101），经审查，公司1#-4#高炉装备升级建设项目—新建2290m³高炉工程符合施工条件，准予施工。",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2025—121",
+  "announcement_date": "2025-12-04",
+  "total_guarantee_balance": 567163.128,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 214.24,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢周口钢铁有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 6.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国金谷国际信托有限责任公司",
+      "guaranteed_debt_purpose": "债权投资款",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "不超过36个月",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "中国金谷国际信托有限责任公司（以下简称金谷信托）拟对安阳钢铁股份有限公司（以下简称公司）控股子公司周口公司开展债权投资业务，投资金额不超过人民币6亿元，投资期限不超过36个月。公司拟作为共同债务人为周口公司提供担保。",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "security_code": "600010",
+  "security_name": "包钢股份",
+  "company_name": "内蒙古包钢钢联股份有限公司",
+  "announcement_number": "（临）2020-023",
+  "announcement_date": "2020-04-30",
+  "estimate_year": 2020,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "内蒙古包钢钢联股份有限公司",
+      "counterparty": "中国北方稀土（集团）高科技股份有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购稀土精矿",
+      "goods_or_services": "稀土精矿",
+      "estimated_amount": 21.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": 20.55,
+      "prior_year_actual_unit": "亿元",
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "2020 年度，公司预计此项日常关联交易总额不超过人民币21 亿元（含税）。",
+      "confidence": 0.95
+    }
+  ]
+}

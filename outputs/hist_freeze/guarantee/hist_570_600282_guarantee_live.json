@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2024-063",
+  "announcement_date": "2024-08-24",
+  "total_guarantee_balance": 59.45,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 36.3,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京钢铁股份有限公司",
+      "guaranteed_party": "安阳复星合力新材料科技有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 3000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中原银行股份有限公司安阳分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自债务人依具体业务合同约定的债务履行期限届满之日起三年",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "2024年8月23日，公司与中原银行股份有限公司安阳分行（以下简称“中原银行”）签署《最高额保证合同》，为安阳合力科技与中原银行发生的授信业务提供主债权本金余额不超过3,000万元连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

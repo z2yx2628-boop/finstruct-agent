@@ -1,0 +1,29 @@
+{
+  "security_code": "600117",
+  "security_name": "西宁特钢",
+  "company_name": "西宁特殊钢股份有限公司",
+  "announcement_number": "临2025-057",
+  "announcement_date": "2025-08-28",
+  "estimate_year": 2025,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "西宁特殊钢股份有限公司",
+      "counterparty": "建龙集团及附属公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联方购买/接受原材料、物资、产成品、劳务等",
+      "goods_or_services": null,
+      "estimated_amount": 29237.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "西宁特殊钢股\n份有限公司\n向关联方购买/接\n受原材料、物资、\n产成品、劳务等\n建龙集团\n及附属公\n司\n1,187\n28,050\n29,237",
+      "confidence": 0.98
+    }
+  ]
+}

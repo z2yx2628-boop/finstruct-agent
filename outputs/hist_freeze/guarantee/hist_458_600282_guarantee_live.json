@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2022-059",
+  "announcement_date": "2022-06-23",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": null,
+  "overdue_guarantee_unit": null,
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "浙江万盛股份有限公司",
+      "guaranteed_party": "江苏万盛大伟有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "宁波银行股份有限公司台州分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主债务期限届满之日起两年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "南京钢铁股份有限公司控股子公司浙江万盛股份有限公司（以下简称“万盛股份”）于近日与宁波银行股份有限公司台州分行（以下简称“宁波银行”）重新签订《最高额保证合同》，为全资子公司江苏万盛大伟有限公司与宁波银行发生的授信业务提供不超过1亿元的连带责任保证担保，担保协议的主要内容如下：\n被担保人名称：江苏万盛大伟有限公司\n担保方式：连带责任保证\n担保的主债务最高余额：1亿元\n主债务期限：2021年8月11日- 2022年12月31日（因为续签合同故起始日期涵盖上个合同日期）\n担保期限：主债务期限届满之日起两年\n本次担保无反担保。",
+      "confidence": 1.0
+    }
+  ]
+}

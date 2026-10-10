@@ -1,0 +1,61 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2021-031",
+  "announcement_date": "2021-04-28",
+  "estimate_year": 2021,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": null,
+  "transactions": [
+    {
+      "listed_company": "中信泰富特钢集团股份有限公司",
+      "counterparty": "徐工集团工程机械有限公司及其子公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售产品、商品",
+      "goods_or_services": "钢板、钢材、钢管等",
+      "estimated_amount": 65000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人销售\n产品、商品 \n徐工集团工程机\n械有限公司及其\n子公司 \n钢板、钢材、\n钢管等 \n市场价/ \n协议价 \n65,000 \n5,104 \n0",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "中信泰富特钢集团股份有限公司",
+      "counterparty": "上海电气集团钢管有限公司及其子公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售产品、商品",
+      "goods_or_services": "钢材、钢管、合金等",
+      "estimated_amount": 40000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "向关联人销售\n产品、商品 \n上海电气集团\n钢管有限公司\n及其子公司 \n钢材、钢管、\n合金等 \n市场价/ \n协议价 \n40,000 \n1,156 \n0",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "中信泰富特钢集团股份有限公司",
+      "counterparty": "上海电气集团钢管有限公司及其子公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购关联人产品、商品",
+      "goods_or_services": "钢材、钢管、钢坯等",
+      "estimated_amount": 10000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "采购关联人产\n品、商品 \n上海电气集团\n钢管有限公司\n及其子公司 \n钢材、钢管、\n钢坯等 \n市场价/ \n协议价 \n10,000 \n983 \n0",
+      "confidence": 0.98
+    }
+  ]
+}

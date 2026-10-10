@@ -1,0 +1,23 @@
+{
+  "runs": {
+    "live_20261009_001_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20261009_freeze/guarantee/live_20261009_001_601686_guarantee_live.json",
+      "sha256": "10818a4076e7ae3f0ab031cc9715ceec86d1f591c86235b5977b3f7ad894813f",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20261009_001_601686_guarantee_live\\20261009T180713Z"
+    },
+    "live_20261009_002_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20261009_freeze/guarantee/live_20261009_002_601686_guarantee_live.json",
+      "sha256": "7cbb8bd62044185f39d98a6150236baf511bbe0c70a12878302dc7f155cf7334",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20261009_002_601686_guarantee_live\\20261009T180845Z"
+    }
+  },
+  "commit": "868139e9693d02c661c6bd60a6764ff24307d5e8",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "8a0abbaf1507f15d6a94a8e26eb939f6229072fb",
+  "started_at": "2026-10-09T18:07:13.350894+00:00",
+  "completed_at": "2026-10-09T18:10:03.757971+00:00"
+}

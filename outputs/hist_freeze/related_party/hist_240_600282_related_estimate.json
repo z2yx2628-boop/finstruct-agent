@@ -1,0 +1,29 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2023-117",
+  "announcement_date": "2023-12-29",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "南京钢铁股份有限公司",
+      "counterparty": "中信金属香港有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售铁矿石",
+      "goods_or_services": "铁矿石",
+      "estimated_amount": 3000.0,
+      "estimated_unit": "万美元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "USD",
+      "source_page": 1,
+      "evidence_text": "公司全资子公司香港金腾发展有限公司（以下简称“香港金腾发展”）因业务需要向中信金属香港有限公司（以下简称“中信金属香港”）销售铁矿石，本次交易金额最高不超过3,000 万美元",
+      "confidence": 0.98
+    }
+  ]
+}

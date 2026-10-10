@@ -1,0 +1,29 @@
+{
+  "security_code": "000923",
+  "security_name": "河钢资源",
+  "company_name": "河钢资源股份有限公司",
+  "announcement_number": "2025-34",
+  "announcement_date": "2025-11-28",
+  "estimate_year": 2025,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "河钢资源股份有限公司",
+      "counterparty": "河钢香港有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售产品、商品",
+      "goods_or_services": "铁矿石",
+      "estimated_amount": 40000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联\n人销售\n产品、商\n品\n河钢香港有限公司\n铁矿石\n市场价\n77,068.80\n40,000\n117,068.80\n81,195.89",
+      "confidence": 0.98
+    }
+  ]
+}

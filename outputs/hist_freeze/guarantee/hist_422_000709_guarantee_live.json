@@ -1,0 +1,37 @@
+{
+  "security_code": "000709",
+  "security_name": "河钢股份",
+  "company_name": "河钢股份有限公司",
+  "announcement_number": "2021-081",
+  "announcement_date": "2021-12-03",
+  "total_guarantee_balance": 120000.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "河钢股份有限公司",
+      "guaranteed_party": "邯钢集团邯宝钢铁有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 12.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中信银行股份有限公司",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "两年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "该项担保系本公司为全资子公司邯钢集团邯宝钢铁有限公司（以下简称“邯宝公司”）向中信银行股份有限公司申请的人民币12亿元综合授信额度提供连带责任保证担保，担保期限为两年。具体担保金额及起止日期以合同签订金额、日期为准。此项担保的担保协议于本次董事会决议后签署。",
+      "confidence": 1.0
+    }
+  ]
+}

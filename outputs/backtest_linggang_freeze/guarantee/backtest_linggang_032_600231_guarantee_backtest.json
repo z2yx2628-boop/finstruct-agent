@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2023-035",
+  "announcement_date": "2023-06-17",
+  "total_guarantee_balance": 27.58,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 33.86,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "pledge",
+      "creditor": "盛京银行股份有限公司朝阳分行",
+      "guaranteed_debt_purpose": "银行承兑汇票",
+      "start_date": "2023-06-15",
+      "end_date": "2023-12-13",
+      "period_text": null,
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": 67.51,
+      "source_page": 2,
+      "evidence_text": "2023 年6 月15 日，根据上述股东大会决议，公司与盛京银行朝阳分行签订了《质押合同》（合同编号：150211202306140009Z03），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协议》（合同编号：150211202306140009）项下，期限自2023 年6 月15 日始至2023 年12 月13 日止，金额为人民币1.0 亿元的99张银行承兑汇票提供质押担保，该额度在公司2023 年第二季度为凌钢集团提供担保的计划范围内。",
+      "confidence": 1.0
+    }
+  ]
+}

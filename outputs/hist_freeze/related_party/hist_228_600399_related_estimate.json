@@ -1,0 +1,29 @@
+{
+  "security_code": "600399",
+  "security_name": "抚顺特钢",
+  "company_name": "抚顺特殊钢股份有限公司",
+  "announcement_number": "临2023-049",
+  "announcement_date": "2023-10-31",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "抚顺特殊钢股份有限公司",
+      "counterparty": "东北特钢集团及其关联方、全资和控股子公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "receive_services",
+      "category_text": "接受关联人提供的劳务",
+      "goods_or_services": null,
+      "estimated_amount": 5200.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "接受关联人\n提供的劳务 \n东北特钢集团及其\n关联方、全资和控\n股子公司 \n4,000 \n1,200 \n5,200 \n92.13 \n3,520.82",
+      "confidence": 0.95
+    }
+  ]
+}

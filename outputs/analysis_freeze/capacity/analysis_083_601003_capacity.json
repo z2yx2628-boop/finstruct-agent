@@ -1,0 +1,42 @@
+{
+  "security_code": "601003",
+  "security_name": "柳钢股份",
+  "company_name": "柳州钢铁股份有限公司",
+  "announcement_number": "2024-048",
+  "announcement_date": "2024-11-19",
+  "events": [
+    {
+      "event_type": "commissioning",
+      "project_name": "防城港钢铁基地项目（一期）3号高炉系统",
+      "project_entity": "广西钢铁集团有限公司",
+      "project_location": "防城港",
+      "project_country": "中国",
+      "decision_reasons": [],
+      "decision_reason_text": null,
+      "project_status": "commissioned",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "3号高炉系统预计于2024年11月底投产；防城港钢铁基地项目（一期）共规划3座高炉和4座转炉，1号、2号高炉系统分别于2020年6月底及2021年11月底建成投产。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": null,
+      "project_purpose": null,
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "柳州钢铁股份有限公司（以下简称“公司”）的控股子公司广西钢铁集团有限公司（以下简称“广西钢铁”）防城港钢铁基地项目（一期）3 号高炉系统高炉本体与辅助设施工程（以下简称“3 号高炉系统”）预计于2024 年11 月底投产。",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2023-031",
+  "announcement_date": "2023-03-21",
+  "total_guarantee_balance": 546684.97,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 20.72,
+  "external_guarantee_balance": 17717.03,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京钢铁股份有限公司",
+      "guaranteed_party": "宁波北仑船务有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 4000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国银行股份有限公司宁波市鄞州分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "该笔债务履行期限届满之日起三年",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "2023年3月17日，公司与中国银行股份有限公司宁波市鄞州分行（以下简称“中国银行”）签署《最高额保证合同》，为宁波北仑与中国银行发生的授信业务提供最高本金余额不超过4,000万元连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

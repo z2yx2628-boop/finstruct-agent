@@ -1,0 +1,61 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2021-055",
+  "announcement_date": "2021-11-30",
+  "estimate_year": 2021,
+  "total_estimated_amount": 66100.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "中信泰富特钢集团股份有限公司",
+      "counterparty": "上海电气集团钢管有限公司及其子公司",
+      "relationship": "other_related_party",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售产品、商品",
+      "goods_or_services": "钢材、钢管、合金、焦炭、生铁等",
+      "estimated_amount": 52600.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人\n销售产\n品、商品 \n上海电气集团\n钢管有限公司\n及其子公司 \n销售钢材、钢\n管、合金、焦\n炭、生铁等 \n市场价/\n协议价 \n40,000 \n12,600 \n52,600 \n34,075",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "中信泰富特钢集团股份有限公司",
+      "counterparty": "上海电气集团钢管有限公司及其子公司",
+      "relationship": "other_related_party",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联人采购产品、商品",
+      "goods_or_services": "钢材、钢管、钢坯等",
+      "estimated_amount": 10000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人\n采购产\n品、商品 \n上海电气集团\n钢管有限公司\n及其子公司 \n采购钢材、钢\n管、钢坯等 \n市场价/\n协议价 \n10,000 \n0 \n10,000 \n1,942",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "中信泰富特钢集团股份有限公司",
+      "counterparty": "上海电气集团钢管有限公司及其子公司",
+      "relationship": "other_related_party",
+      "transaction_category": "provide_services",
+      "category_text": "向关联人提供劳务",
+      "goods_or_services": "提供服务",
+      "estimated_amount": 3500.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人\n提供劳务 \n上海电气集团\n钢管有限公司\n及其子公司 \n提供服务 \n市场价/\n协议价 \n0 \n3,500 \n3,500 \n0",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2022-068",
+  "announcement_date": "2022-06-11",
+  "estimate_year": 2022,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "北京方大炭素科技有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售钢材等",
+      "goods_or_services": "钢材等",
+      "estimated_amount": 25000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "销售钢材等 \n北京方大 \n10,000 \n0",
+      "confidence": 0.95
+    }
+  ]
+}

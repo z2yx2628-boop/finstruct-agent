@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2023-010",
+  "announcement_date": "2023-03-04",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "江苏方大炭素化工有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售煤焦油等",
+      "goods_or_services": "煤焦油等",
+      "estimated_amount": 8450.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "方大特钢科技股份有限公司与关联方江苏方大炭素化工有限公司（以下简称“江苏方大”）预计新增日常关联交易金额8,450 万元。",
+      "confidence": 0.95
+    }
+  ]
+}

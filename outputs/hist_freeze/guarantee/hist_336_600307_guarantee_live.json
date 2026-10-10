@@ -1,0 +1,37 @@
+{
+  "security_code": "600307",
+  "security_name": "酒钢宏兴",
+  "company_name": "甘肃酒钢集团宏兴钢铁股份有限公司",
+  "announcement_number": "2020-015",
+  "announcement_date": "2020-04-30",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "甘肃酒钢集团宏兴钢铁股份有限公司",
+      "guaranteed_party": "酒泉钢铁(集团)有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": null,
+      "guarantee_unit": null,
+      "guarantee_currency": null,
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自该议案经公司股东大会审议通过之日起至2020年年度股东大会召开之日止",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "甘肃酒钢集团宏兴钢铁股份有限公司（以下简称“公司”）控股股东酒泉钢铁（集团）有限责任公司（以下简称“酒钢集团”）为公司2020年度各类银行综合授信业务提供了连带责任担保，公司拟于2020年在酒钢集团提供担保的授信额度范围内，以实际发生担保融资金额为上限为其提供相应额度的连带责任反担保。",
+      "confidence": 0.95
+    }
+  ]
+}

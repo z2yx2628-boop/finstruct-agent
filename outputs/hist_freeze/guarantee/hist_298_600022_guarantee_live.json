@@ -1,0 +1,37 @@
+{
+  "security_code": "600022",
+  "security_name": "山东钢铁",
+  "company_name": "山东钢铁股份有限公司",
+  "announcement_number": "2019-024",
+  "announcement_date": "2019-07-30",
+  "total_guarantee_balance": 21.0,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 10.41,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "山东钢铁股份有限公司",
+      "guaranteed_party": "山东钢铁集团日照有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": false,
+      "guarantee_amount": 4.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "济宁银行日照分行",
+      "guaranteed_debt_purpose": "银行承兑汇票、信用证等业务",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主合同项下债务履行期限届满之日起两年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "关于为山东钢铁集团日照有限公司 \n在济宁银行日照分行办理4 亿元综合授信提供 \n担保的公告",
+      "confidence": 0.98
+    }
+  ]
+}
