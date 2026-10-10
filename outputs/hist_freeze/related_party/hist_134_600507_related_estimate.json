@@ -1,0 +1,45 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2021-064",
+  "announcement_date": "2021-11-06",
+  "estimate_year": 2021,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "辽宁方大集团国贸有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购锰硅合金、石灰石中块、废钢、无烟煤等",
+      "goods_or_services": "锰硅合金、石灰石中块、废钢、无烟煤",
+      "estimated_amount": 42850.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 31551.62,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "采购锰硅合金、石灰石中块、废钢、\n无烟煤等 \n方大国贸 \n42,850 \n31,551.62",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "辽宁方大集团国贸有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "煤炭、合金、废钢等",
+      "goods_or_services": "煤炭、合金、废钢",
+      "estimated_amount": 15000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "1 \n方大 \n国贸 \n公司 \n合同 \n煤炭、合金、\n废钢等 \n市场 \n价格 \n合同 \n约定 \n2021 年10-12 月 \n15,000",
+      "confidence": 0.97
+    }
+  ]
+}

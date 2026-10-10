@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2022—024",
+  "announcement_date": "2022-03-24",
+  "total_guarantee_balance": 238934.67,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 23.99,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢周口钢铁有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 60000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "信达金融租赁有限公司",
+      "guaranteed_debt_purpose": "融资租赁（售后回租），用于炼钢连铸、原料场、烧结、煤气发电、轧钢等系统部分设备及配套设施",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "融资期限为4年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "● 被担保人名称：河南安钢周口钢铁有限责任公司（以下简称“周口公司”） \n● 本次担保金额：安阳钢铁股份有限公司（以下简称“公司”）控股子公司周口公司拟以售后回租方式与信达金融租赁有限公司开展融资租赁业务，租赁物为周口公司炼钢连铸、原料场、烧结、煤气发电、轧钢等系统部分设备及配套设施，计划融资金额为60,000 万元人民币，融资期限为4 年。公司拟为周口公司与信达金融租赁有限公司开展以上融资租赁业务提供连带责任保证担保。",
+      "confidence": 0.98
+    }
+  ]
+}

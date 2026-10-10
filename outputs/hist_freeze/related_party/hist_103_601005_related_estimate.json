@@ -1,0 +1,45 @@
+{
+  "security_code": "601005",
+  "security_name": "重庆钢铁",
+  "company_name": "重庆钢铁股份有限公司",
+  "announcement_number": "2021-024",
+  "announcement_date": "2021-04-02",
+  "estimate_year": 2021,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "重庆钢铁股份有限公司",
+      "counterparty": "中国宝武钢铁集团有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "sell_goods",
+      "category_text": "提供给中国宝武及其附属公司（简称“中国宝武集团”）的产品",
+      "goods_or_services": null,
+      "estimated_amount": 4974100.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "《服务和供应协议》约定公司及其附属公司（简称“本集团”）提供给中国宝武及其附属公司（简称“中国宝武集团”）的产品在2021 年4 月1 日至2023 年12 月31 日期间的总额不超过4,974,100 万元",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "重庆钢铁股份有限公司",
+      "counterparty": "中国宝武钢铁集团有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "purchase_goods",
+      "category_text": "中国宝武集团提供给本集团的产品、物料及服务",
+      "goods_or_services": null,
+      "estimated_amount": 8799000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "中国宝武集团提供给本集团的产品、物料及服务在2021 年4 月1 日至2023 年12 月31 日期间的总额不超过8,799,000 万元。",
+      "confidence": 0.95
+    }
+  ]
+}

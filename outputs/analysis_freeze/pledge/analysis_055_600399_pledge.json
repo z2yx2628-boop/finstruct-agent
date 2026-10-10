@@ -1,0 +1,50 @@
+{
+  "security_code": "600399",
+  "security_name": "抚顺特钢",
+  "announcement_number": "临2026-003",
+  "company_name": "抚顺特殊钢股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "东北特钢及一致行动人",
+      "shares": 120876444.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 19.77,
+      "total_share_capital_ratio": 6.13,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": null,
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2025-12-30",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": null,
+      "purpose": null,
+      "source_page": 2,
+      "evidence_text": "一、解除质押情况\n股东名称\n东北特钢及一致行动人\n本次解除质押股份(股)\n120,876,444\n占其所持股份比例\n19.77%\n占公司总股本比例\n6.13%\n解除质押时间\n2025 年12 月30 日",
+      "confidence": 1.0
+    },
+    {
+      "event_type": "pledge",
+      "shareholder_name": "东北特钢及一致行动人",
+      "shares": 120876444.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 19.77,
+      "total_share_capital_ratio": 6.13,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-12-30",
+      "pledge_end_date": null,
+      "pledge_end_condition": "质押股份在东北特钢向沙钢集团清偿完全部债务时解除，具体以实际办理股份解除质押登记时间为准。",
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "沙钢集团",
+      "purpose": "生产经营",
+      "source_page": 2,
+      "evidence_text": "二、再质押情况\n1、本次股份质押基本情况\n股东名称\n是否\n为控\n股股\n东\n本次质\n押股数\n（股）\n是否为限售\n股（如是，\n注明限售类\n型）\n是否\n补充\n质押\n质押起始\n日\n质押到期\n日\n质权人\n占其所\n持股份\n比例\n占公\n司总\n股本\n比例\n质押融\n资资金\n用途\n东北特钢及\n一致行动人\n是\n120,876\n,444\n否\n否\n2025年12\n月30 日\n见注\n沙钢集\n团\n19.77%\n6.13%\n生产经\n营\n注：2024 年1 月3 日，东北特钢将持有的170,876,444 股公司股份质押给沙钢集团，\n为其借款业务提供担保。2025 年12 月30 日，双方对已签署的借款合同及质押担保合同进\n行变更，担保期限为2025 年12 月19 日至2028 年12 月19 日，质押股份在东北特钢向沙钢\n集团清偿完全部债务时解除，具体以实际办理股份解除质押登记时间为准。",
+      "confidence": 1.0
+    }
+  ]
+}

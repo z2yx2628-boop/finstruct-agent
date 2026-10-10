@@ -1,0 +1,37 @@
+{
+  "security_code": "600022",
+  "security_name": "山东钢铁",
+  "company_name": "山东钢铁股份有限公司",
+  "announcement_number": "2019-019",
+  "announcement_date": "2019-04-26",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": null,
+  "overdue_guarantee_unit": null,
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "山东钢铁集团有限公司",
+      "guaranteed_party": "山东钢铁股份有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 200.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "2019年度",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "预计山东钢铁股份有限公司（以下简称“公司”）2019 年度将向各金融机构申请综合授信业务及债券发行金额总计不超过人民币200 亿元，需由山东钢铁集团有限公司（以下简称“山钢集团”）提供连带责任担保，并按照签署担保合同金额的0.5%年费率支付担保费，预计支付担保费总金额不超过人民币1 亿元。",
+      "confidence": 1.0
+    }
+  ]
+}

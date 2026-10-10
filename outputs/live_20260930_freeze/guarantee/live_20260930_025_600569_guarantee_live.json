@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2025—106",
+  "announcement_date": "2025-11-15",
+  "total_guarantee_balance": 476463.128,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 179.98,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢南方电磁新材料科技有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "河南九鼎金融租赁股份有限公司",
+      "guaranteed_debt_purpose": "融资租赁（设备直租，用于安钢电磁新材料二期一步工程项目部分设备）",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "融资期限不超过3年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "●被担保人名称：河南安钢南方电磁新材料科技有限责任公司\n（以下简称安钢电磁新材料公司）\n●本次担保金额及已实际为其提供的担保余额：安阳钢铁股份有\n限公司（以下简称公司）控股子公司安钢电磁新材料公司拟与河南九\n鼎金融租赁股份有限公司（以下简称九鼎金租）以设备直租方式开展\n融资租赁业务，租赁物为安钢电磁新材料二期一步工程项目部分设备，\n计划融资金额为不超过人民币1 亿元，融资期限不超过3 年。同时授\n权董事长签署公司上述交易所需要的合同及相关文件。",
+      "confidence": 0.98
+    }
+  ]
+}

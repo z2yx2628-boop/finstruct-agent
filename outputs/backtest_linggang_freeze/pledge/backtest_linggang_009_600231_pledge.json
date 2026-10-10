@@ -1,0 +1,50 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "announcement_number": "临2022-033",
+  "company_name": "凌源钢铁股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "凌钢集团",
+      "shares": 222112000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 21.93,
+      "total_share_capital_ratio": 7.79,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": null,
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2022-08-03",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "盛京银行股份有限公司朝阳分行",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "一、股份被解除质押情况 \n股东名称 \n凌钢集团 \n本次解除质押股份（股） \n222,112,000 \n占其所持股份比例（%） \n21.93 \n占公司总股本比例（%） \n7.79 \n解除质押时间 \n2022 年8 月3 日",
+      "confidence": 1.0
+    },
+    {
+      "event_type": "pledge",
+      "shareholder_name": "凌钢集团",
+      "shares": 222112000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 21.93,
+      "total_share_capital_ratio": 7.79,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2022-08-03",
+      "pledge_end_date": null,
+      "pledge_end_condition": "无",
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "盛京银行股份有限公司朝阳分行",
+      "purpose": "用于自身生产经营",
+      "source_page": 2,
+      "evidence_text": "二、股份质押情况 \n1.本次股份质押基本情况 \n股东名称 \n是否\n为控\n股股\n东 \n本次质押股\n数（股） \n是否\n为限\n售股 \n是否\n补充\n质押 \n质押起\n始日 \n质押到期\n日 \n质权人 \n占其\n所持\n股份\n比例\n（%） \n占公\n司总\n股本\n比例\n（%） \n质押融资\n资金用途 \n凌钢集团 \n是 \n222,112,000 \n否 \n否 \n2022 年\n8 月3 日 \n无 \n盛京银行股份有\n限公司朝阳分行 \n21.93 \n7.79 \n用于自身\n生产经营 \n注：本次质押登记未设具体期限，以实际办理时为准。本次质押涉及的被担保主债权到期日为2024\n年6 月21 日。",
+      "confidence": 1.0
+    }
+  ]
+}

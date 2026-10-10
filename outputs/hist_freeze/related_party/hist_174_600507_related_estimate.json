@@ -1,0 +1,45 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2022-049",
+  "announcement_date": "2022-04-29",
+  "estimate_year": 2022,
+  "total_estimated_amount": 1100.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "江西方大钢铁集团有限公司及其子公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "sell_goods",
+      "category_text": "销售牛羊肉",
+      "goods_or_services": "牛羊肉",
+      "estimated_amount": 600.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "1 \n方大优\n尔塔 \n方大钢\n铁及其\n子公司 \n合同 \n牛羊肉等 \n市场 \n价格 \n合同 \n约定 \n2022年1-12月 \n600",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "江西方大钢铁集团有限公司及其子公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "sell_goods",
+      "category_text": "腐竹等",
+      "goods_or_services": "腐竹",
+      "estimated_amount": 500.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "2 \n盛味堂 \n合同 \n腐竹等 \n市场 \n价格 \n合同 \n约定 \n2022年1-12月 \n500",
+      "confidence": 0.98
+    }
+  ]
+}

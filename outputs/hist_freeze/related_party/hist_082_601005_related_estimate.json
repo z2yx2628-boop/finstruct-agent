@@ -1,0 +1,45 @@
+{
+  "security_code": "601005",
+  "security_name": "重庆钢铁",
+  "company_name": "重庆钢铁股份有限公司",
+  "announcement_number": "2020-058",
+  "announcement_date": "2020-11-21",
+  "estimate_year": 2021,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "重庆钢铁股份有限公司",
+      "counterparty": "中国宝武钢铁集团有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "provide_services",
+      "category_text": "服务及/或物料",
+      "goods_or_services": null,
+      "estimated_amount": 96671.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "公司及其附属公司（简称“本集团”）提供给中国宝武及其附属公司（简称“中国宝武集团”）的服务及/或物料在公司实际控制人变更且双方签署协议后至2021 年3 月31 日期间的总额不超过96,671 万元",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "重庆钢铁股份有限公司",
+      "counterparty": "中国宝武钢铁集团有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "purchase_goods",
+      "category_text": "服务及/或物料",
+      "goods_or_services": null,
+      "estimated_amount": 721162.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "中国宝武集团提供给本集团的服务及/或物料在公司实际控制人变更且双方签署协议后至2021年3 月31 日期间的总额不超过721,162 万元。",
+      "confidence": 0.95
+    }
+  ]
+}

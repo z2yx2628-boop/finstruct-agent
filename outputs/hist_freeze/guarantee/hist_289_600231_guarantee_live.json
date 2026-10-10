@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2019-024",
+  "announcement_date": "2019-03-30",
+  "total_guarantee_balance": 36.55,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 49.09,
+  "external_guarantee_balance": 36.55,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 3.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "葫芦岛银行股份有限公司沈阳和平支行",
+      "guaranteed_debt_purpose": "银行承兑汇票",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "2019年3月29日至2020年3月28日",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 69.88,
+      "source_page": 2,
+      "evidence_text": "2019 年3 月29 日，根据《相互担保协议》和《相互担保协议之补充协议》\n约定，公司为控股股东凌钢集团与葫芦岛银行股份有限公司沈阳和平支行签订的\n授信额度为3 亿元人民币的银行承兑汇票《最高额综合授信合同》（合同编号：",
+      "confidence": 0.98
+    }
+  ]
+}

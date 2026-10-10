@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2021-008",
+  "announcement_date": "2021-03-30",
+  "total_guarantee_balance": 39.97,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 51.58,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁国际贸易有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 3.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "朝阳银行股份有限公司凌源支行",
+      "guaranteed_debt_purpose": "流动资金贷款",
+      "start_date": "2021-03-26",
+      "end_date": "2022-03-25",
+      "period_text": "主债务履行期限为12个月，自2021年3月26日起至2022年3月25日止。",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 68.12,
+      "source_page": 2,
+      "evidence_text": "鉴于公司的全资子公司凌源钢铁国际贸易有限公司（以下简称“国贸公司”）在2020 年3 月26 日为控股股东凌钢集团向朝阳银行股份有限公司凌源支行（以下简称“朝阳银行凌源支行”）进行流动资金贷款提供的3 亿元保证担保……于2021 年3 月25 日到期，为续做该笔贷款，2021 年3 月26 日，根据《相互担保协议》及《相互担保协议补充协议》约定，国贸公司为凌钢集团与朝阳银行凌源支行续签的人民币3 亿元的《流动资金借款合同》（合同编号：2021 年凌源公司借字第004 号）提供保证担保，并与朝阳银行凌源支行续签了《保证合同》（合同编号：2021 年凌源公司保字第004 号）。",
+      "confidence": 1.0
+    }
+  ]
+}

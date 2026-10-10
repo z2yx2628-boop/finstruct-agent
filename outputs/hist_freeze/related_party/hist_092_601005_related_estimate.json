@@ -1,0 +1,29 @@
+{
+  "security_code": "601005",
+  "security_name": "重庆钢铁",
+  "company_name": "重庆钢铁股份有限公司",
+  "announcement_number": "2021-008",
+  "announcement_date": "2021-01-30",
+  "estimate_year": 2021,
+  "total_estimated_amount": 253710.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "重庆钢铁股份有限公司",
+      "counterparty": "中国宝武钢铁集团有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "生产材料，例如水、电力、天然气、钢坯、钢材、生铁等",
+      "goods_or_services": "水、电力、天然气、钢坯、钢材、生铁",
+      "estimated_amount": 253710.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 5,
+      "evidence_text": "在原协议下，由原协议生效后至2021 年3 月31 日期间，本集团向中国宝武集团销售产品的建议金额上限（不含税）如下：\n币种：人民币  单位：万元\n序号\n项目\n金额上限\n1\n生产材料，例如水、电力、天然气、钢坯、钢材、生铁等\n253,710\n合计 / \n253,710",
+      "confidence": 0.95
+    }
+  ]
+}

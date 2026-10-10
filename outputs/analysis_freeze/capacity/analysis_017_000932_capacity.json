@@ -1,0 +1,66 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2024-16",
+  "announcement_date": "2024-03-29",
+  "events": [
+    {
+      "event_type": "capacity_construction",
+      "project_name": "华菱涟钢冷轧高端家电板项目",
+      "project_entity": "湖南华菱涟源钢铁有限公司",
+      "project_location": null,
+      "project_country": "中国",
+      "decision_reasons": [
+        "market_demand",
+        "environmental_policy"
+      ],
+      "decision_reason_text": "在“双碳”政策背景下，为适应绿色低碳的新要求，将进一步加快镀锌产品高强化。",
+      "project_status": "approved",
+      "investment_amount": 90000.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "自有资金和银行贷款",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "建设期14个月。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": "新建镀锌机组，包括连续退火炉、锌锅、气刀、镀后冷却塔、时效炉、平整机、拉矫机、辊涂机等。",
+      "project_purpose": "进一步优化产品结构，提高镀锌板的竞争力和品种效益；填补高档次、多品种热镀锌产品的产能空缺；满足家电用钢高强化、绿色化要求，实现企业可持续发展。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "镀锌生产线",
+          "product_name": "镀锌板",
+          "capacity": 50.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "华菱涟钢拟在冷轧板厂现有预留场地建设一条生产规模为50 万吨的镀锌生产线。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "为",
+          "product_name": "为产能",
+          "capacity": 50.0,
+          "capacity_unit": "万吨",
+          "source_page": 1,
+          "evidence_text": "生产规模\n为50 万吨",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "为进一步优化产品结构，提高镀锌板的竞争力和品种效益，子公司湖南华菱涟源钢铁有限公司（以下简称“华菱涟钢”）拟实施冷轧高端家电板建设项目（以下简称“项目”），投资总额9 亿元，建设期14 个月。",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2025-061",
+  "announcement_date": "2025-12-16",
+  "total_guarantee_balance": 819138.56,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 31.47,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京钢铁股份有限公司",
+      "guaranteed_party": "PT. KinRui New Energy Technologies Indonesia",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 6400.0,
+      "guarantee_unit": "万美元",
+      "guarantee_currency": "USD",
+      "guarantee_type": "joint_and_several",
+      "creditor": "国家开发银行江苏省分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2025-12-15",
+      "end_date": "2028-12-14",
+      "period_text": "主债权确定期间：2025 年12 月15 日-2028 年12 月14 日；保证期间：主合同项下债务履行期届满之日起三年。",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "2025 年12 月15 日，南京钢铁股份有限公司（以下简称公司）与国家开发银行江苏省分行签署《外汇贷款保证合同》，为金瑞新能源与国家开发银行江苏省分行发生的授信业务提供不超过6,400 万美元的连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

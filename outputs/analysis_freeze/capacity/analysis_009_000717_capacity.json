@@ -1,0 +1,46 @@
+{
+  "security_code": "000717",
+  "security_name": "中南股份",
+  "company_name": "广东中南钢铁股份有限公司",
+  "announcement_number": "2025-07",
+  "announcement_date": "2025-03-29",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "2025年度基建技改项目投资框架计划",
+      "project_entity": "广东中南钢铁股份有限公司",
+      "project_location": null,
+      "project_country": "中国",
+      "decision_reasons": [
+        "environmental_policy",
+        "cost_reduction",
+        "industrial_policy"
+      ],
+      "decision_reason_text": "聚焦主责主业，严禁非主业投资；强化资源约束，严控超越财务承受能力的投资行为；防范投资风险，加强行业发展态势研判，合理控制投资节奏；聚焦价值创造，坚持算账投资，严控投资成本，提升投资收益。",
+      "project_status": "approved",
+      "investment_amount": 59013.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2025年度全年计划安排基建技改项目22项（不含尾款和前期项目），投资总额59,013万元；节能环保类项目计划2025—2026年内陆续改造完毕投入使用；装备措施类、降本增效类、信息化类等项目计划在2025—2026年或2025年内完成改造/实施完毕并投用。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": "包括煤气高效发电三期、烧结发电能力提升、焦炉循环氨水节能改造、3级能效电机设备提质增效更新改造、炭化室压力控制系统、氢氧切割改造、块矿筛分系统、炉前铁水快分检测改造、精炼炉电极调节声呐辅助升级、自动热分切改造、原料取样制样自动化改造、在线机器人智能焊牌系统、龙头寨码头建设、CDQ余能发电机组能效提升改造、加热炉智能燃烧改造、营销数字化运营二期、自主可控应用配套改造、CRM重建、铁区动态管控系统实时数据库升级改造等。",
+      "project_purpose": "贯彻职代会精神，坚持‘四化’发展方向和‘四有’经营原则，聚焦主责主业，强化资源约束，防范投资风险，聚焦价值创造，严控投资成本，提升投资收益；落实节能环保、绿色低碳、智慧制造等政策要求。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "广东中南钢铁股份有限公司 \n2025 年度基建技改项目投资框架计划的公告 \n2025 年，广东中南钢铁股份有限公司（以下简称“公司”\n或“本公司”）将全面贯彻一届三次职代会精神，坚持“四化”\n发展方向和“四有”经营原则，聚焦主责主业，严禁非主业投资；\n强化资源约束，严控超越财务承受能力的投资行为；防范投资风\n险，加强行业发展态势研判，合理控制投资节奏；聚焦价值创造，\n坚持算账投资，严控投资成本，提升投资收益。 \n一、投资计划汇总 \n2025 年度全年计划安排基建技改项目22 项（不含尾款和前\n期项目），投资总额59,013 万元。",
+      "confidence": 1.0
+    }
+  ]
+}

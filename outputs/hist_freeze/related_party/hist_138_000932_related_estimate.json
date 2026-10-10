@@ -1,0 +1,45 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2021-93",
+  "announcement_date": "2021-12-03",
+  "estimate_year": 2021,
+  "total_estimated_amount": 14.94,
+  "total_estimated_unit": "亿元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "湖南华菱钢铁股份有限公司",
+      "counterparty": "湖南煤化新能源有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "关联销售",
+      "goods_or_services": "代购物资（焦煤）",
+      "estimated_amount": 76414.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 276860.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "煤化新能源 \n关联销售 \n代购物资 \n（焦煤） \n市场价 \n214,307 \n276,860 \n76,414 \n290,721",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "湖南华菱钢铁股份有限公司",
+      "counterparty": "湖南煤化新能源有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "关联采购",
+      "goods_or_services": "原材料（焦炭）",
+      "estimated_amount": 73035.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 279834.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "煤化新能源 \n关联采购 \n原材料 \n（焦炭） \n市场价 \n231,021 \n279,834 \n73,035 \n304,056",
+      "confidence": 0.98
+    }
+  ]
+}

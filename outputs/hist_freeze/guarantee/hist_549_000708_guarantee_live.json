@@ -1,0 +1,37 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2024-002",
+  "announcement_date": "2024-01-09",
+  "total_guarantee_balance": 486056.86,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 13.4,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "江阴兴澄合金材料有限公司",
+      "guaranteed_party": "江阴兴澄特种钢铁有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 10.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "广发银行股份有限公司江阴支行",
+      "guaranteed_debt_purpose": "敞口综合授信",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主债务合同债务期限届满之日起三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "中信泰富特钢集团股份有限公司（以下简称“公司”）的全资孙公司江阴兴澄合金材料有限公司（以下简称“兴澄合金”）拟对公司的子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）提供10 亿元人民币的担保，具体情况如下：\n兴澄特钢在广发银行股份有限公司江阴支行（以下简称“广发银行”）申请的10 亿元人民币敞口综合授信，由兴澄合金提供连带责任保证担保，担保期限为主债务合同债务期限届满之日起三年。兴澄特钢于1 月8 日在江阴与广发银行签署《最高额保证合同》。",
+      "confidence": 1.0
+    }
+  ]
+}

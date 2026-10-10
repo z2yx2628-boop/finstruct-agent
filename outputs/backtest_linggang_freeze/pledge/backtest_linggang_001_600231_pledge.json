@@ -1,0 +1,29 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "announcement_number": "临2022-003",
+  "company_name": "凌源钢铁股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "九江萍钢钢铁有限公司",
+      "shares": 206530000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 66.37,
+      "total_share_capital_ratio": 7.24,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2022-01-21",
+      "pledge_end_date": "2022-04-20",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中国银河证券股份有限公司",
+      "purpose": "自身生产经营",
+      "source_page": 1,
+      "evidence_text": "股东名称 \n是否为控股\n股东 \n本次质押股数\n(股) \n是否为限售股 \n是否补\n充质押 \n质押起始日 \n质押到期日 \n质权人 \n占其所持\n股份比例\n（%） \n占公司总\n股本比例\n（%） \n质押融资\n资金用途 \n九江萍钢钢铁\n有限公司 \n否 \n206,530,000 \n否 \n否 \n2022 年1 月\n21 日 \n2022 年4 月\n20 日 \n中国银河证\n券股份有限\n公司 \n66.37 \n7.24 \n自身生产\n经营",
+      "confidence": 1.0
+    }
+  ]
+}

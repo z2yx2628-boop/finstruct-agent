@@ -1,0 +1,37 @@
+{
+  "security_code": "600019",
+  "security_name": "宝钢股份",
+  "company_name": "宝山钢铁股份有限公司",
+  "announcement_number": "临2023-032",
+  "announcement_date": "2023-05-03",
+  "total_guarantee_balance": 0.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "宝山钢铁股份有限公司",
+      "guaranteed_party": "沙特厚板公司（暂定名，以沙特工商部门核准登记名称为准）",
+      "relationship": "associate_or_joint_venture",
+      "is_related_transaction": null,
+      "guarantee_amount": 13.3,
+      "guarantee_unit": "亿美元",
+      "guarantee_currency": "USD",
+      "guarantee_type": "joint_and_several",
+      "creditor": "沙特工业发展基金",
+      "guaranteed_debt_purpose": "项目建设资金",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自沙特工业发展基金借款合同生效至合资公司担保借款转为合资公司资产抵押借款后解除。",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "被担保人名称：沙特厚板公司（暂定名，以沙特工商部门核准登记名称为准）\n\n本次担保金额：本次担保为按合资公司持股比例提供不超过13.3 亿美元本金的融资担保。",
+      "confidence": 0.95
+    }
+  ]
+}

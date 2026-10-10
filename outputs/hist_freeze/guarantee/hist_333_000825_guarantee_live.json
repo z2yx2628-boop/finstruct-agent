@@ -1,0 +1,37 @@
+{
+  "security_code": "000825",
+  "security_name": "太钢不锈",
+  "company_name": "山西太钢不锈钢股份有限公司",
+  "announcement_number": "2020-022",
+  "announcement_date": "2020-04-23",
+  "total_guarantee_balance": 23.69,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 7.42,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "山西太钢不锈钢股份有限公司",
+      "guaranteed_party": "太钢不锈香港有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 3.16,
+      "guarantee_unit": "亿美元",
+      "guarantee_currency": "USD",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中银香港",
+      "guaranteed_debt_purpose": "综合授信",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "期限3年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "不锈香港因生产经营资金需求，拟向中银香港申请3.16亿美元综合授信，期限3年。不锈香港原授信额度由太钢不锈担保，于2020年4月15日到期，不锈香港现提请太钢不锈继续为该笔授信额度提供担保。",
+      "confidence": 0.95
+    }
+  ]
+}

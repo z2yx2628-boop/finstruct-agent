@@ -1,0 +1,45 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2020-047",
+  "announcement_date": "2020-07-15",
+  "estimate_year": 2020,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "九江萍钢钢铁有限公司丰南分公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购钢厂用物资",
+      "goods_or_services": null,
+      "estimated_amount": 5000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 227.19,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "采购钢厂用物资 \n九钢分公司 \n0 \n227.19",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "天津百货商务贸易总公司梦幻分公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购空调等物资",
+      "goods_or_services": "空调等",
+      "estimated_amount": 500.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "天百商贸\n分公司 \n公司及控股\n子公司 \n合同 \n空调等 \n市场\n价格 \n合同\n约定 \n2020 年\n1-12 月 \n500",
+      "confidence": 0.98
+    }
+  ]
+}

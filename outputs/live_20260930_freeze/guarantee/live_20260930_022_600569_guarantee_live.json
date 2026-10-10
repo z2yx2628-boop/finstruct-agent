@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2025—128",
+  "announcement_date": "2025-12-24",
+  "total_guarantee_balance": 567163.128,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 214.24,
+  "external_guarantee_balance": 11000.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢周口钢铁有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 5.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国工商银行股份有限公司周口分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "期限不超过1年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "公司控股子公司周口公司拟向中国工商银行股份有限公司周口分行申请金额不超过人民币5 亿元银行综合授信，期限不超过1 年，实际以签订借款协议约定为准。公司拟为周口公司的上述业务提供连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

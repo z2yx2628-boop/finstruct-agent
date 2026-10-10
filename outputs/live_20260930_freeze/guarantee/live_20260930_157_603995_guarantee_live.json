@@ -1,0 +1,37 @@
+{
+  "security_code": "603995",
+  "security_name": "甬金股份",
+  "company_name": "甬金科技集团股份有限公司",
+  "announcement_number": "2025-040",
+  "announcement_date": "2025-06-14",
+  "total_guarantee_balance": 255860.05,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 37.33,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "甬金科技集团股份有限公司",
+      "guaranteed_party": "福建甬金金属科技有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 7000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "招商银行股份有限公司宁德分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自本担保书生效之日起至《授信协议》项下每笔贷款或其他融资或贵行受让的应收账款债权的到期日或每笔垫款的垫款日另加三年。任一项具体授信展期，则保证期间延续至展期期间届满后另加三年。",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "本次担保金额：甬金科技集团股份有限公司（下称“公司”）本次为控股子公司福建甬金向招商银行股份有限公司宁德分行（下称“招行宁德分行”）申请的借款按持股比例70%提供最高不超过人民币7,000万元的连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

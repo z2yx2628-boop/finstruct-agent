@@ -1,0 +1,29 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "announcement_number": "临2023-076",
+  "company_name": "凌源钢铁股份有限公司",
+  "events": [
+    {
+      "event_type": "extension",
+      "shareholder_name": "宏运（深圳）资本有限公司",
+      "shares": 85560000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": null,
+      "total_share_capital_ratio": 3.0,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": "2017-10-25",
+      "pledge_end_date": null,
+      "pledge_end_condition": "到期购回日为2023年11月16日",
+      "release_date": null,
+      "original_end_date": "2023-11-16",
+      "extended_end_date": null,
+      "pledgee": "东吴证券股份有限公司",
+      "purpose": "股票质押式回购交易展期",
+      "source_page": 2,
+      "evidence_text": "宏运资本于2023 年5 月16 日将其持有的公司股份在东吴证券办理了股票质押式回购交易展期手续，初始交易日为2017 年10 月25 日，到期购回日为2023\n年11 月16 日。因未按照协议约定完成股票质押式回购交易，东吴证券启动违约\n处置程序，拟通过协议转让方式处置其所质押的部分公司股份。",
+      "confidence": 0.95
+    }
+  ]
+}

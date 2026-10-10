@@ -1,0 +1,29 @@
+{
+  "security_code": "601003",
+  "security_name": "柳钢股份",
+  "company_name": "柳州钢铁股份有限公司",
+  "announcement_number": "2021-002",
+  "announcement_date": "2021-02-04",
+  "estimate_year": 2021,
+  "total_estimated_amount": 22000000000.0,
+  "total_estimated_unit": "元",
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "柳州钢铁股份有限公司",
+      "counterparty": "广西柳州钢铁集团有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "sell_goods",
+      "category_text": "销售原材料或其他货物",
+      "goods_or_services": "钢坯等产品",
+      "estimated_amount": 220.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "公司拟与广西柳州钢铁集团有限公司（以下简称“柳钢集团”）签订《原材料购销协议》，向其销售原材料或其他货物，总交易金额暂估为220 亿元/年（以实际结算金额为准）。",
+      "confidence": 0.98
+    }
+  ]
+}

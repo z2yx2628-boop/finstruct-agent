@@ -1,0 +1,37 @@
+{
+  "security_code": "603995",
+  "security_name": "甬金股份",
+  "company_name": "甬金科技集团股份有限公司",
+  "announcement_number": "2026-017",
+  "announcement_date": "2026-04-03",
+  "total_guarantee_balance": 491673.51,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 71.74,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "甬金科技集团股份有限公司",
+      "guaranteed_party": "江苏镨赛精工科技有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": false,
+      "guarantee_amount": 3600.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "交通银行股份有限公司南通分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自该笔债务履行期限届满之日起三年止",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "甬金科技集团股份有限公司（下称“公司”）与交通银行股份有限公司南通分行于2026 年3 月31 日签署了《保证合同》（合同编号：C260327GR7043288），为控股子公司江苏镨赛精工科技有限公司（下称“江苏镨赛”）申请的最高债权本金人民币最高不超过3,600 万元的借款提供连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2023-047",
+  "announcement_date": "2023-06-07",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": 14.51,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "江阴兴澄特种钢铁有限公司",
+      "guaranteed_party": "天津钢管制造有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 6.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "招商银行股份有限公司天津分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主债务合同债务期限届满之日起三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "中信泰富特钢集团股份有限公司（以下简称“公司”）的全资子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟对其子公司天津钢管制造有限公司（以下简称“天津钢管”）提供6 亿元人民币的担保，具体情况如下：\n天津钢管在招商银行股份有限公司天津分行（以下简称“招商银行”）申请的6 亿元人民币贷款，由兴澄特钢提供全额连带责任保证担保，担保期限为主债务合同债务期限届满之日起三年。兴澄特钢于2023 年6月6 日在江阴与招商银行签署《最高额不可撤销担保书》。",
+      "confidence": 1.0
+    }
+  ]
+}

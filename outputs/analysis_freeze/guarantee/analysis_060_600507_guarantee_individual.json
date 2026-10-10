@@ -1,0 +1,37 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2026-037",
+  "announcement_date": "2026-06-27",
+  "total_guarantee_balance": 372000.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 36.64,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "方大特钢科技股份有限公司",
+      "guaranteed_party": "辽宁方大集团国贸有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": false,
+      "guarantee_amount": 8000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "华夏银行股份有限公司沈阳中山广场支行",
+      "guaranteed_debt_purpose": "综合授信",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自公司第九届第十六次董事会审议通过之日起一年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "担保\n方\n被担保方\n担保方持股\n比例(%)\n被担保方最近\n一期资产负债\n率(%)\n截至目前担保余\n额（万元）\n本次新增担保额\n度（万元）\n担保额度占上市公\n司最近一期净资产\n比例(%)\n担保预计有效期\n是否关\n联担保\n是否有\n反担保\n公司\n方大国贸\n100.00\n61.04\n27,325.47\n8,000.00\n0.79\n自公司第九届第十\n六次董事会审议通\n过之日起一年\n否\n否",
+      "confidence": 1.0
+    }
+  ]
+}

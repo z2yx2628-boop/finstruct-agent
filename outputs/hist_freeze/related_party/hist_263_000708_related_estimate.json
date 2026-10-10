@@ -1,0 +1,45 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2024-041",
+  "announcement_date": "2024-08-20",
+  "estimate_year": 2024,
+  "total_estimated_amount": 36000.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "中信泰富特钢集团股份有限公司",
+      "counterparty": "中特云商（江苏）有限责任公司",
+      "relationship": "other_related_party",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售商品",
+      "goods_or_services": "钢产品",
+      "estimated_amount": 24000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人销售\n商品 \n中特云商（江苏）有\n限责任公司 \n销售钢产品 \n市场价/\n协议价 \n24,000 \n0 \n0",
+      "confidence": 1.0
+    },
+    {
+      "listed_company": "中信泰富特钢集团股份有限公司",
+      "counterparty": "中特云商（江苏）有限责任公司",
+      "relationship": "other_related_party",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联人采购商品",
+      "goods_or_services": "合金",
+      "estimated_amount": 12000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人采购\n商品 \n中特云商（江苏）有\n限责任公司 \n采购合金 \n市场价/\n协议价 \n12,000 \n0 \n0",
+      "confidence": 1.0
+    }
+  ]
+}

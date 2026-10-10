@@ -1,0 +1,37 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2020-064",
+  "announcement_date": "2020-11-19",
+  "total_guarantee_balance": 215400.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 31.4,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "方大特钢科技股份有限公司",
+      "guaranteed_party": "方大炭素新材料科技股份有限公司",
+      "relationship": "sister_company",
+      "is_related_transaction": true,
+      "guarantee_amount": 10.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": "发行公司债券和向银行申请综合授信",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "互保协议有效期5年；担保人承担保证责任的期间最长不超过债券（或贷款）存续期及债券（或贷款）到期之日起2年",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": 14.53,
+      "source_page": 1,
+      "evidence_text": "被担保人名称：方大炭素新材料科技股份有限公司；\n本次担保金额及公司对外担保数量：公司与方大炭素新材料科技股份有限公司互保金额不超过人民币10 亿元（含10 亿元）。截至披露日，公司对外担保总额215,400 万元，占最近一期经审计净资产的31.4%。其中，公司对外担保发生总额56,963 万元，占最近一期经审计净资产的8.3%；",
+      "confidence": 0.95
+    }
+  ]
+}

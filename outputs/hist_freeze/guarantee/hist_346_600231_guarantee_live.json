@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2020-073",
+  "announcement_date": "2020-08-26",
+  "total_guarantee_balance": 41.38,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 53.4,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 50.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": null,
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "互保额度由不超过人民币40亿元提高至不超过人民币50亿元",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 68.84,
+      "source_page": 1,
+      "evidence_text": "本次《相互担保协议之补充协议》将《相互担保协议》的互保额度由不超过人民币40 亿元提高至不超过人民币50 亿元。截至本公告披露日，公司及公司控制的公司累计为凌钢集团及其控制的公司提供的担保余额为39.28 亿元；凌钢集团及其控制的公司累计为公司及公司控制的公司提供的担保余额为32.99 亿元。",
+      "confidence": 0.95
+    }
+  ]
+}

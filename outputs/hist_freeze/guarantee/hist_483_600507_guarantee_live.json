@@ -1,0 +1,37 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2022-105",
+  "announcement_date": "2022-12-31",
+  "total_guarantee_balance": 36.64,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 38.7,
+  "external_guarantee_balance": 10.0,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "方大特钢科技股份有限公司",
+      "guaranteed_party": "方大炭素新材料科技股份有限公司",
+      "relationship": "sister_company",
+      "is_related_transaction": true,
+      "guarantee_amount": 10.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": "发行公司债券或向银行申请综合授信",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "互保协议期限：十年；协议项下互保综合授信期限不超过5年，担保人承担保证责任的期间最长不超过债券（或贷款）存续期及债券（或贷款）到期之日起3年",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": 19.31,
+      "source_page": 1,
+      "evidence_text": "公司拟与方大炭素签署《互保协议书》，双方就发行公司债券或向银行申请综合授信互相提供担保，互保金额不超过人民币10 亿元；截至本公告披露日，公司为方大炭素提供的担保余额为0 元。",
+      "confidence": 0.98
+    }
+  ]
+}

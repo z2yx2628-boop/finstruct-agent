@@ -1,0 +1,37 @@
+{
+  "security_code": "600408",
+  "security_name": "安泰集团",
+  "company_name": "山西安泰集团股份有限公司",
+  "announcement_number": "2025-030",
+  "announcement_date": "2025-07-04",
+  "total_guarantee_balance": 257824.43,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 170.36,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 40000.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "山西宏安焦化科技有限公司",
+      "guaranteed_party": "山西安泰型钢有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 9800.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "mortgage",
+      "creditor": "浙商中拓集团股份有限公司、浙江中拓供应链管理有限公司、浙商中拓集团（湖南）有限公司",
+      "guaranteed_debt_purpose": "业务合作期间签订的主合同项下货款、本金及其各种利息、代理费、资金占用费、垫付费用、违约金、逾期付款利息、赔偿金等",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "2025年7月1日至2026年12月31日期间",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "担保对象\n被担保人名称\n山西安泰型钢有限公司\n本次担保金额\n9,800 万元\n实际为其提供的担保余额\n0 万元\n是否在前期预计额度内\n是\n□否\n□不适用：_________\n本次担保是否有反担保\n□是\n否\n□不适用：_________",
+      "confidence": 0.95
+    }
+  ]
+}

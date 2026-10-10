@@ -1,0 +1,37 @@
+{
+  "security_code": "002541",
+  "security_name": "鸿路钢构",
+  "company_name": "安徽鸿路钢结构（集团）股份有限公司",
+  "announcement_number": "2025-033",
+  "announcement_date": "2025-05-10",
+  "total_guarantee_balance": 72.05,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 74.94,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "安徽鸿路钢结构（集团）股份有限公司",
+      "guaranteed_party": "安徽鸿翔建材有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 20000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "杭州银行股份有限公司合肥分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2025-04-07",
+      "end_date": "2027-04-06",
+      "period_text": null,
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 3,
+      "evidence_text": "2025 年4 月22 日，公司与杭州银行银行股份有限公司合肥分行签订《最高额保证合同》，约定为全资子公司安徽鸿翔建材有限公司融资业务提供担保，最高担保金额不超过20,000 万元人民币，担保期限为2025 年4 月7 日至2027 年4 月6 日。",
+      "confidence": 0.98
+    }
+  ]
+}

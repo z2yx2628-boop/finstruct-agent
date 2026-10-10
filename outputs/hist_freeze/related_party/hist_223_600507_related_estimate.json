@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2023-092",
+  "announcement_date": "2023-09-27",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "九江银行股份有限公司",
+      "relationship": "other_related_party",
+      "transaction_category": "financial_services",
+      "category_text": "存款业务",
+      "goods_or_services": null,
+      "estimated_amount": 50.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "存款\n业务 \n九\n江\n银\n行 \n2023 年\n1-12 月 \n截至2023 年8 月31 日，公司在九江银行办理定\n期存款1.94 亿元，开立银行承兑汇票1.94 亿元；\n2023 年1-8 月活期存款日均25.17 亿元。 \n单日存款余额\n不超过人民币\n50 亿元。",
+      "confidence": 0.95
+    }
+  ]
+}

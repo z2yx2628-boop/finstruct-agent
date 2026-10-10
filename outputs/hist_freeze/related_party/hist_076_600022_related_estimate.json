@@ -1,0 +1,29 @@
+{
+  "security_code": "600022",
+  "security_name": "山东钢铁",
+  "company_name": "山东钢铁股份有限公司",
+  "announcement_number": "2020-033",
+  "announcement_date": "2020-08-28",
+  "estimate_year": 2020,
+  "total_estimated_amount": 120000000.0,
+  "total_estimated_unit": "元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "山东钢铁股份有限公司",
+      "counterparty": "山东冶金机械厂有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "receive_services",
+      "category_text": "检修维保加工业务",
+      "goods_or_services": "维修、备件设备制作及维保、机加工",
+      "estimated_amount": 1.2,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "（三）交易金额 \n预计2020 年与冶金机械厂发生关联交易金额不超过1.2 亿元。",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "security_code": "000717",
+  "security_name": "中南股份",
+  "company_name": "广东中南钢铁股份有限公司",
+  "announcement_number": "2025-54",
+  "announcement_date": "2025-12-13",
+  "events": [
+    {
+      "event_type": "technical_upgrade",
+      "project_name": "2025年度基建技改项目中期调整投资框架计划",
+      "project_entity": null,
+      "project_location": null,
+      "project_country": "中国",
+      "decision_reasons": [],
+      "decision_reason_text": null,
+      "project_status": "approved",
+      "investment_amount": 52338.0,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2025年度中期调整投资计划安排基建技改项目35项，投资总额52,338万元；项目计划在2025-2026年内陆续改造完毕投入使用。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": "涵盖节能环保、装备措施、降本增效、信息化、质量改善、品种调整、消防安全、零固等多类技改方向，包括节能改造、超低排改造、智能运维、自动化、数字化、AI应用等。",
+      "project_purpose": "贯彻职代会精神，坚持‘四化’发展方向和‘四有’经营原则，聚焦主责主业，强化资源约束，防范投资风险，聚焦价值创造，提升投资收益。",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "广东中南钢铁股份有限公司2025 年度基建技改项目中期调整投资框架计划的公告",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "security_code": "601003",
+  "security_name": "柳钢股份",
+  "company_name": "柳州钢铁股份有限公司",
+  "announcement_number": "2024-047",
+  "announcement_date": "2024-11-19",
+  "events": [
+    {
+      "event_type": "capacity_replacement",
+      "project_name": null,
+      "project_entity": "柳州钢铁股份有限公司",
+      "project_location": "柳州生产基地",
+      "project_country": "中国",
+      "decision_reasons": [
+        "industrial_policy",
+        "equipment_safety"
+      ],
+      "decision_reason_text": null,
+      "project_status": "planned",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "根据广西工信厅2021年8月2日及2024年5月10日公告的相关产能淘汰方案文件和精神，公司计划于近期将设备老化的一座1250立方米高炉、一座120吨转炉、一座150吨转炉等相关设施进行拆除。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": null,
+      "project_purpose": "淘汰设备老化高炉、转炉，响应国家工业低碳行动、压缩粗钢产量及广西优化钢铁工业布局政策要求",
+      "capacity_changes": [
+        {
+          "action": "retired",
+          "facility_type": "1250立方米高炉",
+          "product_name": "炼铁",
+          "capacity": 118.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。",
+          "confidence": 0.95
+        },
+        {
+          "action": "retired",
+          "facility_type": "120吨转炉",
+          "product_name": "炼钢",
+          "capacity": 310.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。",
+          "confidence": 0.95
+        },
+        {
+          "action": "retired",
+          "facility_type": "150吨转炉",
+          "product_name": "炼钢",
+          "capacity": 310.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。",
+          "confidence": 0.95
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "按照广西工信厅2021年8月2日及2024年5月10日公告的相关产能淘汰方案文件和精神，公司计划于近期将设备老化的一座1250立方米高炉、一座120吨转炉、一座150吨转炉等相关设施进行拆除。本次淘汰相关设施预计将影响公司柳州生产基地约118万吨/年的炼铁产能及310万吨/年的炼钢产能。",
+      "confidence": 0.98
+    }
+  ]
+}

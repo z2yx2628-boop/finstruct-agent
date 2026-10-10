@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2019—071",
+  "announcement_date": "2019-07-25",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": 3700.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京南钢产业发展有限公司",
+      "guaranteed_party": "南京鑫武海运有限公司",
+      "relationship": "associate_or_joint_venture",
+      "is_related_transaction": null,
+      "guarantee_amount": 2000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国银行股份有限公司南京六合支行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主合同约定的债务履行期限届满之日起2年",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "2019 年7 月24 日，南钢发展与中国银行股份有限公司南京六合支行（以下简称“中国银行六合支行”）签订《最高额保证合同》，为鑫武海运与中国银行六合支行发生的授信业务提供不超过人民币2,000 万元的连带责任保证担保。",
+      "confidence": 0.95
+    }
+  ]
+}

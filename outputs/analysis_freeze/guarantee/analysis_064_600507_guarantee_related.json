@@ -1,0 +1,37 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2025-007",
+  "announcement_date": "2025-02-11",
+  "total_guarantee_balance": 420500.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 45.61,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "辽宁方大集团国贸有限公司",
+      "guaranteed_party": "绥芬河方大国际贸易有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 50000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "龙江银行股份有限公司哈尔滨开发区支行",
+      "guaranteed_debt_purpose": "综合授信",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "股东大会决议自审议通过之日起一年内有效",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 76.11,
+      "source_page": 2,
+      "evidence_text": "序号 \n担保方 \n被担保方 \n金融机构 \n担保金额 \n（万元） \n1 \n方大国贸、九江 \n钢铁 \n绥芬河方大 龙江银行股份有限公司哈尔滨\n开发区支行 \n50,000",
+      "confidence": 1.0
+    }
+  ]
+}

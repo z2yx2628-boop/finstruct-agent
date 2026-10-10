@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2019-084",
+  "announcement_date": "2019-11-21",
+  "total_guarantee_balance": 28.06,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 37.68,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌钢股份北票保国铁矿有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "sister_company",
+      "is_related_transaction": true,
+      "guarantee_amount": 28.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "mortgage",
+      "creditor": "中国民生银行股份有限公司大连分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自2019年9月9日起至2020年9月8日止",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "2019 年9 月6 日，根据《相互担保协议》和《相互担保协议之补充协议》约定，公司全资子公司凌钢股份北票保国铁矿有限公司(以下简称“保国公司”)与民生银行大连分行续签了《最高额抵押合同》，以其所持有的采矿权为该项综合授信额度提供最高额抵押担保。",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "security_code": "002110",
+  "security_name": "三钢闽光",
+  "company_name": "福建三钢闽光股份有限公司",
+  "announcement_number": "2020-033",
+  "announcement_date": "2020-08-27",
+  "estimate_year": 2020,
+  "total_estimated_amount": 1035000.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "福建三钢闽光股份有限公司",
+      "counterparty": "福建三钢国贸有限公司",
+      "relationship": "associate_or_joint_venture",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联人采购原、辅材料",
+      "goods_or_services": null,
+      "estimated_amount": 1000000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 637672.91,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人采购原、辅材料 \n福建三钢国贸有限公司 \n900,000 \n100,000 \n1,000,000 \n543,156.01 \n637,672.91",
+      "confidence": 1.0
+    },
+    {
+      "listed_company": "福建三钢闽光股份有限公司",
+      "counterparty": "福建天尊新材料制造有限公司",
+      "relationship": "associate_or_joint_venture",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联人采购原、辅材料",
+      "goods_or_services": null,
+      "estimated_amount": 25000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人采购原、辅材料 \n福建天尊新材料制造有限公司 \n0 \n25,000 \n25,000 \n2,414.67 \n0",
+      "confidence": 1.0
+    },
+    {
+      "listed_company": "福建三钢闽光股份有限公司",
+      "counterparty": "福建天尊新材料制造有限公司",
+      "relationship": "associate_or_joint_venture",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售产品、商品",
+      "goods_or_services": null,
+      "estimated_amount": 10000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人销售产品、商品 \n福建天尊新材料制造有限公司 \n0 \n10,000 \n10,000 \n3,553.15 \n0",
+      "confidence": 1.0
+    }
+  ]
+}

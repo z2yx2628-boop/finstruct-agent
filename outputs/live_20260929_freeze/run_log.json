@@ -1,0 +1,16 @@
+{
+  "runs": {
+    "live_20260929_001_600282_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "success",
+      "prediction": "outputs/live_20260929_freeze/guarantee/live_20260929_001_600282_guarantee_live.json",
+      "sha256": "3ea628097837bcc6e664038f423c7e52e2452f611e90e13a048e8e5554f0b7e1",
+      "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260929_001_600282_guarantee_live\\20260928T225749Z"
+    }
+  },
+  "commit": "07f6bde2423195a611777c169af522f7b12f2a2f",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "8a0abbaf1507f15d6a94a8e26eb939f6229072fb",
+  "started_at": "2026-09-28T22:57:49.246865+00:00",
+  "completed_at": "2026-09-28T22:58:12.614511+00:00"
+}

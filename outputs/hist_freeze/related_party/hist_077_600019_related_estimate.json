@@ -1,0 +1,29 @@
+{
+  "security_code": "600019",
+  "security_name": "宝钢股份",
+  "company_name": "宝山钢铁股份有限公司",
+  "announcement_number": "临2020-056",
+  "announcement_date": "2020-09-11",
+  "estimate_year": 2020,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "宝山钢铁股份有限公司",
+      "counterparty": "宝武原料供应有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购铁矿石",
+      "goods_or_services": "铁矿石",
+      "estimated_amount": 20.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "2020 年9-12 月，预计向宝武原料采购铁矿石290 万吨，预计采购金额20 亿元人民币。",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2019—074",
+  "announcement_date": "2019-08-03",
+  "total_guarantee_balance": 338898.1,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 22.04,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京钢铁股份有限公司",
+      "guaranteed_party": "江苏金贸钢宝电子商务股份有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 2000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "江苏银行股份有限公司营业部",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "为主合同项下每笔债务履行期届满之日起2年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "2019 年8 月2 日，公司与江苏银行股份有限公司营业部（以下简称“江苏银行”）签订《最高额保证合同》，为钢宝股份与江苏银行发生的授信业务提供不超过人民币2,000 万元的最高额连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2022—085",
+  "announcement_date": "2022-12-08",
+  "total_guarantee_balance": 378463.128,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 34.9,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "安钢集团冷轧有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 5.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国外贸金融租赁有限公司",
+      "guaranteed_debt_purpose": "融资租赁（售后回租，租赁物为连退镀锌及酸轧机组部分设备）",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "融资期限为3年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "被担保人名称：安钢集团冷轧有限责任公司（以下简称“冷轧公司”）。 \n● 本次担保金额：为优化公司控股子公司冷轧公司融资结构，满足业务发\n展需要，冷轧公司拟与中国外贸金融租赁有限公司以售后回租方式开展融资租赁\n业务，租赁物为冷轧公司连退镀锌及酸轧机组部分设备，计划融资金额为人民币\n5 亿元，融资期限为3 年。 \n公司拟为冷轧公司以上融资租赁业务提供连带责任保证担保。",
+      "confidence": 0.98
+    }
+  ]
+}

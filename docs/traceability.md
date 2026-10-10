@@ -20,7 +20,7 @@
 | 使用的系统版本 | 运行记录写入当时的 Git 提交号与冻结标签；源码有未提交改动时拒绝运行 | `run_log.json` 的 `commit`、`freeze_tag` |
 | 调度智能体（分析新公告） | 10 步轨迹：每步的工具、类型（规则 / 模型 / 查询 / 计算）、输出、决定、理由、耗时 | `src/orchestrator.py`；网页上可展开查看，报告下载包含轨迹 |
 | 问一句 | 5 步轨迹：理解问题、识别对象、选择工具、调用工具、生成回答；注明是规则还是模型分类 | `src/ask.py`；网页对话框内可展开 |
-| 每日更新 | 新公告清单、抽取、图谱重建、评分、路径变化，逐日写成报告 | `data/live/report_<日期>.md` |
+| 每日更新 | 新公告清单、抽取、图谱重建、评分、路径变化，逐日写成报告；GitHub 定时任务每天北京时间 06:30 运行，每次运行的日志保存在 GitHub Actions，结果作为一次提交进入代码仓库 | `data/live/report_<日期>.md`、`.github/workflows/daily-update.yml` |
 | 计算结果 | 每个评估日一个快照目录：承压评分、季度指标、变化说明、元数据（权重、版本） | `data/snapshots/<日期>/`、`data/event_study/snapshots/<日期>/` |
 | 传导路径 | 每个评估日的全部原始分支（JSON）和关键路径（CSV、Markdown） | `data/chain/<图谱>/paths_<日期>.*`、`key_paths_<日期>.csv` |
 

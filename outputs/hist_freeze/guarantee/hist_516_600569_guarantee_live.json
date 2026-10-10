@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2023—036",
+  "announcement_date": "2023-06-05",
+  "total_guarantee_balance": 408463.128,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 54.74,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢周口钢铁有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 2.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国工商银行股份有限公司周口分行",
+      "guaranteed_debt_purpose": "营运资金贷款",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "至授信使用金额归还完毕之日止",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "被担保人名称：河南安钢周口钢铁有限责任公司（以下简称“周口公司”）。 \n● 本次担保金额：周口公司向中国工商银行股份有限公司周口分行申请营运资金贷款人民币贰亿元。公司拟为周口公司以上融资事项提供连带责任担保，担保期限至授信使用金额归还完毕之日止。 \n●本次担保事项尚需提交公司股东大会审议。",
+      "confidence": 0.95
+    }
+  ]
+}

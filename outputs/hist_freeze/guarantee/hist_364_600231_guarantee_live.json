@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2020-104",
+  "announcement_date": "2020-12-04",
+  "total_guarantee_balance": 37.61,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 48.54,
+  "external_guarantee_balance": 37.4,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 18000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "pledge",
+      "creditor": "朝阳银行股份有限公司凌源支行",
+      "guaranteed_debt_purpose": "商业汇票银行承兑",
+      "start_date": "2020-12-03",
+      "end_date": "2021-10-16",
+      "period_text": "11个月",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 68.12,
+      "source_page": 2,
+      "evidence_text": "2020 年12 月3 日，根据《相互担保协议》及《相互担保协议补充协议》约定，公司为控股股东凌钢集团与朝阳银行股份有限公司凌源支行（以下简称“朝阳银行凌源支行”）签订的期限为11 个月的18,000 万元人民币的《商业汇票银行承兑协议》（编号：2020 年凌源公司承字第041 号）提供质押担保，公司与朝阳银行凌源支行签订了《质押合同》\n（合同编号：2020 年凌源公司质字第041 号）。",
+      "confidence": 1.0
+    }
+  ]
+}

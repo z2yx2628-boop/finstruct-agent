@@ -1,0 +1,45 @@
+{
+  "security_code": "600399",
+  "security_name": "抚顺特钢",
+  "company_name": "抚顺特殊钢股份有限公司",
+  "announcement_number": "临2026-026",
+  "announcement_date": "2026-06-16",
+  "estimate_year": 2026,
+  "total_estimated_amount": 7150.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "抚顺特殊钢股份有限公司",
+      "counterparty": "沙钢国际（新加坡）有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售产品",
+      "goods_or_services": null,
+      "estimated_amount": 7000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人\n销售产品\n沙钢国际（新加坡）\n有限公司\n7000",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "抚顺特殊钢股份有限公司",
+      "counterparty": "江苏沙钢国际贸易有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "provide_services",
+      "category_text": "委托关联人销售产品、商品",
+      "goods_or_services": null,
+      "estimated_amount": 150.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 0.0,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "委托关联\n人销售产\n品、商品\n江苏沙钢国际贸易有\n限公司\n150",
+      "confidence": 0.98
+    }
+  ]
+}

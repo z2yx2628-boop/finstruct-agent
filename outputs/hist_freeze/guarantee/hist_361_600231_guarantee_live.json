@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2020-096",
+  "announcement_date": "2020-11-07",
+  "total_guarantee_balance": 39.34,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 50.77,
+  "external_guarantee_balance": 39.13,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 7000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国农业银行股份有限公司朝阳分行",
+      "guaranteed_debt_purpose": "流动资金贷款",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主合同约定的债务履行期限届满之日起二年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 68.12,
+      "source_page": 2,
+      "evidence_text": "2020 年11 月5 日，根据《相互担保协议》及《相互担保协议补充协议》约定，公司为控股股东凌钢集团与中国农业银行股份有限公司朝阳分行（以下简称“农业银行朝阳分行”）签订的期限为1 年的7,000 万元人民币的《中国农业银\n行股份有限公司流动资金借款合同》(合同编号：21010120200000932)提供连带\n责任保证担保, 公司与农业银行朝阳分行签订了《保证合同》(合同编号：\n21100120200017452)。",
+      "confidence": 1.0
+    }
+  ]
+}

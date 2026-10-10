@@ -1,0 +1,37 @@
+{
+  "security_code": "600295",
+  "security_name": "鄂尔多斯",
+  "company_name": "内蒙古鄂尔多斯资源股份有限公司",
+  "announcement_number": "临2025-037",
+  "announcement_date": "2025-12-05",
+  "total_guarantee_balance": 89986.67,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 4.3,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "内蒙古鄂尔多斯资源股份有限公司",
+      "guaranteed_party": null,
+      "relationship": null,
+      "is_related_transaction": null,
+      "guarantee_amount": 22.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "pledge",
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自股东大会审议通过该事项之日起1年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "（四）实施额度\n公司及所属分子公司用于与合作金融机构开展资产池业务（包含票据池业务）总额度不超过人民币22 亿元（含资产质押额度和综合授信额度）。业务期限内，该额度可滚动使用。",
+      "confidence": 0.95
+    }
+  ]
+}

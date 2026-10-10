@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2022-046",
+  "announcement_date": "2022-09-24",
+  "total_guarantee_balance": 28.74,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 31.07,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "pledge",
+      "creditor": "盛京银行股份有限公司朝阳分行",
+      "guaranteed_debt_purpose": "银行承兑汇票",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "银行承兑汇票签发日为2022年9月23日，到期日为2023年2月24日",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": 64.18,
+      "source_page": 2,
+      "evidence_text": "2022 年9 月23 日，根据《相互担保协议》及《相互担保协议之补充协议》\n约定，公司与盛京银行朝阳分行签订了《银行承兑质押合同》（合同编号：\n150211202209230101Z02），为凌钢集团与盛京银行朝阳分行签订的《银行承兑协\n议》（合同编号：150211202209230101）项下签发日为2022 年9 月23 日，到期\n日为2023 年2 月24 日，金额为人民币1.0 亿元的88 张银行承兑汇票提供质押\n担保，凌钢集团就上述担保事项向公司提供反担保，并签署了《反担保合同》，\n承担连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

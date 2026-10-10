@@ -1,0 +1,50 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "announcement_number": "临2025-076",
+  "company_name": "方大特钢科技股份有限公司",
+  "events": [
+    {
+      "event_type": "release",
+      "shareholder_name": "方大钢铁",
+      "shares": 140000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 18.59,
+      "total_share_capital_ratio": 6.05,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": "2022-12-21",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2025-12-22",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中信证券股份有限公司",
+      "purpose": null,
+      "source_page": 2,
+      "evidence_text": "1、本次股份解除质押基本情况\n单位：股\n股东名称\n是否为控股股东\n本次解除质押股数\n是否为\n限售股\n质押起始日\n解除质押时间\n质权人\n占其所持\n股份比例\n占公司总股本\n比例\n方大钢铁\n是\n140,000,000\n否\n2022/12/21\n2025/12/22\n中信证券股份\n有限公司\n18.59%\n6.05%",
+      "confidence": 1.0
+    },
+    {
+      "event_type": "pledge",
+      "shareholder_name": "方大钢铁",
+      "shares": 90000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 11.95,
+      "total_share_capital_ratio": 3.89,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-12-22",
+      "pledge_end_date": "2026-12-22",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中信证券股份有限公司",
+      "purpose": "自身资金需要",
+      "source_page": 2,
+      "evidence_text": "2、本次股份质押基本情况\n单位：股\n股东名称\n是否为\n控股股东\n本次质押股数\n是否为\n限售股\n是否补充\n质押\n质押\n起始日\n质押\n到期日\n质权人\n占其所持\n股份比例\n占公司\n总股本比例\n质押融资\n资金用途\n方大钢铁\n是\n90,000,000\n否\n否\n2025/12/22\n2026/12/22\n中信证券股\n份有限公司\n11.95%\n3.89%\n自身资金需要",
+      "confidence": 1.0
+    }
+  ]
+}

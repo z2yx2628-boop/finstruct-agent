@@ -1,0 +1,37 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2025-071",
+  "announcement_date": "2025-11-29",
+  "total_guarantee_balance": 425800.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 45.8,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "方大特钢科技股份有限公司",
+      "guaranteed_party": "方大炭素新材料科技股份有限公司",
+      "relationship": "sister_company",
+      "is_related_transaction": true,
+      "guarantee_amount": 5.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "协议有效期内双方都有权向对方要求提供担保，担保方式为保证担保，双方提供担保时，被担保方必须同时提供反担保等风险控制措施。",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "公司于2025 年11 月28 日召开第九届董事会第八次会议，审议通过《关于调整与方大炭素关联担保额度的议案》，根据公司生产经营的需要，公司调整与方大炭素关联担保额度，由“不超过人民币10 亿元”调整为“不超过人民币5 亿元”，协议其他内容不变。",
+      "confidence": 0.95
+    }
+  ]
+}

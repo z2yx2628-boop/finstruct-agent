@@ -1,0 +1,37 @@
+{
+  "security_code": "600408",
+  "security_name": "安泰集团",
+  "company_name": "山西安泰集团股份有限公司",
+  "announcement_number": "临2024—018",
+  "announcement_date": "2024-04-26",
+  "total_guarantee_balance": 28.7,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 155.98,
+  "external_guarantee_balance": 0.12,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "山西安泰集团股份有限公司",
+      "guaranteed_party": "山西宏安焦化科技有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1200.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "招商银行股份有限公司太原分行",
+      "guaranteed_debt_purpose": "融资业务",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自主合同签署之日起不超过12个月",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "● 被担保人名称：山西宏安焦化科技有限公司（简称“宏安焦化”）\n● 本次担保金额及已实际为其提供的担保余额：公司本次为宏安焦化提供担保金额不超过1,200 万元（为现有已提供担保的主债权办理续贷等手续时继续提供的担保）；截至本公告披露日，已实际为其提供的融资本金担保余额为1,200 万元\n● 本次是否有反担保：无\n● 对外担保逾期的累计数量：无\n● 本次担保尚需提交公司2023 年年度股东大会审议",
+      "confidence": 1.0
+    }
+  ]
+}

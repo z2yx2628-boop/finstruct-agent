@@ -1,0 +1,44 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2025-036",
+  "announcement_date": "2025-05-28",
+  "events": [
+    {
+      "event_type": "commissioning",
+      "project_name": null,
+      "project_entity": "凌源钢铁股份有限公司",
+      "project_location": null,
+      "project_country": "中国",
+      "decision_reasons": [
+        "industrial_policy"
+      ],
+      "decision_reason_text": "项目符合《钢铁行业产能置换实施管理办法》相关规定",
+      "project_status": "commissioned",
+      "investment_amount": null,
+      "investment_unit": null,
+      "investment_currency": null,
+      "funding_source": null,
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "2023年8月29日董事会审议通过，2023年9月15日股东大会审议通过；2023年11月24日董事会、12月12日股东大会审议通过方案变更；2025年5月27日新建2290m³高炉成功出铁，顺利投产。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": null,
+      "project_purpose": "高炉装备升级，实施产能置换",
+      "capacity_changes": [],
+      "environmental_metrics": [],
+      "source_page": 2,
+      "evidence_text": "2025 年5 月27 日，公司新建的2290m³高炉成功出铁，顺利投产。项目用于产能置换的2 座450m³高炉已拆除完成，1 座1000m³高炉已实现去功能化拆除，不具备恢复生产条件，计划于2025 年7 月拆除完成。",
+      "confidence": 1.0
+    }
+  ]
+}

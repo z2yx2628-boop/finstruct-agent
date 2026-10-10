@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2021—069",
+  "announcement_date": "2021-12-15",
+  "total_guarantee_balance": 127682.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 12.82,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢周口钢铁有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 4.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "太平石化金融租赁有限责任公司",
+      "guaranteed_debt_purpose": "融资租赁业务（租赁物为制氧站、高炉等部分设备）",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "融资期限为3年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "● 被担保人名称：河南安钢周口钢铁有限责任公司（以下简称“周口公司”） \n● 本次担保金额：公司控股子公司周口公司拟与太平石化金融租赁有限责\n任公司开展融资租赁业务，租赁物为周口公司制氧站、高炉等部分设备，计划融\n资金额为人民币4 亿元，融资期限为3 年。公司拟为周口公司与太平石化金融租\n赁有限责任公司开展以上融资租赁业务提供连带责任保证担保。",
+      "confidence": 0.98
+    }
+  ]
+}

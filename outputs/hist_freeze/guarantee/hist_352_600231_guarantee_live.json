@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2020-077",
+  "announcement_date": "2020-09-09",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": null,
+  "overdue_guarantee_unit": null,
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 50.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": null,
+      "creditor": null,
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": null,
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "朝阳市国资委同意凌钢集团与公司的“互保额度由40 亿元提高到50 亿元，担保范围除原批准的融资担保外，增加为对方发行债券等融资事项提供担保。",
+      "confidence": 0.95
+    }
+  ]
+}

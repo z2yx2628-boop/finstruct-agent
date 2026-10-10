@@ -1,0 +1,37 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2024-050",
+  "announcement_date": "2024-11-08",
+  "total_guarantee_balance": 486611.96,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 12.6,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "江阴兴澄特种钢铁有限公司",
+      "guaranteed_party": "青岛特殊钢铁有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 10.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中信银行股份有限公司青岛分行",
+      "guaranteed_debt_purpose": "流动资金贷款、银行承兑汇票、信用证等相关业务",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主债务合同债务期限届满之日起三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "中信泰富特钢集团股份有限公司（以下简称“公司”）全资子公司\n江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟对全资孙公司\n青岛特殊钢铁有限公司（以下简称“青岛特钢”）提供10 亿元人民币的\n担保，具体情况如下：\n青岛特钢在中信银行股份有限公司青岛分行（以下简称“中信银行”）\n申请10 亿元人民币的授信额度，由兴澄特钢提供连带责任保证担保，\n担保期限为主债务合同债务期限届满之日起三年。兴澄特钢于11 月7\n日在青岛与中信银行签署《最高额保证合同》。",
+      "confidence": 1.0
+    }
+  ]
+}

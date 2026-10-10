@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2022—052",
+  "announcement_date": "2022-07-22",
+  "total_guarantee_balance": 263934.67,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 24.34,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "河南安钢周口钢铁有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 2.5,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "交银金融租赁有限责任公司",
+      "guaranteed_debt_purpose": "融资租赁（焦化项目干熄焦、脱硫脱硝部分设备）",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "融资期限为3年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "● 本次担保金额：安阳钢铁股份有限公司（以下简称“公司”）控股子公司周口公司拟以直租方式与交银金融租赁有限责任公司开展融资租赁业务，租赁物为周口公司焦化项目干熄焦、脱硫脱硝部分设备，计划融资金额为2.5 亿元人民币，融资期限为3 年。公司拟为周口公司与交银金融租赁有限责任公司开展以上融资租赁业务提供连带责任保证担保。",
+      "confidence": 0.98
+    }
+  ]
+}

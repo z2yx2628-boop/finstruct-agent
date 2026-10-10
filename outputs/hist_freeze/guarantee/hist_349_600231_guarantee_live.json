@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2020-075",
+  "announcement_date": "2020-08-28",
+  "total_guarantee_balance": 41.48,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 53.53,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁股份有限公司",
+      "guaranteed_party": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "is_related_transaction": true,
+      "guarantee_amount": 4.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "渤海银行股份有限公司锦州分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2020-08-27",
+      "end_date": "2021-08-26",
+      "period_text": "自2020年8月27日至2021年8月26日止",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 68.84,
+      "source_page": 2,
+      "evidence_text": "2020 年8 月27 日，根据《相互担保协议》约定，公司为控股股东凌钢集团与渤海银行股份有限公司锦州分行（以下简称“渤海银行锦州分行”）签订的授信额度为人民币4 亿元的《综合授信合同》（合同编号：渤锦分综（2020）第10号）提供保证担保；公司与渤海银行锦州分行签订了《最高额保证协议》（合同编号：渤锦分最高保（2020）第10 号）。",
+      "confidence": 1.0
+    }
+  ]
+}

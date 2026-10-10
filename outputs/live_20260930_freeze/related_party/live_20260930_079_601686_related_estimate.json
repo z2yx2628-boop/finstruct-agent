@@ -1,0 +1,29 @@
+{
+  "security_code": "601686",
+  "security_name": "友发集团",
+  "company_name": "天津友发钢管集团股份有限公司",
+  "announcement_number": "2026-092",
+  "announcement_date": "2026-08-24",
+  "estimate_year": 2026,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "天津友发钢管集团股份有限公司",
+      "counterparty": "沐光而行（天津）国际贸易有限公司",
+      "relationship": "other_related_party",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售产品、商品",
+      "goods_or_services": null,
+      "estimated_amount": 10000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人销售产品、\n商品\n沐光而行（天津）国际贸易\n有限公司\n-\n10,000.00\n0.14\n-",
+      "confidence": 0.95
+    }
+  ]
+}

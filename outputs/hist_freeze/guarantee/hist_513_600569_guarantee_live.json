@@ -1,0 +1,37 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "company_name": "安阳钢铁股份有限公司",
+  "announcement_number": "2023—030",
+  "announcement_date": "2023-05-26",
+  "total_guarantee_balance": 388463.128,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 52.06,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "安阳钢铁股份有限公司",
+      "guaranteed_party": "安钢集团永通球墨铸铁管有限责任公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国工商银行股份有限公司安阳水冶支行",
+      "guaranteed_debt_purpose": "营运资金借款",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "期限1年",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "被担保人名称：安钢集团永通球墨铸铁管有限责任公司（以下简称“永通公司”）。 \n● 本次担保金额：永通公司向中国工商银行股份有限公司安阳水冶支行申请营运资金借款人民币1 亿元，期限1 年，公司拟为永通公司以上借款业务提供连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

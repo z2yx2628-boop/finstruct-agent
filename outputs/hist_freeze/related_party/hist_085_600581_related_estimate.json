@@ -1,0 +1,61 @@
+{
+  "security_code": "600581",
+  "security_name": "八一钢铁",
+  "company_name": "新疆八一钢铁股份有限公司",
+  "announcement_number": "临2020-044",
+  "announcement_date": "2020-12-09",
+  "estimate_year": 2021,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "新疆八一钢铁股份有限公司",
+      "counterparty": "欧冶工业品股份有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购资材备件",
+      "goods_or_services": "资材备件",
+      "estimated_amount": 2.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "2020 年 12 月，公司预计向欧冶工业品采购资材备件发生交易金额 2 亿元人民币。2021 年，公司与欧冶工业品发生的关联交易纳入年度日常关联交易管理，履行相应的审议程序和披露义务。",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "新疆八一钢铁股份有限公司",
+      "counterparty": "宝武水务科技有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "receive_services",
+      "category_text": "接受污水处理劳务",
+      "goods_or_services": "污水处理劳务",
+      "estimated_amount": 1700.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "2020 年 12 月，公司预计接受宝武水务污水处理劳务发生交易金额1700 万元，销售宝武水务能源介质发生交易金额400 万元人民币。2021 年，公司与宝武水务发生的关联交易纳入年度日常关联交易管理，履行相应的审议程序和披露义务。",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "新疆八一钢铁股份有限公司",
+      "counterparty": "宝武水务科技有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售能源介质",
+      "goods_or_services": "能源介质",
+      "estimated_amount": 400.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "2020 年 12 月，公司预计接受宝武水务污水处理劳务发生交易金额1700 万元，销售宝武水务能源介质发生交易金额400 万元人民币。2021 年，公司与宝武水务发生的关联交易纳入年度日常关联交易管理，履行相应的审议程序和披露义务。",
+      "confidence": 0.95
+    }
+  ]
+}

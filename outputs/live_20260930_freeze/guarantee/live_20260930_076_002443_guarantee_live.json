@@ -1,0 +1,37 @@
+{
+  "security_code": "002443",
+  "security_name": "金洲管道",
+  "company_name": "浙江金洲管道科技股份有限公司",
+  "announcement_number": "2025-036",
+  "announcement_date": "2025-08-21",
+  "total_guarantee_balance": 22750.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 6.52,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "浙江金洲管道科技股份有限公司",
+      "guaranteed_party": "浙江金洲管道工业有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 10000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "招商银行股份有限公司湖州分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自本最高额不可撤销担保书生效之日起至《授信协议》项下每笔贷款或其他融资或招商银行受让的应收账款债权的到期日或每笔垫款的垫款日另加三年。",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": 18.67,
+      "source_page": 3,
+      "evidence_text": "担保金额：人民币壹亿元整（含等值其他币种）\n保证担保范围：招商银行根据《授信协议》在授信额度内向浙江金洲管道工业有限公司提供贷款及其他授信本金余额之和（最高限额为人民币壹亿元整），以及相关利息、罚息、复息、违约金、迟延履行金、保理费用、实现担保权和债权的费用和其他相关费用。",
+      "confidence": 1.0
+    }
+  ]
+}

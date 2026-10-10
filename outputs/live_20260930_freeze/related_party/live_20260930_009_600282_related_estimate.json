@@ -1,0 +1,29 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2025-047",
+  "announcement_date": "2025-08-20",
+  "estimate_year": 2025,
+  "total_estimated_amount": 500000000.0,
+  "total_estimated_unit": "元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "南京钢铁股份有限公司",
+      "counterparty": "扬州泰富特种材料有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购铁矿石等原料",
+      "goods_or_services": "铁矿石等原料",
+      "estimated_amount": 5.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "公司因业务需要向关联人扬州泰富采购铁矿石等原料，预计2025 年度新增日常关联交易5 亿元，占公司最近一期经审计归属于上市公司股东的净资产的1.92%，无需提交公司股东会审议。",
+      "confidence": 0.98
+    }
+  ]
+}

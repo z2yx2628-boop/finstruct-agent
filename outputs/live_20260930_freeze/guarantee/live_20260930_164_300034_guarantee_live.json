@@ -1,0 +1,37 @@
+{
+  "security_code": "300034",
+  "security_name": "钢研高纳",
+  "company_name": "北京钢研高纳科技股份有限公司",
+  "announcement_number": "2025-068",
+  "announcement_date": "2025-10-22",
+  "total_guarantee_balance": 56606.37,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 16.2,
+  "external_guarantee_balance": 8607.37,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "北京钢研高纳科技股份有限公司",
+      "guaranteed_party": "青岛钢研新材料科技发展有限公司",
+      "relationship": "associate_or_joint_venture",
+      "is_related_transaction": true,
+      "guarantee_amount": 8606.37,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中钢研（河北）科技有限公司",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "债转股后剩余借款1.97亿元",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "基于借款金额、债权人主体及公司对青岛钢研持股比例发生变化，公司拟与中钢研河北、青岛钢研协商变更原关联担保为按持股比例43.69%对债转股后剩余借款1.97 亿元进行关联担保，即为其中不超过8,606.37 万元借款提供连带责任担保，青岛钢研另一股东中钢研河北为该借款的债权人，因此未进行同比例担保。青岛钢研就公司本次对其不超过8,606.37 万元担保提供反担保。",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2024-024",
+  "announcement_date": "2024-03-13",
+  "total_guarantee_balance": 493361.27,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 12.78,
+  "external_guarantee_balance": 12000.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "江阴兴澄特种钢铁有限公司",
+      "guaranteed_party": "湖北中航冶钢特种钢材有限公司",
+      "relationship": "associate_or_joint_venture",
+      "is_related_transaction": true,
+      "guarantee_amount": 4000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "广发银行股份有限公司武汉分行",
+      "guaranteed_debt_purpose": "综合授信",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主债务合同债务期限届满之日起三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "公司的全资子公司江阴兴澄特种钢铁有限公司（以下简称“兴澄特钢”）拟对公司参股公司湖北中航冶钢特种钢材有限公司（以下简称“湖北中航”）提供人民币4,000 万元担保，具体情况如下：\n湖北中航向广发银行股份有限公司武汉分行（以下简称“广发银行”） \n申请综合授信1 亿元，本次授信需要公司全资子公司兴澄特钢与湖北中\n航另一股东中国航空工业供销中南有限公司（以下简称“中航中南”） \n分别按持股比例提供担保，三方将于近期在湖北武汉签署《最高额保证\n合同》，其中兴澄特钢为湖北中航在广发银行申请的4,000 万元综合授\n信提供连带责任保证担保，中航中南为湖北中航在广发银行申请的 \n6,000 万元综合授信提供同等条件担保。担保期限为主债务合同债务期\n限届满之日起三年。本次担保不涉及反担保。",
+      "confidence": 1.0
+    }
+  ]
+}

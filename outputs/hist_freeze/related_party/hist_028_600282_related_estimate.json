@@ -1,0 +1,61 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2019—054",
+  "announcement_date": "2019-05-23",
+  "estimate_year": 2019,
+  "total_estimated_amount": 15533.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "南京钢铁股份有限公司",
+      "counterparty": "复星旅游文化集团",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "关联销售",
+      "goods_or_services": "钢材等",
+      "estimated_amount": 10333.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "关联销售\n复星旅游文化集团\n10,333\n销售钢材等",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "南京钢铁股份有限公司",
+      "counterparty": "安阳复星合力新材料股份有限公司",
+      "relationship": "associate_or_joint_venture",
+      "transaction_category": "sell_goods",
+      "category_text": "关联销售",
+      "goods_or_services": "钢材等",
+      "estimated_amount": 5150.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "关联销售\n安阳复星合力新材料股份有限公司\n5,150\n销售钢材等",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "南京钢铁股份有限公司",
+      "counterparty": "南京钢铁集团有限公司、南京南钢钢铁联合有限公司、南京钢铁联合有限公司",
+      "relationship": "other_related_party",
+      "transaction_category": "receive_services",
+      "category_text": "接受关联方担保",
+      "goods_or_services": null,
+      "estimated_amount": 50.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "接受关联方担保\n南京钢铁集团有限公司、南京南钢钢铁联合有限公司、南京钢铁联合有限公司\n50\n担保费用",
+      "confidence": 0.97
+    }
+  ]
+}

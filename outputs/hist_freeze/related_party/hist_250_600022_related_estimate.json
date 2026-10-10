@@ -1,0 +1,45 @@
+{
+  "security_code": "600022",
+  "security_name": "山东钢铁",
+  "company_name": "山东钢铁股份有限公司",
+  "announcement_number": "2024-021",
+  "announcement_date": "2024-03-30",
+  "estimate_year": 2024,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "山东钢铁股份有限公司",
+      "counterparty": "山东钢铁集团财务有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "financial_services",
+      "category_text": "每日最高存款余额（含利息）",
+      "goods_or_services": null,
+      "estimated_amount": 60.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": 439357.89,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "1.公司及所属分公司、全资及控股子公司在财务公司的每日最高存款余额（含利息）不高于人民币60 亿元，利率不低于中国人民银行统一公布的同期同类型的基准利率，及其它在中国的独立商业银行向甲方提供的同期同类型的存款利率。",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "山东钢铁股份有限公司",
+      "counterparty": "山东钢铁集团财务有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "financial_services",
+      "category_text": "综合授信额度",
+      "goods_or_services": null,
+      "estimated_amount": 88.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "2.财务公司向公司及所属分公司、全资及控股子公司提供的综合授信额度不超过人民币88 亿元。",
+      "confidence": 0.97
+    }
+  ]
+}

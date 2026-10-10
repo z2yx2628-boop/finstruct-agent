@@ -1,0 +1,29 @@
+{
+  "security_code": "600010",
+  "security_name": "包钢股份",
+  "announcement_number": "（临）2025-053",
+  "company_name": "内蒙古包钢钢联股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "包钢集团",
+      "shares": 62100.0,
+      "shares_unit": "万股",
+      "shareholder_holding_ratio": 2.48,
+      "total_share_capital_ratio": 1.37,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-07-15",
+      "pledge_end_date": "2026-07-15",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中信证券股份有限公司",
+      "purpose": "为包钢集团融资提供担保",
+      "source_page": 2,
+      "evidence_text": "股东名称\n是否为控\n股股东\n本次质押股数\n（万股）\n是否为限售\n股（如是，注\n明限售类型）\n是否\n补充\n质押\n质押起始日\n质押到期日\n质权人\n占其所\n持股份\n比例\n占公司\n总股本\n比例\n质押融资资金\n用途\n包钢集团\n是\n62,100.00\n否\n否\n2025-07-15\n2026-07-15\n中信证券股份有\n限公司\n2.48%\n1.37%\n为包钢集团融\n资提供担保",
+      "confidence": 1.0
+    }
+  ]
+}

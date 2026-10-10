@@ -1,0 +1,45 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2026-047",
+  "announcement_date": "2026-08-27",
+  "estimate_year": 2026,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "方大炭素新材料科技股份有限公司及其子公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售煤焦油等",
+      "goods_or_services": "煤焦油等",
+      "estimated_amount": 6000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 2513.01,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "公司及子公司\t方大炭素及其子公司\t销售煤\n焦油等\t市场\n价格\t合同\n约定\t2026 年\n1-12 月\t3,000.00\t6,000.00\t2,513.01",
+      "confidence": 0.98
+    },
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "江西海鸥贸易有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购溶剂等",
+      "goods_or_services": "溶剂等",
+      "estimated_amount": 4000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 1400.31,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "海鸥贸易\t公司及\n子公司\t采购\n溶剂等\t市场\n价格\t合同\n约定\t2026 年\n1-12 月\t0\t4,000.00\t1,400.31",
+      "confidence": 0.98
+    }
+  ]
+}

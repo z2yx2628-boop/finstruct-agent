@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2025-031",
+  "announcement_date": "2025-04-24",
+  "estimate_year": 2025,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "江西方大钢铁集团有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购煤、焦、矿等",
+      "goods_or_services": "煤、焦、矿等",
+      "estimated_amount": 30000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "卖方\n买方\n合同/\n协议\n服务项目\n结算\n价格\n付款\n方式\n预计交\n易期限\n预计交易\n金额\n2025 年1-3 月\n已发生金额\n方大\n钢铁\n公司及\n子公司\n合同\n采购煤、\n焦、矿等\n市场\n价格\n合同\n约定\n2025 年\n4-12 月\n30,000\n0",
+      "confidence": 0.98
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2025-002",
+  "announcement_date": "2025-03-08",
+  "total_guarantee_balance": 90.45,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 34.08,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京钢铁股份有限公司",
+      "guaranteed_party": "PT. KinXiang New Energy Technologies Indonesia",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 4000.0,
+      "guarantee_unit": "万美元",
+      "guarantee_currency": "USD",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国建设银行南京江北新区分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2025-03-07",
+      "end_date": "2028-03-06",
+      "period_text": "主债权确定期间：2025年3月7日-2028年3月6日",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "2025年3月7日，公司与中国建设银行南京江北新区分行（以下简称“建设银行”）签署《最高额保证合同》，为金祥新能源与建设银行发生的授信业务提供最高债权限额为4,000万美元的连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

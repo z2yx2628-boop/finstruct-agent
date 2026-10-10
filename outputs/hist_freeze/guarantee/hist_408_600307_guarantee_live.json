@@ -1,0 +1,37 @@
+{
+  "security_code": "600307",
+  "security_name": "酒钢宏兴",
+  "company_name": "甘肃酒钢集团宏兴钢铁股份有限公司",
+  "announcement_number": "2021-034",
+  "announcement_date": "2021-08-13",
+  "total_guarantee_balance": 43.43,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 35.26,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "甘肃酒钢集团宏兴钢铁股份有限公司",
+      "guaranteed_party": "甘肃镜铁山矿业有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 45000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": "中长期项目贷款",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "主债务履行期届满之日起三年（依据担保合同约定，原文未明确起止日）",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": 76.1,
+      "source_page": 1,
+      "evidence_text": "被担保人名称：甘肃镜铁山矿业有限公司（以下简称“镜铁山矿业公司”）。 \n本次担保金额及已实际为其提供的担保余额：公司本次为镜铁山矿业公司提供总金额不超过人民币45,000 万元的连带责任保证担保。截止本报告日，公司未对其提供其他任何担保事项。",
+      "confidence": 0.98
+    }
+  ]
+}

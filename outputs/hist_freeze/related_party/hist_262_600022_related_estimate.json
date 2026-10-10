@@ -1,0 +1,29 @@
+{
+  "security_code": "600022",
+  "security_name": "山东钢铁",
+  "company_name": "山东钢铁股份有限公司",
+  "announcement_number": "2024-044",
+  "announcement_date": "2024-06-21",
+  "estimate_year": 2024,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "山东钢铁股份有限公司",
+      "counterparty": "宝山钢铁股份有限公司",
+      "relationship": "other_related_party",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联方销售商品、提供劳务等",
+      "goods_or_services": null,
+      "estimated_amount": 1500000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "向关联方销售\n商品、提供劳\n务等 \n宝山钢铁股\n份有限公司 \n300,000 \n1,200,000 \n1,500,000 \n16.67% \n38,307",
+      "confidence": 0.98
+    }
+  ]
+}

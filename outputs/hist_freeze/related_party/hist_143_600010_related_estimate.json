@@ -1,0 +1,29 @@
+{
+  "security_code": "600010",
+  "security_name": "包钢股份",
+  "company_name": "内蒙古包钢钢联股份有限公司",
+  "announcement_number": "（临）2022-003",
+  "announcement_date": "2022-01-07",
+  "estimate_year": 2022,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "内蒙古包钢钢联股份有限公司",
+      "counterparty": "中国北方稀土（集团）高科技股份有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "销售稀土精矿",
+      "goods_or_services": "稀土精矿",
+      "estimated_amount": null,
+      "estimated_unit": null,
+      "prior_year_actual_amount": 28.68,
+      "prior_year_actual_unit": "亿元",
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "稀土精矿2022 年交易总量不超过23 万吨（干量，REO=50%）。……2021 年稀土精矿实际交易量为17.98 万吨（干量，REO=50%），交易总金额为28.68 亿元（不含税）。",
+      "confidence": 0.98
+    }
+  ]
+}

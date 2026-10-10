@@ -169,7 +169,8 @@ next_step("选一家企业，看它自身扛不扛得住、风险从哪里传进
 
 # ---------------------------------------------------------------- maintenance (folded)
 if public_mode():
-    st.caption("公开演示版：数据截至最近一次提交，不在线更新；" +
+    st.caption("公开演示版：数据由 GitHub 定时任务每天北京时间 06:30 自动更新（冻结版抽取系统，结果提交到代码仓库后网站自动重新部署）；"
+               "网页本身不提供更新按钮；" +
                ("“分析新公告”可在线分析少量新公告（有次数限制）。" if online_model() else "现场抽取新公告需在本机运行（见 README）。"))
     if reports:
         with st.expander(f"最新日报 {reports[-1].stem[7:]}", icon=":material/article:"):

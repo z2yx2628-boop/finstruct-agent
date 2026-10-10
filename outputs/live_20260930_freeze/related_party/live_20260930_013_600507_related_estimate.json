@@ -1,0 +1,29 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2025-063",
+  "announcement_date": "2025-09-24",
+  "estimate_year": 2025,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "方大特钢科技股份有限公司",
+      "counterparty": "宁波萍钢贸易有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "采购进口矿等",
+      "goods_or_services": "进口矿等",
+      "estimated_amount": 10000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "采购进口矿等\n宁波萍钢\n0\n0",
+      "confidence": 0.95
+    }
+  ]
+}

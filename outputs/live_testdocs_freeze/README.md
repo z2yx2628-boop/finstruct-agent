@@ -1,0 +1,21 @@
+# 测试文档的冻结系统输出（测试结束后并入实时图谱）
+
+这些公告曾是关联交易 / 担保测试集和最终测试集，测试期间不进入任何图谱。测试已完成并报告，为使实时图谱覆盖各钢厂 2026 年度关联交易预计和担保额度，这里复用冻结系统在第 1 次测试运行中的输出（不是 Gold），错误照样保留。这些文档今后不得再用于任何评测。
+
+- related_party: experiments/related_test_r1/predictions/related_test_001_000932_annual_estimate.json
+- related_party: experiments/related_test_r1/predictions/related_test_002_600581_annual_estimate.json
+- related_party: experiments/related_test_r1/predictions/related_test_003_600581_group_scope.json
+- related_party: experiments/related_test_r1/predictions/related_test_004_600307_annual_estimate.json
+- guarantee: experiments/guarantee_test_r1/predictions/guarantee_test_001_000932_annual_limit.json
+- guarantee: experiments/guarantee_test_r1/predictions/guarantee_test_002_002110_annual_limit.json
+- guarantee: experiments/guarantee_test_r1/predictions/guarantee_test_003_600569_progress.json
+- guarantee: experiments/guarantee_test_r1/predictions/guarantee_test_005_600307_wholly_owned.json
+- guarantee: experiments/guarantee_test_r1/predictions/guarantee_test_006_600231_related_controlling_shareholder.json
+- guarantee: experiments/guarantee_test_r1/predictions/guarantee_test_007_600307_wholly_owned_2.json
+- related_party: outputs/final_001_000898_related_estimate/20260926T224529Z/prediction.json
+- related_party: outputs/final_002_600010_related_estimate/20260926T224807Z/prediction.json
+- related_party: outputs/final_004_000825_related_estimate/20260926T225102Z/prediction.json
+- related_party: outputs/final_005_600507_related_estimate/20260926T225447Z/prediction.json
+- related_party: outputs/final_006_002075_related_adjustment/20260926T225645Z/prediction.json
+- related_party: outputs/final_007_600782_related_execution/20260926T225841Z/prediction.json
+- related_party: outputs/final_008_600808_related_agreement/20260926T230035Z/prediction.json

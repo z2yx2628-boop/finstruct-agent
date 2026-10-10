@@ -1,0 +1,29 @@
+{
+  "security_code": "600408",
+  "security_name": "安泰集团",
+  "company_name": "山西安泰集团股份有限公司",
+  "announcement_number": "临2023－039",
+  "announcement_date": "2023-10-27",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "山西安泰集团股份有限公司",
+      "counterparty": "山西新泰钢铁有限公司（包括其子公司冶炼公司、富安新材）",
+      "relationship": "sister_company",
+      "transaction_category": "sell_goods",
+      "category_text": "电力销售",
+      "goods_or_services": "电力",
+      "estimated_amount": 32000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 1,
+      "evidence_text": "电力销售 \n55,000 万度 \n26,500.00 \n5,500.00 \n70,000 万度 32,000.00",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2024-036",
+  "announcement_date": "2024-03-28",
+  "total_guarantee_balance": 78.05,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 36.3,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京钢铁股份有限公司",
+      "guaranteed_party": "南京钢铁集团国际经济贸易有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 52000.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国进出口银行江苏省分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": "2024-03-25",
+      "end_date": "2025-03-25",
+      "period_text": "自每笔主合同项下的被担保债务到期之日起三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "2024年3月26日，公司与中国进出口银行江苏省分行（以下简称“进出口银行”）签署《最高额保证合同》，为南钢国贸与进出口银行发生的债务提供不超过52,000万元的连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

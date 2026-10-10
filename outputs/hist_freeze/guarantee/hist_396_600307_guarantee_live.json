@@ -1,0 +1,37 @@
+{
+  "security_code": "600307",
+  "security_name": "酒钢宏兴",
+  "company_name": "甘肃酒钢集团宏兴钢铁股份有限公司",
+  "announcement_number": "2021-015",
+  "announcement_date": "2021-04-30",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "甘肃酒钢集团宏兴钢铁股份有限公司",
+      "guaranteed_party": "酒钢集团榆中钢铁有限责任公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 6.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": "签发承兑汇票",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "2021年度",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": 99.77,
+      "source_page": 1,
+      "evidence_text": "公司本次为榆钢公司的金融机构贷款提供总额度为6 亿元的连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

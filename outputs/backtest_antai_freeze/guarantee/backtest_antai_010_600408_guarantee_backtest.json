@@ -1,0 +1,37 @@
+{
+  "security_code": "600408",
+  "security_name": "安泰集团",
+  "company_name": "山西安泰集团股份有限公司",
+  "announcement_number": "临2024—037",
+  "announcement_date": "2024-08-05",
+  "total_guarantee_balance": 28.42,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 154.45,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "山西安泰集团股份有限公司",
+      "guaranteed_party": "漳州龙泰供应链管理有限公司",
+      "relationship": "associate_or_joint_venture",
+      "is_related_transaction": true,
+      "guarantee_amount": 2.45,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "工商银行股份有限公司漳州龙江支行",
+      "guaranteed_debt_purpose": "日常运营及业务开展的资金需求",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自主合同项下的借款期限届满之次日起三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "被担保人：本公司的关联参股公司漳州龙泰供应链管理有限公司（以下简称“龙泰公司”）\n担保金额：本公司首次为龙泰公司提供担保，担保最高额为2.45 亿元。\n本次担保是否有反担保：否\n本次担保尚需提交公司股东大会审议",
+      "confidence": 0.98
+    }
+  ]
+}

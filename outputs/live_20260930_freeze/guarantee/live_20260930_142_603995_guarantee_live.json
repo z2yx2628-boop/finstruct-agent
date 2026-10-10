@@ -1,0 +1,37 @@
+{
+  "security_code": "603995",
+  "security_name": "甬金股份",
+  "company_name": "甬金科技集团股份有限公司",
+  "announcement_number": "2026-031",
+  "announcement_date": "2026-04-25",
+  "total_guarantee_balance": 466476.01,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 68.06,
+  "external_guarantee_balance": 0.0,
+  "external_guarantee_unit": "万元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "甬金科技集团股份有限公司",
+      "guaranteed_party": "甬金金属科技（越南）有限公司",
+      "relationship": "controlled_subsidiary",
+      "is_related_transaction": false,
+      "guarantee_amount": 1000.0,
+      "guarantee_unit": "万美元",
+      "guarantee_currency": "USD",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中国信托商业银行股份有限公司胡志明市分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "为主合同项下每笔债务履行期届满之日起二年，若主合同项下债务被划分为数部份(如分期提款)，且各部份的债务履行期不相同，则保证期间为最后一笔主债务履行期届满之日起二年，因主债务人违约，授信银行提前收回债权的，保证人应当相应提前承担保证责任。",
+      "has_counter_guarantee": true,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "甬金科技集团股份有限公司（下称“公司”）与中国信托商业银行股份有限公司胡志明市分行于2026 年4 月23 日签署了《最高额保证合同》（合同编号：CG-STVN2612-26），为控股子公司甬金金属科技（越南）有限公司（下称“越南甬金”）申请的借款提供最高不超过1,000 万美元（按当月1 号汇率中间价约合人民币6,902.50 万元）的连带责任保证担保。",
+      "confidence": 1.0
+    }
+  ]
+}

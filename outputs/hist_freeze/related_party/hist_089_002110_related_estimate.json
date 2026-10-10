@@ -1,0 +1,29 @@
+{
+  "security_code": "002110",
+  "security_name": "三钢闽光",
+  "company_name": "福建三钢闽光股份有限公司",
+  "announcement_number": "2020-073",
+  "announcement_date": "2020-12-29",
+  "estimate_year": 2020,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "福建三钢闽光股份有限公司",
+      "counterparty": "福建三钢国贸有限公司",
+      "relationship": "associate_or_joint_venture",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联人采购原、辅材料",
+      "goods_or_services": "进口煤、进口矿等原燃材料采购",
+      "estimated_amount": 1150000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": 957533.24,
+      "prior_year_actual_unit": "万元",
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人\n采购原、\n辅材料 \n福建三钢国贸\n有限公司 \n1,000,000 \n150,000 \n1,150,000 \n957,533.24",
+      "confidence": 0.98
+    }
+  ]
+}

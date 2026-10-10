@@ -3,14 +3,16 @@
 __pycache__/
 .pytest_cache/
 data/raw/
-outputs/
+# run directories stay local; the frozen extractions (inputs of every graph) are committed
+outputs/*
+!outputs/*_freeze/
 *.log
 tmp/
 .pytest_tmp/
 data/external/probe/
 data/external/financials/raw/
-data/external/financials/quarterly/
-data/external/market/
+# data/external/financials/quarterly/  (committed since 2026-10-10: the scheduled update and reproducibility need them)
+# data/external/market/  (committed since 2026-10-10: the scheduled update and reproducibility need them)
 *.exe
 
 # Office lock files

@@ -1,0 +1,37 @@
+{
+  "security_code": "000708",
+  "security_name": "中信特钢",
+  "company_name": "中信泰富特钢集团股份有限公司",
+  "announcement_number": "2021-002",
+  "announcement_date": "2021-01-05",
+  "total_guarantee_balance": 17.46,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 7.07,
+  "external_guarantee_balance": 16.0,
+  "external_guarantee_unit": "亿元",
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "中信泰富特钢集团股份有限公司",
+      "guaranteed_party": "上海电气集团钢管有限公司",
+      "relationship": "unrelated_party",
+      "is_related_transaction": false,
+      "guarantee_amount": 16.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": null,
+      "guaranteed_debt_purpose": "偿还股东上海电气（集团）总公司借款本息",
+      "start_date": null,
+      "end_date": null,
+      "period_text": "经公司股东大会审议后签署相关协议后的三年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 2,
+      "evidence_text": "公司拟按照所持股权比例为电气钢管提供总金额不超过16 亿元人民币的财务支持，具体形式为提供股权质押担保或直接提供财务资助，资金用于偿还股东上海电气（集团）总公司（以下简称“上海电气”）借款本息。",
+      "confidence": 0.95
+    }
+  ]
+}

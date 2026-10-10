@@ -1,0 +1,37 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2023-003",
+  "announcement_date": "2023-02-04",
+  "total_guarantee_balance": 33.55,
+  "total_guarantee_unit": "亿元",
+  "total_guarantee_net_asset_ratio": 36.27,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "亿元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "凌源钢铁国际贸易有限公司",
+      "guaranteed_party": "凌源钢铁股份有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 1.0,
+      "guarantee_unit": "亿元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "上海浦东发展银行股份有限公司沈阳分行",
+      "guaranteed_debt_purpose": "凌源钢铁股份有限公司炼钢产能置换建设项目",
+      "start_date": "2023-02-02",
+      "end_date": "2031-01-30",
+      "period_text": "主债务履行期届满之日后三年止",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 52.66,
+      "source_page": 2,
+      "evidence_text": "根据上述决议，2023年2月2日，公司全资子公司国贸公司与浦发银行沈阳分行签署了《保证合同》（合同编号:YB7101202328012701），为公司向浦发银行沈阳分行申请的金额为1亿元、期限为8年的《固定资产贷款合同》（合同编号：71012023280127）提供连带责任保证担保。贷款资金专项用于“凌源钢铁股份有限公司炼钢产能置换建设项目”。上述担保无需提供反担保。",
+      "confidence": 1.0
+    }
+  ]
+}

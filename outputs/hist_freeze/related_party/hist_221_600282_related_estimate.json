@@ -1,0 +1,29 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2023-080",
+  "announcement_date": "2023-08-26",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "南京钢铁股份有限公司",
+      "counterparty": "上海钢银（含子公司）",
+      "relationship": "other_related_party",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售产品、商品，提供服务",
+      "goods_or_services": "钢材",
+      "estimated_amount": 6.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人\n销售产\n品、商品，\n提供服务 \n上海 \n钢银（含\n子公司） \n钢材 \n市场 \n定价 \n2 \n4 \n6",
+      "confidence": 0.95
+    }
+  ]
+}

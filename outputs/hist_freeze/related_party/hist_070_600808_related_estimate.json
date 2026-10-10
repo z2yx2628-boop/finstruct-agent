@@ -1,0 +1,29 @@
+{
+  "security_code": "600808",
+  "security_name": "马钢股份",
+  "company_name": "马鞍山钢铁股份有限公司",
+  "announcement_number": "临2020-016",
+  "announcement_date": "2020-05-07",
+  "estimate_year": 2020,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": true,
+  "transactions": [
+    {
+      "listed_company": "马鞍山钢铁股份有限公司",
+      "counterparty": "马钢（集团）控股有限公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "receive_services",
+      "category_text": "接受基建技改工程服务",
+      "goods_or_services": null,
+      "estimated_amount": 2700000000.0,
+      "estimated_unit": "元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "双方同意调整公司接受马钢集团及其附属公司基建技改工程服务的金额上限，2020 年金额上限由人民币1,100,000,000 元增加至人民币2,700,000,000 元；2021 年金额上限由1,000,000,000 元增加至人民币1,900,000,000 元。",
+      "confidence": 0.98
+    }
+  ]
+}

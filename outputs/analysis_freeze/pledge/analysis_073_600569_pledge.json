@@ -1,0 +1,29 @@
+{
+  "security_code": "600569",
+  "security_name": "安阳钢铁",
+  "announcement_number": "2025－017",
+  "company_name": "安阳钢铁股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "安钢集团",
+      "shares": 54000.0,
+      "shares_unit": "万股",
+      "shareholder_holding_ratio": 27.94,
+      "total_share_capital_ratio": 18.8,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-03-10",
+      "pledge_end_date": null,
+      "pledge_end_condition": "办理解除质押登记手续为止",
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中原银行股份有限公司安阳分行",
+      "purpose": "补充流动资金",
+      "source_page": 1,
+      "evidence_text": "股东\n名称 \n是否\n为控\n股股\n东 \n本次质 \n押股数 \n(万股) \n是否\n为限\n售股 \n是否补\n充质押 \n质  押 \n起始日 \n质  押 \n到期日 \n质权人 \n占其所持\n股份比例 \n占公司\n总股本\n比例 \n质押融\n资资金\n用途 \n安钢\n集团 \n是 \n54,000  \n否 \n否 \n2025 年\n3 月10\n日 \n办理解除\n质押登记\n手续为止 \n中原银行股\n份有限公司\n安阳分行 \n27.94% \n18.80% \n补充流\n动资金",
+      "confidence": 0.98
+    }
+  ]
+}

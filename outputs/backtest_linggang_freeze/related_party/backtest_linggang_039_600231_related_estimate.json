@@ -1,0 +1,45 @@
+{
+  "security_code": "600231",
+  "security_name": "凌钢股份",
+  "company_name": "凌源钢铁股份有限公司",
+  "announcement_number": "临2023-069",
+  "announcement_date": "2023-10-28",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "凌源钢铁股份有限公司",
+      "counterparty": "德邻陆港供应链服务有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联人购买材料",
+      "goods_or_services": "矿粉",
+      "estimated_amount": 8000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人购\n买材料 \n德邻陆港 \n\n\n8,000 \n8,000 \n注1",
+      "confidence": 0.95
+    },
+    {
+      "listed_company": "凌源钢铁股份有限公司",
+      "counterparty": "凌源钢铁集团有限责任公司",
+      "relationship": "parent_or_controlling_shareholder",
+      "transaction_category": "provide_services",
+      "category_text": "向关联人提供的劳务",
+      "goods_or_services": "资产和业务委托管理服务",
+      "estimated_amount": 34.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联人提\n供的劳务 \n凌钢集团 \n5,099 \n3,046 \n34 \n5,133 \n注2",
+      "confidence": 0.95
+    }
+  ]
+}

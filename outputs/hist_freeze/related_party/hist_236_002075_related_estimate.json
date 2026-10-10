@@ -1,0 +1,29 @@
+{
+  "security_code": "002075",
+  "security_name": "沙钢股份",
+  "company_name": "江苏沙钢股份有限公司",
+  "announcement_number": "临2023-058",
+  "announcement_date": "2023-12-19",
+  "estimate_year": 2023,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "江苏沙钢股份有限公司",
+      "counterparty": "SHAGANG SOUTH-ASIA (HONG KONG) TRADING CO., LTD.",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "向关联方采购原材料",
+      "goods_or_services": "球团矿",
+      "estimated_amount": 7000.0,
+      "estimated_unit": "万元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 2,
+      "evidence_text": "向关联方采购\n原材料 \n沙钢南亚（香港）\n贸易有限公司 \n球团矿 \n市场价 \n7,000",
+      "confidence": 0.95
+    }
+  ]
+}

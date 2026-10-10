@@ -1,0 +1,37 @@
+{
+  "security_code": "600507",
+  "security_name": "方大特钢",
+  "company_name": "方大特钢科技股份有限公司",
+  "announcement_number": "临2022-086",
+  "announcement_date": "2022-09-29",
+  "total_guarantee_balance": 381400.0,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 40.29,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_limit",
+      "guarantor": "方大特钢科技股份有限公司",
+      "guaranteed_party": "江西方大特钢汽车悬架集团有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 9900.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "北京银行股份有限公司南昌青山湖支行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "一年",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": 60.15,
+      "source_page": 1,
+      "evidence_text": "公司为全资子公司江西方大特钢汽车悬架集团有限公司（以下简称“悬架集团”）在金融机构综合授信人民币9,900 万元提供担保，具体如下：\n被担保方 \n银行 \n综合授信金额（万元） 担保期限 \n悬架集团 北京银行股份有限公司南昌青山湖支行 \n9,900 \n一年",
+      "confidence": 1.0
+    }
+  ]
+}

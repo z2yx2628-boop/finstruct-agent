@@ -1,0 +1,37 @@
+{
+  "security_code": "000717",
+  "security_name": "韶钢松山",
+  "company_name": "广东韶钢松山股份有限公司",
+  "announcement_number": "2019－61",
+  "announcement_date": "2019-10-12",
+  "total_guarantee_balance": null,
+  "total_guarantee_unit": null,
+  "total_guarantee_net_asset_ratio": null,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_released",
+      "guarantor": "广东韶钢松山股份有限公司",
+      "guaranteed_party": "宝钢特钢韶关有限公司",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 5336.0,
+      "guarantee_unit": "万元",
+      "guarantee_currency": "CNY",
+      "guarantee_type": "joint_and_several",
+      "creditor": "韶关市金财投资集团有限公司",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "自签订担保协议之日起至2021年9月21日",
+      "has_counter_guarantee": null,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "广东韶钢松山股份有限公司（以下简称“公司”、“本公司”）于2018年8月27日召开第七届董事会2018年第六次临时会议审议通过了《关于为全资子公司提供担保的议案》，同意公司为全资子公司宝钢特钢韶关有限公司（以下简称“宝特韶关”）与债权人韶关市金财投资集团有限公司（以下简称“韶关金财”）签署的《技术改造专项资金投资协议》（简称“《投资协议》”）提供连带责任保证担保，约定担保金额为5336万元，担保期间自签订担保协议之日起至2021年9月21日。",
+      "confidence": 1.0
+    }
+  ]
+}
