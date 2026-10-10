@@ -1,11 +1,16 @@
+from pathlib import Path
+
 import streamlit as st
 
+BRAND = Path(__file__).resolve().parent / "assets" / "brand"
 
 st.set_page_config(
     page_title="钢铁上市公司上下游冲击传导与经营风险智能体 · 链证 ChainProof",
-    page_icon=":material/account_tree:",
+    page_icon=str(BRAND / "favicon_192.png"),
     layout="wide",
 )
+# the ChainProof logo at the left of the top navigation bar (square icon when space is short)
+st.logo(str(BRAND / "chainproof_horizontal_light.png"), icon_image=str(BRAND / "chainproof_icon.png"), size="large")
 
 # Five pages in the order a first-time reader follows the story (flat links in the top bar), and the
 # detailed tools behind them in one dropdown. Streamlit shows pages under the "" section as plain links.
