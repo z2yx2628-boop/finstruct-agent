@@ -120,8 +120,20 @@ def coverage(chain: Path, snapshot: Path, code: str) -> dict:
             "tier": fragility.get(code, {}).get("tier", ""), "as_of": as_of}
 
 
+@lru_cache(maxsize=1)
+def _listed_names() -> dict[str, str]:
+    """Security code -> short name for every company we monitor (42 chain companies + extension groups), so a
+    company outside the entity table (e.g. a steel company scanned only for credit events) shows a name, not a code."""
+    out = {}
+    for path in (ROOT / "data" / "manifests" / "extension_universe.csv", ROOT / "data" / "manifests" / "steel_universe.csv"):
+        out.update({r["security_code"]: r["security_name"] for r in _read(path) if r.get("security_code")})
+    return out
+
+
 def name_of(node: str, names: dict[str, str]) -> str:
-    return names.get(node, node[2:] if node.startswith(("N_", "S_")) else node)
+    if node in names:
+        return names[node]
+    return _listed_names().get(node) or (node[2:] if node.startswith(("N_", "S_")) else node)
 
 
 def to_dot(ranked: list[dict], fragility: dict[str, dict], names: dict[str, str], highlight: int | None = None) -> str:
