@@ -102,6 +102,23 @@ def issuer_node(doc: dict) -> Resolution:
     return resolve(doc.get("company_name") or doc.get("security_name") or code)
 
 
+AGREEMENTS = ROOT / "data" / "manifests" / "agreement_periods.csv"
+
+
+def agreement_periods() -> dict[str, str]:
+    """frozen JSON path -> end of the framework agreement it states (scripts/scan_agreement_periods.py)."""
+    global _AGREEMENTS
+    if _AGREEMENTS is None:
+        _AGREEMENTS = {}
+        if AGREEMENTS.exists():
+            with AGREEMENTS.open(encoding="utf-8", newline="") as f:
+                _AGREEMENTS = {r["doc"]: r["valid_to"] for r in csv.DictReader(f)}
+    return _AGREEMENTS
+
+
+_AGREEMENTS: dict[str, str] | None = None
+
+
 def doc_kind(doc: dict) -> str:
     if "transactions" in doc:
         return "related_party"
@@ -156,7 +173,8 @@ def edges_from(doc: dict, source_doc: str) -> tuple[list[Edge], int]:
             edge_type, issuer_supplies = TRADE.get(t.get("transaction_category") or "other", ("other", True))
             other = resolve(t["counterparty"], issuer.entity_id, rel)
             src, dst = (issuer, other) if issuer_supplies else (other, issuer)
-            frm, to = related_window(doc.get("estimate_year"), common["announcement_date"])
+            frm, to = related_window(doc.get("estimate_year"), common["announcement_date"],
+                                     agreement_periods().get(source_doc, ""))
             out.append(_edge(edge_type, src, dst, relationship=rel, status="estimate",
                              valid_from=frm, valid_to=to,
                              amount_wan=to_wan(t.get("estimated_amount"), t.get("estimated_unit")),

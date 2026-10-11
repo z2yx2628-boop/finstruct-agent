@@ -127,6 +127,7 @@ def main() -> None:
     print("3/5 重建实时图谱 …")
     sources = [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / "outputs").glob("*_freeze"))
                if p.name.startswith(("analysis", "live_", "manual"))]
+    run("scripts/scan_agreement_periods.py", "--src", *sources)
     run("scripts/build_chain_inputs.py", "--src", *sources, "--out", "data/chain/live")
 
     print("4/5 更新承压评分 …")
