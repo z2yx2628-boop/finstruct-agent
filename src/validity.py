@@ -56,10 +56,17 @@ def guarantee_window(event: dict, announced: str) -> tuple[str, str]:
     return window(event.get("start_date"), event.get("end_date"), announced, DEFAULT_MONTHS.get(kind, 36))
 
 
-def related_window(estimate_year, announced: str) -> tuple[str, str]:
+def related_window(estimate_year, announced: str, agreement_end: str = "") -> tuple[str, str]:
+    """In force until the end of the estimate year; a multi-year framework agreement stated in the
+    same announcement (data/manifests/agreement_periods.csv) extends it to the agreement's end.
+    The agreement can only extend the window, never shorten it."""
     if estimate_year:
-        return announced, f"{int(estimate_year)}-12-31"
-    return window(None, None, announced, DEFAULT_MONTHS["related_estimate"])
+        frm, to = announced, f"{int(estimate_year)}-12-31"
+    else:
+        frm, to = window(None, None, announced, DEFAULT_MONTHS["related_estimate"])
+    if valid(agreement_end) and agreement_end > to:
+        to = agreement_end
+    return frm, to
 
 
 def maintenance_window(event: dict, announced: str) -> tuple[str, str]:
