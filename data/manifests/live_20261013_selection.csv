@@ -1,0 +1,4 @@
+holdout_id,security_code,security_name,announcement_date,target_pattern,announcement_title,source_url,notes
+live_20261013_001,600282,南钢股份,2026-10-13,guarantee_live,关于为全资子公司提供担保的进展公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-10/2026-10-13/12636989.PDF,sina doc 12636989; daily update
+live_20261013_002,002443,金洲管道,2026-10-13,pledge,关于控股股东部分股份质押展期的公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-10/2026-10-13/12636981.PDF,sina doc 12636981; daily update
+live_20261013_003,002541,鸿路钢构,2026-10-13,guarantee_live,关于为子公司担保事项的进展公告,http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-10/2026-10-13/12638359.PDF,sina doc 12638359; daily update

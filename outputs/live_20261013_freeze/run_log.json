@@ -1,0 +1,24 @@
+{
+  "runs": {
+    "live_20261013_001_600282_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "failed",
+      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-bc1856c6-e32d-9ddf-8472-803d8195a4a0', 'request_id': 'bc1856c6-e32d-9ddf-8472-803d8195a4a0'}"
+    },
+    "live_20261013_002_002443_pledge.pdf": {
+      "task": "pledge",
+      "status": "failed",
+      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-96a44c15-9cca-99d2-8830-4979515613ab', 'request_id': '96a44c15-9cca-99d2-8830-4979515613ab'}"
+    },
+    "live_20261013_003_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "failed",
+      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-31ff35a7-8d30-95dd-9935-9ad948cb67a1', 'request_id': '31ff35a7-8d30-95dd-9935-9ad948cb67a1'}"
+    }
+  },
+  "commit": "7113e2551bd07ed158ff761b04b73997a0c2c4ae",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "",
+  "started_at": "2026-10-13T03:08:52.414408+00:00",
+  "completed_at": "2026-10-13T03:08:55.639189+00:00"
+}
