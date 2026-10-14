@@ -11,6 +11,7 @@ from src.fragility_view import events_after_report, explain, guarantee_evidence,
 from src.network_view import edge_index, filter_paths, key_paths, name_of, path_rows, snapshot_equity  # noqa: E402
 from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
 from src.product_layer import exposure_as_of, products  # noqa: E402
+from src.report_signals import report_signals  # noqa: E402
 from src.profile import company_signals, fragility_rows, headline, peer_rank, snapshots, split_paths  # noqa: E402
 from src.ui import TIER_BADGE, UNIFIED_PAGE, deposit_block, next_step, page_header, verdict  # noqa: E402
 
@@ -125,6 +126,20 @@ with tab_own:
         if ev:
             st.markdown("**财报后的风险公告**（会使等级下调一档）")
             st.dataframe(pd.DataFrame(ev), hide_index=True, width="stretch")
+        rs = report_signals(code, snap)
+        if rs["period"]:
+            p = rs["period"]
+            st.markdown(f"**财报分析**（最近一期 {p[:4]} 年{ {'0331': '一季报', '0630': '半年报', '0930': '三季报', '1231': '年报'}[p[4:]] }，"
+                        f"法定披露截止 {rs['available_by']}；同比为累计值，环比为单季度值；亏损时按绝对值计算，负数表示恶化）")
+            fmt = {"本期累计（亿元）": "{:.2f}", "上年同期（亿元）": "{:.2f}", "单季度（亿元）": "{:.2f}",
+                   "同比": "{:+.1%}", "单季度环比": "{:+.1%}"}
+            st.dataframe(pd.DataFrame(rs["rows"]).style.format(fmt, na_rep="—"), hide_index=True, width="stretch")
+            if rs["signals"]:
+                for s_ in rs["signals"]:
+                    st.warning(f"**{s_['kind']}**：{s_['text']}", icon=":material/report:")
+            else:
+                st.caption("未发现财报异常信号（非经常性损益占比 ≥ 30%、盈利但经营现金流为负或不足净利润 50%、会计政策或估计变更公告）。")
+            st.caption("财报异常信号是核查提示，不计入承压评分；阈值为筛查规则，未经校准。")
         st.caption("核对原始定期报告（新浪财经公告列表）")
         links = st.columns(4)
         for col, (label, url) in zip(links, report_links(code).items()):
