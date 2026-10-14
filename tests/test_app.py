@@ -93,15 +93,15 @@ def test_app_loads_without_a_result():
     assert not app.exception
     assert app.title[0].value == "钢铁上市公司上下游冲击传导与经营风险智能体"  # 今日看板 is the home page
 
-    app.switch_page("pages/3_一键分析.py").run()
+    app.switch_page("views/3_一键分析.py").run()
     assert not app.exception
     assert app.title[0].value == "分析新公告"
     assert app.button(key="run_upload").disabled is True
 
 
 def test_every_page_renders_without_error():
-    for page in ("pages/2_承压评分.py", "pages/4_风险路径图.py", "pages/5_上下游情景.py",
-                 "pages/6_验证与证据.py", "pages/7_企业档案.py", "pages/8_风险传导总图.py"):
+    for page in ("views/2_承压评分.py", "views/4_风险路径图.py", "views/5_上下游情景.py",
+                 "views/6_验证与证据.py", "views/7_企业档案.py", "views/8_风险传导总图.py"):
         app = AppTest.from_file(APP_PATH, default_timeout=30).run()
         app.switch_page(page).run()
         assert not app.exception, (page, app.exception)
@@ -109,7 +109,7 @@ def test_every_page_renders_without_error():
 
 def test_app_displays_event_summary():
     app = AppTest.from_file(APP_PATH, default_timeout=10).run()
-    app.switch_page("pages/1_公告结构化.py")
+    app.switch_page("views/1_公告结构化.py")
     app.session_state["app_schema_version"] = 2
     app.session_state["pipeline_result"] = make_result()
 
@@ -125,8 +125,8 @@ def test_app_displays_event_summary():
 
 def test_public_mode_renders_every_page_without_update_buttons(monkeypatch):
     monkeypatch.setenv("CHAINPROOF_PUBLIC", "1")
-    for page in ("pages/0_今日看板.py", "pages/1_公告结构化.py", "pages/2_承压评分.py", "pages/3_一键分析.py",
-                 "pages/4_风险路径图.py", "pages/5_上下游情景.py", "pages/6_验证与证据.py", "pages/7_企业档案.py", "pages/8_风险传导总图.py"):
+    for page in ("views/0_今日看板.py", "views/1_公告结构化.py", "views/2_承压评分.py", "views/3_一键分析.py",
+                 "views/4_风险路径图.py", "views/5_上下游情景.py", "views/6_验证与证据.py", "views/7_企业档案.py", "views/8_风险传导总图.py"):
         app = AppTest.from_file(APP_PATH, default_timeout=30).run()
         app.switch_page(page).run()
         assert not app.exception, (page, app.exception)
@@ -135,9 +135,9 @@ def test_public_mode_renders_every_page_without_update_buttons(monkeypatch):
 
 
 def test_story_pages_end_with_a_next_step():
-    for page, key in (("pages/0_今日看板.py", "home_next"), ("pages/7_企业档案.py", "pf_next"),
-                      ("pages/8_风险传导总图.py", "u_next"), ("pages/3_一键分析.py", "an_next"),
-                      ("pages/6_验证与证据.py", "val_next")):
+    for page, key in (("views/0_今日看板.py", "home_next"), ("views/7_企业档案.py", "pf_next"),
+                      ("views/8_风险传导总图.py", "u_next"), ("views/3_一键分析.py", "an_next"),
+                      ("views/6_验证与证据.py", "val_next")):
         app = AppTest.from_file(APP_PATH, default_timeout=30).run()
         app.switch_page(page).run()
         assert not app.exception, (page, app.exception)
@@ -147,6 +147,6 @@ def test_story_pages_end_with_a_next_step():
 def test_a_company_is_carried_into_the_risk_map():
     app = AppTest.from_file(APP_PATH, default_timeout=30).run()
     app.session_state["_goto_unified"] = {"code": "600231", "snapshot": None}
-    app.switch_page("pages/8_风险传导总图.py").run()
+    app.switch_page("views/8_风险传导总图.py").run()
     assert not app.exception
     assert app.selectbox(key="u_company").value == "600231"

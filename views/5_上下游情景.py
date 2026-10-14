@@ -182,7 +182,7 @@ else:
     pick = b1.selectbox("查看衔接路径", [r["code"] for r in ready], format_func=lambda c: next(r["name"] for r in ready if r["code"] == c))
     if b2.button("在传导图上看每一步的公告原文", icon=":material/account_tree:"):
         st.session_state["_goto_network"] = {"chain": "data/chain/live", "snapshot": snap, "company": pick}
-        st.switch_page("pages/4_风险路径图.py")
+        st.switch_page("views/4_风险路径图.py")
     st.dataframe(pd.DataFrame(onward[pick]), hide_index=True, width="stretch")
 
 with st.expander("每条关系的依据", expanded=False):

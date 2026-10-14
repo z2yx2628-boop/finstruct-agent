@@ -73,9 +73,9 @@ def main(pages: bool) -> int:
     if pages:
         from streamlit.testing.v1 import AppTest
         app_path = ROOT / "app.py"
-        for page in sorted((ROOT / "pages").glob("[0-9]_*.py")):
+        for page in sorted((ROOT / "views").glob("[0-9]_*.py")):
             app = AppTest.from_file(str(app_path), default_timeout=60).run()
-            app.switch_page(f"pages/{page.name}").run()
+            app.switch_page(f"views/{page.name}").run()
             ok = not app.exception
             print(f"{'✓' if ok else '✗'} 页面 {page.name}")
             if not ok:

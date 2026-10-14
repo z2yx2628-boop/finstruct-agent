@@ -129,7 +129,7 @@ with tab_own:
         links = st.columns(4)
         for col, (label, url) in zip(links, report_links(code).items()):
             col.link_button(label, url, width="stretch")
-        st.page_link("pages/2_承压评分.py", label="完整评分拆解、敏感性与数据来源", icon=":material/monitoring:")
+        st.page_link("views/2_承压评分.py", label="完整评分拆解、敏感性与数据来源", icon=":material/monitoring:")
 
 # ---------------------------------------------------------------- related-party risk
 with tab_links:
@@ -149,7 +149,7 @@ with tab_links:
     if mine["incoming"] or mine["outgoing"] or mine["absorbed"]:
         if st.button("在传导图上查看每一步的公告原文", icon=":material/account_tree:"):
             st.session_state["_goto_network"] = {"chain": chain, "snapshot": snap, "company": code}
-            st.switch_page("pages/4_风险路径图.py")
+            st.switch_page("views/4_风险路径图.py")
 
 # ---------------------------------------------------------------- customers and suppliers: how much, what share, how long
 with tab_chain:
@@ -233,7 +233,7 @@ with tab_products:
             hide_index=True, width="stretch")
         st.caption(f"B 级：公司年报披露的分产品收入（{exposure['period'][:4]} 年报，东方财富主营构成）。"
                    f"价格涨跌 ≥ {THRESHOLD:.0%} 标为冲击。两次预注册检验方向一致但不显著，只作情景提示，不计入风险得分。")
-        st.page_link("pages/5_上下游情景.py", label="模拟一次价格或停产冲击", icon=":material/swap_horiz:")
+        st.page_link("views/5_上下游情景.py", label="模拟一次价格或停产冲击", icon=":material/swap_horiz:")
 
 # ---------------------------------------------------------------- announcement signals
 with tab_events:
@@ -243,7 +243,7 @@ with tab_events:
         st.caption(f"来自{CHAINS[chain]}中已抽取的公告，截至评估日 {snap}，最新在前，最多 12 条。")
     else:
         st.caption(f"{CHAINS[chain]}中没有 {name} 在评估日前的公告信号。")
-    st.page_link("pages/3_一键分析.py", label="分析这家企业的一份新公告", icon=":material/bolt:")
+    st.page_link("views/3_一键分析.py", label="分析这家企业的一份新公告", icon=":material/bolt:")
 
 # ---------------------------------------------------------------- where next
 next_step(f"看 {name} 发生风险时，可能沿集团信用通道和供需通道传导至哪些企业", "风险传导", UNIFIED_PAGE, key="pf_next",
