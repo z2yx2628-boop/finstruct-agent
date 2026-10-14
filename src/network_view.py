@@ -46,7 +46,7 @@ def key_paths(chain: Path, snapshot: Path) -> tuple[list[dict], dict[str, dict],
     return ranked, fragility, names
 
 
-SOURCE_KIND = {"weak": "抗冲击能力弱（财务与市场）", "signal": "公告风险事件", "opaque": "财务不公开的被担保方"}
+SOURCE_KIND = {"weak": "财务脆弱性较高（财务与市场）", "signal": "公告风险事件", "opaque": "财务不公开的被担保方"}
 SEVERITY_CN = {"high": "高", "medium": "中", "low": "低"}
 SIGNAL_CN = {"credit_event": "已发生的信用事件", "credit_exposure": "大额对外担保（或有负债）",
              "share_pledge": "股东股权质押", "supply_disruption": "停产或供应中断", "capacity_reduction": "减产或检修"}
@@ -174,7 +174,7 @@ def to_dot(ranked: list[dict], fragility: dict[str, dict], names: dict[str, str]
 # ---------------------------------------------------------------- interactive page helpers
 TIER_LABEL = {"weak": "弱", "medium": "中", "strong": "强", "unknown": "未评分"}
 SEVERITY_LABEL = {"high": "高", "medium": "中", "low": "低"}
-DECISION_LABEL = {"continue": "继续传导", "weakened": "继续传导（减弱）", "absorbed": "被吸收，停止",
+DECISION_LABEL = {"continue": "继续传导", "weakened": "继续传导（减弱）", "absorbed": "不再扩展（风险可能受到缓释）",
                   "immaterial": "金额不重大，停止", "end": "已减弱至最低，停止"}
 
 

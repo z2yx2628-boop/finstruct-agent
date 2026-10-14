@@ -27,7 +27,7 @@ def test_fangda_negative_case_is_not_an_alert():
     rows, row, mine, _ = profile("600507", "2025-02-28", "data/chain/analysis_v1_fix1")
     assert not mine["incoming"] and not mine["outgoing"]            # the only path is absorbed (score 0)
     level, text = headline(row["security_name"], row, 0, 0, len(mine["absorbed"]))
-    assert level == "success" and "被吸收" in text
+    assert level == "success" and "缓释" in text
     assert peer_rank(rows, "600507") == (23, 24)
 
 

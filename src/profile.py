@@ -100,6 +100,6 @@ def headline(name: str, row: dict | None, n_in: int, n_out: int, n_absorbed: int
         links.append(f"{n_out} 条由它发出")
     rel = "；".join(links) if links else "没有需要关注的关联或担保传导路径"
     if n_absorbed:
-        rel += f"（另有 {n_absorbed} 条路径得分为 0：途经企业承压为强，风险被吸收）"
+        rel += f"（另有 {n_absorbed} 条路径得分为 0：途经企业承压为强，路径不再扩展，风险可能受到缓释）"
     level = "error" if tier == "weak" else "warning" if (tier == "medium" or n_in or n_out) else "success"
     return level, f"{name}：{own}；{rel}。"

@@ -124,7 +124,7 @@ def ask_box(key: str) -> None:
     if picked and picked != st.session_state.get(last):
         st.session_state[qkey] = picked
         st.session_state[last] = picked
-    question = st.text_input("你的问题", key=qkey, placeholder="例如：凌钢股份出事会传给谁？")
+    question = st.text_input("你的问题", key=qkey, placeholder="例如：凌钢股份出现风险会波及哪些企业？")
     if question.strip():
         with st.spinner("正在选择工具并计算 …"):
             result = run_question(question)

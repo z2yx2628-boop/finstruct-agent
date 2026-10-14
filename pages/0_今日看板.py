@@ -15,10 +15,10 @@ from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
 from src.ui import (UNIFIED_PAGE, glossary, next_step, online_model, open_unified, page_header,  # noqa: E402
                     profile_button, public_mode, verdict)
 
-page_header("钢铁上市公司上下游冲击传导与经营风险智能体", ":material/dashboard:", "今天谁可能先出问题？会传给谁？",
+page_header("钢铁上市公司上下游冲击传导与经营风险智能体", ":material/dashboard:", "今日风险源与传导路径",
             step=1, fresh=True, subtitle="链证 ChainProof · 钢铁产业链风险传导预警")
-glossary(intro="链证分两段预警：**① 风险源预警**——谁可能先出问题（公告中的风险事件 + 抗冲击能力评分）；"
-               "**② 风险传导预警**——它的问题会沿担保、关联交易和集团关系传给谁、涉及多少钱。"
+glossary(intro="链证分两段预警：**① 风险源预警**——可能率先出现风险的企业（公告中的风险事件 + 财务脆弱性评分）；"
+               "**② 风险传导预警**——风险可能沿担保、关联交易和集团关系传导至哪些企业、涉及多少金额。"
                "页面上的每个结论都能点回公告原文和页码。  \n"
                "**建议阅读顺序**（顶部导航从左到右）：① 今日预警 → ② 企业档案 → ③ 风险传导 → ④ 分析新公告 → ⑤ 可信度。"
                "“明细工具”里是每一层的完整表格与参数，供深入核查。  \n"
@@ -77,17 +77,17 @@ if facts:
     said.append(f"**{len(facts)} 起已发生的风险事件**（" + "；".join(f"{r['name']}：{r['kind_label']}"
                                                      for r in facts[:2]) + ("等" if len(facts) > 2 else "") + "）")
 said.append(f"**{len(exposures)} 个风险敞口**" if exposures else "没有新的风险敞口")
-said.append(f"**{len(weak)} 家企业抗冲击能力弱**" + (f"（新进入 {len(new_weak)} 家）" if new_weak else ""))
+said.append(f"**{len(weak)} 家企业财务脆弱性较高**" + (f"（新进入 {len(new_weak)} 家）" if new_weak else ""))
 top = key_now[0] if key_now else None
-tail = f"；得分最高的传导路径是 **{top['path']}**" if top else "；暂无得分为正的传导路径"
+tail = f"；优先核查的传导路径是 **{top['path']}**" if top else "；暂无得分为正的传导路径"
 verdict("error" if facts or new_weak or new_paths else "warning" if weak or key_now else "success",
         f"**今日结论**（{day}）：" + "，".join(said) + tail + "。")
 
 # ---------------------------------------------------------------- the four questions, left to right
-steps = [("① 发生了什么", len(facts), "已发生事件", "公告里已公开的事实：冻结、风险警示、违约、停产等"),
-         ("② 谁有敞口", len(exposures), "风险敞口", "别人出事才会变成损失：担保、质押、不透明的借款方"),
-         ("③ 扛不扛得住", len(weak), "模型预警", "抗冲击能力弱：负债、偿债、现金流、盈利、股价、担保"),
-         ("④ 会传给谁", len(key_now), None, "沿担保、关联交易、同集团关系传给其他上市公司")]
+steps = [("① 已发生事件", len(facts), "已发生事件", "公告中已公开的事实：冻结、风险警示、违约、停产等"),
+         ("② 风险敞口", len(exposures), "风险敞口", "关联方违约时可能转化为损失：担保、质押、财务不透明的被担保方"),
+         ("③ 财务脆弱性", len(weak), "模型预警", "承压评分为弱：杠杆、偿债、现金流、盈利、市场、担保"),
+         ("④ 传导路径", len(key_now), None, "沿担保、关联交易、同集团关系可能传导至其他上市公司")]
 cols = st.columns([1, 0.08, 1, 0.08, 1, 0.08, 1], vertical_alignment="center")
 for k, (title, n, nature, note) in enumerate(steps):
     with cols[2 * k].container(border=True, height=150):
@@ -101,10 +101,10 @@ reports = sorted((ROOT / "data" / "live").glob("report_*.md"))
 # ---------------------------------------------------------------- sources (stage 1) and where they go (stage 2)
 left, right = st.columns([1.05, 1], gap="large")
 with left:
-    st.subheader("风险源：谁可能先出问题", divider="red")
+    st.subheader("风险源：可能率先出现风险的企业", divider="red")
     for nature, rows, empty in (("已发生事件", facts, "评估日前 12 个月内，公告中没有已发生的信用事件或停产。"),
                                 ("风险敞口", exposures, "没有中、高严重度的风险敞口。")):
-        st.markdown(f"{badge(nature)}　" + ("公告中已公开的事实" if nature == "已发生事件" else "别人出事才会变成损失的承诺"))
+        st.markdown(f"{badge(nature)}　" + ("公告中已公开的事实" if nature == "已发生事件" else "关联方违约时可能转化为损失的或有义务"))
         if not rows:
             st.caption(empty)
         for i, r in enumerate(rows[:5]):
@@ -116,9 +116,9 @@ with left:
                 if r["listed"] and r["node"].isdigit():
                     with b:
                         profile_button(r["node"], "档案", key=f"home_src_{nature}_{i}", width="stretch")
-    st.markdown(f"{badge('模型预警')}　尚未出事，但抗冲击能力弱（0–100 分，≥ 60 为弱，越高越脆弱）")
+    st.markdown(f"{badge('模型预警')}　尚未发生信用事件，但财务脆弱性较高（0–100 分，≥ 60 为弱，越高越脆弱）")
     if not weak:
-        st.caption("今天没有抗冲击能力弱的企业。")
+        st.caption("今天没有财务脆弱性较高的企业。")
     for r in weak:
         with st.container(border=True):
             a, b = st.columns([5, 1.3], vertical_alignment="center")
@@ -128,8 +128,8 @@ with left:
             with b:
                 profile_button(r["security_code"], "档案", key=f"home_{r['security_code']}", width="stretch")
 with right:
-    st.subheader("传导：会传给谁", divider="violet")
-    st.caption("从左边的风险源出发，沿担保、关联交易和集团关系推出的得分最高的路径；标签是起点的性质")
+    st.subheader("传导：优先核查的路径", divider="violet")
+    st.caption("从左边的风险源出发，沿担保、关联交易和集团关系按当前规则排序的优先核查路径（得分不等于损失大小）；标签是起点的性质")
     if not key_now:
         st.caption("没有需要关注的传导路径。")
     for i, r in enumerate(key_now[:6]):
@@ -146,7 +146,7 @@ with right:
     st.markdown(f"{badge('情景假设')}　产品价格（近 {WINDOW} 个交易日，加粗为涨跌 ≥ {THRESHOLD:.0%}）")
     st.caption("；".join(f"{'**' if m['shock'] else ''}{m['product']} {m['ret']:+.1%}{'**' if m['shock'] else ''}" for m in moves)
                or "无价格数据")
-    st.page_link("pages/5_上下游情景.py", label="假设一次价格、停产或政策冲击，看会波及谁", icon=":material/swap_horiz:")
+    st.page_link("pages/5_上下游情景.py", label="情景：价格、停产或政策冲击可能波及的企业", icon=":material/swap_horiz:")
 
 # ---------------------------------------------------------------- trust (one line of numbers; details on 可信度)
 st.subheader("凭什么可信", divider="gray")
@@ -164,7 +164,7 @@ t3.metric("风险传导 · 预注册回测", "3 个案例", help="安泰（标�
 t4.metric("上下游产品层 · 预注册检验", "2 次未显著", help="利润检验未通过；股价检验方向一致但 p = 0.28。因此只作情景提示")
 st.caption("股份质押保留为辅助风险信号，不作为主宣传指标；其独立盲测事件 F1 为 73.85%。全部验证结果（包括没通过的）见顶部“可信度”。")
 
-next_step("选一家企业，看它自身扛不扛得住、风险从哪里传进来", "企业档案", "pages/7_企业档案.py", key="home_next",
+next_step("选择一家企业，查看其财务脆弱性及风险传入路径", "企业档案", "pages/7_企业档案.py", key="home_next",
           state={"code": weak[0]["security_code"]} if weak else None, state_key="_goto_profile" if weak else None)
 
 # ---------------------------------------------------------------- maintenance (folded)

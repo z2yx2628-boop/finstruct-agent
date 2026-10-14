@@ -179,7 +179,7 @@ def propagate(graph: Graph, seed: str, shock: str, severity: str, reason: str) -
             if nxt in graph.proxy and nxt not in graph.fragility:
                 step.note = f"集团参照等级（{graph.proxy[nxt]['total_score']}分）"
             if tier == "strong":
-                step.decision, step.note = "absorbed", (step.note + "；" if step.note else "") + "承压为强，风险在此被吸收"
+                step.decision, step.note = "absorbed", (step.note + "；" if step.note else "") + "承压为强，按规则不再扩展（风险可能受到缓释）"
                 finished.append(branch)
                 continue
             next_level = level if tier == "weak" else lower(level)

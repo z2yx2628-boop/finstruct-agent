@@ -1,4 +1,4 @@
-"""企业档案：一家企业一页 —— 自身扛不扛得住、风险从哪里传进来/传到哪里去、每条依据在哪。"""
+"""企业档案：一家企业一页 —— 财务脆弱性、风险传入与传出路径、每条依据的出处。"""
 import sys
 from pathlib import Path
 
@@ -14,7 +14,7 @@ from src.product_layer import exposure_as_of, products  # noqa: E402
 from src.profile import company_signals, fragility_rows, headline, peer_rank, snapshots, split_paths  # noqa: E402
 from src.ui import TIER_BADGE, UNIFIED_PAGE, deposit_block, next_step, page_header, verdict  # noqa: E402
 
-page_header("企业档案", ":material/badge:", "这家企业自身扛不扛得住？风险会从哪里传进来、传到哪里去？", grades=True,
+page_header("企业档案", ":material/badge:", "这家企业的财务脆弱性如何？风险可能从哪里传入、向哪里传出？", grades=True,
             about="把其他页面的结果按企业重新组合：**自身风险**来自企业承压评分；**关联风险**来自集团信用通道的路径"
                   "（只含公告披露的关系，C 级情景不计入）；**产品暴露**是 B 级情景信息；**公告信号**列出抽取到的原始事件。"
                   "本页不产生新的分数或排名。  \n"
@@ -93,7 +93,7 @@ tab_own, tab_links, tab_chain, tab_products, tab_events = st.tabs(
 
 # ---------------------------------------------------------------- own risk
 with tab_own:
-    st.caption("自身风险 = 这家企业会不会成为**风险源**。抗冲击能力（承压评分）：在 24 家核心钢厂中比较杠杆、短期偿债、造血、盈利、市场、"
+    st.caption("自身风险 = 这家企业是否可能成为**风险源**。财务脆弱性（承压评分）：在 24 家核心钢厂中比较杠杆、短期偿债、造血、盈利、市场、"
                "对外担保六方面，0–100 分，**越高越脆弱**，≥ 60 为弱；它是模型预警，不是违约概率。公告中已发生的冻结、逾期、风险警示等事件会直接下调等级。")
     if not row:
         st.caption("该企业不在这一期承压评分范围内。")
@@ -103,7 +103,7 @@ with tab_own:
                     icon=":material/info:")
         rank = peer_rank(rows, code)
         m1, m2, m3, m4 = st.columns(4)
-        m1.metric("抗冲击能力", TIER_BADGE.get(row["tier"], row.get("tier_label", "")))
+        m1.metric("财务脆弱性", TIER_BADGE.get(row["tier"], row.get("tier_label", "")))
         m2.metric("总分（越高越弱）", row["total_score"] or "—")
         m3.metric("核心钢厂中排名", f"第 {rank[0]} 弱 / {rank[1]}" if rank else "非核心样本")
         m4.metric("财报后风险事件", row.get("events_after_report") or "0")
@@ -135,10 +135,10 @@ with tab_own:
 with tab_links:
     if not (mine["incoming"] or mine["outgoing"]):
         st.success(f"在{CHAINS[chain]}、评估日 {snap} 下，没有经过 {name} 的关键传导路径"
-                   "（风险被强企业吸收、金额不重大，或没有中高严重度的起点）。", icon=":material/check_circle:")
-    for key, title, note in (("incoming", "风险传入或经过", "别的企业出事后，风险沿担保、购销或同集团关系传到它"),
-                             ("outgoing", "由它发出", "它自己的风险信号沿关系传给别人"),
-                             ("absorbed", "被吸收（不预警）", "途经的上市公司承压为强，得分为 0，不计入预警")):
+                   "（途经企业承压为强、风险可能受到缓释，金额不重大，或没有中高严重度的起点）。", icon=":material/check_circle:")
+    for key, title, note in (("incoming", "风险传入或经过", "其他企业发生信用事件后，风险可能沿担保、购销或同集团关系传导至本企业"),
+                             ("outgoing", "由它发出", "本企业的风险信号可能沿关系传导至其他企业"),
+                             ("absorbed", "风险可能受到缓释（不预警）", "途经的上市公司承压为强，路径不再扩展，得分为 0，不计入预警")):
         if mine[key]:
             st.markdown(f"**{title}**（{len(mine[key])} 条）：{note}")
             st.dataframe(pd.DataFrame(path_rows(mine[key], names, eindex, snapshot_equity(ROOT / "data" / "snapshots" / snap))), hide_index=True, width="stretch",
@@ -246,5 +246,5 @@ with tab_events:
     st.page_link("pages/3_一键分析.py", label="分析这家企业的一份新公告", icon=":material/bolt:")
 
 # ---------------------------------------------------------------- where next
-next_step(f"看 {name} 出事时，风险会沿集团信用通道和供需通道传给谁", "风险传导", UNIFIED_PAGE, key="pf_next",
+next_step(f"看 {name} 发生风险时，可能沿集团信用通道和供需通道传导至哪些企业", "风险传导", UNIFIED_PAGE, key="pf_next",
           state={"code": code, "snapshot": snap if chain == "data/chain/live" else None}, state_key="_goto_unified")

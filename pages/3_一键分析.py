@@ -1,4 +1,4 @@
-"""分析新公告：一份公告 → 风险预警卡片（发生了什么 → 扛不扛得住 → 会传给谁）。"""
+"""分析新公告：一份公告 → 风险预警卡片（已发生事件 → 财务脆弱性 → 传导路径）。"""
 import json
 import sys
 from datetime import date
@@ -20,7 +20,7 @@ CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/
                "data/chain/backtest_antai_fix1": "回测图谱·单位修复后（安泰）", "data/chain/backtest_linggang": "回测图谱（凌钢）",
                "data/chain/backtest_linggang_fix1": "回测图谱·单位修复后（凌钢）"}
 
-page_header("分析新公告", ":material/bolt:", "这份新公告意味着什么：发生了什么、企业扛不扛得住、风险会传给谁？", grades=True,
+page_header("分析新公告", ":material/bolt:", "这份新公告意味着什么：发生了什么事件、相关企业的财务脆弱性如何、风险可能传导至哪里？", grades=True,
             about="**演示案例**：6 份真实公告，使用冻结系统当时保存的抽取结果，不联网、不调用模型也能用；评估日和图谱按案例自动设定。  \n"
                   "**上传新公告**：调用冻结版抽取系统（需要模型接口）；打开“离线模式”时只能分析演示包里的文件。  \n"
                   "结果卡片先给一句结论，再分三部分：公告事实、自身风险（承压评分）、关联风险（传导路径），每条都带原文页码。",
@@ -117,7 +117,7 @@ if card:
                f"{card['counts']['edges']} 条关系；自身承压 **{own['tier'] if own else '未评分'}**；"
                + (f"**{len(paths)} 条传导路径需要关注**，首条：{paths[0]['path']}。" if paths else
                   "图谱内没有可评估的传导路径：该企业及其交易对手不在评分范围，**不代表没有风险**。" if out_of_scope else
-                  "没有需要关注的传导路径（风险被强企业吸收、金额不重大，或只有低严重度信号）。"))
+                  "没有需要关注的传导路径（途经企业承压为强、风险可能受到缓释，金额不重大，或只有低严重度信号）。"))
     if out_of_scope:
         level = "info" if level == "success" else level
     h1, h2 = st.columns([5, 1.2], vertical_alignment="center")
@@ -171,9 +171,9 @@ if card:
             for x in trace:
                 if x["detail"]:
                     st.caption(f"{x['step']} 明细：" + "；".join(x["detail"]))
-    t1, t2, t3 = st.tabs([f":material/fact_check: 发生了什么（{len(card['what_happened']) + len(card['relations'])}）",
-                          ":material/monitoring: 扛不扛得住（自身风险）",
-                          f":material/account_tree: 会传给谁（{len(paths)} 条路径）"])
+    t1, t2, t3 = st.tabs([f":material/fact_check: 已发生事件（{len(card['what_happened']) + len(card['relations'])}）",
+                          ":material/monitoring: 财务脆弱性（自身风险）",
+                          f":material/account_tree: 传导路径（{len(paths)} 条路径）"])
     with t1:
         if not card["what_happened"] and not card["relations"]:
             st.info("未识别出风险信号或关系。")
@@ -196,7 +196,7 @@ if card:
             st.markdown(f"- {TIER_ICON.get(c['tier'], '⚪')} **{c['entity']}：{c['tier']}**（{c['score']}分）  \n  {c['reasons'] or ''}")
     with t3:
         if not paths:
-            st.success("未发现需要关注的传导路径：风险被强企业吸收、金额不重大，或本公告只含低严重度信号。")
+            st.success("未发现需要关注的传导路径：途经企业承压为强、风险可能受到缓释，金额不重大，或本公告只含低严重度信号。")
         for p in paths:
             alt = f"；另有 {p['alternatives']} 条同类路线（经由 {'、'.join(p['alternative_routes'])}）" if p["alternatives"] else ""
             with st.expander(f"{p['rank']}. {p['path']} · 得分 {p['score']}{alt}", expanded=p["rank"] == 1):

@@ -15,7 +15,7 @@ from src.scenario import KINDS, build, company_name, core_mills, product_map, se
 from src.ui import TIER_BADGE, next_step, page_header, verdict  # noqa: E402
 from src.unified import SCALE, credit_edges, layout, merge  # noqa: E402
 
-page_header("风险传导", ":material/hub:", "一家企业出事或一次冲击发生，风险会沿哪些通道、传给谁？", grades=True,
+page_header("风险传导", ":material/hub:", "一家企业发生信用事件或出现一次外部冲击时，风险可能沿哪些通道传导至哪些企业？", grades=True,
             about="**一张图，两条通道。** 红色系是**集团信用通道**：公告披露的担保、关联交易和集团关系，经过盲测与 3 个预注册回测，"
                   "**计入风险得分**。蓝色系是**供需情景通道**：产品暴露、公告与债券募集说明书中的具名采购和销售、行业推断，"
                   "两次预注册检验不显著，**只作情景、不计分**。虚线表示仅凭集团名义或行业推断的连接。  \n"
@@ -62,7 +62,7 @@ if mode == "从一家企业出发":
         st.session_state.pop("u_company", None)
     code = c1.selectbox("企业", options, key="u_company",
                         format_func=lambda c: f"{TIER_BADGE.get(fragility[c].get('tier', ''), '')} {fragility[c]['security_name']}（{c}）")
-    show_absorbed = c2.toggle("显示被吸收的路径", value=False, help="途经企业承压为强、得分为 0 的路径")
+    show_absorbed = c2.toggle("显示不再扩展的路径（风险可能受到缓释）", value=False, help="途经企业承压为强、得分为 0 的路径")
     items = filter_paths(ranked, company=code, hide_low_information=True, show_scenarios=False)
     credit_entries = [e for _, e in items if e["score"] > 0 or show_absorbed]
     supply = build("outage", snap, fragility, [], company=code) if code in core_mills() or code in fragility else None
@@ -130,5 +130,5 @@ else:
             st.caption("没有供需通道上的暴露企业。")
         st.page_link("pages/5_上下游情景.py", label="调整冲击幅度、看压力指数与政策冲击", icon=":material/tune:")
 
-next_step("拿一份新公告试试：系统会抽出事实、判断企业扛不扛得住，并推出它会传给谁", "分析新公告", "pages/3_一键分析.py",
+next_step("分析一份新公告：系统抽取事实、评估相关企业的财务脆弱性，并推导可能的传导路径", "分析新公告", "pages/3_一键分析.py",
           key="u_next")

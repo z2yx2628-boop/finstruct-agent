@@ -225,8 +225,8 @@ def run(path: str | Path | None = None, case: dict | None = None, task: str | No
     paths = card["who_is_next"]
     t.add("⑨ 传导推演", "传导规则 R1 担保 / R2 购销 / R3 同集团", "计算",
           f"{len(paths)} 条路径" + (f"；首条：{paths[0]['path']}（得分 {paths[0]['score']}）" if paths else ""),
-          reason="只从本公告的信号出发；途经企业为强则吸收，金额低于对方净资产 1% 则停止")
-    t.add("⑩ 生成报告", "预警卡片模板", "模板", "发生了什么 → 扛不扛得住 → 会传给谁，每条附原文页码")
+          reason="只从本公告的信号出发；途经企业承压为强或金额低于对方净资产 1% 时，按规则不再扩展")
+    t.add("⑩ 生成报告", "预警卡片模板", "模板", "已发生事件 → 财务脆弱性 → 传导路径，每条附原文页码")
 
     card.update({"task": chosen, "extraction_status": status_word, "chain": str(chain), "exposures": exp,
                  "trace": t.steps, "graph_decision": {"auto": auto, "checks": checks}})
