@@ -17,3 +17,6 @@ data/external/financials/raw/
 
 # Office lock files
 ~$*
+
+# 介绍视频与素材（体积大，不进仓库）
+项目视频/

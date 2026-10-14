@@ -21,17 +21,17 @@ from src.orchestrator import Trace
 
 CHAIN = ROOT / "data" / "chain" / "live"
 INTENTS = {
-    "company": ("企业风险概况", "这家企业自身扛不扛得住、有没有已发生的事件、和谁有风险关系"),
+    "company": ("企业风险概况", "企业的财务脆弱性、已发生事件和风险关系"),
     "spread": ("会传给谁", "这家企业出问题时，风险会沿担保、关联交易、集团关系传给哪些上市公司"),
     "exposure": ("风险来自哪里", "哪些企业的风险会传到这家企业"),
     "today": ("今日预警", "当前的风险源和最值得关注的传导路径"),
-    "ranking": ("承压排名", "核心钢厂中抗冲击能力最弱的企业"),
+    "ranking": ("承压排名", "核心钢厂中财务脆弱性最高的企业"),
     "price": ("价格冲击情景", "某个产品价格大幅变动时，哪些企业暴露最大"),
     "export": ("出口政策冲击情景", "出口退税下调、关税或反倾销时，哪些钢厂暴露最大"),
     "document": ("分析新公告", "上传一份公告，抽取事实并推导影响"),
     "trust": ("系统可信度", "系统的结论经过了哪些检验、结果如何"),
 }
-EXAMPLES = ["安阳钢铁现在风险怎么样？", "八一钢铁出事会传给谁？", "哪些企业的风险会传到鞍钢股份？", "今天最该关注什么？",
+EXAMPLES = ["安阳钢铁现在风险怎么样？", "八一钢铁出现风险会波及哪些企业？", "哪些企业的风险会传到鞍钢股份？", "今天最该关注什么？",
             "承压最弱的钢厂有哪些？", "铁矿石涨 20% 谁受影响最大？", "出口关税提高 10% 对谁影响大？", "这个系统准不准？"]
 NATURE = {"company": "模型预警 / 已发生事件", "spread": "情景假设", "exposure": "风险敞口 / 模型预警", "today": "已发生事件 / 风险敞口 / 模型预警",
           "ranking": "模型预警", "price": "情景假设", "export": "情景假设", "document": "", "trust": "已发生事件（检验结果）"}
@@ -224,7 +224,7 @@ def answer_company(code: str, name: str, snapshot: Path, trace: Trace) -> dict:
               f"承压 {_tier_text(f)}；生效事件 {len(events)} 条；以它为起点 {len(out)} 条、传入 {len(inc)} 条；生效披露关系 {len(cov['active'])} 条",
               started=t)
     level = "error" if events or (f or {}).get("tier") == "weak" else "warning" if (f or {}).get("tier") == "medium" else "success"
-    text = f"{name}：抗冲击能力{_tier_text(f)}"
+    text = f"{name}：财务脆弱性{_tier_text(f)}"
     text += f"；12 个月内已发生 {len(events)} 起信用事件" if events else "；近 12 个月没有识别到已发生的信用事件"
     text += f"；风险会传出 {len(out)} 条、传入 {len(inc)} 条关键路径。"
     tables = []
@@ -251,7 +251,7 @@ def answer_spread(code: str, name: str, snapshot: Path, trace: Trace) -> dict:
     actual = [(i, e) for i, e in enumerate(ranked) if e["seed"] == code and e["score"] > 0]
     hypo = second_order(CHAIN, snapshot, [code]).get(code, [])
     trace.add("④ 调用工具", "实时图谱关键路径 + 假设情景推演（second_order，假设严重度：中）", "calculation",
-              f"现有风险源路径 {len(actual)} 条；假设它出事时的路径 {len(hypo)} 条", started=t)
+              f"现有风险源路径 {len(actual)} 条；假设其发生信用事件时的路径 {len(hypo)} 条", started=t)
     tables = []
     if actual:
         tables.append(("它本身已是风险源：当前的传导路径", _path_table(actual, names, snapshot)))
@@ -261,7 +261,7 @@ def answer_spread(code: str, name: str, snapshot: Path, trace: Trace) -> dict:
     text = (f"如果{name}出问题，按公告披露的关系，风险可能传到：{'、'.join(reached[:8])}" + ("等" if len(reached) > 8 else "") + "。"
             if reached else f"按当前生效的披露关系，{name}出问题时没有可推导的、经过其他上市公司的传导路径。")
     return {"verdict": ("warning" if reached else "info", text), "tables": tables,
-            "note": "情景假设：不是预测它会出事，而是回答“如果它出事”。", "goto": ("pages/8_风险传导总图.py", "在风险传导图上查看", code)}
+            "note": "情景假设：不是预测其会发生信用事件，而是回答“如果发生”。", "goto": ("pages/8_风险传导总图.py", "在风险传导图上查看", code)}
 
 
 def answer_exposure(code: str, name: str, snapshot: Path, trace: Trace) -> dict:
@@ -301,7 +301,7 @@ def answer_ranking(snapshot: Path, trace: Trace, company: tuple[str, str] | None
     weak = [r["security_name"] for r in order if r.get("tier") == "weak"]
     rows = [{"排名": i, "企业": r["security_name"], "总分": r["total_score"], "档位": TIER_CN.get(r.get("tier"), ""),
              "红线与极差": (r.get("red_lines") or "")[:50]} for i, r in enumerate(order[:10], 1)]
-    text = f"核心钢厂中抗冲击能力为“弱”的有 {len(weak)} 家：{'、'.join(weak)}。"
+    text = f"核心钢厂中承压等级为“弱”（财务脆弱性较高）的有 {len(weak)} 家：{'、'.join(weak)}。"
     if company:
         rank = next((i for i, r in enumerate(order, 1) if r["security_code"] == company[0]), None)
         text = (f"{company[1]}在 {len(order)} 家核心钢厂中按承压从弱到强排第 {rank}。" if rank
@@ -346,7 +346,7 @@ def answer_export(move: float | None, snapshot: Path, trace: Trace) -> dict:
 def answer_trust(trace: Trace) -> dict:
     t = time.perf_counter()
     rows = [
-        {"检验": "承压评分能否区分谁更容易出事（预注册）", "结果": "弱组 22/49（44.9%）vs 非弱组 15/119（12.6%），p < 0.0001", "判定": "通过"},
+        {"检验": "承压评分能否区分信用事件风险（预注册）", "结果": "弱组 22/49（44.9%）vs 非弱组 15/119（12.6%），p < 0.0001", "判定": "通过"},
         {"检验": "与简单指标比较（事后）", "结果": "最近季报净利率的 AUC 0.903，高于承压评分 0.754", "判定": "评分不优于单一盈利指标"},
         {"检验": "产品暴露能否解释利润与股价分化（预登记两次）", "结果": "方向一致但未显著", "判定": "未通过"},
         {"检验": "铁矿石冲击 × 外购比例（预登记）", "结果": "平均 z = 0.024，p = 0.29", "判定": "方向一致但未显著"},

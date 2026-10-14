@@ -53,7 +53,7 @@ SIGNAL_LABEL = {"credit_exposure": "担保敞口", "credit_event": "担保违约
                 "capacity_reduction": "产能减少", "capacity_increase": "产能增加", "project_delay": "项目延期/终止",
                 "share_pledge": "股权质押"}
 SEVERITY_LABEL = {"high": "高", "medium": "中", "low": "低", "info": "提示"}
-DECISION_LABEL = {"continue": "继续传导", "weakened": "继续传导（减弱）", "absorbed": "被吸收，停止",
+DECISION_LABEL = {"continue": "继续传导", "weakened": "继续传导（减弱）", "absorbed": "不再扩展（风险可能受到缓释）",
                   "immaterial": "金额不重大，停止", "end": "已减弱至最低，停止"}
 EDGE_LABEL = {"guarantee": "担保", "supply": "购销", "service": "劳务", "lease": "租赁", "finance": "金融服务", "other": "其他"}
 RELATION_LABEL = {"wholly_owned_subsidiary": "全资子公司", "controlled_subsidiary": "控股子公司",
@@ -179,7 +179,7 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path, extra_fragility:
 def card_markdown(card: dict) -> str:
     lines = [f"# 风险预警 · {card['company']} · 评估日 {card['as_of']}",
              f"来源：{card['source']}（公告日 {card['announcement_date']}；承压快照 {card['snapshot']}）", ""]
-    lines.append("## ① 发生了什么")
+    lines.append("## ① 已发生事件")
     if not card["what_happened"]:
         lines.append("- 未识别出风险信号。")
     for w in card["what_happened"]:
@@ -190,12 +190,12 @@ def card_markdown(card: dict) -> str:
         amount = f"，合计 {r['amount_yi']} 亿元" if r["amount_yi"] else ""
         rows = f"（{r['rows']}行）" if r["rows"] > 1 else ""
         lines.append(f"- 关系：{r['from']} →[{r['type']}] {r['to']}{amount}{rows}，关系 {r['relationship']}。依据 {r['evidence']}")
-    lines += ["", "## ② 扛不扛得住"]
+    lines += ["", "## ② 财务脆弱性"]
     for c in card["can_they_absorb"] or [{"entity": card["company"], "tier": "未评分", "score": "", "reasons": ""}]:
         lines.append(f"- {c['entity']}：{c['tier']}（{c['score']}分）{c['reasons'] or ''}")
     lines += ["", "## ③ 会传给谁"]
     if not card["who_is_next"]:
-        lines.append("- 未发现需要关注的传导路径（风险被强企业吸收、金额不重大，或本公告只含低严重度信号）。")
+        lines.append("- 未发现需要关注的传导路径（途经企业承压为强、风险可能受到缓释，金额不重大，或本公告只含低严重度信号）。")
     for p in card["who_is_next"]:
         alt = f"（另有 {p['alternatives']} 条同类路线，经由：{'、'.join(p['alternative_routes'])}）" if p["alternatives"] else ""
         lines.append(f"- {p['rank']}. {p['path']} · 得分 {p['score']}{alt}")

@@ -22,7 +22,7 @@ CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/
 import pandas as pd  # noqa: E402
 
 from src.ui import page_header, profile_button  # noqa: E402
-page_header("信用通道明细", ":material/account_tree:", "风险会沿公告披露的关联交易、担保和集团关系传给谁？", grades=True,
+page_header("信用通道明细", ":material/account_tree:", "风险可能沿公告披露的关联交易、担保和集团关系传导至哪些企业？", grades=True,
             about="**范围：公告披露的关系网络（A 级）**，包括**集团内**（子公司、控股股东、同一控制下企业）和"
                   "**跨集团关联方**（联营/合营企业、其他关联方，例如关联方焦化厂、贸易商向钢厂供焦炭和铁矿石）。"
                   "没有股权或人事关系的普通客户和供应商，公告不披露名字，只能在“供需情景通道”里按产品暴露（B 级）或行业（C 级）推断，"
@@ -145,7 +145,7 @@ if not items:
         elif not cov["active"]:
             why.append("图谱里还没有它披露的关联交易、担保或资金往来（只知道它属于哪个集团）。")
         if cov["tier"] == "strong":
-            why.append("它的抗冲击能力为“强”：风险传到它这里会被吸收，这类路径得分为 0，默认不列出。")
+            why.append("它的承压等级为“强”：路径到此不再继续扩展（风险可能受到缓释），这类路径得分为 0，默认不列出。")
         if cov["active"]:
             why.append(f"它有 {len(cov['active'])} 条仍有效的披露关系，但这些关系附近没有风险源，或金额低于对方净资产的 1%，风险不会沿它们传导。")
         st.info(f"**没有经过{who}的关键传导路径。**  \n" + "  \n".join(f"- {w}" for w in why), icon=":material/info:")
@@ -154,7 +154,7 @@ if not items:
                                         "金额(亿元)": round(float(e["amount_wan"]) / 1e4, 2) if e.get("amount_wan") else None,
                                         "公告日": e.get("announcement_date", ""), "有效至": e.get("valid_to", "")}
                                        for e in cov["active"][:30]]), hide_index=True, width="stretch")
-            st.caption("以上是它评估日仍有效的披露关系（最多 30 条）：有关系不等于有风险，只有起点出事时才会沿这些关系传导。")
+            st.caption("以上是它评估日仍有效的披露关系（最多 30 条）：有关系不等于有风险，只有起点企业发生信用事件时，风险才可能沿这些关系传导。")
     else:
         st.info("没有符合筛选条件的路径。")
     st.button("清除选择", on_click=reset_focus)

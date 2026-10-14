@@ -36,7 +36,7 @@ def test_evidence_reference_and_stop_reason():
     assert ref == {"stem": "backtest_linggang_033_600231_guarantee_backtest", "page": 4, "quote": "担保明细"}
     assert evidence_ref("data/reference/entities.csv：同属集团 G_BAOWU")["stem"] is None
     absorbed = dict(GUARANTEE, steps=[step("R3", "600581", "E_BAOWU", tier="strong", decision="absorbed")])
-    assert "被吸收" in stop_reason(absorbed, NAMES)
+    assert "缓释" in stop_reason(absorbed, NAMES)
 
 
 def test_overview_layout_is_layered_and_serialisable():
