@@ -224,5 +224,5 @@ if last and last.get("task") and (ROOT / last["source"]).exists() and last.get("
             shutil.copy2(src, dest)
             st.success(f"已加入：{dest.relative_to(ROOT).as_posix()}。下次在今日预警“数据更新”里点“立即更新”（可不联网）后生效。")
 
-next_step("看这些结论经过了哪些检验：盲测、年报抽查、预注册回测，以及没通过的检验", "可信度", "pages/6_验证与证据.py",
+next_step("看这些结论经过了哪些检验：盲测、年报抽查、预注册回测，以及没通过的检验", "可信度", "views/6_验证与证据.py",
           key="an_next")

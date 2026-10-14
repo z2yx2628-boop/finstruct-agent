@@ -241,7 +241,7 @@ def answer_company(code: str, name: str, snapshot: Path, trace: Trace) -> dict:
         tables.append(("谁的风险会传到它", _path_table(inc, names, snapshot)))
     note = "" if out or inc else (f"没有关键路径：当前生效的披露关系 {len(cov['active'])} 条，已过期 {len(cov['expired'])} 条，"
                                   f"最近一份相关公告 {cov['latest'] or '无'}。")
-    return {"verdict": (level, text), "tables": tables, "note": note, "goto": ("pages/7_企业档案.py", "打开企业档案", code)}
+    return {"verdict": (level, text), "tables": tables, "note": note, "goto": ("views/7_企业档案.py", "打开企业档案", code)}
 
 
 def answer_spread(code: str, name: str, snapshot: Path, trace: Trace) -> dict:
@@ -261,7 +261,7 @@ def answer_spread(code: str, name: str, snapshot: Path, trace: Trace) -> dict:
     text = (f"如果{name}出问题，按公告披露的关系，风险可能传到：{'、'.join(reached[:8])}" + ("等" if len(reached) > 8 else "") + "。"
             if reached else f"按当前生效的披露关系，{name}出问题时没有可推导的、经过其他上市公司的传导路径。")
     return {"verdict": ("warning" if reached else "info", text), "tables": tables,
-            "note": "情景假设：不是预测其会发生信用事件，而是回答“如果发生”。", "goto": ("pages/8_风险传导总图.py", "在风险传导图上查看", code)}
+            "note": "情景假设：不是预测其会发生信用事件，而是回答“如果发生”。", "goto": ("views/8_风险传导总图.py", "在风险传导图上查看", code)}
 
 
 def answer_exposure(code: str, name: str, snapshot: Path, trace: Trace) -> dict:
@@ -273,7 +273,7 @@ def answer_exposure(code: str, name: str, snapshot: Path, trace: Trace) -> dict:
     text = (f"有 {len(inc)} 条关键路径会把风险传到{name}，起点包括：{'、'.join(sources[:8])}。" if inc
             else f"当前没有其他企业的风险沿披露关系传到{name}。")
     return {"verdict": ("warning" if inc else "success", text), "tables": [("传入路径", _path_table(inc, names, snapshot))] if inc else [],
-            "note": "", "goto": ("pages/7_企业档案.py", "打开企业档案", code)}
+            "note": "", "goto": ("views/7_企业档案.py", "打开企业档案", code)}
 
 
 def answer_today(snapshot: Path, trace: Trace) -> dict:
@@ -290,7 +290,7 @@ def answer_today(snapshot: Path, trace: Trace) -> dict:
     rows = [{"性质": s["nature"], "风险源": s["name"], "类型": s["kind_label"], "严重度": s["severity"], "说明": s["reason"][:60],
              "会波及": "、".join(s["reached"][:4])} for s in sources[:10]]
     return {"verdict": ("warning", text), "tables": [("风险源（按性质排序）", rows), ("关键传导路径 Top 5", _path_table(top, names, snapshot))],
-            "note": "", "goto": ("pages/0_今日看板.py", "打开今日预警", None)}
+            "note": "", "goto": ("views/0_今日看板.py", "打开今日预警", None)}
 
 
 def answer_ranking(snapshot: Path, trace: Trace, company: tuple[str, str] | None = None) -> dict:
@@ -307,7 +307,7 @@ def answer_ranking(snapshot: Path, trace: Trace, company: tuple[str, str] | None
         text = (f"{company[1]}在 {len(order)} 家核心钢厂中按承压从弱到强排第 {rank}。" if rank
                 else f"{company[1]}不在 24 家核心钢厂的排名中。") + text
     return {"verdict": ("warning", text),
-            "tables": [("承压最弱的 10 家（模型预警，不是违约预测）", rows)], "note": "", "goto": ("pages/2_承压评分.py", "打开承压评分全表", None)}
+            "tables": [("承压最弱的 10 家（模型预警，不是违约预测）", rows)], "note": "", "goto": ("views/2_承压评分.py", "打开承压评分全表", None)}
 
 
 def answer_price(product: tuple[str, str], move: float | None, snapshot: Path, trace: Trace) -> dict:
@@ -325,7 +325,7 @@ def answer_price(product: tuple[str, str], move: float | None, snapshot: Path, t
     if product[0] in ("P_IRON_ORE", "P_COKING_COAL", "P_COKE"):
         note += " 对钢厂来说这是采购成本：钢厂不披露采购占比，这里只列出卖这个产品的企业；铁矿石外购比例的冲击检验未达显著（docs/shock_transmission_preregistration.md）。"
     return {"verdict": ("info", text), "tables": [(f"{product[1]}价格冲击情景", table)] if table else [], "note": note,
-            "goto": ("pages/5_上下游情景.py", "打开供需情景与政策冲击", None)}
+            "goto": ("views/5_上下游情景.py", "打开供需情景与政策冲击", None)}
 
 
 def answer_export(move: float | None, snapshot: Path, trace: Trace) -> dict:
@@ -340,7 +340,7 @@ def answer_export(move: float | None, snapshot: Path, trace: Trace) -> dict:
     text = f"出口成本上升 {change:.0%} 时，暴露最大的是 {table[0]['企业']}（境外收入占 {table[0]['境外收入占比']}）。" if table else "没有境外收入数据。"
     return {"verdict": ("info", text), "tables": [("出口政策冲击情景", table)] if table else [],
             "note": "情景假设：暴露程度不是损失预测；境外收入占比对汇率冲击的预登记检验未通过（docs/shock_transmission_preregistration.md）。",
-            "goto": ("pages/5_上下游情景.py", "打开供需情景与政策冲击", None)}
+            "goto": ("views/5_上下游情景.py", "打开供需情景与政策冲击", None)}
 
 
 def answer_trust(trace: Trace) -> dict:
@@ -354,7 +354,7 @@ def answer_trust(trace: Trace) -> dict:
     ]
     trace.add("④ 调用工具", "验证结果汇总（docs/ 下的预登记与结果文件）", "lookup", f"{len(rows)} 项检验", started=t)
     return {"verdict": ("info", "每个结论都标明性质（事实 / 敞口 / 模型预警 / 情景），检验先登记后运行，通过和未通过的都如实列出。"),
-            "tables": [("主要检验结果", rows)], "note": "", "goto": ("pages/6_验证与证据.py", "打开可信度页", None)}
+            "tables": [("主要检验结果", rows)], "note": "", "goto": ("views/6_验证与证据.py", "打开可信度页", None)}
 
 
 def ask(question: str, use_model: bool = True, snapshot: Path | None = None) -> dict:
@@ -399,7 +399,7 @@ def ask(question: str, use_model: bool = True, snapshot: Path | None = None) -> 
         result = answer_trust(trace)
     elif intent == "document":
         result = {"verdict": ("info", "请到“分析新公告”上传 PDF 或选择演示案例：调度智能体会抽取事实、核对证据并推导影响。"),
-                  "tables": [], "note": "", "goto": ("pages/3_一键分析.py", "打开分析新公告", None)}
+                  "tables": [], "note": "", "goto": ("views/3_一键分析.py", "打开分析新公告", None)}
     else:
         intent = "unsupported"
         result = {"verdict": ("info", "这个问题不在系统能回答的范围内。系统只回答下面几类问题，所有答案都来自公告与财务数据："),

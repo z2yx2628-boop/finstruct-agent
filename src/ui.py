@@ -11,7 +11,7 @@ from pathlib import Path
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
-PROFILE_PAGE = "pages/7_企业档案.py"
+PROFILE_PAGE = "views/7_企业档案.py"
 GRADES = ("**证据等级**  \n"
           "- **A 披露确认**：公告或年报写明双方（和金额），或股权关系已核对来源；计入风险得分。\n"
           "- **B 部分确认**：公司自己披露的产品暴露、未逐一核对的集团归属；证据为部分确认。\n"
@@ -120,7 +120,7 @@ def freshness() -> dict[str, str]:
 
 
 STORY = ["今日预警", "企业档案", "风险传导", "分析新公告", "可信度"]
-UNIFIED_PAGE = "pages/8_风险传导总图.py"
+UNIFIED_PAGE = "views/8_风险传导总图.py"
 
 
 def page_header(title: str, icon: str, question: str, grades: bool = False, about: str | None = None,

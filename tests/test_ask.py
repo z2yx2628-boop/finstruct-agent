@@ -64,7 +64,7 @@ def test_unsupported_never_calls_a_tool():
 
 def test_page_answers_an_example():
     app = AppTest.from_file(APP_PATH, default_timeout=60).run()
-    app.switch_page("pages/9_问一句.py").run()
+    app.switch_page("views/9_问一句.py").run()
     assert not app.exception
     app.text_input(key="ask_q").set_value("承压最弱的钢厂有哪些？").run()
     assert not app.exception

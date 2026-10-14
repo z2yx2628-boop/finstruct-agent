@@ -146,7 +146,7 @@ with right:
     st.markdown(f"{badge('情景假设')}　产品价格（近 {WINDOW} 个交易日，加粗为涨跌 ≥ {THRESHOLD:.0%}）")
     st.caption("；".join(f"{'**' if m['shock'] else ''}{m['product']} {m['ret']:+.1%}{'**' if m['shock'] else ''}" for m in moves)
                or "无价格数据")
-    st.page_link("pages/5_上下游情景.py", label="情景：价格、停产或政策冲击可能波及的企业", icon=":material/swap_horiz:")
+    st.page_link("views/5_上下游情景.py", label="情景：价格、停产或政策冲击可能波及的企业", icon=":material/swap_horiz:")
 
 # ---------------------------------------------------------------- trust (one line of numbers; details on 可信度)
 st.subheader("凭什么可信", divider="gray")
@@ -164,7 +164,7 @@ t3.metric("风险传导 · 预注册回测", "3 个案例", help="安泰（标�
 t4.metric("上下游产品层 · 预注册检验", "2 次未显著", help="利润检验未通过；股价检验方向一致但 p = 0.28。因此只作情景提示")
 st.caption("股份质押保留为辅助风险信号，不作为主宣传指标；其独立盲测事件 F1 为 73.85%。全部验证结果（包括没通过的）见顶部“可信度”。")
 
-next_step("选择一家企业，查看其财务脆弱性及风险传入路径", "企业档案", "pages/7_企业档案.py", key="home_next",
+next_step("选择一家企业，查看其财务脆弱性及风险传入路径", "企业档案", "views/7_企业档案.py", key="home_next",
           state={"code": weak[0]["security_code"]} if weak else None, state_key="_goto_profile" if weak else None)
 
 # ---------------------------------------------------------------- maintenance (folded)

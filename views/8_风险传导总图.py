@@ -120,7 +120,7 @@ else:
         if st.button("看每一步的公告原文", icon=":material/article:", key="u_to_credit"):
             target = code if mode == "从一家企业出发" else None
             st.session_state["_goto_network"] = {"chain": "data/chain/live", "snapshot": snap, "company": target}
-            st.switch_page("pages/4_风险路径图.py")
+            st.switch_page("views/4_风险路径图.py")
     with right:
         st.subheader("供需情景通道（不计分）", divider="blue")
         if supply and supply["companies"]:
@@ -128,7 +128,7 @@ else:
                                         "证据": r["grade"]} for r in supply["companies"]]), hide_index=True, width="stretch")
         else:
             st.caption("没有供需通道上的暴露企业。")
-        st.page_link("pages/5_上下游情景.py", label="调整冲击幅度、看压力指数与政策冲击", icon=":material/tune:")
+        st.page_link("views/5_上下游情景.py", label="调整冲击幅度、看压力指数与政策冲击", icon=":material/tune:")
 
-next_step("分析一份新公告：系统抽取事实、评估相关企业的财务脆弱性，并推导可能的传导路径", "分析新公告", "pages/3_一键分析.py",
+next_step("分析一份新公告：系统抽取事实、评估相关企业的财务脆弱性，并推导可能的传导路径", "分析新公告", "views/3_一键分析.py",
           key="u_next")
