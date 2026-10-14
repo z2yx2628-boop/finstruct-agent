@@ -4,7 +4,9 @@ CNINFO (巨潮资讯网, the exchanges' designated disclosure site) lists for th
     python scripts/check_coverage.py                 # all companies in data/live/announcement_titles
     python scripts/check_coverage.py --end 2026-09-30
 
-For each company the window is [first date in our cached list, --end]. A CNINFO title counts as found
+For each company the window is (first date in our cached list, --end]: the cache holds the newest
+pages of each company's list, so its first day is cut part-way through and is not counted (the first
+run, 2026-10-14, counted it; every title it missed fell on that first day). A CNINFO title counts as found
 when the same normalised title appears in our list within +-3 days. Titles about guarantees or
 related-party transactions -- the documents that build the graph -- are reported separately.
 Output: docs/coverage_check.md and data/eval/coverage_check.csv.
@@ -23,8 +25,12 @@ KEY = re.compile(r"担保|关联交易")
 PUNCT = re.compile(r"[\s　:：,，。.、()（）《》<>“”\"'‘’\-—_【】\[\]]")
 
 
+FULLNAME = re.compile(r"^[\u4e00-\u9fff]{2,24}?(?:股份)?有限公司")
+
+
 def norm(title: str, name: str) -> str:
     t = PUNCT.sub("", str(title or ""))
+    t = FULLNAME.sub("", t)
     for n in {name, name.replace("*", ""), name.replace("ST", "")}:
         if n and t.startswith(PUNCT.sub("", n)):
             t = t[len(PUNCT.sub("", n)):]
@@ -55,7 +61,8 @@ def main() -> None:
         if not ours:
             continue
         code, name = f.stem, ours[0]["security_name"]
-        start = min(r["notice_date"] for r in ours)
+        first = min(r["notice_date"] for r in ours)
+        start = (date.fromisoformat(first) + timedelta(days=1)).isoformat()   # first day is cut part-way
         if start > args.end:
             continue
         idx = {}
@@ -67,10 +74,13 @@ def main() -> None:
             fails.append(str(e))
             print("FAILED", e)
             continue
+        theirs = [(t, d) for t, d in theirs if d >= start]
         miss, miss_key, n_key = [], [], 0
         for title, day in theirs:
             k = norm(title, name)
             d = date.fromisoformat(day)
+            if day < start:
+                continue
             found = any(abs((x - d).days) <= 3 for x in idx.get(k, []))
             if not found:   # tolerate small wording differences
                 found = any(abs((x - d).days) <= 3 and (k in t or t in k) and min(len(k), len(t)) >= 8
@@ -98,7 +108,8 @@ def main() -> None:
         "# 公告抓取完整性核对（事后核对）", "",
         f"运行日期 {date.today().isoformat()}；脚本 `scripts/check_coverage.py`；明细 `data/eval/coverage_check.csv`。", "",
         "对照来源：巨潮资讯网（证监会指定的信息披露网站），经 akshare `stock_zh_a_disclosure_report_cninfo` 获取。",
-        "每家公司的核对区间为本系统公告列表中最早一条的日期至 " + args.end + "；同一标题（去掉标点和公司简称）在 ±3 天内出现即算找到。", "",
+        "每家公司的核对区间为本系统公告列表中最早一条日期的次日至 " + args.end + "（本系统缓存的是各公司公告列表的最新若干页，最早那一天只保存了一部分，不计入；首次运行（2026-10-14）计入了这一天，当时未找到的标题全部落在这一天）。",
+        "同一标题（去掉标点、公司简称和公司全称）在 ±3 天内出现即算找到。", "",
         f"- 公司数：{len(rows)}" + (f"（另有 {len(fails)} 家查询失败）" if fails else ""),
         f"- 全部公告：巨潮 {tot} 份，本系统找到 {fnd} 份，覆盖率 **{fnd / tot:.1%}**" if tot else "- 全部公告：0",
         f"- 标题含“担保”或“关联交易”的公告（建图来源）：巨潮 {tk} 份，找到 {fk} 份，覆盖率 **{fk / tk:.1%}**" if tk else "- 担保 / 关联交易公告：0",
