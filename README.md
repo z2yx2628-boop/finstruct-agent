@@ -108,6 +108,7 @@ C 行业推断（只作情景，不计分）。
 | 铁矿石冲击、汇率冲击 | p = 0.29；p = 0.90 | 未显著 / 未通过 | `docs/shock_transmission_preregistration.md` |
 | 历史抽取人工抽检（20 份公告、62 条记录） | 整条全对 58/62，条数 20/20 一致 | — | `docs/hist_spot_check_results.md` |
 | 问一句意图识别盲测（30 题，仅规则） | 清晰问题 19/25 | — | `docs/ask_eval.md` |
+| 传导路径是否依赖“需复核”公告（事后敏感性分析） | 逐条剔除无原文依据的记录后，前 20 条路径 20/20 保留；整份剔除时前 10 条全部消失 | 按记录判定稳健；按整份判定过粗 | `docs/needs_review_sensitivity.md` |
 
 ## 快速开始（Windows PowerShell）
 

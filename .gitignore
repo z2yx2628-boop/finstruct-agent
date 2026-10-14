@@ -20,3 +20,6 @@ data/external/financials/raw/
 
 # 介绍视频与素材（体积大，不进仓库）
 项目视频/
+
+# reproducible sensitivity builds (scripts/sensitivity_needs_review.py)
+data/chain/sensitivity_*/
