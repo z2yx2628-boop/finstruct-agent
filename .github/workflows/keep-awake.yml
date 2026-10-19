@@ -1,0 +1,57 @@
+name: Keep app awake
+
+# Streamlit Community Cloud puts free apps to sleep when nobody visits them for a while.
+# A plain HTTP request does not wake a sleeping app, so this opens the page in a real
+# browser every 6 hours and clicks the wake-up button if it is shown.
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours (UTC)
+  workflow_dispatch:
+
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install browser
+        run: |
+          pip install playwright==1.48.0
+          python -m playwright install --with-deps chromium
+      - name: Open the app and wake it if asleep
+        env:
+          APP_URL: https://chainproof-steel.streamlit.app/
+        run: |
+          python - <<'EOF'
+          import os, sys
+          from playwright.sync_api import sync_playwright
+
+          url = os.environ["APP_URL"]
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page()
+              page.goto(url, wait_until="domcontentloaded", timeout=120_000)
+              page.wait_for_timeout(8_000)
+              button = page.get_by_role("button", name="get this app back up", exact=False)
+              if button.count():
+                  print("App was asleep - waking it up")
+                  button.first.click()
+                  page.wait_for_timeout(90_000)
+              else:
+                  print("App was awake")
+              # the app itself is rendered inside an iframe; wait until it shows content
+              ok = False
+              for frame in page.frames:
+                  try:
+                      frame.wait_for_selector("text=今日预警", timeout=60_000)
+                      ok = True
+                      break
+                  except Exception:
+                      continue
+              browser.close()
+          print("App is up" if ok else "App did not show its home page")
+          sys.exit(0 if ok else 1)
+          EOF
