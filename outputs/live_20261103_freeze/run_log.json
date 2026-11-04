@@ -1,0 +1,19 @@
+{
+  "runs": {
+    "live_20261103_001_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "failed",
+      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-8b2678ce-9ccb-9a35-85e8-1e27b18845c5', 'request_id': '8b2678ce-9ccb-9a35-85e8-1e27b18845c5'}"
+    },
+    "live_20261103_002_601686_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "failed",
+      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-da6fed6a-f1bd-9025-8f45-086b83b2bf9d', 'request_id': 'da6fed6a-f1bd-9025-8f45-086b83b2bf9d'}"
+    }
+  },
+  "commit": "65003b067aa1514be41902c430aa4f98bfc2b413",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "",
+  "started_at": "2026-11-03T03:36:38.654621+00:00",
+  "completed_at": "2026-11-03T03:36:41.937451+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "runs": {
+    "live_20261030_001_000932_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "failed",
+      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-058de706-cc8f-960c-bef3-58eed19221c0', 'request_id': '058de706-cc8f-960c-bef3-58eed19221c0'}"
+    }
+  },
+  "commit": "d18afb07716efe7f770a7f054eebccccdd59509e",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "",
+  "started_at": "2026-10-30T02:07:06.009373+00:00",
+  "completed_at": "2026-10-30T02:07:07.919700+00:00"
+}
