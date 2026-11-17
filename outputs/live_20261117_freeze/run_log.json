@@ -1,0 +1,14 @@
+{
+  "runs": {
+    "live_20261117_001_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "failed",
+      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-4ee54cea-ef26-9d88-ae3d-1b76264ca3a3', 'request_id': '4ee54cea-ef26-9d88-ae3d-1b76264ca3a3'}"
+    }
+  },
+  "commit": "a937723db8296afb6ee7dc61f06f2589dc8a14f5",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "",
+  "started_at": "2026-11-17T04:43:08.258705+00:00",
+  "completed_at": "2026-11-17T04:43:09.731206+00:00"
+}
