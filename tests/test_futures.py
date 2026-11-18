@@ -70,3 +70,15 @@ def test_ore_cost_exposure_uses_purchased_ore_only(monkeypatch):
     assert abs(out["extra_yi"] - 8) < 1e-9 and abs(out["to_equity"] - 0.2) < 1e-9
     neg = fu.ore_cost_exposure("600999", "2026-11-18", 0.10, equity_yuan=-5e8)
     assert neg["to_equity"] is None and neg["equity_nonpositive"]
+
+
+def test_company_scenario_adds_revenue_and_cost_sides():
+    ore = {"purchased_yi": 50.0}
+    steel = {"shares": {"RB0": 0.6, "HC0": 0.2}, "revenue_annual_yi": 100.0}
+    sc = fu.company_scenario(ore, steel, 0.10, -0.05, equity_yuan=20e8)
+    assert abs(sc["cost_yi"] - 5.0) < 1e-9                    # 50 x 10%
+    assert abs(sc["revenue_yi"] - (-4.0)) < 1e-9              # 100 x 80% x -5%
+    assert abs(sc["profit_yi"] - (-9.0)) < 1e-9
+    assert abs(sc["to_equity"] - (-0.45)) < 1e-9
+    only_rev = fu.company_scenario(None, steel, 0.10, 0.0, None)
+    assert only_rev["cost_yi"] is None and only_rev["profit_yi"] == 0.0 and only_rev["to_equity"] is None

@@ -208,3 +208,49 @@ def ore_cost_exposure(code: str, as_of: str, ore_move: float, equity_yuan: float
             "to_equity": extra_yi * 1e8 / equity_yuan if equity_yuan and equity_yuan > 0 else None,
             "equity_nonpositive": equity_yuan is not None and equity_yuan <= 0,
             "source": f"{r['fy']}年年报 第{r['page']}页（铁矿石供应情况）"}
+
+
+# ---------------------------------------------------------------- company level: revenue that tracks steel futures
+STEEL_FUTURE = {"RB0": "螺纹（长材）", "HC0": "热卷（板材）"}
+ANNUALIZE = {"0331": 4.0, "0630": 2.0, "0930": 4.0 / 3.0, "1231": 1.0}
+
+
+def steel_revenue_exposure(code: str, as_of: str) -> dict | None:
+    """Share of revenue in products whose price is tracked by rebar / hot-rolled coil futures (B grade:
+    the company's own product-mix disclosure), plus annualized revenue from the latest public period."""
+    from src.product_layer import exposure_as_of, products
+    exp = exposure_as_of(code, as_of)
+    if not (exp and exp.get("products")):
+        return None
+    sym = {p["product_id"]: p["price_symbol"] for p in products()}
+    shares = {}
+    for pid, v in exp["products"].items():
+        s = sym.get(pid)
+        if s in STEEL_FUTURE and v.get("share"):
+            shares[s] = shares.get(s, 0.0) + v["share"]
+    if not shares:
+        return None
+    snaps = sorted(p.name for p in (ROOT / "data" / "snapshots").glob("*") if p.name <= as_of
+                   and (p / "quarterly_metrics.csv").exists())
+    revenue = period = None
+    if snaps:
+        with (ROOT / "data" / "snapshots" / snaps[-1] / "quarterly_metrics.csv").open(encoding="utf-8-sig", newline="") as f:
+            row = next((r for r in csv.DictReader(f) if r["security_code"] == code), None)
+        if row and row.get("revenue") and row.get("period"):
+            period = row["period"]
+            revenue = float(row["revenue"]) * ANNUALIZE.get(period[4:], 1.0)
+    return {"shares": shares, "mix_period": exp.get("period", ""), "revenue_annual_yi": revenue / 1e8 if revenue else None,
+            "revenue_period": period}
+
+
+def company_scenario(ore: dict | None, steel: dict | None, ore_move: float, steel_move: float,
+                     equity_yuan: float | None) -> dict:
+    """One-year, all-else-equal effect on profit: revenue change on futures-tracked steel minus extra ore cost."""
+    cost = ore["purchased_yi"] * ore_move if ore else None
+    rev = None
+    if steel and steel.get("revenue_annual_yi"):
+        rev = steel["revenue_annual_yi"] * sum(steel["shares"].values()) * steel_move
+    parts = [x for x in (rev, -cost if cost is not None else None) if x is not None]
+    total = sum(parts) if parts else None
+    return {"cost_yi": cost, "revenue_yi": rev, "profit_yi": total,
+            "to_equity": total * 1e8 / equity_yuan if (total is not None and equity_yuan and equity_yuan > 0) else None}

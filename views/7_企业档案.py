@@ -14,7 +14,8 @@ from src.product_layer import exposure_as_of, products  # noqa: E402
 from src.report_signals import report_signals  # noqa: E402
 from src.profile import company_signals, fragility_rows, headline, peer_rank, snapshots, split_paths  # noqa: E402
 from src.ui import TIER_BADGE, UNIFIED_PAGE, deposit_block, next_step, page_header, verdict  # noqa: E402
-from src.futures import hedge_label, hedging, margin_snapshot, ore_cost_exposure  # noqa: E402
+from src.futures import (STEEL_FUTURE, company_scenario, hedge_label, hedging, margin_series, margin_snapshot,  # noqa: E402
+                         ore_cost_exposure, steel_revenue_exposure)
 from src.profile_extras import (ORE_SHOCK, brief_html, checklist, equity_of, group_background, peer_dims,  # noqa: E402
                                 period_label, score_history, trend)
 import altair as alt  # noqa: E402
@@ -116,9 +117,9 @@ with st.container(border=True):
         st.download_button("下载核查底稿（可打印为 PDF）", brief.encode("utf-8"), file_name=f"{name}_核查底稿_{snap}.html",
                            mime="text/html", icon=":material/download:", width="stretch")
 
-tab_own, tab_links, tab_chain, tab_products, tab_events = st.tabs(
+tab_own, tab_links, tab_chain, tab_futures, tab_products, tab_events = st.tabs(
     [":material/monitoring: 自身风险", ":material/account_tree: 关联风险", ":material/swap_horiz: 主要客户与供应商",
-     ":material/inventory_2: 产品暴露（情景）", ":material/feed: 公告信号"])
+     ":material/candlestick_chart: 期货与原料（情景）", ":material/inventory_2: 产品暴露（情景）", ":material/feed: 公告信号"])
 
 # ---------------------------------------------------------------- own risk
 with tab_own:
@@ -204,18 +205,7 @@ with tab_own:
             else:
                 st.caption("未发现财报异常信号（非经常性损益占比 ≥ 30%、盈利但经营现金流为负或不足净利润 50%、会计政策或估计变更公告）。")
             st.caption("财报异常信号是核查提示，不计入承压评分；阈值为筛查规则，未经校准。")
-        if ore_x:
-            share_ = f"，占净资产 {ore_x['to_equity']:.1%}" if ore_x.get("to_equity") is not None else "（净资产为负，无法计算占比）"
-            st.markdown(f"**原料价格情景**：铁矿石价格上涨 {ORE_SHOCK:.0%}，按 {ore_x['fy']} 年报外购铁矿 {ore_x['purchased_yi']:.1f} 亿元计，"
-                        f"一年约多付 **{ore_x['extra_yi']:.1f} 亿元**{share_}。")
-            st.caption(f"来源：{ore_x['source']}。假设钢价不跟随、无库存和长协缓冲、不计套保；只作情景，不计入评分。")
-        biz = [x for x in hg["items"] if x["性质"] == "业务公告"]
-        if biz:
-            st.markdown(f"**期货与套期保值**：{hedge_label(hg)}（近 15 个月公告）")
-            st.dataframe(pd.DataFrame(biz)[["日期", "类别", "公告标题"]], hide_index=True, width="stretch")
-            st.caption("有商品套保的企业，原料价格冲击可能部分被对冲；套保规模和效果需看定期报告。详见“市场冲击 → 期货与套保”。")
-        else:
-            st.caption(f"期货与套期保值：{hedge_label(hg)}（公告缓存起点 {hg['cache_from'] or '—'}；未见不等于没有套保）。")
+        st.caption("期货价格、原料成本情景和套期保值见“期货与原料（情景）”标签页。")
         st.caption("核对原始定期报告（新浪财经公告列表）")
         links = st.columns(4)
         for col, (label, url) in zip(links, report_links(code).items()):
@@ -307,6 +297,70 @@ with tab_chain:
         st.caption("口径说明：“预计额度”是关联交易公告给出的下一年上限，不算作实际发生的年份；“期末余额”是应收、预付等余额，"
                    "不是全年交易额；占比优先用原表披露，没有时用公司当年营业收入（销售）或年度采购总额（采购；缺年报时用营业成本近似）计算。"
                    "匿名的“客户一”无法跨年追踪，不计入连续年数。")
+
+# ---------------------------------------------------------------- futures and raw materials (scenario)
+with tab_futures:
+    st.caption("期货视角：钢材和原料的期货价格变动，会从收入端和成本端同时影响这家企业。只作情景，不计入承压评分"
+               "（铁矿石冲击的预先登记检验未达显著）。")
+    steel_x = steel_revenue_exposure(code, snap)
+    f1, f2, f3, f4 = st.columns(4)
+    if margin:
+        f1.metric("行业：螺纹吨钢盘面利润", f"{margin['value']:,.0f} 元/吨", f"{margin['change']:+,.0f}（{WINDOW} 日）",
+                  help=f"{margin['date']}；处于 {margin['since'][:4]} 年以来 {margin['pct_all']:.0%} 分位。螺纹 − 1.6×铁矿 − 0.5×焦炭")
+        f1.caption(f"{margin['since'][:4]} 年以来 {margin['pct_all']:.0%} 分位")
+    f2.metric(f"外购铁矿（{ore_x['fy']} 年报）" if ore_x else "外购铁矿", f"{ore_x['purchased_yi']:.1f} 亿元/年" if ore_x else "未披露",
+              help=ore_x["source"] if ore_x else "年报未披露铁矿石供应情况表")
+    if steel_x:
+        tracked = sum(steel_x["shares"].values())
+        f3.metric("收入中跟踪钢材期货的部分", f"{tracked:.0%}",
+                  help="；".join(f"{STEEL_FUTURE[k]} {v:.0%}" for k, v in steel_x["shares"].items())
+                       + f"（{steel_x['mix_period'][:4]} 年报分产品收入，B 级）")
+    else:
+        f3.metric("收入中跟踪钢材期货的部分", "未披露")
+    f4.metric("套期保值（近 15 个月公告）", hedge_label(hg))
+
+    st.markdown("**情景：期货价格变动后，这家企业一年的利润会受多大影响**")
+    s1, s2 = st.columns(2)
+    ore_mv = s1.slider("铁矿石价格变动", -30, 30, 10, 1, format="%d%%", key="pf_fut_ore")
+    steel_mv = s2.slider("钢材价格变动（螺纹、热卷同幅）", -30, 30, 0, 1, format="%d%%", key="pf_fut_steel")
+    eq_ = equity_of(snap, code)
+    sc_ = company_scenario(ore_x, steel_x, ore_mv / 100, steel_mv / 100, eq_)
+    r1, r2, r3, r4 = st.columns(4)
+    r1.metric("成本端：多付原料", f"{sc_['cost_yi']:+.1f} 亿元" if sc_["cost_yi"] is not None else "无法计算")
+    r2.metric("收入端：钢材收入变动", f"{sc_['revenue_yi']:+.1f} 亿元" if sc_["revenue_yi"] is not None else "无法计算")
+    r3.metric("合计对利润", f"{sc_['profit_yi']:+.1f} 亿元" if sc_["profit_yi"] is not None else "无法计算")
+    r4.metric("占净资产", f"{sc_['to_equity']:+.1%}" if sc_["to_equity"] is not None else ("净资产为负" if eq_ is not None and eq_ <= 0 else "—"))
+    notes = []
+    if ore_x:
+        notes.append(f"成本端 = 外购铁矿 {ore_x['purchased_yi']:.1f} 亿元 × 铁矿变动（{ore_x['source']}）")
+    if steel_x and steel_x.get("revenue_annual_yi"):
+        notes.append(f"收入端 = 年化收入 {steel_x['revenue_annual_yi']:.0f} 亿元（按 {steel_x['revenue_period'][:4]} 年"
+                     f"{ {'0331': '一季报', '0630': '半年报', '0930': '三季报', '1231': '年报'}.get(steel_x['revenue_period'][4:], '')}年化）"
+                     f" × 跟踪钢材期货的收入占比 {sum(steel_x['shares'].values()):.0%} × 钢价变动")
+    st.caption("；".join(notes) + "。一年口径、其他条件不变：不含库存、长协定价、产量调整和套保效果；焦炭、焦煤缺少企业级采购数据，未计入。")
+
+    days_, rebar_ = margin_series("rebar")
+    start_ = f"{int(snap[:4]) - 1}{snap[4:]}"
+    mdf = pd.DataFrame([{"日期": d, "元/吨": v} for d, v in zip(days_, rebar_) if start_ <= d <= snap])
+    if not mdf.empty:
+        mdf["日期"] = pd.to_datetime(mdf["日期"])
+        st.markdown("**行业背景：近一年螺纹吨钢盘面利润**")
+        st.altair_chart(alt.Chart(mdf).mark_area(line={"color": "#16324F"}, color="#dbe5f0").encode(
+            x=alt.X("日期:T", title=None, axis=alt.Axis(format="%Y-%m")),
+            y=alt.Y("元/吨:Q", scale=alt.Scale(zero=False), title="元/吨"),
+            tooltip=[alt.Tooltip("日期:T", format="%Y-%m-%d"), alt.Tooltip("元/吨:Q", format=",.0f")]).properties(height=200),
+            use_container_width=True)
+
+    biz = [x for x in hg["items"] if x["性质"] == "业务公告"]
+    if biz:
+        st.markdown(f"**套期保值公告**：{hedge_label(hg)}")
+        st.dataframe(pd.DataFrame(biz)[["日期", "类别", "公告标题"]], hide_index=True, width="stretch")
+        st.caption("有商品套保的企业，原料价格冲击可能部分被对冲；套保规模和效果需看定期报告。")
+    else:
+        st.caption(f"套期保值：{hedge_label(hg)}（公告缓存起点 {hg['cache_from'] or '—'}；未见不等于没有套保，需核对定期报告）。")
+    if st.button("打开全行业期货情景（24 家钢厂对比）", icon=":material/candlestick_chart:", key="pf_to_futures"):
+        st.session_state["sc_source"] = "期货与套保"
+        st.switch_page("views/5_上下游情景.py")
 
 # ---------------------------------------------------------------- product exposure
 with tab_products:
