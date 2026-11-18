@@ -53,9 +53,14 @@ def margin_rows(days: tuple[str, ...], values: tuple[float, ...], as_of: str, sp
     hist = [v for d, v in zip(days, values) if d <= as_of]
     if not hist:
         return [], None
-    low = sorted(hist)[int(0.2 * (len(hist) - 1))]
+    low = percentile_value(hist, 0.2)
     start = (date.fromisoformat(as_of) - timedelta(days=span)).isoformat()
     return [{"日期": d, "利润": round(v, 1)} for d, v in zip(days, values) if start <= d <= as_of], low
+
+
+def percentile_value(values: list[float], q: float) -> float:
+    ordered = sorted(values)
+    return ordered[int(q * (len(ordered) - 1))]
 
 
 def _base(height: int) -> dict:
@@ -84,37 +89,55 @@ def ranking_chart(rows: list[dict]) -> dict:
     ]}
 
 
-def weak_sentence(rows: list[dict], weak_names: list[str]) -> str:
-    """One line on the weak count over the window (it rarely moves, so a flat line would say nothing)."""
+def weak_sentence(rows: list[dict], core_names: list[str], other_names: list[str] | None = None) -> str:
+    """One line on the weak count among the 24 core mills (the series counts core mills only, so do the names)."""
     vals = [r["数值"] for r in rows if r["指标"].startswith("弱")]
     if not vals:
         return ""
     now = vals[-1]
     change = "近 60 天保持不变" if min(vals) == max(vals) else f"60 天前 {vals[0]} 家，期间最少 {min(vals)}、最多 {max(vals)} 家"
-    return f"弱等级钢厂现有 **{now} 家**（{'、'.join(weak_names)}），{change}。"
+    text = f"核心钢厂中弱等级现有 **{now} 家**（{'、'.join(core_names)}），{change}"
+    if other_names:
+        text += f"；核心钢厂以外另有 {'、'.join(other_names)} 为弱"
+    return text + "。"
 
 
-def path_chart(rows: list[dict]) -> dict:
-    """Scored transmission paths per day as bars; the latest day labelled."""
+# Dated notes on the path chart: why the count jumped (checked against the snapshots and key-path files)
+PATH_NOTES = [
+    {"日期": "2026-09-29", "t": "建设期", "tip": "09-30 回填 186 份历史公告之前，图谱关系不全，路径偏少"},
+    {"日期": "2026-10-31", "t": "三季报", "tip": "三季报更新后：鞍钢系集团参照分 40.8→38.5 转为强，经集团的路径被缓释；"
+                                           "友发集团 40.4→38.1 转为强，其 5 条担保路径被缓释（18→10 条）"},
+]
+
+
+def path_chart(rows: list[dict], notes: list[dict] | None = None) -> dict:
+    """Scored transmission paths per day as bars; the latest day labelled; dated notes explain the jumps."""
     vals = [r for r in rows if r["指标"].startswith("计分")]
     last = vals[-1:] if vals else []
-    return {**_base(220), "data": {"values": vals}, "layer": [
+    days = {r["日期"] for r in vals}
+    top = max([r["数值"] for r in vals] or [1])
+    marks = [dict(n, y=top * 1.12) for n in (PATH_NOTES if notes is None else notes) if n["日期"] in days]
+    x = {"field": "日期", "type": "temporal", "title": None, "axis": {"format": "%m-%d", "labelAngle": 0, "tickCount": 6, "grid": False}}
+    y = {"field": "数值", "type": "quantitative", "title": "条", "axis": {"tickMinStep": 1}, "scale": {"domain": [0, top * 1.25]}}
+    return {**_base(230), "data": {"values": vals}, "layer": [
         {"mark": {"type": "bar", "color": "#B794F4", "cornerRadiusTopLeft": 2, "cornerRadiusTopRight": 2},
-         "encoding": {"x": {"field": "日期", "type": "temporal", "title": None,
-                            "axis": {"format": "%m-%d", "labelAngle": 0, "tickCount": 6, "grid": False}},
-                      "y": {"field": "数值", "type": "quantitative", "title": "条", "axis": {"tickMinStep": 1}},
+         "encoding": {"x": x, "y": y,
                       "tooltip": [{"field": "日期", "type": "temporal", "title": "日期"}, {"field": "数值", "title": "计分路径（条）"}]}},
-        {"data": {"values": last}, "mark": {"type": "bar", "color": "#7B2CBF"},
-         "encoding": {"x": {"field": "日期", "type": "temporal"}, "y": {"field": "数值", "type": "quantitative"}}},
+        {"data": {"values": last}, "mark": {"type": "bar", "color": "#7B2CBF"}, "encoding": {"x": x, "y": y}},
         {"data": {"values": last}, "mark": {"type": "text", "dy": -8, "fontSize": 12, "fontWeight": 700, "color": "#7B2CBF"},
-         "encoding": {"x": {"field": "日期", "type": "temporal"}, "y": {"field": "数值", "type": "quantitative"},
-                      "text": {"field": "数值"}}},
+         "encoding": {"x": x, "y": y, "text": {"field": "数值"}}},
+        {"data": {"values": marks}, "mark": {"type": "rule", "strokeDash": [2, 2], "color": "#98A2B3"},
+         "encoding": {"x": x}},
+        {"data": {"values": marks}, "mark": {"type": "text", "align": "left", "dx": 3, "fontSize": 10, "color": "#667085"},
+         "encoding": {"x": x, "y": {"field": "y", "type": "quantitative"}, "text": {"field": "t"},
+                      "tooltip": [{"field": "tip", "title": "说明"}]}},
     ]}
 
 
-def margin_chart(rows: list[dict], low: float | None) -> dict:
-    """Line of the margin on a zoomed axis; the zone below the historical 20th percentile shaded; latest value labelled."""
-    vals = [r["利润"] for r in rows] + ([low] if low is not None else [])
+def margin_chart(rows: list[dict], low: float | None, median: float | None = None) -> dict:
+    """Line of the margin on a zoomed axis; the zone below the historical 20th percentile shaded; the historical
+    median drawn as the 'normal level' for reference; latest value labelled."""
+    vals = [r["利润"] for r in rows] + [v for v in (low, median) if v is not None]
     lo, hi = (min(vals) - 80, max(vals) + 80) if vals else (0, 1)
     y = {"field": "利润", "type": "quantitative", "title": "元/吨", "scale": {"domain": [lo, hi], "nice": False}}
     x = {"field": "日期", "type": "temporal", "title": None, "axis": {"format": "%y-%m", "labelAngle": 0, "grid": False}}
@@ -132,6 +155,13 @@ def margin_chart(rows: list[dict], low: float | None) -> dict:
                            "mark": {"type": "text", "align": "right", "dy": -6, "fontSize": 10, "color": "#E5484D"},
                            "encoding": {"y": {"field": "y", "type": "quantitative", "scale": {"domain": [lo, hi], "nice": False}},
                                         "x": {"field": "日期", "type": "temporal"}, "text": {"field": "t"}}})
+    if median is not None and rows:
+        layers.append({"data": {"values": [{"y": median}]}, "mark": {"type": "rule", "strokeDash": [2, 3], "color": "#667085"},
+                       "encoding": {"y": {"field": "y", "type": "quantitative", "scale": {"domain": [lo, hi], "nice": False}}}})
+        layers.append({"data": {"values": [{"y": median, "日期": rows[-1]["日期"], "t": f"历史中位数 {median:,.0f}（正常水平）"}]},
+                       "mark": {"type": "text", "align": "right", "dy": -6, "fontSize": 10, "color": "#667085"},
+                       "encoding": {"y": {"field": "y", "type": "quantitative", "scale": {"domain": [lo, hi], "nice": False}},
+                                    "x": {"field": "日期", "type": "temporal"}, "text": {"field": "t"}}})
     layers += [
         {"mark": {"type": "line", "color": "#1C5D99", "strokeWidth": 1.8},
          "encoding": {"x": x, "y": y, "tooltip": [{"field": "日期", "type": "temporal", "title": "日期"},

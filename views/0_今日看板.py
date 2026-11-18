@@ -179,8 +179,8 @@ for i, (col, (title, color, value, unit, note, detail)) in enumerate(zip(cols, c
 
 # ---------------------------------------------------------------- risk panel: three small charts
 from src.futures import margin_series                   # noqa: E402
-from src.home_panel import (margin_chart, margin_rows, path_chart, ranking_chart, ranking_rows,  # noqa: E402
-                            trend_rows, weak_sentence)
+from src.home_panel import (margin_chart, margin_rows, path_chart, percentile_value, ranking_chart,  # noqa: E402
+                            ranking_rows, trend_rows, weak_sentence)
 
 
 @st.cache_data(show_spinner=False)
@@ -194,14 +194,18 @@ with p_left.container(border=True):
     st.vega_lite_chart(ranking_chart(ranking_rows(now)), width="stretch")
 with p_right.container(border=True):
     trend = _panel_trend(day, len(paths))
-    st.markdown("**传导路径走势**　:gray[近 60 天每天的计分传导路径数；深色 = 今天]")
-    st.caption(weak_sentence(trend, [r["security_name"] for r in weak]))
+    st.markdown("**传导路径走势**　:gray[近 60 天每天的计分传导路径数；深色 = 今天；虚线标注 = 跳变原因（悬停查看）；空档 = 节假日或当天未更新]")
+    st.caption(weak_sentence(trend, [r["security_name"] for r in weak if r.get("peer_group") == "core"],
+                             [r["security_name"] for r in weak if r.get("peer_group") != "core"]))
     st.vega_lite_chart(path_chart(trend), width="stretch")
 with p_right.container(border=True):
-    m_rows, m_low = margin_rows(*margin_series("rebar"), day)
+    m_days, m_vals = margin_series("rebar")
+    m_rows, m_low = margin_rows(m_days, m_vals, day)
+    m_hist = [v for d_, v in zip(m_days, m_vals) if d_ <= day]
+    m_median = percentile_value(m_hist, 0.5) if m_hist else None
     st.markdown("**行业利润**　:gray[近一年吨钢盘面利润（卖 1 吨螺纹 − 1.6 吨矿 − 0.5 吨焦，元/吨）；落入红色区域 = 历史最低的 20%]")
     if m_rows:
-        st.vega_lite_chart(margin_chart(m_rows, m_low), width="stretch")
+        st.vega_lite_chart(margin_chart(m_rows, m_low, m_median), width="stretch")
     else:
         st.caption("期货价格不可用。")
 
