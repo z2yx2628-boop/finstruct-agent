@@ -1,5 +1,5 @@
 """首页风险面板: chart data come straight from the snapshot, key paths and futures series."""
-from src.home_panel import margin_chart, margin_rows, ranking_chart, ranking_rows
+from src.home_panel import margin_chart, margin_rows, path_chart, ranking_chart, ranking_rows, weak_sentence
 
 
 def test_ranking_keeps_core_mills_weakest_first():
@@ -15,4 +15,13 @@ def test_margin_low_line_is_the_historical_20th_percentile():
     values = tuple(float(v) for v in range(100, 1100, 100))
     rows, low = margin_rows(days, values, "2025-10-01", span=120)
     assert low == 200.0 and rows[-1]["利润"] == 1000.0 and len(rows) == 4      # 07-01 … 10-01
-    assert len(margin_chart(rows, low)["layer"]) == 2
+    spec = margin_chart(rows, low)
+    domain = spec["layer"][-3]["encoding"]["y"]["scale"]["domain"]
+    assert domain[0] < 200 and domain[1] > 1000            # zoomed to the data, not from zero
+
+
+def test_weak_line_and_path_bars():
+    rows = [{"日期": "2026-10-01", "指标": "弱等级钢厂（家）", "数值": 5}, {"日期": "2026-11-01", "指标": "弱等级钢厂（家）", "数值": 5},
+            {"日期": "2026-10-01", "指标": "计分传导路径（条）", "数值": 14}, {"日期": "2026-11-01", "指标": "计分传导路径（条）", "数值": 10}]
+    assert "保持不变" in weak_sentence(rows, ["甲", "乙"]) and "**5 家**" in weak_sentence(rows, ["甲"])
+    assert path_chart(rows)["layer"][2]["data"]["values"][0]["数值"] == 10

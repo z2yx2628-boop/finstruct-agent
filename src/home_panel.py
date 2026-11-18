@@ -84,27 +84,62 @@ def ranking_chart(rows: list[dict]) -> dict:
     ]}
 
 
-def trend_chart(rows: list[dict]) -> dict:
-    return {**_base(240), "data": {"values": rows},
-            "mark": {"type": "line", "point": {"size": 18}, "strokeWidth": 2, "interpolate": "step-after"},
-            "encoding": {"x": {"field": "日期", "type": "temporal", "title": None, "axis": {"format": "%m-%d", "labelAngle": 0}},
-                         "y": {"field": "数值", "type": "quantitative", "title": None, "axis": {"tickMinStep": 1}},
-                         "color": {"field": "指标", "type": "nominal",
-                                   "scale": {"range": ["#E5484D", "#7B2CBF"]}},
-                         "tooltip": [{"field": "日期", "type": "temporal"}, {"field": "指标"}, {"field": "数值"}]}}
+def weak_sentence(rows: list[dict], weak_names: list[str]) -> str:
+    """One line on the weak count over the window (it rarely moves, so a flat line would say nothing)."""
+    vals = [r["数值"] for r in rows if r["指标"].startswith("弱")]
+    if not vals:
+        return ""
+    now = vals[-1]
+    change = "近 60 天保持不变" if min(vals) == max(vals) else f"60 天前 {vals[0]} 家，期间最少 {min(vals)}、最多 {max(vals)} 家"
+    return f"弱等级钢厂现有 **{now} 家**（{'、'.join(weak_names)}），{change}。"
+
+
+def path_chart(rows: list[dict]) -> dict:
+    """Scored transmission paths per day as bars; the latest day labelled."""
+    vals = [r for r in rows if r["指标"].startswith("计分")]
+    last = vals[-1:] if vals else []
+    return {**_base(220), "data": {"values": vals}, "layer": [
+        {"mark": {"type": "bar", "color": "#B794F4", "cornerRadiusTopLeft": 2, "cornerRadiusTopRight": 2},
+         "encoding": {"x": {"field": "日期", "type": "temporal", "title": None,
+                            "axis": {"format": "%m-%d", "labelAngle": 0, "tickCount": 6, "grid": False}},
+                      "y": {"field": "数值", "type": "quantitative", "title": "条", "axis": {"tickMinStep": 1}},
+                      "tooltip": [{"field": "日期", "type": "temporal", "title": "日期"}, {"field": "数值", "title": "计分路径（条）"}]}},
+        {"data": {"values": last}, "mark": {"type": "bar", "color": "#7B2CBF"},
+         "encoding": {"x": {"field": "日期", "type": "temporal"}, "y": {"field": "数值", "type": "quantitative"}}},
+        {"data": {"values": last}, "mark": {"type": "text", "dy": -8, "fontSize": 12, "fontWeight": 700, "color": "#7B2CBF"},
+         "encoding": {"x": {"field": "日期", "type": "temporal"}, "y": {"field": "数值", "type": "quantitative"},
+                      "text": {"field": "数值"}}},
+    ]}
 
 
 def margin_chart(rows: list[dict], low: float | None) -> dict:
-    layers = [
-        {"mark": {"type": "area", "line": {"color": "#1C5D99", "strokeWidth": 1.6}, "color": "#1C5D99", "opacity": 0.12},
-         "encoding": {"x": {"field": "日期", "type": "temporal", "title": None, "axis": {"format": "%y-%m", "labelAngle": 0}},
-                      "y": {"field": "利润", "type": "quantitative", "title": "元/吨", "scale": {"zero": False}},
-                      "tooltip": [{"field": "日期", "type": "temporal"}, {"field": "利润", "title": "盘面利润（元/吨）"}]}},
-    ]
+    """Line of the margin on a zoomed axis; the zone below the historical 20th percentile shaded; latest value labelled."""
+    vals = [r["利润"] for r in rows] + ([low] if low is not None else [])
+    lo, hi = (min(vals) - 80, max(vals) + 80) if vals else (0, 1)
+    y = {"field": "利润", "type": "quantitative", "title": "元/吨", "scale": {"domain": [lo, hi], "nice": False}}
+    x = {"field": "日期", "type": "temporal", "title": None, "axis": {"format": "%y-%m", "labelAngle": 0, "grid": False}}
+    last = rows[-1:]
+    layers = []
     if low is not None:
-        layers.append({"data": {"values": [{"y": low, "t": f"历史 20% 分位 {low:,.0f}"}]},
-                       "layer": [{"mark": {"type": "rule", "strokeDash": [4, 3], "color": "#E5484D"},
-                                  "encoding": {"y": {"field": "y", "type": "quantitative"}}},
-                                 {"mark": {"type": "text", "align": "left", "dx": 4, "dy": -6, "fontSize": 10, "color": "#E5484D"},
-                                  "encoding": {"y": {"field": "y", "type": "quantitative"}, "x": {"value": 0}, "text": {"field": "t"}}}]})
-    return {**_base(240), "data": {"values": rows}, "layer": layers}
+        layers.append({"data": {"values": [{"y": lo, "y2": low}]},
+                       "mark": {"type": "rect", "color": "#E5484D", "opacity": 0.07},
+                       "encoding": {"y": {"field": "y", "type": "quantitative", "scale": {"domain": [lo, hi], "nice": False}},
+                                    "y2": {"field": "y2"}}})
+        layers.append({"data": {"values": [{"y": low}]}, "mark": {"type": "rule", "strokeDash": [4, 3], "color": "#E5484D"},
+                       "encoding": {"y": {"field": "y", "type": "quantitative", "scale": {"domain": [lo, hi], "nice": False}}}})
+        if rows:
+            layers.append({"data": {"values": [{"y": low, "日期": rows[-1]["日期"], "t": f"历史低位线 {low:,.0f}（2014 年以来 20% 分位）"}]},
+                           "mark": {"type": "text", "align": "right", "dy": -6, "fontSize": 10, "color": "#E5484D"},
+                           "encoding": {"y": {"field": "y", "type": "quantitative", "scale": {"domain": [lo, hi], "nice": False}},
+                                        "x": {"field": "日期", "type": "temporal"}, "text": {"field": "t"}}})
+    layers += [
+        {"mark": {"type": "line", "color": "#1C5D99", "strokeWidth": 1.8},
+         "encoding": {"x": x, "y": y, "tooltip": [{"field": "日期", "type": "temporal", "title": "日期"},
+                                                  {"field": "利润", "title": "盘面利润（元/吨）"}]}},
+        {"data": {"values": last}, "mark": {"type": "point", "filled": True, "size": 60, "color": "#1C5D99"},
+         "encoding": {"x": x, "y": y}},
+        {"data": {"values": [dict(r, t=f"{r['日期'][5:]}：{r['利润']:,.0f}") for r in last]},
+         "mark": {"type": "text", "align": "right", "dx": -6, "dy": 14, "fontSize": 11, "fontWeight": 700, "color": "#1C5D99"},
+         "encoding": {"x": x, "y": y, "text": {"field": "t"}}},
+    ]
+    return {**_base(230), "data": {"values": rows}, "layer": layers}

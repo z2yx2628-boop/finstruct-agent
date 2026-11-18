@@ -179,8 +179,8 @@ for i, (col, (title, color, value, unit, note, detail)) in enumerate(zip(cols, c
 
 # ---------------------------------------------------------------- risk panel: three small charts
 from src.futures import margin_series                   # noqa: E402
-from src.home_panel import (margin_chart, margin_rows, ranking_chart, ranking_rows, trend_chart,  # noqa: E402
-                            trend_rows)
+from src.home_panel import (margin_chart, margin_rows, path_chart, ranking_chart, ranking_rows,  # noqa: E402
+                            trend_rows, weak_sentence)
 
 
 @st.cache_data(show_spinner=False)
@@ -193,11 +193,13 @@ with p_left.container(border=True):
     st.markdown("**承压排行**　:gray[24 家核心钢厂，越长越弱；虚线是弱 / 中分界]")
     st.vega_lite_chart(ranking_chart(ranking_rows(now)), width="stretch")
 with p_right.container(border=True):
-    st.markdown("**风险走势**　:gray[近 60 天：弱等级钢厂数与计分传导路径数]")
-    st.vega_lite_chart(trend_chart(_panel_trend(day, len(paths))), width="stretch")
+    trend = _panel_trend(day, len(paths))
+    st.markdown("**传导路径走势**　:gray[近 60 天每天的计分传导路径数；深色 = 今天]")
+    st.caption(weak_sentence(trend, [r["security_name"] for r in weak]))
+    st.vega_lite_chart(path_chart(trend), width="stretch")
 with p_right.container(border=True):
     m_rows, m_low = margin_rows(*margin_series("rebar"), day)
-    st.markdown("**行业利润**　:gray[近一年吨钢盘面利润；红虚线以下 = 历史低位]")
+    st.markdown("**行业利润**　:gray[近一年吨钢盘面利润（卖 1 吨螺纹 − 1.6 吨矿 − 0.5 吨焦，元/吨）；落入红色区域 = 历史最低的 20%]")
     if m_rows:
         st.vega_lite_chart(margin_chart(m_rows, m_low), width="stretch")
     else:
