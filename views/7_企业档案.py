@@ -32,6 +32,10 @@ CHAINS = {"data/chain/live": "实时图谱（每日更新）", "data/chain/backt
 DEMOS = [("安泰集团 · 回测 2025-01-31", "600408", "2025-01-31", "data/chain/backtest_antai_fix1"),
          ("凌钢股份 · 回测 2024-04-30", "600231", "2024-04-30", "data/chain/backtest_linggang_fix1"),
          ("方大特钢 · 回测 2025-02-28", "600507", "2025-02-28", "data/chain/analysis_v1_fix1")]
+SECTIONS = ["自身风险", "财报分析", "关联风险", "客户与供应商", "期货与原料", "产品暴露", "公告信号"]
+SECTION_ICON = {"自身风险": ":material/monitoring:", "财报分析": ":material/receipt_long:", "关联风险": ":material/account_tree:",
+                "客户与供应商": ":material/swap_horiz:", "期货与原料": ":material/candlestick_chart:",
+                "产品暴露": ":material/inventory_2:", "公告信号": ":material/feed:"}
 snaps = snapshots()
 if not snaps:
     st.info("还没有承压评分快照。")
@@ -49,6 +53,8 @@ def choose(code: str, snapshot: str | None, chain: str | None) -> None:
 goto = st.session_state.pop("_goto_profile", None)          # arriving from another page's "档案" button
 if goto:
     choose(goto["code"], goto.get("snapshot") or snaps[0], goto.get("chain") or "data/chain/live")
+    if goto.get("tab") in SECTIONS:
+        st.session_state["pf_tab"] = goto["tab"]
 st.session_state.setdefault("pf_snap", snaps[0])
 st.session_state.setdefault("pf_chain", "data/chain/live")
 
@@ -117,12 +123,12 @@ with st.container(border=True):
         st.download_button("下载核查底稿（可打印为 PDF）", brief.encode("utf-8"), file_name=f"{name}_核查底稿_{snap}.html",
                            mime="text/html", icon=":material/download:", width="stretch")
 
-tab_own, tab_links, tab_chain, tab_futures, tab_products, tab_events = st.tabs(
-    [":material/monitoring: 自身风险", ":material/account_tree: 关联风险", ":material/swap_horiz: 主要客户与供应商",
-     ":material/candlestick_chart: 期货与原料（情景）", ":material/inventory_2: 产品暴露（情景）", ":material/feed: 公告信号"])
+st.session_state.setdefault("pf_tab", "自身风险")
+section = st.segmented_control("查看", SECTIONS, key="pf_tab", label_visibility="collapsed",
+                               format_func=lambda x: f"{SECTION_ICON[x]} {x}" + ("（情景）" if x in ("期货与原料", "产品暴露") else "")) or "自身风险"
 
 # ---------------------------------------------------------------- own risk
-with tab_own:
+if section == "自身风险":
     st.caption("自身风险 = 这家企业是否可能成为**风险源**。财务脆弱性（承压评分）：在 24 家核心钢厂中比较杠杆、短期偿债、造血、盈利、市场、"
                "对外担保六方面，0–100 分，**越高越脆弱**，≥ 60 为弱；它是模型预警，不是违约概率。公告中已发生的冻结、逾期、风险警示等事件会直接下调等级。")
     if not row:
@@ -192,6 +198,14 @@ with tab_own:
         if ev:
             st.markdown("**财报后的风险公告**（会使等级下调一档）")
             st.dataframe(pd.DataFrame(ev), hide_index=True, width="stretch")
+        st.caption("财报同比环比与异常信号见“财报分析”；期货、原料成本情景和套期保值见“期货与原料”。")
+        st.page_link("views/2_承压评分.py", label="完整评分拆解、敏感性与数据来源", icon=":material/monitoring:")
+
+# ---------------------------------------------------------------- financial report analysis
+if section == "财报分析":
+    if not rs or not rs["period"]:
+        st.caption("没有可用的季度财务摘要。")
+    else:
         if rs and rs["period"]:
             p = rs["period"]
             st.markdown(f"**财报分析**（最近一期 {p[:4]} 年{ {'0331': '一季报', '0630': '半年报', '0930': '三季报', '1231': '年报'}[p[4:]] }，"
@@ -205,15 +219,13 @@ with tab_own:
             else:
                 st.caption("未发现财报异常信号（非经常性损益占比 ≥ 30%、盈利但经营现金流为负或不足净利润 50%、会计政策或估计变更公告）。")
             st.caption("财报异常信号是核查提示，不计入承压评分；阈值为筛查规则，未经校准。")
-        st.caption("期货价格、原料成本情景和套期保值见“期货与原料（情景）”标签页。")
-        st.caption("核对原始定期报告（新浪财经公告列表）")
-        links = st.columns(4)
-        for col, (label, url) in zip(links, report_links(code).items()):
-            col.link_button(label, url, width="stretch")
-        st.page_link("views/2_承压评分.py", label="完整评分拆解、敏感性与数据来源", icon=":material/monitoring:")
+    st.caption("核对原始定期报告（新浪财经公告列表）")
+    links = st.columns(4)
+    for col, (label, url) in zip(links, report_links(code).items()):
+        col.link_button(label, url, width="stretch")
 
 # ---------------------------------------------------------------- related-party risk
-with tab_links:
+if section == "关联风险":
     if not (mine["incoming"] or mine["outgoing"]):
         st.success(f"在{CHAINS[chain]}、评估日 {snap} 下，没有经过 {name} 的关键传导路径"
                    "（途经企业承压为强、风险可能受到缓释，金额不重大，或没有中高严重度的起点）。", icon=":material/check_circle:")
@@ -233,7 +245,7 @@ with tab_links:
             st.switch_page("views/4_风险路径图.py")
 
 # ---------------------------------------------------------------- customers and suppliers: how much, what share, how long
-with tab_chain:
+if section == "客户与供应商":
     from src.policy_shock import iron_ore_import, overseas_share
     from src.supply_relations import SIDE, concentration, summary
     ov, ore = overseas_share(code, snap), iron_ore_import(code, snap)
@@ -299,7 +311,7 @@ with tab_chain:
                    "匿名的“客户一”无法跨年追踪，不计入连续年数。")
 
 # ---------------------------------------------------------------- futures and raw materials (scenario)
-with tab_futures:
+if section == "期货与原料":
     st.caption("期货视角：钢材和原料的期货价格变动，会从收入端和成本端同时影响这家企业。只作情景，不计入承压评分"
                "（铁矿石冲击的预先登记检验未达显著）。")
     steel_x = steel_revenue_exposure(code, snap)
@@ -363,7 +375,7 @@ with tab_futures:
         st.switch_page("views/5_上下游情景.py")
 
 # ---------------------------------------------------------------- product exposure
-with tab_products:
+if section == "产品暴露":
     exposure = exposure_as_of(code, snap)
     if not (exposure and exposure.get("products")):
         st.caption("没有可用的分产品披露。")
@@ -381,7 +393,7 @@ with tab_products:
         st.page_link("views/5_上下游情景.py", label="模拟一次价格或停产冲击", icon=":material/swap_horiz:")
 
 # ---------------------------------------------------------------- announcement signals
-with tab_events:
+if section == "公告信号":
     sig = company_signals(ROOT / chain, code, snap)
     if sig:
         st.dataframe(pd.DataFrame(sig), hide_index=True, width="stretch")

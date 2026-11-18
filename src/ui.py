@@ -123,10 +123,59 @@ STORY = ["今日预警", "企业档案", "风险传导", "分析新公告", "可
 UNIFIED_PAGE = "views/8_风险传导总图.py"
 
 
+@st.cache_data(ttl=600, show_spinner=False)
+def _command_companies() -> list[dict]:
+    from src.command import load_companies
+    from src.profile import fragility_rows, snapshots
+    snaps = snapshots()
+    return load_companies(fragility_rows(snaps[0])) if snaps else []
+
+
+def _queue_command() -> None:
+    st.session_state["_cmd_pending"] = st.session_state.get("cmd_bar")
+    st.session_state["cmd_bar"] = None
+
+
+def command_bar() -> None:
+    """Bloomberg-style command line on every page: "<company> <function>", a page name, or a question."""
+    from src.command import FUNCS, parse, suggestion
+    companies = _command_companies()
+    st.selectbox("命令行", [suggestion(c) for c in companies], index=None, key="cmd_bar", accept_new_options=True,
+                 on_change=_queue_command, label_visibility="collapsed",
+                 placeholder="🔍 输入公司、代码或命令后回车　例：凌钢　600231 FA　安泰 RELS　鞍钢 客户　期货　可信度　?凌钢会传给谁")
+    note = st.session_state.pop("_cmd_note", None)
+    if note:
+        st.toast(note, icon=":material/info:")
+    pending = st.session_state.pop("_cmd_pending", None)
+    if not pending:
+        return
+    cmd = parse(pending, companies)
+    if cmd["kind"] == "company":
+        c = cmd["company"]
+        if cmd["others"]:
+            st.session_state["_cmd_note"] = (f"匹配到多家：{'、'.join([c['name']] + [o['name'] for o in cmd['others'][:4]])}；"
+                                             f"已打开 {c['name']}，可输入全称或代码精确定位")
+        if cmd["target"] == "unified":
+            st.session_state["_goto_unified"] = {"code": c["code"]}
+            st.switch_page(UNIFIED_PAGE)
+        st.session_state["_goto_profile"] = {"code": c["code"], "tab": cmd["section"]}
+        st.switch_page("views/7_企业档案.py")
+    elif cmd["kind"] == "page":
+        st.session_state.update(cmd["state"])
+        st.switch_page(cmd["page"])
+    elif cmd["kind"] == "ask":
+        st.session_state["ask_q"] = cmd["question"]
+        st.switch_page("views/9_问一句.py")
+    else:
+        st.toast("没有找到。试试企业简称、6 位代码，或命令：" + "、".join(f"{k} {v[0]}" for k, v in FUNCS.items()),
+                 icon=":material/search_off:")
+
+
 def page_header(title: str, icon: str, question: str, grades: bool = False, about: str | None = None,
                 step: int | None = None, fresh: bool = False, subtitle: str | None = None) -> None:
     """Title, one caption line (story step + the question the page answers), and everything explanatory
     folded into a single box. Data freshness is shown only where asked (the home page)."""
+    command_bar()
     st.title(title, icon=icon)
     if subtitle:
         st.subheader(subtitle, divider=False)
