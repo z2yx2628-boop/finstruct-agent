@@ -14,6 +14,10 @@ from src.product_layer import exposure_as_of, products  # noqa: E402
 from src.report_signals import report_signals  # noqa: E402
 from src.profile import company_signals, fragility_rows, headline, peer_rank, snapshots, split_paths  # noqa: E402
 from src.ui import TIER_BADGE, UNIFIED_PAGE, deposit_block, next_step, page_header, verdict  # noqa: E402
+from src.futures import hedge_label, hedging, margin_snapshot, ore_cost_exposure  # noqa: E402
+from src.profile_extras import (ORE_SHOCK, brief_html, checklist, equity_of, group_background, peer_dims,  # noqa: E402
+                                period_label, score_history, trend)
+import altair as alt  # noqa: E402
 
 page_header("企业档案", ":material/badge:", "这家企业的财务脆弱性如何？风险可能从哪里传入、向哪里传出？", grades=True,
             about="把其他页面的结果按企业重新组合：**自身风险**来自企业承压评分；**关联风险**来自集团信用通道的路径"
@@ -88,6 +92,30 @@ mine = split_paths(filter_paths(ranked, company=code, hide_low_information=True,
 level, text = headline(name, row, len(mine["incoming"]), len(mine["outgoing"]), len(mine["absorbed"]))
 verdict(level, text)
 
+# ---------------------------------------------------------------- key points: every tab's conclusion in one place
+detail = explain(folder, code) if (row and snapshot_meta(folder).get("version") == "v1") else None
+history = score_history(code, snap)
+tr = trend(history)
+group = group_background(code)
+margin = margin_snapshot("rebar", snap)
+ore_x = ore_cost_exposure(code, snap, ORE_SHOCK, equity_of(snap, code))
+hg = hedging(code, snap)
+rs = report_signals(code, snap) if row else None
+summary_ = checklist(name, row, detail, tr, group, margin, ore_x, hedge_label(hg),
+                     len(mine["incoming"]), len(mine["outgoing"]), rs)
+with st.container(border=True):
+    k1, k2 = st.columns([3, 2], gap="large")
+    with k1:
+        st.markdown("**核查要点**（汇总下方各标签页的结论，不产生新分数）")
+        st.markdown("\n".join(f"- {p_}" for p_ in summary_["points"]))
+    with k2:
+        st.markdown("**建议优先核查**（固定规则生成）")
+        st.markdown("\n".join(f"{i}. {c_}" for i, c_ in enumerate(summary_["checks"], 1)) if summary_["checks"] else "暂无需要优先核查的事项。")
+        brief = brief_html(name, code, snap, text, summary_, peer_dims(snap, code), row["reasons"] if row else "", rs,
+                           path_rows(mine["incoming"] + mine["outgoing"], names, eindex, snapshot_equity(folder)))
+        st.download_button("下载核查底稿（可打印为 PDF）", brief.encode("utf-8"), file_name=f"{name}_核查底稿_{snap}.html",
+                           mime="text/html", icon=":material/download:", width="stretch")
+
 tab_own, tab_links, tab_chain, tab_products, tab_events = st.tabs(
     [":material/monitoring: 自身风险", ":material/account_tree: 关联风险", ":material/swap_horiz: 主要客户与供应商",
      ":material/inventory_2: 产品暴露（情景）", ":material/feed: 公告信号"])
@@ -105,10 +133,10 @@ with tab_own:
         rank = peer_rank(rows, code)
         m1, m2, m3, m4 = st.columns(4)
         m1.metric("财务脆弱性", TIER_BADGE.get(row["tier"], row.get("tier_label", "")))
-        m2.metric("总分（越高越弱）", row["total_score"] or "—")
+        m2.metric("总分（越高越弱）", row["total_score"] or "—",
+                  delta=f"{tr['delta']:+.1f}（较 {tr['from']}）" if tr else None, delta_color="inverse")
         m3.metric("核心钢厂中排名", f"第 {rank[0]} 弱 / {rank[1]}" if rank else "非核心样本")
         m4.metric("财报后风险事件", row.get("events_after_report") or "0")
-        detail = explain(folder, code) if snapshot_meta(folder).get("version") == "v1" else None
         if detail and detail["rules"]:
             st.error("直接判为弱的规则：" + "；".join(detail["rules"]), icon=":material/gpp_bad:")
         st.markdown(f"**主要原因**：{row['reasons'] or '—'}")
@@ -118,6 +146,43 @@ with tab_own:
                                         "对总分贡献": d["contribution"],
                                         "主要指标": "；".join(f"{m['metric']} {m['value']}（{m['rank']}）" for m in d["metrics"][:2])}
                                        for d in detail["dimensions"]]), hide_index=True, width="stretch")
+        ch1, ch2 = st.columns(2, gap="large")
+        if len(history) > 1:
+            with ch1:
+                st.markdown("**评分走势**（每日快照；红虚线 60 分以上为弱；▲ 新财报开始使用）")
+                hdf = pd.DataFrame(history)
+                hdf["日期"] = pd.to_datetime(hdf["日期"])
+                hdf["财报"] = hdf["财报期"].map(period_label)
+                line = alt.Chart(hdf).mark_line(point=True, color="#16324F").encode(
+                    x=alt.X("日期:T", title=None, axis=alt.Axis(format="%m-%d")),
+                    y=alt.Y("总分:Q", scale=alt.Scale(zero=False), title="总分（越高越弱）"),
+                    tooltip=[alt.Tooltip("日期:T", format="%Y-%m-%d"), "总分:Q", "等级:N", alt.Tooltip("财报:N", title="所用财报")])
+                rule = alt.Chart(pd.DataFrame({"y": [60]})).mark_rule(color="#d9534f", strokeDash=[4, 4]).encode(y="y:Q")
+                marks = alt.Chart(hdf[hdf["新财报"]]).mark_point(shape="triangle-up", size=160, filled=True, color="#F28C28").encode(
+                    x="日期:T", y="总分:Q", tooltip=[alt.Tooltip("日期:T", format="%Y-%m-%d"), alt.Tooltip("财报:N", title="开始使用")])
+                st.altair_chart((line + rule + marks).properties(height=230), use_container_width=True)
+                jumps = hdf[hdf["新财报"]]
+                if not jumps.empty:
+                    st.caption("；".join(f"{d:%m-%d} 开始使用{p_}" for d, p_ in zip(jumps["日期"], jumps["财报"]))
+                               + "。两个 ▲ 之间的变化来自股价（市场维度）和同业相对位置。")
+        pdims = peer_dims(snap, code)
+        if pdims and row.get("peer_group") == "core":
+            with ch2:
+                st.markdown("**和 24 家核心钢厂比**（柱：本企业维度得分，越高越弱；灰色竖线：24 家中位数）")
+                pdf = pd.DataFrame(pdims)
+                order_ = [d["维度"] for d in pdims]
+                pdf["颜色"] = pdf["差距"].map(lambda g: "明显更差" if g >= 15 else "接近或更好")
+                bar = alt.Chart(pdf).mark_bar(height=18).encode(
+                    y=alt.Y("维度:N", sort=order_, title=None),
+                    x=alt.X("本企业:Q", scale=alt.Scale(domain=[0, 100]), title=None),
+                    color=alt.Color("颜色:N", scale=alt.Scale(domain=["明显更差", "接近或更好"], range=["#d9534f", "#9fb3c8"]),
+                                    legend=alt.Legend(orient="bottom", title=None)),
+                    tooltip=["维度:N", alt.Tooltip("本企业:Q", format=".1f"), alt.Tooltip("核心钢厂中位数:Q", format=".1f"),
+                             alt.Tooltip("差距:Q", format="+.1f")])
+                tick = alt.Chart(pdf).mark_tick(color="#33475b", thickness=3, size=26).encode(
+                    y=alt.Y("维度:N", sort=order_), x="核心钢厂中位数:Q")
+                bars = bar + tick
+                st.altair_chart(bars.properties(height=230), use_container_width=True)
         g = guarantee_evidence(folder, code)
         if g:
             st.markdown("**对外担保的依据公告**")
@@ -126,8 +191,7 @@ with tab_own:
         if ev:
             st.markdown("**财报后的风险公告**（会使等级下调一档）")
             st.dataframe(pd.DataFrame(ev), hide_index=True, width="stretch")
-        rs = report_signals(code, snap)
-        if rs["period"]:
+        if rs and rs["period"]:
             p = rs["period"]
             st.markdown(f"**财报分析**（最近一期 {p[:4]} 年{ {'0331': '一季报', '0630': '半年报', '0930': '三季报', '1231': '年报'}[p[4:]] }，"
                         f"法定披露截止 {rs['available_by']}；同比为累计值，环比为单季度值；亏损时按绝对值计算，负数表示恶化）")
@@ -140,8 +204,11 @@ with tab_own:
             else:
                 st.caption("未发现财报异常信号（非经常性损益占比 ≥ 30%、盈利但经营现金流为负或不足净利润 50%、会计政策或估计变更公告）。")
             st.caption("财报异常信号是核查提示，不计入承压评分；阈值为筛查规则，未经校准。")
-        from src.futures import hedge_label, hedging
-        hg = hedging(code, snap)
+        if ore_x:
+            share_ = f"，占净资产 {ore_x['to_equity']:.1%}" if ore_x.get("to_equity") is not None else "（净资产为负，无法计算占比）"
+            st.markdown(f"**原料价格情景**：铁矿石价格上涨 {ORE_SHOCK:.0%}，按 {ore_x['fy']} 年报外购铁矿 {ore_x['purchased_yi']:.1f} 亿元计，"
+                        f"一年约多付 **{ore_x['extra_yi']:.1f} 亿元**{share_}。")
+            st.caption(f"来源：{ore_x['source']}。假设钢价不跟随、无库存和长协缓冲、不计套保；只作情景，不计入评分。")
         biz = [x for x in hg["items"] if x["性质"] == "业务公告"]
         if biz:
             st.markdown(f"**期货与套期保值**：{hedge_label(hg)}（近 15 个月公告）")
