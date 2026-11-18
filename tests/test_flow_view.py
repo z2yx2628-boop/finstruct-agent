@@ -4,7 +4,7 @@ from types import SimpleNamespace
 
 from streamlit.testing.v1 import AppTest
 
-from src.flow_view import conclusion, credit_flows, flow_chart, level, supply_flows, supply_strength
+from src.flow_view import conclusion, credit_flows, flow_chart, layered_chart, level, supply_flows, supply_strength
 
 APP_PATH = Path(__file__).resolve().parents[1] / "app.py"
 
@@ -55,3 +55,13 @@ def test_page_switches_between_channels():
     app.session_state["u_channel"] = "supply"
     app.run()
     assert not app.exception
+
+
+def test_full_graph_has_columns_and_no_line_text():
+    result = {"nodes": [{"node": "SHOCK", "name": "冲击", "kind": "冲击"}, {"node": "P", "name": "矿", "kind": "产品"},
+                        {"node": "A", "name": "甲", "kind": "企业", "tier": "weak"}, {"node": "B", "name": "乙", "kind": "企业"}],
+              "edges": [{"src": "SHOCK", "dst": "P", "grade": "—", "effect": "涨"}, {"src": "P", "dst": "A", "grade": "A", "effect": "成本↑"},
+                        {"src": "P", "dst": "B", "grade": "C", "effect": "成本↑"}]}
+    spec = layered_chart(result)
+    assert [h["label"] for h in spec["layer"][3]["data"]["values"]] == ["冲击", "产品", "企业"]
+    assert all(layer["mark"]["type"] != "text" for layer in spec["layer"][:1])

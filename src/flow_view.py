@@ -234,3 +234,85 @@ def table_rows(items: list[dict]) -> list[dict]:
     return [{"排序": i + 1, "企业": r["name"], "自身承压": TIER_LABEL.get(r.get("tier") or "unknown", "未评分"),
              "通道": r["channel"], "证据": r["grade"], "金额/占比": r.get("size", "—"),
              "影响强度": r["strength"], "依据": (r.get("evidence") or "")[:120]} for i, r in enumerate(items)]
+
+
+# ---------------------------------------------------------------- the full graph, for checking
+KIND_SHAPE = {"冲击": "triangle-down", "产品": "square", "行业": "diamond", "企业": "circle"}
+TIER_FILL = {"weak": "#E8A3A6", "medium": "#F2C894", "strong": "#9FD3B5"}
+GRADE_LINE = {"A": "#1C5D99", "B": "#6C8EAD", "C": "#B8C2CC", "—": "#475467"}
+
+
+def layered_chart(result: dict, width: int = 1100) -> dict:
+    """Every node and relation of a scenario, in columns by distance from the shock. Rows inside a column are
+    ordered by the average row of their parents (fewer crossings); no text on the lines (hover for it)."""
+    nodes = {n["node"]: n for n in result["nodes"]}
+    depth = {"SHOCK": 0}
+    changed = True
+    while changed:
+        changed = False
+        for e in result["edges"]:
+            if e["src"] in depth and depth.get(e["dst"], 99) > depth[e["src"]] + 1:
+                depth[e["dst"]] = depth[e["src"]] + 1
+                changed = True
+    for n in nodes:
+        depth.setdefault(n, 0)
+    cols: dict[int, list[str]] = {}
+    for n in nodes:
+        cols.setdefault(depth[n], []).append(n)
+    parents: dict[str, list[str]] = {}
+    for e in result["edges"]:
+        parents.setdefault(e["dst"], []).append(e["src"])
+    row: dict[str, float] = {}
+    for d in sorted(cols):
+        col = cols[d]
+        def key(n):
+            ps = [row[p] for p in parents.get(n, []) if p in row]
+            return (sum(ps) / len(ps) if ps else 0.0, nodes[n]["name"])
+        col.sort(key=key)
+        for i, n in enumerate(col):
+            row[n] = float(i)
+    tallest = max(len(c) for c in cols.values())
+    y = {n: -(row[n] - (len(cols[depth[n]]) - 1) / 2) for n in nodes}
+    pts = [{"x": float(depth[n]), "y": y[n], "name": nodes[n]["name"], "kind": nodes[n]["kind"],
+            "shape": KIND_SHAPE.get(nodes[n]["kind"], "circle"),
+            "fill": "#1D2433" if n == "SHOCK" else TIER_FILL.get(nodes[n].get("tier"), "#D0D5DD") if nodes[n]["kind"] == "企业"
+            else "#98A2B3",
+            "tier": TIER_LABEL.get(nodes[n].get("tier") or "unknown", "未评分") if nodes[n]["kind"] == "企业" else nodes[n]["kind"]}
+           for n in nodes]
+    lines = [{"x": float(depth[e["src"]]), "y": y[e["src"]], "x2": float(depth[e["dst"]]), "y2": y[e["dst"]],
+              "src": nodes[e["src"]]["name"], "dst": nodes[e["dst"]]["name"], "effect": e["effect"], "grade": e["grade"],
+              "color": GRADE_LINE.get(e["grade"], "#98A2B3"), "dash": "推断" if e["grade"] == "C" else "披露",
+              "evidence": (e.get("evidence") or "")[:100]}
+             for e in result["edges"] if e["src"] in nodes and e["dst"] in nodes]
+    heads = []
+    for d, col in cols.items():
+        kinds = dict.fromkeys({"冲击": "冲击", "产品": "产品", "行业": "下游行业", "企业": "企业"}.get(nodes[n]["kind"], nodes[n]["kind"])
+                                for n in col)
+        heads.append({"x": float(d), "label": " / ".join(kinds)})
+    top = tallest / 2 + 0.6
+    xs = {"field": "x", "type": "quantitative", "axis": None, "scale": {"domain": [-0.3, max(cols) + 0.9]}}
+    ys = {"field": "y", "type": "quantitative", "axis": None, "scale": {"domain": [-tallest / 2 - 0.3, top + 0.3]}}
+    return {
+        "width": width, "height": max(260, 30 * tallest + 60),
+        "config": {"view": {"stroke": None}, "font": "Segoe UI, PingFang SC, Microsoft YaHei, sans-serif"},
+        "layer": [
+            {"data": {"values": lines}, "mark": {"type": "rule", "opacity": 0.55, "strokeWidth": 1.4},
+             "encoding": {"x": xs, "y": ys, "x2": {"field": "x2"}, "y2": {"field": "y2"},
+                          "color": {"field": "color", "type": "nominal", "scale": None},
+                          "strokeDash": {"field": "dash", "type": "nominal", "legend": None,
+                                         "scale": {"domain": ["披露", "推断"], "range": [[1, 0], [4, 3]]}},
+                          "tooltip": [{"field": "src", "title": "从"}, {"field": "dst", "title": "到"},
+                                      {"field": "effect", "title": "影响"}, {"field": "grade", "title": "证据等级"},
+                                      {"field": "evidence", "title": "依据"}]}},
+            {"data": {"values": pts}, "mark": {"type": "point", "filled": True, "size": 150, "opacity": 1,
+                                               "stroke": "white", "strokeWidth": 1},
+             "encoding": {"x": xs, "y": ys, "shape": {"field": "shape", "type": "nominal", "scale": None},
+                          "color": {"field": "fill", "type": "nominal", "scale": None},
+                          "tooltip": [{"field": "name", "title": "名称"}, {"field": "tier", "title": "类型/承压"}]}},
+            {"data": {"values": pts}, "mark": {"type": "text", "align": "left", "dx": 9, "fontSize": 11, "color": "#344054"},
+             "encoding": {"x": xs, "y": ys, "text": {"field": "name"}}},
+            {"data": {"values": [dict(h, y=top) for h in heads]},
+             "mark": {"type": "text", "fontSize": 12, "fontWeight": 600, "color": "#667085", "align": "left", "dx": -6},
+             "encoding": {"x": xs, "y": ys, "text": {"field": "label"}}},
+        ],
+    }

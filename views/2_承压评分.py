@@ -77,11 +77,22 @@ table = [{
     "财报期": period_label(r.get("period", "")), "行情截至": metrics.get(r["security_code"], {}).get("last_trade_date", ""),
     "原因": r["reasons"],
 } for r in rows]
-st.caption("点击一行，查看该企业的评分拆解与数据来源；默认显示最弱的一家。")
-picked = st.dataframe(table, width="stretch", hide_index=True, on_select="rerun",
+st.caption("勾选表格最左侧的方框，或在表格下方的下拉框里搜索企业，查看它的评分拆解与数据来源；默认显示最弱的一家。")
+picked = st.dataframe(table, width="stretch", hide_index=True, on_select="rerun", height=420,
                       selection_mode="single-row", key=f"frag_{chosen}")
-index = picked.selection.rows[0] if picked.selection.rows else 0
-code = rows[min(index, len(rows) - 1)]["security_code"]
+codes = [x["security_code"] for x in rows]
+by_code = {x["security_code"]: x for x in rows}
+pick_key = f"frag_pick_{chosen}"
+# the table and the drop-down point at the same company: a new tick in the table moves the drop-down
+sel = picked.selection.rows
+if sel and sel != st.session_state.get(f"_frag_last_{chosen}"):
+    st.session_state[pick_key] = codes[min(sel[0], len(codes) - 1)]
+st.session_state[f"_frag_last_{chosen}"] = sel
+if st.session_state.get(pick_key) not in codes:
+    st.session_state[pick_key] = codes[0]
+code = st.selectbox("查看企业（可输入名称或代码搜索）", codes, key=pick_key,
+                    format_func=lambda c: f"{TIER_COLOR.get(by_code[c]['tier'], '')} {by_code[c]['security_name']}（{c}）"
+                                          f"　总分 {by_code[c]['total_score'] or '—'}")
 
 # ---------------------------------------------------------------- 评分拆解
 r = next(x for x in rows if x["security_code"] == code)

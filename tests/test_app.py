@@ -170,3 +170,14 @@ def test_home_cards_open_their_details():
     for i in range(5):
         app.button(key=f"kpi_open_{i}").click().run()
         assert not app.exception
+
+
+def test_score_table_company_can_be_picked_from_the_dropdown():
+    app = AppTest.from_file(APP_PATH, default_timeout=60).run()
+    app.switch_page("views/2_承压评分.py").run()
+    assert not app.exception
+    box = next(s for s in app.selectbox if s.key and s.key.startswith("frag_pick_"))
+    name = box.options[-1].split("（")[0].split()[-1]          # "🟢 宝钢股份（600019）　总分 12.6" -> 宝钢股份
+    box.select_index(len(box.options) - 1).run()
+    assert not app.exception
+    assert any(name in h.value for h in app.subheader)

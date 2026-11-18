@@ -9,7 +9,7 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.flow_view import TOP, flow_chart, supply_flows, table_rows  # noqa: E402
+from src.flow_view import TOP, flow_chart, layered_chart, supply_flows, table_rows  # noqa: E402
 from src.network_view import SCENARIO_RULE_SCALE, key_paths, overview_chart, route, second_order  # noqa: E402
 from src.price_shock import THRESHOLD, WINDOW, price_moves, scenario_stress  # noqa: E402
 from src.scenario import (CAVEAT, KINDS, RULES, build, company_name, core_mills, layout, product_map, sector_links,
@@ -135,12 +135,9 @@ if flows["right"]:
 else:
     st.info("这个冲击没有找到受影响的企业。")
 with st.expander("完整关系图（全部节点与关系，供核查）", icon=":material/account_tree:"):
-    nodes, links = layout(result)
-    columns_n = int(max(n["x"] for n in nodes)) + 1
-    rows_n = max(sum(1 for n in nodes if n["x"] == x) for x in range(columns_n))
-    st.vega_lite_chart(overview_chart(nodes, links, width=min(1150, max(640, 230 * columns_n)), height=max(300, 70 * rows_n),
-                                      rule_scale=SCENARIO_RULE_SCALE), width="content")
-    st.caption("三角 = 冲击；圆 = 企业（颜色为承压等级）；方块 = 产品；菱形 = 下游行业。线的颜色是关系类型，悬停可看证据等级。")
+    st.vega_lite_chart(layered_chart(result), width="stretch")
+    st.caption("按与冲击的距离分栏，同一栏内按上游位置排序以减少交叉。▼ 冲击　■ 产品　◆ 下游行业　● 企业（浅红/浅橙/浅绿 = 承压弱/中/强）"
+               "　深蓝实线 = A 级披露　浅蓝 = B 级　灰色虚线 = C 级行业推断　线上不写字，鼠标悬停看影响与依据")
 
 if price_change is not None:
     quantified = scenario_stress(result["companies"], price_change)
