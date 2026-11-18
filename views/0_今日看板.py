@@ -146,7 +146,19 @@ with right:
     st.markdown(f"{badge('情景假设')}　产品价格（近 {WINDOW} 个交易日，加粗为涨跌 ≥ {THRESHOLD:.0%}）")
     st.caption("；".join(f"{'**' if m['shock'] else ''}{m['product']} {m['ret']:+.1%}{'**' if m['shock'] else ''}" for m in moves)
                or "无价格数据")
-    st.page_link("views/5_上下游情景.py", label="情景：价格、停产或政策冲击可能波及的企业", icon=":material/swap_horiz:")
+    from src.futures import margin_snapshot          # noqa: E402
+    ms = margin_snapshot("rebar", live[-1].name if live else "9999-12-31")
+    if ms:
+        with st.container(border=True):
+            low = ms["pct_all"] is not None and ms["pct_all"] <= 0.2
+            st.markdown(f"{badge('情景假设')}　**行业压力（期货盘面利润）**" + ("　:red-badge[历史低位]" if low else ""))
+            st.markdown(f"螺纹吨钢盘面利润 **{ms['value']:,.0f} 元/吨**（{ms['date']}），近 {WINDOW} 个交易日 {ms['change']:+,.0f} 元；"
+                        f"处于 {ms['since'][:4]} 年以来的 **{ms['pct_all']:.0%} 分位**。"
+                        + ("全行业利润被原料成本挤压，承压为“弱”的企业更需关注。" if low else ""))
+            if st.button("期货情景与套保", key="home_futures", icon=":material/candlestick_chart:"):
+                st.session_state["sc_source"] = "期货与套保"
+                st.switch_page("views/5_上下游情景.py")
+    st.page_link("views/5_上下游情景.py", label="市场冲击：期货、供需与政策可能波及的企业", icon=":material/swap_horiz:")
 
 # ---------------------------------------------------------------- trust (one line of numbers; details on 可信度)
 st.subheader("凭什么可信", divider="gray")

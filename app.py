@@ -26,7 +26,7 @@ page = st.navigation(
         "明细工具": [
             st.Page("views/2_承压评分.py", title="承压评分全表", icon=":material/monitoring:"),
             st.Page("views/4_风险路径图.py", title="信用通道明细", icon=":material/account_tree:"),
-            st.Page("views/5_上下游情景.py", title="供需情景与政策冲击", icon=":material/swap_horiz:"),
+            st.Page("views/5_上下游情景.py", title="市场冲击：期货、供需与政策", icon=":material/swap_horiz:"),
             st.Page("views/1_公告结构化.py", title="公告事实抽取", icon=":material/description:"),
             st.Page("views/9_问一句.py", title="问一句（全屏）", icon=":material/forum:"),
         ],

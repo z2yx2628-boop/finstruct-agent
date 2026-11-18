@@ -325,7 +325,7 @@ def answer_price(product: tuple[str, str], move: float | None, snapshot: Path, t
     if product[0] in ("P_IRON_ORE", "P_COKING_COAL", "P_COKE"):
         note += " 对钢厂来说这是采购成本：钢厂不披露采购占比，这里只列出卖这个产品的企业；铁矿石外购比例的冲击检验未达显著（docs/shock_transmission_preregistration.md）。"
     return {"verdict": ("info", text), "tables": [(f"{product[1]}价格冲击情景", table)] if table else [], "note": note,
-            "goto": ("views/5_上下游情景.py", "打开供需情景与政策冲击", None)}
+            "goto": ("views/5_上下游情景.py", "打开市场冲击：期货、供需与政策", None)}
 
 
 def answer_export(move: float | None, snapshot: Path, trace: Trace) -> dict:
@@ -340,7 +340,7 @@ def answer_export(move: float | None, snapshot: Path, trace: Trace) -> dict:
     text = f"出口成本上升 {change:.0%} 时，暴露最大的是 {table[0]['企业']}（境外收入占 {table[0]['境外收入占比']}）。" if table else "没有境外收入数据。"
     return {"verdict": ("info", text), "tables": [("出口政策冲击情景", table)] if table else [],
             "note": "情景假设：暴露程度不是损失预测；境外收入占比对汇率冲击的预登记检验未通过（docs/shock_transmission_preregistration.md）。",
-            "goto": ("views/5_上下游情景.py", "打开供需情景与政策冲击", None)}
+            "goto": ("views/5_上下游情景.py", "打开市场冲击：期货、供需与政策", None)}
 
 
 def answer_trust(trace: Trace) -> dict:

@@ -57,3 +57,16 @@ def test_hedge_classification():
     h = {"commodity": False, "unspecified": False, "fx": False, "items": []}
     assert fu.hedge_label(h) == "缓存中未见"
     assert fu.hedge_label({**h, "commodity": True, "fx": True}) == "商品期货 + 外汇"
+
+
+def test_ore_cost_exposure_uses_purchased_ore_only(monkeypatch):
+    import src.policy_shock as ps
+    rows = [{"company_id": "600999", "fy": "2025", "check": "ok", "total_wan": "1000000", "self_wan": "200000", "page": "30"},
+            {"company_id": "600999", "fy": "2026", "check": "ok", "total_wan": "9999999", "self_wan": "", "page": "31"}]
+    monkeypatch.setattr(ps, "_read", lambda path: rows)
+    out = fu.ore_cost_exposure("600999", "2026-11-18", 0.10, equity_yuan=40e8)
+    assert out["fy"] == "2025"                                  # FY2026 report is not public yet
+    assert abs(out["purchased_yi"] - 80) < 1e-9                 # (100 - 20) x 1e4 万元 = 80 亿元
+    assert abs(out["extra_yi"] - 8) < 1e-9 and abs(out["to_equity"] - 0.2) < 1e-9
+    neg = fu.ore_cost_exposure("600999", "2026-11-18", 0.10, equity_yuan=-5e8)
+    assert neg["to_equity"] is None and neg["equity_nonpositive"]

@@ -183,3 +183,28 @@ def hedge_label(h: dict) -> str:
     if h["items"]:
         return "仅有管理制度"
     return "缓存中未见"
+
+
+# ---------------------------------------------------------------- company level: purchased iron ore cost
+def ore_cost_exposure(code: str, as_of: str, ore_move: float, equity_yuan: float | None = None) -> dict | None:
+    """Extra annual cost if the iron-ore price moves by `ore_move`, from the company's own annual report.
+
+    Uses the 铁矿石供应情况 table (data/reference/annual_iron_ore_supply.csv, A grade): purchased ore =
+    domestic + imported purchases (total minus self-supplied, whose cost does not follow the market price),
+    from the latest annual report public on as_of. A one-year, all-else-equal scenario: no pass-through to
+    steel prices, no inventory or long-term contract effects, no hedging.
+    """
+    from src.policy_shock import ANNUAL_ORE, _read, usable_from
+    own = [r for r in _read(ANNUAL_ORE) if r["company_id"] == code and r["check"] == "ok"
+           and usable_from(f"{r['fy']}-12-31") <= as_of and r.get("total_wan")]
+    if not own:
+        return None
+    r = max(own, key=lambda r: r["fy"])
+    total = float(r["total_wan"])
+    self_ = float(r["self_wan"]) if r.get("self_wan") else 0.0
+    purchased_yi = (total - self_) / 1e4
+    extra_yi = purchased_yi * ore_move
+    return {"fy": r["fy"], "purchased_yi": purchased_yi, "extra_yi": extra_yi,
+            "to_equity": extra_yi * 1e8 / equity_yuan if equity_yuan and equity_yuan > 0 else None,
+            "equity_nonpositive": equity_yuan is not None and equity_yuan <= 0,
+            "source": f"{r['fy']}年年报 第{r['page']}页（铁矿石供应情况）"}

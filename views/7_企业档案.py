@@ -146,7 +146,7 @@ with tab_own:
         if biz:
             st.markdown(f"**期货与套期保值**：{hedge_label(hg)}（近 15 个月公告）")
             st.dataframe(pd.DataFrame(biz)[["日期", "类别", "公告标题"]], hide_index=True, width="stretch")
-            st.caption("有商品套保的企业，原料价格冲击可能部分被对冲；套保规模和效果需看定期报告。详见“供需情景 → 期货与套保”。")
+            st.caption("有商品套保的企业，原料价格冲击可能部分被对冲；套保规模和效果需看定期报告。详见“市场冲击 → 期货与套保”。")
         else:
             st.caption(f"期货与套期保值：{hedge_label(hg)}（公告缓存起点 {hg['cache_from'] or '—'}；未见不等于没有套保）。")
         st.caption("核对原始定期报告（新浪财经公告列表）")
@@ -190,7 +190,7 @@ with tab_chain:
                       help=ore["source"])
             e3.metric("按金额", f"{ore['import_share_amount']:.1%}" if ore["import_share_amount"] is not None else "—",
                       help="进口铁矿石支出 ÷ 铁矿石总支出")
-        st.caption("出口受海外关税、反倾销和碳关税影响（可在“供需情景与政策冲击 → 政策”模拟）；进口受海外矿价和汇率影响。")
+        st.caption("出口受海外关税、反倾销和碳关税影响（可在“市场冲击：期货、供需与政策 → 政策”模拟）；进口受海外矿价和汇率影响。")
     conc = concentration(code, snap)
     if conc:
         st.markdown("**客户与供应商集中度**（年报“前五名客户 / 供应商”，A 级：公司自己披露）")
