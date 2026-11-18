@@ -83,19 +83,74 @@ if low_margin:
 head += f"；首要核查路径 **{top['path']}**。" if top else "；暂无需要核查的传导路径。"
 verdict("error" if facts or new_weak or new_paths else "warning" if weak or key_now else "success", head)
 
-# ---------------------------------------------------------------- five numbers, one line each
-cards = [("① 已发生事件", f"{len(facts)}", "冻结、风险警示、违约、停产", None),
-         ("② 风险敞口", f"{len(exposures)}", "担保、质押等或有义务", None),
-         ("③ 财务脆弱", f"{len(weak)}", f"承压评分为弱" + (f"，新进入 {len(new_weak)} 家" if new_weak else ""), None),
-         ("④ 传导路径", f"{len(key_now)}", "沿担保、关联交易、集团关系" + (f"，新增 {len(new_paths)}" if new_paths else ""), None),
+# ---------------------------------------------------------------- five numbers: same height, each opens its detail
+def _src_lines(rows, limit=12):
+    if not rows:
+        st.caption("暂无。")
+    for r in rows[:limit]:
+        st.markdown(f"- **{r['name']}** · {r['kind_label']} · 严重度{r['severity']}  \n  <small>{r['reason'][:90]}</small>",
+                    unsafe_allow_html=True)
+    if len(rows) > limit:
+        st.caption(f"另有 {len(rows) - limit} 条，见下方“风险源”。")
+
+
+def _detail_events():
+    st.markdown("**已发生事件**：公告中已公开的事实（冻结、风险警示、违约、停产、非标审计意见等）")
+    _src_lines(facts)
+
+
+def _detail_exposures():
+    st.markdown("**风险敞口**：关联方违约时可能转化为损失的或有义务（担保、质押、财务不透明的被担保方）")
+    _src_lines(exposures)
+
+
+def _detail_weak():
+    st.markdown("**财务脆弱**：承压评分 ≥ 60 或触发直接判弱规则（24 家核心钢厂相对比较，不是违约概率）")
+    for r in weak:
+        st.markdown(f"- **{r['security_name']}** · {r['total_score']} 分" + (" · 新进入" if r in new_weak else "")
+                    + f"  \n  <small>{short_reasons(r['reasons'])}</small>", unsafe_allow_html=True)
+    st.page_link("views/2_承压评分.py", label="24 家完整评分表", icon=":material/monitoring:")
+
+
+def _detail_paths():
+    st.markdown("**传导路径**：从风险源出发，沿担保、关联交易、集团关系排序的优先核查路径（得分不等于损失）")
+    for r in key_now[:10]:
+        via = " → ".join(RULE_WORD.get(x, x) for x in (r.get("rules") or "").split("+") if x)
+        st.markdown(f"- **{r['path']}**  \n  <small>得分 {r['score']} · 经 {via}</small>", unsafe_allow_html=True)
+    st.page_link(UNIFIED_PAGE, label="在传导图上查看", icon=":material/hub:")
+
+
+def _detail_margin():
+    if not ms:
+        st.caption("期货价格不可用。")
+        return
+    st.markdown("**行业压力 = 吨钢盘面利润**：卖一吨螺纹钢，扣掉 1.6 吨铁矿石和 0.5 吨焦炭后剩下的钱（期货主力连续合约）")
+    p_ = ms["prices"]
+    st.markdown(f"- 螺纹钢 {p_['RB0']:,.1f} − 1.6 × 铁矿石 {p_['I0']:,.1f} − 0.5 × 焦炭 {p_['J0']:,.1f} = **{ms['value']:,.0f} 元/吨**（{ms['date']}）\n"
+                f"- 近 {WINDOW} 个交易日变化 {ms['change']:+,.0f} 元："
+                + "；".join(f"{c['品种']} {c['价格变化']:+.1%}，影响 {c['对利润的贡献（元/吨）']:+,.0f}" for c in ms["contrib"]) + "\n"
+                f"- 在 {ms['since'][:4]} 年以来约 3,000 个交易日中处于 **{ms['pct_all']:.0%} 分位**"
+                f"（区间 {ms['min']:,.0f} 至 {ms['max']:,.0f}）；≤ 20% 视为历史低位")
+    st.caption("未扣加工、人工、折旧等其他成本，不是任何企业的实际利润；只作行业情景，不计入承压评分。")
+    if st.button("期货情景与套保", key="home_card_futures", icon=":material/candlestick_chart:"):
+        st.session_state["sc_source"] = "期货与套保"
+        st.switch_page("views/5_上下游情景.py")
+
+
+cards = [("① 已发生事件", f"{len(facts)}", "冻结、风险警示、违约、停产", _detail_events),
+         ("② 风险敞口", f"{len(exposures)}", "担保、质押等或有义务", _detail_exposures),
+         ("③ 财务脆弱", f"{len(weak)}", "承压评分为弱" + (f"，新进入 {len(new_weak)} 家" if new_weak else ""), _detail_weak),
+         ("④ 传导路径", f"{len(key_now)}", "沿担保、关联交易、集团关系" + (f"，新增 {len(new_paths)}" if new_paths else ""), _detail_paths),
          ("⑤ 行业压力", f"{ms['value']:,.0f} 元/吨" if ms else "—",
-          f"螺纹盘面利润 · {ms['since'][:4]} 年来 {ms['pct_all']:.0%} 分位" if ms else "期货价格不可用",
-          f"{ms['change']:+,.0f}（{WINDOW} 日）" if ms else None)]
+          (f"吨钢盘面利润 · 历史 {ms['pct_all']:.0%} 分位" + ("（低位）" if low_margin else "") + f" · 20 日 {ms['change']:+,.0f}")
+          if ms else "期货价格不可用", _detail_margin)]
 cols = st.columns(5)
-for col, (title, value, note, delta) in zip(cols, cards):
-    with col.container(border=True):
-        st.metric(title, value, delta)
+for col, (title, value, note, detail) in zip(cols, cards):
+    with col.container(border=True, height=215):
+        st.metric(title, value)
         st.caption(note)
+        with st.popover("查看详情", icon=":material/expand_more:", width="stretch"):
+            detail()
 
 reports = sorted((ROOT / "data" / "live").glob("report_*.md"))
 
