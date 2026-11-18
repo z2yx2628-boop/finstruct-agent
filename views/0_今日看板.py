@@ -15,8 +15,9 @@ from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
 from src.ui import (UNIFIED_PAGE, glossary, next_step, online_model, open_unified, page_header,  # noqa: E402
                     profile_button, public_mode, verdict)
 
-page_header("钢铁上市公司上下游冲击传导与经营风险智能体", ":material/dashboard:", "今日风险源与传导路径",
-            step=1, fresh=True, subtitle="链证 ChainProof · 钢铁产业链风险传导预警")
+st.markdown("<style>.block-container{padding-top:2.2rem}</style>", unsafe_allow_html=True)
+page_header("钢铁上市公司上下游冲击传导与经营风险智能体", ":material/dashboard:", "链证 ChainProof · 今日风险源与传导路径",
+            step=1, fresh=True)
 glossary(intro="链证分两段预警：**① 风险源预警**——可能率先出现风险的企业（公告中的风险事件 + 财务脆弱性评分）；"
                "**② 风险传导预警**——风险可能沿担保、关联交易和集团关系传导至哪些企业、涉及多少金额。"
                "页面上的每个结论都能点回公告原文和页码。  \n"
@@ -72,67 +73,79 @@ def badge(nature: str) -> str:
 
 # ---------------------------------------------------------------- the day in one sentence
 day = live[-1].name if live else "—"
-said = []
-if facts:
-    said.append(f"**{len(facts)} 起已发生的风险事件**（" + "；".join(f"{r['name']}：{r['kind_label']}"
-                                                     for r in facts[:2]) + ("等" if len(facts) > 2 else "") + "）")
-said.append(f"**{len(exposures)} 个风险敞口**" if exposures else "没有新的风险敞口")
-said.append(f"**{len(weak)} 家企业财务脆弱性较高**" + (f"（新进入 {len(new_weak)} 家）" if new_weak else ""))
 top = key_now[0] if key_now else None
-tail = f"；优先核查的传导路径是 **{top['path']}**" if top else "；暂无得分为正的传导路径"
-verdict("error" if facts or new_weak or new_paths else "warning" if weak or key_now else "success",
-        f"**今日结论**（{day}）：" + "，".join(said) + tail + "。")
+from src.futures import margin_snapshot          # noqa: E402
+ms = margin_snapshot("rebar", live[-1].name if live else "9999-12-31")
+low_margin = bool(ms and ms["pct_all"] is not None and ms["pct_all"] <= 0.2)
+head = f"**今日结论**（{day}）：{len(facts)} 起已发生事件、{len(weak)} 家财务脆弱"
+if low_margin:
+    head += "，行业利润处于历史低位"
+head += f"；首要核查路径 **{top['path']}**。" if top else "；暂无需要核查的传导路径。"
+verdict("error" if facts or new_weak or new_paths else "warning" if weak or key_now else "success", head)
 
-# ---------------------------------------------------------------- the four questions, left to right
-steps = [("① 已发生事件", len(facts), "已发生事件", "公告中已公开的事实：冻结、风险警示、违约、停产等"),
-         ("② 风险敞口", len(exposures), "风险敞口", "关联方违约时可能转化为损失：担保、质押、财务不透明的被担保方"),
-         ("③ 财务脆弱性", len(weak), "模型预警", "承压评分为弱：杠杆、偿债、现金流、盈利、市场、担保"),
-         ("④ 传导路径", len(key_now), None, "沿担保、关联交易、同集团关系可能传导至其他上市公司")]
-cols = st.columns([1, 0.08, 1, 0.08, 1, 0.08, 1], vertical_alignment="center")
-for k, (title, n, nature, note) in enumerate(steps):
-    with cols[2 * k].container(border=True, height=150):
-        st.markdown(f"**{title}**" + (f"　{badge(nature)}" if nature else "　:gray-badge[传导]"))
-        st.markdown(f"<span style='font-size:2rem;font-weight:700'>{n}</span>", unsafe_allow_html=True)
+# ---------------------------------------------------------------- five numbers, one line each
+cards = [("① 已发生事件", f"{len(facts)}", "冻结、风险警示、违约、停产", None),
+         ("② 风险敞口", f"{len(exposures)}", "担保、质押等或有义务", None),
+         ("③ 财务脆弱", f"{len(weak)}", f"承压评分为弱" + (f"，新进入 {len(new_weak)} 家" if new_weak else ""), None),
+         ("④ 传导路径", f"{len(key_now)}", "沿担保、关联交易、集团关系" + (f"，新增 {len(new_paths)}" if new_paths else ""), None),
+         ("⑤ 行业压力", f"{ms['value']:,.0f} 元/吨" if ms else "—",
+          f"螺纹盘面利润 · {ms['since'][:4]} 年来 {ms['pct_all']:.0%} 分位" if ms else "期货价格不可用",
+          f"{ms['change']:+,.0f}（{WINDOW} 日）" if ms else None)]
+cols = st.columns(5)
+for col, (title, value, note, delta) in zip(cols, cards):
+    with col.container(border=True):
+        st.metric(title, value, delta)
         st.caption(note)
-    if k < 3:
-        cols[2 * k + 1].markdown("<div style='text-align:center;font-size:1.6rem;color:#999'>→</div>", unsafe_allow_html=True)
+
 reports = sorted((ROOT / "data" / "live").glob("report_*.md"))
 
 # ---------------------------------------------------------------- sources (stage 1) and where they go (stage 2)
-left, right = st.columns([1.05, 1], gap="large")
+left, right = st.columns([1, 1], gap="large")
 with left:
     st.subheader("风险源：可能率先出现风险的企业", divider="red")
-    for nature, rows, empty in (("已发生事件", facts, "评估日前 12 个月内，公告中没有已发生的信用事件或停产。"),
-                                ("风险敞口", exposures, "没有中、高严重度的风险敞口。")):
-        st.markdown(f"{badge(nature)}　" + ("公告中已公开的事实" if nature == "已发生事件" else "关联方违约时可能转化为损失的或有义务"))
+    t_fact, t_exp, t_weak = st.tabs([f"已发生事件 {len(facts)}", f"风险敞口 {len(exposures)}", f"财务脆弱 {len(weak)}"])
+
+    def source_cards(rows, key, limit=4):
         if not rows:
-            st.caption(empty)
-        for i, r in enumerate(rows[:5]):
+            st.caption("暂无。")
+        for i, r in enumerate(rows[:limit]):
             with st.container(border=True):
                 a, b = st.columns([5, 1.3], vertical_alignment="center")
                 reach = ("　→ 可能波及 " + "、".join(r["reached"][:3]) + ("等" if len(r["reached"]) > 3 else "")) if r["reached"] else ""
                 a.markdown(f"**{r['name']}** · {r['kind_label']} · 严重度{r['severity']}  \n"
-                           f"<small>{r['reason'][:80]}{reach}</small>", unsafe_allow_html=True)
+                           f"<small>{r['reason'][:70]}{reach}</small>", unsafe_allow_html=True)
                 if r["listed"] and r["node"].isdigit():
                     with b:
-                        profile_button(r["node"], "档案", key=f"home_src_{nature}_{i}", width="stretch")
-    st.markdown(f"{badge('模型预警')}　尚未发生信用事件，但财务脆弱性较高（0–100 分，≥ 60 为弱，越高越脆弱）")
-    if not weak:
-        st.caption("今天没有财务脆弱性较高的企业。")
-    for r in weak:
-        with st.container(border=True):
-            a, b = st.columns([5, 1.3], vertical_alignment="center")
-            tag = " · **新进入**" if r in new_weak else ""
-            a.markdown(f"**{r['security_name']}** · {r['total_score']} 分{tag}  \n<small>{short_reasons(r['reasons'])}</small>",
-                       unsafe_allow_html=True)
-            with b:
-                profile_button(r["security_code"], "档案", key=f"home_{r['security_code']}", width="stretch")
+                        profile_button(r["node"], "档案", key=f"home_src_{key}_{i}", width="stretch")
+        if len(rows) > limit:
+            with st.expander(f"其余 {len(rows) - limit} 条"):
+                for r in rows[limit:]:
+                    st.markdown(f"- **{r['name']}** · {r['kind_label']} · 严重度{r['severity']}")
+
+    with t_fact:
+        st.caption("公告中已公开的事实")
+        source_cards(facts, "fact")
+    with t_exp:
+        st.caption("关联方违约时可能转化为损失的或有义务")
+        source_cards(exposures, "exp")
+    with t_weak:
+        st.caption("尚未发生信用事件，但财务脆弱性较高（0–100 分，≥ 60 为弱，越高越脆弱）")
+        if not weak:
+            st.caption("今天没有财务脆弱性较高的企业。")
+        for r in weak:
+            with st.container(border=True):
+                a, b = st.columns([5, 1.3], vertical_alignment="center")
+                tag = " · **新进入**" if r in new_weak else ""
+                a.markdown(f"**{r['security_name']}** · {r['total_score']} 分{tag}  \n<small>{short_reasons(r['reasons'])}</small>",
+                           unsafe_allow_html=True)
+                with b:
+                    profile_button(r["security_code"], "档案", key=f"home_{r['security_code']}", width="stretch")
 with right:
     st.subheader("传导：优先核查的路径", divider="violet")
-    st.caption("从左边的风险源出发，沿担保、关联交易和集团关系按当前规则排序的优先核查路径（得分不等于损失大小）；标签是起点的性质")
+    st.caption("从风险源出发，沿担保、关联交易和集团关系排序的优先核查路径（得分不等于损失大小）；标签是起点的性质")
     if not key_now:
         st.caption("没有需要关注的传导路径。")
-    for i, r in enumerate(key_now[:6]):
+    for i, r in enumerate(key_now[:5]):
         with st.container(border=True):
             a, b = st.columns([5, 1.3], vertical_alignment="center")
             tag = "　:green-badge[新增]" if r in new_paths else ""
@@ -143,22 +156,22 @@ with right:
             if b.button("传导图", key=f"home_path_{i}", icon=":material/hub:", width="stretch"):
                 open_unified(r["seed"], live[-1].name if live else None)
                 st.switch_page(UNIFIED_PAGE)
-    st.markdown(f"{badge('情景假设')}　产品价格（近 {WINDOW} 个交易日，加粗为涨跌 ≥ {THRESHOLD:.0%}）")
-    st.caption("；".join(f"{'**' if m['shock'] else ''}{m['product']} {m['ret']:+.1%}{'**' if m['shock'] else ''}" for m in moves)
-               or "无价格数据")
-    from src.futures import margin_snapshot          # noqa: E402
-    ms = margin_snapshot("rebar", live[-1].name if live else "9999-12-31")
-    if ms:
-        with st.container(border=True):
-            low = ms["pct_all"] is not None and ms["pct_all"] <= 0.2
-            st.markdown(f"{badge('情景假设')}　**行业压力（期货盘面利润）**" + ("　:red-badge[历史低位]" if low else ""))
-            st.markdown(f"螺纹吨钢盘面利润 **{ms['value']:,.0f} 元/吨**（{ms['date']}），近 {WINDOW} 个交易日 {ms['change']:+,.0f} 元；"
-                        f"处于 {ms['since'][:4]} 年以来的 **{ms['pct_all']:.0%} 分位**。"
-                        + ("全行业利润被原料成本挤压，承压为“弱”的企业更需关注。" if low else ""))
-            if st.button("期货情景与套保", key="home_futures", icon=":material/candlestick_chart:"):
-                st.session_state["sc_source"] = "期货与套保"
-                st.switch_page("views/5_上下游情景.py")
-    st.page_link("views/5_上下游情景.py", label="市场冲击：期货、供需与政策可能波及的企业", icon=":material/swap_horiz:")
+    if len(key_now) > 5:
+        st.caption(f"另有 {len(key_now) - 5} 条，见顶部“风险传导”。")
+    with st.container(border=True):
+        st.markdown(f"{badge('情景假设')}　**市场冲击**：期货与产品价格只作情景，不计入评分")
+        if ms:
+            st.markdown(f"<small>螺纹吨钢盘面利润 {ms['value']:,.0f} 元/吨，{ms['since'][:4]} 年来 {ms['pct_all']:.0%} 分位"
+                        + ("（历史低位：全行业利润被原料成本挤压）" if low_margin else "") + "；近 "
+                        + f"{WINDOW} 日产品价格：" + "；".join(f"{m['product']} {m['ret']:+.1%}" for m in moves[:5]) + "</small>",
+                        unsafe_allow_html=True)
+        m1_, m2_ = st.columns(2)
+        if m1_.button("期货情景与套保", key="home_futures", icon=":material/candlestick_chart:", width="stretch"):
+            st.session_state["sc_source"] = "期货与套保"
+            st.switch_page("views/5_上下游情景.py")
+        if m2_.button("产品与政策冲击", key="home_scenario", icon=":material/swap_horiz:", width="stretch"):
+            st.session_state["sc_source"] = "产品与需求"
+            st.switch_page("views/5_上下游情景.py")
 
 # ---------------------------------------------------------------- trust (one line of numbers; details on 可信度)
 st.subheader("凭什么可信", divider="gray")
