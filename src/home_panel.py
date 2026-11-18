@@ -66,9 +66,13 @@ def _base(height: int) -> dict:
 
 
 def ranking_chart(rows: list[dict]) -> dict:
-    return {**_base(max(260, 19 * len(rows))), "data": {"values": rows}, "layer": [
+    y = {"field": "企业", "type": "nominal", "sort": None, "title": None,
+         "axis": {"labelFontSize": 11, "labelOverlap": False, "labelLimit": 120}}       # every name shown, none skipped
+    return {**_base(max(260, 22 * len(rows))), "data": {"values": rows}, "layer": [
+        {"mark": {"type": "text", "align": "left", "dx": 4, "fontSize": 10, "color": "#475467"},
+         "encoding": {"y": y, "x": {"field": "总分", "type": "quantitative"}, "text": {"field": "总分", "format": ".1f"}}},
         {"mark": {"type": "bar", "cornerRadiusEnd": 3, "height": {"band": 0.72}},
-         "encoding": {"y": {"field": "企业", "type": "nominal", "sort": None, "title": None, "axis": {"labelFontSize": 11}},
+         "encoding": {"y": y,
                       "x": {"field": "总分", "type": "quantitative", "scale": {"domain": [0, 100]}, "title": "承压总分（越高越弱）"},
                       "color": {"field": "等级", "type": "nominal", "legend": None,
                                 "scale": {"domain": list(TIER_COLOR), "range": list(TIER_COLOR.values())}},
