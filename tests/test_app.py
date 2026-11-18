@@ -159,3 +159,14 @@ def test_futures_tab_renders():
     assert not at.exception
     text = " ".join(m.value for m in at.markdown)
     assert "期货盘面利润" in text and "套期保值" in text
+
+
+def test_home_cards_open_their_details():
+    # each of the five home cards is one click target (no separate "查看详情" button)
+    app = AppTest.from_file(APP_PATH, default_timeout=60).run()
+    assert not app.exception
+    keys = [b.key for b in app.button]
+    assert all(f"kpi_open_{i}" in keys for i in range(5))
+    for i in range(5):
+        app.button(key=f"kpi_open_{i}").click().run()
+        assert not app.exception

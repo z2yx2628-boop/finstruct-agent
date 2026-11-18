@@ -25,7 +25,7 @@ page_header("市场冲击：期货、供需与政策", ":material/swap_horiz:", 
                            "→ 企业承压 → 钢材产品 → 下游行业（C 级）→ 下游代表企业（年报点名钢材为主要原材料 B 级，否则 C 级）。  \n"
                            "**企业级具名交易（A 级）**：钢铁集团债券募集说明书“前五大供应商/客户/应付/预付/预收”表中写明名称和金额的非关联交易对手，"
                            "例如鞍钢集团的焦煤供应商；同样只作情景，不计入风险得分。")
-st.caption("⚠ 情景提示：跨集团上下游多为 B/C 级证据，不计入风险得分，不代表真实交易或损失预测。")
+st.caption(":material/warning: 情景提示：跨集团上下游多为 B/C 级证据，不计入风险得分，不代表真实交易或损失预测。")
 
 snaps = sorted(p.name for p in (ROOT / "data" / "snapshots").glob("*") if (p / "fragility.csv").exists())
 

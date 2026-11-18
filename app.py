@@ -36,6 +36,9 @@ page = st.navigation(
 
 # 问一句: a round, draggable button on every page (opens a dialog; see src/ask_view.py)
 from src.ask_view import floating_button  # noqa: E402
+from src.ui import global_style  # noqa: E402
 
-floating_button()
+global_style()
+
+floating_button(page.title)
 page.run()

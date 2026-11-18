@@ -4,7 +4,8 @@ backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#F2F4F7"
 textColor = "#272A34"
 font = "sans-serif"
-baseRadius = "small"
+baseRadius = "medium"
+borderColor = "#E4E7EC"
 
 [client]
 toolbarMode = "minimal"

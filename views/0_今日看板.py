@@ -132,25 +132,45 @@ def _detail_margin():
                 f"- 在 {ms['since'][:4]} 年以来约 3,000 个交易日中处于 **{ms['pct_all']:.0%} 分位**"
                 f"（区间 {ms['min']:,.0f} 至 {ms['max']:,.0f}）；≤ 20% 视为历史低位")
     st.caption("未扣加工、人工、折旧等其他成本，不是任何企业的实际利润；只作行业情景，不计入承压评分。")
-    if st.button("期货情景与套保", key="home_card_futures", icon=":material/candlestick_chart:"):
+    if st.button("期货情景与套保", key="kpi_futures", icon=":material/candlestick_chart:"):
         st.session_state["sc_source"] = "期货与套保"
         st.switch_page("views/5_上下游情景.py")
 
 
-cards = [("① 已发生事件", f"{len(facts)}", "冻结、风险警示、违约、停产", _detail_events),
-         ("② 风险敞口", f"{len(exposures)}", "担保、质押等或有义务", _detail_exposures),
-         ("③ 财务脆弱", f"{len(weak)}", "承压评分为弱" + (f"，新进入 {len(new_weak)} 家" if new_weak else ""), _detail_weak),
-         ("④ 传导路径", f"{len(key_now)}", "沿担保、关联交易、集团关系" + (f"，新增 {len(new_paths)}" if new_paths else ""), _detail_paths),
-         ("⑤ 行业压力", f"{ms['value']:,.0f} 元/吨" if ms else "—",
+# five numbers; each card is one big click target that opens its details (no separate "查看详情" button)
+cards = [("已发生事件", ":material/error:", "red", f"{len(facts)}", "", "冻结、风险警示、违约、停产", _detail_events),
+         ("风险敞口", ":material/link:", "orange", f"{len(exposures)}", "", "担保、质押等或有义务", _detail_exposures),
+         ("财务脆弱", ":material/trending_down:", "red", f"{len(weak)}", "",
+          "承压评分为弱" + (f"，新进入 {len(new_weak)} 家" if new_weak else ""), _detail_weak),
+         ("传导路径", ":material/hub:", "violet", f"{len(key_now)}", "",
+          "沿担保、关联交易、集团关系" + (f"，新增 {len(new_paths)}" if new_paths else ""), _detail_paths),
+         ("行业压力", ":material/candlestick_chart:", "blue", f"{ms['value']:,.0f}" if ms else "—", "元/吨" if ms else "",
           (f"吨钢盘面利润 · 历史 {ms['pct_all']:.0%} 分位" + ("（低位）" if low_margin else "") + f" · 20 日 {ms['change']:+,.0f}")
           if ms else "期货价格不可用", _detail_margin)]
+st.html("""<style>
+[class*="st-key-kpi_card_"] {position: relative; height: 188px; padding: 18px 18px 14px; gap: .35rem;
+  border: 1px solid var(--cp-line); border-radius: 14px; background: var(--cp-card);
+  box-shadow: 0 1px 2px rgba(16,24,40,.04); transition: border-color .15s, box-shadow .15s, transform .15s;}
+[class*="st-key-kpi_card_"]:hover {border-color: var(--cp-accent); box-shadow: 0 8px 24px rgba(16,24,40,.10); transform: translateY(-2px);}
+[class*="st-key-kpi_card_"]::after {content: "›"; position: absolute; right: 16px; top: 12px; font-size: 22px;
+  color: #98A2B3; transition: transform .15s, color .15s;}
+[class*="st-key-kpi_card_"]:hover::after {color: var(--cp-accent); transform: translateX(3px);}
+[class*="st-key-kpi_card_"] p {margin-bottom: 0;}
+.cp-kpi-v {font-size: 2.3rem; font-weight: 650; line-height: 1.1; letter-spacing: -.02em; font-variant-numeric: tabular-nums;
+  color: var(--cp-ink); white-space: nowrap;}
+.cp-kpi-v span {font-size: .95rem; font-weight: 500; color: #667085; margin-left: .3rem; letter-spacing: 0;}
+[class*="st-key-kpi_card_"] [data-testid="stCaptionContainer"] {display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;}
+[class*="st-key-kpi_open_"] {position: absolute !important; inset: 0; z-index: 5; margin: 0 !important;}
+[class*="st-key-kpi_open_"] button {width: 100%; height: 100%; opacity: 0; cursor: pointer;}
+</style>""")
 cols = st.columns(5)
-for col, (title, value, note, detail) in zip(cols, cards):
-    with col.container(border=True, height=215):
-        st.metric(title, value)
+for i, (col, (title, icon, color, value, unit, note, detail)) in enumerate(zip(cols, cards)):
+    with col.container(key=f"kpi_card_{i}"):
+        st.markdown(f":{color}[{icon}]　**{title}**")
+        st.markdown(f"<div class='cp-kpi-v'>{value}<span>{unit}</span></div>", unsafe_allow_html=True)
         st.caption(note)
-        with st.popover("查看详情", icon=":material/expand_more:", width="stretch"):
-            detail()
+        if st.button(f"打开{title}", key=f"kpi_open_{i}", help=f"点击查看{title}明细"):
+            st.dialog(title, width="large")(detail)()
 
 reports = sorted((ROOT / "data" / "live").glob("report_*.md"))
 

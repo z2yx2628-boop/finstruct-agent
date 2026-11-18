@@ -60,9 +60,9 @@ if version != "v1":
 
 counts = {k: sum(1 for r in rows if r["tier"] == k) for k in ("weak", "medium", "strong")}
 m1, m2, m3 = st.columns(3)
-m1.metric("🔴 弱", counts["weak"])
-m2.metric("🟡 中", counts["medium"])
-m3.metric("🟢 强", counts["strong"])
+m1.metric(":red[●] 弱", counts["weak"])
+m2.metric(":orange[●] 中", counts["medium"])
+m3.metric(":green[●] 强", counts["strong"])
 
 
 def period_label(p: str) -> str:
@@ -86,7 +86,7 @@ code = rows[min(index, len(rows) - 1)]["security_code"]
 # ---------------------------------------------------------------- 评分拆解
 r = next(x for x in rows if x["security_code"] == code)
 h1, h2 = st.columns([4, 1], vertical_alignment="bottom")
-h1.subheader(f"{TIER_COLOR.get(r['tier'], '')} {r['security_name']}（{code}）：{r['tier_label']}，"
+h1.subheader(f"{r['security_name']}（{code}）：:{ {'weak': 'red', 'medium': 'orange', 'strong': 'green'}.get(r['tier'], 'gray')}-badge[{r['tier_label']}]，"
              f"总分 {r['total_score'] or '—'}", divider="gray")
 with h2:
     profile_button(code, "打开企业档案", key="frag_profile", snapshot=chosen, width="stretch")

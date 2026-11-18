@@ -22,8 +22,8 @@ page_header("风险传导", ":material/hub:", "一家企业发生信用事件或
                   "两条通道共用同一批企业和同一份承压评分。冲击从供需通道转入信用通道，必须满足衔接条件："
                   "暴露证据为 A/B 级、有披露的收入占比、企业承压为弱或中，且只沿担保或关联交易继续推。",
             step=3)
-st.caption("图例　🟪 紫色粗线 = 集团信用通道（计分）　🟦 蓝灰细线 = 供需情景通道（情景，不计分）　┄ 虚线 = 集团名义或行业推断　"
-           "●  节点颜色 = 企业承压（🔴 弱　🟡 中　🟢 强）")
+st.caption("图例　:violet[━━] 紫色粗线 = 集团信用通道（计分）　:blue[──] 蓝灰细线 = 供需情景通道（情景，不计分）　┄ 虚线 = 集团名义或行业推断　"
+           "节点颜色 = 企业承压（:red[●] 弱　:orange[●] 中　:green[●] 强）")
 
 snaps = sorted((p.name for p in (ROOT / "data" / "snapshots").glob("*") if (p / "fragility.csv").exists()), reverse=True)
 CHAIN = ROOT / "data" / "chain" / "live"

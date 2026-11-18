@@ -76,3 +76,32 @@ def test_floating_button_is_rendered_by_the_app():
     app = AppTest.from_file(APP_PATH, default_timeout=60).run()
     assert not app.exception
     assert "ask_fab_btn" in [b.key for b in app.button]
+
+
+def test_search_bar_question_is_answered_in_place():
+    # a question typed in the search bar opens the 问一句 dialog on the current page instead of switching pages
+    app = AppTest.from_file(APP_PATH, default_timeout=60).run()
+    app.session_state["_cmd_pending"] = "?承压最弱的钢厂有哪些"
+    app.run()
+    assert not app.exception
+    assert any("问题类型" in m.value for m in app.markdown)
+    assert "fab_full" in [b.key for b in app.button]           # 「全屏继续」 is offered
+    assert app.session_state["_ask_history"][0]["q"] == "承压最弱的钢厂有哪些"
+
+
+def _examples_script(root):
+    import sys
+    sys.path.insert(0, root)
+    import streamlit as st
+    from src.ask_view import context_examples
+    st.session_state["pf_code"] = "600581"
+    st.write(context_examples("企业档案")[1][0])
+    st.write(context_examples("市场冲击：期货、供需与政策")[0])
+    st.write(context_examples("今日预警")[0])
+
+
+def test_examples_follow_the_page():
+    app = AppTest.from_function(_examples_script, args=(str(APP_PATH.parent),), default_timeout=60).run()
+    assert not app.exception
+    texts = [m.value for m in app.markdown]
+    assert texts == ["八一钢铁现在风险怎么样？", "关于市场冲击", "试试这些问题"]

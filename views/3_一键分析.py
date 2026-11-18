@@ -14,7 +14,7 @@ from src.ui import (PUBLIC_NOTE, online_model, page_header, profile_button, publ
 
 TASKS = {"自动识别": None, "日常关联交易": "related_party", "对外担保": "guarantee", "产能/检修": "capacity",
          "股权质押（辅助信号）": "pledge"}
-TIER_ICON = {"弱": "🔴", "中": "🟡", "强": "🟢"}
+TIER_ICON = {"弱": "red", "中": "orange", "强": "green"}
 CHAIN_LABEL = {"data/chain/live": "实时图谱（每日更新）", "data/chain/analysis_v1": "真实图谱（84份公告，2024–2026）",
                "data/chain/analysis_v1_fix1": "真实图谱·单位修复后", "data/chain/backtest_antai": "回测图谱（安泰）",
                "data/chain/backtest_antai_fix1": "回测图谱·单位修复后（安泰）", "data/chain/backtest_linggang": "回测图谱（凌钢）",
@@ -164,7 +164,7 @@ if card:
         with st.expander(f"调度智能体：{len(trace)} 步 · 入图决策：{'自动入图' if decision.get('auto') else '转人工复核'}"
                          " · 点开看每一步用了什么工具、为什么这样决定", icon=":material/route:", expanded=False):
             st.caption("只有“结构化抽取”一步使用大模型（测试前冻结）；其余每一步都是写明的规则、查询或计算，同样的输入得到同样的轨迹。")
-            icon = {"ok": "✅", "warn": "⚠️", "stop": "⛔"}
+            icon = {"ok": "✓ 通过", "warn": "! 提示", "stop": "× 停止"}
             st.dataframe([{"": icon.get(x["status"], ""), "步骤": x["step"], "工具": x["tool"], "类型": x["kind"], "结果": x["output"],
                            "决策": x["decision"], "理由": x["reason"], "用时(ms)": x["ms"]} for x in trace],
                          hide_index=True, width="stretch")
@@ -191,9 +191,9 @@ if card:
             st.dataframe([dict(e, 占承担方净资产=f"{e['占承担方净资产']:.1%}" if e["占承担方净资产"] is not None else "—")
                           for e in card["exposures"]], hide_index=True, width="stretch")
         if not absorb:
-            st.markdown(f"- ⚪ **{card['company']}**：不在承压评分范围内（24家核心钢厂及手动加入的企业）。")
+            st.markdown(f"- :gray-badge[未评分] **{card['company']}**：不在承压评分范围内（24家核心钢厂及手动加入的企业）。")
         for c in absorb:
-            st.markdown(f"- {TIER_ICON.get(c['tier'], '⚪')} **{c['entity']}：{c['tier']}**（{c['score']}分）  \n  {c['reasons'] or ''}")
+            st.markdown(f"- :{TIER_ICON.get(c['tier'], 'gray')}-badge[{c['tier']}] **{c['entity']}**（{c['score']}分）  \n  {c['reasons'] or ''}")
     with t3:
         if not paths:
             st.success("未发现需要关注的传导路径：途经企业承压为强、风险可能受到缓释，金额不重大，或本公告只含低严重度信号。")

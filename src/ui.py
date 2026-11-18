@@ -136,13 +136,45 @@ def _queue_command() -> None:
     st.session_state["cmd_bar"] = None
 
 
+GLOBAL_CSS = """
+<style>
+:root {--cp-ink: #1D2433; --cp-muted: #667085; --cp-line: #E4E7EC; --cp-card: #FFFFFF; --cp-soft: #F5F6F8; --cp-accent: #C63F45;}
+.stApp {font-family: "Inter", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+        color: var(--cp-ink); -webkit-font-smoothing: antialiased;}
+.stApp h1 {font-weight: 700; letter-spacing: -.015em;}
+.stApp h2, .stApp h3 {font-weight: 650; letter-spacing: -.01em;}
+[data-testid="stCaptionContainer"] {color: var(--cp-muted);}
+[data-testid="stMetricValue"] {font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.01em;}
+[data-testid="stMetricLabel"] p {color: var(--cp-muted); font-size: .85rem;}
+.stButton button, .stDownloadButton button, .stPageLink a {border-radius: 10px; font-weight: 500; transition: border-color .15s, box-shadow .15s;}
+.stButton button[kind="secondary"]:hover, .stDownloadButton button:hover {border-color: var(--cp-accent); color: var(--cp-accent);}
+[data-testid="stExpander"] details {border-radius: 12px; border-color: var(--cp-line);}
+[data-testid="stExpander"] summary:hover {color: var(--cp-accent);}
+[data-testid="stAlert"] {border-radius: 12px;}
+/* the search bar: one quiet field with a magnifier, highlighted only when used */
+.st-key-cmd_bar [data-baseweb="select"] > div {border-radius: 12px; background-color: var(--cp-soft); border: 1px solid transparent;
+  padding-left: 34px; min-height: 44px; transition: border-color .15s, background-color .15s, box-shadow .15s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: 12px center; background-size: 18px;}
+.st-key-cmd_bar [data-baseweb="select"] > div:hover {border-color: var(--cp-line);}
+.st-key-cmd_bar [data-baseweb="select"] > div:focus-within {background-color: #fff; border-color: var(--cp-accent);
+  box-shadow: 0 0 0 3px rgba(198,63,69,.12);}
+</style>
+"""
+
+
+def global_style() -> None:
+    """One stylesheet for every page (called from app.py)."""
+    st.html(GLOBAL_CSS)
+
+
 def command_bar() -> None:
     """Bloomberg-style command line on every page: "<company> <function>", a page name, or a question."""
     from src.command import FUNCS, parse, suggestion
     companies = _command_companies()
     st.selectbox("命令行", [suggestion(c) for c in companies], index=None, key="cmd_bar", accept_new_options=True,
                  on_change=_queue_command, label_visibility="collapsed",
-                 placeholder="🔍 输入公司、代码或命令后回车　例：凌钢　600231 FA　安泰 RELS　鞍钢 客户　期货　可信度　?凌钢会传给谁")
+                 placeholder="输入公司、代码、命令或问题后回车　例：凌钢　600231 FA　安泰 RELS　鞍钢 客户　期货　可信度　?凌钢会传给谁")
     note = st.session_state.pop("_cmd_note", None)
     if note:
         st.toast(note, icon=":material/info:")
@@ -163,9 +195,9 @@ def command_bar() -> None:
     elif cmd["kind"] == "page":
         st.session_state.update(cmd["state"])
         st.switch_page(cmd["page"])
-    elif cmd["kind"] == "ask":
-        st.session_state["ask_q"] = cmd["question"]
-        st.switch_page("views/9_问一句.py")
+    elif cmd["kind"] == "ask":                         # answered in place, in the same dialog as the floating button
+        from src.ask_view import open_dialog
+        open_dialog(cmd["question"])
     else:
         st.toast("没有找到。试试企业简称、6 位代码，或命令：" + "、".join(f"{k} {v[0]}" for k, v in FUNCS.items()),
                  icon=":material/search_off:")
