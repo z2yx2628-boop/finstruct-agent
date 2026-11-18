@@ -48,6 +48,7 @@ with tab_demo:
         if run_demo:
             from src.orchestrator import run as run_agent
             card = run_agent(case=c)
+            card["original"] = c["source"]                 # the announcement itself, shown in 「公告原文」
 
 with tab_new:
     upload = st.file_uploader("公告文件", type=["pdf", "png", "jpg", "jpeg", "html", "htm", "docx", "doc", "xlsx", "xls", "csv"],
@@ -81,6 +82,7 @@ with tab_new:
                 from src.orchestrator import run as run_agent
                 st.write("调度智能体：识别类型 → 选择工具 → 抽取 → 检查证据 → 入图决策 → 计算敞口 → 推演传导 …")
                 card = run_agent(path=target, task=TASKS[task_label], as_of=as_of.isoformat(), chain=chain, offline=offline)
+                card["original"] = str(target)
                 st.session_state["last_card"] = card
                 status.update(label="风险预警已生成", state="complete", expanded=False)
             except TaskNotDetected as error:
@@ -171,9 +173,10 @@ if card:
             for x in trace:
                 if x["detail"]:
                     st.caption(f"{x['step']} 明细：" + "；".join(x["detail"]))
-    t1, t2, t3 = st.tabs([f":material/fact_check: 已发生事件（{len(card['what_happened']) + len(card['relations'])}）",
-                          ":material/monitoring: 财务脆弱性（自身风险）",
-                          f":material/account_tree: 传导路径（{len(paths)} 条路径）"])
+    t1, t2, t3, t4 = st.tabs([f":material/fact_check: 已发生事件（{len(card['what_happened']) + len(card['relations'])}）",
+                              ":material/monitoring: 财务脆弱性（自身风险）",
+                              f":material/account_tree: 传导路径（{len(paths)} 条路径）",
+                              ":material/description: 公告原文"])
     with t1:
         if not card["what_happened"] and not card["relations"]:
             st.info("未识别出风险信号或关系。")
@@ -204,6 +207,9 @@ if card:
                 for s in p["steps"]:
                     st.markdown(f"- **{s['rule_label']}**：{s['src_name']} → {s['dst_name']}（{s['tier_label']}），"
                                 f"{s['decision_label']}  \n  依据：{s['evidence']}")
+    with t4:
+        from src.original_view import render_original
+        render_original(card, key=f"orig_{Path(card.get('source') or 'x').stem}")
     from src.orchestrator import full_markdown
     st.download_button("下载预警卡片（Markdown，含调度轨迹）", full_markdown(card), file_name=f"alert_{card['as_of']}.md",
                        icon=":material/download:")

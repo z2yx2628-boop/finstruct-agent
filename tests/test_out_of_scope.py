@@ -35,3 +35,11 @@ def test_temporary_score_is_labelled_and_used():
     doc, case = _doc(code)
     card = build_card(doc, case["prediction_from"], "2026-09-29", ROOT / "data" / "chain" / "live", extra_fragility={code: row})
     assert card["in_scope"] and card["adhoc"]
+
+
+def test_news_page_without_security_code_uses_the_resolved_company():
+    case = next(c for c in demo_cases() if c["id"] == "fangda_maintenance")
+    doc = json.loads((ROOT / case["prediction"]).read_text(encoding="utf-8"))
+    assert not doc.get("security_code")                # a news page carries no code
+    card = build_card(doc, case["prediction_from"], case["as_of"], ROOT / case["chain"])
+    assert card["in_scope"] and card["code"] == "600507"

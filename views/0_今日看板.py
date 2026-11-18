@@ -177,6 +177,32 @@ for i, (col, (title, color, value, unit, note, detail)) in enumerate(zip(cols, c
         if st.button(f"查看{title}明细", key=f"kpi_open_{i}"):
             st.dialog(title, width="large")(detail)()
 
+# ---------------------------------------------------------------- risk panel: three small charts
+from src.futures import margin_series                   # noqa: E402
+from src.home_panel import (margin_chart, margin_rows, ranking_chart, ranking_rows, trend_chart,  # noqa: E402
+                            trend_rows)
+
+
+@st.cache_data(show_spinner=False)
+def _panel_trend(last: str, n_paths: int):
+    return trend_rows(live, paths)
+
+
+p_left, p_right = st.columns([1.1, 1], gap="large")
+with p_left.container(border=True):
+    st.markdown("**承压排行**　:gray[24 家核心钢厂，越长越弱；虚线是弱 / 中分界]")
+    st.vega_lite_chart(ranking_chart(ranking_rows(now)), width="stretch")
+with p_right.container(border=True):
+    st.markdown("**风险走势**　:gray[近 60 天：弱等级钢厂数与计分传导路径数]")
+    st.vega_lite_chart(trend_chart(_panel_trend(day, len(paths))), width="stretch")
+with p_right.container(border=True):
+    m_rows, m_low = margin_rows(*margin_series("rebar"), day)
+    st.markdown("**行业利润**　:gray[近一年吨钢盘面利润；红虚线以下 = 历史低位]")
+    if m_rows:
+        st.vega_lite_chart(margin_chart(m_rows, m_low), width="stretch")
+    else:
+        st.caption("期货价格不可用。")
+
 reports = sorted((ROOT / "data" / "live").glob("report_*.md"))
 
 # ---------------------------------------------------------------- sources (stage 1) and where they go (stage 2)

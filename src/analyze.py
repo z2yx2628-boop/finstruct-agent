@@ -123,6 +123,9 @@ def build_card(doc: dict, source: str, as_of: str, chain: Path, extra_fragility:
     ranked, reach = summarize(paths, listed)
 
     issuer = doc.get("security_code") or ""
+    if not issuer:     # a news page has no security code: use the company its signals were resolved to, if it is scored
+        issuer = next((s["entity_id"] for s in new_signals if s["entity_id"] in fragility), "") or \
+                 next((n for e in new_edges for n in (e["src_id"], e["dst_id"]) if n in fragility), "")
     issuer_row = fragility.get(issuer, {})
     nm = lambda n: names.get(n, n[2:] if n.startswith("N_") else n)
     involved = sorted({e["src_id"] for e in new_edges} | {e["dst_id"] for e in new_edges} | {s["entity_id"] for s in new_signals})

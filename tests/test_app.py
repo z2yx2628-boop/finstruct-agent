@@ -181,3 +181,11 @@ def test_score_table_company_can_be_picked_from_the_dropdown():
     box.select_index(len(box.options) - 1).run()
     assert not app.exception
     assert any(name in h.value for h in app.subheader)
+
+
+def test_alert_card_shows_the_original_announcement():
+    app = AppTest.from_file(APP_PATH, default_timeout=90).run()
+    app.switch_page("views/3_一键分析.py").run()
+    app.button(key="build_pack_card").click().run()
+    assert not app.exception
+    assert any("公告原文" in t.label for t in app.tabs)
