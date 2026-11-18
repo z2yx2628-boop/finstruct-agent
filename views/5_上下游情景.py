@@ -9,6 +9,7 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.flow_view import TOP, flow_chart, supply_flows, table_rows  # noqa: E402
 from src.network_view import SCENARIO_RULE_SCALE, key_paths, overview_chart, route, second_order  # noqa: E402
 from src.price_shock import THRESHOLD, WINDOW, price_moves, scenario_stress  # noqa: E402
 from src.scenario import (CAVEAT, KINDS, RULES, build, company_name, core_mills, layout, product_map, sector_links,
@@ -119,17 +120,27 @@ if verified:
 
 result = build(kind, day, fragility, edges, product_id=product, company=company, sector_id=sector)
 st.subheader(result["title"], divider="gray")
-nodes, links = layout(result)
-columns_n = int(max(n["x"] for n in nodes)) + 1
-rows_n = max(sum(1 for n in nodes if n["x"] == x) for x in range(columns_n))
-st.vega_lite_chart(overview_chart(nodes, links, width=min(1150, max(640, 230 * columns_n)), height=max(300, 70 * rows_n),
-                                  rule_scale=SCENARIO_RULE_SCALE), width="content")
-st.caption("三角 = 冲击；圆 = 企业（颜色为承压等级）；方块 = 产品；菱形 = 下游行业。线的颜色是关系类型，悬停可看证据等级。")
-
-st.markdown("**暴露企业**（按承压由弱到强、暴露由大到小排序，仅用于提示关注顺序）")
-st.dataframe(pd.DataFrame([{"企业": r["name"], "承压": TIER.get(r["tier"], "未评分"), "影响": r["effect"],
-                            "证据等级": GRADE.get(r["grade"], r["grade"])} for r in result["companies"]]),
-             hide_index=True, width="stretch")
+flows = supply_flows(result, "SHOCK")
+if flows["right"]:
+    st.markdown(f"**{result['title']}**：波及 {len(flows['right'])} 家企业（情景，不计分）；证据与暴露最强的是 "
+                + "、".join(f"{r['name']}（{r['channel']}）" for r in flows["right"][:3]) + "。")
+    all_ = st.toggle("显示全部", value=False, key="sc_all", help=f"默认只画最强的 {TOP} 家，其余见下表")
+    st.markdown(":gray[**受影响企业 →**（从上到下按影响强度排列）]")
+    st.vega_lite_chart(flow_chart(result["title"], "", [], flows["right"], "supply", top=99 if all_ else TOP), width="stretch")
+    st.caption("线越粗 = 证据越强、暴露越大（披露金额或收入占比）　实线 = 公告披露或企业暴露（A/B 级）　虚线 = 行业推断（C 级）"
+               "　圆点颜色越深 = 影响越强　括号内 = 企业自身承压　灰色小字 = 冲击经过的产品、钢厂和行业")
+    st.dataframe(pd.DataFrame(table_rows(flows["right"])), hide_index=True, width="stretch",
+                 column_config={"影响强度": st.column_config.ProgressColumn(min_value=0, max_value=1, format="%.2f"),
+                                "依据": st.column_config.TextColumn(width="large")})
+else:
+    st.info("这个冲击没有找到受影响的企业。")
+with st.expander("完整关系图（全部节点与关系，供核查）", icon=":material/account_tree:"):
+    nodes, links = layout(result)
+    columns_n = int(max(n["x"] for n in nodes)) + 1
+    rows_n = max(sum(1 for n in nodes if n["x"] == x) for x in range(columns_n))
+    st.vega_lite_chart(overview_chart(nodes, links, width=min(1150, max(640, 230 * columns_n)), height=max(300, 70 * rows_n),
+                                      rule_scale=SCENARIO_RULE_SCALE), width="content")
+    st.caption("三角 = 冲击；圆 = 企业（颜色为承压等级）；方块 = 产品；菱形 = 下游行业。线的颜色是关系类型，悬停可看证据等级。")
 
 if price_change is not None:
     quantified = scenario_stress(result["companies"], price_change)
