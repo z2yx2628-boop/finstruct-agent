@@ -29,7 +29,11 @@ st.caption("⚠ 情景提示：跨集团上下游多为 B/C 级证据，不计�
 
 snaps = sorted(p.name for p in (ROOT / "data" / "snapshots").glob("*") if (p / "fragility.csv").exists())
 
-source = st.segmented_control("冲击来源", ["产品与需求", "政策"], default="产品与需求", key="sc_source")
+source = st.segmented_control("冲击来源", ["产品与需求", "期货与套保", "政策"], default="产品与需求", key="sc_source")
+if source == "期货与套保":
+    from src.futures_render import render_futures          # noqa: E402
+    render_futures(snaps)
+    st.stop()
 if source == "政策":
     from src.policy_render import render_policy          # noqa: E402
     render_policy(snaps)

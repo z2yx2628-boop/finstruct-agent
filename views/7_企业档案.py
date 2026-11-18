@@ -140,6 +140,15 @@ with tab_own:
             else:
                 st.caption("未发现财报异常信号（非经常性损益占比 ≥ 30%、盈利但经营现金流为负或不足净利润 50%、会计政策或估计变更公告）。")
             st.caption("财报异常信号是核查提示，不计入承压评分；阈值为筛查规则，未经校准。")
+        from src.futures import hedge_label, hedging
+        hg = hedging(code, snap)
+        biz = [x for x in hg["items"] if x["性质"] == "业务公告"]
+        if biz:
+            st.markdown(f"**期货与套期保值**：{hedge_label(hg)}（近 15 个月公告）")
+            st.dataframe(pd.DataFrame(biz)[["日期", "类别", "公告标题"]], hide_index=True, width="stretch")
+            st.caption("有商品套保的企业，原料价格冲击可能部分被对冲；套保规模和效果需看定期报告。详见“供需情景 → 期货与套保”。")
+        else:
+            st.caption(f"期货与套期保值：{hedge_label(hg)}（公告缓存起点 {hg['cache_from'] or '—'}；未见不等于没有套保）。")
         st.caption("核对原始定期报告（新浪财经公告列表）")
         links = st.columns(4)
         for col, (label, url) in zip(links, report_links(code).items()):

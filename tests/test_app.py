@@ -150,3 +150,12 @@ def test_a_company_is_carried_into_the_risk_map():
     app.switch_page("views/8_风险传导总图.py").run()
     assert not app.exception
     assert app.selectbox(key="u_company").value == "600231"
+
+
+def test_futures_tab_renders():
+    at = AppTest.from_file(APP_PATH, default_timeout=60).run()
+    at.session_state["sc_source"] = "期货与套保"
+    at.switch_page("views/5_上下游情景.py").run()
+    assert not at.exception
+    text = " ".join(m.value for m in at.markdown)
+    assert "期货盘面利润" in text and "套期保值" in text
