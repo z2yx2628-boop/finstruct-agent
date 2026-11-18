@@ -42,7 +42,7 @@ entity_id,canonical_name,short_name,entity_type,security_code,parent_id,group_id
 300034,北京钢研高纳科技股份有限公司,钢研高纳,listed_downstream,300034,,G_300034,,N,,
 002541,安徽鸿路钢结构（集团）股份有限公司,鸿路钢构,listed_downstream,002541,,G_002541,,N,,
 E_BAOWU,中国宝武钢铁集团有限公司,中国宝武,parent_group,,,G_BAOWU,,N,宝武集团|宝武,
-E_BAYI_GROUP,宝钢集团新疆八一钢铁有限公司,八钢公司,parent_group,,E_BAOWU,G_BAOWU,,N,八钢集团,
+E_BAYI_GROUP,宝钢集团新疆八一钢铁有限公司,八钢公司,parent_group,,E_BAOWU,G_BAOWU,,N,八钢集团|新疆八一钢铁集团有限公司,
 E_MAGANG_GROUP,马钢（集团）控股有限公司,马钢集团,parent_group,,E_BAOWU,G_BAOWU,2019,N,,
 E_TISCO_GROUP,太原钢铁（集团）有限公司,太钢集团,parent_group,,E_BAOWU,G_BAOWU,2020-12,N,,
 E_XINGANG_GROUP,新余钢铁集团有限公司,新钢集团,parent_group,,E_BAOWU,G_BAOWU,2022-12,Y,,https://paper.cnstock.com/html/2022-12/24/content_1708260.htm
