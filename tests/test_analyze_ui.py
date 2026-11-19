@@ -21,3 +21,11 @@ def test_failures_are_reported_with_their_cause():
 def test_recent_runs_are_newest_first():
     rows = recent_runs()
     assert rows == sorted(rows, key=lambda r: r["日期"], reverse=True)
+
+
+def test_page_url_points_to_announcement_page():
+    from src.analyze_ui import page_url
+    raw = "http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-11/2026-11-18/12711094.PDF"
+    assert page_url(raw, "600022") == ("https://vip.stock.finance.sina.com.cn/corp/view/"
+                                       "vCB_AllBulletinDetail.php?stockid=600022&id=12711094")
+    assert page_url("https://example.com/a.html", "600022") == "https://example.com/a.html"

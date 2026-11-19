@@ -57,6 +57,15 @@ def check_model() -> tuple[bool, str]:
         return False, f"连接失败（{type(error).__name__}）"
 
 
+def page_url(url: str, code: str) -> str:
+    """Sina's raw file links (http, internal IP path) often fail to open; use the announcement's page on Sina instead."""
+    import re
+    m = re.search(r"/(\d+)\.PDF$", url or "", re.I)
+    if m and code:
+        return f"https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?stockid={code}&id={m.group(1)}"
+    return url or ""
+
+
 def recent_runs(days: int = 45) -> list[dict]:
     """Announcements the daily update downloaded in the last `days` days of runs, with the extraction status."""
     from datetime import date, timedelta
@@ -80,7 +89,7 @@ def recent_runs(days: int = 45) -> list[dict]:
                 out.append({"日期": r["announcement_date"], "企业": r["security_name"], "公告": r["announcement_title"],
                             "类型": TASK_CN.get(task, task or "—"),
                             "抽取": {"success": "成功", "needs_review": "需人工复核", "failed": "失败"}.get(status, status),
-                            "error": run.get("error", ""), "doc": str(doc) if doc else None, "url": r.get("source_url", ""),
+                            "error": run.get("error", ""), "doc": str(doc) if doc else None, "url": page_url(r.get("source_url", ""), r.get("security_code", "")),
                             "split": split})
     return sorted(out, key=lambda r: r["日期"], reverse=True)
 
