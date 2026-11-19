@@ -20,7 +20,7 @@ from src.validity import is_active  # noqa: E402
 TIER = {"weak": "🔴 弱", "medium": "🟡 中", "strong": "🟢 强", "": "未评分"}
 GRADE = {"A": "A 披露确认", "B": "B 部分确认", "C": "C 行业推断", "—": "—"}
 
-from src.ui import page_header  # noqa: E402
+from src.ui import page_header, part_of_transmission  # noqa: E402
 page_header("市场冲击：期货、供需与政策", ":material/swap_horiz:", "期货价格、产品供需或政策变化，会让哪些企业承压？", grades=True,
             about=CAVEAT + "  \n**传导链**：冲击 → 暴露于该产品的企业（公司自己披露的分产品收入 B 级；公告披露的采购/销售 A 级）"
                            "→ 企业承压 → 钢材产品 → 下游行业（C 级）→ 下游代表企业（年报点名钢材为主要原材料 B 级，否则 C 级）。  \n"
@@ -30,6 +30,17 @@ st.caption(":material/warning: 情景提示：跨集团上下游多为 B/C 级�
 
 snaps = sorted(p.name for p in (ROOT / "data" / "snapshots").glob("*") if (p / "fragility.csv").exists())
 
+part_of_transmission("图上**蓝色的供需通道（情景）**在这里展开：可以改冲击幅度、看压力指数，"
+                     "以及满足衔接条件后冲击如何转入信用通道。供需通道只作情景，不计入风险得分。",
+                     key="sc_back", back=lambda: {"shock": {"u_kind": st.session_state.get("sc_kind"),
+                                                            "u_product": st.session_state.get("sc_product"),
+                                                            "u_outage": st.session_state.get("sc_company"),
+                                                            "u_sector": st.session_state.get("sc_sector")}})
+
+goto_shock = st.session_state.pop("_goto_shock", None)              # arriving from 风险传导
+if goto_shock:
+    st.session_state["sc_source"] = "产品与需求"
+    st.session_state.update({k: v for k, v in goto_shock.items() if v is not None})
 source = st.segmented_control("冲击来源", ["产品与需求", "期货与套保", "政策"], default="产品与需求", key="sc_source")
 if source == "期货与套保":
     from src.futures_render import render_futures          # noqa: E402

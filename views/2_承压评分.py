@@ -16,11 +16,16 @@ from src.product_layer import exposure_as_of, products  # noqa: E402
 SNAP = ROOT / "data" / "snapshots"
 TIER_COLOR = {"weak": "🔴", "medium": "🟡", "strong": "🟢"}
 
-from src.ui import deposit_block, page_header, profile_button, public_mode  # noqa: E402
+from src.ui import deposit_block, page_header, part_of_transmission, profile_button, public_mode  # noqa: E402
 page_header("承压评分全表", ":material/monitoring:", "各企业当前的财务脆弱性如何？分数如何构成？",
             about="**三层评分**：财报层（最新法定披露期，在 24 家核心钢厂中排名）+ 市场层（60 日超额收益、回撤、波动）"
                   "+ 事件层（财报后的高风险公告）。总分越高越弱，≥60 为弱、≥40 为中。  \n"
                   "红线（资不抵债、负债率 ≥85%）和财报后事件只会使等级变差。每个等级都附原因和数据来源。")
+
+part_of_transmission("图上每家企业括号里的**承压等级（弱 / 中 / 强）**就来自这张表。它决定风险能不能继续往下传："
+                     "途经企业为弱时风险全额传递、中时减半、强时被缓释（得分为 0，图上画成灰色虚线）。",
+                     key="frag_back", back=lambda: {"code": st.session_state.get(f"frag_pick_{st.session_state.get('frag_snap')}"),
+                                                    "snapshot": st.session_state.get("frag_snap")})
 
 col2, col1 = st.columns([3, 1.2], vertical_alignment="bottom")
 if not public_mode():
@@ -41,7 +46,15 @@ if not snapshots:
     st.info("还没有评分快照。点击右上角“更新数据并重新评分”生成第一份。")
     st.stop()
 with col2:
-    chosen = st.selectbox("查看快照", [d.name for d in snapshots])
+    goto_score = st.session_state.pop("_goto_score", None)          # arriving from 风险传导
+    snap_names = [d.name for d in snapshots]
+    if goto_score and goto_score.get("snapshot") in snap_names:
+        st.session_state["frag_snap"] = goto_score["snapshot"]
+    if st.session_state.get("frag_snap") not in snap_names:
+        st.session_state.pop("frag_snap", None)
+    chosen = st.selectbox("查看快照", snap_names, key="frag_snap")
+    if goto_score and goto_score.get("code"):
+        st.session_state[f"frag_pick_{chosen}"] = goto_score["code"]
 folder = SNAP / chosen
 with (folder / "fragility.csv").open(encoding="utf-8-sig", newline="") as f:
     rows = list(csv.DictReader(f))

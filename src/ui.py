@@ -238,6 +238,17 @@ def next_step(text: str, label: str, page: str, key: str, state: dict | None = N
             st.switch_page(page)
 
 
+def part_of_transmission(text: str, key: str, back=None) -> None:
+    """A box at the top of a detail page: which part of the 风险传导 picture this page explains, and a way back.
+    `back` is what to hand to 风险传导 (a dict, or a function called at click time so it sees the latest choices)."""
+    with st.container(border=True):
+        a, b = st.columns([3, 1], vertical_alignment="center")
+        a.markdown(f"**在「风险传导」中的位置：** {text}")
+        if b.button("返回风险传导", icon=":material/hub:", width="stretch", key=key):
+            st.session_state["_goto_unified"] = (back() if callable(back) else back) or {}
+            st.switch_page(UNIFIED_PAGE)
+
+
 def open_unified(code: str | None = None, snapshot: str | None = None) -> None:
     """Hand a company to the 风险传导 page (it preselects it once)."""
     st.session_state["_goto_unified"] = {"code": code, "snapshot": snapshot}

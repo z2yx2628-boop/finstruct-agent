@@ -46,7 +46,10 @@ def bridge(snap: str, codes: tuple[str, ...], shock: str):
 
 
 goto = st.session_state.pop("_goto_unified", None)             # arriving from 企业档案, the home page or the search bar
-if goto:
+if goto and goto.get("shock"):                                     # back from 市场冲击 with its shock
+    st.session_state["u_mode"] = "从一次冲击出发"
+    st.session_state.update({k: v for k, v in goto["shock"].items() if v is not None})
+elif goto:
     st.session_state["u_mode"] = "从一家企业出发"
     if goto.get("code"):
         st.session_state["u_company"] = goto["code"]
@@ -141,12 +144,50 @@ else:
     if channel == "credit" and bridged:
         st.caption("含“衔接线索”：冲击经衔接条件转入信用通道后推出的路径，假设严重度为中，只作线索，不进入正式排名。")
 
-b1, b2 = st.columns(2)
-if b1.button("看每一步的公告原文", icon=":material/article:", key="u_to_credit"):
-    st.session_state["_goto_network"] = {"chain": "data/chain/live", "snapshot": snap,
-                                         "company": code if mode == "从一家企业出发" else None}
-    st.switch_page("views/4_风险路径图.py")
-b2.page_link("views/5_上下游情景.py", label="调整冲击幅度、看压力指数与政策冲击", icon=":material/tune:")
+# ---------------------------------------------------------------- the parts behind this picture
+from datetime import date as _date  # noqa: E402
+in_company = mode == "从一家企业出发"
+who = fragility[code]["security_name"] if in_company else None
+
+
+def go(page: str, state_key: str, state: dict) -> None:
+    st.session_state[state_key] = state
+    st.switch_page(page)
+
+
+st.markdown("##### 这张图背后的明细")
+st.caption("图上的每个元素都有一页明细：节点颜色来自承压评分，紫色线来自信用通道，蓝色线来自市场冲击情景，每条线的依据来自公告事实抽取。"
+           "跳转时会带上当前企业或冲击，明细页顶部可以一键返回。")
+p1, p2, p3, p4 = st.columns(4)
+with p1.container(border=True):
+    st.markdown("**① 节点颜色 · 承压评分**")
+    st.caption("括号里的弱 / 中 / 强：决定风险全额传递、减半还是被缓释。")
+    if st.button(f"看{who}的评分拆解" if who else "看承压评分全表", icon=":material/monitoring:", width="stretch", key="u_to_score"):
+        go("views/2_承压评分.py", "_goto_score", {"code": code if in_company else None, "snapshot": snap})
+with p2.container(border=True):
+    st.markdown("**② 紫色线 · 信用通道明细**")
+    st.caption("逐条路径：得分 = 起点严重度 × 金额系数 × 途经企业承压，附每一步公告原文。")
+    if st.button("打开信用通道明细", icon=":material/account_tree:", width="stretch", key="u_to_credit",
+                 type="primary" if channel == "credit" else "secondary"):
+        go("views/4_风险路径图.py", "_goto_network", {"chain": "data/chain/live", "snapshot": snap,
+                                                    "company": code if in_company else None})
+with p3.container(border=True):
+    st.markdown("**③ 蓝色线 · 市场冲击情景**")
+    st.caption("调整冲击幅度、看压力指数，以及冲击怎样转入信用通道；不计分。")
+    if in_company:
+        shock = {"sc_kind": "outage", "sc_company": code if code in core_mills() else None}
+    else:
+        shock = {"sc_kind": kind, "sc_product": st.session_state.get("u_product"),
+                 "sc_company": st.session_state.get("u_outage"), "sc_sector": st.session_state.get("u_sector")}
+    shock["sc_day"] = _date.fromisoformat(snap)
+    if st.button("打开市场冲击", icon=":material/swap_horiz:", width="stretch", key="u_to_shock",
+                 type="primary" if channel == "supply" else "secondary"):
+        go("views/5_上下游情景.py", "_goto_shock", shock)
+with p4.container(border=True):
+    st.markdown("**④ 连线依据 · 公告事实抽取**")
+    st.caption("每条担保、关联交易线都是从公告里抽出来的，字段标注原文页码。")
+    if st.button("打开公告事实抽取", icon=":material/description:", width="stretch", key="u_to_extract"):
+        st.switch_page("views/1_公告结构化.py")
 
 next_step("分析一份新公告：系统抽取事实、评估相关企业的财务脆弱性，并推导可能的传导路径", "分析新公告", "views/3_一键分析.py",
           key="u_next")
