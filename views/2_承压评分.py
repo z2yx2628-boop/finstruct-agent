@@ -22,7 +22,7 @@ page_header("承压评分全表", ":material/monitoring:", "各企业当前的�
                   "+ 事件层（财报后的高风险公告）。总分越高越弱，≥60 为弱、≥40 为中。  \n"
                   "红线（资不抵债、负债率 ≥85%）和财报后事件只会使等级变差。每个等级都附原因和数据来源。")
 
-part_of_transmission("图上每家企业括号里的**承压等级（弱 / 中 / 强）**就来自这张表。它决定风险能不能继续往下传："
+part_of_transmission("图上每家企业括号里的**承压等级**（弱 / 中 / 强）就来自这张表。它决定风险能不能继续往下传："
                      "途经企业为弱时风险全额传递、中时减半、强时被缓释（得分为 0，图上画成灰色虚线）。",
                      key="frag_back", back=lambda: {"code": st.session_state.get(f"frag_pick_{st.session_state.get('frag_snap')}"),
                                                     "snapshot": st.session_state.get("frag_snap")})

@@ -73,7 +73,7 @@ st.caption(f"当前：{CHAIN_LABEL.get(chain, chain)} · 评估日 {snap}")
 
 
 _live = chain == "data/chain/live"                                     # 风险传导 always uses the live graph
-part_of_transmission("图上**紫色的信用通道（计分）**逐条展开：每一步沿哪份公告（担保、关联交易或同集团）、"
+part_of_transmission("图上紫色的**信用通道**（计分）逐条展开：每一步沿哪份公告（担保、关联交易或同集团）、"
                      "得分 = 起点严重度 × 金额系数 × 途经企业承压、在哪里停下，以及每一步的公告原文。",
                      key="net_back", back=lambda: {"code": st.session_state.get("company_pick"), "snapshot": snap if _live else None})
 if "backtest_antai" in chain and snap > "2025-02-05":

@@ -11,6 +11,8 @@ sys.path.insert(0, str(ROOT))
 from src.extension import merged as with_extension  # noqa: E402
 from src.flow_view import TOP, conclusion, credit_flows, disclosed_suppliers, flow_chart, supply_flows, table_rows  # noqa: E402
 from src.network_view import filter_paths, key_paths, second_order  # noqa: E402
+from src.policy_flow import (POLICY_KINDS, POLICY_NOTE, bridge_candidates, margin_context, mark_hedging,  # noqa: E402
+                             policy_flows, policy_rows)
 from src.scenario import KINDS, build, company_name, core_mills, product_map, sector_links  # noqa: E402
 from src.ui import TIER_BADGE, next_step, page_header, verdict  # noqa: E402
 from src.validity import is_active  # noqa: E402
@@ -80,41 +82,68 @@ if mode == "从一家企业出发":
     level_, text = conclusion(center, credit_f, supply_f)
     bridged = []
 else:
-    kind = c1.selectbox("冲击类型", list(KINDS), format_func=KINDS.get, key="u_kind")
-    entries = []
-    if kind in ("price_up", "price_down"):
-        products = {k: v for k, v in product_map().items() if v["layer"] in ("upstream", "steel") and k not in ("P_STEEL", "P_SEMI")}
-        pid = c2.selectbox("产品", list(products), format_func=lambda k: products[k]["name"], key="u_product")
-        supply = build(kind, snap, fragility, edges_now, product_id=pid)
-    elif kind == "outage":
-        comp = c2.selectbox("停产企业", core_mills(), format_func=company_name, key="u_outage")
-        supply = build(kind, snap, fragility, edges_now, company=comp)
-        entries = [e for e in ranked if e["seed"] == comp and e["score"] > 0]
+    ALL_KINDS = {**KINDS, **POLICY_KINDS}
+    if st.session_state.get("u_kind") not in ALL_KINDS:
+        st.session_state.pop("u_kind", None)
+    kind = c1.selectbox("冲击类型", list(ALL_KINDS), format_func=ALL_KINDS.get, key="u_kind",
+                        help="产品价格、企业停产、下游需求沿产品图逐层传导；政策冲击直接作用于每家钢厂，按暴露和承压排序。")
+    entries, pid, notes = [], None, []
+    if kind in POLICY_KINDS:
+        # a policy hits each mill directly: one hop from the policy to the mills, ranked by the stress index
+        supply_f = policy_flows(kind, policy_rows(kind, fragility, snap))
+        hit_codes = bridge_candidates(supply_f)
+        onward = bridge(snap, tuple(hit_codes), "credit") if hit_codes else {}
+        hit = [{"code": c, "name": names.get(c) or fragility[c]["security_name"]} for c in hit_codes]
+        center = POLICY_KINDS[kind]
+        notes.append(POLICY_NOTE[kind])
     else:
-        sectors = {l["sector_id"]: l["sector"] for l in sector_links()}
-        sid = c2.selectbox("下游行业", list(sectors), format_func=sectors.get, key="u_sector")
-        supply = build(kind, snap, fragility, edges_now, sector_id=sid)
-    # a supply shock continues into the credit channel only through the gated bridge
-    hit = [r for r in supply["companies"] if r.get("code") in fragility and r["grade"] in ("A", "B")
-           and (r.get("share") or 0) > 0 and r["tier"] in ("weak", "medium")]
-    onward = bridge(snap, tuple(r["code"] for r in hit), "supply" if kind == "outage" else "credit") if hit else {}
+        if kind in ("price_up", "price_down"):
+            products = {k: v for k, v in product_map().items() if v["layer"] in ("upstream", "steel") and k not in ("P_STEEL", "P_SEMI")}
+            pid = c2.selectbox("产品", list(products), format_func=lambda k: products[k]["name"], key="u_product")
+            supply = build(kind, snap, fragility, edges_now, product_id=pid)
+        elif kind == "outage":
+            comp = c2.selectbox("停产企业", core_mills(), format_func=company_name, key="u_outage")
+            supply = build(kind, snap, fragility, edges_now, company=comp)
+            entries = [e for e in ranked if e["seed"] == comp and e["score"] > 0]
+        else:
+            sectors = {l["sector_id"]: l["sector"] for l in sector_links()}
+            sid = c2.selectbox("下游行业", list(sectors), format_func=sectors.get, key="u_sector")
+            supply = build(kind, snap, fragility, edges_now, sector_id=sid)
+        # a supply shock continues into the credit channel only through the gated bridge
+        hit = [r for r in supply["companies"] if r.get("code") in fragility and r["grade"] in ("A", "B")
+               and (r.get("share") or 0) > 0 and r["tier"] in ("weak", "medium")]
+        onward = bridge(snap, tuple(r["code"] for r in hit), "supply" if kind == "outage" else "credit") if hit else {}
+        supply_f = supply_flows(supply, "SHOCK")
+        center = supply["title"]
+        if kind in ("price_up", "price_down"):
+            # futures: where the industry-wide board margin stands, and which exposed mills disclose hedging
+            margins = margin_context(pid, snap)
+            if margins:
+                notes.append("**期货盘面利润（行业压力背景）**：" + "；".join(margins) + "。")
+            n_hedged = mark_hedging(supply_f["right"], snap)
+            if n_hedged:
+                notes.append(f"受影响企业中 {n_hedged} 家近 15 个月披露过套期保值（表中“通道”已标注），价格冲击对它们的实际影响可能更小。")
     bridged = [e for r in hit for e in onward.get(r["code"], [])]
     credit_f = credit_flows(entries + bridged, names, fragility, focus=None)
-    supply_f = supply_flows(supply, "SHOCK")
-    center, center_tier = supply["title"], ""
+    center_tier = ""
     level_, text = conclusion(center, credit_f, supply_f, shock=True)
+    if kind in POLICY_KINDS:
+        text = text.replace("**供需上**波及", "**政策上**直接影响")
     if hit:
         text += ("　满足衔接条件、能沿担保/关联交易继续传导的企业：" + "、".join(r["name"] for r in hit if onward.get(r["code"])) + "。"
                  if any(onward.values()) else "　没有受冲击企业满足转入信用通道的衔接条件。")
 
 verdict(level_, text)
+if mode != "从一家企业出发":
+    for n_ in notes:
+        st.caption(n_)
 
 # ---------------------------------------------------------------- one channel at a time
 n_credit = sum(1 for r in credit_f["left"] + credit_f["right"] if not r.get("absorbed"))
 n_absorbed = sum(1 for r in credit_f["left"] + credit_f["right"] if r.get("absorbed"))
 n_supply = len(supply_f["left"]) + len(supply_f["right"])
 CHANNELS = {"credit": f"信用传导（计分）· {n_credit}" + (f"（另 {n_absorbed} 条缓释）" if n_absorbed else ""),
-            "supply": f"供需传导（情景）· {n_supply}"}
+            "supply": ("政策冲击（情景）" if mode != "从一家企业出发" and kind in POLICY_KINDS else "供需传导（情景）") + f" · {n_supply}"}
 if st.session_state.get("u_channel_for") != (mode, center):          # a new start picks the channel that has content
     st.session_state["u_channel_for"] = (mode, center)
     st.session_state["u_channel"] = "credit" if (n_credit or n_absorbed) or not n_supply else "supply"
@@ -173,13 +202,16 @@ with p2.container(border=True):
                                                     "company": code if in_company else None})
 with p3.container(border=True):
     st.markdown("**③ 蓝色线 · 市场冲击情景**")
-    st.caption("调整冲击幅度、看压力指数，以及冲击怎样转入信用通道；不计分。")
+    st.caption("调整冲击幅度和政策假设、看期货盘面利润与套保，以及冲击怎样转入信用通道；不计分。")
     if in_company:
         shock = {"sc_kind": "outage", "sc_company": code if code in core_mills() else None}
+    elif kind in POLICY_KINDS:
+        shock = {"sc_source": "政策", "pol_kind": {"policy_carbon": "carbon", "policy_export": "export"}[kind]}
     else:
         shock = {"sc_kind": kind, "sc_product": st.session_state.get("u_product"),
                  "sc_company": st.session_state.get("u_outage"), "sc_sector": st.session_state.get("u_sector")}
-    shock["sc_day"] = _date.fromisoformat(snap)
+    if not (not in_company and kind in POLICY_KINDS):
+        shock["sc_day"] = _date.fromisoformat(snap)
     if st.button("打开市场冲击", icon=":material/swap_horiz:", width="stretch", key="u_to_shock",
                  type="primary" if channel == "supply" else "secondary"):
         go("views/5_上下游情景.py", "_goto_shock", shock)

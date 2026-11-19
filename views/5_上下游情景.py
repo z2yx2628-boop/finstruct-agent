@@ -30,16 +30,19 @@ st.caption(":material/warning: 情景提示：跨集团上下游多为 B/C 级�
 
 snaps = sorted(p.name for p in (ROOT / "data" / "snapshots").glob("*") if (p / "fragility.csv").exists())
 
-part_of_transmission("图上**蓝色的供需通道（情景）**在这里展开：可以改冲击幅度、看压力指数，"
-                     "以及满足衔接条件后冲击如何转入信用通道。供需通道只作情景，不计入风险得分。",
-                     key="sc_back", back=lambda: {"shock": {"u_kind": st.session_state.get("sc_kind"),
+part_of_transmission("图上蓝色的**供需通道**（情景）在这里展开：「产品与需求」可以改冲击幅度、看衔接条件；"
+                     "「期货与套保」是价格冲击时显示的盘面利润和套保标注的完整版；「政策」的碳关税、出口两类冲击也画在风险传导图上（默认假设），"
+                     "这里可以改假设。都只作情景，不计入风险得分。",
+                     key="sc_back", back=lambda: {"shock": {"u_kind": {"carbon": "policy_carbon", "export": "policy_export"}.get(
+                                                                st.session_state.get("pol_kind"), st.session_state.get("sc_kind"))
+                                                            if st.session_state.get("sc_source") == "政策" else st.session_state.get("sc_kind"),
                                                             "u_product": st.session_state.get("sc_product"),
                                                             "u_outage": st.session_state.get("sc_company"),
                                                             "u_sector": st.session_state.get("sc_sector")}})
 
 goto_shock = st.session_state.pop("_goto_shock", None)              # arriving from 风险传导
 if goto_shock:
-    st.session_state["sc_source"] = "产品与需求"
+    st.session_state["sc_source"] = goto_shock.pop("sc_source", "产品与需求")
     st.session_state.update({k: v for k, v in goto_shock.items() if v is not None})
 source = st.segmented_control("冲击来源", ["产品与需求", "期货与套保", "政策"], default="产品与需求", key="sc_source")
 if source == "期货与套保":
