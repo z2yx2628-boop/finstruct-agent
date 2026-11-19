@@ -30,8 +30,32 @@ chains = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "data" / "chain"
                 if (p / "edges.csv").exists() and p.name != "gold_demo")
 default_chain = next((c for c in ("data/chain/live", "data/chain/analysis_v1") if c in chains), chains[0])
 
-tab_demo, tab_new, tab_saved = st.tabs([":material/play_circle: 演示案例（离线可用）", ":material/upload_file: 上传新公告",
-                                        ":material/history: 全部已提取结果"])
+from src.analyze_ui import CASES, check_model, last_daily_failure, model_configured, pipeline_html, recent_runs  # noqa: E402
+
+# ---------------------------------------------------------------- is the model reachable? (said before anyone clicks)
+runs_recent = recent_runs()
+m1, m2 = st.columns([4, 1], vertical_alignment="center")
+if st.session_state.get("_model_check"):
+    ok_, msg_ = st.session_state["_model_check"]
+    m1.markdown((":green-badge[大模型：可用]" if ok_ else ":red-badge[大模型：不可用]") + f"　:gray[{msg_}"
+                + ("" if ok_ else "；上传新公告会改用离线回放（只限演示包里的文件）") + "]")
+else:
+    m1.markdown((":gray-badge[大模型：已配置，未检测]" if model_configured() else ":orange-badge[大模型：未配置]")
+                + "　:gray[演示案例不需要模型；上传新公告需要]")
+if m2.button("检测连接", icon=":material/wifi_tethering:", key="check_model", width="stretch"):
+    with st.spinner("正在发一次最小请求…"):
+        st.session_state["_model_check"] = check_model()
+    st.rerun()
+fail_note = last_daily_failure(runs_recent)
+if fail_note:
+    st.warning(fail_note, icon=":material/error:")
+
+tab_names = [":material/play_circle: 演示案例（离线可用）", ":material/today: 近期自动分析", ":material/upload_file: 上传新公告"]
+if not public_mode():
+    tab_names.append(":material/history: 全部已提取结果")
+tabs_ = st.tabs(tab_names)
+tab_demo, tab_recent, tab_new = tabs_[:3]
+tab_saved = tabs_[3] if len(tabs_) > 3 else None
 card = None
 TIER_KEY = {"weak": "弱", "medium": "中", "strong": "强"}
 with tab_demo:
@@ -40,17 +64,49 @@ with tab_demo:
         st.info("没有演示包。运行 python scripts/build_demo_pack.py 生成。")
     else:
         by_id = {c["id"]: c for c in cases}
+        order_ = sorted(by_id, key=lambda i: CASES.get(i, ("", "", 99))[2])
         d1, d2 = st.columns([3, 1], vertical_alignment="bottom")
-        picked = d1.selectbox("演示案例", list(by_id), format_func=lambda i: by_id[i]["label"])
+        picked = d1.selectbox("演示案例", order_,
+                              format_func=lambda i: f"【{CASES.get(i, ('公告',))[0]}】{by_id[i]['label']}")
         run_demo = d2.button("生成风险预警", type="primary", icon=":material/play_arrow:", key="build_pack_card", width="stretch")
         c = by_id[picked]
-        st.caption(f"{c['why']} · 评估日 {c['as_of']} · {CHAIN_LABEL.get(c['chain'], c['chain'])}")
+        st.caption(CASES.get(picked, ("", c["why"]))[1] + f" · 评估日 {c['as_of']}",
+                   help=f"技术细节：{c['why']}；图谱：{CHAIN_LABEL.get(c['chain'], c['chain'])}")
         if run_demo:
             from src.orchestrator import run as run_agent
             card = run_agent(case=c)
             card["original"] = c["source"]                 # the announcement itself, shown in 「公告原文」
 
+with tab_recent:
+    st.caption("每日更新自动从公告网站抓取 42 家公司的新公告并抽取；抽取成功的可以直接生成预警卡片。")
+    if not runs_recent:
+        st.info("还没有每日更新抓取的记录。")
+    else:
+        import pandas as pd
+        st.dataframe(pd.DataFrame([{k: r_[k] for k in ("日期", "企业", "类型", "公告", "抽取")} | {"原文": r_["url"] or None}
+                                   for r_ in runs_recent]), hide_index=True, width="stretch",
+                     column_config={"原文": st.column_config.LinkColumn(display_text="打开")})
+        ready = [r_ for r_ in runs_recent if r_["doc"]]
+        if ready:
+            pick_ = st.selectbox("选一份已抽取的公告", range(len(ready)),
+                                 format_func=lambda i: f"{ready[i]['日期']} {ready[i]['企业']}《{ready[i]['公告']}》（{ready[i]['抽取']}）")
+            if st.button("生成风险预警", type="primary", icon=":material/bolt:", key="recent_card"):
+                r_ = ready[pick_]
+                doc_ = json.loads(Path(r_["doc"]).read_text(encoding="utf-8"))
+                card = build_card(doc_, Path(r_["doc"]).relative_to(ROOT).as_posix(), runs_recent[0]["日期"], ROOT / "data" / "chain" / "live")
+        else:
+            st.caption("近期没有抽取成功的公告（失败原因见页面顶部提示）。")
+
 with tab_new:
+    st.caption("支持四类公告：对外担保、日常关联交易、股权质押、检修 / 产能；格式可以是文字 PDF、扫描件、图片、网页、Word、Excel。"
+               "一份公告通常 30–60 秒出结果。其他类型会明确提示不支持，不会硬给结论。")
+    samples = [("担保公告示例（安泰集团）.pdf", ROOT / "data" / "demo" / "antai_guarantee.pdf"),
+               ("关联交易公告示例（鞍钢股份）.pdf", ROOT / "data" / "demo" / "ansteel_related.pdf")]
+    sc_ = st.columns(len(samples))
+    for col_, (label_, path_) in zip(sc_, samples):
+        if path_.exists():
+            col_.download_button(f"下载{label_.split('.')[0]}", path_.read_bytes(), file_name=label_, icon=":material/download:",
+                                 width="stretch", key=f"sample_{path_.stem}")
     upload = st.file_uploader("公告文件", type=["pdf", "png", "jpg", "jpeg", "html", "htm", "docx", "doc", "xlsx", "xls", "csv"],
                               help="支持文字PDF、扫描PDF、图片、网页、Word和Excel。")
     with st.expander("分析设置（公告类型、评估日、图谱、离线模式）", icon=":material/tune:"):
@@ -94,19 +150,24 @@ with tab_new:
                 message = _re.sub(r"(sk-|key[=:]\s*)[A-Za-z0-9*_\-]{4,}", r"\1***", str(error))   # never echo key fragments
                 st.error(f"分析失败：{type(error).__name__}: {message}")
 
-with tab_saved:
-    st.caption("开发与复核用：直接读取 outputs/ 里已保存的抽取结果，使用“上传新公告 → 分析设置”里的评估日和图谱。")
-    outputs = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "outputs").glob("*_freeze/*/*.json"))
-    chosen = st.selectbox("选择一份已提取的公告", outputs) if outputs else None
-    if not outputs:
-        st.caption("本机没有 outputs/ 目录（新克隆的仓库不含这些文件）；请用“演示案例”。")
-    if chosen and st.button("生成风险预警", icon=":material/bolt:", key="build_demo_card"):
-        doc = json.loads((ROOT / chosen).read_text(encoding="utf-8"))
-        card = build_card(doc, chosen, as_of.isoformat(), ROOT / chain)
+if tab_saved is not None:
+    with tab_saved:
+        st.caption("开发与复核用：直接读取 outputs/ 里已保存的抽取结果，使用“上传新公告 → 分析设置”里的评估日和图谱。")
+        outputs = sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "outputs").glob("*_freeze/*/*.json"))
+        chosen = st.selectbox("选择一份已提取的公告", outputs) if outputs else None
+        if not outputs:
+            st.caption("本机没有 outputs/ 目录（新克隆的仓库不含这些文件）；请用“演示案例”。")
+        if chosen and st.button("生成风险预警", icon=":material/bolt:", key="build_demo_card"):
+            doc = json.loads((ROOT / chosen).read_text(encoding="utf-8"))
+            card = build_card(doc, chosen, as_of.isoformat(), ROOT / chain)
 
 if card:
     st.session_state["shown_card"] = card
 card = st.session_state.get("shown_card")
+if not card:                       # before the first click: what the agent will do
+    st.divider()
+    st.markdown("**调度智能体会做这 10 步**　:gray[每一步用了什么工具、为什么这样决定，结果出来后都能展开看]")
+    st.html(pipeline_html())
 
 if card:
     st.divider()
