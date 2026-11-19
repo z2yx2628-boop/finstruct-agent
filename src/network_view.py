@@ -474,26 +474,32 @@ SCENARIO_RULE_SCALE = (["冲击", "产品暴露（B）", "披露采购/销售（
                        ["#222222", "#2e86c1", "#c0392b", "#7f8c8d", "#8e44ad", "#16a085", "#d35400"])
 
 
+def _short(name: str, n: int = 9) -> str:
+    return name if len(name) <= n else name[:n] + "…"
+
+
 def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 900, height: int = 440,
                    rule_scale: tuple[list[str], list[str]] | None = None) -> dict:
     """Plain Vega-Lite spec (no Altair API, rendered by st.vega_lite_chart): edges, arrowheads, clickable edge
     labels, clickable company nodes, names. Selections are top-level params `company` (node click) and
-    `link` (edge-label click), bound to their layers by name, which is the form Streamlit reads."""
+    `link` (edge-label click), bound to their layers by name, which is the form Streamlit reads.
+
+    Kept quiet on purpose: small nodes, names beside the node (long names cut, full name on hover), amounts
+    only on links of 1 亿 or more, risk sources marked by a dark outline instead of a ring."""
     import math
     xs = [n["x"] for n in node_rows] + [e["x"] for e in edge_rows] + [e["x2"] for e in edge_rows]
     ys = [n["y"] for n in node_rows] + [e["y"] for e in edge_rows] + [e["y2"] for e in edge_rows]
-    xdom, ydom = [min(xs) - 0.45, max(xs) + 0.45], [min(ys) - 0.7, max(ys) + 0.7]
+    xdom, ydom = [min(xs) - 0.25, max(xs) + 0.85], [min(ys) - 0.6, max(ys) + 0.6]
     sx, sy = width / (xdom[1] - xdom[0]), height / (ydom[1] - ydom[0])
-    edges = [dict(e, angle=round((90 - math.degrees(math.atan2((e["y2"] - e["y"]) * sy, (e["x2"] - e["x"]) * sx))) % 360, 1))
+    edges = [dict(e, angle=round((90 - math.degrees(math.atan2((e["y2"] - e["y"]) * sy, (e["x2"] - e["x"]) * sx))) % 360, 1),
+                  label=(e["label"] if (e.get("amount_yi") or 0) >= 1 or len(edge_rows) <= 8 else ""))
              for e in edge_rows]
     q = lambda field, domain: {"field": field, "type": "quantitative", "scale": {"domain": domain}, "axis": None}
     domain, colors = rule_scale or ([RULE_LABEL[r] for r in RULE_ORDER], [RULE_COLOR[r] for r in RULE_ORDER])
     rule_color = {"field": "rule", "type": "nominal", "legend": None, "scale": {"domain": domain, "range": colors}}
-    node_rows = [dict(n, kind=n.get("kind", "企业")) for n in node_rows]
-    fade = {"condition": {"test": "datum.on", "value": 0.95}, "value": 0.15}
-    # edges: faded when not on the chosen path; links that skip a column are drawn lighter so they do not
-    # read as passing through the companies they cross
-    edge_fade = {"condition": [{"test": "!datum.on", "value": 0.12}, {"test": "datum.span > 1", "value": 0.4}], "value": 0.9}
+    node_rows = [dict(n, kind=n.get("kind", "企业"), short=_short(n["name"])) for n in node_rows]
+    fade = {"condition": {"test": "datum.on", "value": 1}, "value": 0.15}
+    edge_fade = {"condition": [{"test": "!datum.on", "value": 0.1}, {"test": "datum.span > 1", "value": 0.3}], "value": 0.6}
     tip_edge = [{"field": "src", "title": "从"}, {"field": "dst", "title": "到"}, {"field": "rule", "title": "规则"},
                 {"field": "grade", "title": "证据等级"},
                 {"field": "amount_yi", "type": "quantitative", "title": "金额(亿元)", "format": ".2f"},
@@ -503,36 +509,39 @@ def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 90
                 {"field": "best", "type": "quantitative", "title": "最高路径得分", "format": ".2f"}]
     at_mid = {"x": q("mx", xdom), "y": q("my", ydom)}
     at_node = {"x": q("x", xdom), "y": q("y", ydom)}
+    soft = {"weak": "#E5484D", "medium": "#F5A524", "strong": "#30A46C", "unknown": "#C4C9D1"}
     layers = [
-        {"name": "edges", "data": {"values": edges}, "mark": {"type": "rule"},
+        {"name": "edges", "data": {"values": edges}, "mark": {"type": "rule", "strokeCap": "round"},
          "encoding": {**at_node, "x2": {"field": "x2"}, "y2": {"field": "y2"},
                       "color": dict(rule_color, legend={"title": "传导规则", "orient": "bottom"}),
-                      "strokeWidth": {"field": "width", "type": "quantitative", "scale": None, "legend": None},
-                      "strokeDash": {"condition": {"test": "datum.rule_code == 'R4' || datum.rule_code == 'R3'", "value": [5, 4]},
+                      "strokeWidth": {"field": "width", "type": "quantitative", "scale": {"range": [1, 4]}, "legend": None},
+                      "strokeDash": {"condition": {"test": "datum.rule_code == 'R4' || datum.rule_code == 'R3'", "value": [4, 4]},
                                      "value": [1, 0]},
                       "opacity": edge_fade, "tooltip": tip_edge}},
-        {"name": "heads", "data": {"values": edges}, "mark": {"type": "point", "shape": "triangle-up", "filled": True, "size": 110},
+        {"name": "heads", "data": {"values": edges}, "mark": {"type": "point", "shape": "triangle-up", "filled": True, "size": 45},
          "encoding": {**at_mid, "angle": {"field": "angle", "type": "quantitative", "scale": None},
                       "color": rule_color, "opacity": edge_fade, "tooltip": tip_edge}},
         {"name": "edge_labels", "data": {"values": edges},
-         "mark": {"type": "text", "dy": -11, "fontSize": 12, "fontWeight": "bold", "cursor": "pointer"},
+         "mark": {"type": "text", "dy": -8, "fontSize": 10.5, "cursor": "pointer"},
          "encoding": {**at_mid, "text": {"field": "label"}, "color": rule_color, "opacity": edge_fade, "tooltip": tip_edge}},
-        {"name": "rings", "data": {"values": [n for n in node_rows if n["seed"]]},
-         "mark": {"type": "point", "shape": "circle", "filled": False, "stroke": "#222222", "strokeWidth": 2.5, "size": 2000},
-         "encoding": {**at_node, "opacity": fade}},
         {"name": "nodes", "data": {"values": node_rows},
-         "mark": {"type": "point", "filled": True, "stroke": "white", "strokeWidth": 1.5, "cursor": "pointer"},
-         "encoding": {**at_node, "size": {"field": "paths", "type": "quantitative", "scale": {"range": [420, 1500]}, "legend": None},
+         "mark": {"type": "point", "filled": True, "cursor": "pointer"},
+         "encoding": {**at_node, "size": {"field": "paths", "type": "quantitative", "scale": {"range": [140, 420]}, "legend": None},
                       "shape": {"field": "kind", "type": "nominal",
                                 "scale": {"domain": ["企业", "产品", "行业", "冲击"], "range": ["circle", "square", "diamond", "triangle-down"]},
                                 "legend": None if len({n["kind"] for n in node_rows}) == 1 else {"title": "节点", "orient": "bottom"}},
                       "color": {"field": "tier_label", "type": "nominal",
                                 "scale": {"domain": [TIER_LABEL[t] for t in TIER_ORDER] + ["产品", "行业", "冲击"],
-                                          "range": [TIER_STYLE[t][1] for t in TIER_ORDER] + ["#2e86c1", "#95a5a6", "#222222"]},
+                                          "range": [soft.get(t, "#C4C9D1") for t in TIER_ORDER] + ["#6C8EAD", "#B8C2CC", "#1D2433"]},
                                 "legend": {"title": "承压等级（点企业筛选）", "orient": "bottom"}},
+                      "stroke": {"condition": {"test": "datum.seed", "value": "#1D2433"}, "value": "white"},
+                      "strokeWidth": {"condition": {"test": "datum.seed", "value": 2.5}, "value": 1},
                       "opacity": fade, "tooltip": tip_node}},
-        {"name": "names", "data": {"values": node_rows}, "mark": {"type": "text", "dy": 28, "fontSize": 13, "fontWeight": "bold"},
-         "encoding": {**at_node, "text": {"field": "name"}, "opacity": fade, "tooltip": tip_node}},
+        {"name": "names", "data": {"values": node_rows},
+         "mark": {"type": "text", "align": "left", "dx": 11, "dy": 1, "fontSize": 11.5, "baseline": "middle"},
+         "encoding": {**at_node, "text": {"field": "short"}, "opacity": fade, "tooltip": tip_node,
+                      "fontWeight": {"condition": {"test": "datum.tier !== 'unknown'", "value": 600}, "value": 400},
+                      "color": {"condition": {"test": "datum.tier !== 'unknown'", "value": "#1D2433"}, "value": "#667085"}}},
     ]
     return {"$schema": "https://vega.github.io/schema/vega-lite/v6.json", "width": width, "height": height,
             "params": [{"name": "company", "select": {"type": "point", "fields": ["node"], "on": "click", "clear": "dblclick"},
@@ -542,7 +551,8 @@ def overview_chart(node_rows: list[dict], edge_rows: list[dict], width: int = 90
             "layer": layers,
             "resolve": {"scale": {"color": "independent", "size": "independent", "shape": "independent"},
                         "legend": {"color": "independent", "shape": "independent"}},
-            "config": {"view": {"stroke": None}, "font": "Microsoft YaHei, PingFang SC, sans-serif"}}
+            "config": {"view": {"stroke": None}, "font": "Segoe UI, PingFang SC, Microsoft YaHei, sans-serif",
+                       "legend": {"labelColor": "#475467", "titleColor": "#667085"}}}
 
 
 # ---------------------------------------------------------------- group scope (display only)

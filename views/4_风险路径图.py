@@ -187,8 +187,8 @@ with st.expander("全局关系图（全部路径，可点企业或金额筛选�
         shown = shown + [(index, entry)]
     g2.write("")
     g2.button("清除选择", on_click=reset_focus, width="stretch")
-    notes = ["从左到右 = 传导方向；粗黑圈 = 风险起点；圆越大，经过的路径越多；线越粗，金额越大；虚线 = 同集团或行业近似（无金额）。"
-             "点企业筛选，点金额标签打开该路径，双击空白处取消。"]
+    notes = ["从左到右 = 传导方向；深色描边 = 风险起点；圆越大，经过的路径越多；线越粗，金额越大；虚线 = 同集团或行业近似（无金额）；"
+             "灰色名字 = 未评分的非上市企业；只标 1 亿元以上的金额，悬停看全名和明细。点企业筛选，点金额打开该路径，双击空白处取消。"]
     if company:
         into = sum(1 for _, e in items if any(s.dst == company for s in e["steps"]))
         notes.insert(0, f"**{name_of(company, names)}**：风险传入 {into} 条，由它传出或经过 {len(items) - into} 条。")
@@ -197,7 +197,7 @@ with st.expander("全局关系图（全部路径，可点企业或金额筛选�
     nodes_df, edges_df = overview_layout(shown, fragility, names, chosen=highlight)
     columns_n = int(max(n["x"] for n in nodes_df)) + 1
     rows_n = max(sum(1 for n in nodes_df if n["x"] == x) for x in range(columns_n))
-    st.vega_lite_chart(overview_chart(nodes_df, edges_df, width=min(1150, max(640, 240 * columns_n)), height=max(300, 95 * rows_n)),
+    st.vega_lite_chart(overview_chart(nodes_df, edges_df, width=min(1150, max(640, 260 * columns_n)), height=max(300, 56 * rows_n)),
                        on_select="rerun", key=chart_key, width="content")
 
 
