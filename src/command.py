@@ -3,7 +3,7 @@
     凌钢 / 600231 / LGGF          -> company profile (DES)
     凌钢 FA / 凌钢财报            -> profile, 财报分析 section
     安泰 RELS / 安泰 传导         -> risk-transmission map starting from 安泰集团
-    期货 / CMDTY                 -> futures scenario page;  凌钢 期货 -> profile, 期货与原料 section
+    期货 / CMDTY                 -> futures scenario page;  凌钢 期货 -> profile, 产品与价格 section
     ?凌钢会传给谁 / 一句完整的问题  -> 问一句
 
 Pure functions only (no Streamlit) so the parser can be tested; src/ui.py renders the bar.
@@ -25,8 +25,8 @@ FUNCS = {
     "RELS": ("风险传导", "unified", None),
     "LINK": ("关联风险", "profile", "关联风险"),
     "SPLC": ("客户与供应商", "profile", "客户与供应商"),
-    "CMDTY": ("期货与原料", "profile", "期货与原料"),
-    "PROD": ("产品暴露", "profile", "产品暴露"),
+    "CMDTY": ("期货与原料", "profile", "产品与价格"),
+    "PROD": ("产品暴露", "profile", "产品与价格"),
     "CN": ("公告信号", "profile", "公告信号"),
     "BRIEF": ("核查底稿", "profile", "自身风险"),
 }

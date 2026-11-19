@@ -91,7 +91,8 @@ def group_background(code: str) -> dict | None:
     parent = rows.get(me.get("parent_id") or "")
     members = [r["short_name"] for r in rows.values()
                if me.get("group_id") and r.get("group_id") == me["group_id"] and r.get("security_code") and r["security_code"] != code]
-    return {"parent": parent["canonical_name"] if parent else None, "group_id": me.get("group_id") or None,
+    return {"parent": parent["canonical_name"] if parent else None, "parent_id": parent["entity_id"] if parent else None,
+            "group_id": me.get("group_id") or None,
             "listed_peers": members}
 
 
@@ -101,7 +102,8 @@ def equity_of(snapshot: str, code: str) -> float | None:
 
 
 def checklist(name: str, row: dict | None, detail: dict | None, tr: dict | None, group: dict | None,
-              margin: dict | None, ore: dict | None, hedge: str, n_in: int, n_out: int, report: dict | None) -> dict:
+              margin: dict | None, ore: dict | None, hedge: str, n_in: int, n_out: int, report: dict | None,
+              n_absorbed: int = 0) -> dict:
     """Key points (what is known) and up to three priority checks (what to verify next), by fixed rules."""
     points, checks = [], []
     if row:
@@ -135,7 +137,10 @@ def checklist(name: str, row: dict | None, detail: dict | None, tr: dict | None,
         paths.append(f"{n_in} 条传入或经过")
     if n_out:
         paths.append(f"{n_out} 条由它发出")
-    points.append("传导路径：" + ("；".join(paths) if paths else "没有需要关注的路径"))
+    text = "；".join(paths) if paths else "没有计分路径"
+    if n_absorbed:
+        text += f"；另有 {n_absorbed} 条传到承压为强的企业，风险可能被缓释"
+    points.append("传导路径：" + text)
     if n_in:
         checks.append("核查传入路径上的担保和关联交易（关联风险标签页，每一步有公告原文页码）")
     if report and report.get("signals"):

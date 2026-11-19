@@ -66,9 +66,10 @@ if mode == "从一家企业出发":
         st.session_state.pop("u_company", None)
     code = c1.selectbox("企业", options, key="u_company",
                         format_func=lambda c: f"{TIER_BADGE.get(fragility[c].get('tier', ''), '')} {fragility[c]['security_name']}（{c}）")
-    show_absorbed = c2.toggle("包括风险可能被缓释的路径", value=False, help="途经企业承压为强、得分为 0 的路径")
-    items = filter_paths(ranked, company=code, hide_low_information=True, show_scenarios=False)
-    entries = [e for _, e in items if e["score"] > 0 or show_absorbed]
+    # same-group links without amounts and paths ending at strong companies are shown too (flagged), so a weak
+    # company never reads as "no credit link at all" when its risk does travel and is only absorbed
+    items = filter_paths(ranked, company=code, hide_low_information=False, show_scenarios=False)
+    entries = [e for _, e in items]
     supply = build("outage", snap, fragility, edges_now, company=code)
     credit_f = credit_flows(entries, names, fragility, focus=code)
     supply_f = supply_flows(supply, code, disclosed_suppliers(edges_now, code, names, fragility))
@@ -106,12 +107,14 @@ else:
 verdict(level_, text)
 
 # ---------------------------------------------------------------- one channel at a time
-n_credit = len(credit_f["left"]) + len(credit_f["right"])
+n_credit = sum(1 for r in credit_f["left"] + credit_f["right"] if not r.get("absorbed"))
+n_absorbed = sum(1 for r in credit_f["left"] + credit_f["right"] if r.get("absorbed"))
 n_supply = len(supply_f["left"]) + len(supply_f["right"])
-CHANNELS = {"credit": f"信用传导（计分）· {n_credit}", "supply": f"供需传导（情景）· {n_supply}"}
+CHANNELS = {"credit": f"信用传导（计分）· {n_credit}" + (f"（另 {n_absorbed} 条缓释）" if n_absorbed else ""),
+            "supply": f"供需传导（情景）· {n_supply}"}
 if st.session_state.get("u_channel_for") != (mode, center):          # a new start picks the channel that has content
     st.session_state["u_channel_for"] = (mode, center)
-    st.session_state["u_channel"] = "credit" if n_credit or not n_supply else "supply"
+    st.session_state["u_channel"] = "credit" if (n_credit or n_absorbed) or not n_supply else "supply"
 channel = st.segmented_control("看哪种传导", list(CHANNELS), format_func=CHANNELS.get, key="u_channel") or "credit"
 flows = credit_f if channel == "credit" else supply_f
 show_all = st.toggle("显示全部", value=False, key="u_all", help=f"默认每侧只画最强的 {TOP} 条，其余见下表")
@@ -125,7 +128,7 @@ else:
     head_l.markdown(":gray[**← 风险来自 / 上游**]" if flows["left"] else "")
     head_r.markdown(":gray[**会传给 / 受影响 →**]", help="按影响强度从上到下排列")
     st.vega_lite_chart(flow_chart(center, center_tier, flows["left"], flows["right"], channel, top=top), width="stretch")
-    st.caption(("线越粗 = 路径得分越高（相对本图最高分）" if channel == "credit" else "线越粗 = 证据越强、暴露越大（披露金额或收入占比）")
+    st.caption(("线越粗 = 路径得分越高（相对本图最高分）；灰色虚线 = 对方承压为强、风险可能被缓释（不计分）" if channel == "credit" else "线越粗 = 证据越强、暴露越大（披露金额或收入占比）")
                + "　实线 = 公告披露（A/B 级）　虚线 = 行业推断（C 级）　圆点颜色越深 = 影响越强　括号内 = 企业自身承压"
                + ("" if channel == "credit" else "　·　情景，不计入风险得分"))
 

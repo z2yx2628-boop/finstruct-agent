@@ -277,11 +277,22 @@ def deposit_block(code: str, as_of: str) -> None:
     if not e:
         st.caption("评估日前没有收集到该企业在集团财务公司存款的披露。")
         return
+    from src.related_view import deposit_reading, newer_report
+    reading_ = deposit_reading(e, equity, as_of)
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("存款余额", f"{e['deposit_yi']:.2f} 亿元", help=f"截至 {e['period']}")
-    c2.metric("占净资产", f"{e['deposit_to_equity']:.1%}" if e["deposit_to_equity"] is not None else "—")
+    c2.metric("占净资产", f"{e['deposit_to_equity']:.1%}" if e["deposit_to_equity"] is not None
+              else (reading_["equity_note"] or "—"))
     c3.metric("占自身存款", f"{e['deposit_share']:.1%}" if e["deposit_share"] is not None else "未披露")
     c4.metric("从财务公司借款", f"{e['loan_yi']:.2f} 亿元" if e["loan_yi"] is not None else "未披露")
+    for line in reading_["lines"]:
+        st.markdown(f"**解读**：{line}")
     st.caption(f"{e['finance_company']} · 截至 {e['period']} · 来源：{e['source_label']}《{e['source_title']}》（{e['source_date']}）"
                + ("" if e["verified"] == "Y" else " · 数字尚未人工对照原文核对"))
+    newer = newer_report(code, e["source_date"], as_of)
+    if reading_["stale"] or newer:
+        msg = (f"数据较旧：截至 {e['period']}，距评估日已 {reading_.get('age_days', 0)} 天。" if reading_["stale"] else "")
+        if newer:
+            msg += f"已有更新的报告：{newer['date']}《{newer['title']}》，数字待补录。"
+        st.warning(msg, icon=":material/history:")
     st.markdown(f"> {e['evidence_text']}  \n[原文链接]({e['source_url']})")

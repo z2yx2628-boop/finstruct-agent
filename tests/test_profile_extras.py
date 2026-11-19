@@ -24,7 +24,7 @@ def test_checklist_strong_company_has_no_solvency_check():
     s = pe.checklist("某钢厂", {"tier": "strong", "total_score": "10"}, {"rules": []}, None, None, None, None,
                      "商品期货", 0, 0, None)
     assert not s["checks"]
-    assert "传导路径：没有需要关注的路径" in s["points"]
+    assert "传导路径：没有计分路径" in s["points"]
 
 
 def test_brief_is_standalone_html_and_escaped():

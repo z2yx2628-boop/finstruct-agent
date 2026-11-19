@@ -32,10 +32,11 @@ CHAINS = {"data/chain/live": "实时图谱（每日更新）", "data/chain/backt
 DEMOS = [("安泰集团 · 回测 2025-01-31", "600408", "2025-01-31", "data/chain/backtest_antai_fix1"),
          ("凌钢股份 · 回测 2024-04-30", "600231", "2024-04-30", "data/chain/backtest_linggang_fix1"),
          ("方大特钢 · 回测 2025-02-28", "600507", "2025-02-28", "data/chain/analysis_v1_fix1")]
-SECTIONS = ["自身风险", "财报分析", "关联风险", "客户与供应商", "期货与原料", "产品暴露", "公告信号"]
+SECTIONS = ["自身风险", "财报分析", "关联风险", "客户与供应商", "产品与价格", "公告信号"]
+OLD_SECTION = {"期货与原料": "产品与价格", "产品暴露": "产品与价格"}     # links made before the merge
 SECTION_ICON = {"自身风险": ":material/monitoring:", "财报分析": ":material/receipt_long:", "关联风险": ":material/account_tree:",
-                "客户与供应商": ":material/swap_horiz:", "期货与原料": ":material/candlestick_chart:",
-                "产品暴露": ":material/inventory_2:", "公告信号": ":material/feed:"}
+                "客户与供应商": ":material/swap_horiz:", "产品与价格": ":material/candlestick_chart:",
+                "公告信号": ":material/feed:"}
 snaps = snapshots()
 if not snaps:
     st.info("还没有承压评分快照。")
@@ -53,6 +54,7 @@ def choose(code: str, snapshot: str | None, chain: str | None) -> None:
 goto = st.session_state.pop("_goto_profile", None)          # arriving from another page's "档案" button
 if goto:
     choose(goto["code"], goto.get("snapshot") or snaps[0], goto.get("chain") or "data/chain/live")
+    goto["tab"] = OLD_SECTION.get(goto.get("tab"), goto.get("tab"))
     if goto.get("tab") in SECTIONS:
         st.session_state["pf_tab"] = goto["tab"]
 st.session_state.setdefault("pf_snap", snaps[0])
@@ -95,7 +97,7 @@ def load_paths(chain: str, snap: str):
 
 
 ranked, names, eindex = load_paths(chain, snap)
-mine = split_paths(filter_paths(ranked, company=code, hide_low_information=True, show_scenarios=False), code)
+mine = split_paths(filter_paths(ranked, company=code, hide_low_information=False, show_scenarios=False), code)
 level, text = headline(name, row, len(mine["incoming"]), len(mine["outgoing"]), len(mine["absorbed"]))
 verdict(level, text)
 
@@ -109,7 +111,7 @@ ore_x = ore_cost_exposure(code, snap, ORE_SHOCK, equity_of(snap, code))
 hg = hedging(code, snap)
 rs = report_signals(code, snap) if row else None
 summary_ = checklist(name, row, detail, tr, group, margin, ore_x, hedge_label(hg),
-                     len(mine["incoming"]), len(mine["outgoing"]), rs)
+                     len(mine["incoming"]), len(mine["outgoing"]), rs, len(mine["absorbed"]))
 with st.container(border=True):
     k1, k2 = st.columns([3, 2], gap="large")
     with k1:
@@ -125,7 +127,7 @@ with st.container(border=True):
 
 st.session_state.setdefault("pf_tab", "自身风险")
 section = st.segmented_control("查看", SECTIONS, key="pf_tab", label_visibility="collapsed",
-                               format_func=lambda x: f"{SECTION_ICON[x]} {x}" + ("（情景）" if x in ("期货与原料", "产品暴露") else "")) or "自身风险"
+                               format_func=lambda x: f"{SECTION_ICON[x]} {x}" + ("（情景）" if x == "产品与价格" else "")) or "自身风险"
 
 # ---------------------------------------------------------------- own risk
 if section == "自身风险":
@@ -198,7 +200,7 @@ if section == "自身风险":
         if ev:
             st.markdown("**财报后的风险公告**（会使等级下调一档）")
             st.dataframe(pd.DataFrame(ev), hide_index=True, width="stretch")
-        st.caption("财报同比环比与异常信号见“财报分析”；期货、原料成本情景和套期保值见“期货与原料”。")
+        st.caption("财报同比环比与异常信号见“财报分析”；产品结构、期货情景和套期保值见“产品与价格”。")
         st.page_link("views/2_承压评分.py", label="完整评分拆解、敏感性与数据来源", icon=":material/monitoring:")
 
 # ---------------------------------------------------------------- financial report analysis
@@ -269,9 +271,49 @@ if section == "财报分析":
 
 # ---------------------------------------------------------------- related-party risk
 if section == "关联风险":
-    if not (mine["incoming"] or mine["outgoing"]):
-        st.success(f"在{CHAINS[chain]}、评估日 {snap} 下，没有经过 {name} 的关键传导路径"
-                   "（途经企业承压为强、风险可能受到缓释，金额不重大，或没有中高严重度的起点）。", icon=":material/check_circle:")
+    from src.flow_view import credit_flows, flow_chart
+    from src.network_view import coverage
+    from src.related_view import group_support, no_path_reasons, relation_summary
+
+    @st.cache_data(show_spinner=False)
+    def _cov(chain_: str, snap_: str, code_: str):
+        return coverage(ROOT / chain_, ROOT / "data" / "snapshots" / snap_, code_)
+
+    @st.cache_data(show_spinner=False)
+    def _proxies(chain_: str, snap_: str):
+        from src.network_view import _context
+        return _context(ROOT / chain_, ROOT / "data" / "snapshots" / snap_)[-1].proxy
+
+    cov = _cov(chain, snap, code)
+    support = group_support((row or {}).get("tier", ""), (group or {}).get("parent"),
+                            _proxies(chain, snap).get((group or {}).get("parent_id") or ""))
+    scored = mine["incoming"] + mine["outgoing"]
+    # ① the conclusion, with its reasons (an empty result is explained, never shown as a green "all clear")
+    if scored:
+        st.warning(f"在{CHAINS[chain]}、评估日 {snap} 下，有 {len(scored)} 条计分传导路径经过 {name}"
+                   f"（风险传入或经过 {len(mine['incoming'])} 条，由它发出 {len(mine['outgoing'])} 条）。", icon=":material/warning:")
+    else:
+        why = no_path_reasons(cov, len(mine["absorbed"]), support)
+        st.info(f"**在{CHAINS[chain]}、评估日 {snap} 下，没有经过 {name} 的计分传导路径。**"
+                + ("  \n" + "  \n".join(f"- {w}" for w in why) if why else ""), icon=":material/info:")
+    # ② group background: a weak member of a strong group
+    if support:
+        st.markdown(f"**集团背景**　控股股东：{support['parent']}")
+        st.caption(support["text"].replace("**", ""))
+    # ③ who it is tied to
+    rel = relation_summary(cov["active"], code, names)
+    if rel["by_type"]:
+        st.markdown(f"**关系总览**　:gray[评估日仍有效的披露关系 {sum(rel['by_type'].values())} 条（"
+                    + "、".join(f"{k} {v}" for k, v in sorted(rel["by_type"].items(), key=lambda kv: -kv[1]))
+                    + f"），涉及 {rel['partners']} 个交易对手；下表为金额最大的 {len(rel['top'])} 个]")
+        st.dataframe(pd.DataFrame(rel["top"]), hide_index=True, width="stretch",
+                     column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f")})
+        st.caption("金额为关联交易预计额或担保额，是业务规模或代偿上限，不等于可能的损失。")
+    # ④ the same three-column picture as the 风险传导 page
+    if scored:
+        fl = credit_flows([e for _, e in scored], names, {r["security_code"]: r for r in rows}, focus=code)
+        st.vega_lite_chart(flow_chart(name, (row or {}).get("tier", ""), fl["left"], fl["right"], "credit"), width="stretch")
+        st.caption("左 = 风险从谁传来，右 = 会传给谁，从上到下按路径得分排列；线越粗得分越高。")
     for key, title, note in (("incoming", "风险传入或经过", "其他企业发生信用事件后，风险可能沿担保、购销或同集团关系传导至本企业"),
                              ("outgoing", "由它发出", "本企业的风险信号可能沿关系传导至其他企业"),
                              ("absorbed", "风险可能受到缓释（不预警）", "途经的上市公司承压为强，路径不再扩展，得分为 0，不计入预警")):
@@ -297,11 +339,15 @@ if section == "客户与供应商":
         e1, e2, e3 = st.columns(3)
         if ov:
             e1.metric(f"境外收入占比（{ov['period'][:4]}）", f"{ov['share']:.1%}", help=f"{ov['source']}，{ov['grade']} 级；{ov['items']}")
+        else:
+            e1.metric("境外收入占比", "未披露", help="年报分地区收入中没有境外、海外或出口项目")
         if ore:
             e2.metric(f"铁矿石进口占比（{ore['fy']}，按吨）", f"{ore['import_share_t']:.1%}" if ore["import_share_t"] is not None else "—",
                       help=ore["source"])
             e3.metric("按金额", f"{ore['import_share_amount']:.1%}" if ore["import_share_amount"] is not None else "—",
                       help="进口铁矿石支出 ÷ 铁矿石总支出")
+        if ore and ore["import_share_t"] == 0:
+            st.caption(f"铁矿石进口占比 0% = {ore['fy']} 年全部铁矿石来自国内采购或自有矿山（{ore['source']}），不受海外矿价和汇率直接影响。")
         st.caption("出口受海外关税、反倾销和碳关税影响（可在“市场冲击：期货、供需与政策 → 政策”模拟）；进口受海外矿价和汇率影响。")
     conc = concentration(code, snap)
     if conc:
@@ -323,38 +369,121 @@ if section == "客户与供应商":
                              if c["largest_share"] is not None else "") +
                             (f"年度{'销售' if side == 'customer' else '采购'}总额约 {c['total_yi']:.0f} 亿元（前五名金额 ÷ 其占比）"
                              if c["total_yi"] else ""))
-        st.dataframe(pd.DataFrame([{"年度": c["fy"], "方向": "客户（销售）" if c["side"] == "customer" else "供应商（采购）",
-                                    "前五名合计(亿元)": c["top5_yi"], "占总额": c["top5_share"], "其中关联方": c["related_share"],
-                                    "最大单一": c["largest_share"], "年度总额(亿元)": c["total_yi"],
-                                    "出处": f"{c['source']} 第{c['page']}页" + ("" if c["check"] == "ok" else f"（{c['check']}）")}
-                                   for c in conc]), hide_index=True, width="stretch",
-                     column_config={k: st.column_config.NumberColumn(format="percent") for k in ("占总额", "其中关联方", "最大单一")} |
-                                   {k: st.column_config.NumberColumn(format="%.2f") for k in ("前五名合计(亿元)", "年度总额(亿元)")})
+        from src.partner_view import concentration_bars, concentration_reading
+        for line in concentration_reading(conc):
+            st.markdown(f"- {line}")
+        bars = concentration_bars(conc)
+        if bars:
+            bdf = pd.DataFrame(bars)
+            for col_, side_ in zip(st.columns(2), ["前五大客户（占销售）", "前五大供应商（占采购）"]):
+                part_ = bdf[bdf["方向"] == side_]
+                if part_.empty:
+                    continue
+                col_.markdown(f":gray[{side_}]")
+                col_.altair_chart(alt.Chart(part_).mark_bar(cornerRadiusTopLeft=2, cornerRadiusTopRight=2).encode(
+                    x=alt.X("年度:N", title=None, axis=alt.Axis(labelAngle=0)),
+                    y=alt.Y("占比:Q", title=None, axis=alt.Axis(format="%"), stack="zero", scale=alt.Scale(domain=[0, 1])),
+                    color=alt.Color("构成:N", scale=alt.Scale(domain=["关联方", "非关联方", "未区分"],
+                                                               range=["#7B2CBF", "#B8C2CC", "#98A2B3"]),
+                                    legend=alt.Legend(orient="top", title=None)),
+                    tooltip=["年度", "构成", alt.Tooltip("占比:Q", format=".1%")]).properties(height=200), width="stretch")
+            st.caption("柱高 = 前五名合计占比；紫色 = 其中关联方。")
+        table_c = [{"年度": c["fy"], "方向": "客户（销售）" if c["side"] == "customer" else "供应商（采购）",
+                    "前五名合计(亿元)": c["top5_yi"], "占总额": c["top5_share"], "其中关联方": c["related_share"],
+                    "最大单一": c["largest_share"], "年度总额(亿元)": c["total_yi"],
+                    "出处": f"{c['source']} 第{c['page']}页" + ("" if c["check"] == "ok" else f"（{c['check']}）")} for c in conc]
+        if all(t["最大单一"] is None for t in table_c):
+            for t in table_c:
+                t.pop("最大单一")
+        with st.expander("集中度明细（年报原表）", icon=":material/table:"):
+            st.dataframe(pd.DataFrame(table_c).fillna("—"), hide_index=True, width="stretch",
+                         column_config={k: st.column_config.NumberColumn(format="percent") for k in ("占总额", "其中关联方", "最大单一")} |
+                                       {k: st.column_config.NumberColumn(format="%.2f") for k in ("前五名合计(亿元)", "年度总额(亿元)")})
     partners = summary(code, snap)
     if not (conc or partners):
         st.caption("还没有该企业的年报前五名表、募集说明书或关联交易金额。")
+    from src.partner_view import newer_estimate, share_cell, source_date, source_label, title_url
     for side in ("upstream", "downstream"):
         part = [r for r in partners if r["direction"] == side]
         if not part:
             continue
         st.markdown(f"**{SIDE[side]}**（按占比排序；金额统一为亿元，销量单列）")
-        st.dataframe(pd.DataFrame([{
-            "对方": r["counterparty"], "披露主体": "本公司" if r["company_id"] == code else r["company_name"],
-            "关联方": r["related_party"], "年份": r["year"], "口径": r["amount_type"],
-            "金额(亿元)": r["amount_yi"], "销量": r["quantity"], "占比": r["share"],
-            "占比口径": (r["share_basis"] or "") + (f"（{r['share_method']}）" if r["share_method"] else ""),
-            "实际发生年数": r["years_seen"] or None, "连续年数": r["run_years"] or None,
-            "来源": f"{r['source_type']}：{r['source'][:40]}"} for r in part]),
-            hide_index=True, width="stretch",
-            column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f"),
-                           "占比": st.column_config.NumberColumn(format="percent")})
+        table_p = []
+        for r in part:
+            share_, basis_ = share_cell(r)
+            table_p.append({"对方": r["counterparty"], "披露主体": "本公司" if r["company_id"] == code else r["company_name"],
+                            "关联方": r["related_party"], "年份": r["year"], "口径": r["amount_type"],
+                            "金额(亿元)": r["amount_yi"], "销量": r["quantity"] or None, "占比": share_, "占比口径": basis_,
+                            "实际发生年数": r["years_seen"] or None, "连续年数": r["run_years"] or None,
+                            "来源": source_label(r), "原文": title_url(r["company_id"], source_date(r))})
+        if all(t["销量"] is None for t in table_p):
+            for t in table_p:
+                t.pop("销量")
+        st.dataframe(pd.DataFrame(table_p), hide_index=True, width="stretch",
+                     column_config={"金额(亿元)": st.column_config.NumberColumn(format="%.2f"),
+                                    "占比": st.column_config.NumberColumn(format="percent"),
+                                    "原文": st.column_config.LinkColumn(display_text="打开")})
+        # newer figures may exist: an actual amount more than a year old, or a newer estimate announcement
+        own = [r for r in part if r["company_id"] == code and r["amount_type"] == "上年实际发生" and r["year"]]
+        if own:
+            latest_year = max(int(r["year"]) for r in own)
+            newer = newer_estimate(code, max((source_date(r) or "") for r in own), snap)
+            if latest_year < int(snap[:4]) - 1 or newer:
+                st.warning(f"这里的实际发生额是 {latest_year} 年的；" +
+                           (f"已有更新的公告 {newer['date']}《{newer['title']}》，" if newer else "")
+                           + f"{int(snap[:4]) - 1} 年的实际发生额通常在次年的日常关联交易公告中披露，待补录。",
+                           icon=":material/history:")
     if partners:
         st.caption("口径说明：“预计额度”是关联交易公告给出的下一年上限，不算作实际发生的年份；“期末余额”是应收、预付等余额，"
                    "不是全年交易额；占比优先用原表披露，没有时用公司当年营业收入（销售）或年度采购总额（采购；缺年报时用营业成本近似）计算。"
                    "匿名的“客户一”无法跨年追踪，不计入连续年数。")
 
 # ---------------------------------------------------------------- futures and raw materials (scenario)
-if section == "期货与原料":
+if section == "产品与价格":
+    from src import product_view as pv
+    exposure = exposure_as_of(code, snap)
+    prow = pv.product_rows(code, snap)
+    if not prow:
+        st.caption("没有可用的分产品披露。")
+    else:
+        sx = steel_revenue_exposure(code, snap)
+        hit = pv.revenue_hit(prow, (sx or {}).get("revenue_annual_yi"))
+        line = pv.reading(prow, hit)
+        if line:
+            st.info(f"**一句话解读**：{line}", icon=":material/insights:")
+        core_ = [r["security_code"] for r in rows if r.get("peer_group") == "core"]
+        pos = [(pid, label, pv.peer_position(code, core_, snap, pid)) for pid, label in (("P_FLAT", "板材"), ("P_LONG", "长材"))]
+        pos = [(pid, label, p_) for pid, label, p_ in pos if p_]
+        if pos:
+            st.caption("同行对比：" + "；".join(f"{label}收入占比 {p_['value']:.0%}，在披露该产品的 {p_['n']} 家核心钢厂中排第 {p_['rank']}"
+                                                 f"（中位数 {p_['median']:.0%}）" for _, label, p_ in pos))
+        st.dataframe(pd.DataFrame([{
+            "产品": r["产品"], "占收入": r["share"], "下游需求": r["下游需求"] or "—", "跟踪价格": r["跟踪价格"],
+            f"近 {WINDOW} 日": (f"{r['stats']['ret20']:+.1%}" + (" ⚠ 冲击" if abs(r["stats"]["ret20"]) >= THRESHOLD else "")) if r["stats"] else "—",
+            "近 60 日": f"{r['stats']['ret60']:+.1%}" if r["stats"] else "—",
+            "价格历史分位": f"{r['stats']['pct']:.0%}（{r['stats']['since']} 年以来）" if r["stats"] else "—",
+            "原文条目": r["原文条目"]} for r in prow]), hide_index=True, width="stretch",
+            column_config={"占收入": st.column_config.ProgressColumn(min_value=0, max_value=1, format="percent")})
+        split_note = (f"；{exposure['period'][:4]} 年报只披露钢材合计，品种拆分沿用 {exposure['split_from'][:4]} 年比例"
+                      if exposure and exposure.get("split_from") and exposure["split_from"] != exposure.get("period") else "")
+        st.caption(f"B 级：公司年报披露的分产品收入（{exposure['period'][:4]} 年报，东方财富主营构成{split_note}）。"
+                   f"板材用热卷期货、长材用螺纹期货代表价格；价格涨跌 ≥ {THRESHOLD:.0%} 标为冲击；收入影响 = 年化营收 × 产品占比 × 近 {WINDOW} 日涨跌，"
+                   "假设持续一年、其他不变。两次预注册检验方向一致但不显著，只作情景提示，不计入风险得分。")
+        hist_ = pv.mix_history(code)
+        if len({h["年度"] for h in hist_}) >= 3:
+            st.markdown("**产品结构变化**　:gray[板材与长材占收入的比例，按年报]")
+            st.altair_chart(alt.Chart(pd.DataFrame(hist_)).mark_line(point=True, strokeWidth=2).encode(
+                x=alt.X("年度:N", title=None, axis=alt.Axis(labelAngle=0)),
+                y=alt.Y("占收入:Q", title=None, axis=alt.Axis(format="%")),
+                color=alt.Color("产品:N", scale=alt.Scale(range=["#1C5D99", "#D9822B"]), legend=alt.Legend(orient="top", title=None)),
+                tooltip=["年度", "产品", alt.Tooltip("占收入:Q", format=".1%")]).properties(height=200), width="stretch")
+    st.divider()
+    st.markdown("**期货与原料情景**")
+
+if section == "产品与价格":
+    if st.button("模拟这家企业停产或价格冲击", icon=":material/swap_horiz:", key="pf_to_scenario"):
+        st.session_state["sc_source"] = "产品与需求"
+        st.switch_page("views/5_上下游情景.py")
     st.caption("期货视角：钢材和原料的期货价格变动，会从收入端和成本端同时影响这家企业。只作情景，不计入承压评分"
                "（铁矿石冲击的预先登记检验未达显著）。")
     steel_x = steel_revenue_exposure(code, snap)
@@ -418,31 +547,63 @@ if section == "期货与原料":
         st.switch_page("views/5_上下游情景.py")
 
 # ---------------------------------------------------------------- product exposure
-if section == "产品暴露":
-    exposure = exposure_as_of(code, snap)
-    if not (exposure and exposure.get("products")):
-        st.caption("没有可用的分产品披露。")
-    else:
-        pnames = {p["product_id"]: p["name"] for p in products()}
-        move = {m["product_id"]: m for m in price_moves(snap)}
-        st.dataframe(pd.DataFrame([{
-            "产品": pnames.get(k, k), "占收入": f"{v['share']:.1%}" if v.get("share") is not None else "—",
-            f"近 {WINDOW} 日价格": f"{move[k]['ret']:+.1%}{' ⚠ 冲击' if move[k]['shock'] else ''}" if k in move else "—",
-            "原文条目": v.get("items", "")}
-            for k, v in sorted(exposure["products"].items(), key=lambda kv: -(kv[1].get("share") or 0))]),
-            hide_index=True, width="stretch")
-        st.caption(f"B 级：公司年报披露的分产品收入（{exposure['period'][:4]} 年报，东方财富主营构成）。"
-                   f"价格涨跌 ≥ {THRESHOLD:.0%} 标为冲击。两次预注册检验方向一致但不显著，只作情景提示，不计入风险得分。")
-        st.page_link("views/5_上下游情景.py", label="模拟一次价格或停产冲击", icon=":material/swap_horiz:")
-
 # ---------------------------------------------------------------- announcement signals
 if section == "公告信号":
-    sig = company_signals(ROOT / chain, code, snap)
-    if sig:
-        st.dataframe(pd.DataFrame(sig), hide_index=True, width="stretch")
-        st.caption(f"来自{CHAINS[chain]}中已抽取的公告，截至评估日 {snap}，最新在前，最多 12 条。")
-    else:
+    from src.live_events import chain_signals
+    from src.signal_view import escalation, event_reaction, price_window, signal_rows
+
+    @st.cache_data(show_spinner=False)
+    def _signals(chain_: str, snap_: str):
+        return chain_signals(ROOT / chain_, snap_)
+
+    srows = signal_rows(_signals(chain, snap), code, snap)
+    if not srows:
         st.caption(f"{CHAINS[chain]}中没有 {name} 在评估日前的公告信号。")
+    else:
+        core_ = [r["security_code"] for r in rows if r.get("peer_group") == "core"]
+        for r_ in srows:
+            rx = event_reaction(code, r_["日期"], core_)
+            r_["5日涨跌"] = rx["ret"] if rx else None
+            r_["5日超额（vs 核心钢厂）"] = rx["excess"] if rx else None
+        line = escalation(srows)
+        moved = [r_ for r_ in srows if r_["5日超额（vs 核心钢厂）"] is not None]
+        if moved:
+            big = min(moved, key=lambda r_: r_["5日超额（vs 核心钢厂）"])
+            if big["5日超额（vs 核心钢厂）"] <= -0.05:
+                line += (f" 市场反应最大的是 {big['日期']}「{big['事件']}」：随后 5 个交易日跑输核心钢厂 "
+                         f"{-big['5日超额（vs 核心钢厂）']:.1%}。")
+        if line:
+            st.info(f"**一句话解读**：{line}", icon=":material/insights:")
+        kinds = sorted({r_["类别"] for r_ in srows})
+        pick = st.pills("类别", kinds, selection_mode="multi", default=kinds, key="pf_sig_kinds") or kinds
+        shown = [r_ for r_ in srows if r_["类别"] in pick]
+        # ① timeline: share price with the events marked on their dates
+        px_ = price_window(code, snap)
+        if px_:
+            ev = pd.DataFrame([{"日期": r_["日期"], "事件": r_["事件"], "严重度": r_["严重度"]} for r_ in shown
+                               if r_["日期"] >= px_[0]["日期"]])
+            base = alt.Chart(pd.DataFrame(px_)).mark_line(color="#475467", strokeWidth=1.5).encode(
+                x=alt.X("日期:T", title=None, axis=alt.Axis(format="%y-%m")), y=alt.Y("收盘价:Q", title="收盘价（元）", scale=alt.Scale(zero=False)),
+                tooltip=[alt.Tooltip("日期:T"), "收盘价:Q"])
+            layers_ = [base]
+            if not ev.empty:
+                sev_scale = alt.Scale(domain=["高", "中", "低"], range=["#E5484D", "#F5A524", "#98A2B3"])
+                layers_.append(alt.Chart(ev).mark_rule(strokeDash=[3, 3], strokeWidth=1.5).encode(
+                    x="日期:T", color=alt.Color("严重度:N", scale=sev_scale, legend=alt.Legend(orient="top", title="事件严重度")),
+                    tooltip=["日期", "事件", "严重度"]))
+            st.markdown("**近一年股价与公告事件**　:gray[竖线 = 事件发生日，颜色 = 严重度；悬停看事件]")
+            st.altair_chart(alt.layer(*layers_).properties(height=240), width="stretch")
+        # ② the list
+        st.dataframe(pd.DataFrame([{k: r_[k] for k in ("日期", "事件", "严重度", "仍有效", "有效期至", "5日涨跌", "5日超额（vs 核心钢厂）",
+                                                       "公告", "原文")} for r_ in shown]),
+                     hide_index=True, width="stretch",
+                     column_config={"5日涨跌": st.column_config.NumberColumn(format="percent"),
+                                    "5日超额（vs 核心钢厂）": st.column_config.NumberColumn(format="percent",
+                                        help="事件后 5 个交易日本企业涨跌减去其余核心钢厂等权平均；单一公司的描述，不是统计检验"),
+                                    "仍有效": st.column_config.TextColumn(help="；".join(sorted({r_["有效期规则"] for r_ in srows if r_["有效期规则"]}))),
+                                    "原文": st.column_config.LinkColumn(display_text="打开")})
+        st.caption(f"来自{CHAINS[chain]}中已抽取的公告与公告标题识别的信用事件，截至评估日 {snap}，最新在前。"
+                   "有效期规则见“仍有效”列的说明；同一天的多份公告股价反应相同。")
     st.page_link("views/3_一键分析.py", label="分析这家企业的一份新公告", icon=":material/bolt:")
 
 # ---------------------------------------------------------------- where next

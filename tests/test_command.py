@@ -20,7 +20,7 @@ def test_company_and_function():
     rels = parse("安泰 RELS", COMPANIES)
     assert rels["target"] == "unified" and rels["company"]["code"] == "600408"
     assert parse("鞍钢 客户", COMPANIES)["section"] == "客户与供应商"
-    assert parse("凌钢 期货", COMPANIES)["section"] == "期货与原料"
+    assert parse("凌钢 期货", COMPANIES)["section"] == "产品与价格"
 
 
 def test_initials_can_be_ambiguous():

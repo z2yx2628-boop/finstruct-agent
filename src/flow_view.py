@@ -68,10 +68,13 @@ def credit_flows(entries: list[dict], names: dict[str, str], fragility: dict[str
         items = []
         for r in rows.values():
             channel = r["rules"] + ("：经 " + "、".join(name_of(v, names) for v in r["via"]) if r["via"] else "")
-            items.append({"node": r["node"], "name": r["name"], "tier": r["tier"], "channel": channel,
-                          "grade": r["grade"], "strength": round(max(0.08, r["score"] / top), 3), "score": r["score"],
+            absorbed = r["score"] <= 0
+            items.append({"node": r["node"], "name": r["name"], "tier": r["tier"],
+                          "channel": channel + ("（风险可能被缓释）" if absorbed else ""),
+                          "grade": r["grade"], "strength": 0.05 if absorbed else round(max(0.08, r["score"] / top), 3),
+                          "score": r["score"], "absorbed": absorbed,
                           "size": f"{r['amount_yi']:.1f} 亿" if r["amount_yi"] else "—", "evidence": r["evidence"], "kind": "credit"})
-        out[side] = sorted(items, key=lambda x: -x["strength"])
+        out[side] = sorted(items, key=lambda x: (x["absorbed"], -x["strength"]))
     return out
 
 
@@ -147,20 +150,27 @@ def disclosed_suppliers(chain_edges: list[dict], code: str, names: dict[str, str
 def conclusion(name: str, credit: dict, supply: dict, shock: bool = False) -> tuple[str, str]:
     """-> (level, text) for ui.verdict."""
     subject = name if shock else f"{name}出现风险"
-    cr = credit["right"]
+    cr = [r for r in credit["right"] if not r.get("absorbed")]
+    ab = [r for r in credit["right"] if r.get("absorbed")]
     if cr:
         top = "、".join(f"{r['name']}（{TIER_LABEL.get(r['tier'], '未评分')}）" for r in cr[:3])
         credit_text = f"**信用上**有 {len(cr)} 家企业在计分路径上，最可能被拖累的是 {top}"
+        if all(r["channel"].startswith("同集团") and r["size"] == "—" for r in cr):
+            credit_text += "（仅凭同集团关系，没有披露金额）"
     else:
-        credit_text = "**信用上**没有通过担保或关联交易直接拖累其他企业的计分路径"
+        credit_text = "**信用上**没有计分路径"
+    if ab:
+        names_ = "、".join(r["name"] for r in ab[:4]) + ("等" if len(ab) > 4 else "")
+        credit_text += f"；风险还会传到{names_} {len(ab)} 家，但它们承压为强，风险可能被缓释，不计分"
     sr = supply["right"]
     if sr:
         top = "、".join(r["name"] for r in sr[:3])
         supply_text = f"**供需上**波及 {len(sr)} 家企业（情景，不计分），证据与暴露最强的是 {top}"
     else:
         supply_text = "**供需上**没有找到受影响的企业"
-    if credit["left"]:
-        supply_text += f"；另有 {len(credit['left'])} 家企业的风险可能传到它"
+    left = [r for r in credit["left"] if not r.get("absorbed")]
+    if left:
+        supply_text += f"；另有 {len(left)} 家企业的风险可能传到它"
     return ("error" if cr else "info"), f"{subject}：{credit_text}；{supply_text}。"
 
 
@@ -184,12 +194,15 @@ def flow_chart(center: str, center_tier: str, left: list[dict], right: list[dict
         for r, y in zip(items, ys(len(items))):
             tier = TIER_LABEL.get(r.get("tier") or "unknown", "未评分")
             nodes.append({"x": x, "y": y, "name": r["name"], "label": f"{r['name']}（{tier}）", "sub": r["channel"][:26], "tier": tier,
-                          "strength": r["strength"], "level": level(r["strength"]), "side": side,
+                          "strength": 0 if r.get("absorbed") else r["strength"],
+                          "level": "缓释" if r.get("absorbed") else level(r["strength"]), "side": side,
                           "grade": r["grade"], "size": r.get("size", "—"), "channel_full": r["channel"]})
             x1, y1, x2, y2 = (x, y, 1.0, 0.0) if side == "left" else (1.0, 0.0, x, y)
             edges.append({"x": x1, "y": y1, "x2": x2, "y2": y2, "w": 1.2 + 7 * r["strength"],
-                          "dash": "推断" if r["grade"] == "C" else "披露", "name": r["name"], "channel_full": r["channel"],
-                          "grade": r["grade"], "size": r.get("size", "—"), "level": level(r["strength"])})
+                          "dash": "推断" if (r["grade"] == "C" or r.get("absorbed")) else "披露", "name": r["name"],
+                          "channel_full": r["channel"], "grade": r["grade"], "size": r.get("size", "—"),
+                          "level": "缓释" if r.get("absorbed") else level(r["strength"]),
+                          "ink": "#B8C2CC" if r.get("absorbed") else hi})
     nodes.append({"x": 1.0, "y": 0.0, "name": center, "sub": "", "tier": TIER_LABEL.get(center_tier or "unknown", ""),
                   "strength": 1.0, "level": "", "side": "center", "grade": "", "size": "", "channel_full": ""})
     xs = {"field": "x", "type": "quantitative", "axis": None, "scale": {"domain": [-0.75, 2.85]}}
@@ -205,7 +218,7 @@ def flow_chart(center: str, center_tier: str, left: list[dict], right: list[dict
                           "strokeWidth": {"field": "w", "type": "quantitative", "scale": None},
                           "strokeDash": {"field": "dash", "type": "nominal",
                                          "scale": {"domain": ["披露", "推断"], "range": [[1, 0], [5, 4]]}, "legend": None},
-                          "color": {"value": hi}, "tooltip": tip_e}},
+                          "color": {"field": "ink", "type": "nominal", "scale": None}, "tooltip": tip_e}},
             {"data": {"values": [n for n in nodes if n["side"] != "center"]},
              "mark": {"type": "circle", "size": 260, "stroke": "white", "strokeWidth": 1.5, "opacity": 1},
              "encoding": {"x": xs, "y": yd,
@@ -233,7 +246,8 @@ def flow_chart(center: str, center_tier: str, left: list[dict], right: list[dict
 def table_rows(items: list[dict]) -> list[dict]:
     return [{"排序": i + 1, "企业": r["name"], "自身承压": TIER_LABEL.get(r.get("tier") or "unknown", "未评分"),
              "通道": r["channel"], "证据": r["grade"], "金额/占比": r.get("size", "—"),
-             "影响强度": r["strength"], "依据": (r.get("evidence") or "")[:120]} for i, r in enumerate(items)]
+             "影响强度": r["strength"], "计分": "否（缓释）" if r.get("absorbed") else "是" if r.get("kind") == "credit" else "情景",
+             "依据": (r.get("evidence") or "")[:120]} for i, r in enumerate(items)]
 
 
 # ---------------------------------------------------------------- the full graph, for checking
