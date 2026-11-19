@@ -246,8 +246,8 @@ with left:
         for r in weak:
             with st.container(border=True):
                 a, b = st.columns([5, 1.3], vertical_alignment="center")
-                tag = " · **新进入**" if r in new_weak else ""
-                a.markdown(f"**{r['security_name']}** · {r['total_score']} 分{tag}  \n<small>{short_reasons(r['reasons'])}</small>",
+                new_tag = " · **新进入**" if r in new_weak else ""
+                a.markdown(f"**{r['security_name']}** · {r['total_score']} 分{new_tag}  \n<small>{short_reasons(r['reasons'])}</small>",
                            unsafe_allow_html=True)
                 with b:
                     profile_button(r["security_code"], "档案", key=f"home_{r['security_code']}", width="stretch")
@@ -259,10 +259,10 @@ with right:
     for i, r in enumerate(key_now[:5]):
         with st.container(border=True):
             a, b = st.columns([5, 1.3], vertical_alignment="center")
-            tag = "　:green-badge[新增]" if r in new_paths else ""
+            new_tag = "　:green-badge[新增]" if r in new_paths else ""
             via = " → ".join(RULE_WORD.get(x, x) for x in (r.get("rules") or "").split("+") if x)
             amount = f" · 涉及 {float(r['amount_yi']):.2f} 亿元" if float(r.get("amount_yi") or 0) > 0 else ""
-            a.markdown(f"{badge(seed_nature(r.get('reason', '')))}{tag}  \n**{r['path']}**  \n"
+            a.markdown(f"{badge(seed_nature(r.get('reason', '')))}{new_tag}  \n**{r['path']}**  \n"
                        f"<small>得分 {r['score']} · 经 {via}{amount}</small>", unsafe_allow_html=True)
             if b.button("传导图", key=f"home_path_{i}", icon=":material/hub:", width="stretch"):
                 open_unified(r["seed"], live[-1].name if live else None)
