@@ -96,6 +96,16 @@ def read_paths(path: Path) -> dict[str, dict]:
         return {r["path"]: r for r in csv.DictReader(f)}
 
 
+def failed_splits() -> list[str]:
+    """Earlier daily splits with documents whose extraction failed (e.g. a wrong model setting); they are retried."""
+    out = []
+    for log_path in sorted((ROOT / "outputs").glob("live_*_freeze/run_log.json")):
+        runs = json.loads(log_path.read_text(encoding="utf-8")).get("runs", {})
+        if any(r.get("status") == "failed" for r in runs.values()):
+            out.append(log_path.parent.name.removesuffix("_freeze"))
+    return out
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-network", action="store_true")
@@ -118,6 +128,14 @@ def main() -> None:
             run("scripts/download_capacity_holdout.py", "--split", split)
             if (ROOT / "data" / "manifests" / f"{split}_sources.csv").exists():
                 run("scripts/run_analysis_corpus.py", "--split", split)
+        retry = [s for s in failed_splits() if s != split]
+        if retry:
+            print(f"   重试之前抽取失败的公告：{', '.join(retry)}")
+            for old in retry:
+                run("scripts/download_capacity_holdout.py", "--split", old)
+                run("scripts/run_analysis_corpus.py", "--split", old)
+            left = failed_splits()
+            log.append(f"- 重试之前失败的抽取：{len(retry)} 批" + (f"，仍失败 {len(left)} 批" if left else "，全部完成"))
     else:
         log.append("- 未联网：只用已有数据重建")
 
