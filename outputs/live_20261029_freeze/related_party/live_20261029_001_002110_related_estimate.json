@@ -1,0 +1,29 @@
+{
+  "security_code": "002110",
+  "security_name": "三钢闽光",
+  "company_name": "福建三钢闽光股份有限公司",
+  "announcement_number": "2026-028",
+  "announcement_date": "2026-10-28",
+  "estimate_year": 2026,
+  "total_estimated_amount": 2818235.0,
+  "total_estimated_unit": "万元",
+  "requires_shareholder_approval": null,
+  "transactions": [
+    {
+      "listed_company": "福建三钢闽光股份有限公司",
+      "counterparty": "厦门国贸金属有限公司",
+      "relationship": "other_related_party",
+      "transaction_category": "sell_goods",
+      "category_text": "向关联人销售产品、商品等",
+      "goods_or_services": "钢材等",
+      "estimated_amount": 2.5,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": 86181666.52,
+      "prior_year_actual_unit": "元",
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "向关联\n人销售\n产品、商\n品等\n厦门国贸金属有限\n公司\n销售钢材\n等\n0\n250,000,000\n250,000,000\n86,181,666.52",
+      "confidence": 0.98
+    }
+  ]
+}

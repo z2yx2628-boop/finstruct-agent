@@ -1,0 +1,16 @@
+{
+  "runs": {
+    "live_20261119_001_600126_related_estimate.pdf": {
+      "task": "related_party",
+      "status": "success",
+      "prediction": "outputs/live_20261119_freeze/related_party/live_20261119_001_600126_related_estimate.json",
+      "sha256": "5ddd272945fb7be1bbf298ed41f17b722baace10e3bf015ecd95d469d98511f2",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261119_001_600126_related_estimate/20261119T042131Z"
+    }
+  },
+  "commit": "0e4ec86b18a14917fc85e180c1f60a024d3701b1",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "",
+  "started_at": "2026-11-19T04:21:31.894938+00:00",
+  "completed_at": "2026-11-19T04:21:55.493470+00:00"
+}

@@ -1087,8 +1087,10 @@
     },
     "live_20260930_156_603995_guarantee_live.pdf": {
       "task": "guarantee",
-      "status": "failed",
-      "error": "ValidationError: 6 validation errors for GuaranteeDocument\nevents.1\n  Value error, Guarantee unit or currency requires an amount [type=value_error, input_value={'event_type': 'guarantee...否', 'confidence': 0.9}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nevents."
+      "status": "needs_review",
+      "prediction": "outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json",
+      "sha256": "b96731ffcea21018398e9b5e12ad0ece23434c7167b82c7853a70c9956c5c23d",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20260930_156_603995_guarantee_live/20261119T051343Z"
     },
     "live_20260930_157_603995_guarantee_live.pdf": {
       "task": "guarantee",
@@ -1301,9 +1303,9 @@
       "run_directory": "E:\\金融人工智能比赛9..10-10.18\\outputs\\live_20260930_186_002541_guarantee_live\\20260930T055709Z"
     }
   },
-  "commit": "2da72bbfd19bce26de0492c9a914688db04987dd",
+  "commit": "0e4ec86b18a14917fc85e180c1f60a024d3701b1",
   "freeze_tag": "extraction-freeze-2026-09-24",
-  "tag_commit": "8a0abbaf1507f15d6a94a8e26eb939f6229072fb",
-  "started_at": "2026-09-30T01:52:38.099119+00:00",
-  "completed_at": "2026-09-30T06:02:25.883346+00:00"
+  "tag_commit": "",
+  "started_at": "2026-11-19T05:13:43.745987+00:00",
+  "completed_at": "2026-11-19T05:15:19.021310+00:00"
 }

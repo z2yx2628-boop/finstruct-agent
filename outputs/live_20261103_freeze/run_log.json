@@ -2,18 +2,22 @@
   "runs": {
     "live_20261103_001_601686_guarantee_live.pdf": {
       "task": "guarantee",
-      "status": "failed",
-      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-8b2678ce-9ccb-9a35-85e8-1e27b18845c5', 'request_id': '8b2678ce-9ccb-9a35-85e8-1e27b18845c5'}"
+      "status": "needs_review",
+      "prediction": "outputs/live_20261103_freeze/guarantee/live_20261103_001_601686_guarantee_live.json",
+      "sha256": "f74f114952c09db60c469ec97bf25e975bd04e81b09b9910688fd0ed0a393992",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261103_001_601686_guarantee_live/20261119T053456Z"
     },
     "live_20261103_002_601686_guarantee_live.pdf": {
       "task": "guarantee",
-      "status": "failed",
-      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-da6fed6a-f1bd-9025-8f45-086b83b2bf9d', 'request_id': 'da6fed6a-f1bd-9025-8f45-086b83b2bf9d'}"
+      "status": "success",
+      "prediction": "outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json",
+      "sha256": "af14145aba992bde5c7de286b55a4e091a6e0cc99f15c1b9ed71c65ce876d8a4",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261103_002_601686_guarantee_live/20261119T053533Z"
     }
   },
-  "commit": "65003b067aa1514be41902c430aa4f98bfc2b413",
+  "commit": "0e4ec86b18a14917fc85e180c1f60a024d3701b1",
   "freeze_tag": "extraction-freeze-2026-09-24",
   "tag_commit": "",
-  "started_at": "2026-11-03T03:36:38.654621+00:00",
-  "completed_at": "2026-11-03T03:36:41.937451+00:00"
+  "started_at": "2026-11-19T05:34:56.533266+00:00",
+  "completed_at": "2026-11-19T05:36:49.075401+00:00"
 }

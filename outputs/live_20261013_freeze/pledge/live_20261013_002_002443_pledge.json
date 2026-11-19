@@ -1,0 +1,29 @@
+{
+  "security_code": "002443",
+  "security_name": "金洲管道",
+  "announcement_number": "2026-041",
+  "company_name": "浙江金洲管道科技股份有限公司",
+  "events": [
+    {
+      "event_type": "extension",
+      "shareholder_name": "上海金洲智慧",
+      "shares": 13000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 11.76,
+      "total_share_capital_ratio": 2.5,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2025-04-10",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": "2027-04-10",
+      "pledgee": "浙江银通典当有限责任公司",
+      "purpose": "自身生产经营",
+      "source_page": 1,
+      "evidence_text": "股东名\n称\n是否为控\n股股东或\n第一大股\n东及其一\n致行动人\n本次质\n押数量\n（股）\n占其所\n持股份\n比例\n（%）\n占公司\n总股本\n比例\n（%）\n是否为限\n售股（如\n是，注明\n限售类\n型）\n是否为\n补充质\n押\n质押起\n始日\n展期后\n到期日\n质权人\n质押\n用途\n上海金\n洲智慧\n是\n13,000\n,000\n11.76%\n2.50%\n否\n否\n2025\n年04\n月10\n日\n2027\n年04\n月10\n日\n浙江银\n通典当\n有限责\n任公司\n自身生\n产经营",
+      "confidence": 1.0
+    }
+  ]
+}

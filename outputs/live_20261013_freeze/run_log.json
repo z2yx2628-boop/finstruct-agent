@@ -2,23 +2,29 @@
   "runs": {
     "live_20261013_001_600282_guarantee_live.pdf": {
       "task": "guarantee",
-      "status": "failed",
-      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-bc1856c6-e32d-9ddf-8472-803d8195a4a0', 'request_id': 'bc1856c6-e32d-9ddf-8472-803d8195a4a0'}"
+      "status": "success",
+      "prediction": "outputs/live_20261013_freeze/guarantee/live_20261013_001_600282_guarantee_live.json",
+      "sha256": "2734f671d214933bed208aaf906c1fafbe54a66d79e99300151ecdbf71e5754c",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261013_001_600282_guarantee_live/20261119T051609Z"
     },
     "live_20261013_002_002443_pledge.pdf": {
       "task": "pledge",
-      "status": "failed",
-      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-96a44c15-9cca-99d2-8830-4979515613ab', 'request_id': '96a44c15-9cca-99d2-8830-4979515613ab'}"
+      "status": "needs_review",
+      "prediction": "outputs/live_20261013_freeze/pledge/live_20261013_002_002443_pledge.json",
+      "sha256": "2ba4e9b505aea13c8a615085dd9a9a268391bd36defe3e6c5f84ec2257da8e66",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261013_002_002443_pledge/20261119T051629Z"
     },
     "live_20261013_003_002541_guarantee_live.pdf": {
       "task": "guarantee",
-      "status": "failed",
-      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-31ff35a7-8d30-95dd-9935-9ad948cb67a1', 'request_id': '31ff35a7-8d30-95dd-9935-9ad948cb67a1'}"
+      "status": "success",
+      "prediction": "outputs/live_20261013_freeze/guarantee/live_20261013_003_002541_guarantee_live.json",
+      "sha256": "61947b6a65f7ce42f019771e463be7d01c1f89f57c7f3bec2f75241a63d8b45c",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261013_003_002541_guarantee_live/20261119T051641Z"
     }
   },
-  "commit": "7113e2551bd07ed158ff761b04b73997a0c2c4ae",
+  "commit": "0e4ec86b18a14917fc85e180c1f60a024d3701b1",
   "freeze_tag": "extraction-freeze-2026-09-24",
   "tag_commit": "",
-  "started_at": "2026-10-13T03:08:52.414408+00:00",
-  "completed_at": "2026-10-13T03:08:55.639189+00:00"
+  "started_at": "2026-11-19T05:16:09.379272+00:00",
+  "completed_at": "2026-11-19T05:26:17.480715+00:00"
 }

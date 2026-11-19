@@ -10174,6 +10174,169 @@ guarantee,603995,甬金科技集团股份有限公司,N_江苏甬金金属科技
 guarantee,603995,甬金科技集团股份有限公司,N_新越金属科技有限公司,新越金属科技有限公司,G_603995,G_603995,1,controlled_subsidiary,guarantee_provided,25638.81,,joint_and_several,2025-09-27,603995,2025-09-27,outputs/live_20260930_freeze/guarantee/live_20260930_153_603995_guarantee_live.json,2,"3、公司与越南工商银行胡志明市分行于2025 年9 月26 日签署了《保证合同》（编号：18/2025），为控股子公司新越金属科技有限公司（下称“越南新越”）申请的存量借款提供最高不超过95,057,150 万越南盾(约合人民币25,638.81 万元)的连带责任保证担保，担保范围及担保期间详见“三、担保协议的主要内容”。本次担保方只涉及公司一家，越南新越母公司甬金金属科技（越南）有限公司（下称“越南甬金”）之少数股东佛山市联鸿源不锈钢有限公司对本次担保按照其相应少数股权比例提供一般保证担保的反担保。",exact,relationship,self,self,disclosed,2025-09-27,2028-09-27
 guarantee,603995,甬金科技集团股份有限公司,N_广东甬金金属科技有限公司,广东甬金金属科技有限公司,G_603995,G_603995,1,controlled_subsidiary,guarantee_provided,3000.0,,joint_and_several,2025-09-04,603995,2025-09-04,outputs/live_20260930_freeze/guarantee/live_20260930_154_603995_guarantee_live.json,2,"1、公司与华夏银行广州分行于2025 年9 月2 日签署了《最高额保证合同》（编号：GZ（高保）20250054），为控股子公司广东甬金金属科技有限公司（下称“广东甬金”）申请的借款提供最高不超过人民币3,000 万元的连带责任保证担保，担保的主合同期限自2025 年7 月21 日至2026 年7 月21 日。",exact,relationship,self,self,disclosed,2025-09-04,2028-09-04
 guarantee,603995,甬金科技集团股份有限公司,N_江苏甬金金属科技有限公司,江苏甬金金属科技有限公司,G_603995,G_603995,1,wholly_owned_subsidiary,guarantee_provided,5000.0,,joint_and_several,2025-09-04,603995,2025-09-04,outputs/live_20260930_freeze/guarantee/live_20260930_154_603995_guarantee_live.json,2,"2、公司与招商银行南通分行于2025 年9 月2 日签署了《最高额不可撤销保证书》（编号：513XY250827T00018702），为全资子公司江苏甬金金属科技有限公司（下称“江苏甬金”）在《授信协议》（编号：513XY250827T000187）项下的贷款及其他授信余额之和（最高限额为人民币5,000 万元）及相关费用提供连带责任保证担保，担保期限自担保书生效之日起至《授信协议》项下每笔贷款或其他融资或银行受让的应收账款债权的到期日或每笔垫款的垫款日另加三年。",exact,relationship,self,self,disclosed,2025-09-04,2028-09-04
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_新越金属科技有限公司,新越金属科技有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,150000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,2,"公司
+及其
+合并
+新越金属科技
+有限公司
+72%
+70%
+以上
+26,342.42
+资产负
+债
+率
+70% 以
+3.84%
+至2025
+年度股
+东大会
+否
+是",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_甬金(上海)企业管理有限公司,甬金（上海）企业管理有限公司,,G_603995,0,wholly_owned_subsidiary,guarantee_limit,150000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,2,"公司
+及其
+合并
+范围
+内子
+公司
+甬金（上海）企
+100%
+-
+否
+否",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_新诺国际贸易有限公司,新诺国际贸易有限公司,,G_603995,0,wholly_owned_subsidiary,guarantee_limit,150000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,2,"公司
+及其
+合并
+范围
+内子
+公司
+新诺国际贸易
+有限公司
+100%
+-
+否
+否",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_江苏甬金金属科技有限公司,江苏甬金金属科技有限公司,,G_603995,0,wholly_owned_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"公司
+及其
+合并
+范围
+内子
+公司
+江苏甬金金属
+科技有限公司
+100%
+70%
+以下
+55,680.00
+资产负
+债
+率
+70% 以
+下的子
+公司共
+享担保
+总额50
+亿
+8.12%
+至2025
+年度股
+东大会
+召开之
+日止
+否
+否",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_福建甬金金属科技有限公司,福建甬金金属科技有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"福建甬金金属
+科技有限公司
+70%
+21,562.50
+3.15%
+否
+否",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_福建青拓上克不锈钢有限公司,福建青拓上克不锈钢有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"福建青拓上克
+不锈钢有限公
+司
+70%
+392.00
+0.06%
+否
+否",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_广东甬金金属科技有限公司,广东甬金金属科技有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"广东甬金金属
+科技有限公司
+75%
+25,978.28
+3.79%
+否
+是",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_甬金金属科技(越南)有限公司,甬金金属科技（越南）有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"甬金金属科技
+（越南）有限公
+司
+72%
+64,876.00
+9.47%
+否
+是",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_靖江市甬金金属科技有限公司,靖江市甬金金属科技有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"靖江市甬金金
+属科技有限公
+司
+70%
+28,570.00
+4.17%
+否
+是",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_江苏镨赛精工科技有限公司,江苏镨赛精工科技有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"江苏镨赛精工
+科技有限公司
+85%
+6,450.00
+0.94%
+否
+是",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_浙江镨赛新材料有限公司,浙江镨赛新材料有限公司,,G_603995,0,wholly_owned_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"浙江镨赛新材
+料有限公司
+100%
+15,465.00
+2.26%
+否
+否",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_江苏银羊不锈钢管业有限公司,江苏银羊不锈钢管业有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"江苏银羊不锈
+钢管业有限公
+司
+68.2
+%
+8,400.00
+1.23%
+否
+是",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_深圳市民乐管业有限公司,深圳市民乐管业有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"深圳市民乐管
+业有限公司
+68.2
+%
+-
+-
+否
+是",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_民乐管业(江门)有限公司,民乐管业（江门）有限公司,,G_603995,0,controlled_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"民乐管业（江
+门）有限公司
+68.2
+%
+-
+-
+否
+是",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_甘肃甬金金属科技有限公司,甘肃甬金金属科技有限公司,,G_603995,0,wholly_owned_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"甘肃甬金金属
+科技有限公司
+100%
+-
+-
+否
+否",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
+guarantee,N_甬金科技集团股份有限公司及其合并报表范围内子公司,甬金科技集团股份有限公司及其合并报表范围内子公司,N_新诺国际贸易(新加坡)私人有限公司,新诺国际贸易（新加坡）私人有限公司,,G_603995,0,wholly_owned_subsidiary,guarantee_limit,500000.0,,,2025-08-15,603995,2025-08-15,outputs/live_20260930_freeze/guarantee/live_20260930_156_603995_guarantee_live.json,3,"新诺国际贸易
+（新加坡）私人
+有限公司
+100%
+-
+-
+否
+否",unresolved,relationship,self,self,disclosed,2025-08-15,2026-08-15
 guarantee,603995,甬金科技集团股份有限公司,N_福建甬金金属科技有限公司,福建甬金金属科技有限公司,G_603995,G_603995,1,controlled_subsidiary,guarantee_provided,7000.0,,joint_and_several,2025-06-14,603995,2025-06-14,outputs/live_20260930_freeze/guarantee/live_20260930_157_603995_guarantee_live.json,1,"本次担保金额：甬金科技集团股份有限公司（下称“公司”）本次为控股子公司福建甬金向招商银行股份有限公司宁德分行（下称“招行宁德分行”）申请的借款按持股比例70%提供最高不超过人民币7,000万元的连带责任保证担保。",exact,relationship,self,self,disclosed,2025-06-14,2028-06-14
 guarantee,603995,甬金科技集团股份有限公司,N_广东甬金金属科技有限公司,广东甬金金属科技有限公司,G_603995,G_603995,1,controlled_subsidiary,guarantee_provided,20000.0,,joint_and_several,2025-05-14,603995,2025-05-14,outputs/live_20260930_freeze/guarantee/live_20260930_158_603995_guarantee_live.json,1,"公司本次为控股子公司广东甬金向中国银行股份有限公司阳江分行（下称“中国银行阳江分行”）申请的借款提供最高不超过人民币20,000万元的连带责任保证担保。",exact,relationship,self,self,disclosed,2025-05-14,2028-05-14
 guarantee,603995,甬金科技集团股份有限公司,N_江苏甬金金属科技有限公司,江苏甬金金属科技有限公司,G_603995,G_603995,1,wholly_owned_subsidiary,guarantee_provided,10000.0,,joint_and_several,2025-05-14,603995,2025-05-14,outputs/live_20260930_freeze/guarantee/live_20260930_158_603995_guarantee_live.json,1,"公司本次为全资子公司江苏甬金向中国建设银行股份有限公司南通通州支行（下称“建行通州支行”）申请的借款提供最高不超过人民币10,000万元的连带责任保证担保。",exact,relationship,self,self,disclosed,2025-05-14,2028-05-14
@@ -11156,7 +11319,7 @@ supply,600581,新疆八一钢铁股份有限公司,N_新疆天山钢铁巴州有
 0.15
 0.15
 0",exact,relationship,self,self,disclosed,2026-07-15,2026-12-31
-service,N_新疆八一钢铁集团有限公司,新疆八一钢铁集团有限公司,600581,新疆八一钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,2500.0,200.0,接受劳务：接受劳务服务,2026,600581,2026-07-15,outputs/live_20260930_freeze/related_party/live_20260930_031_600581_related_estimate.json,2,"接受劳务
+service,E_BAYI_GROUP,新疆八一钢铁集团有限公司,600581,新疆八一钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,2500.0,200.0,接受劳务：接受劳务服务,2026,600581,2026-07-15,outputs/live_20260930_freeze/related_party/live_20260930_031_600581_related_estimate.json,2,"接受劳务
 新疆八一钢
 铁集团有限
 公司
@@ -11165,7 +11328,7 @@ service,N_新疆八一钢铁集团有限公司,新疆八一钢铁集团有限公
 0.02
 0.25
 0.27
-0.02",relationship,exact,self,self,disclosed,2026-07-15,2026-12-31
+0.02",alias,exact,self,self,disclosed,2026-07-15,2026-12-31
 service,N_新疆八钢国际贸易股份有限公司,新疆八钢国际贸易股份有限公司,600581,新疆八一钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,700.0,,接受劳务：接受劳务服务,2026,600581,2026-07-15,outputs/live_20260930_freeze/related_party/live_20260930_031_600581_related_estimate.json,2,"新疆八钢国
 际贸易股份
 有限公司
@@ -13532,6 +13695,356 @@ guarantee,601686,天津友发钢管集团股份有限公司,N_河北海乾威钢
 guarantee,601686,天津友发钢管集团股份有限公司,N_河北海乾威钢管有限公司,河北海乾威钢管有限公司,G_601686,G_601686,1,controlled_subsidiary,guarantee_provided,3000.0,,joint_and_several,2026-10-08,601686,2026-10-08,outputs/live_20261009_freeze/guarantee/live_20261009_002_601686_guarantee_live.json,6,"河北海乾威	公司	平安银行股份有限公司天津分行	2026/8/27	3,000	最高额担保	48	连带责任保证",exact,relationship,self,self,disclosed,2026-10-08,2029-10-08
 guarantee,601686,天津友发钢管集团股份有限公司,N_广西友发昆大管道科技有限公司,广西友发昆大管道科技有限公司,G_601686,G_601686,1,controlled_subsidiary,guarantee_provided,2000.0,,joint_and_several,2026-10-08,601686,2026-10-08,outputs/live_20261009_freeze/guarantee/live_20261009_002_601686_guarantee_live.json,6,"广西友发昆大	公司	兴业银行股份有限公司昆明分行	2026/8/5	2,000	最高额担保	72	连带责任保证",exact,relationship,self,self,disclosed,2026-10-08,2029-10-08
 guarantee,601686,天津友发钢管集团股份有限公司,N_广东友发管业科技有限公司,广东友发管业科技有限公司,G_601686,G_601686,1,wholly_owned_subsidiary,guarantee_provided,50000.0,,joint_and_several,2026-10-08,601686,2026-10-08,outputs/live_20261009_freeze/guarantee/live_20261009_002_601686_guarantee_live.json,6,"广东友发	公司	中国工商银行股份有限公司佛山南海九江支行	2026/9/18	50,000	普通保证	96	连带责任保证",exact,relationship,self,self,disclosed,2026-10-08,2029-10-08
+guarantee,600282,南京钢铁股份有限公司,N_SingaporeJintengInternationalPte.Ltd.,Singapore Jinteng International Pte.Ltd.,G_CITIC,G_CITIC,1,wholly_owned_subsidiary,guarantee_provided,,,joint_and_several,2026-10-13,600282,2026-10-13,outputs/live_20261013_freeze/guarantee/live_20261013_001_600282_guarantee_live.json,1,"被担保人名称
+本次担保金额
+实际为其提供的
+担保余额（不含本
+次担保金额）
+是否在前
+期预计额
+度内
+本次担保
+是否有反
+担保
+Singapore Jinteng International
+Pte.Ltd.（中文名称：新加坡金腾
+国际有限公司，以下简称新加坡
+金腾）
+7,000 万美元
+0
+是
+否",exact,relationship,self,self,disclosed,2026-10-13,2029-10-13
+guarantee,002541,安徽鸿路钢结构（集团）股份有限公司,N_安徽鸿翔建材有限公司,安徽鸿翔建材有限公司,G_002541,G_002541,1,wholly_owned_subsidiary,guarantee_provided,20000.0,,joint_and_several,2026-10-13,002541,2026-10-13,outputs/live_20261013_freeze/guarantee/live_20261013_003_002541_guarantee_live.json,4,"2026 年9 月14 日，公司与中信银行股份有限公司合肥分行签订《最高额保证合同》，约定为全资子公司安徽鸿翔建材有限公司综合授信业务提供担保，担保金额不超过20,000 万元人民币，担保期限为2026 年9 月14 日至2027 年9 月14 日。",exact,relationship,self,self,disclosed,2026-09-14,2027-09-14
+guarantee,002541,安徽鸿路钢结构（集团）股份有限公司,N_安徽鸿翔建材有限公司,安徽鸿翔建材有限公司,G_002541,G_002541,1,wholly_owned_subsidiary,guarantee_provided,20000.0,,joint_and_several,2026-10-13,002541,2026-10-13,outputs/live_20261013_freeze/guarantee/live_20261013_003_002541_guarantee_live.json,4,2026 年9 月21 日，公司与华夏银行股份有限公司合肥高新区支行签订《最高额保证合同》，约定为全资子公司安徽鸿翔建材有限公司综合授信业务提供担保，担保金额不超过20000 万元人民币，担保期限为2026 年9 月20 日至2027 年7 月27 日。,exact,relationship,self,self,disclosed,2026-09-20,2027-07-27
+supply,E_TISCO_GROUP,太钢集团,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,188130.8,146078.41,向关联人采购原材料、备件等：原辅料、废钢、备件等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,1,"向关联人采购原材料、备件等	太钢集团	原辅料、废钢、备件等	市场价	188,130.80	146,078.41	215,203.50",exact,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_太原钢铁(集团)国际经济贸易有限公司,太原钢铁（集团）国际经济贸易有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,186099.12,308780.51,向关联人采购原材料、备件等：原辅料、备件等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,1,"向关联人采购原材料、备件等	太原钢铁（集团）国际经济贸易有限公司	原辅料、备件等	市场价	186,099.12	308,780.51	370,350.00",relationship,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_太钢集团岚县矿业有限公司,太钢集团岚县矿业有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,681314.0,435448.05,向关联人采购原材料、备件等：原辅料、废钢等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	太钢集团岚县矿业有限公司	原辅料、废钢等	市场价	681,314.00	435,448.05	688,627.13",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_山西太钢鑫磊资源有限公司,山西太钢鑫磊资源有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,44800.0,22074.15,向关联人采购原材料、备件等：原辅料,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	山西太钢鑫磊资源有限公司	原辅料	市场价	44,800.00	22,074.15	38,844.00",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_山西星火弘源工贸有限公司,山西星火弘源工贸有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,26850.0,0.0,向关联人采购原材料、备件等：原辅料,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	山西星火弘源工贸有限公司	原辅料	市场价	26,850.00	0.00	0.00",relationship,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_山西禄纬堡太钢耐火材料有限公司,山西禄纬堡太钢耐火材料有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,18146.0,11415.59,向关联人采购原材料、备件等：原辅料、废钢等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	山西禄纬堡太钢耐火材料有限公司	原辅料、废钢等	市场价	18,146.00	11,415.59	19,056.68",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_宝武原料供应有限公司,宝武原料供应有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,49380.53,46218.04,向关联人采购原材料、备件等：原辅料,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	宝武原料供应有限公司	原辅料	市场价	49,380.53	46,218.04	57,200.00",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_宝钢资源(国际)有限公司,宝钢资源（国际）有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,80125.18,24749.04,向关联人采购原材料、备件等：原辅料,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	宝钢资源（国际）有限公司	原辅料	市场价	80,125.18	24,749.04	27,729.00",relationship,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_中钢国际贸易有限公司,中钢国际贸易有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,47964.6,10889.66,向关联人采购原材料、备件等：原辅料,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	中钢国际贸易有限公司	原辅料	市场价	47,964.60	10,889.66	33,595.10",relationship,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_上海欧冶采购信息科技有限责任公司,上海欧冶采购信息科技有限责任公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,25000.0,20594.62,向关联人采购原材料、备件等：备件等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	上海欧冶采购信息科技有限责任公司	备件等	市场价	25,000.00	20,594.62	31,419.00",relationship,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_太钢集团子公司,太钢集团子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3005.0,1778.66,向关联人采购原材料、备件等：原辅料、废钢、备件等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	太钢集团子公司	原辅料、废钢、备件等	市场价	3,005.00	1,778.66	2,703.53",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_中国宝武子公司,中国宝武子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,18600.0,23691.14,向关联人采购原材料、备件等：原辅料、钢材、备件等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	中国宝武子公司	原辅料、钢材、备件等	市场价	18,600.00	23,691.14	41,357.42",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_本公司的联营公司,本公司的联营公司,000825,山西太钢不锈钢股份有限公司,,G_BAOWU,0,associate_or_joint_venture,estimate,6600.0,2954.82,向关联人采购原材料、备件等：原辅料、钢材、备件等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购原材料、备件等	本公司的联营公司	原辅料、钢材、备件等	市场价	6,600.00	2,954.82	4,088.43",unresolved,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_太钢集团子公司,太钢集团子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3000.0,3100.27,向关联人采购燃料和动力：能源,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人采购燃料和动力	太钢集团子公司	能源	市场价	3,000.00	3,100.27	5,181.19",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_中国宝武子公司,中国宝武子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,450.0,293.8,向关联人采购燃料和动力：能源,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,向关联人采购燃料和动力	中国宝武子公司	能源	市场价	450.00	293.80	440.70,group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,000825,山西太钢不锈钢股份有限公司,E_TISCO_GROUP,太钢集团,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,2400.0,4100.4,向关联人销售产品、商品：钢材、能源、备件等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人销售产品、商品	太钢集团	钢材、能源、备件等	市场价	2,400.00	4,100.40	6,150.60",exact,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_宁波宝新不锈钢有限公司,宁波宝新不锈钢有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,393600.0,272135.55,向关联人销售产品、商品：钢材,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人销售产品、商品	宁波宝新不锈钢有限公司	钢材	市场价	393,600.00	272,135.55	422,819.42",exact,relationship,self,self,disclosed,2026-10-13,2027-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_欧冶云商股份有限公司,欧冶云商股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,811040.0,117153.36,向关联人销售产品、商品：钢材,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人销售产品、商品	欧冶云商股份有限公司	钢材	市场价	811,040.00	117,153.36	632,171.00",exact,relationship,self,self,disclosed,2026-10-13,2027-12-31
+supply,000825,山西太钢不锈钢股份有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,24230.0,21014.44,向关联人销售产品、商品：钢材,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人销售产品、商品	宝山钢铁股份有限公司	钢材	市场价	24,230.00	21,014.44	27,301.00",exact,exact,self,self,disclosed,2026-10-13,2027-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_太原重工轨道交通设备有限公司,太原重工轨道交通设备有限公司,G_BAOWU,,0,associate_or_joint_venture,estimate,101598.0,68999.81,向关联人销售产品、商品：钢材,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人销售产品、商品	太原重工轨道交通设备有限公司	钢材	市场价	101,598.00	68,999.81	100,452.19",exact,unresolved,self,self,disclosed,2026-10-13,2027-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_宝武环科山西资源循环利用有限公司,宝武环科山西资源循环利用有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,12000.0,9750.46,向关联人销售产品、商品：原辅料、能源、废钢、备件等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人销售产品、商品	宝武环科山西资源循环利用有限公司	原辅料、能源、废钢、备件等	市场价	12,000.00	9,750.46	16,983.50",exact,group_token,self,self,disclosed,2026-10-13,2027-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_太钢集团子公司,太钢集团子公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1950.0,1225.31,向关联人销售产品、商品：能源、废钢、备件等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人销售产品、商品	太钢集团子公司	能源、废钢、备件等	市场价	1,950.00	1,225.31	1,973.10",exact,group_token,self,self,disclosed,2026-10-13,2027-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_中国宝武子公司,中国宝武子公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,12300.0,8138.71,向关联人销售产品、商品：钢材、备件、能源等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人销售产品、商品	中国宝武子公司	钢材、备件、能源等	市场价	12,300.00	8,138.71	12,208.07",exact,group_token,self,self,disclosed,2026-10-13,2027-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_本公司的联营公司,本公司的联营公司,G_BAOWU,,0,associate_or_joint_venture,estimate,8500.0,3686.74,向关联人销售产品、商品：钢材、能源等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人销售产品、商品	本公司的联营公司	钢材、能源等	市场价	8,500.00	3,686.74	5,530.10",exact,unresolved,self,self,disclosed,2026-10-13,2027-12-31
+service,000825,山西太钢不锈钢股份有限公司,E_TISCO_GROUP,太钢集团及其子公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,318.9,208.62,向关联人提供劳务：服务费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,向关联人提供劳务	太钢集团及其子公司	服务费	协议价	318.90	208.62	298.76,exact,exact,self,self_and_subsidiaries,disclosed,2026-10-13,2027-12-31
+service,000825,山西太钢不锈钢股份有限公司,E_BAOWU,中国宝武及其子公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,5650.0,3127.11,向关联人提供劳务：服务费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,"向关联人提供劳务	中国宝武及其子公司	服务费	协议价	5,650.00	3,127.11	4,690.67",exact,exact,self,self_and_subsidiaries,disclosed,2026-10-13,2027-12-31
+service,000825,山西太钢不锈钢股份有限公司,N_本公司的联营公司,本公司的联营公司,G_BAOWU,,0,associate_or_joint_venture,estimate,550.0,151.45,向关联人提供劳务：服务费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,2,向关联人提供劳务	本公司的联营公司	服务费	协议价	550.00	151.45	227.17,exact,unresolved,self,self,disclosed,2026-10-13,2027-12-31
+service,E_TISCO_GROUP,太钢集团,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,12000.0,651.63,接受关联人提供的劳务：综合服务费、加工费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"接受关联人提供的劳务	太钢集团	综合服务费、加工费	协议价	12,000.00	651.63	1,866.50",exact,exact,self,self,disclosed,2026-10-13,2027-12-31
+service,N_山西太钢工程技术有限公司,山西太钢工程技术有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,15200.0,8611.35,接受关联人提供的劳务：劳务费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"接受关联人提供的劳务	山西太钢工程技术有限公司	劳务费	市场价	15,200.00	8,611.35	14,328.23",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+service,N_上海宝信软件股份有限公司,上海宝信软件股份有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,22000.0,12031.87,接受关联人提供的劳务：劳务费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"接受关联人提供的劳务	上海宝信软件股份有限公司	劳务费	市场价	22,000.00	12,031.87	23,065.12",relationship,exact,self,self,disclosed,2026-10-13,2027-12-31
+service,N_宝武水务科技有限公司,宝武水务科技有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,23125.0,14614.1,接受关联人提供的劳务：劳务费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"接受关联人提供的劳务	宝武水务科技有限公司	劳务费	市场价	23,125.00	14,614.10	26,620.28",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+service,N_宝武环科山西资源循环利用有限公司,宝武环科山西资源循环利用有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,35600.0,23528.74,接受关联人提供的劳务：劳务费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"接受关联人提供的劳务	宝武环科山西资源循环利用有限公司	劳务费	市场价	35,600.00	23,528.74	40,025.79",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+service,N_上海欧冶物流股份有限公司,上海欧冶物流股份有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,23500.0,17915.4,接受关联人提供的劳务：运输费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"接受关联人提供的劳务	上海欧冶物流股份有限公司	运输费	市场价	23,500.00	17,915.40	27,946.16",relationship,exact,self,self,disclosed,2026-10-13,2027-12-31
+service,N_太钢集团子公司,太钢集团子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,14000.0,9288.94,接受关联人提供的劳务：劳务费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"接受关联人提供的劳务	太钢集团子公司	劳务费	协议价	14,000.00	9,288.94	12,662.83",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+service,N_中国宝武子公司,中国宝武子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,17000.0,11053.23,接受关联人提供的劳务：劳务费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"接受关联人提供的劳务	中国宝武子公司	劳务费	市场价	17,000.00	11,053.23	18,035.09",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+service,N_本公司的联营公司,本公司的联营公司,000825,山西太钢不锈钢股份有限公司,,G_BAOWU,0,associate_or_joint_venture,estimate,430.0,170.6,接受关联人提供的劳务：加工费等,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,接受关联人提供的劳务	本公司的联营公司	加工费等	市场价	430.00	170.60	255.90,unresolved,exact,self,self,disclosed,2026-10-13,2027-12-31
+finance,N_中国宝武子公司,中国宝武子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,280.0,181.55,贷款：手续费,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,贷款	中国宝武子公司	手续费	协议价	280.00	181.55	272.32,group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+finance,N_中国宝武子公司,中国宝武子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1100.0,477.68,贷款：利息支出,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"贷款	中国宝武子公司	利息支出	协议价	1,100.00	477.68	734.35",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+finance,E_TISCO_GROUP,太钢集团,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,0.6,0.0,贷款：利息支出,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,贷款	太钢集团	利息支出	协议价	0.60	0.00	0.15,exact,exact,self,self,disclosed,2026-10-13,2027-12-31
+finance,N_中国宝武子公司,中国宝武子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3400.0,1075.13,存款：利息收入,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"存款	中国宝武子公司	利息收入	协议价	3,400.00	1,075.13	2,150.25",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+lease,E_TISCO_GROUP,太钢集团,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,8485.61,5657.05,租入资产：土地租赁,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"租入资产	太钢集团	土地租赁	协议价	8,485.61	5,657.05	8,485.61",exact,exact,self,self,disclosed,2026-10-13,2027-12-31
+lease,N_太钢集团子公司,太钢集团子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,9284.0,6123.07,租入资产：房屋建筑物、设备租赁,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,"租入资产	太钢集团子公司	房屋建筑物、设备租赁	协议价	9,284.00	6,123.07	9,251.75",group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+lease,N_中国宝武子公司,中国宝武子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,31.76,20.45,租入资产：房屋建筑物、设备租赁,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,租入资产	中国宝武子公司	房屋建筑物、设备租赁	协议价	31.76	20.45	31.76,group_token,exact,self,self,disclosed,2026-10-13,2027-12-31
+lease,000825,山西太钢不锈钢股份有限公司,E_TISCO_GROUP,太钢集团,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,25.26,16.84,租出资产：房屋建筑物租赁,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,租出资产	太钢集团	房屋建筑物租赁	协议价	25.26	16.84	25.26,exact,exact,self,self,disclosed,2026-10-13,2027-12-31
+lease,000825,山西太钢不锈钢股份有限公司,N_太钢集团子公司,太钢集团子公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,10.21,6.81,租出资产：房屋建筑物租赁,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,租出资产	太钢集团子公司	房屋建筑物租赁	协议价	10.21	6.81	10.20,exact,group_token,self,self,disclosed,2026-10-13,2027-12-31
+lease,000825,山西太钢不锈钢股份有限公司,N_中国宝武子公司,中国宝武子公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,230.2,153.48,租出资产：房屋建筑物、设备租赁,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,租出资产	中国宝武子公司	房屋建筑物、设备租赁	协议价	230.20	153.48	230.22,exact,group_token,self,self,disclosed,2026-10-13,2027-12-31
+lease,000825,山西太钢不锈钢股份有限公司,N_本公司的联营公司,本公司的联营公司,G_BAOWU,,0,associate_or_joint_venture,estimate,18.0,12.0,租出资产：房屋建筑物租赁,2027,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_001_000825_related_estimate.json,3,租出资产	本公司的联营公司	房屋建筑物租赁	协议价	18.00	12.00	18.00,exact,unresolved,self,self,disclosed,2026-10-13,2027-12-31
+supply,N_太原钢铁(集团)国际经济贸易有限公司,太原钢铁（集团）国际经济贸易有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,370350.0,308780.51,关联采购：原辅料,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联采购	太原钢铁（集团）国际经济贸易有限公司	原辅料	198,000.00	308,780.51	370,350.00	172,350.00",relationship,exact,self,self,disclosed,2026-10-13,2026-12-31
+supply,N_宝钢资源(国际)有限公司,宝钢资源（国际）有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,27729.0,24749.04,关联采购：原辅料,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联采购	宝钢资源（国际）有限公司	原辅料	114,400.00	24,749.04	27,729.00	-86,671.00",relationship,exact,self,self,disclosed,2026-10-13,2026-12-31
+supply,E_TISCO_GROUP,太原钢铁（集团）有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,215203.5,146078.41,关联采购：原辅料、废钢、备件等,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联采购	太原钢铁（集团）有限公司	原辅料、废钢、备件等	194,192.50	146,078.41	215,203.50	21,011.00",exact,exact,self,self,disclosed,2026-10-13,2026-12-31
+supply,N_太钢集团岚县矿业有限公司,太钢集团岚县矿业有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,688627.13,435448.05,关联采购：原辅料、废钢等,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联采购	太钢集团岚县矿业有限公司	原辅料、废钢等	635,421.13	435,448.05	688,627.13	53,206.00",group_token,exact,self,self,disclosed,2026-10-13,2026-12-31
+supply,N_山西星火弘源工贸有限公司,山西星火弘源工贸有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,0.0,0.0,关联采购：原辅料,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联采购	山西星火弘源工贸有限公司	原辅料	15,714.00	0.00	0.00	-15,714.00",relationship,exact,self,self,disclosed,2026-10-13,2026-12-31
+supply,N_上海欧冶采购信息科技有限责任公司,上海欧冶采购信息科技有限责任公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,31419.0,20594.62,关联采购：备件等,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联采购	上海欧冶采购信息科技有限责任公司	备件等	20,350.00	20,594.62	31,419.00	11,069.00",relationship,exact,self,self,disclosed,2026-10-13,2026-12-31
+supply,N_中国宝武子公司,中国宝武子公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,74952.52,34580.81,关联采购：原辅料、钢材、备件等,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联采购	中国宝武子公司	原辅料、钢材、备件等	25,067.52	34,580.81	74,952.52	49,885.00",group_token,exact,self,self,disclosed,2026-10-13,2026-12-31
+supply,N_中钢国际贸易有限公司,中钢国际贸易有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,33595.1,10889.66,关联采购：原辅料,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"其中：中钢国际贸易有限公司	原辅料	863.10	10,889.66	33,595.10	32,732.00",relationship,exact,self,self,disclosed,2026-10-13,2026-12-31
+supply,N_宝钢德盛不锈钢有限公司,宝钢德盛不锈钢有限公司,000825,山西太钢不锈钢股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,24153.0,13025.18,关联采购：钢材,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"宝钢德盛不锈钢有限公司	钢材	7,000.00	13,025.18	24,153.00	17,153.00",relationship,exact,self,self,disclosed,2026-10-13,2026-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_欧冶云商股份有限公司,欧冶云商股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,632171.0,117153.36,关联销售：钢材,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联销售	欧冶云商股份有限公司	钢材	90,204.00	117,153.36	632,171.00	541,967.00",exact,relationship,self,self,disclosed,2026-10-13,2026-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_宁波宝新不锈钢有限公司,宁波宝新不锈钢有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,422819.42,272135.55,关联销售：钢材,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联销售	宁波宝新不锈钢有限公司	钢材	251,660.42	272,135.55	422,819.42	171,159.00",exact,relationship,self,self,disclosed,2026-10-13,2026-12-31
+supply,000825,山西太钢不锈钢股份有限公司,N_太原重工轨道交通设备有限公司,太原重工轨道交通设备有限公司,G_BAOWU,,0,associate_or_joint_venture,estimate,100452.19,68999.81,关联销售：钢材,2026,000825,2026-10-13,outputs/live_20261014_freeze/related_party/live_20261014_002_000825_related_estimate.json,2,"关联销售	太原重工轨道交通设备有限公司	钢材	94,106.19	68,999.81	100,452.19	6,346.00",exact,unresolved,self,self,disclosed,2026-10-13,2026-12-31
+guarantee,300881,盛德鑫泰新材料股份有限公司,N_江苏攀森智能科技有限公司,江苏攀森智能科技有限公司,G_300881,G_300881,1,sister_company,guarantee_limit,680.0,,joint_and_several,2026-10-28,300881,2026-10-28,outputs/live_20261028_freeze/guarantee/live_20261028_001_300881_guarantee_live.json,2,"（一）合同#1
+债权人：中国光大银行股份有限公司常州分行
+债务人：江苏攀森智能科技有限公司
+保证人：盛德鑫泰新材料股份有限公司
+1、担保金额：对江苏攀森提供的担保金额为680 万元。",exact,relationship,self,self,disclosed,2026-10-28,2027-10-28
+guarantee,N_江苏锐美汽车零部件有限公司,江苏锐美汽车零部件有限公司,N_江苏攀森智能科技有限公司,江苏攀森智能科技有限公司,,G_300881,0,wholly_owned_subsidiary,guarantee_limit,320.0,,joint_and_several,2026-10-28,300881,2026-10-28,outputs/live_20261028_freeze/guarantee/live_20261028_001_300881_guarantee_live.json,3,"（二）合同#2
+债权人：中国光大银行股份有限公司常州分行
+债务人：江苏攀森智能科技有限公司
+保证人：江苏锐美汽车零部件有限公司
+1、担保金额：对江苏攀森提供的担保金额为320 万元。",unresolved,relationship,self,self,disclosed,2026-10-28,2027-10-28
+supply,002110,福建三钢闽光股份有限公司,N_厦门国贸金属有限公司,厦门国贸金属有限公司,G_FJYJ,,0,other_related_party,estimate,25000.0,8618.1667,向关联人销售产品、商品等：钢材等,2026,002110,2026-10-28,outputs/live_20261029_freeze/related_party/live_20261029_001_002110_related_estimate.json,3,"向关联
+人销售
+产品、商
+品等
+厦门国贸金属有限
+公司
+销售钢材
+等
+0
+250,000,000
+250,000,000
+86,181,666.52",exact,unresolved,self,self,disclosed,2026-10-28,2026-12-31
+supply,N_湘钢物产金属(浙江)有限公司,湘钢物产金属（浙江）有限公司,000932,湖南华菱钢铁股份有限公司,G_HUNAN,G_HUNAN,1,sister_company,estimate,50000.0,,关联采购：原材料（铁矿石）、原材料（煤炭）、原材料（焦炭）、原材料（合金）,2026,000932,2026-10-29,outputs/live_20261030_freeze/related_party/live_20261030_001_000932_related_estimate.json,3,"湘钢物产
+关联采购
+原材料
+（铁矿石）市场价
+800
+15
+1.2
+原材料
+（煤炭）
+市场价
+1,360
+12
+1.63
+原材料
+（焦炭）
+市场价
+1,950
+9.3
+1.82
+原材料
+（合金）
+市场价
+10,000
+0.35
+0.35
+合计
+/
+/
+/
+5",group_token,exact,self,self,disclosed,2026-10-29,2026-12-31
+guarantee,N_江苏锐美汽车零部件有限公司,江苏锐美汽车零部件有限公司,N_江西省锐美电驱动系统有限公司,江西省锐美电驱动系统有限公司,,G_300881,0,controlled_subsidiary,guarantee_provided,500.0,,joint_and_several,2026-10-31,300881,2026-10-31,outputs/live_20261031_freeze/guarantee/live_20261031_001_300881_guarantee_live.json,1,盛德鑫泰新材料股份有限公司（以下简称“公司”）重孙公司江西省锐美电驱动系统有限公司（以下简称“江西锐美”）为满足自身经营的资金需求，拟向中国银行股份有限公司抚州市分行（以下简称“中国银行”）申请500 万元的综合授信额度，由公司控股子公司江苏锐美汽车零部件有限公司（以下简称“江苏锐美”）为其提供担保，担保期限为三年。,unresolved,relationship,self,self,disclosed,2026-10-31,2029-10-31
+guarantee,601686,天津友发钢管集团股份有限公司,601686,天津友发钢管集团股份有限公司,G_601686,G_601686,1,unrelated_party,guarantee_provided,5900.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"公司
+友发
+供应链
+招商银行股份有限公司天
+津分行
+2026/9/22
+30,000
+最高额担
+保
+48
+连带责任
+保证",exact,exact,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_天津市友发德众钢管有限公司,天津市友发德众钢管有限公司,G_601686,G_601686,1,wholly_owned_subsidiary,guarantee_provided,1300.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"友发德众
+公司
+招商银行股份有限公司天
+津分行
+2026/10/9
+6,000
+最高额担
+保
+48
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_天津友发管道科技有限公司,天津友发管道科技有限公司,G_601686,G_601686,1,wholly_owned_subsidiary,guarantee_provided,1300.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"管道科技
+公司
+浙商银行股份有限公司天
+津分行
+2026/8/24
+10,000
+最高额担
+保
+48
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_安徽友发管道科技有限公司,安徽友发管道科技有限公司,G_601686,,0,associate_or_joint_venture,guarantee_provided,400.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"安徽管道
+公司
+浙商银行股份有限公司天
+津分行
+2026/8/24
+2,000
+最高额担
+保
+48
+连带责任
+保证",exact,unresolved,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_天津友发钢管集团销售有限公司,天津友发钢管集团销售有限公司,G_601686,G_601686,1,controlled_subsidiary,guarantee_provided,1050.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"销售公司
+公司
+渤海银行股份有限公司天
+津滨海新区分行
+2026/10/9
+5,000
+最高额担
+保
+48
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_天津友发钢管集团销售有限公司,天津友发钢管集团销售有限公司,G_601686,G_601686,1,controlled_subsidiary,guarantee_provided,1050.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"销售公司
+公司
+渤海银行股份有限公司天
+津滨海新区分行
+2026/10/9
+5,000
+最高额担
+保
+48
+连带责任
+保证
+浙商银行股份有限公司天
+津分行
+2026/8/24
+10,000
+最高额担
+保
+48
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_邯郸市友发钢管有限公司,邯郸市友发钢管有限公司,G_601686,G_601686,1,wholly_owned_subsidiary,guarantee_provided,2000.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"邯郸友发
+公司
+中信银行股份有限公司邯
+郸分行
+2026/1/23
+10,000
+最高额担
+保
+56
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_陕西友发钢管有限公司,陕西友发钢管有限公司,G_601686,G_601686,1,wholly_owned_subsidiary,guarantee_provided,2500.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"陕西友发
+公司
+中国光大银行股份有限公
+司天津分行
+2026/9/20
+25,000
+最高额担
+保
+48
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_成都友发管业有限公司,成都友发管业有限公司,G_601686,G_601686,1,wholly_owned_subsidiary,guarantee_provided,4540.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"成都友发
+公司
+成都农村商业银行股份有
+限公司青白江支行
+2026/10/9
+5,000
+普通保证
+48
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_唐山友发新型建筑器材有限公司,唐山友发新型建筑器材有限公司,G_601686,G_601686,1,wholly_owned_subsidiary,guarantee_provided,300.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"唐山友发
+新型建材
+公司
+浙商银行股份有限公司天
+津分行
+2026/8/24
+10,000
+最高额担
+保
+48
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_河北海乾威钢管有限公司,河北海乾威钢管有限公司,G_601686,G_601686,1,controlled_subsidiary,guarantee_provided,15050.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"河北
+海乾威
+公司
+兴业银行股份有限公司沧
+州分行
+2026/10/13
+24,000
+最高额担
+保
+47
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,601686,天津友发钢管集团股份有限公司,N_吉林华明管业有限公司,吉林华明管业有限公司,G_601686,G_601686,1,controlled_subsidiary,guarantee_provided,500.0,,joint_and_several,2026-11-02,601686,2026-11-02,outputs/live_20261103_freeze/guarantee/live_20261103_002_601686_guarantee_live.json,7,"吉林华明
+公司
+中国民生银行股份有限公
+司吉林分行
+2026/10/21
+5,000
+最高额担
+保
+48
+连带责任
+保证",exact,relationship,self,self,disclosed,2026-11-02,2029-11-02
+guarantee,603995,甬金科技集团股份有限公司,N_江苏甬金金属科技有限公司,江苏甬金金属科技有限公司,G_603995,G_603995,1,wholly_owned_subsidiary,guarantee_provided,15000.0,,joint_and_several,2026-11-12,603995,2026-11-12,outputs/live_20261112_freeze/guarantee/live_20261112_002_603995_guarantee_live.json,2,"1. 甬金科技集团股份有限公司（下称“公司”）与平安银行股份有限公司义乌分行于2026 年11 月11 日签署了《最高额保证担保合同》（合同编号：平银杭义四部额保字20261022 第003 号），为全资子公司江苏甬金金属科技有限公司（下称“江苏甬金”）申请的授信提供最高不超过15,000 万元的连带责任保证担保。",exact,relationship,self,self,disclosed,2026-11-12,2029-11-12
+guarantee,603995,甬金科技集团股份有限公司,N_浙江镨赛新材料有限公司,浙江镨赛新材料有限公司,G_603995,G_603995,1,wholly_owned_subsidiary,guarantee_provided,1000.0,,joint_and_several,2026-11-12,603995,2026-11-12,outputs/live_20261112_freeze/guarantee/live_20261112_002_603995_guarantee_live.json,2,"2. 公司与平安银行股份有限公司义乌分行于2026 年11 月11 日签署了《最高额保证担保合同》（合同编号：平银杭义四部额保字20261027 第003 号），为全资子公司浙江镨赛新材料有限公司（下称“浙江镨赛”）申请的授信提供最高不超过1,000 万元的连带责任保证担保。",exact,relationship,self,self,disclosed,2026-11-12,2029-11-12
+supply,N_中国宝武钢铁集团有限公司及其附属公司,中国宝武钢铁集团有限公司及其附属公司,601005,重庆钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,1033100.0,1020002.0,原材料：铁矿石、废钢、耐材、辅料（包括白云石、石灰石等）、钢坯、煤等,2027,601005,2026-11-11,outputs/live_20261112_freeze/related_party/live_20261112_001_601005_related_estimate.json,3,"中国宝武集团提供给本集团的物料及服务
+原材料
+1,033,100
+1,276,200
+1,340,000
+3,649,300",group_token,exact,self,self,disclosed,2026-11-11,2029-12-31
+supply,N_中国宝武钢铁集团有限公司及其附属公司,中国宝武钢铁集团有限公司及其附属公司,601005,重庆钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,98100.0,54809.0,生产材料：资材备件、设备、水、气体等,2027,601005,2026-11-11,outputs/live_20261112_freeze/related_party/live_20261112_001_601005_related_estimate.json,3,"生产材料
+98,100
+115,500
+115,500
+329,100",group_token,exact,self,self,disclosed,2026-11-11,2029-12-31
+service,N_中国宝武钢铁集团有限公司及其附属公司,中国宝武钢铁集团有限公司及其附属公司,601005,重庆钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,196900.0,152957.0,服务：施工、软件开发及劳务服务等、汽车运输服务、环卫绿化服务等,2027,601005,2026-11-11,outputs/live_20261112_freeze/related_party/live_20261112_001_601005_related_estimate.json,3,"服务
+196,900
+215,500
+215,800
+628,200",group_token,exact,self,self,disclosed,2026-11-11,2029-12-31
+supply,601005,重庆钢铁股份有限公司,N_中国宝武钢铁集团有限公司及其附属公司,中国宝武钢铁集团有限公司及其附属公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,884100.0,516711.0,物料：水、电、气、钢坯、钢材、生铁、固体废弃物、铁矿石等,2027,601005,2026-11-11,outputs/live_20261112_freeze/related_party/live_20261112_001_601005_related_estimate.json,3,"本集团向中国宝武集团提供的物料及服务
+物料
+884,100
+1,084,200
+1,130,600
+3,098,900",exact,group_token,self,self,disclosed,2026-11-11,2029-12-31
+service,601005,重庆钢铁股份有限公司,N_中国宝武钢铁集团有限公司及其附属公司,中国宝武钢铁集团有限公司及其附属公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,5550.0,58.0,服务：加工、质量控制及技术咨询等技术服务等,2027,601005,2026-11-11,outputs/live_20261112_freeze/related_party/live_20261112_001_601005_related_estimate.json,3,"服务
+5,550
+6,350
+7,150
+19,050",exact,group_token,self,self,disclosed,2026-11-11,2029-12-31
+guarantee,603995,甬金科技集团股份有限公司,N_江苏甬金金属科技有限公司,江苏甬金金属科技有限公司,G_603995,G_603995,1,wholly_owned_subsidiary,guarantee_provided,23000.0,,joint_and_several,2026-11-17,603995,2026-11-17,outputs/live_20261117_freeze/guarantee/live_20261117_001_603995_guarantee_live.json,1,"被担保人名称
+本次担保金额
+实际为其提供的担
+保余额（不含本次
+担保金额）
+是否在前期
+预计额度内
+本次担保是
+否有反担保
+江苏甬金金属科
+技有限公司
+23,000.00 万元
+27,244.13 万元
+是
+否",exact,relationship,self,self,disclosed,2026-11-17,2029-11-17
+supply,N_杭州钢铁集团有限公司及其下属公司,杭州钢铁集团有限公司及其下属公司,600126,杭州钢铁股份有限公司,G_HANGGANG,G_HANGGANG,1,parent_or_controlling_shareholder,estimate,500000.0,140766.73,向关联人购买原燃材料和动力：购买矿石矿粉、煤、合金、废钢、钢材、设备等,2027,600126,2026-11-19,outputs/live_20261119_freeze/related_party/live_20261119_001_600126_related_estimate.json,3,"向关联人购买原
+燃材料和动力
+杭州钢
+铁集团
+有限公
+司及下
+属公司
+购买矿石矿粉、
+煤、合金、废钢、
+钢材、设备等
+500,000.00
+140,766.73",relationship,exact,self,self,disclosed,2026-11-19,2027-12-31
+supply,600126,杭州钢铁股份有限公司,N_杭州钢铁集团有限公司及其下属公司,杭州钢铁集团有限公司及其下属公司,G_HANGGANG,G_HANGGANG,1,parent_or_controlling_shareholder,estimate,450000.0,306019.0,向关联人销售商品：销售热卷、铝锭、煤、矿等,2027,600126,2026-11-19,outputs/live_20261119_freeze/related_party/live_20261119_001_600126_related_estimate.json,3,"向关联人销售商
+品
+销售热卷、铝锭、
+煤、矿等
+450,000.00
+306,019.00",exact,relationship,self,self,disclosed,2026-11-19,2027-12-31
+service,N_杭州钢铁集团有限公司及其下属公司,杭州钢铁集团有限公司及其下属公司,600126,杭州钢铁股份有限公司,G_HANGGANG,G_HANGGANG,1,parent_or_controlling_shareholder,estimate,40000.0,6453.88,接受关联人提供的劳务：检修协力、劳务、运输、工程服务、后勤保障服务等,2027,600126,2026-11-19,outputs/live_20261119_freeze/related_party/live_20261119_001_600126_related_estimate.json,3,"接受关联人
+提供的劳务
+检修协力、劳务、
+运输、工程服务、
+后勤保障服务等
+40,000.00
+6,453.88",relationship,exact,self,self,disclosed,2026-11-19,2027-12-31
+service,600126,杭州钢铁股份有限公司,N_杭州钢铁集团有限公司及其下属公司,杭州钢铁集团有限公司及其下属公司,G_HANGGANG,G_HANGGANG,1,parent_or_controlling_shareholder,estimate,10000.0,2935.94,向关联人提供劳务：后勤保障服务等,2027,600126,2026-11-19,outputs/live_20261119_freeze/related_party/live_20261119_001_600126_related_estimate.json,3,"向关联人提供劳
+务
+后勤保障服务等
+10,000.00
+2,935.94",exact,relationship,self,self,disclosed,2026-11-19,2027-12-31
 guarantee,000932,湖南华菱钢铁股份有限公司,E_XIANGGANG,湖南华菱湘潭钢铁有限公司,G_HUNAN,G_HUNAN,1,wholly_owned_subsidiary,guarantee_limit,653900.0,,,2026-03-30,000932,2026-03-30,outputs/live_testdocs_freeze/guarantee/guarantee_test_001_000932_annual_limit.json,2,"华菱钢铁
 湖南华菱湘潭
 钢铁有限公司
@@ -15113,7 +15626,7 @@ service,600581,新疆八一钢铁股份有限公司,E_BAYI_GROUP,八钢公司及
 service,600581,新疆八一钢铁股份有限公司,E_BAOWU,宝武集团（提供劳务）,G_BAOWU,G_BAOWU,1,sister_company,estimate,,1400.0,提供劳务：提供劳务,2026,600581,2026-03-30,outputs/live_testdocs_freeze/related_party/related_test_002_600581_annual_estimate.json,7,提供劳务	宝武集团（提供劳务）	1540	0.08%	1400	0.07%,exact,alias,self,self,disclosed,2026-03-30,2026-12-31
 service,600581,新疆八一钢铁股份有限公司,E_BAOWU,宝武集团之子公司（提供劳务）,G_BAOWU,G_BAOWU,1,sister_company,estimate,,,提供劳务：提供劳务,2026,600581,2026-03-30,outputs/live_testdocs_freeze/related_party/related_test_002_600581_annual_estimate.json,7,提供劳务	宝武集团之子公司（提供劳务）	9271	0.48%	7726	0.41%,exact,alias,self,subsidiaries,disclosed,2026-03-30,2026-12-31
 service,600581,新疆八一钢铁股份有限公司,600581,本公司之联营企业（提供劳务）,G_BAOWU,G_BAOWU,1,associate_or_joint_venture,estimate,,,提供劳务：提供劳务,2026,600581,2026-03-30,outputs/live_testdocs_freeze/related_party/related_test_002_600581_annual_estimate.json,7,提供劳务	本公司之联营企业（提供劳务）	235	0.01%	209	0.01%,exact,self_reference,self,associates,disclosed,2026-03-30,2026-12-31
-finance,N_新疆八一钢铁集团有限公司,新疆八一钢铁集团有限公司及其下属子公司,600581,新疆八一钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,420000.0,,借款,2026,600581,2026-03-30,outputs/live_testdocs_freeze/related_party/related_test_003_600581_group_scope.json,1,新疆八一钢铁股份有限公司（以下简称“八一钢铁”、“上市公司”或“公司”）2026 年度拟向关联方申请借款，累计发生额不超过人民币42 亿元，借款有效期为2026 年3 月至2026 年12 月，具体借款事宜以合同约定为主，利率定价按照一年期贷款市场报价利率（LPR）下浮40BP，用于公司经营资金周转及项目建设，上市公司无需提供担保。,relationship,exact,self_and_subsidiaries,self,disclosed,2026-03-30,2026-12-31
+finance,E_BAYI_GROUP,新疆八一钢铁集团有限公司及其下属子公司,600581,新疆八一钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,420000.0,,借款,2026,600581,2026-03-30,outputs/live_testdocs_freeze/related_party/related_test_003_600581_group_scope.json,1,新疆八一钢铁股份有限公司（以下简称“八一钢铁”、“上市公司”或“公司”）2026 年度拟向关联方申请借款，累计发生额不超过人民币42 亿元，借款有效期为2026 年3 月至2026 年12 月，具体借款事宜以合同约定为主，利率定价按照一年期贷款市场报价利率（LPR）下浮40BP，用于公司经营资金周转及项目建设，上市公司无需提供担保。,alias,exact,self_and_subsidiaries,self,disclosed,2026-03-30,2026-12-31
 supply,N_汇丰工业制品,汇丰工业制品,600307,甘肃酒钢集团宏兴钢铁股份有限公司,G_JISCO,G_JISCO,1,sister_company,estimate,12000.0,447331.45,采购：材料备件、服务费,2026,600307,2026-04-23,outputs/live_testdocs_freeze/related_party/related_test_004_600307_annual_estimate.json,1,"采购
 材料备件、服务费
 汇丰工业制品
@@ -15365,6 +15878,158 @@ service,601005,重庆钢铁股份有限公司,N_中国宝武钢铁集团有限�
 218,000 
 220,300 
 621,300",exact,group_token,self,self,disclosed,2023-11-11,2026-12-31
+supply,E_MAGANG_GROUP,马钢（集团）控股有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,2585817.0,696430.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"马钢集团 市场价 25,858.17 8.49% 6,964.30 2.36% 18,893.86 深入推进营销协同",exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝武资源有限公司,宝武资源有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,2570128.0,1728635.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"宝武资源 市场价 25,701.28 8.44% 17,286.35 5.87% 8,414.93 增加西芒杜及资源矿石采购量",group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝武原料供应有限公司,宝武原料供应有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,669120.0,674547.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"宝武原料 市场价 6,691.20 2.20% 6,745.47 2.29% -54.27",group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_欧冶工业品股份有限公司,欧冶工业品股份有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,389240.0,294622.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"欧冶工业品 市场价 3,892.40 1.28% 2,946.22 1.00% 946.18",relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝武清洁能源有限公司,宝武清洁能源有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,453217.0,380487.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"宝武清能 市场价 4,532.17 1.49% 3,804.87 1.29% 727.30",group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝钢特钢有限公司,宝钢特钢有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,320029.0,238515.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"宝钢特钢 市场价 3,200.29 1.05% 2,385.15 0.81% 815.14 增加钢材采购量",relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_武钢集团有限公司,武钢集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,237168.0,233275.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"武钢集团 市场价 2,371.68 0.78% 2,332.75 0.79% 38.93",relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_欧冶云商股份有限公司,欧冶云商股份有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,134626.0,119785.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"欧冶云商 市场价 1,346.26 0.44% 1,197.85 0.41% 148.42",relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_中国中钢集团有限公司,中国中钢集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,284505.0,236789.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"中国中钢 市场价 2,845.05 0.93% 2,367.89 0.80% 477.16",relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝武铝业科技有限公司,宝武铝业科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,414172.0,376296.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"宝武铝业 市场价 4,141.72 1.36% 3,762.96 1.28% 378.76",group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,E_TISCO_GROUP,太原钢铁（集团）有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,153488.0,155222.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,"太原钢铁 市场价 1,534.88 0.50% 1,552.22 0.53% -17.34",exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝武集团中南钢铁有限公司,宝武集团中南钢铁有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,47773.0,48598.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,中南钢铁 市场价 477.73 0.16% 485.98 0.17% -8.25,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,E_BAYI_GROUP,新疆八一钢铁集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,21664.0,20374.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,八一钢铁 市场价 216.64 0.07% 203.74 0.07% 12.91,alias,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝武装备智能科技有限公司,宝武装备智能科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,42701.0,31153.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,宝武装备 市场价 427.01 0.14% 311.53 0.11% 115.48,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,E_CHANGSHOU,重庆长寿钢铁有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,53034.0,37575.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,重庆长寿 市场价 530.34 0.17% 375.75 0.13% 154.59,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_重庆钢铁(集团)有限责任公司,重庆钢铁（集团）有限责任公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1600.0,475.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,重钢集团 市场价 16.00 0.01% 4.75 0.00% 11.25,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_上海宝钢包装股份有限公司,上海宝钢包装股份有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,50.0,24.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,宝钢包装 市场价 0.50 0.00% 0.24 0.00% 0.26,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝武集团环境资源科技有限公司,宝武集团环境资源科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,44163.0,48011.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,23,宝武环科 市场价 441.63 0.14% 480.11 0.16% -38.48,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_上海宝地不动产资产管理有限公司,上海宝地不动产资产管理有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,13694.0,7940.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,宝地不动产 市场价 136.94 0.04% 79.40 0.03% 57.54,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,E_XINGANG_GROUP,新余钢铁集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,6970.0,4771.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,新余集团 市场价 69.70 0.02% 47.71 0.02% 21.99,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_武汉钢铁集团轧辊有限责任公司,武汉钢铁集团轧辊有限责任公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,4052.0,3392.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,武钢轧辊 市场价 40.52 0.01% 33.92 0.01% 6.60,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝武物流资产有限公司,宝武物流资产有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1013.0,6063.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,宝武物流 市场价 10.13 0.00% 60.63 0.02% -50.50,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝钢金属有限公司,宝钢金属有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,9140.0,5852.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,宝钢金属 市场价 91.40 0.03% 58.52 0.02% 32.88,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_上海宝钢不锈钢有限公司,上海宝钢不锈钢有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,2000.0,0.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,宝钢不锈 市场价 20.00 0.01% 0.00 0.00% 20.00,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_宝武水务科技有限公司,宝武水务科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1998.0,2009.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,宝武水务 市场价 19.98 0.01% 20.09 0.01% -0.11,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,E_BAOWU,中国宝武钢铁集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,950.0,411.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,宝武集团 市场价 9.50 0.00% 4.11 0.00% 5.39,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,N_上海化工宝数字科技有限公司,上海化工宝数字科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,764.0,724.0,采购商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,化工宝数科 市场价 7.64 0.00% 7.24 0.00% 0.40,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_欧冶云商股份有限公司,欧冶云商股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1272442.0,1126031.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,"欧冶云商 市场价 12,724.42 3.86% 11,260.31 3.55% 1,464.11 欧冶云商双买断业务规模增加",exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_武钢集团有限公司,武钢集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,339491.0,369065.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,"武钢集团 市场价 3,394.91 1.03% 3,690.65 1.16% -295.75",exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武清洁能源有限公司,宝武清洁能源有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,398181.0,306846.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,"宝武清能 市场价 3,981.81 1.21% 3,068.46 0.97% 913.35 增加其他燃动力及能源销售",exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武资源有限公司,宝武资源有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,333940.0,412702.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,"宝武资源 市场价 3,339.40 1.01% 4,127.02 1.30% -787.62",exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝钢特钢有限公司,宝钢特钢有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,132700.0,126502.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,"宝钢特钢 市场价 1,327.00 0.40% 1,265.02 0.40% 61.98",exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武集团环境资源科技有限公司,宝武集团环境资源科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,212023.0,154854.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,"宝武环科 市场价 2,120.23 0.64% 1,548.54 0.49% 571.69",exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝钢金属有限公司,宝钢金属有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,71360.0,120999.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,"宝钢金属 市场价 713.60 0.22% 1,209.99 0.38% -496.39",exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_欧冶工业品股份有限公司,欧冶工业品股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,92071.0,17378.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,欧冶工业品 市场价 920.71 0.28% 173.78 0.05% 746.93,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,E_MAGANG_GROUP,马钢（集团）控股有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,10493.0,21845.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,马钢集团 市场价 104.93 0.03% 218.45 0.07% -113.51,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武水务科技有限公司,宝武水务科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,40563.0,34345.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,宝武水务 市场价 405.63 0.12% 343.45 0.11% 62.18,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,E_CHANGSHOU,重庆长寿钢铁有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,22431.0,134.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,24,重庆长寿 市场价 224.31 0.07% 1.34 0.00% 222.96,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武集团中南钢铁有限公司,宝武集团中南钢铁有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,21721.0,1165.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,中南钢铁 市场价 217.21 0.07% 11.65 0.00% 205.55,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武装备智能科技有限公司,宝武装备智能科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,11277.0,5321.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,宝武装备 市场价 112.77 0.03% 53.21 0.02% 59.56,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_中国中钢集团有限公司,中国中钢集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,14136.0,10867.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,中国中钢 市场价 141.36 0.04% 108.67 0.03% 32.69,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,E_BAOWU,中国宝武钢铁集团有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,147.0,0.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,宝武集团 市场价 1.47 0.00% 0.00 0.00% 1.47,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_上海宝地不动产资产管理有限公司,上海宝地不动产资产管理有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,2076.0,2004.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,宝地不动产 市场价 20.76 0.01% 20.04 0.01% 0.71,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武原料供应有限公司,宝武原料供应有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,8640.0,13125.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,宝武原料 市场价 86.40 0.03% 131.25 0.04% -44.85,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_武汉钢铁集团轧辊有限责任公司,武汉钢铁集团轧辊有限责任公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3811.0,3676.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,武钢轧辊 市场价 38.11 0.01% 36.76 0.01% 1.35,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_上海宝钢包装股份有限公司,上海宝钢包装股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,569.0,6495.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,宝钢包装 市场价 5.69 0.00% 64.95 0.02% -59.26,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武物流资产有限公司,宝武物流资产有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,18440.0,15842.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,宝武物流 市场价 184.40 0.06% 158.42 0.05% 25.98,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,E_XINGANG_GROUP,新余钢铁集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1613.0,7727.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,新余集团 市场价 16.13 0.00% 77.27 0.02% -61.14,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武共享服务有限公司,宝武共享服务有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,200.0,21.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,宝武共享 市场价 2.00 0.00% 0.21 0.00% 1.79,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_宝武铝业科技有限公司,宝武铝业科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,126.0,1235.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,宝武铝业 市场价 1.26 0.00% 12.35 0.00% -11.09,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,E_BAYI_GROUP,新疆八一钢铁集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,820.0,880.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,八一钢铁 市场价 8.20 0.00% 8.80 0.00% -0.60,exact,alias,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,E_TISCO_GROUP,太原钢铁（集团）有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,2248.0,277.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,太原钢铁 市场价 22.48 0.01% 2.77 0.00% 19.71,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_华宝投资有限公司,华宝投资有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,5.0,3.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,华宝投资 市场价 0.05 0.00% 0.03 0.00% 0.02,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+supply,600019,宝山钢铁股份有限公司,N_重庆钢铁(集团)有限责任公司,重庆钢铁（集团）有限责任公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,50.0,46.0,销售产品、商品,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,重钢集团 市场价 0.50 0.00% 0.46 0.00% 0.04,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武装备智能科技有限公司,宝武装备智能科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,333449.0,247403.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,"宝武装备 协议价 3,334.49 1.09% 2,474.03 0.84% 860.46",group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_欧冶云商股份有限公司,欧冶云商股份有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,157423.0,210249.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,"欧冶云商 协议价 1,574.23 0.52% 2,102.49 0.71% -528.26",relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武集团环境资源科技有限公司,宝武集团环境资源科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,130409.0,110957.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,"宝武环科 协议价 1,304.09 0.43% 1,109.57 0.38% 194.52",group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武水务科技有限公司,宝武水务科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,143955.0,112011.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,25,"宝武水务 协议价 1,439.55 0.47% 1,120.11 0.38% 319.44",group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_武钢集团有限公司,武钢集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,95904.0,80010.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,武钢集团 协议价 959.04 0.31% 800.10 0.27% 158.95,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武资源有限公司,宝武资源有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,77878.0,91224.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝武资源 协议价 778.78 0.26% 912.24 0.31% -133.46,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_欧冶工业品股份有限公司,欧冶工业品股份有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,61761.0,38996.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,欧冶工业品 协议价 617.61 0.20% 389.96 0.13% 227.66,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,E_MAGANG_GROUP,马钢（集团）控股有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,4970.0,73516.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,马钢集团 协议价 49.70 0.02% 735.16 0.25% -685.46,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_中国中钢集团有限公司,中国中钢集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,130416.0,73155.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,"中国中钢 协议价 1,304.16 0.43% 731.55 0.25% 572.61",relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_上海宝地不动产资产管理有限公司,上海宝地不动产资产管理有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,31827.0,31760.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝地不动产 协议价 318.27 0.10% 317.60 0.11% 0.67,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武物流资产有限公司,宝武物流资产有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,26516.0,19581.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝武物流 协议价 265.16 0.09% 195.81 0.07% 69.35,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武原料供应有限公司,宝武原料供应有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,8160.0,2674.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝武原料 协议价 81.60 0.03% 26.74 0.01% 54.86,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武共享服务有限公司,宝武共享服务有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,19784.0,19164.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝武共享 协议价 197.84 0.06% 191.64 0.07% 6.20,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武产教融合发展(上海)有限公司,宝武产教融合发展（上海）有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,6689.0,4526.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝武产教 协议价 66.89 0.02% 45.26 0.02% 21.63,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_上海宝钢心越人才科技有限公司,上海宝钢心越人才科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,4169.0,4277.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝钢心越 协议价 41.69 0.01% 42.77 0.01% -1.07,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武铝业科技有限公司,宝武铝业科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3853.0,3233.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝武铝业 协议价 38.53 0.01% 32.33 0.01% 6.20,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝钢特钢有限公司,宝钢特钢有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,2047.0,1759.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝钢特钢 协议价 20.47 0.01% 17.59 0.01% 2.88,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_上海化工宝数字科技有限公司,上海化工宝数字科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3017.0,3132.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,化工宝数科 协议价 30.17 0.01% 31.32 0.01% -1.15,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝钢金属有限公司,宝钢金属有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1023.0,82.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝钢金属 协议价 10.23 0.00% 0.82 0.00% 9.41,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,E_BAOWU,中国宝武钢铁集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,2169.0,1616.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝武集团 协议价 21.69 0.01% 16.16 0.01% 5.53,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,E_BAYI_GROUP,新疆八一钢铁集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,60.0,1529.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,八一钢铁 协议价 0.60 0.00% 15.29 0.01% -14.69,alias,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武集团中南钢铁有限公司,宝武集团中南钢铁有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,860.0,696.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,中南钢铁 协议价 8.60 0.00% 6.96 0.00% 1.64,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_宝武清洁能源有限公司,宝武清洁能源有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3327.0,3047.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝武清能 协议价 33.27 0.01% 30.47 0.01% 2.80,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_华宝投资有限公司,华宝投资有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,514.0,14.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,华宝投资 协议价 5.14 0.00% 0.14 0.00% 5.00,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,E_TISCO_GROUP,太原钢铁（集团）有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1014.0,359.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,太原钢铁 协议价 10.14 0.00% 3.59 0.00% 6.55,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_上海宝钢不锈钢有限公司,上海宝钢不锈钢有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,160.0,133.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,26,宝钢不锈 协议价 1.60 0.00% 1.33 0.00% 0.27,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_武汉钢铁集团轧辊有限责任公司,武汉钢铁集团轧辊有限责任公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,100.0,77.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,武钢轧辊 协议价 1.00 0.00% 0.77 0.00% 0.23,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,E_XINGANG_GROUP,新余钢铁集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,500.0,127.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,新余集团 协议价 5.00 0.00% 1.27 0.00% 3.73,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_华宝信托有限责任公司,华宝信托有限责任公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,50.0,47.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,华宝信托 协议价 0.50 0.00% 0.47 0.00% 0.02,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,E_CHANGSHOU,重庆长寿钢铁有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,5.0,15.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,重庆长寿 协议价 0.05 0.00% 0.15 0.00% -0.10,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_重庆钢铁(集团)有限责任公司,重庆钢铁（集团）有限责任公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1700.0,630.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,重钢集团 协议价 17.00 0.01% 6.30 0.00% 10.70,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,N_上海宝钢包装股份有限公司,上海宝钢包装股份有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,10.0,6.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,宝钢包装 协议价 0.10 0.00% 0.06 0.00% 0.04,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,E_SHANGANG_GROUP,山东钢铁集团有限公司,600019,宝山钢铁股份有限公司,G_SHANGANG,G_BAOWU,0,other_related_party,estimate,5000.0,66.0,接受劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,山钢集团 协议价 50.00 0.02% 0.66 0.00% 49.34,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,E_MAGANG_GROUP,马钢（集团）控股有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,74508.0,46341.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,马钢集团 协议价 745.08 0.23% 463.41 0.15% 281.67,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,E_TISCO_GROUP,太原钢铁（集团）有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,76656.0,32588.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,太原钢铁 协议价 766.56 0.23% 325.88 0.10% 440.68,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,E_XINGANG_GROUP,新余钢铁集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,50700.0,42407.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,新余集团 协议价 507.00 0.15% 424.07 0.13% 82.93,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武资源有限公司,宝武资源有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,24119.0,12930.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,宝武资源 协议价 241.19 0.07% 129.30 0.04% 111.89,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_欧冶工业品股份有限公司,欧冶工业品股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,26241.0,26550.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,欧冶工业品 协议价 262.41 0.08% 265.50 0.08% -3.09,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_中国中钢集团有限公司,中国中钢集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,20222.0,21967.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,中国中钢 协议价 202.22 0.06% 219.67 0.07% -17.44,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,E_CHANGSHOU,重庆长寿钢铁有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,19150.0,7771.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,重庆长寿 协议价 191.50 0.06% 77.71 0.02% 113.79,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,E_BAYI_GROUP,新疆八一钢铁集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,22002.0,14084.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,八一钢铁 协议价 220.02 0.07% 140.84 0.04% 79.18,exact,alias,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,E_BAOWU,中国宝武钢铁集团有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,20092.0,12362.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,宝武集团 协议价 200.92 0.06% 123.62 0.04% 77.30,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝钢金属有限公司,宝钢金属有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,15127.0,9321.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,宝钢金属 协议价 151.27 0.05% 93.21 0.03% 58.07,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武集团中南钢铁有限公司,宝武集团中南钢铁有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,16229.0,8386.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,中南钢铁 协议价 162.29 0.05% 83.86 0.03% 78.43,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_欧冶云商股份有限公司,欧冶云商股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,13575.0,8017.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,欧冶云商 协议价 135.75 0.04% 80.17 0.03% 55.58,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_武钢集团有限公司,武钢集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,12817.0,11473.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,武钢集团 协议价 128.17 0.04% 114.73 0.04% 13.44,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝钢德盛不锈钢有限公司,宝钢德盛不锈钢有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,9000.0,5248.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,27,宝钢德盛 协议价 90.00 0.03% 52.48 0.02% 37.52,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武清洁能源有限公司,宝武清洁能源有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,8029.0,5423.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝武清能 协议价 80.29 0.02% 54.23 0.02% 26.06,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武共享服务有限公司,宝武共享服务有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,9900.0,16772.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝武共享 协议价 99.00 0.03% 167.72 0.05% -68.72,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝钢特钢有限公司,宝钢特钢有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,22034.0,10413.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝钢特钢 协议价 220.34 0.07% 104.13 0.03% 116.21,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武水务科技有限公司,宝武水务科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3501.0,2875.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝武水务 协议价 35.01 0.01% 28.75 0.01% 6.25,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武集团环境资源科技有限公司,宝武集团环境资源科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,6758.0,5408.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝武环科 协议价 67.58 0.02% 54.08 0.02% 13.50,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武集团财务有限责任公司,宝武集团财务有限责任公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,6000.0,4845.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,财务公司 协议价 60.00 0.02% 48.45 0.02% 11.55,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_上海宝钢包装股份有限公司,上海宝钢包装股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,5060.0,2579.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝钢包装 协议价 50.60 0.02% 25.79 0.01% 24.81,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武装备智能科技有限公司,宝武装备智能科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3001.0,4038.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝武装备 协议价 30.01 0.01% 40.38 0.01% -10.37,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_华宝信托有限责任公司,华宝信托有限责任公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3500.0,1806.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,华宝信托 协议价 35.00 0.01% 18.06 0.01% 16.94,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_上海宝地不动产资产管理有限公司,上海宝地不动产资产管理有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3100.0,1584.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝地不动产 协议价 31.00 0.01% 15.84 0.00% 15.16,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_华宝投资有限公司,华宝投资有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,8400.0,3901.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,华宝投资 协议价 84.00 0.03% 39.01 0.01% 44.99,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武物流资产有限公司,宝武物流资产有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,2200.0,1195.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝武物流 协议价 22.00 0.01% 11.95 0.00% 10.05,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武铝业科技有限公司,宝武铝业科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1000.0,376.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝武铝业 协议价 10.00 0.00% 3.76 0.00% 6.24,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武原料供应有限公司,宝武原料供应有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,500.0,587.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝武原料 协议价 5.00 0.00% 5.87 0.00% -0.87,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_重庆钢铁(集团)有限责任公司,重庆钢铁（集团）有限责任公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,6210.0,2245.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,重钢集团 协议价 62.10 0.02% 22.45 0.01% 39.65,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_武汉钢铁集团轧辊有限责任公司,武汉钢铁集团轧辊有限责任公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,10.0,33.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,武钢轧辊 协议价 0.10 0.00% 0.33 0.00% -0.23,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_上海化工宝数字科技有限公司,上海化工宝数字科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,129.0,369.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,化工宝数科 协议价 1.29 0.00% 3.69 0.00% -2.40,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_西藏矿业资产经营有限公司,西藏矿业资产经营有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,239.0,327.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,西藏矿业 协议价 2.39 0.00% 3.27 0.00% -0.88,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_上海宝钢心越人才科技有限公司,上海宝钢心越人才科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,300.0,95.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝钢心越 协议价 3.00 0.00% 0.95 0.00% 2.05,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,N_宝武产教融合发展(上海)有限公司,宝武产教融合发展（上海）有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,700.0,507.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,宝武产教 协议价 7.00 0.00% 5.07 0.00% 1.93,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+service,600019,宝山钢铁股份有限公司,E_SHANGANG_GROUP,山东钢铁集团有限公司,G_BAOWU,G_SHANGANG,0,other_related_party,estimate,6000.0,95.0,提供劳务,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,28,山钢集团 协议价 60.00 0.02% 0.95 0.00% 59.05,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,E_BAOWU,中国宝武钢铁集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,parent_or_controlling_shareholder,estimate,32195.0,26411.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝武集团 协议价 321.95 0.11% 264.11 0.09% 57.84,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_武钢集团有限公司,武钢集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,12157.0,11960.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,武钢集团 协议价 121.57 0.04% 119.60 0.04% 1.97,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_上海宝地不动产资产管理有限公司,上海宝地不动产资产管理有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,10704.0,7409.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝地不动产 协议价 107.04 0.04% 74.09 0.03% 32.95,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_宝武资源有限公司,宝武资源有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3684.0,1144.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝武资源 协议价 36.84 0.01% 11.44 0.00% 25.40,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_宝钢特钢有限公司,宝钢特钢有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1600.0,1407.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝钢特钢 协议价 16.00 0.01% 14.07 0.00% 1.93,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_宝武清洁能源有限公司,宝武清洁能源有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1114.0,958.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝武清能 协议价 11.14 0.00% 9.58 0.00% 1.56,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_宝武集团环境资源科技有限公司,宝武集团环境资源科技有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,300.0,139.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝武环科 协议价 3.00 0.00% 1.39 0.00% 1.61,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_宝钢金属有限公司,宝钢金属有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,701.0,676.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝钢金属 协议价 7.01 0.00% 6.76 0.00% 0.25,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_宝钢德盛不锈钢有限公司,宝钢德盛不锈钢有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,20.0,9.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝钢德盛 协议价 0.20 0.00% 0.09 0.00% 0.11,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_宝武集团中南钢铁有限公司,宝武集团中南钢铁有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,10.0,16.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,中南钢铁 协议价 0.10 0.00% 0.16 0.00% -0.06,group_token,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,E_MAGANG_GROUP,马钢（集团）控股有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,20.0,23.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,马钢集团 协议价 0.20 0.00% 0.23 0.00% -0.03,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,E_TISCO_GROUP,太原钢铁（集团）有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,270.0,70.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,太原钢铁 协议价 2.70 0.00% 0.70 0.00% 2.00,exact,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,E_BAYI_GROUP,新疆八一钢铁集团有限公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,100.0,66.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,八一钢铁 协议价 1.00 0.00% 0.66 0.00% 0.34,alias,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,N_重庆钢铁(集团)有限责任公司,重庆钢铁（集团）有限责任公司,600019,宝山钢铁股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,20.0,5.0,租入资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,重钢集团 协议价 0.20 0.00% 0.05 0.00% 0.15,relationship,exact,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_上海宝地不动产资产管理有限公司,上海宝地不动产资产管理有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,12489.0,11003.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝地不动产 协议价 124.89 0.04% 110.03 0.03% 14.87,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_宝钢特钢有限公司,宝钢特钢有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1500.0,712.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝钢特钢 协议价 15.00 0.00% 7.12 0.00% 7.88,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_宝武水务科技有限公司,宝武水务科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,3576.0,2335.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝武水务 协议价 35.76 0.01% 23.35 0.01% 12.41,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_宝武资源有限公司,宝武资源有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,1739.0,1729.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,29,宝武资源 协议价 17.39 0.01% 17.29 0.01% 0.10,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_宝武物流资产有限公司,宝武物流资产有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,644.0,666.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,宝武物流 协议价 6.44 0.00% 6.66 0.00% -0.22,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_宝武集团环境资源科技有限公司,宝武集团环境资源科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,2279.0,476.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,宝武环科 协议价 22.79 0.01% 4.76 0.00% 18.04,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_宝武装备智能科技有限公司,宝武装备智能科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,306.0,179.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,宝武装备 协议价 3.06 0.00% 1.79 0.00% 1.27,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_中国中钢集团有限公司,中国中钢集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,636.0,99.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,中国中钢 协议价 6.36 0.00% 0.99 0.00% 5.37,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_武钢集团有限公司,武钢集团有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,20.0,47.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,武钢集团 协议价 0.20 0.00% 0.47 0.00% -0.27,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_宝武清洁能源有限公司,宝武清洁能源有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,91.0,67.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,宝武清能 协议价 0.91 0.00% 0.67 0.00% 0.24,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_宝武共享服务有限公司,宝武共享服务有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,9.0,7.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,宝武共享 协议价 0.09 0.00% 0.07 0.00% 0.02,exact,group_token,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_欧冶云商股份有限公司,欧冶云商股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,884.0,946.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,欧冶云商 协议价 8.84 0.00% 9.46 0.00% -0.63,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_上海宝钢包装股份有限公司,上海宝钢包装股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,20.0,18.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,宝钢包装 协议价 0.20 0.00% 0.18 0.00% 0.02,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_华宝投资有限公司,华宝投资有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,5.0,3.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,华宝投资 协议价 0.05 0.00% 0.03 0.00% 0.02,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_欧冶工业品股份有限公司,欧冶工业品股份有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,5.0,4.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,欧冶工业品 协议价 0.05 0.00% 0.04 0.00% 0.01,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
+lease,600019,宝山钢铁股份有限公司,N_上海宝钢心越人才科技有限公司,上海宝钢心越人才科技有限公司,G_BAOWU,G_BAOWU,1,sister_company,estimate,5.0,1.0,租出资产,2026,600019,2026-04-29,outputs/manual_freeze/related_party/related_dev_001_600019_annual_estimate.json,30,宝钢心越 协议价 0.05 0.00% 0.01 0.00% 0.04,exact,relationship,self,self,disclosed,2026-04-29,2026-12-31
 industry,S_铁矿,铁矿,S_普钢,普钢,,,0,,,,,铁矿石（依赖度 high）,,,,data/reference/industry_links.csv,,高炉-转炉长流程的主要原料,industry,industry,self,self,industry_approx,,
 industry,S_铁矿,铁矿,S_特钢,特钢,,,0,,,,,铁矿石（依赖度 medium）,,,,data/reference/industry_links.csv,,特钢部分采用长流程,industry,industry,self,self,industry_approx,,
 industry,S_焦炭,焦炭,S_普钢,普钢,,,0,,,,,焦炭（依赖度 high）,,,,data/reference/industry_links.csv,,高炉燃料和还原剂,industry,industry,self,self,industry_approx,,

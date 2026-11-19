@@ -2,13 +2,15 @@
   "runs": {
     "live_20261030_001_000932_related_estimate.pdf": {
       "task": "related_party",
-      "status": "failed",
-      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-058de706-cc8f-960c-bef3-58eed19221c0', 'request_id': '058de706-cc8f-960c-bef3-58eed19221c0'}"
+      "status": "success",
+      "prediction": "outputs/live_20261030_freeze/related_party/live_20261030_001_000932_related_estimate.json",
+      "sha256": "bb06a62918ffd782c128793c0c1663589712add0e2039027ee0ad5cfa83245e9",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261030_001_000932_related_estimate/20261119T053342Z"
     }
   },
-  "commit": "d18afb07716efe7f770a7f054eebccccdd59509e",
+  "commit": "0e4ec86b18a14917fc85e180c1f60a024d3701b1",
   "freeze_tag": "extraction-freeze-2026-09-24",
   "tag_commit": "",
-  "started_at": "2026-10-30T02:07:06.009373+00:00",
-  "completed_at": "2026-10-30T02:07:07.919700+00:00"
+  "started_at": "2026-11-19T05:33:42.627798+00:00",
+  "completed_at": "2026-11-19T05:33:52.891794+00:00"
 }

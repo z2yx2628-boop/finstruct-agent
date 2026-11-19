@@ -1,0 +1,29 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2026-50",
+  "announcement_date": "2026-10-29",
+  "estimate_year": 2026,
+  "total_estimated_amount": null,
+  "total_estimated_unit": null,
+  "requires_shareholder_approval": false,
+  "transactions": [
+    {
+      "listed_company": "湖南华菱钢铁股份有限公司",
+      "counterparty": "湘钢物产金属（浙江）有限公司",
+      "relationship": "sister_company",
+      "transaction_category": "purchase_goods",
+      "category_text": "关联采购",
+      "goods_or_services": "原材料（铁矿石）、原材料（煤炭）、原材料（焦炭）、原材料（合金）",
+      "estimated_amount": 5.0,
+      "estimated_unit": "亿元",
+      "prior_year_actual_amount": null,
+      "prior_year_actual_unit": null,
+      "currency": "CNY",
+      "source_page": 3,
+      "evidence_text": "湘钢物产\n关联采购\n原材料\n（铁矿石）市场价\n800\n15\n1.2\n原材料\n（煤炭）\n市场价\n1,360\n12\n1.63\n原材料\n（焦炭）\n市场价\n1,950\n9.3\n1.82\n原材料\n（合金）\n市场价\n10,000\n0.35\n0.35\n合计\n/\n/\n/\n5",
+      "confidence": 0.95
+    }
+  ]
+}

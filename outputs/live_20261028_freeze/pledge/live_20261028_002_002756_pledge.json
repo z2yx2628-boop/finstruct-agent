@@ -1,0 +1,50 @@
+{
+  "security_code": "002756",
+  "security_name": "永兴材料",
+  "announcement_number": "2026-048 号",
+  "company_name": "永兴特种材料科技股份有限公司",
+  "events": [
+    {
+      "event_type": "pledge",
+      "shareholder_name": "高兴江",
+      "shares": 7000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 3.64,
+      "total_share_capital_ratio": 1.3,
+      "is_restricted_share": false,
+      "is_supplementary_pledge": false,
+      "pledge_start_date": "2026-10-26",
+      "pledge_end_date": "2029-10-25",
+      "pledge_end_condition": null,
+      "release_date": null,
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中国银河证券股份有限公司",
+      "purpose": "自身生产经营",
+      "source_page": 1,
+      "evidence_text": "股东\n名称\n是否为控股\n股东或第一\n大股东及其\n一致行动人\n本次质押\n股数（股）\n占其所\n持股份\n比例\n占公司\n总股本\n比例\n是否\n为限\n售股\n是否为\n补充质\n押\n质押起始\n日\n质押到期\n日\n质权人\n质押\n用途\n高兴江\n是\n7,000,000 3.64%\n1.30%\n否\n否\n2026 年10\n月26 日\n2029年10\n月25 日\n中国银河\n证券股份\n有限公司\n自身\n生产经营",
+      "confidence": 0.98
+    },
+    {
+      "event_type": "release",
+      "shareholder_name": "高兴江",
+      "shares": 7000000.0,
+      "shares_unit": "股",
+      "shareholder_holding_ratio": 3.64,
+      "total_share_capital_ratio": 1.3,
+      "is_restricted_share": null,
+      "is_supplementary_pledge": null,
+      "pledge_start_date": "2024-11-08",
+      "pledge_end_date": null,
+      "pledge_end_condition": null,
+      "release_date": "2026-10-27",
+      "original_end_date": null,
+      "extended_end_date": null,
+      "pledgee": "中国银河证券股份有限公司",
+      "purpose": null,
+      "source_page": 1,
+      "evidence_text": "股东\n名称\n是否为控股股\n东或第一大股\n东及其一致行\n动人\n本次解除质押\n股份数量（股）\n占其所持\n股份比例\n占公司总\n股本比例\n起始日\n解除日期\n质权人\n高兴江\n是\n7,000,000\n3.64%\n1.30%\n2024 年11\n月8 日\n2026年10\n月27 日\n中国银河证券股\n份有限公司",
+      "confidence": 0.98
+    }
+  ]
+}

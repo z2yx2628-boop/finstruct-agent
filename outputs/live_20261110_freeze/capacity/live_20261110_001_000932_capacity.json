@@ -1,0 +1,77 @@
+{
+  "security_code": "000932",
+  "security_name": "华菱钢铁",
+  "company_name": "湖南华菱钢铁股份有限公司",
+  "announcement_number": "2026-53",
+  "announcement_date": "2026-11-09",
+  "events": [
+    {
+      "event_type": "capacity_construction",
+      "project_name": "汽车板三期建设项目",
+      "project_entity": "华菱安赛乐米塔尔汽车板有限公司",
+      "project_location": null,
+      "project_country": "中国",
+      "decision_reasons": [
+        "market_demand",
+        "environmental_policy",
+        "cost_reduction"
+      ],
+      "decision_reason_text": null,
+      "project_status": "approved",
+      "investment_amount": 314702.36,
+      "investment_unit": "万元",
+      "investment_currency": "CNY",
+      "funding_source": "企业自有资金50%、银行贷款50%",
+      "planned_start_date": null,
+      "planned_completion_date": null,
+      "commissioning_date": null,
+      "delay_until_date": null,
+      "timeline_text": "项目建设工期28个月；董事会已于2026年11月9日前审议通过。",
+      "shutdown_facility": null,
+      "shutdown_start_date": null,
+      "expected_restart_date": null,
+      "shutdown_days": null,
+      "output_loss_amount": null,
+      "output_loss_unit": null,
+      "output_loss_product": null,
+      "technology_description": "引进安赛乐米塔尔全球独有的高效能真空涂镀技术（JVD技术），可生产超薄涂层、高耐蚀冷成型高强钢，抑制氢脆风险，提高锌锭利用率，提升生产效率，降低原料消耗。",
+      "project_purpose": "填补国内高端汽车板相关领域技术空白，拓展冷成型高强汽车用钢市场，丰富高附加值产品矩阵，践行绿色低碳理念，巩固高端汽车板领域技术与市场领先优势。",
+      "capacity_changes": [
+        {
+          "action": "new",
+          "facility_type": "JVD真空涂镀生产线",
+          "product_name": "高端冷成型汽车用钢",
+          "capacity": 85.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "项目将新建一条年产能85万吨的高效能真空涂镀生产线（以下简称“JVD真空涂镀生产线”）与一条年产能100万吨的连续退火线及其配套设施，总投资估算为314,702.36万元（含税），主打高端冷成型汽车用钢产品，包括超高强钢UHSS（马氏体钢）、高强钢AHSS和汽车外板等品类，将同步引入安赛乐米塔尔多项先进新钢种。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "连续退火线",
+          "product_name": "高端冷成型汽车用钢",
+          "capacity": 100.0,
+          "capacity_unit": "万吨/年",
+          "source_page": 1,
+          "evidence_text": "项目将新建一条年产能85万吨的高效能真空涂镀生产线（以下简称“JVD真空涂镀生产线”）与一条年产能100万吨的连续退火线及其配套设施，总投资估算为314,702.36万元（含税），主打高端冷成型汽车用钢产品，包括超高强钢UHSS（马氏体钢）、高强钢AHSS和汽车外板等品类，将同步引入安赛乐米塔尔多项先进新钢种。",
+          "confidence": 1.0
+        },
+        {
+          "action": "new",
+          "facility_type": "达",
+          "product_name": "达产能",
+          "capacity": 200.0,
+          "capacity_unit": "万吨",
+          "source_page": 2,
+          "evidence_text": "设计产能达200 万吨",
+          "confidence": 1.0
+        }
+      ],
+      "environmental_metrics": [],
+      "source_page": 1,
+      "evidence_text": "公司下属子公司华菱安赛乐米塔尔汽车板有限公司（以下简称“汽车板公司”）拟实施汽车板三期建设项目（以下简称“项目”），项目将新建一条年产能85万吨的高效能真空涂镀生产线（以下简称“JVD真空涂镀生产线”）与一条年产能100万吨的连续退火线及其配套设施，总投资估算为314,702.36万元（含税），主打高端冷成型汽车用钢产品，包括超高强钢UHSS（马氏体钢）、高强钢AHSS和汽车外板等品类，将同步引入安赛乐米塔尔多项先进新钢种。",
+      "confidence": 1.0
+    }
+  ]
+}

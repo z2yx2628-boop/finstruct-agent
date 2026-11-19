@@ -1,0 +1,37 @@
+{
+  "security_code": "600282",
+  "security_name": "南钢股份",
+  "company_name": "南京钢铁股份有限公司",
+  "announcement_number": "临2026-054",
+  "announcement_date": "2026-10-13",
+  "total_guarantee_balance": 534693.45,
+  "total_guarantee_unit": "万元",
+  "total_guarantee_net_asset_ratio": 19.29,
+  "external_guarantee_balance": null,
+  "external_guarantee_unit": null,
+  "overdue_guarantee_amount": 0.0,
+  "overdue_guarantee_unit": "万元",
+  "events": [
+    {
+      "event_type": "guarantee_provided",
+      "guarantor": "南京钢铁股份有限公司",
+      "guaranteed_party": "Singapore Jinteng International Pte.Ltd.",
+      "relationship": "wholly_owned_subsidiary",
+      "is_related_transaction": null,
+      "guarantee_amount": 7000.0,
+      "guarantee_unit": "万美元",
+      "guarantee_currency": "USD",
+      "guarantee_type": "joint_and_several",
+      "creditor": "中信银行（国际）有限公司新加坡分行",
+      "guaranteed_debt_purpose": null,
+      "start_date": null,
+      "end_date": null,
+      "period_text": "本担保属于新加坡法下的持续担保，不因担保债务的部分清偿、部分免除或阶段性付款而解除；同时，其对担保债务的最终余额亦不受影响。只要存在未清偿担保债务，本担保持续完全有效、存续并生效。",
+      "has_counter_guarantee": false,
+      "guaranteed_party_debt_ratio": null,
+      "source_page": 1,
+      "evidence_text": "被担保人名称\n本次担保金额\n实际为其提供的\n担保余额（不含本\n次担保金额）\n是否在前\n期预计额\n度内\n本次担保\n是否有反\n担保\nSingapore Jinteng International\nPte.Ltd.（中文名称：新加坡金腾\n国际有限公司，以下简称新加坡\n金腾）\n7,000 万美元\n0\n是\n否",
+      "confidence": 0.98
+    }
+  ]
+}

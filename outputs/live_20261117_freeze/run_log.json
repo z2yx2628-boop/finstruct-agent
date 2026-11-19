@@ -2,13 +2,15 @@
   "runs": {
     "live_20261117_001_603995_guarantee_live.pdf": {
       "task": "guarantee",
-      "status": "failed",
-      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-4ee54cea-ef26-9d88-ae3d-1b76264ca3a3', 'request_id': '4ee54cea-ef26-9d88-ae3d-1b76264ca3a3'}"
+      "status": "success",
+      "prediction": "outputs/live_20261117_freeze/guarantee/live_20261117_001_603995_guarantee_live.json",
+      "sha256": "338a722cd81b29aa5207f893b97de7881787ae21f379bee9504ab7a085bfad44",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261117_001_603995_guarantee_live/20261119T053914Z"
     }
   },
-  "commit": "a937723db8296afb6ee7dc61f06f2589dc8a14f5",
+  "commit": "0e4ec86b18a14917fc85e180c1f60a024d3701b1",
   "freeze_tag": "extraction-freeze-2026-09-24",
   "tag_commit": "",
-  "started_at": "2026-11-17T04:43:08.258705+00:00",
-  "completed_at": "2026-11-17T04:43:09.731206+00:00"
+  "started_at": "2026-11-19T05:39:14.569636+00:00",
+  "completed_at": "2026-11-19T05:39:33.730634+00:00"
 }

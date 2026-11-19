@@ -2,13 +2,15 @@
   "runs": {
     "live_20261021_001_600010_pledge.pdf": {
       "task": "pledge",
-      "status": "failed",
-      "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Model not exist.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'id': 'chatcmpl-b4b6d760-2938-9689-a925-9a645574f37f', 'request_id': 'b4b6d760-2938-9689-a925-9a645574f37f'}"
+      "status": "needs_review",
+      "prediction": "outputs/live_20261021_freeze/pledge/live_20261021_001_600010_pledge.json",
+      "sha256": "1637aeb31917a8b5e025a08537c834cc729a24ab3bb3b8a11e55cfe493b10ed4",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261021_001_600010_pledge/20261119T053139Z"
     }
   },
-  "commit": "80e1f1593970ff21638a76fd6b1a3b123ff41e0b",
+  "commit": "0e4ec86b18a14917fc85e180c1f60a024d3701b1",
   "freeze_tag": "extraction-freeze-2026-09-24",
   "tag_commit": "",
-  "started_at": "2026-10-21T00:46:19.873308+00:00",
-  "completed_at": "2026-10-21T00:46:21.251337+00:00"
+  "started_at": "2026-11-19T05:31:39.195125+00:00",
+  "completed_at": "2026-11-19T05:31:49.081437+00:00"
 }
