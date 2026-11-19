@@ -1,0 +1,49 @@
+链证 ChainProof（钢铁上市公司上下游冲击传导与经营风险智能体）
+
+Copyright (c) 2026 申昀鑫 (Shen Yunxin). All rights reserved.
+版权所有 (c) 2026 申昀鑫。保留所有权利。
+
+本仓库中的源代码、提示词、数据处理脚本、评测设计、文档和网页界面（以下简称"本作品"）
+由申昀鑫独立设计与开发，著作权归申昀鑫所有。
+
+一、允许的使用
+  1. 2026 北京市大学生金融人工智能竞赛的主办方、承办方和评审专家，为评审本作品而查看、
+     下载、安装和运行本作品。
+  2. 任何人在线查看本仓库和演示网站，用于个人学习和了解本作品。
+
+二、未经著作权人事先书面许可，不得：
+  1. 复制、修改、改编、合并、再发布、再许可或出售本作品的全部或部分；
+  2. 将本作品或基于本作品的衍生作品用于其他比赛、项目申报、课程作业、论文发表、
+     软件著作权登记、专利申请或任何商业用途；
+  3. 删除或修改本版权声明。
+
+三、第三方内容
+  本作品使用的第三方模型、开源组件和公开数据，仍分别适用其各自的许可协议和使用条款，
+  见 docs/third_party.md。本声明不改变这些第三方内容的权利归属。
+
+四、团队与分工
+  决赛现场路演与答辩：杨钦然、王鹏喆（钢铁侠小队成员）。比赛成绩和获奖证书归参赛团队；
+  本作品的著作权不因团队参赛而转移。
+
+许可申请请联系著作权人：申昀鑫（GitHub：z2yx2628-boop）。
+
+----------------------------------------------------------------------
+
+ChainProof - Copyright (c) 2026 Shen Yunxin. All rights reserved.
+
+The source code, prompts, data-processing scripts, evaluation design, documentation and
+web interface in this repository (the "Work") were designed and developed solely by
+Shen Yunxin, who holds the copyright.
+
+Permitted: (1) viewing, downloading, installing and running the Work by the organisers and
+judges of the 2026 Beijing University Student Financial AI Competition for the purpose of
+evaluating it; (2) viewing the repository and the demo website for personal study.
+
+Not permitted without prior written permission of the copyright holder: copying, modifying,
+adapting, merging, redistributing, sublicensing or selling the Work in whole or in part;
+using the Work or derivative works in other competitions, grant or project applications,
+coursework, publications, software copyright registrations, patent applications or for any
+commercial purpose; removing or altering this notice.
+
+Third-party models, open-source components and public data remain under their own licences
+and terms (see docs/third_party.md).
