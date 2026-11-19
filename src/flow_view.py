@@ -15,6 +15,7 @@ import math
 from collections import deque
 
 from src.network_view import TIER_LABEL, name_of, path_grade
+from src.sources import readable
 
 GRADE_W = {"A": 1.0, "B": 0.7, "C": 0.4}
 CREDIT_RULE = {"R1": "担保", "R2": "关联交易", "R3": "同集团", "R4": "行业"}
@@ -247,7 +248,7 @@ def table_rows(items: list[dict]) -> list[dict]:
     return [{"排序": i + 1, "企业": r["name"], "自身承压": TIER_LABEL.get(r.get("tier") or "unknown", "未评分"),
              "通道": r["channel"], "证据": r["grade"], "金额/占比": r.get("size", "—"),
              "影响强度": r["strength"], "计分": "否（缓释）" if r.get("absorbed") else "是" if r.get("kind") == "credit" else "情景",
-             "依据": (r.get("evidence") or "")[:120]} for i, r in enumerate(items)]
+             "依据": readable(r.get("evidence") or "", 120)} for i, r in enumerate(items)]
 
 
 # ---------------------------------------------------------------- the full graph, for checking
@@ -296,7 +297,7 @@ def layered_chart(result: dict, width: int = 1100) -> dict:
     lines = [{"x": float(depth[e["src"]]), "y": y[e["src"]], "x2": float(depth[e["dst"]]), "y2": y[e["dst"]],
               "src": nodes[e["src"]]["name"], "dst": nodes[e["dst"]]["name"], "effect": e["effect"], "grade": e["grade"],
               "color": GRADE_LINE.get(e["grade"], "#98A2B3"), "dash": "推断" if e["grade"] == "C" else "披露",
-              "evidence": (e.get("evidence") or "")[:100]}
+              "evidence": readable(e.get("evidence") or "", 100)}
              for e in result["edges"] if e["src"] in nodes and e["dst"] in nodes]
     heads = []
     for d, col in cols.items():

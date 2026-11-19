@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import json
 import os
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -101,3 +102,41 @@ def last_daily_failure(runs: list[dict]) -> str | None:
     model = any("Model not exist" in r["error"] or "model_not_found" in r["error"] for r in failed)
     return (f"最近 {len(runs)} 份自动抓取的新公告中有 {len(failed)} 份抽取失败"
             + ("，原因是模型名称不可用（服务商找不到该模型）" if model else "") + "；这些公告目前只按标题识别信用事件。")
+
+
+STEP_CN = {"document_parsing": "读取原文", "llm_structured_extraction": "大模型结构化抽取", "event_normalization": "规则归一化",
+           "evidence_validation": "原文证据核验"}
+
+
+def run_trace(run_dir: str | None) -> dict | None:
+    """The pipeline's own run log, in plain words: which file was read (SHA-256), which prompt and model,
+    each tool with its time, and the files written. None when the card is an offline replay."""
+    if not run_dir:
+        return None
+    path = Path(run_dir) / "run_log.json"
+    if not path.exists():
+        return None
+    log = json.loads(path.read_text(encoding="utf-8"))
+    rows = []
+    for s in log.get("steps", []):
+        extra = []
+        if "page_count" in s:
+            extra.append(f"{s['page_count']} 页、{s.get('text_char_count', 0)} 字" + ("，含 OCR" if s.get("needs_ocr") else ""))
+        if "changes_count" in s:
+            extra.append(f"修正 {s['changes_count']} 处")
+        if "checks_count" in s:
+            extra.append(f"检查 {s['checks_count']} 项，{'全部通过' if s.get('passed') else '有未通过项'}")
+        if s.get("model"):
+            extra.append(f"模型 {s['model']}")
+        rows.append({"步骤": STEP_CN.get(s.get("name"), s.get("name")), "工具": s.get("tool", ""), "结果": "；".join(extra),
+                     "用时(秒)": round(float(s.get("duration_seconds") or 0), 2)})
+    inp, prompt = log.get("input", {}), log.get("prompt", {})
+    return {"rows": rows, "model": log.get("model", ""), "seconds": log.get("duration_seconds"), "run_id": log.get("run_id", ""),
+            "input_sha": (inp.get("sha256") or "")[:16], "input_kb": round((inp.get("size_bytes") or 0) / 1024),
+            "prompt": _base(prompt.get("path", "")), "prompt_sha": (prompt.get("sha256") or "")[:16],
+            "files": [_base(f) for f in log.get("files_written", [])]}
+
+
+def _base(path) -> str:
+    """File name of a path written on Windows or Linux."""
+    return re.split(r"[\\\\/]", str(path or ""))[-1]

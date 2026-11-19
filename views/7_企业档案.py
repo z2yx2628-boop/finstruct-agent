@@ -13,10 +13,10 @@ from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
 from src.product_layer import exposure_as_of, products  # noqa: E402
 from src.report_signals import report_signals  # noqa: E402
 from src.profile import company_signals, fragility_rows, headline, peer_rank, snapshots, split_paths  # noqa: E402
-from src.ui import TIER_BADGE, UNIFIED_PAGE, deposit_block, next_step, page_header, verdict  # noqa: E402
+from src.ui import NATURE_NOTE, TIER_BADGE, UNIFIED_PAGE, deposit_block, next_step, page_header, tag, verdict  # noqa: E402
 from src.futures import (STEEL_FUTURE, company_scenario, hedge_label, hedging, margin_series, margin_snapshot,  # noqa: E402
                          ore_cost_exposure, steel_revenue_exposure)
-from src.profile_extras import (ORE_SHOCK, brief_html, checklist, equity_of, group_background, peer_dims,  # noqa: E402
+from src.profile_extras import (ORE_SHOCK, brief_html, checklist, equity_of, group_background, peer_dims, point_nature,  # noqa: E402
                                 period_label, score_history, trend)
 import altair as alt  # noqa: E402
 
@@ -116,14 +116,15 @@ with st.container(border=True):
     k1, k2 = st.columns([3, 2], gap="large")
     with k1:
         st.markdown("**核查要点**（汇总下方各标签页的结论，不产生新分数）")
-        st.markdown("\n".join(f"- {p_}" for p_ in summary_["points"]))
+        st.markdown("\n".join(f"- {tag(point_nature(p_))} {p_}" for p_ in summary_["points"]))
     with k2:
         st.markdown("**建议优先核查**（固定规则生成）")
-        st.markdown("\n".join(f"{i}. {c_}" for i, c_ in enumerate(summary_["checks"], 1)) if summary_["checks"] else "暂无需要优先核查的事项。")
+        st.markdown("\n".join(f"{i}. {tag('观点')} {c_}" for i, c_ in enumerate(summary_["checks"], 1)) if summary_["checks"] else "暂无需要优先核查的事项。")
         brief = brief_html(name, code, snap, text, summary_, peer_dims(snap, code), row["reasons"] if row else "", rs,
                            path_rows(mine["incoming"] + mine["outgoing"], names, eindex, snapshot_equity(folder)))
         st.download_button("下载核查底稿（可打印为 PDF）", brief.encode("utf-8"), file_name=f"{name}_核查底稿_{snap}.html",
                            mime="text/html", icon=":material/download:", width="stretch")
+    st.caption(NATURE_NOTE)
 
 st.session_state.setdefault("pf_tab", "自身风险")
 section = st.segmented_control("查看", SECTIONS, key="pf_tab", label_visibility="collapsed",

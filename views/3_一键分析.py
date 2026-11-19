@@ -234,6 +234,18 @@ if card:
             for x in trace:
                 if x["detail"]:
                     st.caption(f"{x['step']} 明细：" + "；".join(x["detail"]))
+    from src.analyze_ui import run_trace          # noqa: E402
+    rt = run_trace(card.get("run_dir"))
+    with st.expander("运行留痕：读了哪个文件、用了哪个模型和提示词、每一步用时（可复现）", icon=":material/receipt_long:"):
+        if rt:
+            st.caption(f"运行编号 {rt['run_id']} · 输入文件 {rt['input_kb']} KB，SHA-256 {rt['input_sha']}… · "
+                       f"提示词 {rt['prompt']}（SHA-256 {rt['prompt_sha']}…）· 模型 {rt['model']} · 总用时 {rt['seconds']:.1f} 秒")
+            st.dataframe(rt["rows"], hide_index=True, width="stretch")
+            st.caption("写入的文件：" + "、".join(rt["files"]) + "。同一文件、同一提示词和模型版本可重新运行复现；日志随结果一起保存。")
+        else:
+            st.caption("离线回放：本次没有调用模型，结果来自冻结系统此前对同一文件（SHA-256 一致）的运行；"
+                       "那次运行的完整日志（输入哈希、提示词哈希、模型、每步用时）保存在代码仓库 outputs/ 目录。"
+                       "上传新公告在线分析时，这里会显示本次运行的完整留痕。")
     t1, t2, t3, t4 = st.tabs([f":material/fact_check: 已发生事件（{len(card['what_happened']) + len(card['relations'])}）",
                               ":material/monitoring: 财务脆弱性（自身风险）",
                               f":material/account_tree: 传导路径（{len(paths)} 条路径）",

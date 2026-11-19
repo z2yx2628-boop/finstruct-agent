@@ -42,3 +42,11 @@ def test_history_marks_the_day_a_new_report_comes_into_use():
     for prev, cur in zip(h, h[1:]):
         assert cur["新财报"] == (cur["财报期"] != prev["财报期"])
     assert pe.period_label("20260930") == "2026 年三季报"
+
+
+def test_point_nature_separates_fact_and_inference():
+    from src.profile_extras import point_nature
+    assert point_nature("自身承压 **弱**（69.5 分）") == "推论"
+    assert point_nature("集团背景：控股股东 某集团") == "事实"
+    assert point_nature("集团影响：可能获得集团支持") == "推论"
+    assert point_nature("套期保值：缓存中未见") == "事实"

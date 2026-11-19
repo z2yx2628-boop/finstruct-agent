@@ -14,7 +14,7 @@ from src.network_view import filter_paths, key_paths, second_order  # noqa: E402
 from src.policy_flow import (POLICY_KINDS, POLICY_NOTE, bridge_candidates, margin_context, mark_hedging,  # noqa: E402
                              policy_flows, policy_rows)
 from src.scenario import KINDS, build, company_name, core_mills, product_map, sector_links  # noqa: E402
-from src.ui import TIER_BADGE, next_step, page_header, verdict  # noqa: E402
+from src.ui import TIER_BADGE, next_step, page_header, tag, verdict  # noqa: E402
 from src.validity import is_active  # noqa: E402
 
 page_header("风险传导", ":material/hub:", "一家企业发生信用事件或出现一次外部冲击时，风险可能沿哪些通道传导至哪些企业？", grades=True,
@@ -133,7 +133,8 @@ else:
         text += ("　满足衔接条件、能沿担保/关联交易继续传导的企业：" + "、".join(r["name"] for r in hit if onward.get(r["code"])) + "。"
                  if any(onward.values()) else "　没有受冲击企业满足转入信用通道的衔接条件。")
 
-verdict(level_, text)
+text = text.replace("；**供需上**", "  \n**供需上**").replace("；**政策上**", "  \n**政策上**")
+verdict(level_, f"{tag('推论')} " + text)
 if mode != "从一家企业出发":
     for n_ in notes:
         st.caption(n_)
@@ -187,20 +188,20 @@ def go(page: str, state_key: str, state: dict) -> None:
 st.markdown("##### 这张图背后的明细")
 st.caption("图上的每个元素都有一页明细：节点颜色来自承压评分，紫色线来自信用通道，蓝色线来自市场冲击情景，每条线的依据来自公告事实抽取。"
            "跳转时会带上当前企业或冲击，明细页顶部可以一键返回。")
-p1, p2, p3, p4 = st.columns(4)
-with p1.container(border=True):
+p1, p2, p3, p4 = st.columns(4)  # equal-height cards (st-key-cardrow_* in GLOBAL_CSS)
+with p1.container(border=True, key="cardrow_u1", height="stretch"):
     st.markdown("**① 节点颜色 · 承压评分**")
     st.caption("括号里的弱 / 中 / 强：决定风险全额传递、减半还是被缓释。")
     if st.button(f"看{who}的评分拆解" if who else "看承压评分全表", icon=":material/monitoring:", width="stretch", key="u_to_score"):
         go("views/2_承压评分.py", "_goto_score", {"code": code if in_company else None, "snapshot": snap})
-with p2.container(border=True):
+with p2.container(border=True, key="cardrow_u2", height="stretch"):
     st.markdown("**② 紫色线 · 信用通道明细**")
     st.caption("逐条路径：得分 = 起点严重度 × 金额系数 × 途经企业承压，附每一步公告原文。")
     if st.button("打开信用通道明细", icon=":material/account_tree:", width="stretch", key="u_to_credit",
                  type="primary" if channel == "credit" else "secondary"):
         go("views/4_风险路径图.py", "_goto_network", {"chain": "data/chain/live", "snapshot": snap,
                                                     "company": code if in_company else None})
-with p3.container(border=True):
+with p3.container(border=True, key="cardrow_u3", height="stretch"):
     st.markdown("**③ 蓝色线 · 市场冲击情景**")
     st.caption("调整冲击幅度和政策假设、看期货盘面利润与套保，以及冲击怎样转入信用通道；不计分。")
     if in_company:
@@ -215,7 +216,7 @@ with p3.container(border=True):
     if st.button("打开市场冲击", icon=":material/swap_horiz:", width="stretch", key="u_to_shock",
                  type="primary" if channel == "supply" else "secondary"):
         go("views/5_上下游情景.py", "_goto_shock", shock)
-with p4.container(border=True):
+with p4.container(border=True, key="cardrow_u4", height="stretch"):
     st.markdown("**④ 连线依据 · 公告事实抽取**")
     st.caption("每条担保、关联交易线都是从公告里抽出来的，字段标注原文页码。")
     if st.button("打开公告事实抽取", icon=":material/description:", width="stretch", key="u_to_extract"):

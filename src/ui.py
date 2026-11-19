@@ -141,6 +141,10 @@ GLOBAL_CSS = """
 :root {--cp-ink: #1D2433; --cp-muted: #667085; --cp-line: #E4E7EC; --cp-card: #FFFFFF; --cp-soft: #F5F6F8; --cp-accent: #C63F45;}
 .stApp {font-family: "Inter", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
         color: var(--cp-ink); -webkit-font-smoothing: antialiased;}
+.stMainBlockContainer {padding-top: 4.5rem !important;}   /* less empty space under the top bar */
+/* cards in a row end level: the last element (the button) sits at the bottom */
+[class*="st-key-cardrow_"] {min-height: 100%; justify-content: flex-start;}
+[class*="st-key-cardrow_"] > div:last-child {margin-top: auto;}
 .stApp h1 {font-weight: 700; letter-spacing: -.015em;}
 .stApp h2, .stApp h3 {font-weight: 650; letter-spacing: -.01em;}
 [data-testid="stCaptionContainer"] {color: var(--cp-muted);}
@@ -236,6 +240,16 @@ def next_step(text: str, label: str, page: str, key: str, state: dict | None = N
             if state_key:
                 st.session_state[state_key] = state or {}
             st.switch_page(page)
+
+
+NATURE = {"事实": ":blue-badge[事实]", "推论": ":violet-badge[推论]", "观点": ":orange-badge[观点]"}
+NATURE_NOTE = ("标签含义：**事实** = 公告、财报或行情里可以直接核对的数据；**推论** = 模型评分、规则推导或情景计算的结果；"
+               "**观点** = 据此建议的核查动作。")
+
+
+def tag(kind: str) -> str:
+    """Badge marking a sentence as fact, inference or opinion (the contest asks to keep the three apart)."""
+    return NATURE.get(kind, "")
 
 
 def part_of_transmission(text: str, key: str, back=None) -> None:

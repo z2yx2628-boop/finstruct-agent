@@ -120,8 +120,8 @@ def checklist(name: str, row: dict | None, detail: dict | None, tr: dict | None,
                       + (f"，等级 {tr['tier_from']} → {tr['tier_to']}" if tr["tier_from"] != tr["tier_to"] else ""))
     if group and group.get("parent"):
         peers = "、".join(group["listed_peers"][:3])
-        points.append(f"集团背景：控股股东 {group['parent']}" + (f"（同集团上市公司：{peers}）" if peers else "")
-                      + "；可能获得集团支持，也可能经集团通道传导，不计分")
+        points.append(f"集团背景：控股股东 {group['parent']}" + (f"（同集团上市公司：{peers}）" if peers else ""))
+        points.append("集团影响：可能获得集团支持，也可能经集团通道传导，不计分")
         if row and row.get("tier") == "weak":
             checks.append(f"核查集团支持：{group['parent']} 的担保、资金拆借或增资安排")
     if margin:
@@ -146,6 +146,14 @@ def checklist(name: str, row: dict | None, detail: dict | None, tr: dict | None,
     if report and report.get("signals"):
         checks.append(f"核查财报异常信号：{report['signals'][0]['kind']}")
     return {"points": points, "checks": checks[:3]}
+
+
+INFERENCE = ("自身承压", "评分走势", "集团影响", "原料情景", "传导路径")
+
+
+def point_nature(point: str) -> str:
+    """事实 for disclosed or observed data, 推论 for scores, rules and scenarios (checks are always 观点)."""
+    return "推论" if point.startswith(INFERENCE) else "事实"
 
 
 def brief_html(name: str, code: str, snapshot: str, verdict_text: str, summary: dict, dims: list[dict],

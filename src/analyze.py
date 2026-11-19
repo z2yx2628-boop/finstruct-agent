@@ -267,4 +267,5 @@ def analyze(path: str | Path, task: str | None = None, as_of: str | None = None,
     (out / "alert_card.json").write_text(json.dumps(card, ensure_ascii=False, indent=2), encoding="utf-8")
     (out / "alert_card.md").write_text(card_markdown(card), encoding="utf-8")
     card["card_path"] = str(out / "alert_card.md")
+    card["run_dir"] = str(out)
     return card

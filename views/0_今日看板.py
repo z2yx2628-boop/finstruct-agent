@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT))
 from src.fragility_view import snapshot_meta  # noqa: E402
 from src.network_view import NATURE_COLOR, risk_sources, seed_nature  # noqa: E402
 from src.price_shock import THRESHOLD, WINDOW, price_moves  # noqa: E402
-from src.ui import (UNIFIED_PAGE, glossary, next_step, online_model, open_unified, page_header,  # noqa: E402
+from src.ui import (UNIFIED_PAGE, glossary, tag, next_step, online_model, open_unified, page_header,  # noqa: E402
                     profile_button, public_mode, verdict)
 
 st.markdown("<style>.block-container{padding-top:2.2rem}</style>", unsafe_allow_html=True)
@@ -77,10 +77,9 @@ top = key_now[0] if key_now else None
 from src.futures import margin_snapshot          # noqa: E402
 ms = margin_snapshot("rebar", live[-1].name if live else "9999-12-31")
 low_margin = bool(ms and ms["pct_all"] is not None and ms["pct_all"] <= 0.2)
-head = f"**今日结论**（{day}）：{len(facts)} 起已发生事件、{len(weak)} 家财务脆弱"
-if low_margin:
-    head += "，行业利润处于历史低位"
-head += f"；首要核查路径 **{top['path']}**。" if top else "；暂无需要核查的传导路径。"
+head = f"**今日结论**（{day}）：{tag('事实')} {len(facts)} 起已发生事件" + ("，行业利润处于历史低位" if low_margin else "")
+head += f"　{tag('推论')} {len(weak)} 家财务脆弱"
+head += f"　{tag('观点')} 首要核查路径 **{top['path']}**。" if top else "；暂无需要核查的传导路径。"
 verdict("error" if facts or new_weak or new_paths else "warning" if weak or key_now else "success", head)
 
 # ---------------------------------------------------------------- five numbers: same height, each opens its detail
@@ -270,18 +269,22 @@ with right:
                 st.switch_page(UNIFIED_PAGE)
     if len(key_now) > 5:
         st.caption(f"另有 {len(key_now) - 5} 条，见顶部“风险传导”。")
-    with st.container(border=True):
+
+# market shock: full width under both columns, so the two columns end level
+with st.container(border=True):
+    mk_a, mk_b = st.columns([3, 1.4], vertical_alignment="center", gap="large")
+    with mk_a:
         st.markdown(f"{badge('情景假设')}　**市场冲击**：期货与产品价格只作情景，不计入评分")
         if ms:
-            st.markdown(f"<small>螺纹吨钢盘面利润 {ms['value']:,.0f} 元/吨，{ms['since'][:4]} 年来 {ms['pct_all']:.0%} 分位"
+            st.markdown(f"{tag('事实')} <small>螺纹吨钢盘面利润 {ms['value']:,.0f} 元/吨，{ms['since'][:4]} 年来 {ms['pct_all']:.0%} 分位"
                         + ("（历史低位：全行业利润被原料成本挤压）" if low_margin else "") + "；近 "
                         + f"{WINDOW} 日产品价格：" + "；".join(f"{m['product']} {m['ret']:+.1%}" for m in moves[:5]) + "</small>",
                         unsafe_allow_html=True)
-        m1_, m2_ = st.columns(2)
-        if m1_.button("期货情景与套保", key="home_futures", icon=":material/candlestick_chart:", width="stretch"):
+    with mk_b:
+        if st.button("期货情景与套保", key="home_futures", icon=":material/candlestick_chart:", width="stretch"):
             st.session_state["sc_source"] = "期货与套保"
             st.switch_page("views/5_上下游情景.py")
-        if m2_.button("产品与政策冲击", key="home_scenario", icon=":material/swap_horiz:", width="stretch"):
+        if st.button("产品与政策冲击", key="home_scenario", icon=":material/swap_horiz:", width="stretch"):
             st.session_state["sc_source"] = "产品与需求"
             st.switch_page("views/5_上下游情景.py")
 
@@ -292,14 +295,15 @@ final = json.loads(summary.read_text(encoding="utf-8"))["aggregate"]["related_pa
 t1, t5, t2, t3, t4 = st.columns(5)
 t1.metric("公告抽取 · 最终盲测 F1", f"{final['f1']['mean']:.1%}" if final else "—",
           help="关联交易 7 份 × 3 次，记录级 F1；冻结系统、Gold 在运行前锁定（AI 预标注、人工抽查 53/178）。修复单位缺陷后（非盲）为 92.15%")
-t5.metric("承压评分 · 预注册事件研究", "44.9% vs 12.6%",
+t5.metric("承压评分 · 弱企业出事率倍数", "3.6 倍",
           help="2019–2025 年 7 个评估日 × 24 家核心钢厂：被判为“弱”的企业 12 个月内发生信用事件（硬事件或年度亏损 ≥ 净资产 5%）"
                "的比例 vs 其他企业；提升 3.6 倍，AUC 0.75（企业重抽样区间 0.64–0.85）；2019–2023 样本外提升 2.6 倍（p = 0.035）。"
                "事后分析：以亏损为主的事件上不优于净利率单指标")
 t2.metric("财务数据 · 年报抽查", "30 / 30", help="6 家企业 × 5 个科目，与年报原文逐位一致")
 t3.metric("风险传导 · 预注册回测", "3 个案例", help="安泰（标准 1、3 通过，2 部分通过）、凌钢（2、3 通过，1 部分通过）、方大（全部通过，无误报）")
 t4.metric("上下游产品层 · 预注册检验", "2 次未显著", help="利润检验未通过；股价检验方向一致但 p = 0.28。因此只作情景提示")
-st.caption("股份质押保留为辅助风险信号，不作为主宣传指标；其独立盲测事件 F1 为 73.85%。全部验证结果（包括没通过的）见顶部“可信度”。")
+st.caption("承压评分的预注册事件研究：被判为“弱”的企业 12 个月内发生信用事件的比例为 44.9%，其他企业为 12.6%（AUC 0.75）。"
+           "股份质押保留为辅助风险信号，不作为主宣传指标；其独立盲测事件 F1 为 73.85%。全部验证结果（包括没通过的）见顶部“可信度”。")
 
 next_step("选择一家企业，查看其财务脆弱性及风险传入路径", "企业档案", "views/7_企业档案.py", key="home_next",
           state={"code": weak[0]["security_code"]} if weak else None, state_key="_goto_profile" if weak else None)
