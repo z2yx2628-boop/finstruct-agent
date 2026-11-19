@@ -210,9 +210,52 @@ if section == "财报分析":
             p = rs["period"]
             st.markdown(f"**财报分析**（最近一期 {p[:4]} 年{ {'0331': '一季报', '0630': '半年报', '0930': '三季报', '1231': '年报'}[p[4:]] }，"
                         f"法定披露截止 {rs['available_by']}；同比为累计值，环比为单季度值；亏损时按绝对值计算，负数表示恶化）")
+            from src import report_analysis as ra
+            core = [r["security_code"] for r in rows if r.get("peer_group") == "core"]
+            line = ra.reading(code, p, core)
+            if line:
+                st.info(f"**一句话解读**：{line}", icon=":material/insights:")
+            # ⑤ where each growth rate stands among the 24 core mills
+            field_of = {"营业总收入": "revenue", "归母净利润": "np", "扣非净利润": "np_deduct", "经营现金流量净额": "ocf"}
+            table_ = [dict(r_, **{"同比在同行中": ra.position(code, ra.peer_growth(core, p, field_of[r_["指标"]]), True)})
+                      for r_ in rs["rows"]]
             fmt = {"本期累计（亿元）": "{:.2f}", "上年同期（亿元）": "{:.2f}", "单季度（亿元）": "{:.2f}",
                    "同比": "{:+.1%}", "单季度环比": "{:+.1%}"}
-            st.dataframe(pd.DataFrame(rs["rows"]).style.format(fmt, na_rep="—"), hide_index=True, width="stretch")
+            st.dataframe(pd.DataFrame(table_).style.format(fmt, na_rep="—"), hide_index=True, width="stretch")
+
+            def _show(rows_):
+                st.dataframe(pd.DataFrame([{"指标": r_["指标"], "本期": ra.fmt(r_["本期"], r_["_kind"]),
+                                            "上年同期": ra.fmt(r_["上年同期"], r_["_kind"]),
+                                            "24 家中位数": ra.fmt(r_["24 家中位数"], r_["_kind"]), "同行位置": r_["同行位置"]}
+                                           for r_ in rows_]), hide_index=True, width="stretch")
+
+            # ② DuPont
+            dp = ra.dupont(code, p, core)
+            st.markdown("**杜邦分析**　:gray[ROE = 销售净利率 × 总资产周转率 × 权益乘数，回答 ROE 高低来自盈利、周转还是杠杆]")
+            _show(dp["rows"])
+            roe_now = dp["rows"][3]["本期"]
+            note = (f"三项相乘 ≈ {dp['product']:.1%}（报告的平均 ROE {ra.fmt(roe_now, 'pct')}，口径差异来自平均资产与净资产的取法）"
+                    if dp["product"] is not None else "")
+            if dp["worst"] and dp["gaps"][dp["worst"]] < -0.2:
+                note += f"；与 24 家中位数相比，最大拖累是**{dp['worst'].split('（')[0]}**"
+            if note:
+                st.caption(note + "。周转率为年初至今口径，只与上年同期和同行同期比较。")
+            # ③ earnings quality and working capital
+            st.markdown("**盈利质量与营运能力**　:gray[现金流比利润更难粉饰；钢厂最怕存货跌价和回款变慢]")
+            _show(ra.metric_rows(code, p, core, ["gm", "expense", "cash_np", "inv_days", "ar_days"]))
+            st.caption("经营现金流 / 归母净利润只在盈利时有意义，亏损企业显示“—”，同行位置只在盈利企业中比较。")
+            # ④ eight quarters
+            tr = ra.trend(code, p)
+            if tr:
+                st.markdown("**近 8 个季度趋势**　:gray[单季度口径：持续走低才是真恶化，一个季度的波动不必过度解读]")
+                chart = alt.Chart(pd.DataFrame(tr)).mark_line(point=True, strokeWidth=2).encode(
+                    x=alt.X("季度:N", sort=None, title=None, axis=alt.Axis(labelAngle=0)),
+                    y=alt.Y("数值:Q", title=None, axis=alt.Axis(format="%")),
+                    color=alt.Color("指标:N", scale=alt.Scale(range=["#1C5D99", "#E5484D", "#30A46C"]),
+                                    legend=alt.Legend(orient="top", title=None)),
+                    tooltip=["季度", "指标", alt.Tooltip("数值:Q", format=".1%")]).properties(height=240)
+                zero = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(color="#98A2B3", strokeDash=[3, 3]).encode(y="y:Q")
+                st.altair_chart(chart + zero, width="stretch")
             if rs["signals"]:
                 for s_ in rs["signals"]:
                     st.warning(f"**{s_['kind']}**：{s_['text']}", icon=":material/report:")

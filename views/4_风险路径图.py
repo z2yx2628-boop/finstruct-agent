@@ -177,27 +177,29 @@ focus = st.session_state.get("_focus_rank")
 index = focus if focus in ranks else ranks[0]
 entry = ranked[index]
 
-# ---------------------------------------------------------------- overview graph
-st.subheader("全局风险图", divider="gray")
-g1, g2, g3 = st.columns([2, 1, 3])
-max_show = g1.slider("总图显示前 N 条", 5, 40, 15, help="按原始排名取前 N 条（在筛选结果内）")
-shown = items[:max_show]
-if index not in [i for i, _ in shown]:
-    shown = shown + [(index, entry)]
-g2.write("")
-g2.button("清除选择", on_click=reset_focus, width="stretch")
-notes = ["从左到右 = 传导方向；粗黑圈 = 风险起点；圆越大，经过的路径越多；线越粗，金额越大；虚线 = 同集团或行业近似（无金额）。"
-         "点企业筛选，点金额标签打开该路径，双击空白处取消。"]
-if company:
-    into = sum(1 for _, e in items if any(s.dst == company for s in e["steps"]))
-    notes.insert(0, f"**{name_of(company, names)}**：风险传入 {into} 条，由它传出或经过 {len(items) - into} 条。")
-g3.caption("  \n".join(notes))
-highlight = index if st.session_state.get("_focus_rank") in ranks else None     # nothing picked yet: show all
-nodes_df, edges_df = overview_layout(shown, fragility, names, chosen=highlight)
-columns_n = int(max(n["x"] for n in nodes_df)) + 1
-rows_n = max(sum(1 for n in nodes_df if n["x"] == x) for x in range(columns_n))
-st.vega_lite_chart(overview_chart(nodes_df, edges_df, width=min(1150, max(640, 240 * columns_n)), height=max(300, 95 * rows_n)),
-                   on_select="rerun", key=chart_key, width="content")
+# ---------------------------------------------------------------- overview graph (folded: the list below is the main view)
+with st.expander("全局关系图（全部路径，可点企业或金额筛选）", icon=":material/account_tree:",
+                 expanded=False):
+    g1, g2, g3 = st.columns([2, 1, 3])
+    max_show = g1.slider("总图显示前 N 条", 5, 40, 15, help="按原始排名取前 N 条（在筛选结果内）")
+    shown = items[:max_show]
+    if index not in [i for i, _ in shown]:
+        shown = shown + [(index, entry)]
+    g2.write("")
+    g2.button("清除选择", on_click=reset_focus, width="stretch")
+    notes = ["从左到右 = 传导方向；粗黑圈 = 风险起点；圆越大，经过的路径越多；线越粗，金额越大；虚线 = 同集团或行业近似（无金额）。"
+             "点企业筛选，点金额标签打开该路径，双击空白处取消。"]
+    if company:
+        into = sum(1 for _, e in items if any(s.dst == company for s in e["steps"]))
+        notes.insert(0, f"**{name_of(company, names)}**：风险传入 {into} 条，由它传出或经过 {len(items) - into} 条。")
+    g3.caption("  \n".join(notes))
+    highlight = index if st.session_state.get("_focus_rank") in ranks else None     # nothing picked yet: show all
+    nodes_df, edges_df = overview_layout(shown, fragility, names, chosen=highlight)
+    columns_n = int(max(n["x"] for n in nodes_df)) + 1
+    rows_n = max(sum(1 for n in nodes_df if n["x"] == x) for x in range(columns_n))
+    st.vega_lite_chart(overview_chart(nodes_df, edges_df, width=min(1150, max(640, 240 * columns_n)), height=max(300, 95 * rows_n)),
+                       on_select="rerun", key=chart_key, width="content")
+
 
 # ---------------------------------------------------------------- ① list
 with st.expander("集团财务公司通道：若财务公司出现兑付问题，哪些上市公司的钱被困住（情景，不计分）", icon=":material/account_balance:"):
