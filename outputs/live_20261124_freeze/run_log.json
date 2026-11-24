@@ -1,0 +1,16 @@
+{
+  "runs": {
+    "live_20261124_001_600117_pledge.pdf": {
+      "task": "pledge",
+      "status": "needs_review",
+      "prediction": "outputs/live_20261124_freeze/pledge/live_20261124_001_600117_pledge.json",
+      "sha256": "44896c2c79bb6e454ba3deac53b0a3e4bd10e2360e111dadb17cb38c02905182",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261124_001_600117_pledge/20261124T061653Z"
+    }
+  },
+  "commit": "ff59b962b60374eee9b90f1b5a495a57f5a9f5c2",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "",
+  "started_at": "2026-11-24T06:16:53.925846+00:00",
+  "completed_at": "2026-11-24T06:17:02.450365+00:00"
+}
