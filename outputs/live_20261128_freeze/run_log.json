@@ -1,0 +1,23 @@
+{
+  "runs": {
+    "live_20261128_001_603995_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20261128_freeze/guarantee/live_20261128_001_603995_guarantee_live.json",
+      "sha256": "18e04f67bfb3481b745c21e03667e720a24f407f333d172d71baeee348f4892f",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261128_001_603995_guarantee_live/20261128T040611Z"
+    },
+    "live_20261128_002_002541_guarantee_live.pdf": {
+      "task": "guarantee",
+      "status": "needs_review",
+      "prediction": "outputs/live_20261128_freeze/guarantee/live_20261128_002_002541_guarantee_live.json",
+      "sha256": "cddad17a52cf744fb1bcbd323a084d6e2d22a442d9447826034148d616b1e042",
+      "run_directory": "/home/runner/work/finstruct-agent/finstruct-agent/outputs/live_20261128_002_002541_guarantee_live/20261128T040642Z"
+    }
+  },
+  "commit": "e81dc6d0a75dde88382e1df96c497f728ca55bda",
+  "freeze_tag": "extraction-freeze-2026-09-24",
+  "tag_commit": "",
+  "started_at": "2026-11-28T04:06:11.396137+00:00",
+  "completed_at": "2026-11-28T04:14:48.852271+00:00"
+}
